@@ -1,0 +1,34 @@
+@mixin flexStyle($align: null, $justify: null) {
+    display: flex;
+
+    // Only apply align-items if a value is provided
+    @if $align !=null {
+        align-items: $align;
+    }
+
+    // Only apply justify-content if a value is provided
+    @if $justify !=null {
+        justify-content: $justify;
+    }
+}
+
+
+@mixin position($position: relative, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    // Only apply top if a value is provided
+    @if $top !=null {
+        top: $top;
+    }
+    // Only apply right if a value is provided
+    @if $right !=null {
+        right: $right;
+    }
+    // Only apply bottom if a value is provided
+    @if $bottom !=null {
+        bottom: $bottom;
+    }
+    // Only apply left if a value is provided
+    @if $left !=null {
+        left: $left;
+    }
+}

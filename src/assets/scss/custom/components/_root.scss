@@ -1,0 +1,37 @@
+:root {
+
+    @each $color, $value in $theme-colors-text {
+        --#{$prefix}#{$color}-text-emphasis: #{$value};
+    }
+
+    @each $color, $value in $theme-colors-bg-subtle {
+        --#{$prefix}#{$color}-bg-subtle: #{$value};
+    }
+
+    @each $color, $value in $theme-colors-border-subtle {
+        --#{$prefix}#{$color}-border-subtle: #{$value};
+    }
+
+    //topbar styles
+    --#{$prefix}sidebar: #{$sidebar-width};
+    --#{$prefix}sidebar-bg: #{$sidebar-bg};
+    --#{$prefix}sidebar-border: #{$sidebar-border};
+    //sidebar styles
+    --#{$prefix}topbar: #{$topbar-height};
+    --#{$prefix}topbar-bg: #{$topbar-bg};
+    --#{$prefix}topbar-border: #{$topbar-border};
+
+    // @if $enable-dark-mode {
+    //     @each $color, $value in $theme-colors-text-dark {
+    //         --#{$prefix}#{$color}-text-emphasis: #{$value};
+    //     }
+
+    //     @each $color, $value in $theme-colors-bg-subtle-dark {
+    //         --#{$prefix}#{$color}-bg-subtle: #{$value};
+    //     }
+
+    //     @each $color, $value in $theme-colors-border-subtle-dark {
+    //         --#{$prefix}#{$color}-border-subtle: #{$value};
+    //     }
+    // }
+}

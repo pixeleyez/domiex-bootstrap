@@ -1,0 +1,37 @@
+.main-sidebar {
+    @include position(fixed, null, null, 0, null);
+    @include transition;
+    z-index: 1005;
+    top: var(--#{$prefix}topbar);
+    width: var(--#{$prefix}sidebar);
+    border-right: 1px solid var(--#{$prefix}sidebar-border);
+    background-color: var(--#{$prefix}sidebar-bg);
+}
+
+.profile-dropdown {
+    .profile-dropdown-menu {
+        .profile-link {
+            display: block;
+            @include transition;
+            padding: 0.5rem;
+            color: var(--#{$prefix}secondary-color);
+
+            &:hover {
+                color: var(--#{$prefix}primary);
+            }
+        }
+    }
+
+    .arrow {
+        @include transition;
+        &:hover {
+            background-color: $red;
+        }
+    }
+    
+    [aria-expanded="true"] {
+        .arrow {
+            transform: rotate(180deg);
+        }
+    }
+}

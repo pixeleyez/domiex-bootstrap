@@ -1,0 +1,32 @@
+/*
+Template Name:
+File: Main Css File
+*/
+
+//Fonts
+@import "custom/fonts/fonts";
+
+//Core files
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "variables";
+@import "variables-dark";
+@import "custom/components/maps";
+@import 'custom/components/root';
+@import "./node_modules/bootstrap/scss/mixins";
+@import "custom/components/mixin";
+
+//layouts
+@import "custom/structure/page-wrapper";
+@import "custom/structure/sidebar";
+@import "custom/structure/topbar";
+@import "custom/structure/footer";
+@import "custom/structure/page-heading";
+
+//components
+@import "custom/components/alerts";
+@import "custom/components/animation";
+@import "custom/components/avatar";
+@import "custom/components/buttons";
+@import "custom/components/card";
+@import "custom/components/dropdown";

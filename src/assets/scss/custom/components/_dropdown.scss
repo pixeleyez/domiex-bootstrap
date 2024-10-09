@@ -1,0 +1,22 @@
+.dropdown-custom {
+    @include position(relative);
+    display: inline-block;
+
+    .dropdown-menu {
+        @include position(fixed);
+
+        .dropdown-item {
+            @include flexStyle(center);
+            gap: 0.5rem;
+        }
+    }
+
+}
+
+.dropdown-menu-lg {
+    width: 24rem;
+}
+
+.dropdown-menu-64 {
+    width: 16rem;
+}

@@ -1,0 +1,14 @@
+{
+    "packagesToCopy": [
+        "@alpinejs/mask",
+        "@popperjs/core",
+        "@ryangjchandler/alpine-tooltip",
+        "alpinejs",
+        "lucide",
+        "moment",
+        "simplebar",
+        "bootstrap",
+        "swiper",
+        "virtual-select-plugin"
+    ]
+}

@@ -1,0 +1,49 @@
+.alert {
+    font-size: 14px;
+}
+.alert-dismissible .btn-close {
+    background-image: none;
+    font-size: 18px;
+    top: -5px;
+    color: var(--#{$prefix}alert-color);
+    box-shadow: none;
+}
+
+.alert-icon{
+    position: relative;
+    @include flexStyle(center);
+    padding-left: 4rem;
+    
+    .icon {
+        @include position(absolute, 0, null, 0, 0);
+        @include flexStyle(center, center);
+        width: 2.75rem;
+        border-right: 1px solid var(--#{$prefix}alert-border-color);
+    }
+}
+
+@if $enable-alerts-styles {
+    // Generate contextual modifier classes for colorizing the alert
+    @each $state in map-keys($theme-colors) {
+        .alert-outline-#{$state} {
+            --#{$prefix}alert-color: var(--#{$prefix}#{$state});
+            --#{$prefix}alert-bg: var(--#{$prefix}body-bg);
+            --#{$prefix}alert-border-color: var(--#{$prefix}#{$state});
+            --#{$prefix}alert-link-color: var(--#{$prefix}#{$state});
+        }
+        .alert-sub-#{$state} {
+            --#{$prefix}alert-color: var(--#{$prefix}#{$state}-text-emphasis);
+            --#{$prefix}alert-bg: var(--#{$prefix}#{$state}-bg-subtle);
+            --#{$prefix}alert-border-color: var(--#{$prefix}#{$state}-bg-subtle);
+            --#{$prefix}alert-link-color: var(--#{$prefix}#{$state});
+        }
+        .alert-solid-#{$state} {
+            --#{$prefix}alert-color: var(--#{$prefix}#{$state}-bg-subtle);
+            --#{$prefix}alert-bg: var(--#{$prefix}#{$state});
+            --#{$prefix}alert-border-color: var(--#{$prefix}#{$state});
+            --#{$prefix}alert-link-color: var(--#{$prefix}#{$state}-bg-subtle);
+        }
+    }
+}
+
+// scss-docs-end alert-modifiers

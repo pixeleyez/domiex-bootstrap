@@ -1,0 +1,88 @@
+@mixin button-sub-variant($color,
+    $custom-color: var(--#{$prefix}#{$color}),
+    $soft-background: var(--#{$prefix}#{$color}-bg-subtle),
+    $soft-border: var(--#{$prefix}#{$color}-border-subtle),
+    $color-hover: color-contrast($color),
+    $active-background: $color,
+    $active-border: $color,
+    $active-color: color-contrast($active-background)) {
+    --#{$prefix}btn-color: #{$custom-color};
+    --#{$prefix}btn-bg: #{$soft-background};
+    --#{$prefix}btn-hover-color: #{$custom-color};
+    --#{$prefix}btn-hover-bg: #{$soft-border};
+    --#{$prefix}btn-focus-shadow-rgb: #{to-rgb($color)};
+    --#{$prefix}btn-active-color: #{$custom-color};
+    --#{$prefix}btn-active-bg: #{$soft-border};
+    --#{$prefix}btn-disabled-color: #{$custom-color};
+    --#{$prefix}btn-disabled-bg: #{$soft-border};
+    --#{$prefix}btn-disabled-border-color: transparent;
+}
+
+// scss-docs-start btn-variant-mixin
+@mixin button-variant($background,
+    $custom-color: var(--#{$prefix}#{$color}),
+    $custom-dark-color: var(--#{$prefix}#{$color}-text-emphasis),
+    $color: color-contrast($background),
+    $hover-background: if($color ==$color-contrast-light, shade-color($background, $btn-hover-bg-shade-amount), tint-color($background, $btn-hover-bg-tint-amount)),
+    $hover-color: color-contrast($hover-background),
+    $active-background: if($color ==$color-contrast-light, shade-color($background, $btn-active-bg-shade-amount), tint-color($background, $btn-active-bg-tint-amount)),
+    $active-color: color-contrast($active-background),
+    $disabled-background: $background,
+    $disabled-color: color-contrast($disabled-background)) {
+    --#{$prefix}btn-color: #{$color};
+    --#{$prefix}btn-bg: #{$custom-color};
+    --#{$prefix}btn-border-color: #{$custom-color};
+    --#{$prefix}btn-hover-color: #{$hover-color};
+    --#{$prefix}btn-hover-bg: #{$custom-dark-color};
+    --#{$prefix}btn-hover-border-color: #{$custom-dark-color};
+    --#{$prefix}btn-active-color: #{$active-color};
+    --#{$prefix}btn-active-bg: #{$custom-dark-color};
+    --#{$prefix}btn-active-border-color: #{$custom-dark-color};
+    --#{$prefix}btn-disabled-color: #{$disabled-color};
+    --#{$prefix}btn-disabled-bg: #{$custom-dark-color};
+    --#{$prefix}btn-disabled-border-color: #{$custom-dark-color};
+}
+
+// scss-docs-end btn-variant-mixin
+
+@mixin button-dashed-variant($color,
+    $custom-color: var(--#{$prefix}#{$color}),
+    $soft-background: var(--#{$prefix}#{$color}-bg-subtle),
+    $soft-border: var(--#{$prefix}#{$color}-border-subtle),
+    $color-hover: color-contrast($color),
+    $active-background: $color,
+    $active-border: $color,
+    $active-color: color-contrast($active-background)) {
+    --#{$prefix}btn-color: #{$custom-color};
+    --#{$prefix}btn-border-color: #{$custom-color};
+    // --#{$prefix}btn-bg: transparent;
+    --#{$prefix}btn-hover-color: #{$custom-color};
+    --#{$prefix}btn-hover-border-color: #{$custom-color};
+    --#{$prefix}btn-hover-bg: #{$soft-background};
+    --#{$prefix}btn-focus-shadow-rgb: #{to-rgb($color)};
+    --#{$prefix}btn-active-color: #{$custom-color};
+    --#{$prefix}btn-active-border-color: #{$custom-color};
+    --#{$prefix}btn-active-bg: #{$soft-background};
+    --#{$prefix}btn-disabled-color: #{$custom-color};
+    --#{$prefix}btn-disabled-bg: #{$soft-background};
+    --#{$prefix}btn-disabled-border-color: #{$custom-color};
+}
+
+@each $color, $value in $theme-colors {
+    .btn-#{$color} {
+        @include button-variant($value, var(--#{$prefix}#{$color}), var(--#{$prefix}#{$color}-text-emphasis));
+    }
+
+    .btn-sub-#{$color} {
+        @include button-sub-variant($value, var(--#{$prefix}#{$color}), var(--#{$prefix}#{$color}-bg-subtle), var(--#{$prefix}#{$color}-border-subtle));
+    }
+
+    .btn-dashed-#{$color} {
+        border-style: dashed;
+        @include button-dashed-variant($value, var(--#{$prefix}#{$color}), var(--#{$prefix}#{$color}-bg-subtle), var(--#{$prefix}#{$color}-border-subtle));
+    }
+}
+
+:is(.btn.show) {
+    border-color: transparent;
+}

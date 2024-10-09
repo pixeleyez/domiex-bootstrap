@@ -1,0 +1,58 @@
+$utilities: ();
+$utilities: map-merge(
+  (
+        "avatar-sizes": (
+            property: height width,
+            class: size,
+            values: $avatar-sizes 
+        ),
+        "border": (
+            property: border,
+            responsive: true,
+            values: (null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+            0: 0,
+        )),
+        "border-top": (
+            property: border-top,
+            responsive: true,
+            values: (null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+            0: 0,
+        )),
+
+        "border-end": (
+            property: border-right,
+            class: border-end,
+            responsive: true,
+            values: (null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+            0: 0,
+        )),
+
+        "border-bottom": (
+            property: border-bottom,
+            responsive: true,
+            values: (null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+            0: 0,
+        )),
+        "height-custom": (
+            property: height,
+            class: h,
+            values: (
+                9: 2.25rem,
+            )
+        ),
+        "border-start": (
+            property: border-left,
+            class: border-start,
+            responsive: true,
+            values: (null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+            0: 0,
+        )),
+        "border-style": (
+            css-var: true,
+            css-variable-name: border-style,
+            class: border,
+            values: solid dashed 
+        ),
+    ),
+    $utilities
+);

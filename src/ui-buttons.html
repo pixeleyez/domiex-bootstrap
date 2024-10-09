@@ -1,0 +1,149 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+        <div class="container-fluid">
+            {{> partials/page-heading title="Buttons" sub-title="UI" }}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0 card-title d-flex">Base Buttons</h6>
+                        </div>
+                        <div class="card-body">
+                            <div x-data="{ 
+                                baseButtons: [
+                                    { text: 'Primary', color: 'btn-primary'}, 
+                                    { text: 'Secondary', color: 'btn-secondary'}, 
+                                    { text: 'Success', color: 'btn-success'}, 
+                                    { text: 'Danger', color: 'btn-danger'}, 
+                                    { text: 'Warning', color: 'btn-warning'}, 
+                                    { text: 'Info', color: 'btn-info'}, 
+                                    { text: 'Pink', color: 'btn-pink'}, 
+                                    { text: 'Indigo', color: 'btn-indigo'}, 
+                                    { text: 'Orange', color: 'btn-orange'}, 
+                                    { text: 'Dark', color: 'btn-dark'}, 
+                                    { text: 'Light', color: 'btn-light'}, 
+                                ] 
+                            }" class="d-flex flex-wrap gap-4">
+                                <template x-for="(button, index) in baseButtons" :key="index">
+                                    <button :class="button.color + ' btn'" x-text="button.text">
+                                    </button>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0 card-title d-flex">Outline Buttons</h6>
+                        </div>
+                        <div class="card-body">
+                            <div x-data="{ 
+                                baseButtons: [
+                                    { text: 'Primary', color: 'btn-outline-primary'}, 
+                                    { text: 'Secondary', color: 'btn-outline-secondary'}, 
+                                    { text: 'Success', color: 'btn-outline-success'}, 
+                                    { text: 'Danger', color: 'btn-outline-danger'}, 
+                                    { text: 'Warning', color: 'btn-outline-warning'}, 
+                                    { text: 'Info', color: 'btn-outline-info'}, 
+                                    { text: 'Pink', color: 'btn-outline-pink'}, 
+                                    { text: 'Indigo', color: 'btn-outline-indigo'}, 
+                                    { text: 'Orange', color: 'btn-outline-orange'}, 
+                                    { text: 'Dark', color: 'btn-outline-dark'}, 
+                                    { text: 'Light', color: 'btn-outline-light'}, 
+                                ] 
+                            }" class="d-flex flex-wrap gap-4">
+                                <template x-for="(button, index) in baseButtons" :key="index">
+                                    <button :class="button.color + ' btn'" x-text="button.text">
+                                    </button>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0 card-title d-flex">Soft Buttons</h6>
+                        </div>
+                        <div class="card-body">
+                            <div x-data="{ 
+                                baseButtons: [
+                                    { text: 'Primary', color: 'btn-sub-primary'}, 
+                                    { text: 'Secondary', color: 'btn-sub-secondary'}, 
+                                    { text: 'Success', color: 'btn-sub-success'}, 
+                                    { text: 'Danger', color: 'btn-sub-danger'}, 
+                                    { text: 'Warning', color: 'btn-sub-warning'}, 
+                                    { text: 'Info', color: 'btn-sub-info'}, 
+                                    { text: 'Pink', color: 'btn-sub-pink'}, 
+                                    { text: 'Indigo', color: 'btn-sub-indigo'}, 
+                                    { text: 'Orange', color: 'btn-sub-orange'}, 
+                                    { text: 'Dark', color: 'btn-sub-dark'}, 
+                                ] 
+                            }" class="d-flex flex-wrap gap-4">
+                                <template x-for="(button, index) in baseButtons" :key="index">
+                                    <button :class="button.color + ' btn'" x-text="button.text">
+                                    </button>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0 card-title d-flex">Soft Buttons</h6>
+                        </div>
+                        <div class="card-body">
+                            <div x-data="{ 
+                                baseButtons: [
+                                    { text: 'Primary', color: 'btn-dashed-primary'}, 
+                                    { text: 'Secondary', color: 'btn-dashed-secondary'}, 
+                                    { text: 'Success', color: 'btn-dashed-success'}, 
+                                    { text: 'Danger', color: 'btn-dashed-danger'}, 
+                                    { text: 'Warning', color: 'btn-dashed-warning'}, 
+                                    { text: 'Info', color: 'btn-dashed-info'}, 
+                                    { text: 'Pink', color: 'btn-dashed-pink'}, 
+                                    { text: 'Indigo', color: 'btn-dashed-indigo'}, 
+                                    { text: 'Orange', color: 'btn-dashed-orange'}, 
+                                    { text: 'Dark', color: 'btn-dashed-dark'}, 
+                                ] 
+                            }" class="d-flex flex-wrap gap-4">
+                                <template x-for="(button, index) in baseButtons" :key="index">
+                                    <button :class="button.color + ' btn'" x-text="button.text">
+                                    </button>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div>
+        {{> partials/footer}}
+    </div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

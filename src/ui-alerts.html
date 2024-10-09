@@ -1,0 +1,234 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Index" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+        <div class="container-fluid">
+            {{> partials/page-heading title="Alerts" sub-title="UI" }}
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0 card-title d-flex">Basic Alerts</h6>
+                        </div>
+                        <div class="card-body">
+                            <div x-data="{ 
+                                    alerts: [
+                                        { text: 'This is a basic alert message',   color: 'alert-primary' }, 
+                                        { text: 'This is a basic alert message',    color: 'alert-secondary' },
+                                        { text: 'This is a basic alert message',     color: 'alert-success' }, 
+                                        { text: 'This is a basic alert message',   color: 'alert-danger' }, 
+                                        { text: 'This is a basic alert message',   color: 'alert-info' }, 
+                                        { text: 'This is a basic alert message',       color: 'alert-warning' },
+                                        { text: 'This is a basic alert message',       color: 'alert-indigo' },
+                                        { text: 'This is a basic alert message',    color: 'alert-pink' }, 
+                                        { text: 'This is a basic alert message',    color: 'alert-orange' }, 
+                                        { text: 'This is a basic alert message',    color: 'alert-light' }, 
+                                        { text: 'This is a basic alert message',    color: 'alert-dark' }
+                                    ] 
+                                }" class="d-flex flex-column gap-2">
+                                <template x-for="(alert, index) in alerts" :key="index">
+                                    <div :class="alert.color + ' alert alert-dismissible'">
+                                        <span x-text="alert.text"></span>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="ri-close-fill"></i></button>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0 card-title d-flex">Soft Alerts</h6>
+                        </div>
+                        <div class="card-body">
+                            <div x-data="{ 
+                                alerts: [
+                                    { text: 'This is a basic alert message',   color: 'alert-sub-primary' }, 
+                                    { text: 'This is a basic alert message',    color: 'alert-sub-secondary' },
+                                    { text: 'This is a basic alert message',     color: 'alert-sub-success' }, 
+                                    { text: 'This is a basic alert message',   color: 'alert-sub-danger' }, 
+                                    { text: 'This is a basic alert message',   color: 'alert-sub-info' }, 
+                                    { text: 'This is a basic alert message',       color: 'alert-sub-warning' },
+                                    { text: 'This is a basic alert message',    color: 'alert-sub-indigo' },
+                                    { text: 'This is a basic alert message',    color: 'alert-sub-pink' }, 
+                                    { text: 'This is a basic alert message',    color: 'alert-sub-orange' }, 
+                                    { text: 'This is a basic alert message',    color: 'alert-sub-light' }, 
+                                    { text: 'This is a basic alert message',    color: 'alert-sub-dark' }
+                                ] 
+                            }" class="d-flex flex-column gap-2">
+                                <template x-for="(alert, index) in alerts" :key="index">
+                                    <div :class="alert.color + ' alert alert-dismissible'">
+                                        <span x-text="alert.text"></span>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="ri-close-fill"></i></button>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0 card-title">Outline Alerts</h6>
+                        </div>
+                        <div class="card-body">
+                            <div x-data="{ 
+                                alerts: [
+                                    { text: 'This is a basic alert message',   color: 'alert-outline-primary' }, 
+                                    { text: 'This is a basic alert message',    color: 'alert-outline-secondary' },
+                                    { text: 'This is a basic alert message',     color: 'alert-outline-success' }, 
+                                    { text: 'This is a basic alert message',   color: 'alert-outline-danger' }, 
+                                    { text: 'This is a basic alert message',   color: 'alert-outline-info' }, 
+                                    { text: 'This is a basic alert message',       color: 'alert-outline-warning' },
+                                    { text: 'This is a basic alert message',       color: 'alert-outline-indigo' },
+                                    { text: 'This is a basic alert message',    color: 'alert-outline-pink' }, 
+                                    { text: 'This is a basic alert message',    color: 'alert-outline-orange' },
+                                    { text: 'This is a basic alert message',    color: 'alert-outline-dark' }
+                                ] 
+                            }" class="d-flex flex-column gap-2">
+                                <template x-for="(alert, index) in alerts" :key="index">
+                                    <div :class="alert.color + ' alert alert-dismissible'">
+                                        <span x-text="alert.text"></span>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="ri-close-fill"></i></button>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0 card-title">Solid Alerts</h6>
+                        </div>
+                        <div class="card-body">
+                            <div x-data="{ 
+                                alerts: [
+                                    { text: 'This is a basic alert message',   color: 'alert-solid-primary' }, 
+                                    { text: 'This is a basic alert message',    color: 'alert-solid-secondary' },
+                                    { text: 'This is a basic alert message',     color: 'alert-solid-success' }, 
+                                    { text: 'This is a basic alert message',   color: 'alert-solid-danger' }, 
+                                    { text: 'This is a basic alert message',   color: 'alert-solid-info' }, 
+                                    { text: 'This is a basic alert message',       color: 'alert-solid-warning' },
+                                    { text: 'This is a basic alert message',       color: 'alert-solid-indigo' },
+                                    { text: 'This is a basic alert message',    color: 'alert-solid-pink' }, 
+                                    { text: 'This is a basic alert message',    color: 'alert-solid-orange' },
+                                    { text: 'This is a basic alert message',    color: 'alert-solid-dark' }
+                                ] 
+                            }" class="d-flex flex-column gap-2">
+                                <template x-for="(alert, index) in alerts" :key="index">
+                                    <div :class="alert.color + ' alert alert-dismissible'">
+                                        <span x-text="alert.text"></span>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="ri-close-fill"></i></button>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0 card-title d-flex">Basic Alerts</h6>
+                        </div>
+                        <div class="card-body">
+                            <div x-data="{ 
+                                    alerts: [
+                                        { text: 'This is a link alert message',   color: 'alert-primary' }, 
+                                        { text: 'This is a basic alert message',    color: 'alert-secondary' },
+                                        { text: 'This is a basic alert link message',     color: 'alert-success' }, 
+                                        { text: 'This is a basic alert message',   color: 'alert-danger' }, 
+                                        { text: 'This is a basic alert message',   color: 'alert-info' }, 
+                                        { text: 'This is a basic alert message',       color: 'alert-warning' },
+                                        { text: 'This is a basic alert message',       color: 'alert-indigo' },
+                                        { text: 'This is a basic alert message',    color: 'alert-pink' }, 
+                                        { text: 'This is a basic alert message',    color: 'alert-orange' }, 
+                                        { text: 'This is a basic alert message',    color: 'alert-dark' }
+                                    ] 
+                                }" class="d-flex flex-column gap-2">
+                                <template x-for="(alert, index) in alerts" :key="index">
+                                    <div :class="alert.color + ' alert alert-dismissible'">
+                                        <span x-text="alert.text"></span>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="ri-close-fill"></i></button>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0 card-title">Icons with Alerts</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2">
+                                <div class="col-lg-6">
+                                    <div class="alert alert-primary alert-icon alert-dismissible">
+                                        <div class="icon">
+                                            <i data-lucide="alert-triangle" class="size-4"></i>
+                                        </div>
+                                        <span>Primary Alerts</span>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="ri-close-fill"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="alert alert-success alert-icon alert-dismissible">
+                                        <div class="icon">
+                                            <i data-lucide="check-square" class="size-4"></i>
+                                        </div>
+                                        <span>Primary Alerts</span>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="ri-close-fill"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="alert alert-outline-secondary alert-icon alert-dismissible">
+                                        <div class="icon">
+                                            <i data-lucide="check-square" class="size-4"></i>
+                                        </div>
+                                        <span>Primary Alerts</span>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="ri-close-fill"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="alert alert-outline-warning alert-icon alert-dismissible">
+                                        <div class="icon">
+                                            <i data-lucide="check-square" class="size-4"></i>
+                                        </div>
+                                        <span>Primary Alerts</span>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="ri-close-fill"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{> partials/footer}}
+    </div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
