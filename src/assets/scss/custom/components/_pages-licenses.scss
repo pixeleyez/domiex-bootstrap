@@ -1,0 +1,5 @@
+@each $state in map-keys($theme-colors){
+    .bg-gradient-t-#{$state}{
+        background-image: linear-gradient(to bottom, rgba(var(--#{$prefix}#{$state}-rgb), 0.1), rgba(var(--#{$prefix}#{$state}-rgb), 0));
+    }
+}

@@ -1,0 +1,19 @@
+.text-gradient {
+    background: linear-gradient(90deg, $primary-500, $secondary-500, $pink-500);
+    -webkit-background-clip: text;
+    filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) 
+            drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
+    color: transparent;
+}
+.clock-box{
+    width: 5rem;
+}
+.comming-soon-input{
+    input.form-control {
+        height: 48px;
+    }
+    button {
+        @include position(absolute, 50%, 0.1875rem, null, null);
+        transform: translateY(-50%);
+    }
+}

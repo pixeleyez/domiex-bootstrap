@@ -11,9 +11,3 @@
         }
     }
 }
-.btn-primary{
-    &:hover{
-        transform: translateY(-3px);
-        transition: $transition-base;
-    }
-}
