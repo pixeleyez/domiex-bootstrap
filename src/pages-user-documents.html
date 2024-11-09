@@ -1,0 +1,326 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    <div class="position-relative mb-6">
+        <div class="position-relative overflow-hidden rounded bg-primary bg-opacity-10 custom-box">
+            <div class="bordered-square bordered-position1 border-color-primary size-96"></div>
+            <div class="bordered-square bordered-position2 border-color-success size-80"></div>
+            <div class="bordered-square bordered-position3 border-color-pink size-40"></div>
+        </div>
+        <div class="text-center">
+            <div class="position-relative d-inline-block mx-auto custom-container">
+                <div class="position-relative p-1 rounded-circle custom-gradient custom-image-container">
+                    <img src="assets/images/avatar/user-17.png" alt="" class="mx-auto custom-image rounded-pill size-28 border border-4 border-white">
+                </div>
+                <div class="position-absolute border border-white rounded-pill bg-success custom-small-circle size-4"></div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center gap-1">
+                <h5 class="mt-2 mb-1">Sophia Mia</h5>
+                <i data-lucide="badge-check" class="size-5 icon-primary"></i>
+            </div>
+            <ul class="text-dark d-flex align-items-center gap-2 justify-content-center m-0">
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="building-2" class="size-4"></i>
+                    <span>UI / UX Designer</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="map-pin" class="size-4"></i>
+                    <span>Argentina</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="calendar-days" class="size-4"></i>
+                    <span>24 April, 2024</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link fw-medium " aria-current="page" href="pages-user.html">
+                    <i data-lucide="eye" class="size-4 me-1"></i>
+                    Overview
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-user-activity.html">
+                    <i data-lucide="sparkles" class="size-4 me-1"></i>
+                    Activity
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-user-followers.html">
+                    <i data-lucide="user-round" class="size-4 me-1"></i>
+                    Followers
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium active" aria-current="page" href="pages-user-documents.html">
+                    <i data-lucide="file-text" class="size-4 me-1"></i>
+                    Documents
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="">
+                    <i data-lucide="list" class="size-4 me-1"></i>
+                    Notes
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="">
+                    <i data-lucide="monitor" class="size-4 me-1"></i>
+                    Projects
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="mt-4">
+        <div class="d-flex align-items-center gap-5">
+            <h6 class="flex-grow-1 fs-16 mb-0">Documents</h6>
+            <div class="dropdown">
+                <button class="btn btn-light text-dark px-4 py-2 text-dark d-flex align-items-center gap-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i data-lucide="sliders-horizontal" class="size-4 me-1"></i>
+                    <span>Filters</span>
+                </button>
+                <div class="dropdown-menu shadow-sm dropdown-menu-end p-4 w-80">
+                    <h6 class="mb-4">Filter Options</h6>
+                    <form action="#!">
+                        <p class="text-black mb-2 fs-sm fw-medium">Member Type:</p>
+                        <div class="row g-4">
+                            <div class="col-6">
+                                <div class="form-check check-primary">
+                                    <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Author
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check check-primary">
+                                    <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Customer
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <p class="text-black mb-2 fs-sm fw-medium">Files Type:</p>
+                                <div id="multiple-select"></div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 mt-4 justify-content-end">
+                            <button type="reset" class="btn-xs btn btn-light">
+                                Reset
+                            </button>
+                            <button type="submit" class="btn-xs btn btn-primary">
+                                Apply
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <i data-lucide="folder-closed" class="size-8 icon-secondary stroke-1"></i>
+                    <h6 class="mt-4 mb-1"><a href="#!" class="text-black">Projects 2024</a></h6>
+                    <p class="text-muted">23 Files - 128 MB</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <i data-lucide="folder-closed" class="size-8 icon-secondary stroke-1"></i>
+                    <h6 class="mt-4 mb-1"><a href="#!" class="text-black">All Contact</a></h6>
+                    <p class="text-muted">49 Files - 27 MB</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <i data-lucide="folder-closed" class="size-8 icon-secondary stroke-1"></i>
+                    <h6 class="mt-4 mb-1"><a href="#!" class="text-black">Marketing Analysis</a></h6>
+                    <p class="text-muted">3 Files - 5.65 MB</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <i data-lucide="folder-closed" class="size-8 icon-secondary stroke-1"></i>
+                    <h6 class="mt-4 mb-1"><a href="#!" class="text-black">Images & Video</a></h6>
+                    <p class="text-muted">163 Files - 0.9 GB</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <i data-lucide="folder-closed" class="size-8 icon-secondary stroke-1"></i>
+                    <h6 class="mt-4 mb-1"><a href="#!" class="text-black">Application</a></h6>
+                    <p class="text-muted">149 Files - 68.83 GB</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h5 class="fs-16">Files</h5>
+    <div class="row mt-4">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <i data-lucide="file" class="size-8 icon-info stroke-1"></i>
+                    <h6 class="mt-4 mb-1"><a href="#!" class="text-black">tailwind.config.js</a></h6>
+                    <p class="text-muted">4 KB</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <i data-lucide="file" class="size-8 icon-info stroke-1"></i>
+                    <h6 class="mt-4 mb-1"><a href="#!" class="text-black">package.json</a></h6>
+                    <p class="text-muted">2 kb</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <i data-lucide="file" class="size-8 icon-info stroke-1"></i>
+                    <h6 class="mt-4 mb-1"><a href="#!" class="text-black">vite.config.js</a></h6>
+                    <p class="text-muted">5 KB</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <i data-lucide="file" class="size-8 icon-info stroke-1"></i>
+                    <h6 class="mt-4 mb-1"><a href="#!" class="text-black">tailwind.scss</a></h6>
+                    <p class="text-muted">5 KB</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <i data-lucide="file" class="size-8 icon-info stroke-1"></i>
+                    <h6 class="mt-4 mb-1"><a href="#!" class="text-black">index.html</a></h6>
+                    <p class="text-muted">129 kb</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h5 class="fs-16">Images & Video</h5>
+    <div class="row mt-4">
+        <div class="col d-flex">
+            <div class="card flex-fill">
+                <div class="card-body">
+                    <div>
+                        <img src="assets/images/gallery/img-01.jpg" alt="" class="ratio ratio-21x9 object-fit-cover rounded-3 w-100 shadow-sm">
+                    </div>
+                    <h6 class="mt-4 mb-1 text-truncate"><a href="#!" class="text-black">Adventure is a form of self care</a></h6>
+                    <p class="text-muted">15.6 KB</p>
+                </div>
+            </div>
+        </div><!--end col-->
+
+        <div class="col d-flex">
+            <div class="card flex-fill">
+                <div class="card-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe class="w-100 rounded-3 shadow-sm" src="https://www.youtube.com/embed/eSzNNYk7nVU?si=EHJjJ8BjAsp6yMgx" title="YouTube video player" allowfullscreen=""></iframe>
+                    </div>  
+                    <h6 class="mt-4 mb-1 text-truncate"><a href="#!" class="text-black">Rebuilding iOS 15 with Tailwind CSS</a></h6>
+                    <p class="text-muted">23.98 MB</p>
+                </div>
+            </div>
+        </div><!--end col-->
+
+        <div class="col d-flex">
+            <div class="card flex-fill">
+                <div class="card-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe class="w-100 rounded-3 shadow-sm" src="https://www.youtube.com/embed/Tmkr2kKUEgU?si=g6q_jn3gzqxK_CMj" title="YouTube video player" allowfullscreen=""></iframe>
+                    </div>
+                    <h6 class="mt-4 mb-1 text-truncate"><a href="#!" class="text-black">Rebuilding iOS 15 with Tailwind CSS</a></h6>
+                    <p class="text-muted">23.98 MB</p>
+                </div>
+            </div>
+        </div><!--end col-->
+
+
+        <div class="col d-flex">
+            <div class="card flex-fill">
+                <div class="card-body">
+                    <div>
+                        <img src="assets/images/gallery/img-02.jpg" alt="" class="ratio ratio-21x9 object-fit-cover rounded-3 w-100 shadow-sm">
+                    </div>
+                    <h6 class="mt-4 mb-1"><a href="#!" class="text-black">Cuteness in every bloom</a></h6>
+                    <p class="text-muted">1.97 KB</p>
+                </div>
+            </div>
+        </div><!--end col-->
+
+        <div class="col d-flex">
+            <div class="card flex-fill">
+                <div class="card-body">
+                    <div>
+                        <img src="assets/images/gallery/img-03.jpg" alt="" class="ratio ratio-21x9 object-fit-cover rounded-3 w-100 shadow-sm">
+                    </div>
+                    <h6 class="mt-4 mb-1"><a href="#!" class="text-black">Finding paradise wherever I go</a></h6>
+                    <p class="text-muted">0.587 KB</p>
+                </div>
+            </div>
+        </div><!--end col-->
+    </div>
+
+
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/pages/ui/pages-user-documents.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

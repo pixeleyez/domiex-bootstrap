@@ -1,0 +1,55 @@
+@each $state in map-keys($theme-colors) {
+    .range-#{$state} {
+        --#{$prefix}form-range-thumb-active-bg: var(--#{$prefix}#{$state});
+    }
+}
+.noUi-connect{
+    background-color: $primary;
+}
+.noUi-horizontal{
+    height: 12px;
+    background: none;
+    box-shadow: none;
+    border-color: #e4e4e4;
+}
+.noUi-horizontal .noUi-handle{
+    right: -.25rem;
+    height: 1.5rem;
+    width: .5rem;
+    top: -8px;
+}
+.noUi-handle{
+    box-shadow: none;
+    &::after{
+        display: none;
+    }
+    &::before{
+        display: none;
+    }
+}
+.h-20{
+    height: 3rem;
+    margin-top: 2.125rem;
+}
+.noUi-marker{
+    background-color: $gray-200;
+}
+.noUi-value-sub{
+    color: $gray-500;
+}
+
+.c-1-color { background: $danger; }
+.c-2-color { background: $warning; }
+.c-3-color { background: $success; }
+.c-4-color { background: $primary; }
+
+#slider-toggle {
+	height: 50px;
+}
+#slider-toggle.off .noUi-handle {
+	border-color: red;
+}
+#soft {
+    margin: 20px 0;
+}
+

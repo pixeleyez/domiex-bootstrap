@@ -1,0 +1,95 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Video" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Aspect Auto -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Aspect Auto</h6>
+                </div>
+                <div class="card-body">
+                    <div class="ratio ratio-16x9 w-100">
+                        <iframe src="https://www.youtube.com/embed/iUCyU_U0J2E?si=fKcCtQR9bK_c5aOc" title="YouTube video" allowfullscreen></iframe>
+                      </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Aspect Video (16 / 9)</h6>
+                </div>
+                <div class="card-body">
+                    <div class="ratio ratio-16x9 w-100">
+                        <iframe src="https://www.youtube.com/embed/iUCyU_U0J2E?si=hoZe7GLMhbX-z9H2" title="YouTube video" allowfullscreen></iframe>
+                      </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Aspect Video (21 / 9)</h6>
+                </div>
+                <div class="card-body">
+                    <div class="ratio ratio-21x9 w-100">
+                        <iframe src="https://www.youtube.com/embed/O_9u1P5YjVc?si=cZdJnhvBi6qImmg_" title="YouTube video" allowfullscreen></iframe>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aspect Square (1 / 1) -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Aspect Square (1 / 1)</h6>
+                </div>
+                <div class="card-body">
+                    <div class="ratio ratio-1x1 w-100">
+                        <iframe src="https://www.youtube.com/embed/irfbn103AzE?si=aYPXlVTUjIkYYmb3" title="YouTube video" allowfullscreen></iframe>
+                      </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Aspect Square (4 / 3)</h6>
+                </div>
+                <div class="card-body">
+                    <div class="ratio ratio-4x3 w-100">
+                        <iframe src="https://www.youtube.com/embed/nCeHeA7IsvU?si=X99U2DuoUt4JFoj9" title="YouTube video" allowfullscreen></iframe>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

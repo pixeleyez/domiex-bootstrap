@@ -55,7 +55,6 @@
     $active-color: color-contrast($active-background)) {
     --#{$prefix}btn-color: #{$custom-color};
     --#{$prefix}btn-border-color: #{$custom-color};
-    // --#{$prefix}btn-bg: transparent;
     --#{$prefix}btn-hover-color: #{$custom-color};
     --#{$prefix}btn-hover-border-color: #{$custom-color};
     --#{$prefix}btn-hover-bg: #{$soft-background};
@@ -66,6 +65,42 @@
     --#{$prefix}btn-disabled-color: #{$custom-color};
     --#{$prefix}btn-disabled-bg: #{$soft-background};
     --#{$prefix}btn-disabled-border-color: #{$custom-color};
+}
+
+@mixin button-active-variant($color,
+    $custom-color: var(--#{$prefix}#{$color}),
+    $soft-background: var(--#{$prefix}#{$color}-bg-subtle),
+    $soft-border: var(--#{$prefix}#{$color}-border-subtle),
+    $color-hover: color-contrast($color),
+    $active-background: $color,
+    $active-border: $color,
+    $active-color: color-contrast($active-background)) {
+    --#{$prefix}btn-color: #{$custom-color};
+    --#{$prefix}btn-hover-color: #{$custom-color};
+    --#{$prefix}btn-hover-bg: #{$soft-background};
+    --#{$prefix}btn-focus-shadow-rgb: #{to-rgb($color)};
+    --#{$prefix}btn-active-color: #{$custom-color};
+    --#{$prefix}btn-active-bg: #{$soft-background};
+    --#{$prefix}btn-disabled-color: #{$custom-color};
+    --#{$prefix}btn-disabled-bg: #{$soft-background};
+}
+
+// scss-docs-start btn-variant-mixin
+@mixin button-3D-variant($background,
+    $custom-color: var(--#{$prefix}#{$color}),
+    $custom-dark-color: var(--#{$prefix}#{$color}-text-emphasis),
+    $color: color-contrast($background),
+    $hover-color: color-contrast($hover-background),
+    $active-color: color-contrast($active-background)) {
+    --#{$prefix}btn-color: #{$color};
+    --#{$prefix}btn-bg: #{$custom-color};
+    --#{$prefix}btn-border-color: #{$custom-color};
+    --#{$prefix}btn-hover-color: #{$hover-color};
+    --#{$prefix}btn-hover-bg: #{$custom-dark-color};
+    --#{$prefix}btn-hover-border-color: #{$custom-dark-color};
+    --#{$prefix}btn-active-color: #{$active-color};
+    --#{$prefix}btn-active-bg: #{$custom-dark-color};
+    --#{$prefix}btn-disabled-bg: #{$custom-dark-color};
 }
 
 @each $color, $value in $theme-colors {
@@ -81,8 +116,108 @@
         border-style: dashed;
         @include button-dashed-variant($value, var(--#{$prefix}#{$color}), var(--#{$prefix}#{$color}-bg-subtle), var(--#{$prefix}#{$color}-border-subtle));
     }
+
+    .btn-active-#{$color} {
+        border: none;
+        @include button-active-variant($value, var(--#{$prefix}#{$color}), var(--#{$prefix}#{$color}-bg-subtle), var(--#{$prefix}#{$color}-border-subtle));
+    }
+
+    .btn-3D-#{$color} {
+        @include button-variant($value, var(--#{$prefix}#{$color}), var(--#{$prefix}#{$color}-text-emphasis));
+    }
 }
 
 :is(.btn.show) {
     border-color: transparent;
+}
+
+// Button Size
+
+.btn.btn-xs {
+    padding: map-get($spacers, 1) map-get($spacers, 2);
+    font-size: .6875rem;
+}
+
+.btn.btn-md {
+    padding: map-get($spacers, 2) map-get($spacers, 4);
+    font-size: map-get($font-sizes, '12');
+}
+.btn.btn-lg {
+    padding: map-get($spacers, 2) map-get($spacers, 6);
+    font-size: map-get($font-sizes, '16');
+}
+
+// Loading Buttons
+
+.spinner-border{
+    height: $spinner-width-sm;
+    width: $spinner-width-sm; 
+}
+
+// Icon Overlay with Text
+.social-icon {
+    @include position(absolute, 0, null, 0, 0);
+    width: 2.438rem;
+    background-color: white;
+    opacity: 0.25;
+}
+
+// Icon Buttons
+
+.btn.btn-icon {
+    width: map-get($spacers, 10);
+    height: map-get($spacers, 10);
+    @include flexStyle(center, center);
+    padding: 0;
+}
+.icon-button {
+    height: map-get($avatar-sizes, 4);
+    width:  map-get($avatar-sizes, 4); 
+}
+
+// end row
+.dark-button {
+    background-color: $gray-800;
+    &:hover {
+        background-color: $gray-900;
+    }
+}
+.background-hover {
+    background-image: radial-gradient(75% 100% at 50% 0%, rgba(56, 189, 248, 0.6) 0%, rgba(56, 189, 248, 0) 75%);
+    opacity: 0;
+    transition: $btn-transition;
+    &:hover{
+        opacity: 100;
+    }
+}
+
+// hover effect
+$btn-transition: transform .5s ease; 
+
+.btn-translate-up {
+    transform: translateY(0);
+    transition: $btn-transition;
+
+    &:hover {
+        transform: translateY(-0.125rem); 
+    }
+}
+
+.btn-translate-down {
+    transform: translateY(0);
+    transition: $btn-transition;
+
+    &:hover {
+        transform: translateY(0.125rem); 
+    }
+}
+
+.btn-scale {
+    transform: scale(1);
+    transition: $btn-transition;
+
+    &:hover {
+        transform: scale(1.1);
+        color: $primary-500;
+    }
 }

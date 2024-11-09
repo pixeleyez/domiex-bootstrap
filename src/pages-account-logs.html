@@ -1,0 +1,283 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    <div class="position-relative mb-6">
+        <div class="position-relative overflow-hidden rounded bg-primary bg-opacity-10 custom-box">
+            <div class="bordered-square bordered-position1 border-color-primary size-96"></div>
+            <div class="bordered-square bordered-position2 border-color-success size-80"></div>
+            <div class="bordered-square bordered-position3 border-color-pink size-40"></div>
+        </div>
+        <div class="text-center">
+            <div class="position-relative d-inline-block mx-auto custom-container">
+                <div class="position-relative p-1 rounded-circle custom-gradient custom-image-container">
+                    <img src="assets/images/avatar/user-17.png" alt="" class="mx-auto custom-image rounded-pill size-28 border border-4 border-white">
+                </div>
+                <div class="position-absolute border border-white rounded-pill bg-success custom-small-circle size-4"></div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center gap-1">
+                <h5 class="mt-2 mb-1">Sophia Mia</h5>
+                <i data-lucide="badge-check" class="size-5 icon-primary"></i>
+            </div>
+            <ul class="text-dark d-flex align-items-center gap-2 justify-content-center m-0">
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="building-2" class="size-4"></i>
+                    <span>UI / UX Designer</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="map-pin" class="size-4"></i>
+                    <span>Argentina</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="calendar-days" class="size-4"></i>
+                    <span>24 April, 2024</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-settings.html">
+                    <i data-lucide="user-round" class="size-4 me-1"></i>
+                    Account
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-security.html">
+                    <i data-lucide="shield-check" class="size-4 me-1"></i>
+                    Security
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-billing-plan.html">
+                    <i data-lucide="gem" class="size-4 me-1"></i>
+                    Billing & Plans
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-notification.html">
+                    <i data-lucide="bell" class="size-4 me-1"></i>
+                    Notification
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-statements.html">
+                    <i data-lucide="list-tree" class="size-4 me-1"></i>
+                    Statements
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium active" aria-current="page" href="pages-account-logs.html">
+                    <i data-lucide="log-out" class="size-4 me-1"></i>
+                    Logs
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="card mt-4">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center gap-3">
+                <h6 class="card-title flex-grow-1 mb-0">Device and active sessions</h6>
+                <button type="button" class="btn btn-light text-dark fs-12 fw-semibold btn-sm px-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    All Logouts <i data-lucide="move-right" class="size-4 ms-1"></i>
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xs modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-content p-7 text-center">
+                                <div class="d-flex align-items-center justify-content-center mx-auto mb-4 bg-danger rounded-circle p-3 text-white ring-4 ring-danger">
+                                    <i data-lucide="log-out" class="size-6"></i>
+                                </div>
+                                <h5 class="mb-2">All Devices Logout</h5>
+                                <p class="mb-5 text-muted">Are you sure you want to log out from all devices?</p>
+                                <div class="d-flex justify-content-center gap-2">
+                                    <button class="btn btn-danger">Logout Device</button>
+                                    <button class="btn btn-link link-primary text-dark" data-bs-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body row">
+            <div class="col-4 d-flex">
+                <div class="card flex-fill">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex align-items-center justify-content-center p-3">
+                                <i data-lucide="monitor-smartphone" class="icon-success"></i>
+                            </div>
+                        
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1">Apple Mac 12.5.1 <span class="badge bg-success-subtle text-success  border border-success-subtle ms-1">Online</span></h6>
+                                <p class="fs-sm">London, United Kingdom - 81.64.22.98</p>
+                            </div>
+                        
+                            <div class="dropdown position-relative">
+                                <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i data-lucide="chevron-right"></i>
+                                </button>
+                        
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#!">Overview</a></li>
+                                    <li><a class="dropdown-item" href="#!" data-bs-toggle="modal" data-bs-target="#exampleModal">Log Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 d-flex">
+                <div class="card flex-fill">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex align-items-center justify-content-center p-3">
+                                <i data-lucide="smartphone" class="icon-dark"></i>
+                            </div>
+                        
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1">Apple iPhone iOS 14.8.5  <span class="badge bg-dark-subtle text-dark  border border-dark-subtle ms-1">Offline</span></h6>
+                                <p class="fs-sm">Berlin, Germany. - 225.222.152.154</p>
+                            </div>
+                        
+                            <div class="dropdown position-relative">
+                                <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i data-lucide="chevron-right"></i>
+                                </button>
+                        
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#!">Overview</a></li>
+                                    <li><a class="dropdown-item" href="#!" data-bs-toggle="modal" data-bs-target="#exampleModal">Log Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 d-flex">
+                <div class="card flex-fill">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex align-items-center justify-content-center p-3">
+                                <i data-lucide="smartphone" class="icon-dark"></i>
+                            </div>
+                        
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1">Samsung Phone s24<span class="badge bg-dark-subtle text-dark  border border-dark-subtle ms-1">Offline</span></h6>
+                                <p class="fs-sm">Paris, France. - 225.222.152.154</p>
+                            </div>
+                        
+                            <div class="dropdown position-relative">
+                                <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i data-lucide="chevron-right"></i>
+                                </button>
+                        
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#!">Overview</a></li>
+                                    <li><a class="dropdown-item" href="#!" data-bs-toggle="modal" data-bs-target="#exampleModal">Log Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 d-flex">
+                <div class="card flex-fill">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex align-items-center justify-content-center p-3">
+                                <i data-lucide="smartphone" class="icon-dark"></i>
+                            </div>
+                        
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1">Apple iPhone iOS 14.8.5<span class="badge bg-dark-subtle text-dark  border border-dark-subtle ms-1">Offline</span></h6>
+                                <p class="fs-sm">Berlin, Germany. - 225.222.152.154</p>
+                            </div>
+                        
+                            <div class="dropdown position-relative">
+                                <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i data-lucide="chevron-right"></i>
+                                </button>
+                        
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#!">Overview</a></li>
+                                    <li><a class="dropdown-item" href="#!" data-bs-toggle="modal" data-bs-target="#exampleModal">Log Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 d-flex">
+                <div class="card flex-fill">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex align-items-center justify-content-center p-3">
+                                <i data-lucide="smartphone" class="icon-dark"></i>
+                            </div>
+                        
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1">Samsung Phone s24 <span class="badge bg-dark-subtle text-dark  border border-dark-subtle ms-1">Offline</span></h6>
+                                <p class="fs-sm">Paris, France. - 225.222.152.154</p>
+                            </div>
+                        
+                            <div class="dropdown position-relative">
+                                <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i data-lucide="chevron-right"></i>
+                                </button>
+                        
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#!">Overview</a></li>
+                                    <li><a class="dropdown-item" href="#!" data-bs-toggle="modal" data-bs-target="#exampleModal">Log Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

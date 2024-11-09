@@ -33,13 +33,6 @@ $utilities: map-merge(
             values: (null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
             0: 0,
         )),
-        "height-custom": (
-            property: height,
-            class: h,
-            values: (
-                9: 2.25rem,
-            )
-        ),
         "border-start": (
             property: border-left,
             class: border-start,
@@ -52,6 +45,11 @@ $utilities: map-merge(
             css-variable-name: border-style,
             class: border,
             values: solid dashed 
+        ),
+        "custom-list-styles": (
+            property: list-style-type,
+            class: list-group,
+            values: $custom-list-styles 
         ),
     ),
     $utilities

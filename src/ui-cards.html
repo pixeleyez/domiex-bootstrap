@@ -1,0 +1,686 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Cards" sub-title="UI" }}
+
+    <!-- Card Header -->
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title">Card Header</h6>
+                </div>
+                <div class="card-body">
+                    <p>Business Content means any sound recordings, musical works, album cover artwork, photographs, images, audiovisual works, third party metadata (including editorial content) and other copyrighted materials made available by Seller through the Business Products, but excluding the Business Product Software and Incorporated</p>
+                </div>
+                <div class="card-footer mb-0">
+                    <h6>Card Footer</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title">Card Header</h6>
+                </div>
+                <div class="card-body">
+                    <p>Business Content means any sound recordings, musical works, album cover artwork, photographs, images, audiovisual works, third party metadata (including editorial content) and other copyrighted materials made available by Seller through the Business Products, but excluding the Business Product Software and Incorporated</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <p>Business Content means any sound recordings, musical works, album cover artwork, photographs, images, audiovisual works, third party metadata (including editorial content) and other copyrighted materials made available by Seller through the Business Products, but excluding the Business Product Software and Incorporated</p>
+                </div>
+                <div class="card-footer mb-0">
+                    <h6>Card Footer</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="card basic-card">
+                <img src="assets/images/gallery/img-01.jpg" class="card-img-top" alt="...">
+                <div class="mx-auto">
+                    <img src="assets/images/avatar-new/user-21.png" alt="" class="user rounded-pill border border-4 border-white">
+                </div>
+                <div class="card-body text-center">
+                    <h6 class="fs-6 mb-1">Linda J. Bell</h6>
+                    <p class="text-dark">Sr. Web Designer</p>
+                    <ul class="list-unstyled d-flex flex-wrap justify-content-around align-content-center mt-2 pt-3 mb-0">
+                        <li>
+                            <i data-lucide="star" class="size-5 text-warning mb-2"></i>
+                            <h6 class="mb-0">2k</h6>
+                        </li>
+                        <li>
+                            <i data-lucide="users" class="size-5 text-primary mb-2"></i>
+                            <h6 class="mb-0">10k</h6>
+                        </li>
+                        <li>
+                            <i data-lucide="briefcase-business" class="size-5 text-success mb-2"></i>
+                            <h6 class="mb-0">15</h6>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer mb-0 d-flex justify-content-center">
+                    <div x-data="{ loadingButton: false, isActive: false }">
+                        <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-pink d-flex align-items-center gap-2">
+                            <span x-show="!isActive">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-add-line"></i>
+                                    <p>Follow</p>
+                                </div>
+                            </span>
+                            <span x-show="isActive" style="display: none;">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-unfollow-line"></i>
+                                    <p>UnFollow</p>
+                                </div>
+                            </span>
+                            <span class="spinner-border spinner-border-sm" x-show="loadingButton" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card basic-card">
+                <img src="assets/images/gallery/img-02.jpg" class="card-img-top" alt="...">
+                <div class="mx-auto">
+                    <img src="assets/images/avatar-new/user-18.png" alt="" class="user rounded-pill border border-4 border-white">
+                </div>
+                <div class="card-body text-center">
+                    <h6 class="fs-6 mb-1">Jennifer Brunner</h6>
+                    <p class="text-dark">Laravel Developer</p>
+                    <ul class="list-unstyled d-flex flex-wrap justify-content-around align-content-center mt-2 pt-3 mb-0">
+                        <li>
+                            <i data-lucide="star" class="size-5 text-warning mb-2"></i>
+                            <h6 class="mb-0">1.1k</h6>
+                        </li>
+                        <li>
+                            <i data-lucide="users" class="size-5 text-primary mb-2"></i>
+                            <h6 class="mb-0">2.5k</h6>
+                        </li>
+                        <li>
+                            <i data-lucide="briefcase-business" class="size-5 text-success mb-2"></i>
+                            <h6 class="mb-0">2</h6>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer mb-0 d-flex justify-content-center">
+                    <div x-data="{ loadingButton: false, isActive: false }">
+                        <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-pink d-flex align-items-center gap-2">
+                            <span x-show="!isActive">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-add-line"></i>
+                                    <p>UnFollow</p>
+                                </div>
+                            </span>
+                            <span x-show="isActive" style="display: none;">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-unfollow-line"></i>
+                                    <p>Follow</p>
+                                </div>
+                            </span>
+                            <span class="spinner-border spinner-border-sm" x-show="loadingButton" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card basic-card">
+                <img src="assets/images/gallery/img-03.jpg" class="card-img-top" alt="...">
+                <div class="mx-auto">
+                    <img src="assets/images/avatar-new/user-17.png" alt="" class="user rounded-pill border border-4 border-white">
+                </div>
+                <div class="card-body text-center">
+                    <h6 class="fs-6 mb-1">Sandra Alexander</h6>
+                    <p class="text-dark">ASP.Net Developer</p>
+                    <ul class="list-unstyled d-flex flex-wrap justify-content-around align-content-center mt-2 pt-3 mb-0">
+                        <li>
+                            <i data-lucide="star" class="size-5 text-warning mb-2"></i>
+                            <h6 class="mb-0">3.6k</h6>
+                        </li>
+                        <li>
+                            <i data-lucide="users" class="size-5 text-primary mb-2"></i>
+                            <h6 class="mb-0">12k</h6>
+                        </li>
+                        <li>
+                            <i data-lucide="briefcase-business" class="size-5 text-success mb-2"></i>
+                            <h6 class="mb-0">8</h6>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer mb-0 d-flex justify-content-center">
+                    <div x-data="{ loadingButton: false, isActive: false }">
+                        <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-pink d-flex align-items-center gap-2">
+                            <span x-show="!isActive">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-add-line"></i>
+                                    <p>Follow</p>
+                                </div>
+                            </span>
+                            <span x-show="isActive" style="display: none;">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-unfollow-line"></i>
+                                    <p>UnFollow</p>
+                                </div>
+                            </span>
+                            <span class="spinner-border spinner-border-sm" x-show="loadingButton" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card basic-card">
+                <img src="assets/images/gallery/img-04.jpg" class="card-img-top" alt="...">
+                <div class="mx-auto">
+                    <img src="assets/images/avatar-new/user-14.png" alt="" class="user rounded-pill border border-4 border-white">
+                </div>
+                <div class="card-body text-center">
+                    <h6 class="fs-6 mb-1">James Hazelwood</h6>
+                    <p class="text-dark">Wordpress Developer</p>
+                    <ul class="list-unstyled d-flex flex-wrap justify-content-around align-content-center mt-2 pt-3 mb-0">
+                        <li>
+                            <i data-lucide="star" class="size-5 text-warning mb-2"></i>
+                            <h6 class="mb-0">2.9k</h6>
+                        </li>
+                        <li>
+                            <i data-lucide="users" class="size-5 text-primary mb-2"></i>
+                            <h6 class="mb-0">11.8k</h6>
+                        </li>
+                        <li>
+                            <i data-lucide="briefcase-business" class="size-5 text-success mb-2"></i>
+                            <h6 class="mb-0">5</h6>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer mb-0 d-flex justify-content-center">
+                    <div x-data="{ loadingButton: false, isActive: false }">
+                        <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-pink d-flex align-items-center gap-2">
+                            <span x-show="!isActive">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-add-line"></i>
+                                    <p>Follow</p>
+                                </div>
+                            </span>
+                            <span x-show="isActive" style="display: none;">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-unfollow-line"></i>
+                                    <p>UnFollow</p>
+                                </div>
+                            </span>
+                            <span class="spinner-border spinner-border-sm" x-show="loadingButton" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h5 class="underline mb-5 mt-2">Card Hover Effect:</h5>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="card card-hover-effect card-hover-solid-primary position-relative overflow-hidden">
+                <div class="icon-hover-bg z-0"></div>
+                <div class="card-body position-relative">
+                    <div class="icon-bg  rounded-pill">
+                        <i data-lucide="message-circle-more" class="size-8"></i>
+                    </div>
+                    <div class="pt-5">
+                        <p class="lh-lg">
+                            Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
+                    </div>
+                    <div class="pt-5">
+                        <a href="#!">
+                            Read the docs
+                            <i data-lucide="move-right" class="size-4 ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-hover-effect card-hover-solid-success position-relative overflow-hidden">
+                <div class="icon-hover-bg z-0"></div>
+                <div class="card-body position-relative">
+                    <div class="icon-bg  rounded-pill">
+                        <i data-lucide="message-circle-more" class="size-8"></i>
+                    </div>
+                    <div class="pt-5">
+                        <p class="lh-lg">
+                            Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
+                    </div>
+                    <div class="pt-5">
+                        <a href="#!">
+                            Read the docs
+                            <i data-lucide="move-right" class="size-4 ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-hover-effect card-hover-sub-primary position-relative overflow-hidden">
+                <div class="icon-hover-bg z-0"></div>
+                <div class="card-body position-relative">
+                    <div class="icon-bg  rounded-pill">
+                        <i data-lucide="message-circle-more" class="size-8"></i>
+                    </div>
+                    <div class="pt-5">
+                        <p class="lh-lg">
+                            Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
+                    </div>
+                    <div class="pt-5">
+                        <a href="#!">
+                            Read the docs
+                            <i data-lucide="move-right" class="size-4 ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-hover-effect card-hover-sub-secondary position-relative overflow-hidden">
+                <div class="icon-hover-bg z-0"></div>
+                <div class="card-body position-relative">
+                    <div class="icon-bg  rounded-pill">
+                        <i data-lucide="message-circle-more" class="size-8"></i>
+                    </div>
+                    <div class="pt-5">
+                        <p class="lh-lg">
+                            Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
+                    </div>
+                    <div class="pt-5">
+                        <a href="#!">
+                            Read the docs
+                            <i data-lucide="move-right" class="size-4 ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-hover-effect card-hover-primary position-relative overflow-hidden">
+                <div class="card-body position-relative">
+                    <div class="icon-bg  rounded-pill">
+                        <i data-lucide="airplay" class="size-8"></i>
+                    </div>
+                    <div class="pt-5">
+                        <p class="lh-lg text-dark">
+                            Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
+                    </div>
+                    <div class="pt-5">
+                        <a href="#!">
+                            Read the docs
+                            <i data-lucide="move-right" class="size-4 ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-hover-effect card-hover-secondary position-relative overflow-hidden">
+                <div class="card-body position-relative">
+                    <div class="icon-bg  rounded-pill">
+                        <i data-lucide="airplay" class="size-8"></i>
+                    </div>
+                    <div class="pt-5">
+                        <p class="lh-lg text-dark">
+                            Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
+                    </div>
+                    <div class="pt-5">
+                        <a href="#!">
+                            Read the docs
+                            <i data-lucide="move-right" class="size-4 ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-hover-effect card-hover-orange position-relative overflow-hidden">
+                <div class="card-body position-relative">
+                    <div class="icon-bg  rounded-pill">
+                        <i data-lucide="airplay" class="size-8"></i>
+                    </div>
+                    <div class="pt-5">
+                        <p class="lh-lg text-dark">
+                            Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
+                    </div>
+                    <div class="pt-5">
+                        <a href="#!">
+                            Read the docs
+                            <i data-lucide="move-right" class="size-4 ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-hover-effect card-hover-success position-relative overflow-hidden">
+                <div class="card-body position-relative">
+                    <div class="icon-bg  rounded-pill">
+                        <i data-lucide="airplay" class="size-8"></i>
+                    </div>
+                    <div class="pt-5">
+                        <p class="lh-lg text-dark">
+                            Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
+                    </div>
+                    <div class="pt-5">
+                        <a href="#!">
+                            Read the docs
+                            <i data-lucide="move-right" class="size-4 ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h5 class="underline mb-5 mt-2">Card Colored:</h5>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="card card-border-primary">
+                <div class="card-body">
+                    <h6>Need a help in Claim?</h6>
+                    <p class="mb-3">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
+                    <a href="#!" class="d-flex align-items-center gap-2">
+                        See our guideline
+                        <i data-lucide="square-arrow-out-up-right" class="size-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-border-secondary">
+                <div class="card-body">
+                    <h6>Need a help in Claim?</h6>
+                    <p class="mb-3">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
+                    <a href="#!" class="d-flex align-items-center gap-2 link-underline">
+                        See our guideline
+                        <i data-lucide="square-arrow-out-up-right" class="size-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-border-success">
+                <div class="card-body">
+                    <h6>Need a help in Claim?</h6>
+                    <p class="mb-3">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
+                    <a href="#!" class="d-flex align-items-center gap-2">
+                        See our guideline
+                        <i data-lucide="square-arrow-out-up-right" class="size-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-border-danger">
+                <div class="card-body">
+                    <h6>Need a help in Claim?</h6>
+                    <p class="mb-3">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
+                    <a href="#!" class="d-flex align-items-center gap-2">
+                        See our guideline
+                        <i data-lucide="square-arrow-out-up-right" class="size-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-border-warning">
+                <div class="card-body">
+                    <h6>Need a help in Claim?</h6>
+                    <p class="mb-3">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
+                    <a href="#!" class="d-flex align-items-center gap-2">
+                        See our guideline
+                        <i data-lucide="square-arrow-out-up-right" class="size-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-border-info">
+                <div class="card-body">
+                    <h6>Need a help in Claim?</h6>
+                    <p class="mb-3">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
+                    <a href="#!" class="d-flex align-items-center gap-2">
+                        See our guideline
+                        <i data-lucide="square-arrow-out-up-right" class="size-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-border-pink">
+                <div class="card-body">
+                    <h6>Need a help in Claim?</h6>
+                    <p class="mb-3">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
+                    <a href="#!" class="d-flex align-items-center gap-2">
+                        See our guideline
+                        <i data-lucide="square-arrow-out-up-right" class="size-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-border-orange">
+                <div class="card-body">
+                    <h6>Need a help in Claim?</h6>
+                    <p class="mb-3">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
+                    <a href="#!" class="d-flex align-items-center gap-2">
+                        See our guideline
+                        <i data-lucide="square-arrow-out-up-right" class="size-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-border-indigo">
+                <div class="card-body">
+                    <h6>Need a help in Claim?</h6>
+                    <p class="mb-3">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
+                    <a href="#!" class="d-flex align-items-center gap-2">
+                        See our guideline
+                        <i data-lucide="square-arrow-out-up-right" class="size-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h5 class="underline mb-5 mt-2">Fancy Card:</h5>
+    <div class="row g-5">
+        <div class="col-lg-4">
+            <div class="card card-fancy-black border-0 shadow-none">
+                <a href="#!">
+                    <img src="assets/images/gallery/img-04.jpg" alt="" class="img-fluid rounded-2">
+                </a>
+                <div class="p-5 mx-10 bg-body rounded-3 -mt-16 card-body" style="margin-top: -4rem;">
+                    <h5 class="mb-3">
+                        <a href="#!" class="lh-base text-black">The white and blue boat on river under blue sky during daytime</a>
+                    </h5>
+                    <p class="text-dark">Today, I’m covering one of my favorite parts of the Nordstrom Anniversary Sale: the activewear!</p>
+                    <p class="text-dark mt-4">
+                        By
+                        <a href="#!">Daniel</a>
+                        | in
+                        <a href="#!">Traveling</a>
+                        ,
+                        <a href="#!">Business</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card card-fancy-black border-0 shadow-none">
+                <a href="#!">
+                    <img src="assets/images/gallery/img-01.jpg" alt="" class="img-fluid rounded-2">
+                </a>
+                <div class="p-5 mx-10 bg-body rounded-3 -mt-16 card-body" style="margin-top: -4rem;">
+                    <h5 class="mb-3">
+                        <a href="#!" class="lh-base text-black">A heritage Shophouse at Little india SG</a>
+                    </h5>
+                    <p class="text-dark">Today, I’m covering one of my favorite parts of the Nordstrom Anniversary Sale: the activewear!</p>
+                    <p class="text-dark mt-4">
+                        By
+                        <a href="#!">Daniel</a>
+                        | in
+                        <a href="#!">Traveling</a>
+                        ,
+                        <a href="#!">Business</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card card-fancy border-0 shadow-none">
+                <a href="#!">
+                    <img src="assets/images/gallery/img-01.jpg" alt="" class="img-fluid rounded-2">
+                </a>
+                <div class="p-5 mx-10 bg-body rounded-3 -mt-16 card-body" style="margin-top: -4rem;">
+                    <h5 class="mb-3">
+                        <a href="#!" class="lh-base text-black">Purple flowers with green leaves</a>
+                    </h5>
+                    <p class="text-dark">Today, I’m covering one of my favorite parts of the Nordstrom Anniversary Sale: the activewear!</p>
+                    <p class="text-dark mt-4">
+                        By
+                        <a href="#!">Daniel</a>
+                        | in
+                        <a href="#!">Traveling</a>
+                        ,
+                        <a href="#!">Business</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h5 class="underline mb-5 mt-2">Overlay Card:</h5>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card position-relative border-0 shadow-none overflow-hidden rounded-2">
+                <img src="assets/images/gallery/img-02.jpg" alt="">
+                <div class="position-absolute h-100 w-100 top-0 start-0 bottom-0 end-0 card-success"></div>
+                <div class="position-absolute bottom-0 start-0 text-white card-body">
+                    <h3 class="mb-1">Water Lily</h3>
+                    <p>Flowers of love</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card position-relative border-0 shadow-none overflow-hidden rounded-2">
+                <img src="assets/images/gallery/img-03.jpg" alt="">
+                <div class="position-absolute h-100 w-100 top-0 start-0 bottom-0 end-0 card-sky"></div>
+                <div class="position-absolute bottom-0 start-0 text-white card-body">
+                    <h3 class="mb-1">Art Of Holiday</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card position-relative border-0 shadow-none overflow-hidden rounded-2">
+                <img src="assets/images/gallery/img-04.jpg" alt="">
+                <div class="position-absolute h-100 w-100 top-0 start-0 bottom-0 end-0 card-sky-two"></div>
+                <div class="position-absolute bottom-0 start-0 text-white card-body">
+                    <h3 class="mb-1">Water Lily</h3>
+                    <p>Flowers of love</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h5 class="underline mb-5 mt-2">Edit Cards</h5>
+    <div class="row">
+        <div class="col-lg-4">
+            <div x-data="{ showSettings: false, selectedColor: 'bg-primary' }" class="p-4 rounded-3 transition-colors duration-300" :class="selectedColor">
+                <div class="text-white">
+                    <!-- Button and log-out icon -->
+                    <div x-show="showSettings == false">
+                        <div class="d-flex justify-content-between p-2">
+                            <button @click="showSettings = true" class="bg-transparent border-0 d-flex align-items-center gap-1 position-relative overflow-hidden">
+                                <i data-lucide="settings" class="text-white"></i>
+                                <span class="fs-5 fw-semibold transition-transform transform-scale text-white">Settings</span>
+                            </button>
+                            <i data-lucide="log-out"></i>
+                        </div>
+                    </div>
+                    <!-- Settings content -->
+                    <div x-show="showSettings" x-transition class="text-center p-5">
+                        <h4 class="fw-bold">Settings</h4>
+                        <div class="d-flex flex-column mt-3">
+                            <div class="fw-bold">Background color:</div>
+                            <div class="d-flex justify-content-center gap-2 mt-4">
+                                <button @click="selectedColor = 'bg-warning'" class="size-8 bg-warning rounded-pill border border-4 border-white transition-transform duration-300 transform hover:scale-110"></button>
+                                <button @click="selectedColor = 'bg-pink'" class="size-8 bg-pink rounded-pill border border-4 border-white transition-transform duration-300 transform hover:scale-110"></button>
+                                <button @click="selectedColor = 'bg-secondary'" class="size-8 bg-secondary rounded-pill border border-4 border-white transition-transform duration-300 transform hover:scale-110"></button>
+                                <button @click="selectedColor = 'bg-indigo'" class="size-8 bg-indigo rounded-pill border border-4 border-white transition-transform duration-300 transform hover:scale-110"></button>
+                                <button @click="selectedColor = 'bg-primary'" class="size-8 bg-primary rounded-pill border border-4 border-white transition-transform duration-300 transform hover:scale-110"></button>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="fs-5 fw-bold text-white border-0 bg-transparent mt-4" @click="showSettings = false">Close</button>
+                        </div>
+                    </div>
+
+                    <!-- Profile content -->
+                    <div x-show="!showSettings" x-transition class="text-center">
+                        <div class="d-flex flex-column mb-3 align-items-center">
+                            <img src="assets/images/avatar/user-18.png" alt="" class="h-25 w-25 rounded-pill">
+                            <div class="mt-4">
+                                <span class="fs-5 fw-semibold">Frankie N. Mixon</span>
+                                <i data-lucide="pencil" class="size-4"></i>
+                            </div>
+                            <div class="mt-1">
+                                <span class="fw-semibold">frankie_mixon</span>
+                                <i data-lucide="pencil" class="size-4"></i>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-evenly">
+                            <div class="d-flex flex-column align-items-center">
+                                <h5 class="fw-semibold">11</h5>
+                                <span>Followers</span>
+                            </div>
+                            <div class="d-flex flex-column align-items-center">
+                                <h5 class="fw-semibold">52</h5>
+                                <span>Following</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            {{> partials/footer}}
+        </div>
+    </div>
+
+
+    {{> partials/vendor-scripts}}
+
+    <script type="module" src="assets/js/main.js"></script>
+
+    </body>
+
+    </html>

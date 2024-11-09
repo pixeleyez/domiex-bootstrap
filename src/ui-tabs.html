@@ -1,0 +1,290 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Tabs" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Basic -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Basic</h6>
+                </div>
+                <div class="card-body basic-tabs">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active fw-medium" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-medium" id="service-tab" data-bs-toggle="tab" data-bs-target="#service-tab-pane" type="button" role="tab" aria-controls="service-tab-pane" aria-selected="false">Service</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-medium" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact Us</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content mt-4" id="myTabContent">
+                        <div class="tab-pane  show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                            <p class="text-dark">The Admin Dashboard displays tabs for multiple pages that provide a personalized view of BI performance, data correctness, required cube maintenance, and required administrative actions. These pages contain the results of detailed analyses, represented by links, images, graphs, pie charts, and BI reports.</p>
+                        </div>
+                        <div class="tab-pane " id="service-tab-pane" role="tabpanel" aria-labelledby="service-tab" tabindex="0">
+                            <p class="text-dark">A service administrator is responsible for overseeing all aspects of the work order for a service department. Your job duties include coordinating with the service manager on the completion of customer work orders, putting together billing for work completed, and reviewing time cards for service employees.</p>
+                        </div>
+                        <div class="tab-pane " id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                            <p class="text-dark">The official business definition of a Contact Administrator is an individual responsible for managing the contact database of an organization. This includes the maintenance of contact information, the creation of contact groups, and the organization of contact information into categories.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Basic Justify -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Basic Justify</h6>
+                </div>
+                <div class="card-body basic-tabs">
+                    <ul class="nav nav-tabs row px-3" id="myJustifyTab" role="tablist">
+                        <li class="nav-item col d-flex justify-content-center" role="presentation">
+                            <button class="nav-link active fw-medium" id="justify-home-tab" data-bs-toggle="tab" data-bs-target="#justify-home-tab-pane" type="button" role="tab" aria-controls="justify-home-tab-pane" aria-selected="true">Home</button>
+                        </li>
+                        <li class="nav-item col d-flex justify-content-center" role="presentation">
+                            <button class="nav-link fw-medium" id="justify-service-tab" data-bs-toggle="tab" data-bs-target="#justify-service-tab-pane" type="button" role="tab" aria-controls="justify-service-tab-pane" aria-selected="false">Service</button>
+                        </li>
+                        <li class="nav-item col d-flex justify-content-center" role="presentation">
+                            <button class="nav-link fw-medium" id="justify-contact-tab" data-bs-toggle="tab" data-bs-target="#justify-contact-tab-pane" type="button" role="tab" aria-controls="justify-contact-tab-pane" aria-selected="false">Contact Us</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content mt-4" id="myJustifyTabContent">
+                        <div class="tab-pane  show active" id="justify-home-tab-pane" role="tabpanel" aria-labelledby="justify-home-tab" tabindex="0">
+                            <p class="text-dark">The Admin Dashboard displays tabs for multiple pages that provide a personalized view of BI performance, data correctness, required cube maintenance, and required administrative actions. These pages contain the results of detailed analyses, represented by links, images, graphs, pie charts, and BI reports.</p>
+                        </div>
+                        <div class="tab-pane " id="justify-service-tab-pane" role="tabpanel" aria-labelledby="justify-service-tab" tabindex="0">
+                            <p class="text-dark">A service administrator is responsible for overseeing all aspects of the work order for a service department. Your job duties include coordinating with the service manager on the completion of customer work orders, putting together billing for work completed, and reviewing time cards for service employees.</p>
+                        </div>
+                        <div class="tab-pane " id="justify-contact-tab-pane" role="tabpanel" aria-labelledby="justify-contact-tab" tabindex="0">
+                            <p class="text-dark">The official business definition of a Contact Administrator is an individual responsible for managing the contact database of an organization. This includes the maintenance of contact information, the creation of contact groups, and the organization of contact information into categories.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pill Tabs -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Pill Tabs</h6>
+                </div>
+                <div class="card-body">
+                    <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active fw-medium" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pill-home" type="button" role="tab" aria-controls="pill-home" aria-selected="true">Home</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-medium" id="pills-service-tab" data-bs-toggle="pill" data-bs-target="#pill-service" type="button" role="tab" aria-controls="pill-service" aria-selected="false">Service</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-medium" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pill-contact" type="button" role="tab" aria-controls="pill-contact" aria-selected="false">Contact Us</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content mt-4" id="myPillTabContent">
+                        <div class="tab-pane  show active" id="pill-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                            <p class="text-dark">The Admin Dashboard displays tabs for multiple pages that provide a personalized view of BI performance, data correctness, required cube maintenance, and required administrative actions. These pages contain the results of detailed analyses, represented by links, images, graphs, pie charts, and BI reports.</p>
+                        </div>
+                        <div class="tab-pane " id="pill-service" role="tabpanel" aria-labelledby="pills-service-tab" tabindex="0">
+                            <p class="text-dark">A service administrator is responsible for overseeing all aspects of the work order for a service department. Your job duties include coordinating with the service manager on the completion of customer work orders, putting together billing for work completed, and reviewing time cards for service employees.</p>
+                        </div>
+                        <div class="tab-pane " id="pill-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                            <p class="text-dark">The official business definition of a Contact Administrator is an individual responsible for managing the contact database of an organization. This includes the maintenance of contact information, the creation of contact groups, and the organization of contact information into categories.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pill Justify Tabs -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Pill Tabs</h6>
+                </div>
+                <div class="card-body">
+                    <ul class="nav nav-pills row" id="pills-tab" role="tablist">
+                        <li class="nav-item col d-flex justify-content-center" role="presentation">
+                            <button class="nav-link active fw-medium w-100" id="-pills-home-tab" data-bs-toggle="pill" data-bs-target="#-pill-home" type="button" role="tab" aria-controls="-pill-home" aria-selected="true">Home</button>
+                        </li>
+                        <li class="nav-item col d-flex justify-content-center" role="presentation">
+                            <button class="nav-link fw-medium w-100" id="-pills-service-tab" data-bs-toggle="pill" data-bs-target="#-pill-service" type="button" role="tab" aria-controls="-pill-service" aria-selected="false">Service</button>
+                        </li>
+                        <li class="nav-item col d-flex justify-content-center" role="presentation">
+                            <button class="nav-link fw-medium w-100" id="-pills-contact-tab" data-bs-toggle="pill" data-bs-target="#-pill-contact" type="button" role="tab" aria-controls="-pill-contact" aria-selected="false">Contact Us</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content mt-4" id="myPillTabContent">
+                        <div class="tab-pane  show active" id="-pill-home" role="tabpanel" aria-labelledby="-pills-home-tab" tabindex="0">
+                            <p class="text-dark">The Admin Dashboard displays tabs for multiple pages that provide a personalized view of BI performance, data correctness, required cube maintenance, and required administrative actions. These pages contain the results of detailed analyses, represented by links, images, graphs, pie charts, and BI reports.</p>
+                        </div>
+                        <div class="tab-pane " id="-pill-service" role="tabpanel" aria-labelledby="-pills-service-tab" tabindex="0">
+                            <p class="text-dark">A service administrator is responsible for overseeing all aspects of the work order for a service department. Your job duties include coordinating with the service manager on the completion of customer work orders, putting together billing for work completed, and reviewing time cards for service employees.</p>
+                        </div>
+                        <div class="tab-pane " id="-pill-contact" role="tabpanel" aria-labelledby="-pills-contact-tab" tabindex="0">
+                            <p class="text-dark">The official business definition of a Contact Administrator is an individual responsible for managing the contact database of an organization. This includes the maintenance of contact information, the creation of contact groups, and the organization of contact information into categories.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Icon with Animation Tabs -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Pill Tabs</h6>
+                </div>
+                <div class="card-body">
+                    <ul class="nav nav-pills" id="icon-pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link px-3 active fw-medium" id="icon-home-tab" data-bs-toggle="pill" data-bs-target="#icon-home" type="button" role="tab" aria-controls="icon-home" aria-selected="true"><i data-lucide="home" class="size-4"></i></button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link px-3 fw-medium" id="icon-service-tab" data-bs-toggle="pill" data-bs-target="#icon-service" type="button" role="tab" aria-controls="icon-service" aria-selected="false"><i data-lucide="airplay" class="size-4"></i></button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link px-3 fw-medium" id="icon-contact-tab" data-bs-toggle="pill" data-bs-target="#icon-contact" type="button" role="tab" aria-controls="icon-contact" aria-selected="false"><i data-lucide="square-user" class="size-4"></i></button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content mt-4" id="iconPillTabContent">
+                        <div class="tab-pane  show active" id="icon-home" role="tabpanel" aria-labelledby="icon-home-tab" tabindex="0">
+                            <p class="text-dark">The Admin Dashboard displays tabs for multiple pages that provide a personalized view of BI performance, data correctness, required cube maintenance, and required administrative actions. These pages contain the results of detailed analyses, represented by links, images, graphs, pie charts, and BI reports.</p>
+                        </div>
+                        <div class="tab-pane " id="icon-service" role="tabpanel" aria-labelledby="icon-service-tab" tabindex="0">
+                            <p class="text-dark">A service administrator is responsible for overseeing all aspects of the work order for a service department. Your job duties include coordinating with the service manager on the completion of customer work orders, putting together billing for work completed, and reviewing time cards for service employees.</p>
+                        </div>
+                        <div class="tab-pane " id="icon-contact" role="tabpanel" aria-labelledby="icon-contact-tab" tabindex="0">
+                            <p class="text-dark">The official business definition of a Contact Administrator is an individual responsible for managing the contact database of an organization. This includes the maintenance of contact information, the creation of contact groups, and the organization of contact information into categories.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Icon with Text Tabs -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Icon with Text Tabs</h6>
+                </div>
+                <div class="card-body">
+                    <ul class="nav nav-pills" id="icon-pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link d-flex align-items-center gap-2 active fw-medium" id="icon-home-tab" data-bs-toggle="pill" data-bs-target="#icon-home-content" type="button" role="tab" aria-controls="icon-home-content" aria-selected="true">
+                                <i data-lucide="home" class="size-4"></i> Home
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link d-flex align-items-center gap-2 fw-medium" id="icon-service-tab" data-bs-toggle="pill" data-bs-target="#icon-service-content" type="button" role="tab" aria-controls="icon-service-content" aria-selected="false">
+                                <i data-lucide="tangent " class="size-4"></i> Service
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link d-flex align-items-center gap-2 fw-medium" id="icon-contact-tab" data-bs-toggle="pill" data-bs-target="#icon-contact-content" type="button" role="tab" aria-controls="icon-contact-content" aria-selected="false">
+                                <i data-lucide="home" class="size-4"></i> Contact Us
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content mt-4" id="iconPillTabContent">
+                        <div class="tab-pane  show active" id="icon-home-content" role="tabpanel" aria-labelledby="icon-home-tab" tabindex="0">
+                            <p class="text-dark">The Admin Dashboard displays tabs for multiple pages that provide a personalized view of BI performance, data correctness, required cube maintenance, and required administrative actions. These pages contain the results of detailed analyses, represented by links, images, graphs, pie charts, and BI reports.</p>
+                        </div>
+                        <div class="tab-pane " id="icon-service-content" role="tabpanel" aria-labelledby="icon-service-tab" tabindex="0">
+                            <p class="text-dark">A service administrator is responsible for overseeing all aspects of the work order for a service department. Your job duties include coordinating with the service manager on the completion of customer work orders, putting together billing for work completed, and reviewing time cards for service employees.</p>
+                        </div>
+                        <div class="tab-pane " id="icon-contact-content" role="tabpanel" aria-labelledby="icon-contact-tab" tabindex="0">
+                            <p class="text-dark">The official business definition of a Contact Administrator is an individual responsible for managing the contact database of an organization. This includes the maintenance of contact information, the creation of contact groups, and the organization of contact information into categories.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animation Tabs -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Animation Tabs</h6>
+                </div>
+                <div class="card-body animation-tabs">
+                    <ul class="nav nav-pills" id="animation-pills-tab" role="tablist">
+                        <li class="nav-item tab-success" role="presentation">
+                            <button class="nav-link active fw-medium overflow-hidden" id="animation-home-tab" data-bs-toggle="pill" data-bs-target="#animation-home-content" type="button" role="tab" aria-controls="animation-home-content" aria-selected="true">
+                                <i data-lucide="home" class="size-4 icon"></i> 
+                                <span class="title">Home</span>
+                            </button>
+                        </li>
+                        <li class="nav-item tab-success" role="presentation">
+                            <button class="nav-link fw-medium overflow-hidden" id="animation-service-tab" data-bs-toggle="pill" data-bs-target="#animation-service-content" type="button" role="tab" aria-controls="animation-service-content" aria-selected="false">
+                                <i data-lucide="tangent" class="size-4 icon"></i> 
+                                <span class="title">Service</span>
+                            </button>
+                        </li>
+                        <li class="nav-item tab-success" role="presentation">
+                            <button class="nav-link d-inline-flex fw-medium overflow-hidden" id="animation-contact-tab" data-bs-toggle="pill" data-bs-target="#animation-contact-content" type="button" role="tab" aria-controls="animation-contact-content" aria-selected="false">
+                                <i data-lucide="home" class="size-4 icon"></i> 
+                                <span class="title">Contact Us</span>
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content mt-4" id="animationPillTabContent">
+                        <div class="tab-pane show active" id="animation-home-content" role="tabpanel" aria-labelledby="animation-home-tab" tabindex="0">
+                            <p class="text-dark">The Admin Dashboard displays tabs for multiple pages that provide a personalized view of BI performance, data correctness, required cube maintenance, and required administrative actions. These pages contain the results of detailed analyses, represented by links, images, graphs, pie charts, and BI reports.</p>
+                        </div>
+                        <div class="tab-pane" id="animation-service-content" role="tabpanel" aria-labelledby="animation-service-tab" tabindex="0">
+                            <p class="text-dark">A service administrator is responsible for overseeing all aspects of the work order for a service department. Your job duties include coordinating with the service manager on the completion of customer work orders, putting together billing for work completed, and reviewing time cards for service employees.</p>
+                        </div>
+                        <div class="tab-pane" id="animation-contact-content" role="tabpanel" aria-labelledby="animation-contact-tab" tabindex="0">
+                            <p class="text-dark">The official business definition of a Contact Administrator is an individual responsible for managing the contact database of an organization. This includes the maintenance of contact information, the creation of contact groups, and the organization of contact information into categories.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,311 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Select" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Default Select -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Default Select</h6>
+                </div>
+                <div class="card-body">
+                    <div id="sample-select"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- With search box -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">With search box</h6>
+                </div>
+                <div class="card-body">
+                    <div id="search-select"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Multiple Select -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">With search box</h6>
+                </div>
+                <div class="card-body">
+                    <div id="multiple-select"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Multiple Select without Search -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Multiple Select without Search </h6>
+                </div>
+                <div class="card-body">
+                    <div id="multipleWithoutSearchSelect"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disabled options -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Disabled options</h6>
+                </div>
+                <div class="card-body">
+                    <div id="disabledOptionSelect"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Option Group -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Option Group</h6>
+                </div>
+                <div class="card-body">
+                    <div id="optionGroupSelect"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preselect value -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Preselect value</h6>
+                </div>
+                <div class="card-body">
+                    <div id="preselectValue"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preselect multiple values -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Preselect multiple values</h6>
+                </div>
+                <div class="card-body">
+                    <div id="preselectMultipleValue"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hide Clear Button -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Hide Clear Button</h6>
+                </div>
+                <div class="card-body">
+                    <div id="hideClearButton"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom width for dropbox -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Custom width for dropbox</h6>
+                </div>
+                <div class="card-body">
+                    <div id="customWidthDropbox"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Allow to add new option -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Allow to add new option</h6>
+                </div>
+                <div class="card-body">
+                    <div id="allowNewOption"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mark matched term in label -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Mark matched term in label</h6>
+                </div>
+                <div class="card-body">
+                    <div id="markMatchedLabel"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Showing selected options first -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Showing selected options first</h6>
+                </div>
+                <div class="card-body">
+                    <div id="showingSelectedOption"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Using alias for searching -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Using alias for searching</h6>
+                </div>
+                <div class="card-body">
+                    <div id="aliasForSearching"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Maximum Values -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Maximum Values</h6>
+                </div>
+                <div class="card-body">
+                    <div id="maximumValues"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Label with description -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Label with description</h6>
+                </div>
+                <div class="card-body">
+                    <div id="labelDescription"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Show options only on search -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Show options only on search</h6>
+                </div>
+                <div class="card-body">
+                    <div id="showOptionOnlySearch"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Initialize from native select element (not recommended) -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Initialize from native select element (not recommended)</h6>
+                </div>
+                <div class="card-body">
+                    <select name="native-select" placeholder="Native Select">
+                        <option value="1" disabled>Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                        <option value="4" selected>Option 4</option>
+                        <option value="5">Option 5</option>
+                        <option value="6">Option 6</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image/Icon -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Image/Icon</h6>
+                </div>
+                <div class="card-body">
+                    <div id="sample-image"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popup with Multi Select -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Popup with Multi Select</h6>
+                </div>
+                <div class="card-body">
+                    <div id="popup-multi-select"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popup with Single Select -->
+        <div class="col-lg-6 d-flex">
+            <div class="card flex-fill">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Popup with Single Select</h6>
+                </div>
+                <div class="card-body">
+                    <div id="popup-single-select"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Show values as tags -->
+        <div class="col-lg-6 d-flex">
+            <div class="card flex-fill">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Show values as tags</h6>
+                </div>
+                <div class="card-body ">
+                    <div id="value-tag"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/pages/ui/form-select.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

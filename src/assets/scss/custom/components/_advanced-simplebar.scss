@@ -1,0 +1,15 @@
+.box__scrollbar {
+    padding: 0 20px;
+    max-height: 256px;
+    overflow: auto;
+}
+.simplebar-scrollbar:before {
+    background: #00000028 !important;
+}
+@each $state in map-keys($theme-colors) {
+    .simplebar-#{$state}{
+        .simplebar-scrollbar:before{
+            background-color: var(--#{$prefix}#{$state}) !important;  
+        }
+    }
+}

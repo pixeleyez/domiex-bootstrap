@@ -1,0 +1,93 @@
+@each $state in map-keys($theme-colors) {
+    .pagination-#{$state} {
+        --#{$prefix}pagination-active-bg: var(--#{$prefix}#{$state});
+        --#{$prefix}pagination-color: var(--#{$prefix}#{$state}-contrast-dark);
+        --#{$prefix}pagination-active-border-color: var(--#{$prefix}#{$state});
+        --#{$prefix}pagination-hover-color: var(--#{$prefix}#{$state});
+    }
+
+    .modern-#{$state} {
+        --#{$prefix}pagination-bg: var(--#{$prefix}#{$state});
+        --#{$prefix}pagination-color: rgba(255, 255, 255, 0.719);
+        --#{$prefix}pagination-border-color: rgba(255, 255, 255, 0.185);
+        --#{$prefix}pagination-hover-bg: var(--#{$prefix}#{$state});
+        --#{$prefix}pagination-focus-bg: var(--#{$prefix}#{$state});
+        --#{$prefix}pagination-focus-color: white;
+        --#{$prefix}pagination-hover-border-color: rgba(255, 255, 255, 0.185);
+        --#{$prefix}pagination-hover-color: white;
+
+    }
+
+    .flush-#{$state} {
+        --#{$prefix}pagination-border-width: none;
+
+    }
+
+    .light-#{$state} {
+        --#{$prefix}pagination-bg: transparent;
+        --#{$prefix}border-width: none;
+        background: $gray-100;
+        display: inline-flex;
+
+    }
+}
+.pagination {
+    &.pagination-xs {
+        .page-link {
+            font-size: 0.75rem;
+
+            &.page-number {
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+        }
+    }
+
+    &.pagination-sm {
+        .page-link {
+            font-size: 0.75rem;
+
+            &.page-number {
+                height: 1.75rem;
+                width: 1.75rem;
+            }
+        }
+    }
+
+    &.pagination-md {
+        .page-link {
+            font-size: 0.75rem;
+
+            &.page-number {
+                height: 2rem;
+                width: 2rem;
+            }
+        }
+    }
+
+    &.pagination-xl {
+        .page-link {
+            font-size: 0.9375rem;
+
+            &.page-number {
+                height: 2.5rem;
+                width: 2.5rem;
+            }
+        }
+    }
+
+    .page-link {
+        &.page-number {
+            height: 2.25rem;
+            width: 2.25rem;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &.pagination-icon {
+            background-color: $gray-100;
+        }
+    }
+}

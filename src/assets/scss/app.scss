@@ -14,7 +14,7 @@ File: Main Css File
 @import "custom/components/maps";
 @import 'custom/components/root';
 @import "./node_modules/bootstrap/scss/mixins";
-@import "custom/components/mixin";
+@import "custom/mixin/mixin";
 
 //layouts
 @import "custom/structure/page-wrapper";
@@ -25,8 +25,70 @@ File: Main Css File
 
 //components
 @import "custom/components/alerts";
+@import "custom/components/breadcrumb";
+@import "custom/components/button-navigation";
+@import "custom/components/badge";
+@import "custom/components/loader";
+@import "custom/components/accordion";
+@import "custom/components/modal";
+@import "custom/components/progress";
+@import "custom/components/tooltips";
+@import "custom/components/drawer";
+@import "custom/components/notification";
+@import "custom/components/gallery";
+@import "custom/components/colors";
+@import "custom/components/typography";
+@import "custom/components/timeline";
+@import "custom/components/video";
+@import "custom/components/pagination";
+@import "custom/components/links";
+@import "custom/components/list-group";
+@import "custom/components/tabs";
+@import "custom/components/cookie";
 @import "custom/components/animation";
 @import "custom/components/avatar";
 @import "custom/components/buttons";
 @import "custom/components/card";
 @import "custom/components/dropdown";
+@import "custom/components/advanced-animation";
+@import "custom/components/advanced-simplebar";
+@import "custom/components/advanced-swiper";
+@import "custom/components/advanced-3d-effect";
+@import "custom/components/advanced-word-counter";
+@import "custom/components/advanced-image-annotation";
+@import "custom/components/advanced-tree";
+@import "custom/components/advanced-highlight";
+@import "custom/components/advanced-mask";
+
+// Icon
+@import "custom/components/icons-lucide";
+@import "custom/components/icons-boxicon";
+
+// Forms
+@import "custom/components/form-basic-input";
+@import "custom/components/form-input-group";
+@import "custom/components/form-file-input";
+@import "custom/components/form-select";
+@import "custom/components/form-pickers";
+@import "custom/components/form-range";
+@import "custom/components/form-switches";
+@import "custom/components/form-checkbox-radio";
+@import "custom/components/form-input-spin";
+@import "custom/components/form-recaptcha";
+@import "custom/components/form-editor";
+@import "custom/components/form-wizard-basic";
+
+// Tabel
+@import "custom/components/table-base";
+@import "custom/components/table-datatables-basic";
+
+// Pages
+@import "custom/components/pages-account-settings";
+@import "custom/components/pages-account-security";
+@import "custom/components/pages-account-billing-plan";
+@import "custom/components/pages-user";
+@import "custom/components/pages-user-activity";
+@import "custom/components/pages-user-documents";
+@import "custom/components/pages-user-projects";
+@import "custom/components/pages-pricing";
+@import "custom/components/pages-contact-us";

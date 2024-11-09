@@ -1,0 +1,16 @@
+.link {
+    transition: $transition-base;
+    &:hover {
+        .arrow {
+            transform: translateX(0.125rem);
+            transition: $transition-base;
+        }
+        .delete{
+            animation: bounce 1s infinite;
+        }
+        .clipboard{
+            transform: translateY(-2px);
+            transition: $transition-base;
+        }
+    }
+}

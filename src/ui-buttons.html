@@ -16,16 +16,16 @@
 
 {{> partials/page-wrapper}}
 
-        <div class="container-fluid">
-            {{> partials/page-heading title="Buttons" sub-title="UI" }}
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h6 class="mb-0 card-title d-flex">Base Buttons</h6>
-                        </div>
-                        <div class="card-body">
-                            <div x-data="{ 
+<div class="container-fluid">
+    {{> partials/page-heading title="Buttons" sub-title="UI" }}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Base Buttons</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ 
                                 baseButtons: [
                                     { text: 'Primary', color: 'btn-primary'}, 
                                     { text: 'Secondary', color: 'btn-secondary'}, 
@@ -40,21 +40,22 @@
                                     { text: 'Light', color: 'btn-light'}, 
                                 ] 
                             }" class="d-flex flex-wrap gap-4">
-                                <template x-for="(button, index) in baseButtons" :key="index">
-                                    <button :class="button.color + ' btn'" x-text="button.text">
-                                    </button>
-                                </template>
-                            </div>
-                        </div>
+                        <template x-for="(button, index) in baseButtons" :key="index">
+                            <button :class="button.color + ' btn'" x-text="button.text">
+                            </button>
+                        </template>
                     </div>
-                </div><!--end col-->
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h6 class="mb-0 card-title d-flex">Outline Buttons</h6>
-                        </div>
-                        <div class="card-body">
-                            <div x-data="{ 
+                </div>
+            </div>
+        </div>
+        <!--end col-->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Outline Buttons</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ 
                                 baseButtons: [
                                     { text: 'Primary', color: 'btn-outline-primary'}, 
                                     { text: 'Secondary', color: 'btn-outline-secondary'}, 
@@ -69,21 +70,22 @@
                                     { text: 'Light', color: 'btn-outline-light'}, 
                                 ] 
                             }" class="d-flex flex-wrap gap-4">
-                                <template x-for="(button, index) in baseButtons" :key="index">
-                                    <button :class="button.color + ' btn'" x-text="button.text">
-                                    </button>
-                                </template>
-                            </div>
-                        </div>
+                        <template x-for="(button, index) in baseButtons" :key="index">
+                            <button :class="button.color + ' btn'" x-text="button.text">
+                            </button>
+                        </template>
                     </div>
-                </div><!--end col-->
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h6 class="mb-0 card-title d-flex">Soft Buttons</h6>
-                        </div>
-                        <div class="card-body">
-                            <div x-data="{ 
+                </div>
+            </div>
+        </div>
+        <!--end col-->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Soft Buttons</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ 
                                 baseButtons: [
                                     { text: 'Primary', color: 'btn-sub-primary'}, 
                                     { text: 'Secondary', color: 'btn-sub-secondary'}, 
@@ -97,21 +99,22 @@
                                     { text: 'Dark', color: 'btn-sub-dark'}, 
                                 ] 
                             }" class="d-flex flex-wrap gap-4">
-                                <template x-for="(button, index) in baseButtons" :key="index">
-                                    <button :class="button.color + ' btn'" x-text="button.text">
-                                    </button>
-                                </template>
-                            </div>
-                        </div>
+                        <template x-for="(button, index) in baseButtons" :key="index">
+                            <button :class="button.color + ' btn'" x-text="button.text">
+                            </button>
+                        </template>
                     </div>
-                </div><!--end col-->
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h6 class="mb-0 card-title d-flex">Soft Buttons</h6>
-                        </div>
-                        <div class="card-body">
-                            <div x-data="{ 
+                </div>
+            </div>
+        </div>
+        <!--end col-->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Outline Dashed Style</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ 
                                 baseButtons: [
                                     { text: 'Primary', color: 'btn-dashed-primary'}, 
                                     { text: 'Secondary', color: 'btn-dashed-secondary'}, 
@@ -125,18 +128,277 @@
                                     { text: 'Dark', color: 'btn-dashed-dark'}, 
                                 ] 
                             }" class="d-flex flex-wrap gap-4">
-                                <template x-for="(button, index) in baseButtons" :key="index">
-                                    <button :class="button.color + ' btn'" x-text="button.text">
-                                    </button>
-                                </template>
-                            </div>
+                        <template x-for="(button, index) in baseButtons" :key="index">
+                            <button :class="button.color + ' btn'" x-text="button.text">
+                            </button>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end col-->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Active Style</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ 
+                                baseButtons: [
+                                    { text: 'Primary', color: 'btn-active-primary'}, 
+                                    { text: 'Secondary', color: 'btn-active-secondary'}, 
+                                    { text: 'Success', color: 'btn-active-success'}, 
+                                    { text: 'Danger', color: 'btn-active-danger'}, 
+                                    { text: 'Warning', color: 'btn-active-warning'}, 
+                                    { text: 'Info', color: 'btn-active-info'}, 
+                                    { text: 'Pink', color: 'btn-active-pink'}, 
+                                    { text: 'Indigo', color: 'btn-active-indigo'}, 
+                                    { text: 'Orange', color: 'btn-active-orange'}, 
+                                    { text: 'Dark', color: 'btn-active-dark'}, 
+                                ] 
+                            }" class="d-flex flex-wrap gap-4">
+                        <template x-for="(button, index) in baseButtons" :key="index">
+                            <button :class="button.color + ' btn'" x-text="button.text">
+                            </button>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end col-->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">3D Buttons</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ 
+                                baseButtons: [
+                                    { text: 'Primary', color: 'btn-3D-primary'}, 
+                                    { text: 'Secondary', color: 'btn-3D-secondary'}, 
+                                    { text: 'Success', color: 'btn-3D-success'}, 
+                                    { text: 'Danger', color: 'btn-3D-danger'}, 
+                                    { text: 'Warning', color: 'btn-3D-warning'}, 
+                                    { text: 'Info', color: 'btn-3D-info'}, 
+                                    { text: 'Pink', color: 'btn-3D-pink'}, 
+                                    { text: 'Indigo', color: 'btn-3D-indigo'}, 
+                                    { text: 'Orange', color: 'btn-3D-orange'}, 
+                                    { text: 'Dark', color: 'btn-3D-dark'}, 
+                                    { text: 'Light', color: 'btn-3D-light'}, 
+                                ] 
+                            }" class="d-flex flex-wrap gap-4">
+                        <template x-for="(button, index) in baseButtons" :key="index">
+                            <button :class="button.color + ' btn'" x-text="button.text">
+                            </button>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end col-->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Icon with Text</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ 
+                                baseButtons: [
+                                    { text: 'Facebook', color: 'btn-primary', icon:'ri-facebook-fill'}, 
+                                    { text: 'Instagram', color: 'btn-pink',  icon:'ri-instagram-line'}, 
+                                ] 
+                            }" class="d-flex flex-wrap gap-4">
+                        <template x-for="(button, index) in baseButtons" :key="index">
+                            <button :class="button.color + ' btn'" class="d-flex gap-2">
+                                <i :class="button.icon"></i>
+                                <p x-text="button.text"></p>
+                            </button>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end col-->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Icon Overlay with Text</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex gap-4">
+                        <button class="btn btn-secondary position-relative">
+                            <span class="social-icon d-flex align-items-center justify-content-center"><i data-lucide="twitch" class=" "></i></span>
+                            Twitch
+                        </button>
+                        <button class="btn btn-primary">Small</button>
+                        <button class="btn btn-danger">Medium</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end col-->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Button Size</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex gap-4 flex-wrap align-items-center">
+                        <button class="btn btn-primary btn-xs">Extra Small</button>
+                        <button class="btn btn-primary btn-sm">Small</button>
+                        <button class="btn btn-primary btn-md">Medium</button>
+                        <button class="btn btn-primary">Default</button>
+                        <button class="btn btn-primary btn-lg">Large</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end col-->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Loading Buttons</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex gap-4 flex-wrap align-items-center">
+                        <div x-data="{ loadingButton: false, isActive: false }">
+                            <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-primary btn-icon-text">
+                                <span x-show="!isActive">Active</span>
+                                <span x-show="isActive" style="display: none;">Unactive</span>
+                                <span class="spinner-border" x-show="loadingButton"></span>
+                            </button>
+                        </div>
+                        <div x-data="{ loadingButton: false, isActive: false }">
+                            <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-secondary btn-icon-text">
+                                <span x-show="!isActive">Launching</span>
+                                <span x-show="isActive" style="display: none;">Welcome to Domiex 😍</span>
+                                <span class="spinner-border" x-show="loadingButton"></span>
+                            </button>
+                        </div>
+                        <div x-data="{ loadingButton: false, isActive: false }">
+                            <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-pink d-flex align-items-center gap-2">
+                                <span x-show="!isActive">
+                                    <div class="d-flex align-content-center gap-2">
+                                        <i class="ri-user-add-line"></i>
+                                        <span>Follow</span>
+                                    </div>
+                                </span>
+                                <span x-show="isActive" style="display: none;">
+                                    <div class="d-flex align-content-center gap-2">
+                                        <i class="ri-user-unfollow-line"></i>
+                                        <span>UnFollow</span>
+                                    </div>
+                                </span>
+                                <span class="spinner-border spinner-border-sm" x-show="loadingButton" role="status" aria-hidden="true"></span>
+                            </button>
                         </div>
                     </div>
-                </div><!--end col-->
-            </div><!--end row-->
+                </div>
+            </div>
+            <!--end col-->
         </div>
-        {{> partials/footer}}
+        <!--end row-->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Rounded Buttons</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex gap-4 flex-wrap align-items-center">
+                        <button class="btn btn-primary rounded-pill">Primary</button>
+                        <button class="btn btn-sub-primary rounded-pill">Primary</button>
+                        <button class="btn btn-outline-primary rounded-pill">Primary</button>
+                        <button class="btn btn-dashed-primary rounded-pill">Primary</button>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Hover Effect</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ 
+                                baseButtons: [
+                                    { text: 'Button Up', color: 'btn-primary', effect: 'btn-translate-up'}, 
+                                    { text: 'Button Down', color: 'btn-success',  effect: 'btn-translate-down'}, 
+                                    { text: 'Scale', color: 'btn-secondary', effect: 'btn-scale'}, 
+                                ] 
+                            }" class="d-flex flex-wrap gap-4">
+                        <template x-for="(button, index) in baseButtons" :key="index">
+                            <button :class="button.color + ' btn ' + button.effect" class="d-flex gap-2">
+                                <span x-text="button.text"></span>
+                            </button>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end row-->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Icon Buttons</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex gap-4 flex-wrap align-items-center">
+                        <button class="btn btn-danger btn-icon"><i data-lucide="trash" class="icon-button"></i></button>
+                        <button class="btn btn-outline-success btn-icon"><i data-lucide="wrench" class="icon-button"></i></button>
+                        <button class="btn btn-sub-primary btn-icon"><i data-lucide="user" class="icon-button"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Hover Effect Buttons</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-4">
+                        <button class="btn btn-primary position-relative">
+                            <span class="position-absolute top-0 start-0 bottom-0 end-0 overflow-hidden">
+                                <span class="position-absolute top-0 start-0 bottom-0 end-0 background-hover"></span>
+                            </span>
+                            <span>Let's get started</span>
+                        </button>
+                        <button class="btn btn-dark position-relative dark-button">
+                            <span class="position-absolute top-0 start-0 bottom-0 end-0 overflow-hidden">
+                                <span class="position-absolute top-0 start-0 bottom-0 end-0 background-hover"></span>
+                            </span>
+                            <span>Let's get started</span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end row-->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Disabled Buttons</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex gap-4 flex-wrap align-items-center">
+                        <button class="btn btn-primary" disabled>Disabled</button>
+                        <button class="btn btn-sub-primary" disabled>Disabled</button>
+                        <button class="btn btn-outline-primary" disabled>Disabled</button>
+                        <button class="btn btn-dashed-primary" disabled>Disabled</button>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
     </div>
+    {{> partials/footer}}
+</div>
 </div>
 
 

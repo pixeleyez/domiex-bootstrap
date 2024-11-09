@@ -1,0 +1,114 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Typography" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Typography -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Font Family</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <h6 class="mb-2">Base Font Family</h6>
+                            <code>.font-body</code>
+                        </div>
+                        <div class="col-lg-2">
+                            <h6 class="mb-2">Heading Font Family</h6>
+                            <code>.font-heading</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Heading Title -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Heading Title</h6>
+                </div>
+                <div class="card-body d-flex flex-column gap-5">
+                    <h1 class="mb-0">The quick brown fox jumps over the lazy dog. (h1)</h1>
+                    <h2 class="mb-0">The quick brown fox jumps over the lazy dog. (h2)</h2>
+                    <h3 class="mb-0">The quick brown fox jumps over the lazy dog. (h3)</h3>
+                    <h4 class="mb-0">The quick brown fox jumps over the lazy dog. (h4)</h4>
+                    <h5 class="mb-0">The quick brown fox jumps over the lazy dog. (h5)</h5>
+                    <h6 class="mb-0">The quick brown fox jumps over the lazy dog. (h6)</h6>
+                </div>
+            </div>
+        </div>
+
+        <!-- Font Weight -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Font Family</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row g-5">
+                        <div class="col-lg-3">
+                            <code>.font-lighter</code>
+                            <h6 class="mt-2 fw-lighter">The quick brown fox jumps over the lazy dog.</h6>
+                        </div>
+                        <div class="col-lg-3">
+                            <code>.font-light</code>
+                            <h6 class="mt-2 fw-light">The quick brown fox jumps over the lazy dog.</h6>
+                        </div>
+                        <div class="col-lg-3">
+                            <code>.font-normal</code>
+                            <h6 class="mt-2 fw-normal">The quick brown fox jumps over the lazy dog.</h6>
+                        </div>
+                        <div class="col-lg-3">
+                            <code>.font-medium</code>
+                            <h6 class="mt-2 fw-medium">The quick brown fox jumps over the lazy dog.</h6>
+                        </div>
+                        <div class="col-lg-3">
+                            <code>.font-semibold</code>
+                            <h6 class="mt-2 fw-semibold">The quick brown fox jumps over the lazy dog.</h6>
+                        </div>
+                        <div class="col-lg-3">
+                            <code>.font-bolder</code>
+                            <h6 class="mt-2 fw-bolder">The quick brown fox jumps over the lazy dog.</h6>
+                        </div>
+                        <div class="col-lg-3">
+                            <code>.font-bold</code>
+                            <h6 class="mt-2 fw-bold">The quick brown fox jumps over the lazy dog.</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

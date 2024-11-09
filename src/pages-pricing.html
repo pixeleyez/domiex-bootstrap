@@ -1,0 +1,262 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Pricing" sub-title="Pages" }}
+    <h6 class="mb-5 underline">Step 1:</h6>
+    <div class="row justify-content-center">
+        <div class="col-12 col-xl-10">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-5">
+                <!-- Card 1: Basic Plan -->
+                <div>
+                    <div class="card position-relative">
+                        <div class="card-body">
+                            <div class="position-relative">
+                                <div class="position-absolute top-0 z-0 size-10 blur-md bg-blur-info"></div>
+                                <i data-lucide="fan" class="size-10 stroke-1 text-info z-2 position-relative"></i>
+                            </div>
+                            <h6 class="mt-5 mb-0">Basic Plan</h6>
+                            <p class="mb-3 fs-sm">Forever</p>
+                            <h2 class="fw-semibold">$29.99</h2>
+                            <div class="pt-5 my-5 border-top">
+                                <ul class="list-unstyled d-flex flex-column gap-3">
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        1 Products & Projects
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        Custom Permissions
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        Some Basic Integration
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        Up to 5 Team Members
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        24/7 Support
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Choose Plan
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <h5 class="mb-3">Upgraded Plan</h5>
+                                            <p class="mb-5">Please confirm your upgrade by selecting the 'Upgrade Plan' option below.</p>
+                                            <div class="d-flex justify-content-end gap-2">
+                                                <button type="submit" class="btn btn-warning">Confirm</button>
+                                                <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Professional Plan -->
+                <div>
+                    <div class="card position-relative">
+                        <div class="card-body">
+                            <div class="position-absolute badge bg-pink-subtle text-pink" style="right: 1rem; top: 1rem;">Popular</div>
+                            <div class="position-relative">
+                                <div class="position-absolute top-0 z-0 size-10 blur-md bg-blur-success"></div>
+                                <i data-lucide="pyramid" class="size-10 stroke-1 text-success z-2 position-relative"></i>
+                            </div>
+                            <h6 class="mt-5 mb-0">Professional Plan</h6>
+                            <p class="mb-3 fs-sm">Saving $24.99 a year</p>
+                            <h2 class="fw-semibold">$49.99</h2>
+                            <div class="pt-5 my-5 border-top">
+                                <ul class="list-unstyled d-flex flex-column gap-3">
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        10 Products & Projects
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        Custom Permissions
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        Some Basic Integration
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        Up to 10 Team Members
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        Advanced Security
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        24/7 Support
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Choose Plan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Enterprise Plan -->
+                <div>
+                    <div class="card position-relative">
+                        <div class="card-body">
+                            <div class="position-relative">
+                                <div class="position-absolute top-0 z-0 size-10 blur-md bg-blur-danger"></div>
+                                <i data-lucide="zap" class="size-10 stroke-1 text-danger z-2 position-relative"></i>
+                            </div>
+                            <h6 class="mt-5 mb-0">Enterprise Plan</h6>
+                            <p class="mb-3 fs-sm">Saving $24.99 a year</p>
+                            <h2 class="fw-semibold">$59.99</h2>
+                            <div class="pt-5 my-5 border-top">
+                                <ul class="list-unstyled d-flex flex-column gap-3">
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        30 Products & Projects
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        Custom Permissions
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        Some Basic Integration
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        Up to 50 Team Members
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        Advanced Security
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        Permissions & Workflows
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center">
+                                        <i data-lucide="redo-2" class="size-4 text-success"></i>
+                                        24/7 Support
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Choose Plan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h6 class="mb-5 underline">Step 2:</h6>
+    <div class="row row-cols-3 g-5">
+        <div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div class="d-flex align-items-center justify-content-center rounded-modern arrow-gradient size-16">
+                        <i data-lucide="arrow-down-from-line" class="size-10 stroke-1 text-warning"></i>
+                        </div>
+                        <div class="form-check form-switch p-0 switch-softColor-success">
+                            <input type="checkbox" id="switch-softColor-1" /><label class="label"  for="switch-softColor-1"></label>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mt-4 mb-1">
+                        <h6 class="flex-grow-1 mb-0">Comodo Media Downloader</h6>
+                        <h6 class="mb-0">$3.99/month</h6>
+                    </div>
+                    <p>Comodo Media Downloader Service</p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div class="d-flex align-items-center justify-content-center rounded-modern droplet-gradient size-16">
+                        <i data-lucide="droplet" class="size-10 stroke-1 text-secondary"></i>
+                        </div>
+                        <div class="form-check form-switch p-0 switch-softColor-success">
+                            <input type="checkbox" id="switch-softColor-2" /><label class="label"  for="switch-softColor-2"></label>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mt-4 mb-1">
+                        <h6 class="flex-grow-1 mb-0">Https Enforcement</h6>
+                        <h6 class="mb-0">$6.99/month</h6>
+                    </div>
+                    <p>Automatic Security</p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div class="d-flex align-items-center justify-content-center rounded-modern gem-gradient size-16">
+                        <i data-lucide="gem" class="size-10 stroke-1 text-danger"></i>
+                        </div>
+                        <div class="form-check form-switch p-0 switch-softColor-success">
+                            <input type="checkbox" id="switch-softColor-3" /><label class="label"  for="switch-softColor-3"></label>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mt-4 mb-1">
+                        <h6 class="flex-grow-1 mb-0">Online Security Pro</h6>
+                        <h6 class="mb-0">$6.99/month</h6>
+                    </div>
+                    <p class="text-truncate">Online Security Pro protects you against malware, phishing and malicious websites.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

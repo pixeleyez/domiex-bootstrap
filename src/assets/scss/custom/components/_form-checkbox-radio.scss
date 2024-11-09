@@ -1,0 +1,95 @@
+@each $state in map-keys($theme-colors) {
+	.check-#{$state} {
+		.form-check-input:checked {
+			background-color: var(--#{$prefix}#{$state});
+			border-color: var(--#{$prefix}#{$state});
+		}
+	}
+
+	.check-soft-#{$state} {
+		.form-check-input {
+			--#{$prefix}border-color: rgba(var(--#{$prefix}#{$state}-rgb), .2);
+			--#{$prefix}form-check-bg: var(--#{$prefix}#{$state}-bg-subtle);
+
+			&:checked {
+				background-color: var(--#{$prefix}#{$state});
+				border-color: var(--#{$prefix}#{$state});
+			}
+		}
+	}
+
+	.radio-#{$state} {
+		.form-check-input {
+			&:checked {
+				background-color: var(--#{$prefix}#{$state});
+				border-color: var(--#{$prefix}#{$state});
+			}
+
+			&:focus {
+				box-shadow: 0 0 0 1px #fff,
+				0 0 0 calc(1px + 1px) var(--#{$prefix}#{$state});
+			}
+		}
+	}
+
+	.radio-soft-#{$state} {
+		.form-check-input {
+			--#{$prefix}border-color: rgba(var(--#{$prefix}#{$state}-rgb), .2);
+			--#{$prefix}form-check-bg: var(--#{$prefix}#{$state}-bg-subtle);
+
+			&:focus {
+				box-shadow: 0 0 0 1px #fff,
+				0 0 0 calc(1px + 1px) var(--#{$prefix}#{$state});
+			}
+
+			&:checked {
+				background-color: var(--#{$prefix}#{$state});
+				border-color: var(--#{$prefix}#{$state});
+			}
+		}
+	}
+}
+
+.form-check-input {
+	height: 1.125rem;
+	width: 1.125rem;
+	cursor: pointer;
+}
+
+[type=checkbox]:checked {
+	background-size: .65rem .65rem;
+}
+
+.form-check-input[type=checkbox] {
+	&.circle {
+		border-radius: 50px;
+	}
+
+	&:focus {
+		box-shadow: none;
+	}
+}
+
+.form-check {
+	@include flexStyle(center);
+	gap: map-get($spacers, 2);
+	min-height: 0;
+
+}
+.form-check-label{
+	cursor: pointer;
+}
+.cardSelected{
+	svg {
+		width: 2.375rem;
+	}
+
+	.form-check-selected {
+		&:hover {
+			background-color: $gray-100;
+		}
+		&:checked{
+			background-color: $primary;
+		}
+	}
+}

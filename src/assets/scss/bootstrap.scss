@@ -8,6 +8,6 @@ File: Custom Bootstrap Css File
 @import "./node_modules/bootstrap/scss/variables";
 @import "variables";
 @import "variables-dark";
-@import "custom/components/utilities";
+@import "custom/mixin/utilities";
 @import "./node_modules/bootstrap/scss/bootstrap";
 // @import "../../../node_modules/bootstrap/dist/css/bootstrap.rtl.css";

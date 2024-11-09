@@ -1,0 +1,367 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Tree" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Folder Structure Tree -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0">Folder Structure Tree</h6>
+                </div>
+                <div class="card-body" x-data="{
+                    openNodes: new Set(),
+                    toggleNode(value) {
+                        this.openNodes.has(value) ? this.openNodes.delete(value) : this.openNodes.add(value);
+                    },
+                    isOpen(value) {
+                        return this.openNodes.has(value);
+                    }
+                }">
+                    <ul class="px-0 mb-0">
+                        <li>
+                            <a href="#" @click.prevent="toggleNode('domiex')" class="d-block">
+                                <i :class="isOpen('domiex') ? 'ri-folder-open-line text-warning' : 'ri-folder-3-line text-warning'"></i>
+                                Domiex-HTML Folders
+                            </a>
+                            <ul x-show="isOpen('domiex')" class="list-unstyled ms-4">
+                                <li>
+                                    <a href="#" @click.prevent="toggleNode('dist')" class="d-block">
+                                        <i :class="isOpen('dist') ? 'ri-folder-open-line text-warning' : 'ri-folder-3-line text-warning'"></i>
+                                        dist/
+                                    </a>
+                                    <ul x-show="isOpen('dist')" class="list-unstyled ms-4">
+                                        <li>
+                                            <a href="#" @click.prevent="toggleNode('assets')" class="d-block">
+                                                <i :class="isOpen('assets') ? 'ri-folder-open-line text-warning' : 'ri-folder-3-line text-warning'"></i>
+                                                assets
+                                            </a>
+                                            <ul x-show="isOpen('assets')" class="list-unstyled ms-4">
+                                                <li>
+                                                    <a href="#" class="d-block">
+                                                        <i class="ri-file-line text-dark"></i>
+                                                        css
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="d-block">
+                                                        <i class="ri-file-line text-dark"></i>
+                                                        images
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="d-block">
+                                                        <i class="ri-file-line text-dark"></i>
+                                                        js
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="d-block">
+                                                        <i class="ri-file-line text-dark"></i>
+                                                        libs
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="d-block">
+                                                        <i class="ri-file-line text-dark"></i>
+                                                        main-*.js
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-block">
+                                                <i class="ri-file-line text-dark"></i>
+                                                All HTML Files
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" @click.prevent="toggleNode('plugins')" class="d-block">
+                                        <i :class="isOpen('plugins') ? 'ri-folder-open-line text-warning' : 'ri-folder-3-line text-warning'"></i>
+                                        plugins/
+                                    </a>
+                                    <ul x-show="isOpen('plugins')" class="list-unstyled ms-4">
+                                        <li>
+                                            <a href="#" @click.prevent="toggleNode('plugin-folder')" class="d-block">
+                                                <i :class="isOpen('plugin-folder') ? 'ri-folder-open-line text-warning' : 'ri-folder-3-line text-warning'"></i>
+                                                plugin-folder/
+                                            </a>
+                                            <ul x-show="isOpen('plugin-folder')" class="list-unstyled ms-4">
+                                                <li>
+                                                    <a href="#" class="d-block">
+                                                        <i class="ri-file-line text-dark"></i>
+                                                        Plugins
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="d-block">
+                                                        <i class="ri-file-line text-dark"></i>
+                                                        Layouts Plugins
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-block">
+                                                <i class="ri-file-line text-dark"></i>
+                                                buttons.js
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-block">
+                                                <i class="ri-file-line text-dark"></i>
+                                                cards.js
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-block">
+                                                <i class="ri-file-line text-dark"></i>
+                                                forms.js
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" @click.prevent="toggleNode('src')" class="d-block">
+                                        <i :class="isOpen('src') ? 'ri-folder-open-line text-warning' : 'ri-folder-3-line text-warning'"></i>
+                                        src/
+                                    </a>
+                                    <ul x-show="isOpen('src')" class="list-unstyled ms-4">
+                                        <li>
+                                            <a href="#" @click.prevent="toggleNode('src-assets')" class="d-block">
+                                                <i :class="isOpen('src-assets') ? 'ri-folder-open-line text-warning' : 'ri-folder-3-line text-warning'"></i>
+                                                assets/
+                                            </a>
+                                            <ul x-show="isOpen('src-assets')" class="list-unstyled ms-4">
+                                                <li>
+                                                    <a href="#" @click.prevent="toggleNode('src-assets-fonts')" class="d-block">
+                                                        <i :class="isOpen('src-assets-fonts') ? 'ri-folder-open-line text-warning' : 'ri-folder-3-line text-warning'"></i>
+                                                        fonts/
+                                                    </a>
+                                                    <ul x-show="isOpen('src-assets-fonts')" class="list-unstyled ms-4">
+                                                        <li>
+                                                            <a href="#" class="d-block">
+                                                                <i class="ri-file-line text-dark"></i>
+                                                                All Fonts
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#" @click.prevent="toggleNode('src-assets-images')" class="d-block">
+                                                        <i :class="isOpen('src-assets-images') ? 'ri-folder-open-line text-warning' : 'ri-folder-3-line text-warning'"></i>
+                                                        images/
+                                                    </a>
+                                                    <ul x-show="isOpen('src-assets-images')" class="list-unstyled ms-4">
+                                                        <li>
+                                                            <a href="#" class="d-block">
+                                                                <i class="ri-file-line text-dark"></i>
+                                                                All Images
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#" @click.prevent="toggleNode('src-assets-js')" class="d-block">
+                                                        <i :class="isOpen('src-assets-js') ? 'ri-folder-open-line text-warning' : 'ri-folder-3-line text-warning'"></i>
+                                                        js/
+                                                    </a>
+                                                    <ul x-show="isOpen('src-assets-js')" class="list-unstyled ms-4">
+                                                        <li>
+                                                            <a href="#" class="d-block">
+                                                                <i class="ri-file-line text-dark"></i>
+                                                                All Js Files
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#" @click.prevent="toggleNode('src-assets-libs')" class="d-block">
+                                                        <i :class="isOpen('src-assets-libs') ? 'ri-folder-open-line text-warning' : 'ri-folder-3-line text-warning'"></i>
+                                                        libs/
+                                                    </a>
+                                                    <ul x-show="isOpen('src-assets-libs')" class="list-unstyled ms-4">
+                                                        <li>
+                                                            <a href="#" class="d-block">
+                                                                <i class="ri-file-line text-dark"></i>
+                                                                All Libs Files
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#" @click.prevent="toggleNode('src-assets-scss')" class="d-block">
+                                                        <i :class="isOpen('src-assets-scss') ? 'ri-folder-open-line text-warning' : 'ri-folder-3-line text-warning'"></i>
+                                                        scss/
+                                                    </a>
+                                                    <ul x-show="isOpen('src-assets-scss')" class="list-unstyled ms-4">
+                                                        <li>
+                                                            <a href="#" class="d-block">
+                                                                <i class="ri-file-line text-dark"></i>
+                                                                All Scss Files
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <li>
+                                                <a href="#" @click.prevent="toggleNode('src-assets-partials')" class="d-block">
+                                                    <i :class="isOpen('src-assets-partials') ? 'ri-folder-open-line text-warning' : 'ri-folder-3-line text-warning'"></i>
+                                                    partials
+                                                </a>
+                                                <ul x-show="isOpen('src-assets-partials')" class="list-unstyled ms-4">
+                                                    <li>
+                                                        <a href="#" class="d-block">
+                                                            <i class="ri-file-line text-dark"></i>
+                                                            body.html
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="d-block">
+                                                            <i class="ri-file-line text-dark"></i>
+                                                            footer.html
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="d-block">
+                                                            <i class="ri-file-line text-dark"></i>
+                                                            head-css.html
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="d-block">
+                                                            <i class="ri-file-line text-dark"></i>
+                                                            main.html
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="d-block">
+                                                            <i class="ri-file-line text-dark"></i>
+                                                            page-heading.html
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="d-block">
+                                                            <i class="ri-file-line text-dark"></i>
+                                                            page-wrapper.html
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="d-block">
+                                                            <i class="ri-file-line text-dark"></i>
+                                                            settings-modal.html
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="d-block">
+                                                            <i class="ri-file-line text-dark"></i>
+                                                            sidebar.html
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="d-block">
+                                                            <i class="ri-file-line text-dark"></i>
+                                                            title-meta.html
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="d-block">
+                                                            <i class="ri-file-line text-dark"></i>
+                                                            topbar.html
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="d-block">
+                                                            <i class="ri-file-line text-dark"></i>
+                                                            vendor-scripts.html
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="d-block">
+                                                    <i class="ri-file-line text-dark"></i>
+                                                    All HTML Pages Files
+                                                </a>
+                                            </li>
+                                        </li>
+                                    </ul>
+                                    <li>
+                                        <a href="#" class="d-block">
+                                            <i class="ri-file-line text-dark"></i>
+                                            package-libs-config.json
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-block">
+                                            <i class="ri-file-line text-dark"></i>
+                                            package-lock.json
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-block">
+                                            <i class="ri-file-line text-dark"></i>
+                                            package.json
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-block">
+                                            <i class="ri-file-line text-dark"></i>
+                                            preload.js
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-block">
+                                            <i class="ri-file-line text-dark"></i>
+                                            README.md
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-block">
+                                            <i class="ri-file-line text-dark"></i>
+                                            vite.config.js
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-block">
+                                            <i class="ri-file-line text-dark"></i>
+                                            .gitignore
+                                        </a>
+                                    </li>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>          
+            </div>
+        </div>
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

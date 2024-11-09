@@ -1,0 +1,150 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="3D Effect" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Basic -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <div class="square basic-square" data-tilt></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Glare effect -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Glare effect</h6>
+                </div>
+                <div class="card-body">
+                    <p class="mb-4 text-dark">Setting this option will enable a glare effect. You can tweak the glare value with</p>
+                    <div class="square glare-square" data-tilt data-tilt-glare data-tilt-max-glare="0.8"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reverse Tilt -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Reverse Tilt</h6>
+                </div>
+                <div class="card-body">
+                    <p class="mb-4 text-dark">Setting this option will reverse the tilt.</p>
+                    <div class="square reverse-square" data-tilt data-tilt-reverse="true"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Keep Floating -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Keep Floating</h6>
+                </div>
+                <div class="card-body">
+                    <p class="mb-4 text-dark">Setting this option will not reset the tilt element when the user mouse leaves the element.</p>
+                    <div class="square floating-square" data-tilt data-tilt-reset="false"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full Page Listening -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Full Page Listening</h6>
+                </div>
+                <div class="card-body">
+                    <p class="mb-4 text-dark">Setting this option will make the element respond to any mouse movements on page.</p>
+                    <div class="square basic-square" data-tilt data-tilt-full-page-listening></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scale on Hover -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Scale on Hover</h6>
+                </div>
+                <div class="card-body">
+                    <p class="mb-4 text-dark">Setting this option will scale tilt element on hover.</p>
+                    <div class="square basic-square" data-tilt data-tilt-scale="1.1"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Tilt Position -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Reverse Tilt</h6>
+                </div>
+                <div class="card-body">
+                    <p class="mb-4 text-dark">Setting this option will reverse the tilt.</p>
+                    <div class="square reverse-square" data-tilt data-tilt-startX="20" data-tilt-startY="-20" data-tilt-reset-to-start="true"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disable X axis -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Disable X axis</h6>
+                </div>
+                <div class="card-body">
+                    <p class="mb-4 text-dark">Setting this option will disable the X-Axis on the tilt element.</p>
+                    <div class="square glare-square" data-tilt data-tilt-axis="y"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disable Y axis -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Disable X axis</h6>
+                </div>
+                <div class="card-body">
+                    <p class="mb-4 text-dark">Setting this option will disable the Y-Axis on the tilt element.  </p>
+                    <div class="square glare-square" data-tilt data-tilt-axis="x"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+{{> partials/vendor-scripts}}
+
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

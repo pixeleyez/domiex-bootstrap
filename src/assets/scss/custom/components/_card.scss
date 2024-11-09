@@ -5,4 +5,130 @@
     .card-title {
         font-size: 15px;
     }
+
+}
+
+.basic-card {
+    .card-img-top {
+        height: 8rem;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .user {
+        height: 120px;
+        width: 120px;
+        margin-top: -4rem;
+    }
+}
+
+.card-hover-effect {
+    transition: .3s ease-out;
+
+    .icon-bg {
+        height: 5rem;
+        width: 5rem;
+        @include flexStyle(center, center);
+    }
+
+    .icon-hover-bg {
+        height: 5rem;
+        width: 5rem;
+        border-radius: 50%;
+        @include position(absolute, 30px, null, null, 30px);
+    }
+
+    &:hover {
+        .icon-hover-bg {
+            transform: scale(10);
+            transition: .5s ease-in-out;
+            border-radius: 100%;
+        }
+        box-shadow: 0 25px 50px -12px rgb(0 0 0 / .25);
+        transform: translateY(-6px);
+         transition: .5s ease-out;
+    }
+}
+
+@each $state in map-keys($theme-colors) {
+    $color: map-get($theme-colors, $state);
+
+    .card-border-#{$state} {
+        --#{$prefix}card-border-color: var(--#{$prefix}#{$state}-border-subtle);
+        box-shadow: 0 10px 15px -3px var(--#{$prefix}#{$state}-bg-subtle),
+        0 4px 6px -4px var(--#{$prefix}#{$state}-bg-subtle);
+        --#{$prefix}link-color-rgb: var(--#{$prefix}#{$state}-rgb);
+        --#{prefix}link-hover-color-rgb: var(--#{$prefix}#{$state}-rgb);
+    }
+
+    .card-hover-solid-#{$state} {
+        --#{$prefix}link-color-rgb: var(--#{$prefix}#{$state}-rgb);
+
+        .icon-bg {
+            background-color: var(--#{$prefix}#{$state});
+            color: #{color-contrast($color)};
+        }
+
+        &:hover {
+            .icon-bg {
+                background-color: rgba(255, 255, 255, 0.144);
+            }
+
+            .icon-hover-bg {
+                background-color: var(--#{$prefix}#{$state});
+            }
+            --#{$prefix}card-border-color: var(--#{$prefix}#{$state}-border-subtle);
+            color:#{color-contrast($color)};
+            --#{$prefix}link-color-rgb:#{color-contrast($color)};
+        }
+    }
+
+    .card-hover-sub-#{$state} {
+        transition: .4s ease-in-out;
+        --#{$prefix}link-color-rgb: var(--#{$prefix}#{$state}-rgb);
+
+        .icon-bg {
+            background-color: var(--#{$prefix}#{$state}-bg-subtle);
+            color: var(--#{$prefix}#{$state});
+        }
+
+        &:hover {
+            .icon-hover-bg {
+                background-color: rgba(var(--#{$prefix}#{$state}-rgb), .08);
+            }
+
+            color: var(--#{$prefix}#{$state});
+            --#{$prefix}card-border-color: var(--#{$prefix}#{$state}-border-subtle);
+        }
+    }
+    .card-hover-#{$state}{
+        --#{$prefix}link-color-rgb: var(--#{$prefix}#{$state}-rgb);
+        .icon-bg {
+            background-color: var(--#{$prefix}#{$state}-bg-subtle);
+            color: var(--#{$prefix}#{$state});
+        }
+    }
+
+}
+
+.card-success {
+    background-image: linear-gradient(rgba($primary, .3), rgba($success, .3));
+}
+
+.card-sky {
+    background-image: linear-gradient(rgba($info, .0), rgba($primary, .8));
+}
+
+.card-sky-two {
+    background-image: linear-gradient(rgba($info, .2), rgba($primary, .5));
+}
+
+.transform-scale {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease-in;
+}
+
+button:hover .transform-scale {
+    transform: scaleX(1);
 }

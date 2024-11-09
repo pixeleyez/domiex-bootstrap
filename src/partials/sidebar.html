@@ -56,8 +56,8 @@
                 </div>
             </div>
         </div>
-        <div class="navbar-menu" data-simplebar id="navbar-menu-list" x-data="sidebarMenu()" x-init="init()">
-            <ul class="group-data-[layout=horizontal]:md:flex group-data-[layout=horizontal]:*:shrink-0" id="sidebar">
+        <div class="navbar-menu" data-simplebar id="navbar-menu-list" >
+            <!-- <ul class="group-data-[layout=horizontal]:md:flex group-data-[layout=horizontal]:*:shrink-0" id="sidebar">
                 <template x-for="(item, index) in filteredMenu" :key="`${index}-${item.title}`" :attr="$data.layout">
                     <li x-data="dropdownBehavior()" x-init="initializeDropdownActive()" x-transition.scale.origin.top @open-parent-dropdown.window="open = false; calculatePosition();" :class="item.separator ? 'menu-title' : 'relative'">
                         <template x-if="!item.children.length && item.separator">
@@ -124,7 +124,6 @@
                                 </ul>
                             </div>
                         </template>
-                        <!-- mega menu -->
                         <template x-if="item.children.length && item.megaMenu">
                             <div data-parent-yes x-ref="dropdown" x-show="open" x-transition.origin.top.left class="dropdown-menu mega-menu" :dropdown-position="($data.layout === 'horizontal') ? 'left' : 'right-top'" x-on:click.outside="open = getOpen($event)">
                                 <div class="dropdown-wrapper">
@@ -142,7 +141,7 @@
                         </template>
                     </li>
                 </template>
-            </ul>
+            </ul> -->
         </div>
     </div>
 </div>

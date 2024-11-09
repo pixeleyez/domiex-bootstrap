@@ -1,0 +1,18 @@
+@each $state in map-keys($theme-colors){
+    .bg-blur-#{$state} {
+        background-color: rgba(var(--#{$prefix}#{$state}-rgb), 0.3);
+    }
+}
+
+.blur-md{
+    filter: blur(12px);
+}
+.arrow-gradient{
+    background: linear-gradient(to bottom, rgba($warning-500, 0.2), rgba($warning-500, 0),);
+}
+.droplet-gradient{
+    background: linear-gradient(to right, rgba($secondary-500, 0.2), rgba($secondary-500, 0),);
+}
+.gem-gradient{
+    background: linear-gradient(to left, rgba($danger-500, 0.2), rgba($danger-500, 0),);
+}

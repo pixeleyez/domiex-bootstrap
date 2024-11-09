@@ -1,0 +1,36 @@
+.form-floating .form-control {
+    height: 40px;
+    min-height: 40px;
+}
+.form-floating > label{
+    top: -8px;
+}
+.form-floating .form-control:not(:placeholder-shown) + label,
+.form-floating .form-control:focus + label {
+    top: -0.9375rem;
+}
+.form-control{
+    --#{$prefix}box-shadow-inset: none;
+}
+.form-control:disabled{
+    cursor: none;
+}
+.form-control {
+    background-image: none !important;
+}
+.eyes-btn{
+    @include position(absolute, 50%, 12px, null, null);
+    transform: translateY(-50%);
+}
+.email-left{
+    @include position(absolute, 50%, null, null, 12px);
+    transform: translateY(-50%);
+}
+.email-right{
+    @include position(absolute, 50%, 12px, null, null);
+    transform: translateY(-50%);
+}
+.input-group-md{
+    height: 2.125rem;
+    min-height: 2.125rem;
+}

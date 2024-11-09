@@ -1,0 +1,40 @@
+.custom-box {
+    height: 11rem;
+}
+
+.custom-border {
+    border-width: 60px;
+}
+.bordered-square{
+    border-width: 60px;
+    border-style:  solid;
+    rotate: 45deg;
+    &.bordered-position1{
+        @include position(absolute, 0, null, null, 0);
+    }
+    &.bordered-position2{
+        @include position(absolute, 5rem, null, null, 2rem);
+    }
+    &.bordered-position3{
+        @include position(absolute, 9rem, null, null, 7rem);
+    }
+}
+
+@each $state in map-keys($theme-colors){
+    .border-color-#{$state}{
+        border-color:  rgba(var(--#{$prefix}#{$state}-rgb), .10 );
+    }
+}
+
+.custom-small-circle {
+    bottom: 0.625rem;
+    right: 0.625rem;
+}
+
+.custom-gradient {
+    background: linear-gradient(to top right, #90cdff, #fca5a1, #34d399);
+    margin-top: -3.5rem; 
+}
+p{
+    color: $gray-500;
+}

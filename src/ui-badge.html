@@ -1,0 +1,296 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Badge" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Base Badge -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Base Badge</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ 
+                        baseBadge: [
+                            { text: 'Primary', color: 'bg-primary-subtle text-primary border border-primary-subtle'}, 
+                            { text: 'Secondary', color: 'bg-secondary-subtle text-secondary  border border-secondary-subtle'}, 
+                            { text: 'Success', color: 'bg-success-subtle text-success  border border-success-subtle'}, 
+                            { text: 'Danger', color: 'bg-danger-subtle text-danger  border border-danger-subtle'}, 
+                            { text: 'Warning', color: 'bg-warning-subtle text-warning  border border-warning-subtle'}, 
+                            { text: 'Info', color: 'bg-info-subtle text-info  border border-info-subtle'}, 
+                            { text: 'Pink', color: 'bg-pink-subtle text-pink  border border-pink-subtle'}, 
+                            { text: 'Indigo', color: 'bg-indigo-subtle text-indigo  border border-indigo-subtle'}, 
+                            { text: 'Orange', color: 'bg-orange-subtle text-orange  border border-orange-subtle'}, 
+                            { text: 'Light', color: 'bg-light-subtle text-dark  border border-dark-subtle'}, 
+                        ] 
+                    }" class="d-flex flex-wrap gap-4">
+                        <template x-for="(badge, index) in baseBadge" :key="index">
+                            <span :class="badge.color + ' badge'" x-text="badge.text" class="badge"></span>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Outline Badge -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Outline Badge</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ 
+                        baseBadge: [
+                            { text: 'Primary', color: 'text-primary border border-primary'}, 
+                            { text: 'Secondary', color: 'text-secondary  border border-secondary'}, 
+                            { text: 'Success', color: 'text-success  border border-success'}, 
+                            { text: 'Danger', color: 'text-danger  border border-danger'}, 
+                            { text: 'Warning', color: 'text-warning  border border-warning'}, 
+                            { text: 'Info', color: 'text-info  border border-info'}, 
+                            { text: 'Pink', color: 'text-pink  border border-pink'}, 
+                            { text: 'Indigo', color: 'text-indigo  border border-indigo'}, 
+                            { text: 'Orange', color: 'text-orange  border border-orange'}, 
+                            { text: 'Dark', color: 'text-dark  border border-dark'}, 
+                            { text: 'Light', color: 'text-dark  border border-dark'}, 
+                        ] 
+                    }" class="d-flex flex-wrap gap-4">
+                        <template x-for="(badge, index) in baseBadge" :key="index">
+                            <span :class="badge.color + ' badge'" x-text="badge.text" class="badge"></span>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soft Badge -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Soft Badge</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ 
+                        baseBadge: [
+                            { text: 'Primary', color: 'bg-primary-subtle text-primary'}, 
+                            { text: 'Secondary', color: 'bg-secondary-subtle text-secondary'}, 
+                            { text: 'Success', color: 'bg-success-subtle text-success'}, 
+                            { text: 'Danger', color: 'bg-danger-subtle text-danger'}, 
+                            { text: 'Warning', color: 'bg-warning-subtle text-warning'}, 
+                            { text: 'Info', color: 'bg-info-subtle text-info'}, 
+                            { text: 'Pink', color: 'bg-pink-subtle text-pink'}, 
+                            { text: 'Indigo', color: 'bg-indigo-subtle text-indigo'}, 
+                            { text: 'Orange', color: 'bg-orange-subtle text-orange'}, 
+                            { text: 'Dark', color: 'bg-dark-subtle text-dark'}, 
+                            { text: 'Light', color: 'bg-light-subtle text-dark'}, 
+                        ] 
+                    }" class="d-flex flex-wrap gap-4">
+                        <template x-for="(badge, index) in baseBadge" :key="index">
+                            <span :class="badge.color + ' badge'" x-text="badge.text" class="badge"></span>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Solid Badge -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Solid Badge</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ 
+                        baseBadge: [
+                            { text: 'Primary', color: 'bg-primary'}, 
+                            { text: 'Secondary', color: 'bg-secondary'}, 
+                            { text: 'Success', color: 'bg-success'}, 
+                            { text: 'Danger', color: 'bg-danger'}, 
+                            { text: 'Warning', color: 'bg-warning'}, 
+                            { text: 'Info', color: 'bg-info'}, 
+                            { text: 'Pink', color: 'bg-pink'}, 
+                            { text: 'Indigo', color: 'bg-indigo'}, 
+                            { text: 'Orange', color: 'bg-orange'}, 
+                            { text: 'Dark', color: 'bg-dark'}, 
+                            { text: 'Light', color: 'bg-light text-dark'}, 
+                        ] 
+                    }" class="d-flex flex-wrap gap-4">
+                        <template x-for="(badge, index) in baseBadge" :key="index">
+                            <span :class="badge.color + ' badge'" x-text="badge.text" class="badge"></span>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soft Badge -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Soft Badge</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ 
+                        baseBadge: [
+                            { text: 'Primary', icon: 'Primary', color: 'bg-primary-subtle text-primary'}, 
+                            { text: 'Secondary', icon: 'Secondary', color: 'bg-secondary-subtle text-secondary'}, 
+                            { text: 'Success', icon: 'Success', color: 'bg-success-subtle text-success'}, 
+                            { text: 'Danger', icon: 'Danger', color: 'bg-danger-subtle text-danger'}, 
+                            { text: 'Warning', icon: 'Warning', color: 'bg-warning-subtle text-warning'}, 
+                            { text: 'Info', icon: 'Info', color: 'bg-info-subtle text-info'}, 
+                            { text: 'Pink', icon: 'Pink', color: 'bg-pink-subtle text-pink'}, 
+                            { text: 'Indigo', icon: 'Indigo', color: 'bg-indigo-subtle text-indigo'}, 
+                            { text: 'Orange', icon: 'Orange', color: 'bg-orange-subtle text-orange'}, 
+                            { text: 'Dark', icon: 'Dark', color: 'bg-dark-subtle text-dark'}, 
+                            { text: 'Light', icon: 'Light', color: 'bg-light-subtle text-dark'}, 
+                        ] 
+                    }" class="d-flex flex-wrap gap-4">
+                        <template x-for="(badge, index) in baseBadge" :key="index">
+                            <span :class="badge.color + ' badge'" class="badge">
+                                <span x-text="badge.text"></span>
+                                <a href="#!" @click="baseBadge.splice(index, 1)" class="d-inline-flex align-items-center">
+                                    <i class="ri-close-fill" :class="badge.color" style="color: inherit;"></i>
+                                </a>
+                            </span>
+                        </template>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <!-- Square Badge -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Square Badge</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ 
+                        baseBadge: [
+                            { text: '2', color: 'bg-primary-subtle text-primary'}, 
+                            { text: '3', color: 'bg-secondary-subtle text-secondary'}, 
+                            { text: '5', color: 'text-success  border border-success'}, 
+                            { text: '4', color: 'bg-danger-subtle text-danger'}, 
+                            { text: '3', color: 'bg-primary'}, 
+                            { text: '2', color: 'bg-info-subtle text-info border border-info-subtle'}, 
+                            { text: '1', color: 'bg-pink-subtle text-pink border border-pink-subtle'}, 
+                            { text: '2', color: 'bg-dark-subtle text-dark'}, 
+                            { text: '3', color: 'bg-light-subtle text-dark'},                         ] 
+                    }" class="d-flex flex-wrap gap-4">
+                        <template x-for="(badge, index) in baseBadge" :key="index">
+                            <span :class="badge.color + ' badge badge-square'" x-text="badge.text" class="badge"></span>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rounded Badge -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Rounded Badge</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ 
+                        baseBadge: [
+                            { text: 'Primary', color: 'bg-primary'}, 
+                            { text: 'Secondary', color: 'bg-secondary-subtle text-secondary'}, 
+                            { text: 'Success', color: 'text-success  border border-success'}, 
+                            { text: 'Danger', color: 'bg-danger-subtle text-danger'}, 
+                        ] 
+                    }" class="d-flex flex-wrap gap-4">
+                        <template x-for="(badge, index) in baseBadge" :key="index">
+                            <span :class="badge.color + ' badge'" x-text="badge.text" class="badge rounded-pill"></span>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button Badge -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Button Badge</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex gap-6 flex-wrap align-items-center">
+                        <button type="button" class="btn btn-primary position-relative">
+                            Notification
+                            <span class="bg-danger rounded-circle notification top-end">2
+                            </span>
+                        </button>
+                        <button type="button" class="btn btn-primary position-relative">
+                            Notification
+                            <span class="bg-success rounded-circle notification bottom-end">2
+                            </span>
+                        </button>
+                        <button type="button" class="btn btn-primary position-relative">
+                            Notification
+                            <span class="bg-warning rounded-circle notification top-start">2
+                            </span>
+                        </button>
+                        <button type="button" class="btn btn-primary position-relative">
+                            Notification
+                            <span class="bg-primary rounded-circle notification bottom-start">2
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inside Button Badge -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Inside Button Badge</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex gap-4 flex-wrap align-items-center">
+                        <button type="button" class="btn btn-primary position-relative">
+                            Notification
+                            <span class="bg-danger rounded-circle notification inside border-danger">2
+                            </span>
+                        </button>
+                        <button type="button" class="btn btn-primary position-relative">
+                            Notification
+                            <span class="bg-success rounded-circle notification inside border-success">2
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

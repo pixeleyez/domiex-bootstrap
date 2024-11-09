@@ -1,0 +1,132 @@
+// comman css
+
+.btn-navigation {
+    position: relative;
+    display: inline-flex;
+    box-shadow: 0 10px 15px -3px #0000001a;
+
+    .icon-color {
+        color: $gray-500;
+        padding: 1.5rem 1rem;
+        position: relative;
+
+        svg {
+            margin: 0 3.625rem;
+        }
+    }
+}
+
+// Bottom Navigation
+.navigation-primary {
+
+    &.active {
+        color: $primary;
+    }
+
+    &:hover {
+        color: $primary;
+        transition: color 0.8s;
+    }
+}
+
+// Animation Navigation
+.navigation-secondary {
+
+    &::before {
+        content: '';
+        @include position(absolute, null, null, 0px, 50%);
+        width: 6px;
+        height: 6px;
+        border-radius: $border-radius-pill;
+        transform: translateX(-50%);
+        transition: $transition-base;
+    }
+
+    &.active {
+        color: $secondary;
+
+        &::before {
+            background-color: $secondary;
+            bottom: 10px;
+
+        }
+    }
+
+    &:hover {
+        color: $secondary;
+        transition: $transition-base;
+
+        &::before {
+            background-color: $secondary;
+            bottom: 10px;
+            transition: $transition-base;
+            transition-duration: .2s;
+        }
+    }
+}
+
+// Border Navigation
+.navigation-success {
+
+    &::before {
+        content: '';
+        @include position(absolute, null, null, 0, 50%);
+        width: 0;
+        height: 0.125rem;
+        background-color: $success;
+        transform: translateX(-50%);
+    }
+
+    &.active {
+        color: $success;
+
+        &::before {
+            width: 100%;
+
+        }
+    }
+
+    &:hover {
+        color: $success;
+        transition: $transition-base;
+
+        &::before {
+            width: 100%;
+            transition: $transition-base;
+            transition-duration: .2s;
+        }
+    }
+}
+
+// Border Navigation
+.navigation-animate-primary {
+
+    &::before {
+        content: '';
+        @include position(absolute, 0, null, null, 50%);
+        width: 0;
+        height: 0.125rem;
+        background-color: $primary;
+        transform: translateX(-50%);
+    }
+
+    &.active {
+        color: $primary;
+
+        &::before {
+            width: 100%;
+
+        }
+    }
+
+    &:hover {
+        color: $primary;
+        transition: $transition-base;
+
+        &::before {
+            width: 100%;
+            transition: $transition-base;
+            transition-duration: .2s;
+        }
+    }
+}

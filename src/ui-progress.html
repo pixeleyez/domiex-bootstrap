@@ -1,0 +1,284 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Progress Bar" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Basic Progress Bar -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Basic Progress Bar</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="d-flex flex-column gap-3">
+                                <div class="progress " role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" style="width: 50%">Primary 50%</div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-secondary" style="width: 33.33%">Secondary 33.33%</div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-success" style="width: 66.66%">Success 66.66%</div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-danger" style="width: 80%">Danger 80%</div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-warning" style="width: 75%">Warning 75%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex flex-column gap-3">
+                                <div class="progress " role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-info" style="width: 50%">Info 50%</div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-pink" style="width: 66.66%">Pink 66.66%</div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-dark-subtle text-dark" style="width: 60%">Light 60%</div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-black" style="width: 100%">Dark 100%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soft Progress Bar -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Soft Progress Bar</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="d-flex flex-column gap-3">
+                                <div class="progress " role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar opacity-25" style="width: 50%"></div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-secondary opacity-25" style="width: 33.33%"></div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-success opacity-25" style="width: 66.66%"></div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-danger opacity-25" style="width: 80%"></div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-warning opacity-25" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex flex-column gap-3">
+                                <div class="progress " role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-info opacity-25" style="width: 50%"></div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-pink opacity-25" style="width: 66.66%"></div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-dark-subtle text-dark opacity-25" style="width: 60%"></div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-black opacity-25" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animation Progress Bar -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Animation Progress Bar</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="d-flex flex-column gap-3">
+                                <div class="progress " role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar position-relative" style="width: 50%">
+                                        <div class="progress-animate"></div>
+                                    </div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar position-relative bg-secondary" style="width: 33.33%">
+                                        <div class="progress-animate"></div>
+                                    </div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar position-relative bg-success" style="width: 66.66%">
+                                        <div class="progress-animate"></div>
+                                    </div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar position-relative bg-danger" style="width: 80%">
+                                        <div class="progress-animate"></div>
+                                    </div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar position-relative bg-warning" style="width: 75%">
+                                        <div class="progress-animate"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex flex-column gap-3">
+                                <div class="progress " role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar position-relative bg-info" style="width: 50%">
+                                        <div class="progress-animate"></div>
+                                    </div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar position-relative bg-pink" style="width: 66.66%">
+                                        <div class="progress-animate"></div>
+                                    </div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar position-relative bg-dark-subtle text-dark" style="width: 60%">
+                                        <div class="progress-animate"></div>
+                                    </div>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar position-relative bg-black" style="width: 100%">
+                                        <div class="progress-animate"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gradient Progress Bar -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Gradient Progress Bar</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-column gap-3">
+                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-gradient progress-gradient-primary" style="width: 50%"></div>
+                        </div>
+                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-gradient progress-gradient-info" style="width: 33.33%"></div>
+                        </div>
+                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-gradient progress-gradient-indigo" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sizes Progress Bar -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Basic Progress Bar</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-column gap-3">
+                        <div class="progress progress-1" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar " style="width: 50%"></div>
+                        </div>
+                        <div class="progress progress-2" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 50%"></div>
+                        </div>
+                        <div class="progress progress-3" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 50%"></div>
+                        </div>
+                        <div class="progress progress-4" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 50%"></div>
+                        </div>
+                        <div class="progress progress-5" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 50%"></div>
+                        </div>
+                        <div class="progress progress-6" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 50%"></div>
+                        </div>
+                        <div class="progress progress-7" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 50%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Progress Bar -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Basic Progress Bar</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-column gap-3">
+                        <div>
+                            <div class="d-flex align-content-center justify-content-between ">
+                                <h6>Project Workforce</h6>
+                                <h6 class="text-danger">32.21%</h6>
+                            </div>
+                            <div class="progress " role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" style="width: 50%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-flex align-content-center justify-content-between ">
+                                <h6>Critical Hours</h6>
+                                <h6 class="text-danger">64%</h6>
+                            </div>
+                            <div class="progress " role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar bg-success" style="width: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

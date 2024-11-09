@@ -1,0 +1,216 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Notification" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Basic -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Basic Notification</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-2">
+                        <div>
+                            <!-- Success Button -->
+                            <button type="button" class="btn btn-success" data-toast="toastSuccess">Success</button>
+                            <div class="toast-container position-fixed bottom-0 end-0 p-4">
+                                <div id="toastSuccess" class="toast toast-success" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-body">
+                                        🔥 Your success message - make it short
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- Info Button -->
+                            <button type="button" class="btn btn-primary" data-toast="toastInfo">Info</button>
+                            <div class="toast-container position-fixed bottom-0 end-0 p-4">
+                                <div id="toastInfo" class="toast toast-primary" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-body">
+                                        Your Info message - make it short
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- Warning Button -->
+                            <button type="button" class="btn btn-warning" data-toast="toastWarning">Warning</button>
+                            <div class="toast-container position-fixed bottom-0 end-0 p-4">
+                                <div id="toastWarning" class="toast toast-warning" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-body">
+                                        🪄 Your Warning message - make it short
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- Error Button -->
+                            <button type="button" class="btn btn-danger" data-toast="toastError">Error</button>
+                            <div class="toast-container position-fixed bottom-0 end-0 p-4">
+                                <div id="toastError" class="toast toast-danger" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-body">
+                                        🪄 Your Error message - make it short
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Position Notification -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Position Notification</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-2">
+                        <div>
+                            <button type="button" class="btn btn-primary" data-toast="toastTopleft">Top Left</button>
+                            <div class="toast-container position-fixed top-0 start-0 p-4">
+                                <div id="toastTopleft" class="toast toast-primary" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-body d-flex align-content-center justify-content-between">
+                                        You have successfully completed this thing!
+                                        <button class="text-white p-0 bg-transparent border-0 " data-bs-dismiss="toast">
+                                            <i data-lucide="x" class="size-4"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-primary" data-toast="toastTopcenter">Top Center</button>
+                            <div class="toast-container position-fixed top-0 start-50 translate-X p-4">
+                                <div id="toastTopcenter" class="toast toast-primary" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-body d-flex align-content-center justify-content-between">
+                                        You have successfully completed this thing!
+                                        <button class="text-white p-0 bg-transparent border-0 " data-bs-dismiss="toast">
+                                            <i data-lucide="x" class="size-4"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-primary" data-toast="toastTopright">Top Right</button>
+                            <div class="toast-container position-fixed top-0 end-0 p-4">
+                                <div id="toastTopright" class="toast toast-primary" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-body d-flex align-content-center justify-content-between">
+                                        You have successfully completed this thing!
+                                        <button class="text-white p-0 bg-transparent border-0 " data-bs-dismiss="toast">
+                                            <i data-lucide="x" class="size-4"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-primary" data-toast="toastBottomleft">Bottom Left</button>
+                            <div class="toast-container position-fixed bottom-0 start-0 p-4">
+                                <div id="toastBottomleft" class="toast toast-primary" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-body d-flex align-content-center justify-content-between">
+                                        You have successfully completed this thing!
+                                        <button class="text-white p-0 bg-transparent border-0 " data-bs-dismiss="toast">
+                                            <i data-lucide="x" class="size-4"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-primary" data-toast="toastBottomcenter">Bottom Center</button>
+                            <div class="toast-container position-fixed bottom-0 start-50 translate-X p-4">
+                                <div id="toastBottomcenter" class="toast toast-primary" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-body d-flex align-content-center justify-content-between">
+                                        You have successfully completed this thing!
+                                        <button class="text-white p-0 bg-transparent border-0 " data-bs-dismiss="toast">
+                                            <i data-lucide="x" class="size-4"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-primary" data-toast="toastBottomright">Bottom Right</button>
+                            <div class="toast-container position-fixed bottom-0 end-0 p-4">
+                                <div id="toastBottomright" class="toast toast-primary" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-body d-flex align-content-center justify-content-between">
+                                        You have successfully completed this thing!
+                                        <button class="text-white p-0 bg-transparent border-0 " data-bs-dismiss="toast">
+                                            <i data-lucide="x" class="size-4"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Toast -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Content Toast</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-2">
+                        <div>
+                            <!-- Success Button -->
+                            <button type="button" class="btn btn-secondary" data-toast="toastContent">Content Toast</button>
+                            <div class="toast-container position-fixed top-0 end-0 p-4">
+                                <div id="toastContent" class="toast toast-content border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-body p-0">
+                                        <div class="d-flex align-items-center justify-content-between p-3 border-bottom border-dark-subtle">
+                                            <h6 class="mb-0 text-black">You have successfully completed this thing!</h6>
+                                            <button class="bg-transparent border-0 p-0 " data-bs-dismiss="toast">
+                                                <i data-lucide="x" class="size-4"></i>
+                                            </button>
+                                        </div>
+                                        <div class="p-4">
+                                            <p class="text-dark">Those who successfully complete the programme will be awarded a certificate of achievement. You can concentrate and successfully complete a project that just days ago would have looked too difficult.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

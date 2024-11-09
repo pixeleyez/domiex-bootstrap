@@ -1,0 +1,197 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    <div class="position-relative mb-6">
+        <div class="position-relative overflow-hidden rounded bg-primary bg-opacity-10 custom-box">
+            <div class="bordered-square bordered-position1 border-color-primary size-96"></div>
+            <div class="bordered-square bordered-position2 border-color-success size-80"></div>
+            <div class="bordered-square bordered-position3 border-color-pink size-40"></div>
+        </div>
+        <div class="text-center">
+            <div class="position-relative d-inline-block mx-auto custom-container">
+                <div class="position-relative p-1 rounded-circle custom-gradient custom-image-container">
+                    <img src="assets/images/avatar/user-17.png" alt="" class="mx-auto custom-image rounded-pill size-28 border border-4 border-white">
+                </div>
+                <div class="position-absolute border border-white rounded-pill bg-success custom-small-circle size-4"></div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center gap-1">
+                <h5 class="mt-2 mb-1">Sophia Mia</h5>
+                <i data-lucide="badge-check" class="size-5 icon-primary"></i>
+            </div>
+            <ul class="text-dark d-flex align-items-center gap-2 justify-content-center m-0">
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="building-2" class="size-4"></i>
+                    <span>UI / UX Designer</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="map-pin" class="size-4"></i>
+                    <span>Argentina</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="calendar-days" class="size-4"></i>
+                    <span>24 April, 2024</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-settings.html">
+                    <i data-lucide="user-round" class="size-4 me-1"></i>
+                    Account
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-security.html">
+                    <i data-lucide="shield-check" class="size-4 me-1"></i>
+                    Security
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-billing-plan.html">
+                    <i data-lucide="gem" class="size-4 me-1"></i>
+                    Billing & Plans
+                </a>
+            </li>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link fw-medium active" aria-current="page" href="pages-account-notification.html">
+                    <i data-lucide="bell" class="size-4 me-1"></i>
+                    Notification
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-statements.html">
+                    <i data-lucide="list-tree" class="size-4 me-1"></i>
+                    Statements
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-logs.html">
+                    <i data-lucide="log-out" class="size-4 me-1"></i>
+                    Logs
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="flex-grow-1">
+            <h6 class="mt-5 mb-1">Notifications</h6>
+            <p class="mb-5">Where would you like to receive notifications?</p>
+        </div>
+        <div>
+            <a href="#!" class="link link-primary text-dark">Reset to Default Settings</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h6 class="card-title mb-0">Receive notifications about new activities in projects you're involved in</h6>
+        </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center gap-2 mt-4">
+                <label for="notification1" class="form-label cursor-pointer mb-0 fw-medium flex-grow-1">New comments by others comments</label>
+                <div class="form-check form-switch p-0 switch-outline-primary">
+                    <input type="checkbox" id="notification1" checked /><label class="label" for="notification1"></label>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center gap-2 mt-4">
+                <label for="notification2" class="form-label cursor-pointer mb-0 fw-medium flex-grow-1">Comments fro you tasks</label>
+                <div class="form-check form-switch p-0 switch-outline-primary">
+                    <input type="checkbox" id="notification2" /><label class="label" for="notification2"></label>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center gap-2 mt-4">
+                <label for="notification3" class="form-label cursor-pointer mb-0 fw-medium flex-grow-1">New tasks assigned to you</label>
+                <div class="form-check form-switch p-0 switch-outline-primary">
+                    <input type="checkbox" id="notification3" /><label class="label" for="notification3"></label>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center gap-2 mt-4">
+                <label for="notification4" class="form-label cursor-pointer mb-0 fw-medium flex-grow-1">Tasks completed (For tasks you created or assigned to)</label>
+                <div class="form-check form-switch p-0 switch-outline-primary">
+                    <input type="checkbox" id="notification4" /><label class="label" for="notification4"></label>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center gap-2 mt-4">
+                <label for="notification5" class="form-label cursor-pointer mb-0 fw-medium flex-grow-1">You are mentioned in a projects, task, etc,.</label>
+                <div class="form-check form-switch p-0 switch-outline-primary">
+                    <input type="checkbox" id="notification5" /><label class="label" for="notification5"></label>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center gap-2 mt-4">
+                <label for="notification6" class="form-label cursor-pointer mb-0 fw-medium flex-grow-1">Change in status of a task you're</label>
+                <div class="form-check form-switch p-0 switch-outline-primary">
+                    <input type="checkbox" id="notification6" /><label class="label" for="notification6"></label>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center gap-2 mt-4">
+                <label for="notification7" class="form-label cursor-pointer mb-0 fw-medium flex-grow-1">Added new projects</label>
+                <div class="form-check form-switch p-0 switch-outline-primary">
+                    <input type="checkbox" id="notification7" /><label class="label" for="notification7"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h6 class="card-title mb-0">Get notified wherever you are</h6>
+        </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center gap-2 mt-4">
+                <label for="notification8" class="form-label cursor-pointer mb-0 fw-medium flex-grow-1">Email notifications</label>
+                <div class="form-check form-switch p-0 switch-outline-primary">
+                    <input type="checkbox" id="notification8" checked /><label class="label" for="notification8"></label>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center gap-2 mt-4">
+                <label for="notification9" class="form-label cursor-pointer mb-0 fw-medium flex-grow-1">Notifications via domiex</label>
+                <div class="form-check form-switch p-0 switch-outline-primary">
+                    <input type="checkbox" id="notification9" checked /><label class="label" for="notification9"></label>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center gap-2 mt-4">
+                <label for="notification10" class="form-label cursor-pointer mb-0 fw-medium flex-grow-1">Browser push notifications</label>
+                <div class="form-check form-switch p-0 switch-outline-primary">
+                    <input type="checkbox" id="notification10" checked /><label class="label" for="notification10"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/pages/ui/pages-account-settings.init.js"></script>
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+.square{
+    height: 20rem;
+    width: 20rem;
+    margin: 0 auto;
+}
+.basic-square{
+    background: linear-gradient(136deg, $primary-500, $secondary-500, $info-500);
+}
+.glare-square{
+    background: linear-gradient(136deg, $success-500, $indigo-500, $info-500);
+}
+.reverse-square{
+    background: linear-gradient(136deg, $info-600, $info-800);
+}
+.floating-square{
+    background: linear-gradient(136deg, $primary-600, $primary-800);
+}

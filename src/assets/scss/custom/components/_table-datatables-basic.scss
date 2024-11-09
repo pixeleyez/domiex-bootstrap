@@ -1,0 +1,18 @@
+table.dataTable.display tbody tr.odd>.sorting_1,
+table.dataTable.display tbody tr.even>.sorting_1,
+table.dataTable.display tbody tr:hover,
+table.dataTable.display tbody tr.odd{
+     background-color: transparent !important;
+}
+table.dataTable tbody td {
+    padding: 0.875rem 0.75rem !important;
+}
+table.dataTable tfoot th{
+    padding: 0.875rem 0.75rem !important;
+    border-top: 1px solid $gray-300 !important;
+    border-bottom: 1px solid $gray-300 !important;
+}
+table.dataTable thead th{
+    border-bottom: 1px solid $gray-300 !important;
+    padding: 0.875rem 0.75rem !important;
+}

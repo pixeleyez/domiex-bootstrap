@@ -1,14 +1,25 @@
 {
     "packagesToCopy": [
         "@alpinejs/mask",
+        "@deckdeckgo/highlight-code",
         "@popperjs/core",
         "@ryangjchandler/alpine-tooltip",
+        "aos",
         "alpinejs",
+        "datatables",
         "lucide",
+        "line-awesome",
+        "heroicons",
+        "flatpickr",
+        "nouislider",
         "moment",
         "simplebar",
         "bootstrap",
+        "quill",
+        "line-clamp",
         "swiper",
+        "vanilla-tilt",
+        "lightbox2",
         "virtual-select-plugin"
     ]
 }

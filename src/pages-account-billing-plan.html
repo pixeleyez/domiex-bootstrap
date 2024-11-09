@@ -1,0 +1,497 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    <div class="position-relative mb-6">
+        <div class="position-relative overflow-hidden rounded bg-primary bg-opacity-10 custom-box">
+            <div class="bordered-square bordered-position1 border-color-primary size-96"></div>
+            <div class="bordered-square bordered-position2 border-color-success size-80"></div>
+            <div class="bordered-square bordered-position3 border-color-pink size-40"></div>
+        </div>
+        <div class="text-center">
+            <div class="position-relative d-inline-block mx-auto custom-container">
+                <div class="position-relative p-1 rounded-circle custom-gradient custom-image-container">
+                    <img src="assets/images/avatar/user-17.png" alt="" class="mx-auto custom-image rounded-pill size-28 border border-4 border-white">
+                </div>
+                <div class="position-absolute border border-white rounded-pill bg-success custom-small-circle size-4"></div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center gap-1">
+                <h5 class="mt-2 mb-1">Sophia Mia</h5>
+                <i data-lucide="badge-check" class="size-5 icon-primary"></i>
+            </div>
+            <ul class="text-dark d-flex align-items-center gap-2 justify-content-center m-0">
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="building-2" class="size-4"></i>
+                    <span>UI / UX Designer</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="map-pin" class="size-4"></i>
+                    <span>Argentina</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="calendar-days" class="size-4"></i>
+                    <span>24 April, 2024</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-settings.html">
+                    <i data-lucide="user-round" class="size-4 me-1"></i>
+                    Account
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-security.html">
+                    <i data-lucide="shield-check" class="size-4 me-1"></i>
+                    Security
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium active" aria-current="page" href="pages-account-billing-plan.html">
+                    <i data-lucide="gem" class="size-4 me-1"></i>
+                    Billing & Plans
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-notification.html">
+                    <i data-lucide="bell" class="size-4 me-1"></i>
+                    Notification
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-statements.html">
+                    <i data-lucide="list-tree" class="size-4 me-1"></i>
+                    Statements
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-logs.html">
+                    <i data-lucide="log-out" class="size-4 me-1"></i>
+                    Logs
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="card mt-4">
+        <div class="card-header">
+            <h6 class="mb-1 card-title">Billing Settings</h6>
+            <p>Take control of your billing and plan details here.</p>
+        </div>
+        <div class="card-body row g-5">
+            <div class="col-6 d-flex">
+                <div class="card flex-fill">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <h6 class="mb-2">Basic Plan <span class="badge bg-danger-subtle text-danger border border-danger-subtle ms-1">Monthly</span></h6>
+                                <p class="text-gray-500 dark:text-dark-500">Our most sought-after plan tailored for small teams.</p>
+                            </div>
+                            <h3 class="mb-0">$20 <small class="fs-sm fw-normal text-dark">Per month</small></h3>
+                        </div>
+                        <div class="mt-4">
+                            <div class="d-flex align-items-center gap-3 mb-2">
+                                <h6 class="fs-12 flex-grow-1 mb-0">16 of 30 Users</h6>
+                                <h6 class="fs-12 font-semibold text-primary mb-0">55.47%</h6>
+                            </div>
+                            <div class="progress progress-1" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" style="width: 55.47%"></div>
+                            </div>
+                        </div>
+                        <div class="mt-5 float-end">
+                            <a href="pages-pricing.html" class="btn btn-primary">
+                                Upgrade Plan
+                                <i data-lucide="arrow-up-right" class="size-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 d-flex">
+                <div class="card flex-fill">
+                    <div class="card-body">
+                        <div class="grow">
+                            <h6 class="mb-2">Sophia Mia</h6>
+                            <p class="mb-1">3011 E Semoran Blvd, Apopka, Florida,</p>
+                            <p class="mb-1">United States - 32703.</p>
+                            <p>+(407) 774-3111</p>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <div class="mt-4 float-end">
+                            <button type="button" class="btn btn-light text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <i data-lucide="pencil" class="size-4 me-1"></i>
+                                Edit Billing
+                            </button>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h6 class="modal-title" id="exampleModalLabel">Billing Information</h6>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body row g-5">
+                                        <div class="col-12">
+                                            <label for="namePersonalInput" class="form-label fw-medium">Personal / Company Name</label>
+                                            <input type="text" value="Sophia Mia" placeholder="Enter your name" class="form-control">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="addressInput" class="form-label fw-medium">Personal / Company Name</label>
+                                            <input type="text" value="3011 E Semoran Blvd" placeholder="Your address" class="form-control">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="firstNameInput" class="form-label fw-medium">Country</label>
+                                            <div id="sample-select"></div>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="stateInput" class="form-label fw-medium">State</label>
+                                            <input type="text" value="Florida" placeholder="Your state" class="form-control">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="cityInput" class="form-label fw-medium">City</label>
+                                            <input type="text" value="Apopka" placeholder="Your city" class="form-control">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="zipCodeInput" class="form-label fw-medium">Zip Code</label>
+                                            <input type="number" value="32703" placeholder="Zip code" class="form-control">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="phoneNumberInput" class="form-label fw-medium">Phone Number</label>
+                                            <input type="tel" value="+(407) 774-3111" placeholder="Enter your phone number" class="form-control">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="phoneNumberInput" class="form-label fw-medium">Email Address</label>
+                                            <input type="email" value="shopia@pixeleyez.com" placeholder="Enter your email" class="form-control">
+                                        </div>
+                                        <div class="d-flex justify-content-end gap-2">
+                                            <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-primary">Update</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h6 class="mb-1 card-title">Payment Methods</h6>
+        </div>
+        <div class="card-body">
+            <div>
+                <div class="row g-5">
+                    <!-- Card 1 -->
+                    <div class="col-12 col-sm-6 col-xl-3 d-flex" x-data="{ cardId: 1, isDefault: false }">
+                        <div class="card mb-0 flex-fill">
+                            <div class="card-body payment-gradient">
+                                <img src="assets/images/payment/visa.png" alt="" class="h-10">
+                            </div>
+                            <div class="card-body pt-0">
+                                <div>
+                                    <h6 class="mb-1">xxxx xxxx xxx 1547</h6>
+                                    <p>Expiry on 01/2030</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-5">
+                                    <a href="#!" class="link link-success text-dark" @click.prevent="isDefault = !isDefault">
+                                        <span x-text="isDefault ? 'Default Set' : 'Set as Default'"></span>
+                                    </a>
+
+                                    <a href="#!" class="link link-primary link-dark text-dark cursor-pointer" @click="cardId = 1" data-bs-toggle="modal" data-bs-target="#paymentModal">
+                                        <i data-lucide="pencil" class="size-4"></i> Edit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-12 col-sm-6 col-xl-3 d-flex" x-data="{ cardId: 2, isDefault: false }">
+                        <div class="card mb-0 flex-fill">
+                            <div class="card-body payment-gradient">
+                                <img src="assets/images/payment/american.png" alt="" class="h-10">
+                            </div>
+                            <div class="card-body pt-0">
+                                <div>
+                                    <h6 class="mb-1">xxxx xxxx xxx 8749</h6>
+                                    <p>Expiry on 24/2030</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-5">
+                                    <a href="#!" class="link link-success text-dark" @click.prevent="isDefault = !isDefault">
+                                        <span x-text="isDefault ? 'Default Set' : 'Set as Default'"></span>
+                                    </a>
+                                    <a href="#!" class="link link-primary link-dark text-dark cursor-pointer" @click="setCard(2)" data-bs-toggle="modal" data-bs-target="#paymentModal">
+                                        <i data-lucide="pencil" class="size-4"></i> Edit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-12 col-sm-6 col-xl-3 d-flex" x-data="{ cardId: 3, isDefault: false }">
+                        <div class="card mb-0 flex-fill">
+                            <div class="card-body payment-gradient">
+                                <img src="assets/images/payment/mastercard.png" alt="" class="h-10">
+                            </div>
+                            <div class="card-body pt-0">
+                                <div>
+                                    <h6 class="mb-1">xxxx xxxx xxx 3641</h6>
+                                    <p>Expiry on 13/2028</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-5">
+                                    <a href="#!" class="link link-success text-dark" @click.prevent="isDefault = !isDefault">
+                                        <span x-text="isDefault ? 'Default Set' : 'Set as Default'"></span>
+                                    </a>
+                                    <a href="#!" class="link link-primary link-dark text-dark cursor-pointer" @click="setCard(3)" data-bs-toggle="modal" data-bs-target="#paymentModal">
+                                        <i data-lucide="pencil" class="size-4"></i> Edit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add New Card -->
+                    <div class="col-12 col-sm-6 col-xl-3 d-flex">
+                        <a href="#!" title="add" data-bs-toggle="modal" data-bs-target="#paymentModal" class="card mb-0 border-dashed flex-fill">
+                            <div class="card-body d-flex justify-content-center align-items-center">
+                                <i data-lucide="circle-plus" class="size-10 stroke-1 icon-success"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title" id="paymentModalLabel">Add Card</h6>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <form action="">
+                                <div class="modal-body row g-5">
+                                    <div class="col-12">
+                                        <label for="cardNumberInput" class="form-label fw-medium">Card Number</label>
+                                        <input type="text" x-data="{ value: '' }" x-model="value" @input="
+                            value = value.replace(/[^0-9]/g, '').slice(0, 16); // Allow only numbers
+                            if (value.length >= 5) value = value.slice(0, 4) + ' ' + value.slice(4); // Add space after 4 digits
+                            if (value.length >= 10) value = value.slice(0, 9) + ' ' + value.slice(9); // Add space after 8 digits
+                        " class="form-control" placeholder="0000 0000 0000 0000" maxlength="14" required>
+                                    </div>
+
+                                    <div class="col-3">
+                                        <label for="cvvInput" class="form-label fw-medium">CVV</label>
+                                        <input type="text" x-data="{ value: '' }" x-model="value" @input="value = value.replace(/[^0-9]/g, '').slice(0, 3);" class="form-control" placeholder="000" maxlength="3" required>
+                                    </div>
+
+                                    <div class="col-3" x-data="{ date: '' }">
+                                        <label for="expiryDateInput" class="form-label fw-medium">Expiry Date</label>
+                                        <input type="text" x-model="date" @focus="if (date === 'MM/YYYY') date = ''" @blur="if (date === '') date = 'MM/YYYY'" @input="
+                                   date = date.replace(/[^0-9]/g, '');
+                                   if (date.length >= 2) date = date.slice(0, 2) + '/' + date.slice(2);
+                                   date = date.slice(0, 7); // Limit to 7 characters (MM/YYYY)
+                               " class="form-control" placeholder="MM/YYYY" required>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label for="nameOnTheCardInput" class="form-label fw-medium">Name on the Card</label>
+                                        <input type="text" placeholder="Enter name" class="form-control" required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-check check-primary d-flex align-items-start">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                <span class="fw-semibold">Set as Default</span>
+                                                <p>Scheduled payment will be automatically deducted from this card.</p>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-primary">Add Card</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h6 class="card-title">Billing History</h6>
+        </div>
+        <div x-data="{
+        sortBy: '',
+        sortDirection: 'asc',
+        currentPage: 1,
+        products: [
+            { statementsID: 'PEB15915', paymentDate: '03 May, 2024', plan: 'Basic Plan', paymentType: 'Mastercard', amount: '$29.99', status: 'Paid' },
+            { statementsID: 'PEB15916', paymentDate: '04 May, 2024', plan: 'Professional Plan', paymentType: 'Visa', amount: '$49.99', status: 'Paid' },
+            { statementsID: 'PEB15917', paymentDate: '08 May, 2024', plan: 'Basic Plan', paymentType: 'Visa', amount: '$29.99', status: 'Unpaid' },
+            { statementsID: 'PEB15918', paymentDate: '11 May, 2024', plan: 'Enterprise Plan (Extended)', paymentType: 'American Express', amount: '$999.99', status: 'Paid' },
+            { statementsID: 'PEB15921', paymentDate: '09 June, 2024', plan: 'Professional Plan', paymentType: 'Visa', amount: '$49.99', status: 'Pending' },
+            { statementsID: 'PEB15922', paymentDate: '15 June, 2024', plan: 'Basic Plan', paymentType: 'Mastercard', amount: '$29.99', status: 'Unpaid' },
+            { statementsID: 'PEB15923', paymentDate: '17 June, 2024', plan: 'Enterprise Plan', paymentType: 'American Express', amount: '$59.99', status: 'Paid' },
+            { statementsID: 'PEB15935', paymentDate: '05 June, 2024', plan: 'Basic Plan', paymentType: 'Mastercard', amount: '$29.99', status: 'Paid' },
+            { statementsID: 'PEB15936', paymentDate: '11 May, 2024', plan: 'Professional Plan (Extended)', paymentType: 'Visa', amount: '$699.99', status: 'Paid' },
+            { statementsID: 'PEB15942', paymentDate: '27 May, 2024', plan: 'Professional Plan', paymentType: 'Mastercard', amount: '$49.99', status: 'Unpaid' },
+            { statementsID: 'PEB15943', paymentDate: '30 May, 2024', plan: 'Professional Plan', paymentType: 'Mastercard', amount: '$59.99', status: 'Paid' },
+            { statementsID: 'PEB15944', paymentDate: '01 June, 2024', plan: 'Basic Plan', paymentType: 'Visa', amount: '$29.99', status: 'Pending' },
+            { statementsID: 'PEB15945', paymentDate: '05 June, 2024', plan: 'Enterprise Plan', paymentType: 'Visa', amount: '$129.99', status: 'Pending' },
+        ],
+        get pageSize() {
+            return 10; 
+        },
+        get displayedProducts() {
+            const startIndex = (this.currentPage - 1) * this.pageSize;
+            return this.products.slice(startIndex, startIndex + this.pageSize).sort((a, b) => {
+                if (!this.sortBy) return 0;
+                const aValue = a[this.sortBy];
+                const bValue = b[this.sortBy];
+                if (aValue < bValue) return this.sortDirection === 'asc' ? -1 : 1;
+                if (aValue > bValue) return this.sortDirection === 'asc' ? 1 : -1;
+                return 0;
+            });
+        },
+        get totalPages() {
+            return Math.ceil(this.products.length / this.pageSize); 
+        },
+        sort(field) {
+            this.sortDirection = (this.sortBy === field && this.sortDirection === 'asc') ? 'desc' : 'asc';
+            this.sortBy = field;
+        },
+        gotoPage(page) {
+            this.currentPage = page;
+        },
+        prevPage() {
+            if (this.currentPage > 1) this.currentPage--;
+        },
+        nextPage() {
+            if (this.currentPage < this.totalPages) this.currentPage++;
+        },
+        get showingStart() {
+            return (this.currentPage - 1) * this.pageSize + 1;
+        },
+        get showingEnd() {
+            return Math.min(this.currentPage * this.pageSize, this.products.length);
+        }
+        }" class="card-body">
+
+            <table class="table">
+                <thead>
+                    <tr class="table-light border-bottom cursor-pointer">
+                        <th x-on:click="sort('statementsID')" class="fw-medium text-dark">
+                            Billing ID <span x-show="sortBy === 'statementsID'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                        </th>
+                        <th x-on:click="sort('paymentDate')" class="fw-medium text-dark">
+                            Payment Date <span x-show="sortBy === 'paymentDate'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                        </th>
+                        <th x-on:click="sort('plan')" class="fw-medium text-dark">
+                            Plan <span x-show="sortBy === 'plan'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                        </th>
+                        <th x-on:click="sort('paymentType')" class="fw-medium text-dark">
+                            Payment Type <span x-show="sortBy === 'paymentType'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                        </th>
+                        <th x-on:click="sort('amount')" class="fw-medium text-dark">
+                            Amount <span x-show="sortBy === 'amount'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                        </th>
+                        <th x-on:click="sort('status')" class="fw-medium text-dark">
+                            Status <span x-show="sortBy === 'status'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                        </th>
+                        <th class="text-end fw-medium text-dark">Invoice</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <template x-for="(product, index) in displayedProducts" :key="index">
+                        <tr>
+                            <td><a href="#!" class="link link-primary text-dark" x-text="product.statementsID"></a></td>
+                            <td x-text="product.paymentDate"></td>
+                            <td x-text="product.plan"></td>
+                            <td x-text="product.paymentType"></td>
+                            <td x-text="product.amount"></td>
+                            <td>
+                                <span :class="{
+                                'badge bg-danger-subtle text-danger border border-danger-subtle': product.status === 'Unpaid',
+                                'badge bg-warning-subtle text-warning border border-warning-subtle': product.status === 'Pending',
+                                'badge bg-success-subtle text-success border border-success-subtle': product.status === 'Paid'
+                            }" x-text="product.status"></span>
+                            </td>
+                            <td class="text-end">
+                                <a href="#!" title="Download" class="link link-primary text-dark"><i class="align-bottom ri-download-2-line"></i></a>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+
+            <div class="row g-5 align-items-center">
+                <div class="col-6">
+                    <p class="text-gray-500 dark:text-dark-500">Showing <b x-text="showingStart"></b> - <b x-text="showingEnd"></b> of <b x-text="products.length"></b> Results</p>
+                </div>
+                <div class="col-6">
+                    <div class="d-flex justify-content-end gap-2 pagination pagination-primary">
+                        <button @click="prevPage()" :disabled="currentPage === 1" class="page-link rounded-2 d-flex align-items-center gap-1" :class="{'text-dark': currentPage === 1, 'cursor-not-allowed': currentPage === 1}">
+                            <i data-lucide="chevron-left" class="size-5"></i> Prev
+                        </button>
+                        <button @click="gotoPage(1)" :class="{ 'active': currentPage === 1 }" class="page-link page-number rounded-2">1</button>
+                        <button @click="gotoPage(2)" :class="{ 'active': currentPage === 2 }" class="page-link page-number rounded-2">2</button>
+                        <button @click="nextPage()" :disabled="currentPage === totalPages" class="page-link rounded-2 d-flex align-items-center gap-1" :class="{'text-dark': currentPage === totalPages, 'cursor-not-allowed': currentPage === totalPages}">
+                            Next <i data-lucide="chevron-right" class="size-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/pages/ui/pages-account-billing-plan.init.js"></script>
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
