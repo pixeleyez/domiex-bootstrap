@@ -463,7 +463,8 @@ $font-sizes: (
   '4xl': '36px',
   '5xl': '48px',
   '6xl': '60px',
-  '7xl': '96px'
+  '7xl': '72px',
+  '8xl': '96px'
 );
 // scss-docs-end font-sizes
 
@@ -1586,6 +1587,7 @@ $avatar-sizes: (
   28: 7rem,
   32: 8rem,
   40: 10rem,
+  44: 11rem,
   80: 20rem,
   96: 24rem,
 );
