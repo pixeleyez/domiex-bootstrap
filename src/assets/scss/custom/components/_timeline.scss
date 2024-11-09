@@ -1,0 +1,71 @@
+.timeline-content {
+    &::after {
+        content: '';
+        position: absolute;
+        top: .5rem;
+        left: -0.10rem;
+        height: .375rem;
+        width: .375rem;
+        border-radius: 2px;
+        background-color: $gray-300;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: .5rem;
+        left: 0;
+        bottom: -.5rem;
+        width: .125rem;
+        background-color: $gray-300;
+    }
+}
+.timeline-item:last-child {
+    .timeline-content::before {
+        display: none;
+    }
+}
+
+@each $state in map-keys($theme-colors) {
+    .timeline-#{$state} {
+        &.active::after {
+            background-color: var(--#{$prefix}#{$state});
+        }
+
+        &.active::before {
+            background-color: var(--#{$prefix}#{$state});
+        }
+    }
+}
+
+.feature-btn {
+    .green-circle {
+        height: 6px;
+        width: 6px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.width {
+    max-width: 36rem;
+
+    .list-style {
+        list-style-type: disc;
+    }
+
+    .time-line {
+        padding-bottom: 1.5rem;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: .5rem;
+            left: 1rem;
+            bottom: -.5rem;
+            width: .125rem;
+            margin: 1.875rem 0 1rem 0;
+            background-color: $gray-200;
+        }
+    }
+}

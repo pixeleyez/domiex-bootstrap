@@ -1,0 +1,402 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Pagination" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Basic Pagination -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Basic Pagination</h6>
+                </div>
+                <div class="card-body">
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-primary d-flex gap-2">
+                            <li class="page-item disabled">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                    <i data-lucide="chevron-left" class="size-5"></i>
+                                    <p>Prev</p>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                            <li class="page-item" aria-current="page">
+                                <a class="page-link rounded-2 page-number" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">10</a></li>
+                            <li class="page-item">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1" href="#">
+                                    <p>Next</p>
+                                    <i data-lucide="chevron-right" class="size-5"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-success d-flex gap-2">
+                            <li class="page-item">
+                                <a href="#!" class="page-link rounded-pill d-flex align-items-center gap-1">
+                                    <i data-lucide="chevron-left" class="size-5"></i>
+                                    <p>Prev</p>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link page-number rounded-pill" href="#">1</a></li>
+                            <li class="page-item active" aria-current="page">
+                                <a class="page-link rounded-pill page-number" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link page-number rounded-pill" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-pill" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-pill" href="#">10</a></li>
+                            <li class="page-item">
+                                <a class="page-link rounded-pill d-flex align-items-center gap-1" href="#">
+                                    <p>Next</p>
+                                    <i data-lucide="chevron-right" class="size-5"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modern Pagination -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Modern Pagination</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-4">
+                        <nav aria-label="...">
+                            <ul class="pagination pagination-primary">
+                                <li class="page-item">
+                                    <a href="#!" class="page-link page-number pagination-icon">
+                                        <i data-lucide="chevron-left" class="size-5"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link link-dark" href="#"><b class="fw-medium text-black">04 </b>/ 24</a></li>
+                                <li class="page-item">
+                                    <a class="page-link page-number pagination-icon" href="#">
+                                        <i data-lucide="chevron-right" class="size-5"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <nav aria-label="...">
+                            <ul class="pagination pagination-primary">
+                                <li  class="page-item">
+                                    <a href="#!" class="page-link page-number pagination-icon">
+                                        <i data-lucide="chevron-left" class="size-5"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link link-dark" href="#"><b class="fw-medium text-black">04 </b>/ 24</a></li>
+                                <li class="page-item">
+                                    <a class="page-link page-number pagination-icon" href="#">
+                                        <i data-lucide="chevron-right" class="size-5"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="d-flex flex-wrap gap-4">
+                        <nav aria-label="...">
+                            <ul class="pagination modern-primary">
+                                <li class="page-item">
+                                    <a href="#!" class="page-link page-number">
+                                        <i data-lucide="chevron-left" class="size-5"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#"><b class="text-white fw-medium">04 </b>/ 24</a></li>
+                                <li class="page-item">
+                                    <a class="page-link page-number" href="#">
+                                        <i data-lucide="chevron-right" class="size-5"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <nav aria-label="...">
+                            <ul class="pagination modern-success">
+                                <li href="#!" class="page-item">
+                                    <a class="page-link page-number">
+                                        <i data-lucide="chevron-left" class="size-5"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#"><b class="text-white fw-medium">04 </b>/ 24</a></li>
+                                <li class="page-item">
+                                    <a class="page-link page-number" href="#">
+                                        <i data-lucide="chevron-right" class="size-5"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flush Pagination -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Basic Pagination</h6>
+                </div>
+                <div class="card-body">
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-primary flush-primary d-flex gap-2">
+                            <li class="page-item">
+                                <a href="#!" class="page-link rounded-2 d-flex align-items-center gap-1">
+                                    <i data-lucide="chevron-left" class="size-5"></i>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                            <li class="page-item" aria-current="page">
+                                <a class="page-link rounded-2 page-number" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">10</a></li>
+                            <li class="page-item">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1" href="#">
+                                    <i data-lucide="chevron-right" class="size-5"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-secondary flush-secondary d-flex gap-2">
+                            <li class="page-item">
+                                <a href="#!" class="page-link rounded-pill d-flex align-items-center gap-1">
+                                    <i data-lucide="chevron-left" class="size-5"></i>
+                                    <p>Prev</p>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link page-number rounded-pill" href="#">1</a></li>
+                            <li class="page-item active" aria-current="page">
+                                <a class="page-link rounded-pill page-number" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link page-number rounded-pill" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-pill" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-pill" href="#">10</a></li>
+                            <li class="page-item">
+                                <a class="page-link rounded-pill d-flex align-items-center gap-1" href="#">
+                                    <p>Next</p>
+                                    <i data-lucide="chevron-right" class="size-5"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- Size Pagination -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Basic Pagination</h6>
+                </div>
+                <div class="card-body">
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-primary pagination-xs d-flex gap-2">
+                            <li class="page-item disabled">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                    <i data-lucide="chevron-left" class="size-5"></i>
+                                    <p>Prev</p>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                            <li class="page-item" aria-current="page">
+                                <a class="page-link rounded-2 page-number" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">10</a></li>
+                            <li class="page-item">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1" href="#">
+                                    <p>Next</p>
+                                    <i data-lucide="chevron-right" class="size-5"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-primary pagination-sm d-flex gap-2">
+                            <li class="page-item disabled">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                    <i data-lucide="chevron-left" class="size-5"></i>
+                                    <p>Prev</p>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                            <li class="page-item" aria-current="page">
+                                <a class="page-link rounded-2 page-number" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">10</a></li>
+                            <li class="page-item">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1" href="#">
+                                    <p>Next</p>
+                                    <i data-lucide="chevron-right" class="size-5"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-primary pagination-md d-flex gap-2">
+                            <li class="page-item disabled">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                    <i data-lucide="chevron-left" class="size-5"></i>
+                                    <p>Prev</p>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                            <li class="page-item" aria-current="page">
+                                <a class="page-link rounded-2 page-number" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">10</a></li>
+                            <li class="page-item">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1" href="#">
+                                    <p>Next</p>
+                                    <i data-lucide="chevron-right" class="size-5"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-primary d-flex gap-2">
+                            <li class="page-item disabled">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                    <i data-lucide="chevron-left" class="size-5"></i>
+                                    <p>Prev</p>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                            <li class="page-item" aria-current="page">
+                                <a class="page-link rounded-2 page-number" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">10</a></li>
+                            <li class="page-item">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1" href="#">
+                                    <p>Next</p>
+                                    <i data-lucide="chevron-right" class="size-5"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-primary pagination-xl d-flex gap-2">
+                            <li class="page-item disabled">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                    <i data-lucide="chevron-left" class="size-5"></i>
+                                    <p>Prev</p>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                            <li class="page-item" aria-current="page">
+                                <a class="page-link rounded-2 page-number" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">10</a></li>
+                            <li class="page-item">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1" href="#">
+                                    <p>Next</p>
+                                    <i data-lucide="chevron-right" class="size-5"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- Light Pagination -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Light Pagination</h6>
+                </div>
+                <div class="card-body">
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-primary light-primary p-2 gap-2">
+                            <li class="page-item">
+                                <a class="page-link page-number d-flex align-items-center gap-1">
+                                    <i data-lucide="chevron-left" class="size-5"></i>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                            <li class="page-item" aria-current="page">
+                                <a class="page-link page-number rounded-2" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">10</a></li>
+                            <li class="page-item">
+                                <a class="page-link page-number d-flex align-items-center gap-1 " href="#">
+                                    <i data-lucide="chevron-right" class="size-5"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-primary light-primary p-2 gap-2 rounded-pill">
+                            <li class="page-item">
+                                <a class="page-link page-number d-flex align-items-center gap-1">
+                                    <i data-lucide="chevron-left" class="size-5"></i>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link page-number rounded-pill" href="#">1</a></li>
+                            <li class="page-item" aria-current="page">
+                                <a class="page-link page-number rounded-pill" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link page-number rounded-pill" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-pill" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link page-number rounded-pill" href="#">10</a></li>
+                            <li class="page-item">
+                                <a class="page-link page-number d-flex align-items-center gap-1 " href="#">
+                                    <i data-lucide="chevron-right" class="size-5"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

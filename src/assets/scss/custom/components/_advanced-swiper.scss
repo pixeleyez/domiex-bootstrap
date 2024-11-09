@@ -1,0 +1,19 @@
+@each $state in map-keys($theme-colors) {
+    .swiper-#{$state} {
+        .swiper-pagination-bullet {
+            background: var(--#{$prefix}#{$state});
+            height: 0.75rem;
+            width: 0.75rem;
+        }
+        .swiper-pagination-bullet-active{
+            background: var(--#{$prefix}body-bg);
+            border: 3px solid var(--#{$prefix}#{$state});
+        }
+    }
+}
+.btn-primary{
+    &:hover{
+        transform: translateY(-3px);
+        transition: $transition-base;
+    }
+}

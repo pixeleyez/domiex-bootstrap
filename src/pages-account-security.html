@@ -1,0 +1,273 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    <div class="position-relative mb-6">
+        <div class="position-relative overflow-hidden rounded bg-primary bg-opacity-10 custom-box">
+            <div class="bordered-square bordered-position1 border-color-primary size-96"></div>
+            <div class="bordered-square bordered-position2 border-color-success size-80"></div>
+            <div class="bordered-square bordered-position3 border-color-pink size-40"></div>
+        </div>
+        <div class="text-center">
+            <div class="position-relative d-inline-block mx-auto custom-container">
+                <div class="position-relative p-1 rounded-circle custom-gradient custom-image-container">
+                    <img src="assets/images/avatar/user-17.png" alt="" class="mx-auto custom-image rounded-pill size-28 border border-4 border-white">
+                </div>
+                <div class="position-absolute border border-white rounded-pill bg-success custom-small-circle size-4"></div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center gap-1">
+                <h5 class="mt-2 mb-1">Sophia Mia</h5>
+                <i data-lucide="badge-check" class="size-5 icon-primary"></i>
+            </div>
+            <ul class="text-dark d-flex align-items-center gap-2 justify-content-center m-0">
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="building-2" class="size-4"></i>
+                    <span>UI / UX Designer</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="map-pin" class="size-4"></i>
+                    <span>Argentina</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="calendar-days" class="size-4"></i>
+                    <span>24 April, 2024</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-settings.html">
+                    <i data-lucide="user-round" class="size-4 me-1"></i>
+                    Account
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium active" aria-current="page" href="pages-account-security.html">
+                    <i data-lucide="shield-check" class="size-4 me-1"></i>
+                    Security
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-billing-plan.html">
+                    <i data-lucide="gem" class="size-4 me-1"></i>
+                    Billing & Plans
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-notification.html">
+                    <i data-lucide="bell" class="size-4 me-1"></i>
+                    Notification
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-statements.html">
+                    <i data-lucide="list-tree" class="size-4 me-1"></i>
+                    Statements
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-logs.html">
+                    <i data-lucide="log-out" class="size-4 me-1"></i>
+                    Logs
+                </a>
+            </li>
+        </ul>
+    </div>
+    <h6 class="mt-5 mb-1">Security</h6>
+    <p class="mb-5"><a href="#!">Learn More</a> about securing your account from external and unknown intrusion.</p>
+    <div class="card">
+        <div class="card-body row">
+            <div class="col-9">
+                <h6 class="mb-1">Account Security</h6>
+                <p class="mb-2">Secured Account means any account for which the related obligor has pledged assets or made a cash collateral deposit as security for payment of receivables that arise in such an account.</p>
+                <a href="#!">
+                    Learn More
+                    <i data-lucide="move-right" class="size-4"></i>
+                </a>
+            </div>
+            <div class="col-3">
+                <img src="assets/images/others/security.png" alt="" class="size-24 mx-auto d-block">
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body d-flex gap-3">
+            <div class="flex-shrink-0">
+                <div class="d-flex gap-2 align-items-center">
+                    <img src="assets/images/others/google.png" alt="" class="size-5">
+                    <h6 class="mb-0">Google Authentication</h6>
+                </div>
+            </div>
+            <div>
+                <p class="mb-3">If you set up 2-Step Verification, you can use the Google Authenticator app to generate codes. You can still generate codes without internet connection or mobile service. Learn more about <a href="#!">2-Step Verification</a></p>
+                <span class="badge bg-success-subtle text-success  border border-success-subtle">
+                    <i data-lucide="circle-check-big" class="size-3 me-1"></i>
+                    <span>Connected</span>
+                </span>
+            </div>
+
+            <div class="flex-shrink-0">
+                <button class="btn btn-light text-dark" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Enable</button>
+            </div>
+            <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title" id="exampleModalLabel">Set up two-factor authentication</h6>
+                            <button type="button" class="btn-close size-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="text-dark">To authorize transactions, kindly scan this QR code with your Google Authenticator App and then enter the verification code provided below.</p>
+                            <div class="p-4 mb-3">
+                                <img src="assets/images/others/qr.png" alt="" class="size-28 mx-auto d-block">
+                            </div>
+                            <div>
+                                <div x-data="{ inputValues: ['', '', '', '', '', ''] }" class="d-flex justify-content-center gap-3">
+                                    <template x-for="(value, index) in inputValues" :key="index">
+                                        <input type="text" x-model="inputValues[index]" x-bind:value="value" x-on:input="if (!$event.target.value.match(/^\d*$/)) $event.target.value = $event.target.value.replace(/[^\d]/g, '')" class="form-control pattern-input text-center fs-3 fw-bold bg-light rounded-1 p-2 size-14" maxlength="1" pattern="\d*" :maxlength="1" />
+                                    </template>
+                                </div>
+                                <div class="mt-5">
+                                    <button class="btn btn-primary w-100" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Verify Account</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second Modal -->
+            <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="text-center mb-5">
+                                <h6 class="mb-2">Please check your email</h6>
+                                <p class="mb-2">We're sent a code to <b>sophiamia@pixeleyez.com</b></p>
+                            </div>
+                            <form>
+                                <div x-data="{ inputValues: ['', '', '', ''] }" class="d-flex justify-content-center gap-3">
+                                    <template x-for="(value, index) in inputValues" :key="index">
+                                        <input type="text" x-model="inputValues[index]" x-bind:value="value" x-on:input="if (!$event.target.value.match(/^\d*$/)) $event.target.value = $event.target.value.replace(/[^\d]/g, '')" class="form-control pattern-input text-center fs-3 fw-bold bg-light rounded-1 p-2 size-14" maxlength="1" pattern="\d*" :maxlength="1" />
+                                    </template>
+                                </div>
+                                <div class="mt-5 d-flex justify-content-center gap-2">
+                                    <button class="btn btn-active-danger w-100" data-bs-dismiss="modal">Cancel</button>
+                                    <button class="btn btn-primary w-100">Verify</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h6 class="card-title">Update Password</h6>
+        </div>
+        <div class="card-body">
+            <p class="mb-3">To change your password, please enter your current password.</p>
+            <form action="#!">
+                <div x-data="{ show: false }" class="mb-5">
+                    <label for="passwordInput" class="form-label fw-medium">Current Password</label>
+                    <div class="position-relative password">
+                        <input type="password" id="passwordInput" x-bind:type="show ? 'text' : 'password'" class="form-control pe-8" placeholder="Enter current password" required>
+                        <div type="button" @click="show = !show" class="eyes-btn" id="button-addon2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" x-show="show" style="display: none;">
+                                <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye-off" x-show="!show">
+                                <path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"></path>
+                                <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"></path>
+                                <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"></path>
+                                <path d="m2 2 20 20"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div x-data="{ show: false }" class="mb-5">
+                    <label for="passwordInput" class="form-label fw-medium">New Password</label>
+                    <div class="position-relative password">
+                        <input type="password" id="passwordInput" x-bind:type="show ? 'text' : 'password'" class="form-control pe-8" placeholder="New password" required>
+                        <div type="button" @click="show = !show" class="eyes-btn" id="button-addon2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" x-show="show" style="display: none;">
+                                <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye-off" x-show="!show">
+                                <path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"></path>
+                                <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"></path>
+                                <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"></path>
+                                <path d="m2 2 20 20"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div x-data="{ show: false }" class="mb-5">
+                    <label for="passwordInput" class="form-label fw-medium">Confirm New Password</label>
+                    <div class="position-relative password">
+                        <input type="password" id="passwordInput" x-bind:type="show ? 'text' : 'password'" class="form-control pe-8" placeholder="Confirm password" required>
+                        <div type="button" @click="show = !show" class="eyes-btn" id="button-addon2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" x-show="show" style="display: none;">
+                                <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye-off" x-show="!show">
+                                <path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"></path>
+                                <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"></path>
+                                <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"></path>
+                                <path d="m2 2 20 20"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-primary">Update Password</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/pages/ui/pages-account-settings.init.js"></script>
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

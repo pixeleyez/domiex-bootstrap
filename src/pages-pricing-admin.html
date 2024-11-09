@@ -1,0 +1,264 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Pricing" sub-title="Pages" }}
+
+    <div class="row">
+        <div class="col">
+            <div class="card position-relative overflow-hidden">
+                <div class="position-absolute top-0 start-0 end-0 bottom-0 opacity-90">
+                    <!-- Optional: Add any background element or gradient here -->
+                </div>
+                <div class="card-body position-relative">
+                    <h6 class="text-uppercase fs-sm">Active Plan</h6>
+                    <div class="d-flex align-items-center justify-content-center my-10">
+                        <div class="text-center">
+                            <i data-lucide="trending-up" class="text-success size-7"></i>
+                            <h3 class="mb-0 fs-2xl">+35.9%</h3>
+                        </div>
+                    </div>
+                    <h6 class="mb-0">
+                        <i data-lucide="user-round" class="size-4 me-1"></i>
+                        9725
+                    </h6>
+                </div>
+            </div>
+
+        </div>
+        <div class="col">
+            <div class="card position-relative overflow-hidden">
+                <div class="position-absolute top-0 start-0 end-0 bottom-0 opacity-90">
+                    <!-- Optional: Add any background element or gradient here -->
+                </div>
+                <div class="card-body position-relative">
+                    <h6 class="text-uppercase fs-sm">UnActive Plan</h6>
+                    <div class="d-flex align-items-center justify-content-center my-10">
+                        <div class="text-center">
+                            <i data-lucide="trending-down" class="text-danger size-7"></i>
+                            <h3 class="mb-0 fs-2xl">-6.4%</h3>
+                        </div>
+                    </div>
+                    <h6 class="mb-0">
+                        <i data-lucide="user-round" class="size-4 me-1"></i>
+                        1020
+                    </h6>
+                </div>
+            </div>
+
+        </div>
+        <div class="col">
+            <div class="card position-relative overflow-hidden">
+                <div class="position-absolute top-0 start-0 end-0 bottom-0 opacity-90">
+                    <!-- Optional: Add any background element or gradient here -->
+                </div>
+                <div class="card-body position-relative">
+                    <h6 class="text-uppercase fs-sm">Regular Plan</h6>
+                    <div class="d-flex align-items-center justify-content-center my-10">
+                        <div class="text-center">
+                            <i data-lucide="trending-up" class="text-success size-7"></i>
+                            <h3 class="mb-0 fs-2xl">+6.3%</h3>
+                        </div>
+                    </div>
+                    <h6 class="mb-0">
+                        <i data-lucide="user-round" class="size-4 me-1"></i>
+                        1450
+                    </h6>
+                </div>
+            </div>
+
+        </div>
+        <div class="col">
+            <div class="card position-relative overflow-hidden">
+                <div class="position-absolute top-0 start-0 end-0 bottom-0 opacity-90">
+                    <!-- Optional: Add any background element or gradient here -->
+                </div>
+                <div class="card-body position-relative">
+                    <h6 class="text-uppercase fs-sm">Professional Plan</h6>
+                    <div class="d-flex align-items-center justify-content-center my-10">
+                        <div class="text-center">
+                            <i data-lucide="trending-up" class="text-success size-7"></i>
+                            <h3 class="mb-0 fs-2xl">+10.7%</h3>
+                        </div>
+                    </div>
+                    <h6 class="mb-0">
+                        <i data-lucide="user-round" class="size-4 me-1"></i>
+                        4784
+                    </h6>
+                </div>
+            </div>
+
+        </div>
+        <div class="col">
+            <div class="card position-relative overflow-hidden">
+                <div class="position-absolute top-0 start-0 end-0 bottom-0 opacity-90">
+                    <!-- Optional: Add any background element or gradient here -->
+                </div>
+                <div class="card-body position-relative">
+                    <h6 class="text-uppercase fs-sm">Enterprise Plan</h6>
+                    <div class="d-flex align-items-center justify-content-center my-10">
+                        <div class="text-center">
+                            <i data-lucide="trending-up" class="text-success size-7"></i>
+                            <h3 class="mb-0 fs-2xl">+9.6%</h3>
+                        </div>
+                    </div>
+                    <h6 class="mb-0">
+                        <i data-lucide="user-round" class="size-4 me-1"></i>
+                        2647
+                    </h6>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <h6 class="mt-2 mb-5">All Users</h6>
+    <div x-data="{
+        users: [
+            { id: '01', name: 'Barbara Freeman', startDate: '03 Dec, 2023', endDate: '03 Feb, 2024', planType: 'Professional', totalPayment: '$39.99', status: 'Successfully', statusClass: 'bg-success' },
+            { id: '02', name: 'Paula Dennis', startDate: '25 Jan, 2024', endDate: '25 April, 2024', planType: 'Enterprise', totalPayment: '$59.99', status: 'Failed', statusClass: 'bg-danger' },
+            { id: '03', name: 'Martin Wexler', startDate: '10 Jan, 2024', endDate: '10 Jan, 2025', planType: 'Enterprise', totalPayment: '$499.99', status: 'Successfully', statusClass: 'bg-success' },
+            { id: '04', name: 'Jasmine Moore', startDate: '16 Feb, 2024', endDate: '16 Jun, 2024', planType: 'Basic', totalPayment: '$29.99', status: 'Pending', statusClass: 'bg-warning' },
+            { id: '05', name: 'Josh Davison', startDate: '18 Feb, 2024', endDate: '18 Jun, 2024', planType: 'Enterprise', totalPayment: '$59.99', status: 'Successfully', statusClass: 'bg-success' },
+            { id: '06', name: 'Grace Gibbons', startDate: '03 April, 2024', endDate: '03 Sep, 2024', planType: 'Professional', totalPayment: '$49.99', status: 'Successfully', statusClass: 'bg-success' },
+            { id: '07', name: 'Anthony Dennis', startDate: '16 Jun, 2024', endDate: '16 Jun, 2025', planType: 'Professional', totalPayment: '$399.99', status: 'Pending', statusClass: 'bg-warning' },
+            { id: '08', name: 'Olivia Stephens', startDate: '03 Dec, 2023', endDate: '03 Feb, 2024', planType: 'Professional', totalPayment: '$39.99', status: 'Successfully', statusClass: 'bg-success' },
+            { id: '09', name: 'David Brown', startDate: '25 Jan, 2024', endDate: '25 April, 2024', planType: 'Enterprise', totalPayment: '$59.99', status: 'Failed', statusClass: 'bg-danger' },
+            { id: '10', name: 'Jennifer Bolton', startDate: '03 Jan, 2024', endDate: '03 Jun, 2024', planType: 'Professional', totalPayment: '$39.99', status: 'Successfully', statusClass: 'bg-success' }
+        ]
+    }" class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Plan Type</th>
+                    <th>Total Payment</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template x-for="user in users" :key="user.id">
+                    <tr>
+                        <td><a href="#!" class="text-black">#<span x-text="user.id"></span></a></td>
+                        <td x-text="user.name"></td>
+                        <td x-text="user.startDate"></td>
+                        <td x-text="user.endDate"></td>
+                        <td x-text="user.planType"></td>
+                        <td x-text="user.totalPayment"></td>
+                        <td>
+                            <!-- Corrected badge logic for user status -->
+                            <span :class="{
+                                'badge bg-danger-subtle text-danger border border-danger-subtle': user.status === 'Failed',
+                                'badge bg-warning-subtle text-warning border border-warning-subtle': user.status === 'Pending',
+                                'badge bg-success-subtle text-success border border-success-subtle': user.status === 'Successfully'
+                            }" x-text="user.status"></span>
+                        </td>
+                        <td class="whitespace-nowrap">
+                            <div class="dropdown">
+                                <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="ellipsis" class="lucide lucide-ellipsis size-5">
+                                        <circle cx="12" cy="12" r="1"></circle>
+                                        <circle cx="19" cy="12" r="1"></circle>
+                                        <circle cx="5" cy="12" r="1"></circle>
+                                    </svg>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" class="lucide lucide-eye inline-block ltr:mr-2 rtl:ml-2 size-4">
+                                                <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                                                <circle cx="12" cy="12" r="3"></circle>
+                                            </svg> <span>Overview</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="pencil" class="lucide lucide-pencil inline-block ltr:mr-2 rtl:ml-2 size-4">
+                                                <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path>
+                                                <path d="m15 5 4 4"></path>
+                                            </svg> <span>Edit</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" class="lucide lucide-trash-2 inline-block ltr:mr-2 rtl:ml-2 size-4">
+                                                <path d="M3 6h18"></path>
+                                                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                                <line x1="10" x2="10" y1="11" y2="17"></line>
+                                                <line x1="14" x2="14" y1="11" y2="17"></line>
+                                            </svg> <span>Delete</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+    <div class="row mb-5">
+        <div class="col-6">
+            <p>Showing <b>07</b> of <b>19</b> Results</p>
+        </div>
+        <div class="col-6 justify-content-end d-flex">
+            <nav aria-label="...">
+                <ul class="pagination pagination-primary d-flex gap-2 mb-0">
+                    <li class="page-item disabled">
+                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                            <i data-lucide="chevron-left" class="size-5"></i>
+                            <p>Prev</p>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                    </li>
+                    <li class="page-item"><a class="page-link page-number rounded-2" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link page-number rounded-2" href="#">...</a></li>
+                    <li class="page-item"><a class="page-link page-number rounded-2" href="#">10</a></li>
+                    <li class="page-item">
+                        <a class="page-link rounded-2 d-flex align-items-center gap-1" href="#">
+                            <p>Next</p>
+                            <i data-lucide="chevron-right" class="size-5"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>  
+
+
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

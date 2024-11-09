@@ -1,0 +1,61 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Images Annotation" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Basic -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <div class="position-relative " id="annotation-area">
+                        <img src="assets/images/gallery/img-02.jpg" class="w-100 rounded" id="annotated-image">
+                        <div>
+                            <div class="marker size-5 bg-danger rounded-pill animate-ping border-0"></div>
+                            <button class="marker bg-danger rounded-pill"></button>
+                        </div>
+                        <div class="comment-box">
+                            <p class="px-4 py-2">Beautiful Fabulous!</p>
+                            <p class="px-4 py-2">Nice Awesome Photo!</p>
+                            <input type="text" placeholder="Type comment" class="border-0" id="comment-input">
+                        </div>    
+                    </div>
+                    <i class="mt-2 text-dark">
+                        Add comments to the existing marker or click anywhere on the image to add new markers.
+                    </i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/pages/ui/image-annotation.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

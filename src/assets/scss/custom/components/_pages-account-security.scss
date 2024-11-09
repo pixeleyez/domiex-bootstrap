@@ -1,0 +1,9 @@
+.form-control.pattern-input {
+    border: none;
+    &:focus {
+        border: 1px solid $primary-400 !important;
+        box-shadow: 0 0 0 0.1375rem rgba(38, 143, 255, 0.10) !important;
+        background-color: white !important;
+
+    }
+}

@@ -1,0 +1,211 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="FAQ's" sub-title="Pages" }}
+
+    <div class="card">
+        <div class="card-header">
+            <h6 class="mb-0">Frequently asked questions (FAQ)</h6>
+        </div>
+        <div class="card-body">
+            <p class="mb-4">They serve as a self-service tool for customers to easily find the information they need without contacting customer support.</p>
+            <div class="row row-cols-2 align-items-center">
+                <div class="accordion accordion-boxed accordion-primary d-flex flex-column gap-3" id="accordionGreenSubtle">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button shadow-none  d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#greensubtle-collapseOne" aria-expanded="true" aria-controls="greensubtle-collapseOne">
+                                <span class="fw-medium"> Why do we use Tailwind CSS?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                        </h2>
+                        <div id="greensubtle-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionGreenSubtle">
+                            <p class="accordion-body py-3 px-3">Tailwind CSS is used to design and style web pages fast and Responsive. Rapid Development, Highly Customizable, Reduced CSS File Size, Great Documentation, and Community Support are the main reasons for using Tailwind CSS.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-bottom-0">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button shadow-none collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#greensubtle-collapseTwo" aria-expanded="false" aria-controls="greensubtle-collapseTwo">
+                                <span class="fw-medium">Can we change the base font-family in Tailwind config?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                        </h2>
+                        <div id="greensubtle-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionGreenSubtle">
+                            <p class="accordion-body py-3 px-3">Yes, we can change the base <code class="text-pink">font-family</code> in Tailwind <code class="text-pink">config.</code> To adjust the main font style in Tailwind CSS, you can modify it by making changes in the “theme” part of your configuration file (<code class="text-pink">tailwind.config.js</code>). Just open that file, find the theme section, and add or update the fontFamily setting. We can also Change the font-family in the Tailwind config with different techniques Changing base font-family, Adding a new font family, Removing font family.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-bottom-0">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button shadow-none collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#greensubtle-collapseThree" aria-expanded="false" aria-controls="greensubtle-collapseThree">
+                                <span class="fw-medium">How to create a form with Tailwind CSS?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                        </h2>
+                        <div id="greensubtle-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionGreenSubtle">
+                            <div class="accordion-body py-3 px-3">Tailwind CSS, offers Tailwind forms as plugins that provide a foundational reset for form styles. Install TailwindCSS by writing the following command. We can also use utility classes to make a form with Tailwind CSS, use the easy-to-apply classes for backgrounds, borders, shadows, etc. Start by creating the form element and use the space-y-{n} class to add vertical spacing between the form controls.”</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-bottom-0">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button shadow-none collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#greensubtle-collapseFour" aria-expanded="false" aria-controls="greensubtle-collapseFour">
+                                <span class="fw-medium">What is Tailwind CSS, and what is Utility-First CSS?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                        </h2>
+                        <div id="greensubtle-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionGreenSubtle">
+                            <div class="accordion-body py-3 px-3">
+                                <p class="mb-2">Tailwind CSS is a utility-first CSS framework designed for rapid UI development. Instead of providing pre-built components, it offers low-level utility classes that let you build custom designs without ever leaving your HTML.</p>
+
+                                <p>Utility-first CSS is an approach where you use small, single-purpose classes to build your user interface. These utility classes are composed to create complex designs directly in the HTML, rather than relying on custom CSS. This approach favors composition over inheritance, making it easier to maintain and scale your codebase.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-bottom-0">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button shadow-none collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#greensubtle-collapseSix" aria-expanded="false" aria-controls="greensubtle-collapseSix">
+                                <span class="fw-medium">Why do we use Tailwind CSS?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                        </h2>
+                        <div id="greensubtle-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionGreenSubtle">
+                            <p class="accordion-body py-3 px-3">Tailwind CSS is used to design and style web pages fast and Responsive. Rapid Development, Highly Customizable, Reduced CSS File Size, Great Documentation, and Community Support are the main reasons for using Tailwind CSS.
+                        </div>
+                    </div>
+                    <div class="accordion-item border-bottom-0">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button shadow-none collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#greensubtle-collapseSeven" aria-expanded="false" aria-controls="greensubtle-collapseSeven">
+                                <span class="fw-medium">Is Tailwind CSS open-source (FREE to use)?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                        </h2>
+                        <div id="greensubtle-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionGreenSubtle">
+                            <p class="accordion-body py-3 px-3">Tailwind CSS is an open-source project, available for free usage and utility-first CSS framework that provides responsiveness.
+                        </div>
+                    </div>
+                    <div class="accordion-item border-bottom-0">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button shadow-none collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#greensubtle-collapseEight" aria-expanded="false" aria-controls="greensubtle-collapseEight">
+                                <span class="fw-medium">How to integrate Tailwind CSS into the HTML file?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                        </h2>
+                        <div id="greensubtle-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionGreenSubtle">
+                            <p class="accordion-body py-3 px-3">We can easily integrate the tailwind CSS to the project via CDN links and by installing it from npm or yarn.
+                        </div>
+                    </div>
+                    <div class="accordion-item border-bottom-0">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button shadow-none collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#greensubtle-collapseNinght" aria-expanded="false" aria-controls="greensubtle-collapseNinght">
+                                <span class="fw-medium">Do Tailwind CSS 3 Classes Override Previous Classes?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                        </h2>
+                        <div id="greensubtle-collapseNinght" class="accordion-collapse collapse" data-bs-parent="#accordionGreenSubtle">
+                            <p class="accordion-body py-3 px-3">Tailwind CSS is designed to be a low-level utility-first framework, which means that classes are not automatically overridden by default. This make the styling process for form elements simple and allowing easy customization with utilities.
+                        </div>
+                    </div>
+                    <div class="accordion-item border-bottom-0">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button shadow-none collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#greensubtle-collapseTen" aria-expanded="false" aria-controls="greensubtle-collapseTen">
+                                <span class="fw-medium">How to make text bold in Tailwind CSS?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                        </h2>
+                        <div id="greensubtle-collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionGreenSubtle">
+                            <p class="accordion-body py-3 px-3">For achieving the bold text we can easily add utility class font-bold.
+                        </div>
+                    </div>
+                    <div class="accordion-item border-bottom-0">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button shadow-none collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#greensubtle-collapseEleven" aria-expanded="false" aria-controls="greensubtle-collapseEleven">
+                                <span class="fw-medium">How to center both horizontally and vertically?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                        </h2>
+                        <div id="greensubtle-collapseEleven" class="accordion-collapse collapse" data-bs-parent="#accordionGreenSubtle">
+                            <p class="accordion-body py-3 px-3">We can easily add utility class self-center.
+                        </div>
+                    </div>
+                    <div class="accordion-item border-bottom-0">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button shadow-none collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#greensubtle-collapseTweleve" aria-expanded="false" aria-controls="greensubtle-collapseTweleve">
+                                <span class="fw-medium">What are the Empty elements in HTML?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                        </h2>
+                        <div id="greensubtle-collapseTweleve" class="accordion-collapse collapse" data-bs-parent="#accordionGreenSubtle">
+                            <p class="accordion-body py-3 px-3">The empty elements in HTML are the elements that don’t require and closing tag followed by the opening tag. These elements are also known as self-closing elements. Example: <img>, <input>, <br>,
+                                <hr> etc.
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="assets/images/auth/faq.png" alt="" class="mx-auto">
+                    <h5 class="mt-5 mb-1">Frequently asked questions (FAQ)</h5>
+                    <p class="mb-5">Cleaning up common queries about domiex.</p>
+                    <div class="d-flex gap-3 justify-content-center">
+                        <a href="pages-contact-us.html" class="btn btn-secondary">
+                            <i data-lucide="phone" class="size-4 me-2"></i>Contact US
+                        </a>
+                        <a href="pages-help-center.html" class="btn btn-light text-dark">
+                            <i data-lucide="headset" class="size-4 me-2"></i>Help Center
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h6 class="mb-0">Video Tutorial by Domiex</h6>
+        </div>
+        <div class="card-body">
+            <div class="row row-cols-3">
+                <div>
+                    <div class="ratio ratio-16x9">
+                        <iframe class="rounded-4" src="https://www.youtube.com/embed/DxcJbrs6rKk?si=r9xt6eHRj0kayf8d" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div>
+                    <div class="ratio ratio-16x9">
+                        <iframe class="rounded-4" src="https://www.youtube.com/embed/eSzNNYk7nVU?si=EHJjJ8BjAsp6yMgx" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div>
+                    <div class="ratio ratio-16x9">
+                        <iframe class="rounded-4" src="https://www.youtube.com/embed/MAtaT8BZEAo?si=iyOi2lREUWB35ct6" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

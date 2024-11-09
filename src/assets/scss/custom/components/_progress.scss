@@ -1,0 +1,42 @@
+.progress-animate {
+    animation: shimmer 3s ease-out infinite;
+    border-radius: .25rem;
+    background-color: #fff3;
+    @include position(absolute, 0, 0, 0, 0);
+    height: 1rem;
+    transform: translateX(-100%);
+}
+
+    @each $state in map-keys($theme-colors) {
+        .progress-gradient {
+            background: var(--#{$prefix}progress-bar-bg);
+        }
+
+        .progress-gradient-primary {
+            --#{$prefix}progress-bar-bg: linear-gradient(90deg, var(--#{$prefix}primary), var(--#{$prefix}success));
+        }
+
+        .progress-gradient-info {
+            --#{$prefix}progress-bar-bg: linear-gradient(90deg,  var(--#{$prefix}primary), var(--#{$prefix}info-text-emphasis), var(--#{$prefix}info));
+        }
+
+        .progress-gradient-indigo {
+            --#{$prefix}progress-bar-bg: linear-gradient(90deg, var(--#{$prefix}indigo), var(--#{$prefix}secondary));
+        }
+    }
+
+    $progress-heights: (
+    1: 0.5rem,
+    2: 0.625rem,
+    3: 0.75rem,
+    4: 1rem,
+    5: 1.25rem,
+    6: 1.5rem,
+    7: 2rem
+);
+
+@each $index, $height in $progress-heights {
+    .progress-#{$index} {
+        height: $height;
+    }
+}

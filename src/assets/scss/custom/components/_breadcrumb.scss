@@ -1,0 +1,29 @@
+.breadcrumb-item {
+    font-weight: 500;
+
+    a {
+        color: $gray-500;
+    }
+    &.active {
+        color: $gray-900;
+    }
+}
+    .double-arrow .breadcrumb-item + .breadcrumb-item::before {
+        float: left;
+        color: var(--pe-breadcrumb-divider-color);
+        content: "\f2e4";
+        font-family: "RemixIcon";
+    }
+    .single-arrow .breadcrumb-item + .breadcrumb-item::before {
+        float: left;
+        color: var(--pe-breadcrumb-divider-color);
+        content: "\ea6e";
+        font-family: "RemixIcon";
+    }
+    .dash-arrow .breadcrumb-item + .breadcrumb-item::before {
+        float: left;
+        color: var(--pe-breadcrumb-divider-color);
+        content: "\F1AF";
+        font-family: "RemixIcon";
+    }
+

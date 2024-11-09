@@ -1,0 +1,240 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Dropdown" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Base Example -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Base Dropdown</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-4">
+                        <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                            <button class="btn btn-light text-dark d-flex align-items-center gap-2" type="button" @click="open = !open" aria-expanded="open">
+                                <span>Dropdown Options</span>
+                                <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                            </button>
+                            <div x-show="open" style="display: none;" class="dropdown-menu show">
+                                <a class="dropdown-item" href="#">New Task</a>
+                                <a class="dropdown-item" href="#">Edit Task</a>
+                                <a class="dropdown-item text-danger" href="#">Delete Task</a>
+                            </div>
+                        </div>
+                        <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                            <button class="btn border-0 text-dark d-flex align-items-center gap-2" type="button" @click="open = !open" aria-expanded="open">
+                                <span>Dropdown Options</span>
+                                <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                            </button>
+                            <div x-show="open" style="display: none;" class="dropdown-menu show">
+                                <a class="dropdown-item" href="#">New Task</a>
+                                <a class="dropdown-item" href="#">Edit Task</a>
+                                <a class="dropdown-item text-danger" href="#">Delete Task</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Position Dropdown -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Base Dropdown</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-4">
+                        <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                            <button class="btn btn-light text-dark d-flex align-items-center gap-2" type="button" @click="open = !open" aria-expanded="open">
+                                <span>Dropdown Options</span>
+                                <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                            </button>
+                            <div x-show="open" style="display: none;" class="dropdown-menu show">
+                                <a class="dropdown-item" href="#">New Task</a>
+                                <a class="dropdown-item" href="#">Edit Task</a>
+                                <a class="dropdown-item text-danger" href="#">Delete Task</a>
+                            </div>
+                        </div>
+                        <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                            <button class="btn btn-light text-dark d-flex align-items-center gap-2" type="button" @click="open = !open" aria-expanded="open">
+                                <span>Right Dropdown</span>
+                                <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                            </button>
+                            <div x-show="open" style="display: none;" class="dropdown-menu show position-absolute top-100 end-0">
+                                <a class="dropdown-item" href="#">New Task</a>
+                                <a class="dropdown-item" href="#">Edit Task</a>
+                                <a class="dropdown-item text-danger" href="#">Delete Task</a>
+                            </div>
+                        </div>
+                        <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                            <button class="btn btn-light text-dark d-flex align-items-center gap-2" type="button" @click="open = !open" aria-expanded="open">
+                                <span>Right Top Dropdown</span>
+                                <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                            </button>
+                            <div x-show="open" style="display: none;" class="dropdown-menu show position-absolute top-0 start-100">
+                                <a class="dropdown-item" href="#">New Task</a>
+                                <a class="dropdown-item" href="#">Edit Task</a>
+                                <a class="dropdown-item text-danger" href="#">Delete Task</a>
+                            </div>
+                        </div>
+                        <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                            <button class="btn btn-light text-dark d-flex align-items-center gap-2" type="button" @click="open = !open" aria-expanded="open">
+                                <span>Left Top Dropdown</span>
+                                <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                            </button>
+                            <div x-show="open" style="display: none;" class="dropdown-menu show position-absolute top-0 end-100">
+                                <a class="dropdown-item" href="#">New Task</a>
+                                <a class="dropdown-item" href="#">Edit Task</a>
+                                <a class="dropdown-item text-danger" href="#">Delete Task</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Colored Dropdown -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Colored Dropdown</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-4">
+                        <div class="d-flex flex-wrap gap-4">
+                            <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                                <button class="btn btn-primary d-flex align-items-center gap-2" type="button" @click="open = !open" aria-expanded="open">
+                                    <span>Primary Options</span>
+                                    <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                                </button>
+                                <div x-show="open" style="display: none;" class="dropdown-menu show dropdown-primary">
+                                    <a class="dropdown-item" href="#">New Task</a>
+                                    <a class="dropdown-item" href="#">Edit Task</a>
+                                    <a class="dropdown-item" href="#">Delete Task</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-4">
+                            <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                                <button class="btn btn-success d-flex align-items-center gap-2" type="button" @click="open = !open" aria-expanded="open">
+                                    <span>Success Options</span>
+                                    <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                                </button>
+                                <div x-show="open" style="display: none;" class="dropdown-menu show dropdown-success">
+                                    <a class="dropdown-item" href="#">New Task</a>
+                                    <a class="dropdown-item" href="#">Edit Task</a>
+                                    <a class="dropdown-item" href="#">Delete Task</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-4">
+                            <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                                <button class="btn btn-secondary d-flex align-items-center gap-2" type="button" @click="open = !open" aria-expanded="open">
+                                    <span>Secondary Options</span>
+                                    <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                                </button>
+                                <div x-show="open" style="display: none;" class="dropdown-menu show dropdown-secondary">
+                                    <a class="dropdown-item" href="#">New Task</a>
+                                    <a class="dropdown-item" href="#">Edit Task</a>
+                                    <a class="dropdown-item" href="#">Delete Task</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-4">
+                            <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                                <button class="btn btn-warning d-flex align-items-center gap-2" type="button" @click="open = !open" aria-expanded="open">
+                                    <span>Warning Options</span>
+                                    <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                                </button>
+                                <div x-show="open" style="display: none;" class="dropdown-menu show dropdown-warning">
+                                    <a class="dropdown-item" href="#">New Task</a>
+                                    <a class="dropdown-item" href="#">Edit Task</a>
+                                    <a class="dropdown-item" href="#">Delete Task</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-4">
+                            <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                                <button class="btn btn-info d-flex align-items-center gap-2" type="button" @click="open = !open" aria-expanded="open">
+                                    <span>Info Options</span>
+                                    <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                                </button>
+                                <div x-show="open" style="display: none;" class="dropdown-menu show dropdown-info">
+                                    <a class="dropdown-item" href="#">New Task</a>
+                                    <a class="dropdown-item" href="#">Edit Task</a>
+                                    <a class="dropdown-item" href="#">Delete Task</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-4">
+                            <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                                <button class="btn btn-danger d-flex align-items-center gap-2" type="button" @click="open = !open" aria-expanded="open">
+                                    <span>Danger Options</span>
+                                    <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                                </button>
+                                <div x-show="open" style="display: none;" class="dropdown-menu show dropdown-danger">
+                                    <a class="dropdown-item" href="#">New Task</a>
+                                    <a class="dropdown-item" href="#">Edit Task</a>
+                                    <a class="dropdown-item" href="#">Delete Task</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Dropdown -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Profile Dropdown</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                        <button class="btn btn-primary d-flex align-items-center gap-2" type="button" @click="open = !open" aria-expanded="open">
+                            <span>Profile</span>
+                            <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                        </button>
+                        <div x-show="open" style="display: none;" class="dropdown-menu show">
+                            <a class="dropdown-item" href="#">New Task</a>
+                            <a class="dropdown-item" href="#">Edit Task</a>
+                            <a class="dropdown-item text-danger" href="#">Delete Task</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

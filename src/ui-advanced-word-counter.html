@@ -1,0 +1,51 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Word Counter" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Simple Word Counter -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Simple Word Counter</h6>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <textarea name="search" id="words" rows="12" class="form-control" oninput="updateCounts()"></textarea>
+                    </div>
+                    <p class="mt-4">Word count: <span id="wordCount" class="fw-bold text-primary">0</span></p>
+                    <p>Character count: <span id="charCount" class="fw-bold text-primary">0</span> (without spaces)</p>    
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/pages/ui/word-counter.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+.mastercard{
+    height: 23px;
+    width: 100%;
+}
+.btn-primary{
+    &:hover{
+        transform: none;
+    }
+}

@@ -1,0 +1,71 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="reCAPTCHA" sub-title="UI" }}
+    <div class="row">
+
+        <!-- reCAPTCHA -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">reCAPTCHA</h6>
+                </div>
+                <div class="card-body">
+                    <p class="mb-4 text-dark">reCAPTCHA protects your website from fraud and abuse without creating friction.</p>
+                    <form class="mx-auto main-form p-6 shadow-sm rounded-2">
+                        <div class="mb-4">
+                            <label for="name" class="form-label fw-medium">Name :</label>
+                            <input type="text" placeholder="Your Name" class="form-control">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="form-label fw-medium">Email :</label>
+                            <input type="email" placeholder="Your Email" class="form-control">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="form-label fw-medium">Name :</label>
+                            <textarea type="message" rows="4" placeholder="Your Messsage" class="form-control"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+
+<script type="module" src="assets/js/main.js"></script>
+
+<script>
+    
+</script>
+
+</body>
+
+</html>

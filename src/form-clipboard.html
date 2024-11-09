@@ -1,0 +1,79 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    {{> partials/head-css}}
+
+    <link rel="stylesheet" href="assets/libs/quill/dist/quill.snow.css">
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Clipboard" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Input with Clipboard -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Input with Clipboard</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data>
+                        <div class="position-relative">
+                            <input type="text" id="basicClipboard" class="form-control pe-5" value="https://github.com/zenorocha/clipboard.js.git" x-ref="clipboardInput">
+                            <button @click="$refs.clipboardInput.select()" data-clipboard-target="#basicClipboard" class="position-absolute top-50 translate-middle-y end-0 me-2 border-0 bg-transparent" type="button">
+                                <i data-lucide="clipboard" class="size-5 text-dark"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Textarea with Clipboard -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Textarea with Clipboard</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ text: 'Utility classes help you work within the constraints of a system instead of littering your stylesheets with arbitrary values. They make it easy to be consistent with color choices, spacing, typography, shadows, and everything else that makes up a well-engineered design system.' }">
+                        <textarea x-model="text" class="form-control" rows="2" x-ref="textarea"></textarea>
+                        <div class="text-end mt-2">
+                            <button @click="navigator.clipboard.writeText(text).then(() => { text = ''; $refs.textarea.focus(); })" class="btn btn-primary">
+                                Cut to clipboard
+                            </button>
+                        </div>
+                    </div>
+                                  
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/quill/dist/quill.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/pages/ui/form-editor.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,428 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    <div class="position-relative mb-6">
+        <div class="position-relative overflow-hidden rounded bg-primary bg-opacity-10 custom-box">
+            <div class="bordered-square bordered-position1 border-color-primary size-96"></div>
+            <div class="bordered-square bordered-position2 border-color-success size-80"></div>
+            <div class="bordered-square bordered-position3 border-color-pink size-40"></div>
+        </div>
+        <div class="text-center">
+            <div class="position-relative d-inline-block mx-auto custom-container">
+                <div class="position-relative p-1 rounded-circle custom-gradient custom-image-container">
+                    <img src="assets/images/avatar/user-17.png" alt="" class="mx-auto custom-image rounded-pill size-28 border border-4 border-white">
+                </div>
+                <div class="position-absolute border border-white rounded-pill bg-success custom-small-circle size-4"></div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center gap-1">
+                <h5 class="mt-2 mb-1">Sophia Mia</h5>
+                <i data-lucide="badge-check" class="size-5 icon-primary"></i>
+            </div>
+            <ul class="text-dark d-flex align-items-center gap-2 justify-content-center m-0">
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="building-2" class="size-4"></i>
+                    <span>UI / UX Designer</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="map-pin" class="size-4"></i>
+                    <span>Argentina</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="calendar-days" class="size-4"></i>
+                    <span>24 April, 2024</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link fw-medium " aria-current="page" href="pages-user.html">
+                    <i data-lucide="eye" class="size-4 me-1"></i>
+                    Overview
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-user-activity.html">
+                    <i data-lucide="sparkles" class="size-4 me-1"></i>
+                    Activity
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-user-followers.html">
+                    <i data-lucide="user-round" class="size-4 me-1"></i>
+                    Followers
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-user-documents.html">
+                    <i data-lucide="file-text" class="size-4 me-1"></i>
+                    Documents
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-user-notes.html">
+                    <i data-lucide="list" class="size-4 me-1"></i>
+                    Notes
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium active" aria-current="page" href="pages-user-projects.html">
+                    <i data-lucide="monitor" class="size-4 me-1"></i>
+                    Projects
+                </a>
+            </li>
+        </ul>
+    </div>
+    <h5 class="mt-4 mb-5 fs-16">Projects</h5>
+    <div class="row g-5">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex gap-3">
+                        <div class="d-flex align-items-center justify-content-center rounded-modern flex-shrink-0 size-12 bg-gradient-info">
+                            <i data-lucide="messages-square" class="size-7 text-info stroke-1"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="link link-primary text-black">Chat App Templates</a></h6>
+                            <p class="line-clamp-5">Chat applications typically run on centralized networks that are served by platform operator servers as opposed to peer-to-peer protocols such as XMPP. This allows two people to talk to each other in real time.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between gap-3 mt-3">
+                        <a href="#!" class="badge bg-light-subtle text-dark  border border-dark-subtle">#Features</a>
+                        <p class="fs-15">
+                            <i data-lucide="eye" class="size-4"></i>
+                            <span>148</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-3 border-top card-body">
+                    <div class="d-flex align-items-center flex-grow-1">
+                        <a href="#!" class="avatar-hover" title="avatar-link">
+                            <img src="assets/images/avatar/user-2.png" alt="" class="border-2 border border-2 border-white rounded-circle size-7">
+                        </a>
+                        <a href="#!" class="avatar-hover" title="avatar-link">
+                            <img src="assets/images/avatar/user-3.png" alt="" class="border-2 border border-2 border-white rounded-circle size-7">
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-link  p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                            <a href="#!" class="link link-primary text-dark">
+                                <i data-lucide="ellipsis" class="size-5"></i>
+                            </a>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Overview</a></li>
+                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex gap-3">
+                        <div class="d-flex align-items-center justify-content-center rounded-modern flex-shrink-0 size-12 bg-gradient-pink">
+                            <i data-lucide="box " class="size-7 text-pink stroke-1"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="link link-primary text-black">Domiex - Admin & Dashboards Templates</a></h6>
+                            <p class="line-clamp-5">An admin dashboard template is a powerful tool that streamlines the process of building a robust and user-friendly admin panel for web applications. Image by ThemeMakker. It provides a pre-designed interface with various components and features to manage and monitor the backend of an application.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between gap-3 mt-3">
+                        <a href="#!" class="badge bg-light-subtle text-dark  border border-dark-subtle">#Admin</a>
+                        <p class="fs-15">
+                            <i data-lucide="eye" class="size-4"></i>
+                            <span>74</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-3 border-top card-body">
+                    <div class="d-flex align-items-center flex-grow-1">
+                        <a href="#!" class="avatar-hover" title="avatar-link">
+                            <img src="assets/images/avatar/user-5.png" alt="" class="border-2 border border-2 border-white rounded-circle size-7">
+                        </a>
+                        <a href="#!" class="avatar-hover" title="avatar-link">
+                            <img src="assets/images/avatar/user-20.png" alt="" class="border-2 border border-2 border-white rounded-circle size-7">
+                        </a>
+                        <a href="#!" class="avatar-hover" title="avatar-link">
+                            <img src="assets/images/avatar/user-13.png" alt="" class="border-2 border border-2 border-white rounded-circle size-7">
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-link  p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                            <a href="#!" class="link link-primary text-dark">
+                                <i data-lucide="ellipsis" class="size-5"></i>
+                            </a>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Overview</a></li>
+                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex gap-3">
+                        <div class="d-flex align-items-center justify-content-center rounded-modern flex-shrink-0 size-12 bg-gradient-success">
+                            <i data-lucide="users" class="size-7 text-success stroke-1"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="link link-primary text-black">Employee Management System</a></h6>
+                            <p class="line-clamp-5">Employee management is the process by which employers ensure workers perform their jobs to the best of their abilities so as to achieve business goals. It typically entails building and maintaining healthy relationships with employees, as well as monitoring their daily labor and measuring progress.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between gap-3 mt-3">
+                        <a href="#!" class="badge bg-light-subtle text-dark  border border-dark-subtle">#Management</a>
+                        <p class="fs-15">
+                            <i data-lucide="eye" class="size-4"></i>
+                            <span>179</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-3 border-top card-body">
+                    <div class="d-flex align-items-center flex-grow-1">
+                        <a href="#!" class="avatar-hover" title="avatar-link">
+                            <img src="assets/images/avatar/user-15.png" alt="" class="border-2 border border-2 border-white rounded-circle size-7">
+                        </a>
+                        <a href="#!" class="avatar-hover" title="avatar-link">
+                            <img src="assets/images/avatar/user-16.png" alt="" class="border-2 border border-2 border-white rounded-circle size-7">
+                        </a>
+                        <a href="#!" class="avatar-hover" title="avatar-link">
+                            <img src="assets/images/avatar/user-17.png" alt="" class="border-2 border border-2 border-white rounded-circle size-7">
+                        </a>
+                        <a href="#!" class="avatar-hover" title="avatar-link">
+                            <img src="assets/images/avatar/user-18.png" alt="" class="border-2 border border-2 border-white rounded-circle size-7">
+                        </a>
+                        <a href="#!" class="avatar-hover" title="avatar-link">
+                            <img src="assets/images/avatar/user-22.png" alt="" class="border-2 border border-2 border-white rounded-circle size-7">
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-link  p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                            <a href="#!" class="link link-primary text-dark">
+                                <i data-lucide="ellipsis" class="size-5"></i>
+                            </a>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Overview</a></li>
+                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex gap-3">
+                        <div class="d-flex align-items-center justify-content-center rounded-modern flex-shrink-0 size-12 bg-gradient-secondary">
+                            <i data-lucide="globe" class="size-7 text-secondary stroke-1"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="link link-primary text-black">Create Business Website</a></h6>
+                            <p class="line-clamp-5">If all you need is a basic one-page website with an email address, phone number and maybe your business address, you can absolutely do that yourself. There are many website builders and one-page templates you can use to get up and running quickly.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between gap-3 mt-3">
+                        <a href="#!" class="badge bg-light-subtle text-dark  border border-dark-subtle">#Design</a>
+                        <p class="fs-15">
+                            <i data-lucide="eye" class="size-4"></i>
+                            <span>132</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-3 border-top card-body">
+                    <div class="d-flex align-items-center flex-grow-1">
+                        <a href="#!" class="avatar-hover" title="avatar-link">
+                            <img src="assets/images/avatar/user-10.png" alt="" class="border-2 border border-2 border-white rounded-circle size-7">
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-link  p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                            <a href="#!" class="link link-primary text-dark">
+                                <i data-lucide="ellipsis" class="size-5"></i>
+                            </a>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Overview</a></li>
+                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex gap-3">
+                        <div class="d-flex align-items-center justify-content-center rounded-modern flex-shrink-0 size-12 bg-gradient-primary">
+                            <i data-lucide="square-user " class="size-7 text-primary stroke-1"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="link link-primary text-black">Contact Page Prototype</a></h6>
+                            <p class="line-clamp-5">A contact page prototype is a draft of a contact page. It can be used to test the design and functionality of the page before it is launched. There are many different ways to create a contact page prototype. Some popular methods include using a wireframe tool, a prototyping tool, or a content management system.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between gap-3 mt-3">
+                        <a href="#!" class="badge bg-light-subtle text-dark  border border-dark-subtle">#Figma</a>
+                        <p class="fs-15">
+                            <i data-lucide="eye" class="size-4"></i>
+                            <span>163</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-3 border-top card-body">
+                    <div class="d-flex align-items-center flex-grow-1">
+                        <a href="#!" class="avatar-hover" title="avatar-link">
+                            <img src="assets/images/avatar/user-20.png" alt="" class="border-2 border border-2 border-white rounded-circle size-7">
+                        </a>
+                        <a href="#!" class="avatar-hover" title="avatar-link">
+                            <img src="assets/images/avatar/user-18.png" alt="" class="border-2 border border-2 border-white rounded-circle size-7">
+                        </a>
+                        <a href="#!" class="avatar-hover" title="avatar-link">
+                            <img src="assets/images/avatar/user-22.png" alt="" class="border-2 border border-2 border-white rounded-circle size-7">
+                        </a>
+                        <a href="#!" class="avatar-hover" title="avatar-link">
+                            <img src="assets/images/avatar/user-23.png" alt="" class="border-2 border border-2 border-white rounded-circle size-7">
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-link  p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                            <a href="#!" class="link link-primary text-dark">
+                                <i data-lucide="ellipsis" class="size-5"></i>
+                            </a>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Overview</a></li>
+                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex gap-3">
+                        <div class="d-flex align-items-center justify-content-center rounded-modern flex-shrink-0 size-12 bg-gradient-danger">
+                            <i data-lucide="ruler " class="size-7 text-danger stroke-1"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="link link-primary text-black">Design System - Create Components</a></h6>
+                            <p class="line-clamp-5">A design system defines reusable components and their usage, and explains why and when designers should choose a component. This helps designers and developers learn design concepts and best practices for different components.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between gap-3 mt-3">
+                        <a href="#!" class="badge bg-light-subtle text-dark  border border-dark-subtle">#Components</a>
+                        <p class="fs-15">
+                            <i data-lucide="eye" class="size-4"></i>
+                            <span>245</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-3 border-top card-body">
+                    <div class="d-flex align-items-center flex-grow-1">
+                        <a href="#!" class="avatar-hover" title="avatar-link">
+                            <img src="assets/images/avatar/user-10.png" alt="" class="border-2 border border-2 border-white rounded-circle size-7">
+                        </a>
+                        <a href="#!" class="avatar-hover" title="avatar-link">
+                            <img src="assets/images/avatar/user-14.png" alt="" class="border-2 border border-2 border-white rounded-circle size-7">
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-link  p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                            <a href="#!" class="link link-primary text-dark">
+                                <i data-lucide="ellipsis" class="size-5"></i>
+                            </a>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Overview</a></li>
+                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-6">
+            <p>Showing <b>6</b> of <b>76</b> Results</p>
+        </div>
+        <div class="col-6 justify-content-end d-flex">
+            <nav aria-label="...">
+                <ul class="pagination pagination-primary d-flex gap-2 mb-0">
+                    <li class="page-item disabled">
+                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                            <i data-lucide="chevron-left" class="size-5"></i>
+                            <p>Prev</p>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                    </li>
+                    <li class="page-item"><a class="page-link page-number rounded-2" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link page-number rounded-2" href="#">...</a></li>
+                    <li class="page-item"><a class="page-link page-number rounded-2" href="#">10</a></li>
+                    <li class="page-item">
+                        <a class="page-link rounded-2 d-flex align-items-center gap-1" href="#">
+                            <p>Next</p>
+                            <i data-lucide="chevron-right" class="size-5"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

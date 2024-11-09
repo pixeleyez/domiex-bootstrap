@@ -1,0 +1,211 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Tabs" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Basic -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                        Default Drawer
+                    </a>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                        <div class="offcanvas-header">
+                            <h6 class="offcanvas-title" id="offcanvasExampleLabel">Drawer Heading</h6>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <h6>Drawer Heading</h6>
+                            <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                        </div>
+                        <div class="offcanvas-footer">
+                            <h6>Drawer Heading</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Drawer Position -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Drawer Position</h6>
+                </div>
+                <div class="card-body d-flex flex-wrap gap-2">
+                    <div>
+                        <button class="btn btn-light text-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">End Drawer</button>
+
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <h6 class="offcanvas-title" id="offcanvasRightLabel">End Drawer Heading</h6>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <h6>Drawer Heading</h6>
+                                <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                            </div>
+                            <div class="offcanvas-footer">
+                                <h6>Drawer Heading</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-light text-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">Start Drawer</button>
+
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
+                            <div class="offcanvas-header">
+                                <h6 class="offcanvas-title" id="offcanvasLeftLabel">Start Drawer Heading</h6>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <h6>Drawer Heading</h6>
+                                <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                            </div>
+                            <div class="offcanvas-footer">
+                                <h6>Drawer Heading</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-light text-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Top Drawer</button>
+
+                        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                            <div class="offcanvas-header">
+                                <h6 class="offcanvas-title" id="offcanvasTopLabel">Top Drawer Heading</h6>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <h6>Drawer Heading</h6>
+                                <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                            </div>
+                            <div class="offcanvas-footer">
+                                <h6>Drawer Heading</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-light text-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Bottom Drawer</button>
+
+                        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasBottomLabel">Bottom Drawer Heading</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <h6>Drawer Heading</h6>
+                                <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                            </div>
+                            <div class="offcanvas-footer">
+                                <h6>Drawer Heading</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Size Drawer -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Size Drawer</h6>
+                </div>
+                <div class="card-body d-flex flex-wrap gap-2">
+                    <div>
+                        <button class="btn btn-light text-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            Extra Small
+                        </button>
+                    
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <h6 class="offcanvas-title" id="offcanvasRightLabel">Large Drawer Heading</h6>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <h6>Drawer Heading</h6>
+                                <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                            </div>
+                            <div class="offcanvas-footer">
+                                <h6>Drawer Heading</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-light text-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            Large
+                        </button>
+                    
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <h6 class="offcanvas-title" id="offcanvasRightLabel">Large Drawer Heading</h6>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <h6>Drawer Heading</h6>
+                                <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                            </div>
+                            <div class="offcanvas-footer">
+                                <h6>Drawer Heading</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-light text-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            Half Screen
+                        </button>
+                    
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <h6 class="offcanvas-title" id="offcanvasRightLabel">Large Drawer Heading</h6>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <h6>Drawer Heading</h6>
+                                <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                            </div>
+                            <div class="offcanvas-footer">
+                                <h6>Drawer Heading</h6>
+                            </div>
+                        </div>
+                    </div>         
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

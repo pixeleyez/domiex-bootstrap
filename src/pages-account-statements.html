@@ -1,0 +1,382 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    <link rel="stylesheet" href="assets/libs/nouislider/dist/nouislider.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    <div class="position-relative mb-6">
+        <div class="position-relative overflow-hidden rounded bg-primary bg-opacity-10 custom-box">
+            <div class="bordered-square bordered-position1 border-color-primary size-96"></div>
+            <div class="bordered-square bordered-position2 border-color-success size-80"></div>
+            <div class="bordered-square bordered-position3 border-color-pink size-40"></div>
+        </div>
+        <div class="text-center">
+            <div class="position-relative d-inline-block mx-auto custom-container">
+                <div class="position-relative p-1 rounded-circle custom-gradient custom-image-container">
+                    <img src="assets/images/avatar/user-17.png" alt="" class="mx-auto custom-image rounded-pill size-28 border border-4 border-white">
+                </div>
+                <div class="position-absolute border border-white rounded-pill bg-success custom-small-circle size-4"></div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center gap-1">
+                <h5 class="mt-2 mb-1">Sophia Mia</h5>
+                <i data-lucide="badge-check" class="size-5 icon-primary"></i>
+            </div>
+            <ul class="text-dark d-flex align-items-center gap-2 justify-content-center m-0">
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="building-2" class="size-4"></i>
+                    <span>UI / UX Designer</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="map-pin" class="size-4"></i>
+                    <span>Argentina</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="calendar-days" class="size-4"></i>
+                    <span>24 April, 2024</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-settings.html">
+                    <i data-lucide="user-round" class="size-4 me-1"></i>
+                    Account
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-security.html">
+                    <i data-lucide="shield-check" class="size-4 me-1"></i>
+                    Security
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-billing-plan.html">
+                    <i data-lucide="gem" class="size-4 me-1"></i>
+                    Billing & Plans
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-notification.html">
+                    <i data-lucide="bell" class="size-4 me-1"></i>
+                    Notification
+                </a>
+            </li>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link fw-medium active" aria-current="page" href="pages-account-statements.html">
+                    <i data-lucide="list-tree" class="size-4 me-1"></i>
+                    Statements
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-account-logs.html">
+                    <i data-lucide="log-out" class="size-4 me-1"></i>
+                    Logs
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="card mt-5">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center gap-3">
+                <h6 class="card-title mb-0 flex-grow-1">Earnings</h6>
+
+                <!-- Modal -->
+                <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Withdraw $5,879</button>
+
+
+                <!-- Modal 1 -->
+                <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title" id="exampleModalToggleLabel">Withdraw</h6>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="mb-3">What amount would you like to withdraw?</p>
+                                <div class="p-3 text-center bg-light rounded-2">
+                                    <h5 class="mb-0">$5,879</h5>
+                                </div>
+                                <div id="soft"></div>
+                                <p class="mt-10 mb-3 pt-4">Please input the account where you'd like to transfer the withdrawn amount.</p>
+                                <div class="mb-4">
+                                    <label for="bankNameInput" class="form-label fw-medium">Bank Name</label>
+                                    <input type="text" id="bankNameInput" class="form-control" placeholder="Bank name" required="">
+                                </div>
+                                <div class="mb-5">
+                                    <label for="accountNumberInput" class="form-label fw-medium">Account Number</label>
+                                    <input type="text" id="accountNumberInput" x-data="{ value: '' }" x-model="value" @input="
+                                        value = value.replace(/[^0-9]/g, '').slice(0, 16);
+                                        if (value.length >= 5) value = value.slice(0, 4) + ' ' + value.slice(4);
+                                        if (value.length >= 10) value = value.slice(0, 9) + ' ' + value.slice(9); 
+                                        if (value.length >= 15) value = value.slice(0, 14) + ' ' + value.slice(14); 
+                                    " class="form-control" placeholder="0000 0000 0000 0000" maxlength="19">
+                                </div>
+                                <button class="btn btn-success w-100" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Processed</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal 2 -->
+                <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title" id="exampleModalToggleLabel">Confirm Withdraw</h6>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="text-center mb-5">
+                                    <i data-lucide="arrow-down-to-line" class="text-info my-3"></i>
+                                    <p>Are you sure you want to make this withdrawal</p>
+                                </div>
+                                <div class="p-3 mb-5 bg-light rounded-2">
+                                    <div class="row gy-7 gx-2 align-items-center">
+                                        <!-- Withdrawal Label -->
+                                        <div class="col-md-4">
+                                            <span>Withdrawal</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h5 class="mb-0">$5,879</h5>
+                                        </div>
+
+                                        <!-- To Label -->
+                                        <div class="col-md-4">
+                                            <span>To</span>
+                                        </div>
+
+                                        <div class="col-md-8">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="flex-shrink-0">
+                                                    <i data-lucide="landmark" class="text-dark"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-0">Bank Of New</h6>
+                                                    <p class="fs-sm">24516 8792 335 41</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column gap-2">
+                                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Withdraw</button>
+                                    <button class="btn btn-active-danger" data-bs-dismiss="modal">Maybe Later</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal 3 -->
+                <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body p-8">
+                                <div class="mb-5 text-center">
+                                    <div class="d-flex justify-content-center mx-auto pb-5 pt-3 position-relative">
+                                        <i data-lucide="circle-check-big" class="size-10 icon-success"></i>
+                                        <button type="button" class="btn-close position-absolute top-0 end-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+
+                                    <h6 class="mt-3 mb-1">Transfer Successful</h6>
+                                    <p class="text-muted">You've transferred <b>$5,879</b> to your bank account.</p>
+                                </div>
+                                <div class="d-flex flex-column gap-2">
+                                    <button class="btn btn-primary">View Account</button>
+                                    <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <p class="mb-3">Earnings calculated for the last <span class="text-primary">30</span> days.</p>
+            <div class="row g-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i data-lucide="hand-coins" class="text-primary size-6"></i>
+                            <h6 class="mt-3 mb-1">$5,487</h6>
+                            <p class="text-muted">Net Earnings</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i data-lucide="activity" class="text-danger size-6"></i>
+                            <h6 class="mt-3 mb-1">$296.81</h6>
+                            <p class="text-muted">Fees & Charges</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 mb-5">
+                <h6 class="card-title flex-grow-1 mb-0">Statements</h6>
+                <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                    <button class="btn border link link-primary text-dark px-4 py-2 text-dark d-flex align-items-center gap-1" type="button" @click="open = !open" aria-expanded="open">
+                            <span class="fs-12">Filters</span>
+                            <i class="ri-arrow-down-s-line size-4 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                    </button>
+                    <div x-show="open" style="display: none;" class="dropdown-menu show shadow-sm position-absolute end-0">
+                        <a class="dropdown-item" href="#">Date</a>
+                        <a class="dropdown-item" href="#">Amount</a>
+                    </div>
+                </div>
+            </div>
+            <div x-data="{
+                sortBy: '',
+                sortDirection: 'asc',
+                currentPage: 1,
+                products: [
+                    { statementsID: 'PES10015', paymentDate: '03 May, 2024', name: 'Joyce Perry', detail: 'Project Management', amount: '$15,236' },
+                    { statementsID: 'PES10016', paymentDate: '04 May, 2024', name: 'Marilyn Ecklund', detail: 'Chat Web Design', amount: '$8,563' },
+                    { statementsID: 'PES10017', paymentDate: '08 May, 2024', name: 'Todd Day', detail: 'PayPayl Charges', amount: '$244.5' },
+                    { statementsID: 'PES10018', paymentDate: '11 May, 2024', name: 'Mary Diaz', detail: 'Advanced Pay', amount: '$36,322' },
+                    { statementsID: 'PES10019', paymentDate: '27 May, 2024', name: 'Betty Gilliam', detail: 'Admin & Dashboards', amount: '$11,741' },
+                    { statementsID: 'PES10020', paymentDate: '05 June, 2024', name: 'Robert Olsen', detail: 'Admin & Dashboards', amount: '$13,465' },
+                    { statementsID: 'PES10021', paymentDate: '09 June, 2024', name: 'Shirley Elsea', detail: 'Logo Design', amount: '$478.69' },
+                    { statementsID: 'PES10022', paymentDate: '15 June, 2024', name: 'Amelia Denehy', detail: 'App Landing Page', amount: '$1,458' },
+                    { statementsID: 'PES10023', paymentDate: '17 May, 2024', name: 'Zac Bethel', detail: 'Crypto Coin', amount: '$14,786' },
+                    { statementsID: 'PES10024', paymentDate: '24 May, 2024', name: 'Leo Kemp', detail: 'Admin & Dashboards', amount: '$3,499' },
+                    { statementsID: 'PES10022', paymentDate: '15 June, 2024', name: 'Amelia Denehy', detail: 'App Landing Page', amount: '$1,458' },
+                    { statementsID: 'PES10023', paymentDate: '17 May, 2024', name: 'Zac Bethel', detail: 'Crypto Coin', amount: '$14,786' },
+                ],
+                get pageSize() {
+                    return 10; 
+                },
+                get displayedProducts() {
+                    const startIndex = (this.currentPage - 1) * this.pageSize;
+                    return this.products.slice(startIndex, startIndex + this.pageSize).sort((a, b) => {
+                        if (!this.sortBy) return 0;
+                        const aValue = a[this.sortBy];
+                        const bValue = b[this.sortBy];
+                        if (aValue < bValue) return this.sortDirection === 'asc' ? -1 : 1;
+                        if (aValue > bValue) return this.sortDirection === 'asc' ? 1 : -1;
+                        return 0;
+                    });
+                },
+                get totalPages() {
+                    return Math.ceil(this.products.length / this.pageSize); 
+                },
+                sort(field) {
+                    this.sortDirection = (this.sortBy === field && this.sortDirection === 'asc') ? 'desc' : 'asc';
+                    this.sortBy = field;
+                },
+                gotoPage(page) {
+                    this.currentPage = page;
+                },
+                prevPage() {
+                    if (this.currentPage > 1) this.currentPage--;
+                },
+                nextPage() {
+                    if (this.currentPage < this.totalPages) this.currentPage++;
+                },
+                get showingStart() {
+                    return (this.currentPage - 1) * this.pageSize + 1;
+                },
+                get showingEnd() {
+                    return Math.min(this.currentPage * this.pageSize, this.products.length);
+                }
+            }">
+                <table class="table">
+                    <thead>
+                        <tr class="table-light border-bottom cursor-pointer">
+                            <th x-on:click="sort('statementsID')" class="fw-medium text-dark">
+                                ID <span x-show="sortBy === 'statementsID'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                            </th>
+                            <th x-on:click="sort('paymentDate')" class="fw-medium text-dark">
+                                Date <span x-show="sortBy === 'paymentDate'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                            </th>
+                            <th x-on:click="sort('name')" class="fw-medium text-dark">
+                                Name <span x-show="sortBy === 'name'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                            </th>
+                            <th x-on:click="sort('detail')" class="fw-medium text-dark">
+                                Details <span x-show="sortBy === 'detail'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                            </th>
+                            <th x-on:click="sort('amount')" class="fw-medium text-dark">
+                                Amount <span x-show="sortBy === 'amount'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                            </th>
+                            <th class="text-end fw-medium text-dark">Download Invoice</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <template x-for="(product, index) in displayedProducts" :key="index">
+                            <tr>
+                                <td><a href="#!" class="link link-primary text-dark" x-text="product.statementsID"></a></td>
+                                <td x-text="product.paymentDate"></td>
+                                <td x-text="product.name"></td>
+                                <td x-text="product.detail"></td>
+                                <td x-text="product.amount"></td>
+                                <td class="text-end">
+                                    <a href="#!" title="Download" class="btn btn-primary fs-13"><i class="align-bottom ri-download-2-line me-1"></i>Download</a>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+
+                <div class="row g-5 align-items-center">
+                    <div class="col-6">
+                        <p class="text-gray-500 dark:text-dark-500">Showing <b x-text="showingStart"></b> - <b x-text="showingEnd"></b> of <b x-text="products.length"></b> Results</p>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex justify-content-end gap-2 pagination pagination-primary">
+                            <button @click="prevPage()" :disabled="currentPage === 1" class="page-link rounded-2 d-flex align-items-center gap-1" :class="{'text-dark': currentPage === 1, 'cursor-not-allowed': currentPage === 1}">
+                                <i data-lucide="chevron-left" class="size-5"></i> Prev
+                            </button>
+                            <button @click="gotoPage(1)" :class="{ 'active': currentPage === 1 }" class="page-link page-number rounded-2">1</button>
+                            <button @click="gotoPage(2)" :class="{ 'active': currentPage === 2 }" class="page-link page-number rounded-2">2</button>
+                            <button @click="nextPage()" :disabled="currentPage === totalPages" class="page-link rounded-2 d-flex align-items-center gap-1" :class="{'text-dark': currentPage === totalPages, 'cursor-not-allowed': currentPage === totalPages}">
+                                Next <i data-lucide="chevron-right" class="size-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/nouislider/dist/nouislider.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/pages/ui/pages-account-statements.init.js"></script>
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

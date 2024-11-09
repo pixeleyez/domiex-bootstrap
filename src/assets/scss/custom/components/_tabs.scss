@@ -1,0 +1,84 @@
+.nav-tabs {
+    border: none;
+
+    .nav-item {
+        position: relative;
+
+        .nav-link {
+            border: none;
+        }
+    }
+}
+
+.basic-tabs {
+    .nav-link {
+        &::before {
+            content: '';
+            @include position(absolute, null, null, 0, 50%);
+            width: 0;
+            height: 0.0625rem;
+            background-color: $primary;
+            transform: translateX(-50%);
+        }
+
+        &.active {
+            color: $primary;
+
+            &::before {
+                width: 100%;
+
+            }
+        }
+
+        &:hover {
+            color: $primary;
+            transition: $transition-base;
+
+            &::before {
+                width: 100%;
+                transition: $transition-base;
+                transition-duration: .2s;
+            }
+        }
+    }
+}
+
+.animation-tabs {
+    .nav-link {
+        width: 8rem;
+        height: 2.75rem;
+
+        .title {
+            transform: translateY(-2.9375rem);
+            display: block;
+            transition: $icon-link-icon-transition;
+            visibility: hidden;
+        }
+
+        .icon {
+            display: inline-block;
+            transform: translateY(0.1875rem);
+            transition: $icon-link-icon-transition;
+        }
+
+        &:hover {
+            .icon {
+                transform: translateY(1.975rem);
+                transition: $icon-link-icon-transition;
+            }
+
+            .title {
+                transform: translateY(-1.125rem);
+                transition: $icon-link-icon-transition;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+@each $state in map-keys($theme-colors) {
+    .tab-#{$state} {
+        --#{$prefix}nav-pills-link-active-bg: var(--#{$prefix}#{$state});
+        --#{$prefix}nav-link-hover-color: var(--#{$prefix}#{$state});
+    }
+}

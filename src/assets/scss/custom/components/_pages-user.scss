@@ -1,0 +1,40 @@
+.hover-scale-skew {
+    transition: transform 0.2s ease;
+}
+
+.hover-scale-skew:hover {
+    transform: scale(1.05) skewX(3deg);
+}
+.timeline-primary,.timeline-primarys {
+    position: relative;
+}
+
+.timeline-primary {
+    &::before {
+        content: '';
+        position: absolute;
+        top: .5rem;
+        bottom: -0.5rem;
+        left: -1rem;
+        width: 0.125rem;
+        background-color: $gray-200;
+        z-index: 1;
+    }
+    &:active{
+        &::before{
+            background-color: $primary;
+        }
+    }
+}
+.timeline-primarys,.timeline-primary{
+    &::after{
+        content: '';
+        position: absolute;
+        left: -18px;
+        top: .5rem;
+        width: .375rem;
+        height: .375rem;
+        border-radius: 0.625rem;
+        background-color: $primary;
+    }
+}

@@ -1,0 +1,25 @@
+.border-separate {
+    border-collapse: separate;
+
+    tr td ,
+    tr th {
+        border: 1px solid $gray-200;
+    }
+    &.border-spacing-2{
+        border-spacing: .5rem;
+    }
+}
+
+.table-striped-even>tbody>tr:nth-child(even)>td {
+    background-color: #F2F2F3;
+}
+
+@each $state in map-keys($theme-colors) {
+    .table-color-#{$state} {
+        --#{$prefix}table-striped-bg: var(--#{$prefix}#{$state}-bg-subtle);
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

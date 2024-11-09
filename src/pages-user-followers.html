@@ -1,0 +1,487 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    <div class="position-relative mb-6">
+        <div class="position-relative overflow-hidden rounded bg-primary bg-opacity-10 custom-box">
+            <div class="bordered-square bordered-position1 border-color-primary size-96"></div>
+            <div class="bordered-square bordered-position2 border-color-success size-80"></div>
+            <div class="bordered-square bordered-position3 border-color-pink size-40"></div>
+        </div>
+        <div class="text-center">
+            <div class="position-relative d-inline-block mx-auto custom-container">
+                <div class="position-relative p-1 rounded-circle custom-gradient custom-image-container">
+                    <img src="assets/images/avatar/user-17.png" alt="" class="mx-auto custom-image rounded-pill size-28 border border-4 border-white">
+                </div>
+                <div class="position-absolute border border-white rounded-pill bg-success custom-small-circle size-4"></div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center gap-1">
+                <h5 class="mt-2 mb-1">Sophia Mia</h5>
+                <i data-lucide="badge-check" class="size-5 icon-primary"></i>
+            </div>
+            <ul class="text-dark d-flex align-items-center gap-2 justify-content-center m-0">
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="building-2" class="size-4"></i>
+                    <span>UI / UX Designer</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="map-pin" class="size-4"></i>
+                    <span>Argentina</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                    <i data-lucide="calendar-days" class="size-4"></i>
+                    <span>24 April, 2024</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="pages-user.html">
+                    <i data-lucide="eye" class="size-4 me-1"></i>
+                    Overview
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium " aria-current="page" href="pages-user-activity.html">
+                    <i data-lucide="sparkles" class="size-4 me-1"></i>
+                    Activity
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium active" aria-current="page" href="pages-user-followers.html">
+                    <i data-lucide="user-round" class="size-4 me-1"></i>
+                    Followers
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="">
+                    <i data-lucide="file-text" class="size-4 me-1"></i>
+                    Documents
+                </a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="">
+                    <i data-lucide="list" class="size-4 me-1"></i>
+                    Notes
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-medium" aria-current="page" href="">
+                    <i data-lucide="monitor" class="size-4 me-1"></i>
+                    Projects
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="row mt-5 gx-5">
+        <div class="col-6">
+            <div class="card">
+                <div class="d-flex flex-wrap align-items-center gap-3 card-body">
+                    <div class="flex-shrink-0">
+                        <img src="assets/images/avatar/user-13.png" alt="" class="rounded-2 size-20">
+                    </div>
+                    <div class="flex-grow-1">
+                        <h6 class="mb-1">Christina Williams</h6>
+                        <div class="d-flex flex-wrap align-items-center gap-4 mb-3">
+                            <p>
+                                <i data-lucide="mail" class="size-4 me-1"></i>
+                                <a href="mailto:christina@pixeleyez.com" class="text-dark">christina@pixeleyez.com</a>
+                            </p>
+                            <p class="text-muted">
+                                <i data-lucide="phone" class="size-4 me-1"></i>
+                                <span>+(546) 01234 567 89</span>
+                            </p>
+                        </div>
+                        <a href="pages-user.html" class="text-primary">
+                            View More
+                            <i data-lucide="move-right" class="size-4 me-1"></i>
+                        </a>
+                    </div>
+                    <div x-data="{ loadingButton: false, isActive: false }">
+                        <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-light text-dark d-flex align-items-center gap-2">
+                            <span x-show="!isActive">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-add-line"></i>
+                                    <span>Follow</span>
+                                </div>
+                            </span>
+                            <span x-show="isActive" style="display: none;">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-unfollow-line"></i>
+                                    <span>UnFollow</span>
+                                </div>
+                            </span>
+                            <span class="spinner-border spinner-border-sm" x-show="loadingButton" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="d-flex flex-wrap align-items-center gap-3 card-body">
+                    <div class="flex-shrink-0">
+                        <img src="assets/images/avatar/user-14.png" alt="" class="rounded-2 size-20">
+                    </div>
+                    <div class="flex-grow-1">
+                        <h6 class="mb-1">Thomas Blamer</h6>
+                        <div class="d-flex flex-wrap align-items-center gap-4 mb-3">
+                            <p>
+                                <i data-lucide="mail" class="size-4 me-1"></i>
+                                <a href="mailto:thomas@pixeleyez.com" class="text-dark">thomas@pixeleyez.com</a>
+                            </p>
+                            <p class="text-muted">
+                                <i data-lucide="phone" class="size-4 me-1"></i>
+                                <span>651-705-2653</span>
+                            </p>
+                        </div>
+                        <a href="pages-user.html" class="text-primary">
+                            View More
+                            <i data-lucide="move-right" class="size-4 me-1"></i>
+                        </a>
+                    </div>
+                    <div x-data="{ loadingButton: false, isActive: false }">
+                        <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-light text-dark d-flex align-items-center gap-2">
+                            <span x-show="!isActive">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-add-line"></i>
+                                    <span>UnFollow</span>
+                                </div>
+                            </span>
+                            <span x-show="isActive" style="display: none;">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-unfollow-line"></i>
+                                    <span>Follow</span>
+                                </div>
+                            </span>
+                            <span class="spinner-border spinner-border-sm" x-show="loadingButton" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="d-flex flex-wrap align-items-center gap-3 card-body">
+                    <div class="flex-shrink-0">
+                        <img src="assets/images/avatar/user-15.png" alt="" class="rounded-2 size-20">
+                    </div>
+                    <div class="flex-grow-1">
+                        <h6 class="mb-1">Patricia Graham</h6>
+                        <div class="d-flex flex-wrap align-items-center gap-4 mb-3">
+                            <p>
+                                <i data-lucide="mail" class="size-4 me-1"></i>
+                                <a href="mailto:pg@pixeleyez.com" class="text-dark">pg@pixeleyez.com</a>
+                            </p>
+                            <p class="text-muted">
+                                <i data-lucide="phone" class="size-4 me-1"></i>
+                                <span>704-316-0398</span>
+                            </p>
+                        </div>
+                        <a href="pages-user.html" class="text-primary">
+                            View More
+                            <i data-lucide="move-right" class="size-4 me-1"></i>
+                        </a>
+                    </div>
+                    <div x-data="{ loadingButton: false, isActive: false }">
+                        <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-light text-dark d-flex align-items-center gap-2">
+                            <span x-show="!isActive">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-add-line"></i>
+                                    <span>UnFollow</span>
+                                </div>
+                            </span>
+                            <span x-show="isActive" style="display: none;">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-unfollow-line"></i>
+                                    <span>Follow</span>
+                                </div>
+                            </span>
+                            <span class="spinner-border spinner-border-sm" x-show="loadingButton" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="d-flex flex-wrap align-items-center gap-3 card-body">
+                    <div class="flex-shrink-0">
+                        <img src="assets/images/avatar/user-19.png" alt="" class="rounded-2 size-20">
+                    </div>
+                    <div class="flex-grow-1">
+                        <h6 class="mb-1">Patricia Graham</h6>
+                        <div class="d-flex flex-wrap align-items-center gap-4 mb-3">
+                            <p>
+                                <i data-lucide="mail" class="size-4 me-1"></i>
+                                <a href="mailto:patricia@pixeleyez.com" class="text-dark">patricia@pixeleyez.com</a>
+                            </p>
+                            <p class="text-muted">
+                                <i data-lucide="phone" class="size-4 me-1"></i>
+                                <span>952-542-3403</span>
+                            </p>
+                        </div>
+                        <a href="pages-user.html" class="text-primary">
+                            View More
+                            <i data-lucide="move-right" class="size-4 me-1"></i>
+                        </a>
+                    </div>
+                    <div x-data="{ loadingButton: false, isActive: false }">
+                        <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-light text-dark d-flex align-items-center gap-2">
+                            <span x-show="!isActive">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-add-line"></i>
+                                    <span>Follow</span>
+                                </div>
+                            </span>
+                            <span x-show="isActive" style="display: none;">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-unfollow-line"></i>
+                                    <span>UnFollow</span>
+                                </div>
+                            </span>
+                            <span class="spinner-border spinner-border-sm" x-show="loadingButton" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="d-flex flex-wrap align-items-center gap-3 card-body">
+                    <div class="flex-shrink-0">
+                        <img src="assets/images/avatar/user-20.png" alt="" class="rounded-2 size-20">
+                    </div>
+                    <div class="flex-grow-1">
+                        <h6 class="mb-1">Joseph Obrien</h6>
+                        <div class="d-flex flex-wrap align-items-center gap-4 mb-3">
+                            <p>
+                                <i data-lucide="mail" class="size-4 me-1"></i>
+                                <a href="mailto:josepho@pixeleyez.com" class="text-dark">josepho@pixeleyez.com</a>
+                            </p>
+                            <p class="text-muted">
+                                <i data-lucide="phone" class="size-4 me-1"></i>
+                                <span>907-675-5342</span>
+                            </p>
+                        </div>
+                        <a href="pages-user.html" class="text-primary">
+                            View More
+                            <i data-lucide="move-right" class="size-4 me-1"></i>
+                        </a>
+                    </div>
+                    <div x-data="{ loadingButton: false, isActive: false }">
+                        <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-light text-dark d-flex align-items-center gap-2">
+                            <span x-show="!isActive">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-add-line"></i>
+                                    <span>Follow</span>
+                                </div>
+                            </span>
+                            <span x-show="isActive" style="display: none;">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-unfollow-line"></i>
+                                    <span>UnFollow</span>
+                                </div>
+                            </span>
+                            <span class="spinner-border spinner-border-sm" x-show="loadingButton" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="d-flex flex-wrap align-items-center gap-3 card-body">
+                    <div class="flex-shrink-0">
+                        <img src="assets/images/avatar/user-45.png" alt="" class="rounded-2 size-20">
+                    </div>
+                    <div class="flex-grow-1">
+                        <h6 class="mb-1">Edward Chapman</h6>
+                        <div class="d-flex flex-wrap align-items-center gap-4 mb-3">
+                            <p>
+                                <i data-lucide="mail" class="size-4 me-1"></i>
+                                <a href="mailto:edward@pixeleyez.com" class="text-dark">edward@pixeleyez.com</a>
+                            </p>
+                            <p class="text-muted">
+                                <i data-lucide="phone" class="size-4 me-1"></i>
+                                <span>267-645-5685</span>
+                            </p>
+                        </div>
+                        <a href="pages-user.html" class="text-primary">
+                            View More
+                            <i data-lucide="move-right" class="size-4 me-1"></i>
+                        </a>
+                    </div>
+                    <div x-data="{ loadingButton: false, isActive: false }">
+                        <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-light text-dark d-flex align-items-center gap-2">
+                            <span x-show="!isActive">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-add-line"></i>
+                                    <span>UnFollow</span>
+                                </div>
+                            </span>
+                            <span x-show="isActive" style="display: none;">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-unfollow-line"></i>
+                                    <span>Follow</span>
+                                </div>
+                            </span>
+                            <span class="spinner-border spinner-border-sm" x-show="loadingButton" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="d-flex flex-wrap align-items-center gap-3 card-body">
+                    <div class="flex-shrink-0">
+                        <img src="assets/images/avatar/user-38.png" alt="" class="rounded-2 size-20">
+                    </div>
+                    <div class="flex-grow-1">
+                        <h6 class="mb-1">Annie Akins</h6>
+                        <div class="d-flex flex-wrap align-items-center gap-4 mb-3">
+                            <p>
+                                <i data-lucide="mail" class="size-4 me-1"></i>
+                                <a href="mailto:annie@pixeleyez.com" class="text-dark">annie@pixeleyez.com</a>
+                            </p>
+                            <p class="text-muted">
+                                <i data-lucide="phone" class="size-4 me-1"></i>
+                                <span>812-278-7277</span>
+                            </p>
+                        </div>
+                        <a href="pages-user.html" class="text-primary">
+                            View More
+                            <i data-lucide="move-right" class="size-4 me-1"></i>
+                        </a>
+                    </div>
+                    <div x-data="{ loadingButton: false, isActive: false }">
+                        <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-light text-dark d-flex align-items-center gap-2">
+                            <span x-show="!isActive">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-add-line"></i>
+                                    <span>UnFollow</span>
+                                </div>
+                            </span>
+                            <span x-show="isActive" style="display: none;">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-unfollow-line"></i>
+                                    <span>Follow</span>
+                                </div>
+                            </span>
+                            <span class="spinner-border spinner-border-sm" x-show="loadingButton" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="d-flex flex-wrap align-items-center gap-3 card-body">
+                    <div class="flex-shrink-0">
+                        <img src="assets/images/avatar/user-35.png" alt="" class="rounded-2 size-20">
+                    </div>
+                    <div class="flex-grow-1">
+                        <h6 class="mb-1">Gena Kelly</h6>
+                        <div class="d-flex flex-wrap align-items-center gap-4 mb-3">
+                            <p>
+                                <i data-lucide="mail" class="size-4 me-1"></i>
+                                <a href="mailto:kelly@pixeleyez.com" class="text-dark">kelly@pixeleyez.com</a>
+                            </p>
+                            <p class="text-muted">
+                                <i data-lucide="phone" class="size-4 me-1"></i>
+                                <span>713-229-0339</span>
+                            </p>
+                        </div>
+                        <a href="pages-user.html" class="text-primary">
+                            View More
+                            <i data-lucide="move-right" class="size-4 me-1"></i>
+                        </a>
+                    </div>
+                    <div x-data="{ loadingButton: false, isActive: false }">
+                        <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-light text-dark d-flex align-items-center gap-2">
+                            <span x-show="!isActive">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-add-line"></i>
+                                    <span>UnFollow</span>
+                                </div>
+                            </span>
+                            <span x-show="isActive" style="display: none;">
+                                <div class="d-flex align-content-center gap-2">
+                                    <i class="ri-user-unfollow-line"></i>
+                                    <span>Follow</span>
+                                </div>
+                            </span>
+                            <span class="spinner-border spinner-border-sm" x-show="loadingButton" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-6">
+            <p>Showing <b>8</b> of <b>76</b> Results</p>
+        </div>
+        <div class="col-6 justify-content-end d-flex">
+            <nav aria-label="...">
+                <ul class="pagination pagination-primary d-flex gap-2 mb-0">
+                    <li class="page-item disabled">
+                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                            <i data-lucide="chevron-left" class="size-5"></i>
+                            <p>Prev</p>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                    </li>
+                    <li class="page-item"><a class="page-link page-number rounded-2" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link page-number rounded-2" href="#">...</a></li>
+                    <li class="page-item"><a class="page-link page-number rounded-2" href="#">10</a></li>
+                    <li class="page-item">
+                        <a class="page-link rounded-2 d-flex align-items-center gap-1" href="#">
+                            <p>Next</p>
+                            <i data-lucide="chevron-right" class="size-5"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

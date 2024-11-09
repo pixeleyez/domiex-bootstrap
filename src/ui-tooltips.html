@@ -1,0 +1,116 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="UI Tooltip" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Default Behaviour Tooltip -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Basic</h6>
+                </div>
+                <div class="card-body d-flex align-items-center gap-3">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-title="Basic Tooltip">
+                        Click Me
+                    </button>
+                    <a href="#!" class="link link-primary" data-bs-toggle="tooltip" data-bs-title="Basic Link Tooltip">
+                        Link Click Me
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Follow Cursor -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Directions</h6>
+                </div>
+                <div class="card-body d-flex align-content-center gap-2">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+                        Tooltip on top
+                    </button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
+                        Tooltip on right
+                    </button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tooltip on bottom">
+                        Tooltip on bottom
+                    </button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Tooltip on left">
+                        Tooltip on left
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Custom tooltips</h6>
+                </div>
+                <div class="card-body d-flex align-content-center gap-2">
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="This top tooltip is themed via CSS variables.">
+                        Custom tooltip
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Disabled elements</h6>
+                </div>
+                <div class="card-body d-flex align-content-center gap-2">
+                    <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Disabled tooltip">
+                        <button class="btn btn-primary" type="button" disabled>Disabled button</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <h5 class="underline mb-5 mt-2">Tippy.js:</h5>
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Basic Tooltips</h6>
+                </div>
+                <div class="card-body d-flex align-content-center gap-2">
+                    <button class="btn btn-primary" type="button" id="myButton">Basic Tooltips</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/pages/ui/tooltip.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

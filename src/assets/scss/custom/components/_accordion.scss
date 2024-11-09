@@ -1,0 +1,46 @@
+.accordion-button::after {
+    content: none;
+}
+
+.accordion-button:not(.collapsed) {
+    svg {
+        transform: rotate(-180deg);
+    }
+}
+
+.accordion.accordion-boxed {
+    .accordion-item {
+        border: none;
+    }
+    .accordion-button {
+        border: 1px solid var(--#{$prefix}accordion-border-color);
+        border-radius: $border-radius;
+    }
+}
+
+@each $state in map-keys($theme-colors) {
+    $color: map-get($theme-colors, $state);
+    .accordion-#{$state} {
+        --#{$prefix}accordion-active-color: var(--#{$prefix}#{$state});
+        --#{$prefix}accordion-active-bg: var(--#{$prefix}#{$state}-bg-subtle);
+
+        &.accordion-boxed {
+            --#{$prefix}accordion-active-color: var(--#{$prefix}#{$state});
+            --#{$prefix}accordion-active-bg: var(--#{$prefix}#{$state}-bg-subtle);
+            
+            [aria-expanded="true"] {
+                --#{$prefix}accordion-border-color: var(--#{$prefix}#{$state}-border-subtle);
+            }
+        }
+    }
+    
+    .accordion-solid-#{$state} {
+        --#{$prefix}accordion-active-bg: var(--#{$prefix}#{$state});
+        --#{$prefix}accordion-active-color: #{color-contrast($color)};
+        
+        [aria-expanded="true"] {
+            --#{$prefix}accordion-border-color: var(--#{$prefix}#{$state});
+        }
+    }
+
+}

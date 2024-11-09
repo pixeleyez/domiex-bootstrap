@@ -1,0 +1,376 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Modal" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Basic -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Default Modal
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-between">
+                                    <h1 class="modal-title fs-6" id="exampleModalLabel">Modal title</h1>
+                                    <button class="border-0 bg-transparent">
+                                        <i data-lucide="x" class="size-5" type="button" data-bs-dismiss="modal" aria-label="Close"></i>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h6 class="mb-3">Modal Content</h6>
+                                    <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                                </div>
+                                <div class="modal-footer d-flex justify-content-start p-5">
+                                    <h6>Modal Footer</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Position -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-2">
+                        <div>
+                            <button type="button" class="btn btn-light text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Center Modal
+                            </button>
+
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header d-flex justify-content-between">
+                                            <h1 class="modal-title fs-6" id="exampleModalLabel">Modal title</h1>
+                                            <button class="border-0 bg-transparent">
+                                                <i data-lucide="x" class="size-5" type="button" data-bs-dismiss="modal" aria-label="Close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="mb-3">Modal Content</h6>
+                                            <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                                        </div>
+                                        <div class="modal-footer d-flex justify-content-start p-5">
+                                            <h6>Modal Footer</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-light text-dark" data-bs-toggle="modal" data-bs-target="#topModal">
+                                Top Modal
+                            </button>
+
+                            <div class="modal fade" id="topModal" tabindex="-1" aria-labelledby="topModalLabel" aria-hidden="false">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header d-flex justify-content-between">
+                                            <h1 class="modal-title fs-6" id="topModalLabel">Modal title</h1>
+                                            <button class="border-0 bg-transparent">
+                                                <i data-lucide="x" class="size-5" type="button" data-bs-dismiss="modal" aria-label="Close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="mb-3">Modal Content</h6>
+                                            <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                                        </div>
+                                        <div class="modal-footer d-flex justify-content-start p-5">
+                                            <h6>Modal Footer</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-light text-dark" data-bs-toggle="modal" data-bs-target="#topleftModal">
+                                Top Left Modal
+                            </button>
+
+                            <div class="modal fade px-5" id="topleftModal" tabindex="-1" aria-labelledby="topleftModalLabel" aria-hidden="false">
+                                <div class="modal-dialog ms-0">
+                                    <div class="modal-content">
+                                        <div class="modal-header d-flex justify-content-between">
+                                            <h1 class="modal-title fs-6" id="topleftModalLabel">Modal title</h1>
+                                            <button class="border-0 bg-transparent">
+                                                <i data-lucide="x" class="size-5" type="button" data-bs-dismiss="modal" aria-label="Close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="mb-3">Modal Content</h6>
+                                            <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                                        </div>
+                                        <div class="modal-footer d-flex justify-content-start p-5">
+                                            <h6>Modal Footer</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-light text-dark" data-bs-toggle="modal" data-bs-target="#toprightModal">
+                                Top Right Modal
+                            </button>
+
+                            <div class="modal fade px-5" id="toprightModal" tabindex="-1" aria-labelledby="toprightModalLabel" aria-hidden="false">
+                                <div class="modal-dialog me-0">
+                                    <div class="modal-content">
+                                        <div class="modal-header d-flex justify-content-between">
+                                            <h1 class="modal-title fs-6" id="toprightModalLabel">Modal title</h1>
+                                            <button class="border-0 bg-transparent">
+                                                <i data-lucide="x" class="size-5" type="button" data-bs-dismiss="modal" aria-label="Close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="mb-3">Modal Content</h6>
+                                            <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                                        </div>
+                                        <div class="modal-footer d-flex justify-content-start p-5">
+                                            <h6>Modal Footer</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-light text-dark" data-bs-toggle="modal" data-bs-target="#bottomrightModal">
+                                Bottom Right Modal
+                            </button>
+
+                            <div class="modal fade px-5" id="bottomrightModal" tabindex="-1" aria-labelledby="bottomrightModalLabel" aria-hidden="false">
+                                <div class="modal-dialog position-absolute bottom-0" style="right: 20px;">
+                                    <div class="modal-content">
+                                        <div class="modal-header d-flex justify-content-between">
+                                            <h1 class="modal-title fs-6" id="bottomrightModalLabel">Modal title</h1>
+                                            <button class="border-0 bg-transparent">
+                                                <i data-lucide="x" class="size-5" type="button" data-bs-dismiss="modal" aria-label="Close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="mb-3">Modal Content</h6>
+                                            <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                                        </div>
+                                        <div class="modal-footer d-flex justify-content-start p-5">
+                                            <h6>Modal Footer</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-light text-dark" data-bs-toggle="modal" data-bs-target="#bottomleftModal">
+                                Bottom Left Modal
+                            </button>
+
+                            <div class="modal fade px-5" id="bottomleftModal" tabindex="-1" aria-labelledby="bottomleftModalLabel" aria-hidden="false">
+                                <div class="modal-dialog position-absolute bottom-0">
+                                    <div class="modal-content">
+                                        <div class="modal-header d-flex justify-content-between">
+                                            <h1 class="modal-title fs-6" id="bottomleftModalLabel">Modal title</h1>
+                                            <button class="border-0 bg-transparent">
+                                                <i data-lucide="x" class="size-5" type="button" data-bs-dismiss="modal" aria-label="Close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="mb-3">Modal Content</h6>
+                                            <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                                        </div>
+                                        <div class="modal-footer d-flex justify-content-start p-5">
+                                            <h6>Modal Footer</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Size Modal -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-2">
+                        <div>
+                            <button type="button" class="btn btn-light text-dark" data-bs-toggle="modal" data-bs-target="#exampleModalxs">
+                                Extra Small
+                            </button>
+                        
+                            <div class="modal fade" id="exampleModalxs" tabindex="-1" aria-labelledby="exampleModalxsLabel" aria-hidden="false">
+                                <div class="modal-dialog modal-dialog-centered modal-xs">
+                                    <div class="modal-content">
+                                        <div class="modal-header d-flex justify-content-between">
+                                            <h1 class="modal-title fs-6" id="exampleModalxsLabel">Modal title</h1>
+                                            <button class="border-0 bg-transparent" type="button" data-bs-dismiss="modal" aria-label="Close">
+                                                <i data-lucide="x" class="size-5"></i>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="mb-3">Modal Content</h6>
+                                            <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                                        </div>
+                                        <div class="modal-footer d-flex justify-content-start p-5">
+                                            <h6>Modal Footer</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <button type="button" class="btn btn-light text-dark" data-bs-toggle="modal" data-bs-target="#exampleModalsm">
+                                Small
+                            </button>
+
+                            <div class="modal fade" id="exampleModalsm" tabindex="-1" aria-labelledby="exampleModalsmLabel" aria-hidden="false">
+                                <div class="modal-dialog modal-dialog-centered modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-header d-flex justify-content-between">
+                                            <h1 class="modal-title fs-6" id="exampleModalsmLabel">Modal title</h1>
+                                            <button class="border-0 bg-transparent">
+                                                <i data-lucide="x" class="size-5" type="button" data-bs-dismiss="modal" aria-label="Close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="mb-3">Modal Content</h6>
+                                            <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                                        </div>
+                                        <div class="modal-footer d-flex justify-content-start p-5">
+                                            <h6>Modal Footer</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="button" class="btn btn-light text-dark" data-bs-toggle="modal" data-bs-target="#exampleModalmd">
+                                Large
+                            </button>
+
+                            <div class="modal fade" id="exampleModalmd" tabindex="-1" aria-labelledby="exampleModalmdLabel" aria-hidden="false">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header d-flex justify-content-between">
+                                            <h1 class="modal-title fs-6" id="exampleModalmdLabel">Modal title</h1>
+                                            <button class="border-0 bg-transparent">
+                                                <i data-lucide="x" class="size-5" type="button" data-bs-dismiss="modal" aria-label="Close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="mb-3">Modal Content</h6>
+                                            <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                                        </div>
+                                        <div class="modal-footer d-flex justify-content-start p-5">
+                                            <h6>Modal Footer</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="button" class="btn btn-light text-dark" data-bs-toggle="modal" data-bs-target="#exampleModallg">
+                               Extra Large
+                            </button>
+
+                            <div class="modal fade" id="exampleModallg" tabindex="-1" aria-labelledby="exampleModallgLabel" aria-hidden="false">
+                                <div class="modal-dialog modal-dialog-centered modal-xl">
+                                    <div class="modal-content">
+                                        <div class="modal-header d-flex justify-content-between">
+                                            <h1 class="modal-title fs-6" id="exampleModallgLabel">Modal title</h1>
+                                            <button class="border-0 bg-transparent">
+                                                <i data-lucide="x" class="size-5" type="button" data-bs-dismiss="modal" aria-label="Close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="mb-3">Modal Content</h6>
+                                            <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                                        </div>
+                                        <div class="modal-footer d-flex justify-content-start p-5">
+                                            <h6>Modal Footer</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="button" class="btn btn-light text-dark" data-bs-toggle="modal" data-bs-target="#exampleModalxl">
+                                Extra Extra Large
+                            </button>
+
+                            <div class="modal fade" id="exampleModalxl" tabindex="-1" aria-labelledby="exampleModalxlLabel" aria-hidden="false">
+                                <div class="modal-dialog modal-dialog-centered modal-xxl">
+                                    <div class="modal-content">
+                                        <div class="modal-header d-flex justify-content-between">
+                                            <h1 class="modal-title fs-6" id="exampleModalxlLabel">Modal title</h1>
+                                            <button class="border-0 bg-transparent">
+                                                <i data-lucide="x" class="size-5" type="button" data-bs-dismiss="modal" aria-label="Close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="mb-3">Modal Content</h6>
+                                            <p>They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic.</p>
+                                        </div>
+                                        <div class="modal-footer d-flex justify-content-start p-5">
+                                            <h6>Modal Footer</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

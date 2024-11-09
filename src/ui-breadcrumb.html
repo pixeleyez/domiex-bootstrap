@@ -1,0 +1,113 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Breadcrumb" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Base Example -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Base Example</h6>
+                </div>
+                <div class="card-body double-arrow">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Domiex</a></li>
+                            <li class="breadcrumb-item"><a href="#">UI</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Breadcrumb</li>
+                        </ol>
+                    </nav>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#"><i class="ri-home-4-line"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#">UI</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Breadcrumb</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- Arrow Example -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Base Example</h6>
+                </div>
+                <div class="card-body single-arrow">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Domiex</a></li>
+                            <li class="breadcrumb-item"><a href="#">UI</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Breadcrumb</li>
+                        </ol>
+                    </nav>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#"><i class="ri-home-4-line"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#">
+                                Advance UI</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Scrollbar</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- Line Example -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Base Example</h6>
+                </div>
+                <div class="card-body dash-arrow">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Domiex</a></li>
+                            <li class="breadcrumb-item"><a href="#">UI</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Breadcrumb</li>
+                        </ol>
+                    </nav>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#"><i class="ri-home-4-line"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#">
+                                Advance UI</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Scrollbar</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

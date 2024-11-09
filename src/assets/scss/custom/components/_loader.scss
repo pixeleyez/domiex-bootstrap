@@ -1,0 +1,46 @@
+.spin {
+    height: $spinner-width !important;
+    width: $spinner-height !important;
+    border-radius: $border-radius-pill;
+}
+
+// Modern Spin Loader
+.modern-spinner {
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+}
+
+// Gradient Loader
+.bg-gradient{
+    border-color: $primary $success $warning $danger !important;
+}
+.bg-gradient2{
+    border-color: $info $pink $secondary $primary !important;
+}
+.bg-sub-gradient{
+    border-color: $primary-border-subtle $success-border-subtle $warning-border-subtle $danger-border-subtle !important;
+}
+
+// Button
+.circle{
+    height: map-get($spacers, 3);
+    width: map-get($spacers, 3);
+    margin-top: -.25rem;
+    margin-right: -.25rem;
+}
+.position-absolute.animate-ping {
+    margin-top: -.35rem;
+    margin-right: -.35rem;
+}
+
+// Loading dots
+.circles{
+    height: map-get($spacers, 3);
+    width: map-get($spacers, 3);
+}
+.delay-150{
+    animation-delay: -0.3s !important;
+}
+.delay-300{
+    animation-delay: -.15s !important;
+}

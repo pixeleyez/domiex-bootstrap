@@ -1,0 +1,296 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Basic Input" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Default -->
+        <div class="col-lg-6 d-flex">
+            <div class="card  flex-fill">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Box Icons</h6>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <label for="exampleFormControlInput1" class="form-label fw-medium">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Float Label -->
+        <div class="col-lg-6 d-flex">
+            <div class="card  flex-fill">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Float Label</h6>
+                </div>
+                <div class="card-body">
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput" class="text-dark">Float Label</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Placeholder -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Placeholder</h6>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <label for="exampleFormControlInput1" class="form-label fw-medium">Input</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Placeholder">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Value -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Value</h6>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <label for="valueInput1" class="form-label fw-medium">Input</label>
+                        <input type="text" id="valueInput1" class="form-control" placeholder="Placeholder" value="Input value">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disabled -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Disabled</h6>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <label for="disabledInput" class="form-label fw-medium">Input</label>
+                        <input type="text" id="disabledInput" class="form-control" placeholder="Placeholder" value="Disabled Input" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Valid Field -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Valid Field</h6>
+                </div>
+                <div class="card-body">
+                    <form class="was-validated">
+                        <div>
+                            <label for="validationTextarea" class="form-label fw-medium">Email</label>
+                            <input type="email" class="form-control" id="validationTextarea" placeholder="" value="example@gmail.com" required></input>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Invalid Field -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Invalid Field</h6>
+                </div>
+                <div class="card-body">
+                    <form class="was-validated">
+                        <div>
+                            <label for="validationTextarea" class="form-label fw-medium">Email</label>
+                            <input type="email" class="form-control" id="validationTextarea" placeholder="" value="example.com" required></input>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Password Input -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Password Input</h6>
+                </div>
+                <div class="card-body">
+                    <form action="#!">
+                        <div x-data="{ show: false }">
+                            <label for="passwordInput" class="form-label fw-medium">Password</label>
+                            <div class="position-relative password">
+                                <input type="password" id="passwordInput" x-bind:type="show ? 'text' : 'password'" class="form-control pe-8" placeholder="Placeholder" required>
+                                <div type="button" @click="show = !show" class="eyes-btn" id="button-addon2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" x-show="show" style="display: none;">
+                                        <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye-off" x-show="!show">
+                                        <path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"></path>
+                                        <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"></path>
+                                        <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"></path>
+                                        <path d="m2 2 20 20"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Textarea -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Textarea</h6>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <label for="exampleFormControlInput1" class="form-label fw-medium">Textarea Input</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Textarea Placeholder -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Textarea Placeholder</h6>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <label for="exampleFormControlInput1" class="form-label fw-medium">Textarea Input</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter your description"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Textarea Placeholder -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Textarea Placeholder</h6>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <label for="exampleFormControlInput1" class="form-label fw-medium">Textarea Input</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter your description">Admin dashboard is a single screen that includes all crucial information. In contrast, an admin or control panel allows for certain actions.</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Icon with Input -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Icon with Input</h6>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <label for="exampleFormControlInput1" class="form-label fw-medium">Email</label>
+                        <div class="position-relative">
+                            <input type="email" class="form-control ps-9" id="exampleFormControlInput1" placeholder="Placeholder">
+                            <i data-lucide="mail" class="size-4 text-dark email-left"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Icon with Input (Right) -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Icon with Input (Right)</h6>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <label for="exampleFormControlInput1" class="form-label fw-medium">Email</label>
+                        <div class="position-relative">
+                            <input type="email" class="form-control pe-9" id="exampleFormControlInput1" placeholder="Placeholder">
+                            <i data-lucide="mail" class="size-4 text-dark email-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Sizes -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Input Sizes</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3">
+                            <div class="input-group input-group-sm d-flex flex-column">
+                                <label for="exampleFormControlInput1" class="form-label fw-medium">Small Input</label>
+                                <input type="email" class="form-control w-100 rounded-2" id="exampleFormControlInput1" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="input-group d-flex">
+                                <label for="exampleFormControlInput1" class="form-label fw-medium">Small Input</label>
+                                <input type="email" class="form-control input-group-md w-100 rounded-2" id="exampleFormControlInput1" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="input-group d-flex flex-column">
+                                <label for="exampleFormControlInput1" class="form-label fw-medium">Small Input</label>
+                                <input type="email" class="form-control w-100 rounded-2" id="exampleFormControlInput1" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="input-group input-group-lg d-flex flex-column">
+                                <label for="exampleFormControlInput1" class="form-label fw-medium">Small Input</label>
+                                <input type="email" class="form-control w-100 rounded-2" id="exampleFormControlInput1" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+{{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

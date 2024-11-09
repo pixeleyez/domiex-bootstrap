@@ -1,0 +1,220 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Pickers" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Default Select -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Default Select</h6>
+                </div>
+                <div class="card-body">
+                    <input data-provider="flatpickr" data-date-format="d M, Y" type="text" placeholder="YYYY-MM-DD" class="form-control form-input flatpickr-input active" readonly="readonly">
+                </div>
+            </div>
+        </div>
+
+        <!-- Human-friendly Dates -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Human-friendly Dates</h6>
+                </div>
+                <div class="card-body">
+                    <input data-provider="flatpickr" data-date-format="F j, Y" type="text" placeholder="YYYY-MM-DD" class="form-control form-input flatpickr-input active" readonly="readonly">
+                </div>
+            </div>
+        </div>
+
+        <!-- Date Picker with Min and Max Date -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Date Picker with Min and Max Date</h6>
+                </div>
+                <div class="card-body">
+                    <input data-provider="flatpickr" data-min-date="2024-01-01" data-max-date="2024-02-13" type="text" placeholder="DD MMM, YYYY" class="form-control form-input flatpickr-input" readonly="readonly">
+                </div>
+            </div>
+        </div>
+
+        <!-- Default Date -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Default Date</h6>
+                </div>
+                <div class="card-body">
+                    <input data-provider="flatpickr" data-date-format="d M, Y" data-default-date="today" type="text" placeholder="DD MMM, YYYY" class="form-control form-input flatpickr-input" readonly="readonly">
+                </div>
+            </div>
+        </div>
+
+        <!-- Disabling Date -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Disabling Date</h6>
+                </div>
+                <div class="card-body">
+                    <input data-provider="flatpickr" data-date-format="Y-m-d" data-disable-date="2024-07-17" type="text" placeholder="DD MMM, YYYY" class="form-control form-input flatpickr-input" readonly="readonly">
+                </div>
+            </div>
+        </div>
+
+        <!-- Short Date -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Short Date</h6>
+                </div>
+                <div class="card-body">
+                    <input data-provider="flatpickr" data-date-format="m/d/y" type="text" placeholder="MM/DD/YY" class="form-control form-input flatpickr-input" readonly="readonly">
+                </div>
+            </div>
+        </div>
+
+        <!-- Selecting multiple dates -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Selecting multiple dates </h6>
+                </div>
+                <div class="card-body">
+                    <input data-provider="flatpickr" data-date-format="d M, Y" data-multiple-date="true" type="text" placeholder="MM/DD/YY" class="form-control form-input flatpickr-input" readonly="readonly">
+                </div>
+            </div>
+        </div>
+
+        <!-- Full Date with Time -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Full Date with Time</h6>
+                </div>
+                <div class="card-body">
+                    <input data-provider="flatpickr" data-date-format="d M, Y H:i" data-enable-time="" type="text" placeholder="DD MMM, YYYY HH:MM" class="form-control form-input flatpickr-input" readonly="readonly">
+                </div>
+            </div>
+        </div>
+
+        <!-- Range Picker -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Range Picker</h6>
+                </div>
+                <div class="card-body">
+                    <input data-provider="flatpickr" data-date-format="d M, Y" data-range-date="" type="text" placeholder="Select Date Range" class="form-control form-input flatpickr-input" readonly="readonly">
+                </div>
+            </div>
+        </div>
+
+        <!-- Week Numbers -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Week Numbers</h6>
+                </div>
+                <div class="card-body">
+                    <input data-provider="flatpickr" data-date-format="d M, Y" data-week-number="true" type="text" placeholder="Select a date" class="form-control form-input flatpickr-input" readonly="readonly">
+                </div>
+            </div>
+        </div>
+
+        <!-- Timepickr -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Timepickr</h6>
+                </div>
+                <div class="card-body">
+                    <input data-provider="timepickr" data-time-basic="true" type="text" placeholder="Select a time" class="form-control form-input flatpickr-input" readonly="readonly">
+                </div>
+            </div>
+        </div>
+
+        <!-- 24 Hours Timepickr -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">24 Hours Timepickr</h6>
+                </div>
+                <div class="card-body">
+                    <input data-provider="timepickr" data-time-hrs="true" type="text" placeholder="Select a time" class="form-control form-input flatpickr-input" readonly="readonly">
+                </div>
+            </div>
+        </div>
+
+        <!-- Time Picker w/ Limits -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Time Picker w/ Limits</h6>
+                </div>
+                <div class="card-body">
+                    <input data-provider="timepickr" data-min-time="10:30" data-max-time="12:30" type="text" placeholder="Select a time" class="form-control form-input flatpickr-input" readonly="readonly">
+                </div>
+            </div>
+        </div>
+
+        <!-- Preloading Time -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Preloading Time</h6>
+                </div>
+                <div class="card-body">
+                    <input data-provider="timepickr" data-default-time="2024-08-28 12:20" placeholder="Select a time" class="form-control form-input flatpickr-input active" type="text" readonly="readonly">
+                </div>
+            </div>
+        </div>
+
+        <!-- Inline -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Inline</h6>
+                </div>
+                <div class="card-body">
+                    <input data-provider="flatpickr" data-date-format="d M, Y" data-default-date="today" data-inline-date="true" type="text" placeholder="Select a date" class="form-control form-input flatpickr-input" readonly="readonly">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

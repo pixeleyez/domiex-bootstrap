@@ -1,0 +1,27 @@
+.list-borderless {
+    --#{$prefix}list-group-border-width: none;
+    --#{$prefix}list-group-item-padding-x: 0px;
+    --#{$prefix}list-group-item-padding-y: 0px;
+
+}
+
+@each $state in map-keys($theme-colors) { 
+    .list-group-#{$state} {
+        li::marker, li:before {
+            color: var(--#{$prefix}#{$state});
+        }
+    }
+}
+
+.list-arrow {
+    list-style-image: url("../images/others/arrow-right.png");
+}
+
+.list-border {
+    --#{$prefix}list-group-item-padding-x: 0.5rem;
+    --#{$prefix}list-group-item-padding-y: 0.5rem;
+}
+
+.form-check-input:checked + .form-check-label .custom-checkbox {
+    content: url('path/to/your/checked-image.png');
+}

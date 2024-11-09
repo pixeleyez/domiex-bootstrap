@@ -1,0 +1,24 @@
+
+.modal-content{
+    box-shadow:  1px 5px 14px #ffffff4a;
+    border: none;
+}
+.modal-body{
+    p{
+        color: $gray-500;
+    }
+}
+.modal-header{
+    svg{
+        color: $gray-500;
+        &:hover{
+            color: $danger;
+        }
+    }
+}
+.modal-xs{
+    width: 20rem;
+}
+.modal-xxl{
+    width: 64rem;
+}

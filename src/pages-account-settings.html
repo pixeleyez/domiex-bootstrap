@@ -1,0 +1,226 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    <div>
+
+        <div class="position-relative mb-6">
+            <div class="position-relative overflow-hidden rounded bg-primary bg-opacity-10 custom-box">
+                <div class="bordered-square bordered-position1 border-color-primary size-96"></div>
+                <div class="bordered-square bordered-position2 border-color-success size-80"></div>
+                <div class="bordered-square bordered-position3 border-color-pink size-40"></div>
+            </div>
+            <div class="text-center">
+                <div class="position-relative d-inline-block mx-auto custom-container">
+                    <div class="position-relative p-1 rounded-circle custom-gradient custom-image-container">
+                        <img src="assets/images/avatar/user-17.png" alt="" class="mx-auto custom-image rounded-pill size-28 border border-4 border-white">
+                    </div>
+                    <div class="position-absolute border border-white rounded-pill bg-success custom-small-circle size-4"></div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center gap-1">
+                    <h5 class="mt-2 mb-1">Sophia Mia</h5>
+                    <i data-lucide="badge-check" class="size-5 icon-primary"></i>
+                </div>
+                <ul class="text-dark d-flex align-items-center gap-2 justify-content-center m-0">
+                    <li class="d-flex align-items-center gap-2">
+                        <i data-lucide="building-2" class="size-4"></i>
+                        <span>UI / UX Designer</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-2">
+                        <i data-lucide="map-pin" class="size-4"></i>
+                        <span>Argentina</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-2">
+                        <i data-lucide="calendar-days" class="size-4"></i>
+                        <span>24 April, 2024</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link fw-medium active" aria-current="page" href="pages-account-settings.html">
+                        <i data-lucide="user-round" class="size-4 me-1"></i>
+                        Account
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium" aria-current="page" href="pages-account-security.html">
+                        <i data-lucide="shield-check" class="size-4 me-1"></i>
+                        Security
+                    </a>
+                </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium" aria-current="page" href="pages-account-billing-plan.html">
+                        <i data-lucide="gem" class="size-4 me-1"></i>
+                        Billing & Plans
+                    </a>
+                </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium" aria-current="page" href="pages-account-notification.html">
+                        <i data-lucide="bell" class="size-4 me-1"></i>
+                        Notification
+                    </a>
+                </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium" aria-current="page" href="pages-account-statements.html">
+                        <i data-lucide="list-tree" class="size-4 me-1"></i>
+                        Statements
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium" aria-current="page" href="pages-account-logs.html">
+                        <i data-lucide="log-out" class="size-4 me-1"></i>
+                        Logs
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="mt-5 card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <h6 class="card-title">Personal Information</h6>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row g-5">
+                            <div x-data="{ file: null, previewUrl: 'assets/images/avatar/user-17.png' }" class="col-12">
+                                <div>
+                                    <img :src="previewUrl" alt="Profile Image" class="size-20 rounded-3">
+                                </div>
+                                <div class="d-inline-block mt-4">
+                                    <label class="btn btn-sub-primary d-flex justify-content-center align-items-center gap-2">
+                                        <i data-lucide="upload" class="size-4"></i>
+                                        Upload Profile
+                                        <input type="file" @change="file = $event.target.files[0]; previewUrl = URL.createObjectURL(file)" style="display: none;">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label for="firstNameInput" class="form-label fw-medium">First Name</label>
+                                <input type="text" value="Sophia" placeholder="Enter your first name" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <label for="lastNameInput" class="form-label fw-medium">Last Name</label>
+                                <input type="text" value="Mia" placeholder="Enter your last name" class="form-control">
+                            </div>
+                            <div class="col-4">
+                                <label for="roleInput" class="form-label fw-medium">Role</label>
+                                <input type="text" value="UI / UX Designer" placeholder="Enter your role" class="form-control">
+                            </div>
+                            <div class="col-4">
+                                <label for="birthDateInput" class="form-label fw-medium">Birth of Date</label>
+                                <input type="date" placeholder="Select date" class="form-control">
+                            </div>
+                            <div class="col-4">
+                                <label for="joiningDateInput" class="form-label fw-medium">Joining Date</label>
+                                <input type="date" placeholder="Select date" class="form-control">
+                            </div>
+                            <div class="col-4">
+                                <label for="emailInput" class="form-label fw-medium">Email Address</label>
+                                <input type="email" value="sophia@pixeleyez.com" placeholder="example@pixeleyez.com" class="form-control">
+                            </div>
+                            <div class="col-4">
+                                <label for="phoneNumberInput" class="form-label fw-medium">Phone Number</label>
+                                <input type="number" value="01234 56789" placeholder="+(00) 00000 00000" class="form-control">
+                            </div>
+                            <div class="col-4">
+                                <label for="locationInput" class="form-label fw-medium">Location</label>
+                                <input type="text" value="Argentina" placeholder="Enter location" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <label for="languageSelect" class="form-label fw-medium">Language</label>
+                                <div id="language-select"></div>
+                            </div>
+                            <div class="col-6">
+                                <label for="currencySelect" class="form-label fw-medium">Currency</label>
+                                <div id="currency-select"></div>
+                            </div>
+                            <div class="col-12">
+                                <label for="textareaInput2" class="form-label fw-medium">Objective</label>
+                                <textarea type="text" rows="3" placeholder="Write your objective" class="form-control"></textarea>
+                            </div>
+                            <div class="col-12 justify-content-end d-flex">
+                                <button class="btn btn-primary">Update Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3">
+                        <h6 class="card-title">Public Account</h6>
+                    </div>
+                    <div class="col-9">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="flex-grow-1">
+                                <h6>Publish your contact information publicly.</h6>
+                                <p class="text-dark">Allow anyone viewing your profile to access your contact information.</p>
+                            </div>
+                            <div class="form-check form-switch p-0 switch-outline-primary">
+                                <input type="checkbox" id="switch1" /><label class="label"  for="switch1"></label>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <div class="flex-grow-1">
+                                <h6>Make Contact Info Public</h6>
+                                <p class="text-dark">Allow anyone viewing your profile to access your contact information.</p>
+                            </div>
+                            <div class="form-check form-switch p-0 switch-outline-primary">
+                                <input type="checkbox" id="switch2" /><label class="label"  for="switch2"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h6 class="card-title mb-0">Delete Account</h6>
+            </div>
+            <div class="card-body">
+                <p class="text-dark mb-3">Please proceed with caution, as deleting your account and all associated data from our organization is a permanent action and cannot be undone.</p>
+                <button class="btn btn-danger">Delete Account</button>
+            </div>
+        </div>
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/pages/ui/pages-account-settings.init.js"></script>
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

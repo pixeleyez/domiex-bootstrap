@@ -21,6 +21,35 @@ import nl from '/assets/images/flag/nl.svg';
 import kr from '/assets/images/flag/kr.svg';
 import pt from '/assets/images/flag/pt.svg';
 
+AOS.init();
+
+
+// document.getElementById('liveAlertBtn').addEventListener('click', function () {
+// 	const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
+
+// 	// Check if an alert is already present
+// 	if (!alertPlaceholder.querySelector('.alert')) {
+// 		// Create the alert element
+// 		const alert = document.createElement('div');
+// 		alert.className = 'alert alert-primary alert-dismissible fade show';
+// 		alert.role = 'alert';
+// 		alert.innerHTML = 'You have successfully completed this thing! ' +
+// 			'<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="ri-close-fill"></i></button>';
+
+// 		// Append the alert to the placeholder
+// 		alertPlaceholder.appendChild(alert);
+// 	}
+// });
+
+document.querySelectorAll('button[data-toast]').forEach(button => {
+    button.addEventListener('click', () => {
+        const toastId = button.getAttribute('data-toast');
+        const toastElement = document.getElementById(toastId);
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastElement);
+        toastBootstrap.show();
+    });
+});
+
 (function () {
 	("use strict");
 	let backDropOverlay = null;
@@ -224,48 +253,48 @@ import pt from '/assets/images/flag/pt.svg';
 	window.drawerSetting = drawerSetting;
 })();
 
-function sidebarMenu() {
-	return {
-		menu: menu,
-		filteredMenu: menu,
-		activeUrl: window.location.pathname,
-		init() {
-			this.fetchMenu();
-			window.addEventListener('search-data', (event) => {
-				this.filterData(event.detail.term);
-			});
-		},
-		filterData(term) {
-			if (term) {
-				this.filteredMenu = this.menu.filter(item =>
-					(item.title && item.title.toLowerCase().includes(term.toLowerCase())) ||
-					(item.children && item.children.some(child => child.title.toLowerCase().includes(term.toLowerCase())))
-				);
-			} else
-				this.filteredMenu = this.menu;
-			this.fetchMenu();
-		},
-		chunkArray(array, chunkSize) {
-			const chunks = [];
-			for (let i = 0; i < array.length; i += chunkSize) {
-				chunks.push(array.slice(i, i + chunkSize));
-			}
-			return chunks;
-		},
-		fetchMenu() {
-			setTimeout(() => {
-				lucide.createIcons();
-			}, 0);
-		}
-	}
-}
+// function sidebarMenu() {
+// 	return {
+// 		menu: menu,
+// 		filteredMenu: menu,
+// 		activeUrl: window.location.pathname,
+// 		init() {
+// 			this.fetchMenu();
+// 			window.addEventListener('search-data', (event) => {
+// 				this.filterData(event.detail.term);
+// 			});
+// 		},
+// 		filterData(term) {
+// 			if (term) {
+// 				this.filteredMenu = this.menu.filter(item =>
+// 					(item.title && item.title.toLowerCase().includes(term.toLowerCase())) ||
+// 					(item.children && item.children.some(child => child.title.toLowerCase().includes(term.toLowerCase())))
+// 				);
+// 			} else
+// 				this.filteredMenu = this.menu;
+// 			this.fetchMenu();
+// 		},
+// 		chunkArray(array, chunkSize) {
+// 			const chunks = [];
+// 			for (let i = 0; i < array.length; i += chunkSize) {
+// 				chunks.push(array.slice(i, i + chunkSize));
+// 			}
+// 			return chunks;
+// 		},
+// 		fetchMenu() {
+// 			setTimeout(() => {
+// 				lucide.createIcons();
+// 			}, 0);
+// 		}
+// 	}
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
 	// Initialize Alpine.js
 	document.addEventListener('alpine:init', () => {
 		Alpine.data('dropdownBehavior', dropdownBehavior);
 		Alpine.data('layoutSettings', layoutSettings);
-		Alpine.data('sidebarMenu', sidebarMenu);
+		// Alpine.data('sidebarMenu', sidebarMenu);
 	});
 })
 
@@ -693,3 +722,6 @@ function layoutSettings() {
 window.onload = function () {
 	window.Alpine.start();
 }
+
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))

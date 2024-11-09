@@ -1,0 +1,52 @@
+.basic-gallery {
+    position: relative;
+
+    img {
+        transition: transform 8s ease;
+        height: 18.75rem;
+        width: 100%;
+        object-fit: cover;
+
+        &:hover {
+            transform: scale(1.5);
+        }
+    }
+}
+
+.masonary-list {
+    display: grid;
+    grid-gap: 1.25rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.3125rem;
+  }
+  
+  .item-1 {
+    height: 16rem;
+  }
+  .item-2 {
+    height: 25rem;
+  }
+  .item-3 {
+    height: 18rem;
+  }
+  .item-4 {
+    height: 12rem;
+    margin-top: -9rem;
+  }
+  .item-5 {
+    height: 20rem;
+  }
+  .item-6 {
+    height: 20rem;
+    margin-top: -7rem;
+  }
+  .item-7 {
+    height: 24rem;
+    margin-top: -17rem;
+  }

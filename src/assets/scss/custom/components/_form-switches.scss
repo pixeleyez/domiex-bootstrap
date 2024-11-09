@@ -1,0 +1,147 @@
+.form-switch input[type=checkbox] {
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+.label {
+	cursor: pointer;
+	width: 3rem;
+	height: 1.75rem;
+	border-radius: 6.25rem;
+	position: relative;
+}
+
+.label:after {
+	content: '';
+	position: absolute;
+	top: 0.1875rem;
+	left: 0.1875rem;
+	width: 1.25rem;
+	height: 1.25rem;
+	border-radius: 5.625rem;
+	transition: 0.1s;
+}
+
+input:checked+.label:after {
+	left: 1.4375rem;
+}
+
+@each $state in map-keys($theme-colors) {
+	.switch-outline-#{$state} {
+		input:checked+.label:after {
+			background-color: var(--#{$prefix}#{$state});
+		}
+
+		.label {
+			border: 1px solid $gray-200;
+
+			&::after {
+				background: $gray-200;
+			}
+
+			.rounded {
+				border-radius: 2px;
+			}
+		}
+	}
+
+	.switch-soft-#{$state} {
+		input:checked+.label:after {
+			background-color: var(--#{$prefix}#{$state});
+		}
+
+		.label {
+			background-color: $gray-200;
+			border: 1px solid $gray-200;
+
+			&::after {
+				background: $body-bg;
+			}
+		}
+	}
+
+	.switch-softColor-#{$state} {
+		input:checked+.label {
+			background: var(--#{$prefix}#{$state}-bg-subtle);
+			border: 1px solid var(--#{$prefix}#{$state}-bg-subtle);
+
+			&::after {
+				background-color: var(--#{$prefix}#{$state});
+			}
+		}
+
+		.label {
+			background-color: $gray-200;
+			border: 1px solid $gray-200;
+
+			&::after {
+				background: $body-bg;
+			}
+		}
+	}
+
+	.switch-solid-#{$state} {
+		input:checked+.label {
+			background: var(--#{$prefix}#{$state});
+			border: 1px solid var(--#{$prefix}#{$state});
+
+			&::after {
+				background-color: var(--#{$prefix}#{$state}-bg-subtle);
+			}
+		}
+
+		.label {
+			border: 1px solid $gray-200;
+
+			&::after {
+				background: $gray-200;
+			}
+		}
+	}
+
+	.switch-3Deffect-#{$state} {
+		input:checked+.label:after {
+			background-color: var(--#{$prefix}#{$state});
+		}
+
+		.label {
+			border: 1px solid $gray-200;
+			box-shadow: inset 0 2px 4px 0 #d1d5db;
+
+			&::after {
+				background: $body-bg;
+				box-shadow: 0 10px 15px -3px #9ca3af, 0 4px 6px -4px #9ca3af;
+			}
+		}
+	}
+}
+
+.switch-square {
+	.label {
+		border-radius: $border-radius;
+		&::after {
+			border-radius: $border-radius;
+		}
+	}
+}
+.switch-text{
+	.label:after{
+		content: 'N';
+		font-weight: 600;
+		font-size: 12px;
+		@include flexStyle(center, center);
+	}
+	input:checked+.label:after{
+		color: #fff;
+	}
+}
+.switch-icon{
+	.label:after{
+		content: '\ea64';
+		font-family: "RemixIcon";
+	}
+	input:checked+.label:after{
+		content: '\ea6e';
+	}
+}

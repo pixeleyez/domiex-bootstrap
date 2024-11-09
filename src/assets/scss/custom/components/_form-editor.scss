@@ -1,0 +1,9 @@
+.ql-snow .ql-editor h2{
+    line-height: 2;
+}
+.ql-container{
+    height: 13rem !important;
+}
+.ql-toolbar.ql-snow, .ql-container.ql-snow{
+    border-color: $gray-200 !important;
+}

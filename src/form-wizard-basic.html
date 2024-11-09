@@ -1,0 +1,291 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Buttons" }}
+
+    {{> partials/head-css}}
+
+    <link rel="stylesheet" href="assets/libs/quill/dist/quill.snow.css">
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Basic Wizard" sub-title="UI" }}
+    <div class="row">
+
+        <!-- Multi Step Form -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Multi Step Form</h6>
+                </div>
+                <div class="card-body">
+                    <div class="card-width mx-auto">
+                        <div class="card">
+                            <div x-data="{
+                                step: 1,
+                                formData: {
+                                    image: null,
+                                    firstname: '',
+                                    email: '',
+                                    selectedGender: '',
+                                    profession: ''
+                                },
+                                errors: {
+                                    firstnameError: '',
+                                    emailError: '',
+                                    imageError: '',
+                                    showErrors: false
+                                },
+                                validateStep1() {
+                                    this.errors.firstnameError = this.formData.firstname.trim() === '' ? 'Firstname is required.' : '';
+                                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                    this.errors.emailError = !emailPattern.test(this.formData.email) ? 'Valid email is required.' : '';
+                                    this.errors.imageError = this.formData.image ? '' : 'Profile picture is required.';
+                                },
+                                submitStep1() {
+                                    this.validateStep1();
+                                    if (!this.errors.firstnameError && !this.errors.emailError && !this.errors.imageError) {
+                                        this.step = 2; // Move to the next step if validation passes
+                                    }
+                                },
+                                submitStep3() {
+                                    this.errors.showErrors = true;
+                                    if (this.formData.selectedGender && this.formData.profession.trim()) {
+                                        this.step = 4; // Move to success step
+                                    }
+                                },
+                                resetForm() {
+                                    this.step = 1;
+                                    this.formData = {
+                                        image: null,
+                                        firstname: '',
+                                        email: '',
+                                        selectedGender: '',
+                                        profession: ''
+                                    };
+                                    this.errors = {
+                                        firstnameError: '',
+                                        emailError: '',
+                                        imageError: '',
+                                        showErrors: false
+                                    };
+                                }
+                            }">
+                        
+                            <!-- Step 1 -->
+                            <div x-show="step === 1" class="card-body">
+                                <div class="py-4 border-bottom">
+                                    <h6 class="text-dark fs-12">Step: 1 of 4</h6>
+                                    <div class="row align-items-center">
+                                        <div class="col-6">
+                                            <h5 class="mb-0">Your Profile</h5>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="progress w-100 progress-1">
+                                                    <div class="progress-bar bg-success" style="width: 25%;"></div>
+                                                </div>
+                                                <h6 class="text-dark fs-12 mb-0">25%</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-10 pb-5">
+                                    <div class="mb-5 text-center">
+                                        <div class="mb-4">
+                                            <img x-show="formData.image" :src="formData.image" alt="Profile Picture" class="rounded-pill" />
+                                            <img x-show="!formData.image" src="assets/images/others/user.jpg" alt="Default Profile Picture" class="rounded-pill size-32" />
+                                        </div>
+                                        <label for="fileInput" class="btn btn-outline-light text-dark">Browse Photo</label>
+                                        <input type="file" id="fileInput" class="d-none" @change="formData.image = $event.target.files[0] ? URL.createObjectURL($event.target.files[0]) : null" />
+                                        <div class="mt-1 fs-12 text-dark">Click to add profile picture</div>
+                                        <span x-show="errors.imageError" class="text-danger fs-12" x-text="errors.imageError"></span>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="firstname" class="form-label fw-medium">Firstname :</label>
+                                        <input type="text" placeholder="Enter your FirstName..." class="form-control" x-model="formData.firstname" @input="validateStep1()">
+                                        <span x-show="errors.firstnameError" class="text-danger fs-12" x-text="errors.firstnameError"></span>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="email" class="form-label fw-medium">Email :</label>
+                                        <input type="text" placeholder="Enter your email address..." class="form-control" x-model="formData.email" @input="validateStep1()">
+                                        <span x-show="errors.emailError" class="text-danger fs-12" x-text="errors.emailError"></span>
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                        <button class="btn btn-primary mt-5 d-flex justify-content-center align-items-center gap-2" @click="submitStep1">
+                                            Next
+                                            <i data-lucide="move-right" class="size-4"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- Step 2 -->
+                            <div x-show="step === 2" class="card-body">
+                                <div class="py-4 border-bottom">
+                                    <h6 class="text-dark fs-12">Step: 2 of 4</h6>
+                                    <div class="row align-items-center">
+                                        <div class="col-6">
+                                            <h5 class="mb-0">Your Password</h5>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="progress w-100 progress-1">
+                                                    <div class="progress-bar bg-success" style="width: 50%;"></div>
+                                                </div>
+                                                <h6 class="text-dark fs-12 mb-0">50%</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-10 pb-5">
+                                    <label for="password" class="form-label fw-bold">Set up password</label>
+                                    <div class="text-dark">
+                                        Please create a secure password including the following criteria below.
+                                        <ul class="mt-2 list-group-disc">
+                                            <li>lowercase letters</li>
+                                            <li>numbers</li>
+                                            <li>capital letters</li>
+                                            <li>special characters</li>
+                                        </ul>
+                                    </div>
+                                    <div x-data="{ show: false }">
+                                        <label for="passwordInput" class="form-label fw-medium">Password</label>
+                                        <div class="position-relative password">
+                                            <input type="password" id="passwordInput" x-bind:type="show ? 'text' : 'password'" class="form-control pe-8" placeholder="Placeholder" required>
+                                            <div type="button" @click="show = !show" class="eyes-btn" id="button-addon2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x-show="show" style="display: none;">
+                                                    <path d="M12,9c-1.642,0-3,1.359-3,3c0,1.642,1.358,3,3,3c1.641,0,3-1.358,3-3C15,10.359,13.641,9,12,9z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x-show="!show" style="display: none;">
+                                                    <path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"></path>
+                                                    <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"></path>
+                                                    <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"></path>
+                                                    <path d="m2 2 20 20"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-8">
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-light text-dark" @click="step = 1">
+                                                <i data-lucide="move-left" class="size-4"></i>
+                                                Previous
+                                            </button>
+                                            <button class="btn btn-primary" @click="step = 3">
+                                                Next
+                                                <i data-lucide="move-right" class="size-4"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- Step 3 -->
+                            <div x-show="step === 3" class="card-body">
+                                <div class="py-4 border-bottom">
+                                    <h6 class="text-dark fs-12">Step: 3 of 4</h6>
+                                    <div class="row align-items-center">
+                                        <div class="col-6">
+                                            <h5 class="mb-0">Tell me about yourself</h5>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="progress w-100 progress-1">
+                                                    <div class="progress-bar bg-success" style="width: 75%;"></div>
+                                                </div>
+                                                <h6 class="text-dark fs-12 mb-0">75%</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-10 pb-5">
+                                    <div class="mb-5">
+                                        <label for="gender" class="form-label">Gender</label>
+                                        <div class="d-flex gap-5">
+                                            <div class="form-check radio-primary">
+                                                <input class="form-check-input" type="radio" name="gender" id="male" x-model="formData.selectedGender" value="Male">
+                                                <label class="form-check-label" for="male">Male</label>
+                                            </div>
+                                            <div class="form-check radio-primary">
+                                                <input class="form-check-input" type="radio" name="gender" id="female" x-model="formData.selectedGender" value="Female">
+                                                <label class="form-check-label" for="female">Female</label>
+                                            </div>
+                                        </div>
+                                        <span x-show="errors.showErrors && !formData.selectedGender" class="text-danger fs-12">Please select your gender.</span>
+                                    </div>
+                                    <div class="mb-5">
+                                        <label for="profession" class="form-label">Profession</label>
+                                        <input type="text" placeholder="eg. Web Developer" class="form-control" x-model="formData.profession">
+                                        <span x-show="errors.showErrors && !formData.profession.trim()" class="text-danger fs-12">Profession is required.</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-light text-dark" @click="step = 2">
+                                            <i data-lucide="move-left" class="size-4"></i>
+                                            Previous
+                                        </button>
+                                        <button class="btn btn-success" @click="submitStep3">
+                                            Complete
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- Step 4: Registration Success -->
+                            <div x-show="step === 4" class="card-body">
+                                <div class="text-center">
+                                    <div class="py-4">
+                                        <i data-lucide="circle-check-big" class="size-8 icon-success"></i>
+                                    </div>
+                                    <h5 class="fs-xl">Registration Success</h5>
+                                    <div class="text-dark mb-8">
+                                        Thank you. We have sent you an email to info@pixeleyez.com. Please click the link in the message to activate your account.
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <button class="btn btn-light text-dark d-flex align-items-center gap-2" @click="resetForm()">
+                                            <i data-lucide="home" class="size-4"></i>
+                                            Back to home
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/quill/dist/quill.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/pages/ui/form-editor.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
