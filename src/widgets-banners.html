@@ -1,0 +1,120 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Widgets Banners" }}
+
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Banners" sub-title="Widgets" }}
+    <div class="row">
+        <div class="col-12 mb-5">
+            <div class="alert alert-solid-primary alert-dismissible border-0">
+                <div class="d-flex gap-3 align-items-center">
+                    <i data-lucide="headset" class="size-8"></i>
+                    <div>
+                        <p class="text-white">Hello! Need Help?</p>
+                        <h6 class="mb-1 fw-medium">Feel free to ask me anything!</h6>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="ri-close-fill"></i></button>
+            </div>    
+        </div>
+        <div class="col-6">
+            <div class="card widget-banner-info">
+                <div class="card-body position-relative overflow-hidden py-6">
+                    <div class="col-9">
+                        <h6 class="mb-1" style="font-size: 1rem;">Welcome to Dr. Olivia Martina</h6>
+                        <p class="mb-4">Welcome to the Admin Dashboard! This centralized platform is designed to streamline your administrative tasks and provide you with real-time insights.</p>
+                        <a href="#!" class="btn btn-info">Get Started</a>
+                    </div>
+                    <div class="col-3 widget-banner">
+                        <div class="banner-circle rounded-circle"></div>
+                        <img src="assets/images/dashboards/img-1.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card widget-banner-dark">
+                <div class="card-body position-relative overflow-hidden py-6">
+                    <div class="col-9">
+                        <h6 class="mb-1" style="font-size: 1rem;">Welcome to Dr. Olivia Martina</h6>
+                        <p class="mb-4">Welcome to the Admin Dashboard! This centralized platform is designed to streamline your administrative tasks and provide you with real-time insights.</p>
+                        <a href="#!" class="btn btn-dark">Get Started</a>
+                    </div>
+                    <div class="col-3 widget-banner">
+                        <div class="banner-circle rounded-circle"></div>
+                        <img src="assets/images/dashboards/img-1.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="position-relative bg-indigo border border-indigo overflow-hidden card">
+                <div class="position-absolute top-0 end-0">
+                    <div class="position-relative overflow-hidden">
+                        <div class="svg-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="svg-fluid" width="500" height="250" preserveAspectRatio="none" viewBox="0 0 500 250">
+                                <g fill="none">
+                                    <path class="svg-path" d="M231.51 280.18C274.64 267.68 249.28 152.18 351.03 146.08 452.77 139.98 528.45 86.54 590.06 86.08"></path>
+                                    <path class="svg-path" d="M200.68 250.58C260.95 239.55 290.28 88.89 384.42 88.39 478.56 87.89 518.09 166.68 568.16 168.39"></path>
+                                    <path class="svg-path" d="M33.11 268.48C95.57 246.25 104.46 66.02 197.7 60.55 290.93 55.08 279.99 91.8 362.28 91.8 444.58 91.8 484.99 60.69 526.87 60.55"></path>
+                                    <path class="svg-path" d="M214.96 255.51C265.37 253.07 292.61 172.07 395.66 165.55 498.72 159.03 523.65 59.76 576.37 55.55"></path>
+                                    <path class="svg-path" d="M129.54 298.93C172.49 296.37 204.22 217.32 280.98 217.15 357.75 216.98 356.71 248.4 432.43 248.4 508.15 248.4 545.21 217.31 583.87 217.15"></path>
+                                </g>
+                                <defs>
+                                    <mask id="SvgjsMask1020">
+                                        <rect width="500" height="250" fill="#ffffff"></rect>
+                                    </mask>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body py-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="mb-2 text-white">Welcome Back! 👋, Olivia Martina</p>
+                            <h3 class="mb-5 text-light">Make sure to monitor your health regularly</h3>
+                            <a href="#!" class="btn bg-white d-inline-flex align-items-center">
+                                <span>Book Appointment</span>
+                                <i data-lucide="calendar-days" class="size-4 ms-2"></i>
+                            </a>
+                        </div>
+                        <div class="col-6 text-end z-2">
+                            <img src="assets/images/dashboards/img-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

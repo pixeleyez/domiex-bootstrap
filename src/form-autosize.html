@@ -28,21 +28,18 @@
                     <h6 class="mb-0 card-title d-flex">Autosize Textarea</h6>
                 </div>
                 <div class="card-body">
-                    <div x-data="app()">
-                        <textarea
-                            id="messageTextarea"
-                            rows="3"
-                            placeholder="Message..."
-                            maxlength="255"
-                            @input="updateTextarea($event.target)"
-                            x-ref="textarea"
-                            style="height: auto; overflow: hidden;"
-                            class="form-control"
-                        ></textarea>
-                        <div class="mt-1">
-                            <span x-text="charCount + ' / 255'" class="float-end fs-12 text-dark"></span>
+                    <div x-data="app()" x-init="resizeObserver($refs.container,$refs.textarea)">
+                        <div x-ref="container" class="position-relative">
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="3" placeholder="Message..." maxlength="255" @input="updateTextarea($refs.textarea)" x-ref="textarea"></textarea>
+                            </div>
+                            <div class="d-flex justify-content-end mt-1">
+                                <span class="text-muted small">
+                                    <span x-text="charCount"></span> / 255
+                                </span>
+                            </div>
                         </div>
-                    </div>                    
+                    </div>               
                 </div>
             </div>
         </div>
@@ -55,7 +52,8 @@
 
 {{> partials/vendor-scripts}}
 
-<script src="assets/js/pages/ui/form-autosize.init.js"></script>
+<script type="module" src="assets/js/form/autosize.init.js"></script>
+
 <script type="module" src="assets/js/main.js"></script>
 
 </body>

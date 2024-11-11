@@ -26,11 +26,19 @@
                     <h6 class="mb-0 card-title d-flex">Simple Word Counter</h6>
                 </div>
                 <div class="card-body">
-                    <div class="form-group">
-                        <textarea name="search" id="words" rows="12" class="form-control" oninput="updateCounts()"></textarea>
-                    </div>
-                    <p class="mt-4">Word count: <span id="wordCount" class="fw-bold text-primary">0</span></p>
-                    <p>Character count: <span id="charCount" class="fw-bold text-primary">0</span> (without spaces)</p>    
+                    <div x-data="data()" x-init="{...countWords(), ...countChars()}">
+                        <div class="mb-3">
+                            <textarea name="search" id="words" rows="10" x-model="search" @keyup="countWords(); countChars();" class="form-control" x-text="search"></textarea>
+                        </div>
+                        <p class="mt-3">
+                            Word count: 
+                            <span class="fw-semibold text-primary" x-text="wordCount"></span>
+                        </p>
+                        <p>
+                            Character count: 
+                            <span class="fw-semibold text-primary" x-text="charCount"></span> (without spaces)
+                        </p>
+                    </div> 
                 </div>
             </div>
         </div>
@@ -42,7 +50,7 @@
 
 {{> partials/vendor-scripts}}
 
-<script src="assets/js/pages/ui/word-counter.init.js"></script>
+<script type="module" src="assets/js/ui/word-counter.init.js"></script>
 
 <script type="module" src="assets/js/main.js"></script>
 
