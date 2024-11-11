@@ -1,0 +1,59 @@
+.slide-hover {
+    position: relative;
+    transition: all 0.5s ease-in-out; 
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: initial;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.125rem; 
+        transition: height 0.5s ease-in-out;
+    }
+
+    a {
+        color: $dark;
+        border: 1px solid $gray-200;
+        transition: color 0.6s ease-in-out, border-color 0.6s ease-in-out; 
+    }
+
+    &:hover {
+        &::before {
+            height: 100%; 
+            top: 0;
+            bottom: initial;
+        }
+
+        a {
+            color: white;  
+            border-color: rgba(255, 255, 255, 0.26); 
+        }
+
+        color: white; 
+    }
+}
+
+@each $state in map-keys($theme-colors) {
+    .slide-hover-#{$state} {
+        .badge {
+            background-color: var(--#{$prefix}#{$state});
+        }
+        
+        &.slide-hover {
+            &::before {
+                background-color: var(--#{$prefix}#{$state});
+            }
+
+            .badge {
+                background-color: var(--#{$prefix}#{$state}); 
+            }
+        }
+    }
+    .icon-outline-#{$state}{
+        outline: 1px;
+        outline-style: dashed;
+        outline-color: var(--#{$prefix}#{$state});
+    }
+}

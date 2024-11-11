@@ -6,6 +6,7 @@
         "@ryangjchandler/alpine-tooltip",
         "aos",
         "alpinejs",
+        "apexcharts",
         "datatables",
         "lucide",
         "line-awesome",

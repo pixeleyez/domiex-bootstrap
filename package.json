@@ -35,6 +35,7 @@
         "@ryangjchandler/alpine-tooltip": "^2.0.0",
         "alpinejs": "^3.14.1",
         "aos": "^2.3.4",
+        "apexcharts": "^4.0.0",
         "bootstrap": "^5.3.3",
         "boxicons": "^2.1.4",
         "datatables": "^1.10.18",
