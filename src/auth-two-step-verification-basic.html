@@ -1,0 +1,55 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Two Step Verification" }}
+
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+<div class="contact-bg-gradient">
+    <div class="container">
+        <div class="d-grid min-vh-100 py-12">
+            <div class="col-12 col-xl-4 offset-xl-4 d-flex align-items-center">
+                <div class="p-10 card mb-0">
+                    <div class="text-center mb-4">
+                        <i data-lucide="mail-open" class="size-10 stroke-1 icon-dark"></i>
+                    </div>
+                    <h6 class="mb-0 text-gradient fs-xl fw-bold text-center lh-lg">OTP Verification</h6>
+                    <p class="mb-5 text-center">We're sent a code to <b>sophiamia@pixeleyez.com</b></p>
+
+                    <form>
+                        <div class="row g-5">
+                            <div x-data="{ inputValues: ['', '', '', '', '', ''] }" class="d-flex justify-content-center gap-3">
+                                <template x-for="(value, index) in inputValues" :key="index">
+                                    <input type="text" x-model="inputValues[index]" x-bind:value="value" x-on:input="if (!$event.target.value.match(/^\d*$/)) $event.target.value = $event.target.value.replace(/[^\d]/g, '')" class="form-control pattern-input text-center fs-3 fw-bold bg-light rounded-1 p-2 size-14" maxlength="1" pattern="\d*" :maxlength="1" />
+                                </template>
+                            </div>
+                                    
+                            <div class="col-12">
+                                <a href="auth-reset-password-basic.html" type="submit" class="btn btn-primary w-100">Reset Password</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{{> partials/vendor-scripts}}
+
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

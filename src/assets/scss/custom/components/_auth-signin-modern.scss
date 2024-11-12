@@ -1,0 +1,31 @@
+.auth-bg {
+    background: url('../images/others/auth.jpg');
+    background-position: center;
+    background-size: cover;
+
+    .card {
+        background-color: #ffffff1a;
+        backdrop-filter: blur(10px);
+        box-shadow: none;
+        border: none;
+        color: #ffffffbf;
+        a{
+            color: #ffffffbf;
+        }
+        input{
+            background-color: #ffffff1a;
+            border: none;
+            color: white;
+        }
+        .form-check-input:checked{
+            background-color: $primary;
+        }
+        .btn-sub-light{
+            background-color: #ffffff0e;
+        }
+        .social-link:hover{
+            background-color: #ffffff1a;
+            color: white;
+        }
+    }
+}

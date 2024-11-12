@@ -1,0 +1,265 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Widgets Data" }}
+
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Data" sub-title="Widgets" }}
+    <div class="row">
+        <div class="col-6 d-flex">
+            <div class="card flex-fill">
+                <div class="card-header">
+                    <div class="d-flex align-items-center gap-3">
+                        <h6 class="card-title flex-grow-1 mb-0">Top Products</h6>
+                        <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                            <button class="btn border link link-primary text-dark px-3 py-1 text-dark d-flex align-items-center gap-1" type="button" @click="open = !open" aria-expanded="open">
+                                    <span class="fs-12">Filters</span>
+                                    <i class="ri-arrow-down-s-line size-4 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                            </button>
+                            <div x-show="open" style="display: none;" class="dropdown-menu show shadow-sm position-absolute end-0">
+                                <a class="dropdown-item" href="#">Amount</a>
+                                <a class="dropdown-item" href="#">Revenue</a>
+                                <a class="dropdown-item" href="#">Rating</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="productsTable" x-data="{
+                            products: [
+                                { 
+                                    productName: 'Dribbble', 
+                                    image: 'https://dmaxxx.netlify.app/assets/images/img-013.png', 
+                                    salesUnit: 145, 
+                                    price: '$14.99', 
+                                    stock: 10, 
+                                    revenue: '$15,236', 
+                                    rating: 2.5 
+                                },
+                                { 
+                                    productName: 'Figma', 
+                                    image: 'https://dmaxxx.netlify.app/assets/images/img-022.png', 
+                                    salesUnit: 569, 
+                                    price: '$19.99', 
+                                    stock: 36, 
+                                    revenue: '$8,563', 
+                                    rating: 4.8 
+                                },
+                                { 
+                                    productName: 'Snapchat', 
+                                    image: 'https://dmaxxx.netlify.app/assets/images/img-032.png', 
+                                    salesUnit: 541, 
+                                    price: '$22.49', 
+                                    stock: 49, 
+                                    revenue: '$7,986', 
+                                    rating: 4.9 
+                                },
+                                { 
+                                    productName: 'Telegram', 
+                                    image: 'https://dmaxxx.netlify.app/assets/images/img-042.png', 
+                                    salesUnit: 126, 
+                                    price: '$31.78', 
+                                    stock: 29, 
+                                    revenue: '$36,322', 
+                                    rating: 3.7 
+                                },
+                                { 
+                                    productName: 'Ripple', 
+                                    image: 'https://dmaxxx.netlify.app/assets/images/img-052.png', 
+                                    salesUnit: 154, 
+                                    price: '$49.99', 
+                                    stock: 0, 
+                                    revenue: '$11,741', 
+                                    rating: 4.6 
+                                }
+                            ]
+                        }" x-init="console.log(products)">
+                        <div class="table-responsive">
+                            <table class="table table-borderless mb-0">
+                                <thead>
+                                    <tr class="table-light border-bottom">
+                                        <th class="fw-medium text-muted">Product</th>
+                                        <th class="fw-medium text-muted">Sales</th>
+                                        <th class="fw-medium text-muted">Price Unit</th>
+                                        <th class="fw-medium text-muted">Stock</th>
+                                        <th class="fw-medium text-muted">Revenue</th>
+                                        <th class="fw-medium text-muted">Rating</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Loop through products using Alpine.js -->
+                                    <template x-for="(product, index) in products" :key="index">
+                                        <tr class="align-middle">
+                                            <td>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div class="size-9 d-flex align-items-center justify-content-center border rounded-2 ">
+                                                        <img :src="product.image" alt="" class="rounded-circle size-7">
+                                                    </div>
+                                                    <h6 x-text="product.productName" class="mb-0"></h6>
+                                                </div>
+                                            </td>
+                                            <td x-text="product.salesUnit"></td>
+                                            <td x-text="product.price"></td>
+                                            <td x-text="product.stock"></td>
+                                            <td x-text="product.revenue"></td>
+                                            <td>
+                                                <i class="ri-star-line text-warning"></i>
+                                                <span class="text-muted" x-text="product.rating"></span>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        <div class="col-6 d-flex">
+            <div class="card flex-fill">
+                <div class="card-header">
+                    <div class="d-flex align-items-center gap-3">
+                        <h6 class="card-title flex-grow-1 mb-0">Recent Invoice</h6>
+                        <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                            <button class="btn border link link-primary text-dark px-3 py-1 text-dark d-flex align-items-center gap-1" type="button" @click="open = !open" aria-expanded="open">
+                                    <span class="fs-12">Filters</span>
+                                    <i class="ri-arrow-down-s-line size-4 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                            </button>
+                            <div x-show="open" style="display: none;" class="dropdown-menu show shadow-sm position-absolute end-0">
+                                <a class="dropdown-item" href="#">Amount</a>
+                                <a class="dropdown-item" href="#">Revenue</a>
+                                <a class="dropdown-item" href="#">Rating</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div x-data="{
+                        sortBy: '',
+                        sortDirection: 'asc',
+                        currentPage: 1,
+                        products: [
+                            { invoiceID: 'PE-10015', client: 'Joyce Perry', dateDue: '03 May, 2024', totalAmount: '$15,236', status: 'Pending' },
+                            { invoiceID: 'PE-10016', client: 'Marilyn Ecklund', dateDue: '04 May, 2024', totalAmount: '$8,563', status: 'New' },
+                            { invoiceID: 'PE-10017', client: 'Todd Day', dateDue: '08 May, 2024', totalAmount: '$7,986', status: 'Successful' },
+                            { invoiceID: 'PE-10018', client: 'Mary Diaz', dateDue: '11 May, 2024', totalAmount: '$36,322', status: 'Successful' },
+                            { invoiceID: 'PE-10019', client: 'Betty Gilliam', dateDue: '27 May, 2024', totalAmount: '$11,741', status: 'Pending' },
+                            { invoiceID: 'PE-10020', client: 'Robert Olsen', dateDue: '05 June, 2024', totalAmount: '$13,465', status: 'Successful' }
+                        ],
+                        get pageSize() {
+                            return 10; 
+                        },
+                        get displayedProducts() {
+                            const startIndex = (this.currentPage - 1) * this.pageSize;
+                            return this.products.slice(startIndex, startIndex + this.pageSize).sort((a, b) => {
+                                if (!this.sortBy) return 0;
+                                const aValue = a[this.sortBy];
+                                const bValue = b[this.sortBy];
+                                if (aValue < bValue) return this.sortDirection === 'asc' ? -1 : 1;
+                                if (aValue > bValue) return this.sortDirection === 'asc' ? 1 : -1;
+                                return 0;
+                            });
+                        },
+                        get totalPages() {
+                            return Math.ceil(this.products.length / this.pageSize); 
+                        },
+                        sort(field) {
+                            this.sortDirection = (this.sortBy === field && this.sortDirection === 'asc') ? 'desc' : 'asc';
+                            this.sortBy = field;
+                        },
+                        gotoPage(page) {
+                            this.currentPage = page;
+                        },
+                        prevPage() {
+                            if (this.currentPage > 1) this.currentPage--;
+                        },
+                        nextPage() {
+                            if (this.currentPage < this.totalPages) this.currentPage++;
+                        },
+                        get showingStart() {
+                            return (this.currentPage - 1) * this.pageSize + 1;
+                        },
+                        get showingEnd() {
+                            return Math.min(this.currentPage * this.pageSize, this.products.length);
+                        }
+                    }">
+                        <table class="table table-borderless mb-0">
+                            <thead>
+                                <tr class="table-light border-bottom cursor-pointer">
+                                    <th x-on:click="sort('invoiceID')" class="fw-medium text-dark">
+                                        Invoice ID <span x-show="sortBy === 'invoiceID'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                    </th>
+                                    <th x-on:click="sort('client')" class="fw-medium text-dark">
+                                        Client <span x-show="sortBy === 'client'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                    </th>
+                                    <th x-on:click="sort('dateDue')" class="fw-medium text-dark">
+                                        Due Date <span x-show="sortBy === 'dateDue'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                    </th>
+                                    <th x-on:click="sort('totalAmount')" class="fw-medium text-dark">
+                                        Total <span x-show="sortBy === 'totalAmount'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                    </th>
+                                    <th x-on:click="sort('status')" class="fw-medium text-dark">
+                                        Status <span x-show="sortBy === 'status'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                    </th>
+                                </tr>
+                            </thead>
+                
+                            <tbody>
+                                <template x-for="(product, index) in displayedProducts" :key="index">
+                                    <tr>
+                                        <td><a href="#!" class="link text-black" x-text="product.invoiceID"></a></td>
+                                        <td x-text="product.client"></td>
+                                        <td x-text="product.dateDue"></td>
+                                        <td x-text="product.totalAmount"></td>
+                                        <td>
+                                            <span :class="{
+                                                'badge bg-warning-subtle text-warning border-warning-subtle': product.status === 'Pending',
+                                                'badge bg-success-subtle text-success border border-success-subtle': product.status === 'Successful',
+                                                'badge bg-info-subtle text-info border border-info-subtle': product.status === 'New'
+                                            }" x-text="product.status"></span>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script src="assets/js/pages/widgets.charts.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

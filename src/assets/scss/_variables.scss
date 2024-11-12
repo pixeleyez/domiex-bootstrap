@@ -215,6 +215,7 @@ $spacers: (
   8: 2rem,
   9: 2.25rem,
   10: 2.5rem,
+  12: 3rem,
   20: 5rem,
   // 1: $spacer * .25,
   // 2: $spacer * .5,
@@ -292,7 +293,7 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1400px
+  xxl: 1536px
 );
 // scss-docs-end grid-breakpoints
 
@@ -310,7 +311,7 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1140px,
-  xxl: 1320px
+  xxl: 1536px
 );
 // scss-docs-end container-max-widths
 

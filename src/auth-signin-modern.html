@@ -1,0 +1,129 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Sign In" }}
+
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+<div class="auth-bg position-relative">
+    <div class="position-absolute top-0 start-0 end-0 bottom-0 bg-black opacity-50"></div>
+    <div class="container">
+        <div class="d-grid min-vh-100 py-12" x-data="loginForm()">
+            <div class="col-12 col-xl-4 offset-xl-4 d-flex align-items-center">
+                <div class="p-10 card ">
+                    <div class="text-center mb-4">
+                        <a href="/">
+                            <img src="assets/images/logo-white.png" alt="" class="mx-auto main-logo">
+                        </a>
+                    </div>
+                    <h6 class="mb-1 fs-xl fw-bold text-center lh-lg">Welcome Back, Sofia!</h6>
+                    <span class="mb-3 text-center">Don't have an account? <a href="/auth-signup-basic" class="link link-primary text-white fw-medium">Sign Up</a></span>
+                    <form @submit.prevent="submitForm">
+                        <div x-show="showSuccess" class="alert alert-success alert-dismissible border-0" role="alert">
+                            <span>You've successfully signed in to Domiex!</span>
+                            <button type="button" class="btn-close" @click="showSuccess = false" data-bs-dismiss="alert" aria-label="Close">
+                                <i class="ri-close-fill"></i>
+                            </button>
+                        </div>
+                        <div x-show="showError" class="alert alert-danger alert-dismissible border-0" role="alert">
+                            <span>Invalid email or password</span>
+                            <button type="button" class="btn-close" @click="showSuccess = false" data-bs-dismiss="alert" aria-label="Close">
+                                <i class="ri-close-fill"></i>
+                            </button>
+                        </div>
+
+                        <div class="row g-4 mt-3">
+                            <div class="col-12 mt-0">
+                                <label for="email" class="form-label fw-medium">Email Or Username</label>
+                                <input type="text" id="email" placeholder="Enter your email or username" x-model="email" class="form-control">
+                            </div>
+                            <div class="col-12">
+                                <div x-data="{ show: false }">
+                                    <label for="passwordInput" class="form-label fw-medium">Password</label>
+                                    <div class="position-relative password">
+                                        <input type="password" id="passwordInput" :type="show ? 'text' : 'password'" x-model="password" class="form-control pe-8" placeholder="Enter your placeholder" required>
+                                        <div type="button" @click="show = !show" class="eyes-btn" id="button-addon2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" x-show="show" style="display: none;">
+                                                <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                                                <circle cx="12" cy="12" r="3"></circle>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye-off" x-show="!show">
+                                                <path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"></path>
+                                                <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"></path>
+                                                <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"></path>
+                                                <path d="m2 2 20 20"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 d-flex justify-content-between align-items-center">
+                                <div class="form-check">
+                                    <input type="checkbox" id="rememberMe" class="form-check-input">
+                                    <label for="rememberMe" class="form-check-label">Remember me</label>
+                                </div>
+                                <a href="/auth-forgot-password-basic" class="fs-sm">Forgot Password?</a>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary w-100">Sign In</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="text-center my-3">
+                        <div>OR</div>
+                    </div>
+
+                    <!-- Social login buttons -->
+                    <div class="d-grid gap-2">
+                        <a type="button" class="btn btn-link btn-outline-light border border-white border-opacity-10 social-link">
+                            <img src="assets/images/others/google.png" alt="" class="inline-block size-4 me-1">
+                            Sign In via Google
+                        </a>
+                        <a type="button" class="btn btn-link btn-outline-light border border-white border-opacity-10 social-link">
+                            <i data-lucide="facebook" class="size-4 me-1 text-primary"></i>
+                            Sign In via Facebook
+                        </a>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-5">
+                        <div>
+                            <h6 class="mb-1">Admin</h6>
+                            <p class="text-muted">Email: admin@pixeleyez.com</p>
+                            <p class="text-muted">Password: admin@123</p>
+                        </div>
+                        <button class="btn btn-sub-light text-dark" onclick="login('admin')">Login</button>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <div>
+                            <h6 class="mb-1">Users</h6>
+                            <p class="text-muted">Email: user@pixeleyez.com</p>
+                            <p class="text-muted">Password: user@123</p>
+                        </div>
+                        <button class="btn btn-sub-light text-dark">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/auth/signin-basic.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

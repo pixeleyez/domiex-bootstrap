@@ -99,3 +99,9 @@ File: Main Css File
 // Widgets
 @import "custom/components/widgets-cards";
 @import "custom/components/widgets-banners";
+@import "custom/components/widgets-charts";
+
+// Authentication
+@import "custom/components/auth";
+@import "custom/components/auth-signin-modern";
+@import "custom/components/auth-signin-creative";
