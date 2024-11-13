@@ -1,0 +1,9 @@
+.progress-gradient-secondary {
+    background: linear-gradient(90deg, $primary-500, $secondary-500, $pink-500);
+}
+
+.dropdown-menu {
+    &.filter-assignee {
+        width: 13rem;
+    }
+}

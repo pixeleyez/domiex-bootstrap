@@ -1388,7 +1388,7 @@ $alert-color-scale:             40%; // Deprecated in v5.2.0, to be removed in v
 $progress-height:                   1rem;
 $progress-font-size:                $font-size-base * .75;
 $progress-bg:                       var(--#{$prefix}secondary-bg);
-$progress-border-radius:            var(--#{$prefix}border-radius);
+$progress-border-radius:            var(--#{$prefix}border-radius-pill);
 $progress-box-shadow:              none;
 $progress-bar-color:                $white;
 $progress-bar-bg:                   $primary;
