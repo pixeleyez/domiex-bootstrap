@@ -22,8 +22,8 @@
                             <img src="assets/images/logo-white.png" alt="" class="mx-auto main-logo">
                         </a>
                     </div>
-                    <h6 class="mb-1 fs-xl fw-bold text-center lh-lg">Welcome Back, Sofia!</h6>
-                    <span class="mb-3 text-center">Don't have an account? <a href="/auth-signup-basic" class="link link-primary text-white fw-medium">Sign Up</a></span>
+                    <h6 class="mb-1 fs-xl fw-semibold text-center lh-lg text-white">Welcome Back, Sofia!</h6>
+                    <span class="mb-3 text-center">Don't have an account? <a href="/auth-signup-basic" class="link text-white fw-medium">Sign Up</a></span>
                     <form @submit.prevent="submitForm">
                         <div x-show="showSuccess" class="alert alert-success alert-dismissible border-0" role="alert">
                             <span>You've successfully signed in to Domiex!</span>
@@ -93,19 +93,19 @@
                         </a>
                     </div>
                     <div class="d-flex justify-content-between align-items-center mt-5">
-                        <div>
-                            <h6 class="mb-1">Admin</h6>
-                            <p class="text-muted">Email: admin@pixeleyez.com</p>
-                            <p class="text-muted">Password: admin@123</p>
+                        <div class="d-inline-grid">
+                            <h6 class="mb-1 text-white">Admin</h6>
+                            <span>Email: admin@pixeleyez.com</span>
+                            <span>Password: admin@123</span>
                         </div>
                         <button class="btn btn-sub-light text-dark" onclick="login('admin')">Login</button>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center mt-3">
-                        <div>
-                            <h6 class="mb-1">Users</h6>
-                            <p class="text-muted">Email: user@pixeleyez.com</p>
-                            <p class="text-muted">Password: user@123</p>
+                        <div class="d-inline-grid">
+                            <h6 class="mb-1 text-white">Users</h6>
+                            <span>Email: user@pixeleyez.com</span>
+                            <span>Password: user@123</span>
                         </div>
                         <button class="btn btn-sub-light text-dark">Login</button>
                     </div>

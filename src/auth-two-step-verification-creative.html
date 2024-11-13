@@ -1,0 +1,97 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Sign In" }}
+
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+<div class="position-relative container-fluid">
+    <div class="row min-vh-100">
+        <div class="col-6 p-12 bg-light overflow-hidden position-relative">
+            <div class="p-4">
+                <img src="assets/images/main-logo.png" alt="" class="main-logo">
+                <h1 class="max-w-lg lh-sm fs-4xl mt-8 fw-normal text-black text-capitalize">The most straightforward way to manage your projects</h1>
+            </div>
+            <img src="assets/images/others/auth-creative.png" alt="" class="auth-creative-ss rounded-4">
+        </div>
+        <div class="col-6 d-flex align-items-center py-12">
+            <div class="col-12">
+                <div class="col-8 offset-2">
+                    <div class="p-10 card mb-0 mx-10">
+                        <div class="text-center mb-4">
+                            <i data-lucide="mail-open" class="size-10 stroke-1 icon-dark"></i>
+                        </div>
+                        <h6 class="mb-0 text-gradient fs-xl fw-bold text-center lh-lg">OTP Verification</h6>
+                        <p class="mb-5 text-center">We’ve sent a code to <b>sophiamia@pixeleyez.com</b></p>
+            
+                        <form id="otp-form1" action="auth-reset-password-creative.html">
+                            <div class="row g-5">
+                                <!-- OTP Input Fields -->
+                                <div class="d-flex justify-content-center gap-3">
+                                    <input 
+                                        type="text" 
+                                        class="form-control text-center fs-3 fw-bold bg-light rounded-1 p-2 size-14 otp-input"
+                                        maxlength="1" 
+                                        pattern="\d*" 
+                                        id="otp-input-0" 
+                                    />
+                                    <input 
+                                        type="text" 
+                                        class="form-control text-center fs-3 fw-bold bg-light rounded-1 p-2 size-14 otp-input"
+                                        maxlength="1" 
+                                        id="otp-input-1" 
+                                    />
+                                    <input 
+                                        type="text" 
+                                        class="form-control text-center fs-3 fw-bold bg-light rounded-1 p-2 size-14 otp-input"
+                                        maxlength="1" 
+                                        id="otp-input-2" 
+                                    />
+                                    <input 
+                                        type="text" 
+                                        class="form-control text-center fs-3 fw-bold bg-light rounded-1 p-2 size-14 otp-input"
+                                        maxlength="1" 
+                                        id="otp-input-3" 
+                                    />
+                                    <input 
+                                        type="text" 
+                                        class="form-control text-center fs-3 fw-bold bg-light rounded-1 p-2 size-14 otp-input"
+                                        maxlength="1" 
+                                        id="otp-input-4" 
+                                    />
+                                    <input 
+                                        type="text" 
+                                        class="form-control text-center fs-3 fw-bold bg-light rounded-1 p-2 size-14 otp-input"
+                                        maxlength="1" 
+                                        id="otp-input-5" 
+                                    />
+                                </div>
+                        
+                                <a class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-primary w-100">Reset Password</button>
+                                </a>
+                            </div>
+                        </form>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/auth/two-step-verification.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

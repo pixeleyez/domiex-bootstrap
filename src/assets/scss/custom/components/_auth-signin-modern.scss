@@ -16,6 +16,9 @@
             background-color: #ffffff1a;
             border: none;
             color: white;
+            &::placeholder{
+                color: #ffffffbf;
+            }
         }
         .form-check-input:checked{
             background-color: $primary;
