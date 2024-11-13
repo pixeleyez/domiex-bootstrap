@@ -1,0 +1,551 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="List View" }}
+
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="List View" sub-title="Projects" }}
+    <div class="row">
+
+        <div class="card px-0">
+            <div class="card-header d-flex flex-wrap align-items-center gap-5">
+                <div class="flex-grow-1">
+                    <h6 class="mb-1 card-title">All Projects (264)</h6>
+                    <p>Manage your construction projects from start to finish with complete control.</p>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary d-flex justify-content-center align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i data-lucide="circle-plus" class="size-4"></i>Add Project
+                    </button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h6 class="modal-title" id="exampleModalLabel">Add project</h6>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" x-data="{
+                                    projectTitle: '',
+                                    clientName: '',
+                                    dueDate: '',
+                                    totalAmount: '',
+                                    progress: 0,
+                                    assignee: '',
+                                    status: '',
+                                    error: '',
+                                    validateForm() {
+                                        this.error = '';  // Reset error state
+                                
+                                        if (this.projectTitle.trim() === '') {
+                                            this.error = 'Project name is required.';
+                                            return false;
+                                        }
+                                
+                                        if (this.clientName.trim() === '') {
+                                            this.error = 'Client name is required.';
+                                            return false;
+                                        }
+                                
+                                        if (this.dueDate.trim() === '') {
+                                            this.error = 'Due date is required.';
+                                            return false;
+                                        }
+                                
+                                        if (this.totalAmount === '' || isNaN(this.totalAmount) || parseFloat(this.totalAmount) <= 0) {
+                                            this.error = 'Total amount must be a positive number.';
+                                            return false;
+                                        }
+                                
+                                        const parsedProgress = parseInt(this.progress, 10);
+                                        if (isNaN(parsedProgress) || parsedProgress < 0 || parsedProgress > 100) {
+                                            this.error = 'Progress must be between 0 and 100.';
+                                            return false;
+                                        }
+                                
+                                        if (this.assignee === '') {
+                                            this.error = 'Please select an assignee.';
+                                            return false;
+                                        }
+                                
+                                        if (this.status === '') {
+                                            this.error = 'Please select a status.';
+                                            return false;
+                                        }
+                                
+                                        return true;
+                                    },
+                                
+                                    clearError() {
+                                        this.error = '';
+                                    }
+                                }">
+                                    <div class="row g-4">
+                                        <div class="col-12">
+                                            <label for="projectTitleInput" class="form-label fw-medium">Project Title</label>
+                                            <input type="text" class="form-control" id="projectTitleInput" placeholder="Project Title" x-model="projectTitle" @input="clearError()" />
+                                            <p x-show="error && projectTitle === ''" class="text-sm text-danger" x-text="error"></p>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="clientName" class="form-label fw-medium">Client Name</label>
+                                            <input type="text" class="form-control" id="clientName" placeholder="Enter Name" x-model="clientName" @input="clearError()" />
+                                            <p x-show="error && clientName === ''" class="text-sm text-danger" x-text="error"></p>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <label for="dueDateInput" class="form-label fw-medium">Due Date</label>
+                                            <input data-provider="flatpickr" data-date-format="d M, Y" type="text" placeholder="Select due date" class="form-control form-input flatpickr-input active" readonly="readonly" x-model="dueDate" @input="clearError()" />
+                                            <p x-show="error && dueDate === ''" class="text-sm text-danger" x-text="error"></p>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <label for="totalAmountInput" class="form-label fw-medium">Total Amount ($)</label>
+                                            <input type="number" class="form-control" id="totalAmountInput" placeholder="$00.00" x-model="totalAmount" @input="clearError()" />
+                                            <p x-show="error && (totalAmount === '' || isNaN(totalAmount) || parseFloat(totalAmount) <= 0)" class="text-sm text-danger" x-text="error"></p>
+                                        </div>
+
+                                        <div class="col-12" x-data="{
+                                            progress: 0,
+                                            error: '',
+                                            validateProgress() {
+                                                const parsedValue = parseInt(this.progress, 10);
+                                                if (isNaN(parsedValue)) {
+                                                    this.progress = '';
+                                                } else if (parsedValue > 100) {
+                                                    this.progress = 100;
+                                                    this.error = 'Progress must be between 0 and 100.';
+                                                } else {
+                                                    this.progress = parsedValue;
+                                                    this.error = '';
+                                                }
+                                            }
+                                        }">
+                                            <label for="progressInput" class="form-label fw-medium">% Complete</label>
+                                            <input type="text" class="form-control" id="progressInput" x-model="progress" @input="validateProgress()" />
+                                            <p x-show="error && (progress === '' || isNaN(progress) || progress < 0 || progress > 100)" class="text-sm text-danger" x-text="error"></p>
+                                            <div class="progress progress-1 mt-3" role="progressbar" aria-label="Example with label" :aria-valuenow="progress" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar progress-gradient progress-gradient-secondary rounded-5" :style="'width: ' + (progress > 100 ? 0.1 : progress < 0.1 ? 100 : progress) + '%'" :aria-valuenow="progress"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="assignedSelect" class="form-label fw-medium">Assignee To</label>
+                                            <div id="assignedSelect"></div>
+                                            <p x-show="error && assignee === ''" class="text-sm text-danger" x-text="error"></p>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="statusSelect" class="form-label fw-medium">Status</label>
+                                            <div id="statusSelect2"></div>
+                                            <p x-show="error && status === ''" class="text-sm text-danger" x-text="error"></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-end mt-5 gap-2">
+                                        <button class="btn btn-active-danger d-flex justify-content-center align-items-center" data-bs-dismiss="modal">
+                                            <i data-lucide="x" class="size-4 me-1"></i> Close
+                                        </button>
+                                        <button class="btn btn-primary" @click="if (validateForm()) { /* Add project logic here */ }">
+                                            Add project
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-header">
+                <div class="row g-3">
+                    <!-- Search Field -->
+                    <div class="col-12 col-xl-4">
+                        <div class="position-relative">
+                            <input type="text" class="form-control ps-9 pe-4" placeholder="Search for projects..." @input="filterProjects" x-model="searchTerm">
+                            <div class="position-absolute top-50 translate-middle-y d-flex align-items-center text-muted">
+                                <i data-lucide="search" class="size-4 ms-3"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-xl-8 d-flex flex-wrap justify-content-xl-end gap-2">
+                        <button class="btn btn-danger btn-icon" x-show="selectedItems.length > 0" @click="deleteSelectedItems()">
+                            <i data-lucide="trash" class="size-4"></i>
+                        </button>
+
+                        <div>
+                            <div id="filterSelect" placeholder="Filter Date Select"></div>
+                        </div>
+
+                        <div>
+                            <div id="filterStatusSelect" placeholder="Status Select"></div>
+                        </div>
+
+                        <div class="dropdown">
+                            <button class="btn btn-light dropdown-toggle" type="button" id="filterAssigneeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                Filter By Assignee
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="filterAssigneeDropdown">
+                                <li>
+                                    <div class="form-check py-2">
+                                        <input class="form-check-input" type="checkbox" value="Max Boucaut" id="assigneeToMax">
+                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeToMax">
+                                            <img src="assets/images/avatar/user-14.png" alt="" class="rounded-circle size-6"> Max Boucaut
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check py-2">
+                                        <input class="form-check-input" type="checkbox" value="Natasha Tegg" id="assigneeTonatasha">
+                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeTonatasha">
+                                            <img src="assets/images/avatar/user-15.png" alt="" class="rounded-circle size-6"> Natasha Tegg
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check py-2">
+                                        <input class="form-check-input" type="checkbox" value="Ethan Zahel" id="assigneeToEthan">
+                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeToEthan">
+                                            <img src="assets/images/avatar/user-16.png" alt="" class="rounded-circle size-6"> Ethan Zahel
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check py-2">
+                                        <input class="form-check-input" type="checkbox" value="Poppy Dalley" id="assigneeToPoppy">
+                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeToPoppy">
+                                            <img src="assets/images/avatar/user-17.png" alt="" class="rounded-circle size-6"> Poppy Dalley
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check py-2">
+                                        <input class="form-check-input" type="checkbox" value="Ryan Frazer" id="assigneeToRyan">
+                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeToRyan">
+                                            <img src="assets/images/avatar/user-18.png" alt="" class="rounded-circle size-6"> Ryan Frazer
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check py-2">
+                                        <input class="form-check-input" type="checkbox" value="Julian Marconi" id="assigneeToJulian">
+                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeToJulian">
+                                            <img src="assets/images/avatar/user-12.png" alt="" class="rounded-circle size-6"> Julian Marconi
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dropdown position-relative">
+                            <button class="btn btn-light text-dark" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                Filter By Assignee
+                            </button>
+                            <ul class="dropdown-menu filter-assignee dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                <li>
+                                    <p class="mb-1 fw-medium">Filter by Assignee</p>
+                                </li>
+                                <li>
+                                    <div class="form-check py-2">
+                                        <input class="form-check-input" type="checkbox" value="Max Boucaut" id="assigneeToMax">
+                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2 fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeToMax">
+                                            <img src="assets/images/avatar/user-14.png" alt="" class="rounded-circle size-6"> Max Boucaut
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check py-2">
+                                        <input class="form-check-input" type="checkbox" value="Natasha Tegg" id="assigneeTonatasha">
+                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeTonatasha">
+                                            <img src="assets/images/avatar/user-15.png" alt="" class="rounded-circle size-6"> Natasha Tegg
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check py-2">
+                                        <input class="form-check-input" type="checkbox" value="Ethan Zahel" id="assigneeToEthan">
+                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeToEthan">
+                                            <img src="assets/images/avatar/user-16.png" alt="" class="rounded-circle size-6"> Ethan Zahel
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check py-2">
+                                        <input class="form-check-input" type="checkbox" value="Poppy Dalley" id="assigneeToPoppy">
+                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeToPoppy">
+                                            <img src="assets/images/avatar/user-17.png" alt="" class="rounded-circle size-6"> Poppy Dalley
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check py-2">
+                                        <input class="form-check-input" type="checkbox" value="Ryan Frazer" id="assigneeToRyan">
+                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeToRyan">
+                                            <img src="assets/images/avatar/user-18.png" alt="" class="rounded-circle size-6"> Ryan Frazer
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check py-2">
+                                        <input class="form-check-input" type="checkbox" value="Julian Marconi" id="assigneeToJulian">
+                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeToJulian">
+                                            <img src="assets/images/avatar/user-12.png" alt="" class="rounded-circle size-6"> Julian Marconi
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-body p-0">
+                <div x-data="{
+                    sortBy: '',
+                    sortDirection: 'asc',
+                    currentPage: 1,
+                    projects: [
+                        {   projectID: 'PEP-22697', 
+                            projectName: 'Chat Application', 
+                            clientName: 'John Doe', 
+                            assignees: [{ image: 'assets/images/avatar/user-14.png' }, { image: 'assets/images/avatar/user-16.png' }], 
+                            dueDate: '15 June, 2024', 
+                            totalAmount: 18000, 
+                            progress: 18, 
+                            status: 'Active' 
+                        },
+                        {   projectID: 'PEP-22698', 
+                            projectName: 'E-commerce Platform', 
+                            clientName: 'Jane Smith', 
+                            assignees: [{ image: 'assets/images/avatar/user-17.png' }, { image: 'assets/images/avatar/user-15.png' }, { image: 'assets/images/avatar/user-19.png' }], 
+                            dueDate: '25 July, 2024', 
+                            totalAmount: 25000, 
+                            progress: 41, 
+                            status: 'On Hold' 
+                        },
+                        {   projectID: 'PEP-22699', 
+                            projectName: 'Corporate Website', 
+                            clientName: 'ABC Corp', 
+                            assignees: [{ image: 'assets/images/avatar/user-16.png' }, { image: 'assets/images/avatar/user-12.png' }], 
+                            dueDate: '30 May, 2024', 
+                            totalAmount: 10000, 
+                            progress: 75, 
+                            status: 'Pending' 
+                        },
+                        {   projectID: 'PEP-22700', 
+                            projectName: 'Mobile App', 
+                            clientName: 'XYZ Ltd', 
+                            assignees: [{ image: 'assets/images/avatar/user-17.png' }, { image: 'assets/images/avatar/user-15.png' }, { image: 'assets/images/avatar/user-14.png' }], 
+                            dueDate: '30 May, 2024', 
+                            totalAmount: 30000, 
+                            progress: 59, 
+                            status: 'Active' 
+                        },
+                        {   projectID: 'PEP-22701', 
+                            projectName: 'Digital Marketing', 
+                            clientName: 'Marketing Inc', 
+                            assignees: [{ image: 'assets/images/avatar/user-13.png' },], 
+                            dueDate: '5 Sept, 2024', 
+                            totalAmount: 15000, 
+                            progress: 100, 
+                            status: 'Completed' 
+                        },
+                        {   projectID: 'PEP-22702', 
+                            projectName: 'SEO Optimization', 
+                            clientName: 'Tech Solutions', 
+                            assignees: [{ image: 'assets/images/avatar/user-15.png' }, { image: 'assets/images/avatar/user-18.png' }], 
+                            dueDate: '20 June, 2024', 
+                            totalAmount: 12000, 
+                            progress: 50, 
+                            status: 'Active' 
+                        },
+                        {   projectID: 'PEP-22703', 
+                            projectName: 'Social Media Campaign', 
+                            clientName: 'Brandify', 
+                            assignees: [{ image: 'assets/images/avatar/user-15.png' }, { image: 'assets/images/avatar/user-18.png' }], 
+                            dueDate: '20 June, 2024', 
+                            totalAmount: 12000, 
+                            progress: 50, 
+                            status: 'Active' 
+                        },
+                    ],
+                    get pageSize() {
+                        return 10;
+                    },
+                    get displayedProjects() {
+                        const startIndex = (this.currentPage - 1) * this.pageSize;
+                        return this.projects.slice(startIndex, startIndex + this.pageSize).sort((a, b) => {
+                            if (!this.sortBy) return 0;
+                            const aValue = a[this.sortBy];
+                            const bValue = b[this.sortBy];
+                            if (aValue < bValue) return this.sortDirection === 'asc' ? -1 : 1;
+                            if (aValue > bValue) return this.sortDirection === 'asc' ? 1 : -1;
+                            return 0;
+                        });
+                    },
+                    get totalPages() {
+                        return Math.ceil(this.projects.length / this.pageSize);
+                    },
+                    sort(field) {
+                        this.sortDirection = (this.sortBy === field && this.sortDirection === 'asc') ? 'desc' : 'asc';
+                        this.sortBy = field;
+                    },
+                    gotoPage(page) {
+                        this.currentPage = page;
+                    },
+                    prevPage() {
+                        if (this.currentPage > 1) this.currentPage--;
+                    },
+                    nextPage() {
+                        if (this.currentPage < this.totalPages) this.currentPage++;
+                    },
+                    get showingStart() {
+                        return (this.currentPage - 1) * this.pageSize + 1;
+                    },
+                    get showingEnd() {
+                        return Math.min(this.currentPage * this.pageSize, this.projects.length);
+                    }
+                }">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr class="table-light border-bottom cursor-pointer">
+                                <th style="width: 10px;">
+                                    <div class="form-check check-primary">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1"></label>
+                                    </div>
+                                </th>
+                                <th x-on:click="sort('projectID')" class="fw-medium text-dark">
+                                    ID <span x-show="sortBy === 'projectID'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                </th>
+                                <th x-on:click="sort('projectName')" class="fw-medium text-dark">
+                                    Project Name <span x-show="sortBy === 'projectName'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                </th>
+                                <th class="fw-medium text-dark">Assigned To</th>
+                                <th x-on:click="sort('dueDate')" class="fw-medium text-dark">
+                                    Due Date <span x-show="sortBy === 'dueDate'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                </th>
+                                <th x-on:click="sort('totalAmount')" class="fw-medium text-dark">
+                                    Total Amount ($) <span x-show="sortBy === 'totalAmount'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                </th>
+                                <th x-on:click="sort('progress')" class="fw-medium text-dark">
+                                    % Complete <span x-show="sortBy === 'progress'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                </th>
+                                <th x-on:click="sort('status')" class="fw-medium text-dark">
+                                    Status <span x-show="sortBy === 'status'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                </th>
+                                <th class="fw-medium text-dark">Actions</th>
+                            </tr>
+                        </thead>
+                
+                        <tbody>
+                            <template x-for="(project, index) in displayedProjects" :key="index">
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1"></label>
+                                        </div>
+                                    </td>
+                                    <td><span x-text="project.projectID"></span></td>
+                                    <td>
+                                        <h6 class="mb-1"><a class="text-black link link-primary flex-grow-1" href="/apps-projects-overview" x-text="project.projectName"></a></h6>
+                                        <p x-text="project.clientName" class="fs-sm"></p>
+                                    </td>
+                                    <td>
+                                        <div class="flex ml-3 -space-x-3 grow">
+                                            <template x-for="assignee in project.assignees">
+                                                <a href="#!" class="avatar-hover" title="avatar link">
+                                                    <img class="border-2 border border-2 border-white rounded-circle size-8" :src="assignee.image" alt="">
+                                                </a>
+                                            </template>
+                                        </div>
+                                    </td>
+                                    <td x-text="project.dueDate"></td>
+                                    <td x-text="`$${project.totalAmount}`"></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <p x-text="`${project.progress}%`"></p>
+                                            <div class="progress progress-1 w-100" role="progressbar" aria-label="Example with label" aria-valuenow="project.progress" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar" :style="`width: ${project.progress}%`"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!-- Badge logic for status -->
+                                        <span :class="{
+                                            'badge bg-secondary-subtle text-secondary border border-secondary-subtle': project.status === 'Active',
+                                            'badge bg-danger-subtle text-danger border border-danger-subtle': project.status === 'On Hold',
+                                            'badge bg-warning-subtle text-warning border border-warning-subtle': project.status === 'Pending',
+                                            'badge bg-success-subtle text-success border border-success-subtle': project.status === 'Completed'
+                                        }" x-text="project.status"></span>
+                                    </td>
+                                    <td class="whitespace-nowrap">
+                                        <div class="dropdown">
+                                            <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-eye-line"></i> 
+                                                        <span>Overview</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i> 
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+             
+        </div>
+
+    </div>
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/projects/list-view.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
