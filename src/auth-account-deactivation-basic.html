@@ -1,0 +1,65 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Account Deactivation" }}
+
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+<div class="contact-bg-gradient">
+    <div class="container">
+        <div class="d-grid min-vh-100 py-12" x-data="loginForm()">
+            <div class="col-12 col-xl-4 offset-xl-4 d-flex align-items-center">
+                <div class="p-10 card">
+                    <div class="text-center mb-4">
+                        <a href="/">
+                            <img src="./assets/images/main-logo.png" alt="" class="mx-auto main-logo">
+                        </a>
+                    </div>
+                    <h6 class="mb-0 text-gradient fs-xl fw-bold text-center lh-lg">Account Deactivation</h6>
+                    <p class="mb-6 text-center text-muted">Domiex Security and Privacy</p>
+                    <div class="d-flex gap-3 mb-3">
+                        <div class="flex-shrink-0">
+                            <i data-lucide="eye-off"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1">Temporary Disable</h6>
+                            <p>The customer is very important and will be followed up with care. Everyone's needs are expected to be met. It is not just about the process, but about benefiting everyone, with an emphasis on ecological mindfulness.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 mb-0">
+                        <div class="flex-shrink-0">
+                            <i data-lucide="trash-2"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1">Permanent Delete</h6>
+                            <p>The customer is very important and will receive dedicated attention. Everyone's needs and expectations are considered. This process is undertaken for the benefit of all, with a focus on ecological responsibility.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-6 gap-2">
+                        <a href="#!" class="btn btn-primary">Temporary Disable</a>
+                        <a href="#!" class="btn btn-danger">Permanent Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/auth/signin-basic.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
