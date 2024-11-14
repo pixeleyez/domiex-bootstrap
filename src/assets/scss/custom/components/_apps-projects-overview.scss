@@ -1,0 +1,22 @@
+.bordered-square{
+    &.bordered-position4{
+        @include position(absolute, 0, 0, null, null);
+    }
+    &.bordered-position5{
+        @include position(absolute, 5rem, 2rem, null, null);
+    }
+    &.bordered-position6{
+        @include position(absolute, 9rem, 7rem, null, null);
+    }
+}
+.ai-icon{
+    margin-top: -3.5rem;
+}
+.overview-dropdown{
+    width: 13rem;
+    left: -0.625rem;
+    top: 3.125rem;
+}
+.nav-text-black {
+    --#{$prefix}nav-link-color: black;
+}

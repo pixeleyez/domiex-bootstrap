@@ -6,6 +6,11 @@ $utilities: map-merge(
             class: size,
             values: $avatar-sizes 
         ),
+        "width": (
+            property: width,
+            class: w,
+            values: $custom-width 
+        ),
         "border": (
             property: border,
             responsive: true,

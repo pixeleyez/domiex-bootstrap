@@ -1,0 +1,377 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Overview" }}
+
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Overview" sub-title="Projects" }}
+    <div class="position-relative mb-6">
+        <div class="card">
+            <div class="position-relative overflow-hidden rounded bg-primary bg-opacity-10 custom-box">
+                <div class="bordered-square bordered-position4 border-color-primary size-96 position-absolute top-0 start-0"></div>
+                <div class="bordered-square bordered-position5 border-color-success size-80 position-absolute top-50 start-50 translate-middle"></div>
+                <div class="bordered-square bordered-position6 border-color-pink size-40 position-absolute top-100 start-100 translate-middle"></div>
+            </div>
+            <div class="card-body">
+                <div class="d-flex flex-wrap gap-5 align-items-center mb-6">
+                    <div class="size-28 bg-white position-relative border d-flex justify-content-center align-items-center rounded flex-shrink-0 ai-icon">
+                        <img src="assets/images/brands/img-02.png" alt="">
+                    </div>
+                    <div class="flex-grow-1">
+                        <h5 class="mb-1">AI Model Development <span class="badge bg-warning-subtle text-warning  border border-warning-subtle ms-1">In Progress</span></h5>
+                        <p>Create Date: 25 Jan, 2024</p>
+                    </div>
+                    <div class="d-flex gap-3 align-items-center">
+                        <div>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Add User
+                            </button>
+                        </div>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog  modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h6 class="mb-0">Share Project</h6>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <input type="email" x-model="emailOrUsername" placeholder="name@pixeleyez.com" class="form-control flex-grow-1" required>
+                                            <button class="btn btn-primary flex-shrink-0">Send Invite</button>
+                                        </div>
+                                        <div class="mt-5">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <img src="assets/images/avatar/user-5.png" alt="" class="size-7 flex-shrink-0 rounded-circle">
+                                                <h6 class="flex-grow-1 mb-0">Ina Payne</h6>
+                                                <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                                                    <button class="btn border-0 text-dark d-flex align-items-center gap-2 p-0" type="button" @click="open = !open" aria-expanded="open">
+                                                        <span>Admin</span>
+                                                        <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                                                    </button>
+                                                    <div x-show="open" style="display: none;" class="dropdown-menu shadow-sm show position-absolute end-0">
+                                                        <a class="dropdown-item" href="#">Edit</a>
+                                                        <a class="dropdown-item" href="#">View Only</a>
+                                                        <a class="dropdown-item" href="#">Admin</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-5">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <img src="assets/images/avatar/user-11.png" alt="" class="size-7 flex-shrink-0 rounded-circle">
+                                                <h6 class="flex-grow-1 mb-0">Robert Freeman</h6>
+                                                <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                                                    <button class="btn border-0 text-dark d-flex align-items-center gap-2 p-0" type="button" @click="open = !open" aria-expanded="open">
+                                                        <span>View Only</span>
+                                                        <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                                                    </button>
+                                                    <div x-show="open" style="display: none;" class="dropdown-menu shadow-sm show position-absolute end-0">
+                                                        <a class="dropdown-item" href="#">Edit</a>
+                                                        <a class="dropdown-item" href="#">View Only</a>
+                                                        <a class="dropdown-item" href="#">Admin</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-5">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <img src="assets/images/avatar/user-13.png" alt="" class="size-7 flex-shrink-0 rounded-circle">
+                                                <h6 class="flex-grow-1 mb-0">Michelle Wile</h6>
+                                                <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                                                    <button class="btn border-0 text-dark d-flex align-items-center gap-2 p-0" type="button" @click="open = !open" aria-expanded="open">
+                                                        <span>Edit</span>
+                                                        <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                                                    </button>
+                                                    <div x-show="open" style="display: none;" class="dropdown-menu shadow-sm show position-absolute end-0">
+                                                        <a class="dropdown-item" href="#">Edit</a>
+                                                        <a class="dropdown-item" href="#">View Only</a>
+                                                        <a class="dropdown-item" href="#">Admin</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-5">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <img src="assets/images/avatar/user-14.png" alt="" class="size-7 flex-shrink-0 rounded-circle">
+                                                <h6 class="flex-grow-1 mb-0">William Keen</h6>
+                                                <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                                                    <button class="btn border-0 text-dark d-flex align-items-center gap-2 p-0" type="button" @click="open = !open" aria-expanded="open">
+                                                        <span>Edit</span>
+                                                        <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                                                    </button>
+                                                    <div x-show="open" style="display: none;" class="dropdown-menu shadow-sm show position-absolute end-0">
+                                                        <a class="dropdown-item" href="#">Edit</a>
+                                                        <a class="dropdown-item" href="#">View Only</a>
+                                                        <a class="dropdown-item" href="#">Admin</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-5">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <img src="assets/images/avatar/user-16.png" alt="" class="size-7 flex-shrink-0 rounded-circle">
+                                                <h6 class="flex-grow-1 mb-0">Carol Kincaid</h6>
+                                                <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                                                    <button class="btn border-0 text-dark d-flex align-items-center gap-2 p-0" type="button" @click="open = !open" aria-expanded="open">
+                                                        <span>View Only</span>
+                                                        <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                                                    </button>
+                                                    <div x-show="open" style="display: none;" class="dropdown-menu shadow-sm show position-absolute end-0">
+                                                        <a class="dropdown-item" href="#">Edit</a>
+                                                        <a class="dropdown-item" href="#">View Only</a>
+                                                        <a class="dropdown-item" href="#">Admin</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-5">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <img src="assets/images/avatar/user-17.png" alt="" class="size-7 flex-shrink-0 rounded-circle">
+                                                <h6 class="flex-grow-1 mb-0">Rachel Jackson</h6>
+                                                <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                                                    <button class="btn border-0 text-dark d-flex align-items-center gap-2 p-0" type="button" @click="open = !open" aria-expanded="open">
+                                                        <span>Edit</span>
+                                                        <i class="ri-arrow-down-s-line fs-5 fw-semibold lh-sm" :class="{'rotate': open}"></i>
+                                                    </button>
+                                                    <div x-show="open" style="display: none;" class="dropdown-menu shadow-sm show position-absolute end-0">
+                                                        <a class="dropdown-item" href="#">Edit</a>
+                                                        <a class="dropdown-item" href="#">View Only</a>
+                                                        <a class="dropdown-item" href="#">Admin</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer justify-content-start">
+                                        <p>
+                                            <a href="#!" class="link link-primary text-dark">
+                                                <i data-lucide="link" class="size-4 me-1"></i>
+                                                <span>Copy URL</span>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="dropdown">
+                                <button class="btn btn-light text-dark btn-icon" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                    <i data-lucide="ellipsis" class="size-5"></i>
+                                </button>
+                                <ul class="dropdown-menu shadow-sm dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item fw-medium" href="#!">Create Invoice</a></li>
+                                    <li><a class="dropdown-item fw-medium" href="#!">Generate Billing</a></li>
+                                    <li><a class="dropdown-item fw-medium" href="#!">Delete Project</a></li>
+                                    <li><a class="dropdown-item fw-medium" href="#!">Settings</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gap-5 mb-5">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-2 p-3 text-center border border-muted border-dashed rounded">
+                        <h6 class="mb-1">31 May, 2024</h6>
+                        <p class="text-muted">Due Date</p>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-2 p-3 text-center border border-muted border-dashed rounded">
+                        <h6 class="mb-1">$25,000</h6>
+                        <p class="text-muted">Budget ($)</p>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-2 p-3 text-center border border-muted border-dashed rounded">
+                        <h6 class="mb-1">$8,000</h6>
+                        <p class="text-muted">Total Spend ($)</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-2 p-3 border border-muted border-dashed rounded position-relative cursor-pointer" x-data="{ open: false }" @click.away="open = false">
+                        <div class="d-flex gap-2 w-100" @click="open = !open">
+                            <img src="assets/images/avatar/user-5.png" alt="" class="size-10 flex-shrink-0 rounded-circle">
+                            <div class="flex-grow-1">
+                                <p>Project Manager</p>
+                                <span class="fw-medium">Ina Payne</span>
+                            </div>
+                            <div>
+                                <button class="btn border-0 text-dark d-flex align-items-center gap-2 p-0" type="button" aria-expanded="open">
+                                    <i class="ri-arrow-down-s-line fs-5 fw-medium lh-sm text-dark" :class="{'rotate': open}"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Dropdown menu -->
+                        <div x-show="open" style="display: none;" class="dropdown-menu shadow-sm show overview-dropdown">
+                            <a class="dropdown-item" href="#">
+                                <div class="d-flex align-items-center gap-2">
+                                    <img src="assets/images/avatar/user-5.png" alt="" class="size-8 flex-shrink-0 rounded-circle">
+                                    <h6 class="mb-0">Ina Payne</h6>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <div class="d-flex align-items-center gap-2">
+                                    <img src="assets/images/avatar/user-11.png" alt="" class="size-8 flex-shrink-0 rounded-circle">
+                                    <h6 class="mb-0">Robert Freeman</h6>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <div class="d-flex align-items-center gap-2">
+                                    <img src="assets/images/avatar/user-13.png" alt="" class="size-8 flex-shrink-0 rounded-circle">
+                                    <h6 class="mb-0">Michelle Weigle</h6>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <div class="d-flex align-items-center gap-2">
+                                    <img src="assets/images/avatar/user-14.png" alt="" class="size-8 flex-shrink-0 rounded-circle">
+                                    <h6 class="mb-0">William Keen</h6>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row gap-0 mb-5">
+                    <div class="col-4">
+                        <h6 class="mb-1">Assigned To:</h6>
+                        <div class="d-flex align-items-center flex-grow-1">
+                            <a href="#!" class="avatar-hover" title="avatar-link" data-bs-toggle="tooltip" data-bs-title="Ina Payne">
+                                <img src="assets/images/avatar/user-5.png" alt="" class="border-2 border border-2 border-white rounded-circle size-10">
+                            </a>
+                            <a href="#!" class="avatar-hover" title="avatar-link" data-bs-toggle="tooltip" data-bs-title="Robert Freeman">
+                                <img src="assets/images/avatar/user-11.png" alt="" class="border-2 border border-2 border-white rounded-circle size-10">
+                            </a>
+                            <a href="#!" class="avatar-hover" title="avatar-link" data-bs-toggle="tooltip" data-bs-title="Michelle Wile">
+                                <img src="assets/images/avatar/user-13.png" alt="" class="border-2 border border-2 border-white rounded-circle size-10">
+                            </a>
+                            <a href="#!" class="avatar-hover" title="avatar-link" data-bs-toggle="tooltip" data-bs-title="William Keen">
+                                <img src="assets/images/avatar/user-14.png" alt="" class="border-2 border border-2 border-white rounded-circle size-10">
+                            </a>
+                            <a href="#!" class="avatar-hover" title="avatar-link" data-bs-toggle="tooltip" data-bs-title="Carol Kincaid">
+                                <img src="assets/images/avatar/user-16.png" alt="" class="border-2 border border-2 border-white rounded-circle size-10">
+                            </a>
+                            <a href="#!" class="avatar-hover" title="avatar-link" data-bs-toggle="tooltip" data-bs-title="Rachel Jackson">
+                                <img src="assets/images/avatar/user-17.png" alt="" class="border-2 border border-2 border-white rounded-circle size-10">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <h6 class="mb-1">Report To:</h6>
+                        <div class="d-flex align-items-center flex-grow-1 avatar-group">
+                            <a href="#!" class="avatar-hover" title="avatar-link" data-bs-toggle="tooltip" data-bs-title="Leal Bureau">
+                                <img src="assets/images/avatar/user-20.png" alt="" class="border-2 border border-2 border-white rounded-circle size-10">
+                            </a>
+                            <a href="#!" class="avatar-hover" title="avatar-link" data-bs-toggle="tooltip" data-bs-title="Julie Seltzer">
+                                <img src="assets/images/avatar/user-18.png" alt="" class="border-2 border border-2 border-white rounded-circle size-10">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <ul class="nav nav-pills nav-text-black">
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium active" aria-current="page">
+                                <i data-lucide="eye" class="size-4 me-1"></i>
+                                Overview
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" aria-current="page">
+                                <i data-lucide="sparkles" class="size-4 me-1"></i>
+                                RoadMap
+                            </a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" aria-current="page">
+                                <i data-lucide="align-left" class="size-4 me-1"></i>
+                                Tasks
+                            </a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" aria-current="page">
+                                <i data-lucide="file-text" class="size-4 me-1"></i>
+                                Files
+                            </a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" aria-current="page">
+                                <i data-lucide="user-round" class="size-4 me-1"></i>
+                                Users
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title mb-0">Project Overview</h6>
+                    </div>
+                    <div class="card-body">
+                        <p class="mb-3">The goal of this project is to develop an advanced AI model capable of predictive analytics within the e-commerce domain. This model will leverage machine learning techniques to analyze customer behavior, forecast sales trends, and optimize marketing strategies, ultimately enhancing the overall customer experience and boosting revenue for e-commerce platforms.</p>
+
+                        <h6 class="mb-2">Objectives:</h6>
+                        <ul class="mb-5 list-group-circle d-flex gap-2 flex-column">
+                            <li>Customer Behavior Analysis</li>
+                            <li>Sales Forecasting</li>
+                            <li>Marketing Optimization</li>
+                            <li>Personalized Recommendations</li>
+                            <li>Performance Monitoring and Evaluation</li>
+                        </ul>
+
+                        <h6 class="mb-2">Deliverables:</h6>
+                        <ul class="mb-5 list-group-circle d-flex gap-2 flex-column">
+                            <li>Data Requirements Document</li>
+                            <li>Data Extraction Scripts</li>
+                            <li>Cleaned and Transformed Datasets</li>
+                            <li>Data Quality Report</li>
+                            <li>Data Storage Setup</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title mb-0">Working Hours</h6>
+                    </div>
+                    <div class="card-body">
+                        <div x-data="workingHoursApp" x-init="init" class="chart-container" x-ref="workingHoursChart" style="height: 300px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/projects/overview.init.js"></script>
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
