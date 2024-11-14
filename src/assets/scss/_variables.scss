@@ -323,7 +323,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:                12;
-$grid-gutter-width:           3rem;
+$grid-gutter-width:           1.25rem;
 $grid-row-columns:            6;
 
 // Container padding
@@ -1592,6 +1592,13 @@ $avatar-sizes: (
   44: 11rem,
   80: 20rem,
   96: 24rem,
+);
+$custom-width: ( 
+  8: 2rem,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
 );
 
 $custom-list-styles: (

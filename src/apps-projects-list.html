@@ -20,7 +20,7 @@
 
 {{> partials/page-wrapper}}
 
-<div class="container-fluid">
+<div>
     {{> partials/page-heading title="List View" sub-title="Projects" }}
     <div class="row">
 
@@ -31,14 +31,14 @@
                     <p>Manage your construction projects from start to finish with complete control.</p>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-primary d-flex justify-content-center align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-primary d-flex justify-content-center align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#addprojectModal">
                         <i data-lucide="circle-plus" class="size-4"></i>Add Project
                     </button>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="addprojectModal" tabindex="-1" aria-labelledby="addprojectModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h6 class="modal-title" id="exampleModalLabel">Add project</h6>
+                                    <h6 class="modal-title" id="addprojectModalLabel">Add project</h6>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body" x-data="{
@@ -196,62 +196,6 @@
                         <div>
                             <div id="filterStatusSelect" placeholder="Status Select"></div>
                         </div>
-
-                        <div class="dropdown">
-                            <button class="btn btn-light dropdown-toggle" type="button" id="filterAssigneeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                Filter By Assignee
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="filterAssigneeDropdown">
-                                <li>
-                                    <div class="form-check py-2">
-                                        <input class="form-check-input" type="checkbox" value="Max Boucaut" id="assigneeToMax">
-                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeToMax">
-                                            <img src="assets/images/avatar/user-14.png" alt="" class="rounded-circle size-6"> Max Boucaut
-                                        </label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="form-check py-2">
-                                        <input class="form-check-input" type="checkbox" value="Natasha Tegg" id="assigneeTonatasha">
-                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeTonatasha">
-                                            <img src="assets/images/avatar/user-15.png" alt="" class="rounded-circle size-6"> Natasha Tegg
-                                        </label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="form-check py-2">
-                                        <input class="form-check-input" type="checkbox" value="Ethan Zahel" id="assigneeToEthan">
-                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeToEthan">
-                                            <img src="assets/images/avatar/user-16.png" alt="" class="rounded-circle size-6"> Ethan Zahel
-                                        </label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="form-check py-2">
-                                        <input class="form-check-input" type="checkbox" value="Poppy Dalley" id="assigneeToPoppy">
-                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeToPoppy">
-                                            <img src="assets/images/avatar/user-17.png" alt="" class="rounded-circle size-6"> Poppy Dalley
-                                        </label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="form-check py-2">
-                                        <input class="form-check-input" type="checkbox" value="Ryan Frazer" id="assigneeToRyan">
-                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeToRyan">
-                                            <img src="assets/images/avatar/user-18.png" alt="" class="rounded-circle size-6"> Ryan Frazer
-                                        </label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="form-check py-2">
-                                        <input class="form-check-input" type="checkbox" value="Julian Marconi" id="assigneeToJulian">
-                                        <label class="form-check-label fw-semibold flex-grow-1 d-flex align-items-center gap-2" for="assigneeToJulian">
-                                            <img src="assets/images/avatar/user-12.png" alt="" class="rounded-circle size-6"> Julian Marconi
-                                        </label>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
                         <div class="dropdown position-relative">
                             <button class="btn btn-light text-dark" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                 Filter By Assignee
@@ -314,7 +258,7 @@
                 </div>
 
             </div>
-            <div class="card-body p-0">
+            <div class="card-body pt-0">
                 <div x-data="{
                     sortBy: '',
                     sortDirection: 'asc',
@@ -325,64 +269,91 @@
                             clientName: 'John Doe', 
                             assignees: [{ image: 'assets/images/avatar/user-14.png' }, { image: 'assets/images/avatar/user-16.png' }], 
                             dueDate: '15 June, 2024', 
-                            totalAmount: 18000, 
+                            totalAmount: '18,000', 
                             progress: 18, 
                             status: 'Active' 
                         },
                         {   projectID: 'PEP-22698', 
-                            projectName: 'E-commerce Platform', 
-                            clientName: 'Jane Smith', 
-                            assignees: [{ image: 'assets/images/avatar/user-17.png' }, { image: 'assets/images/avatar/user-15.png' }, { image: 'assets/images/avatar/user-19.png' }], 
-                            dueDate: '25 July, 2024', 
-                            totalAmount: 25000, 
-                            progress: 41, 
-                            status: 'On Hold' 
-                        },
-                        {   projectID: 'PEP-22699', 
-                            projectName: 'Corporate Website', 
-                            clientName: 'ABC Corp', 
-                            assignees: [{ image: 'assets/images/avatar/user-16.png' }, { image: 'assets/images/avatar/user-12.png' }], 
-                            dueDate: '30 May, 2024', 
-                            totalAmount: 10000, 
-                            progress: 75, 
-                            status: 'Pending' 
-                        },
-                        {   projectID: 'PEP-22700', 
-                            projectName: 'Mobile App', 
-                            clientName: 'XYZ Ltd', 
-                            assignees: [{ image: 'assets/images/avatar/user-17.png' }, { image: 'assets/images/avatar/user-15.png' }, { image: 'assets/images/avatar/user-14.png' }], 
-                            dueDate: '30 May, 2024', 
-                            totalAmount: 30000, 
-                            progress: 59, 
-                            status: 'Active' 
-                        },
-                        {   projectID: 'PEP-22701', 
-                            projectName: 'Digital Marketing', 
-                            clientName: 'Marketing Inc', 
-                            assignees: [{ image: 'assets/images/avatar/user-13.png' },], 
-                            dueDate: '5 Sept, 2024', 
-                            totalAmount: 15000, 
-                            progress: 100, 
-                            status: 'Completed' 
-                        },
-                        {   projectID: 'PEP-22702', 
-                            projectName: 'SEO Optimization', 
-                            clientName: 'Tech Solutions', 
-                            assignees: [{ image: 'assets/images/avatar/user-15.png' }, { image: 'assets/images/avatar/user-18.png' }], 
-                            dueDate: '20 June, 2024', 
-                            totalAmount: 12000, 
-                            progress: 50, 
-                            status: 'Active' 
-                        },
-                        {   projectID: 'PEP-22703', 
-                            projectName: 'Social Media Campaign', 
-                            clientName: 'Brandify', 
-                            assignees: [{ image: 'assets/images/avatar/user-15.png' }, { image: 'assets/images/avatar/user-18.png' }], 
-                            dueDate: '20 June, 2024', 
-                            totalAmount: 12000, 
-                            progress: 50, 
-                            status: 'Active' 
-                        },
+                        projectName: 'E-commerce Platform', 
+                        clientName: 'Jane Smith', 
+                        assignees: [{ image: 'assets/images/avatar/user-17.png' }, { image: 'assets/images/avatar/user-15.png' }, { image: 'assets/images/avatar/user-19.png' }], 
+                        dueDate: '25 July, 2024', 
+                        totalAmount: '25,000', 
+                        progress: 41, 
+                        status: 'On Hold' 
+                    },
+                    {   projectID: 'PEP-22699', 
+                        projectName: 'Corporate Website', 
+                        clientName: 'ABC Corp', 
+                        assignees: [{ image: 'assets/images/avatar/user-16.png' }, { image: 'assets/images/avatar/user-12.png' }], 
+                        dueDate: '30 May, 2024', 
+                        totalAmount: '10,000', 
+                        progress: 75, 
+                        status: 'Pending' 
+                    },
+                    {   projectID: 'PEP-22700', 
+                        projectName: 'Mobile App', 
+                        clientName: 'XYZ Ltd', 
+                        assignees: [{ image: 'assets/images/avatar/user-17.png' }, { image: 'assets/images/avatar/user-15.png' }, { image: 'assets/images/avatar/user-14.png' }], 
+                        dueDate: '30 May, 2024', 
+                        totalAmount: '30,000', 
+                        progress: 59, 
+                        status: 'Active' 
+                    },
+                    {   projectID: 'PEP-22701', 
+                        projectName: 'Digital Marketing', 
+                        clientName: 'Marketing Inc', 
+                        assignees: [{ image: 'assets/images/avatar/user-13.png' },], 
+                        dueDate: '5 Sept, 2024', 
+                        totalAmount: '15,000', 
+                        progress: 100, 
+                        status: 'Completed' 
+                    },
+                    {   projectID: 'PEP-22702', 
+                        projectName: 'SEO Optimization', 
+                        clientName: 'Tech Solutions', 
+                        assignees: [{ image: 'assets/images/avatar/user-15.png' }, { image: 'assets/images/avatar/user-18.png' }], 
+                        dueDate: '20 June, 2024', 
+                        totalAmount: '12,000', 
+                        progress: 50, 
+                        status: 'Active' 
+                    },
+                    {   projectID: 'PEP-22703', 
+                        projectName: 'Social Media Campaign', 
+                        clientName: 'Brandify', 
+                        assignees: [{ image: 'assets/images/avatar/user-12.png' }, { image: 'assets/images/avatar/user-18.png' }, { image: 'assets/images/avatar/user-14.png' }], 
+                        dueDate: '20 June, 2024', 
+                        totalAmount: '12,000', 
+                        progress: 50, 
+                        status: 'Active' 
+                    },
+                    {   projectID: 'PEP-22704', 
+                        projectName: 'API Integration', 
+                        clientName: 'DevHouse', 
+                        assignees: [{ image: 'assets/images/avatar/user-17.png' }, { image: 'assets/images/avatar/user-16.png' }], 
+                        dueDate: '5 Aug, 2024', 
+                        totalAmount: '20,000', 
+                        progress: 60, 
+                        status: 'Pending' 
+                    },
+                    {   projectID: 'PEP-22705', 
+                        projectName: 'Data Analysis', 
+                        clientName: 'DataWorks', 
+                        assignees: [{ image: 'assets/images/avatar/user-11.png' }, { image: 'assets/images/avatar/user-18.png' }, { image: 'assets/images/avatar/user-16.png' }], 
+                        dueDate: '15 May, 2024', 
+                        totalAmount: '25,000', 
+                        progress: 80, 
+                        status: 'Active' 
+                    },
+                    {   projectID: 'PEP-22706', 
+                        projectName: 'AI Model Development', 
+                        clientName: 'AI Innovators', 
+                        assignees: [{ image: 'assets/images/avatar/user-11.png' }], 
+                        dueDate: '	1 Sept, 2024', 
+                        totalAmount: '50,000', 
+                        progress: 100, 
+                        status: 'Completed' 
+                    },
                     ],
                     get pageSize() {
                         return 10;
@@ -421,114 +392,165 @@
                         return Math.min(this.currentPage * this.pageSize, this.projects.length);
                     }
                 }">
-                    <table class="table align-middle">
-                        <thead>
-                            <tr class="table-light border-bottom cursor-pointer">
-                                <th style="width: 10px;">
-                                    <div class="form-check check-primary">
-                                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1"></label>
-                                    </div>
-                                </th>
-                                <th x-on:click="sort('projectID')" class="fw-medium text-dark">
-                                    ID <span x-show="sortBy === 'projectID'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
-                                </th>
-                                <th x-on:click="sort('projectName')" class="fw-medium text-dark">
-                                    Project Name <span x-show="sortBy === 'projectName'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
-                                </th>
-                                <th class="fw-medium text-dark">Assigned To</th>
-                                <th x-on:click="sort('dueDate')" class="fw-medium text-dark">
-                                    Due Date <span x-show="sortBy === 'dueDate'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
-                                </th>
-                                <th x-on:click="sort('totalAmount')" class="fw-medium text-dark">
-                                    Total Amount ($) <span x-show="sortBy === 'totalAmount'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
-                                </th>
-                                <th x-on:click="sort('progress')" class="fw-medium text-dark">
-                                    % Complete <span x-show="sortBy === 'progress'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
-                                </th>
-                                <th x-on:click="sort('status')" class="fw-medium text-dark">
-                                    Status <span x-show="sortBy === 'status'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
-                                </th>
-                                <th class="fw-medium text-dark">Actions</th>
-                            </tr>
-                        </thead>
-                
-                        <tbody>
-                            <template x-for="(project, index) in displayedProjects" :key="index">
-                                <tr>
-                                    <td>
+                    <div class="table-box overflow-x-auto">
+                        <table class="table align-middle">
+                            <thead>
+                                <tr class="table-light border-bottom cursor-pointer">
+                                    <th class="w-2">
                                         <div class="form-check check-primary">
                                             <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
                                             <label class="form-check-label" for="defaultCheck1"></label>
                                         </div>
-                                    </td>
-                                    <td><span x-text="project.projectID"></span></td>
-                                    <td>
-                                        <h6 class="mb-1"><a class="text-black link link-primary flex-grow-1" href="/apps-projects-overview" x-text="project.projectName"></a></h6>
-                                        <p x-text="project.clientName" class="fs-sm"></p>
-                                    </td>
-                                    <td>
-                                        <div class="flex ml-3 -space-x-3 grow">
-                                            <template x-for="assignee in project.assignees">
-                                                <a href="#!" class="avatar-hover" title="avatar link">
-                                                    <img class="border-2 border border-2 border-white rounded-circle size-8" :src="assignee.image" alt="">
-                                                </a>
-                                            </template>
-                                        </div>
-                                    </td>
-                                    <td x-text="project.dueDate"></td>
-                                    <td x-text="`$${project.totalAmount}`"></td>
-                                    <td>
-                                        <div class="d-flex align-items-center gap-2">
-                                            <p x-text="`${project.progress}%`"></p>
-                                            <div class="progress progress-1 w-100" role="progressbar" aria-label="Example with label" aria-valuenow="project.progress" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="progress-bar" :style="`width: ${project.progress}%`"></div>
+                                    </th>
+                                    <th x-on:click="sort('projectID')" class="fw-medium text-dark">
+                                        ID <span x-show="sortBy === 'projectID'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                    </th>
+                                    <th x-on:click="sort('projectName')" class="fw-medium text-dark">
+                                        Project Name <span x-show="sortBy === 'projectName'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                    </th>
+                                    <th class="fw-medium text-dark">Assigned To</th>
+                                    <th x-on:click="sort('dueDate')" class="fw-medium text-dark">
+                                        Due Date <span x-show="sortBy === 'dueDate'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                    </th>
+                                    <th x-on:click="sort('totalAmount')" class="fw-medium text-dark">
+                                        Total Amount ($) <span x-show="sortBy === 'totalAmount'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                    </th>
+                                    <th x-on:click="sort('progress')" class="fw-medium text-dark">
+                                        % Complete <span x-show="sortBy === 'progress'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                    </th>
+                                    <th x-on:click="sort('status')" class="fw-medium text-dark">
+                                        Status <span x-show="sortBy === 'status'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                    </th>
+                                    <th class="fw-medium text-dark">Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <template x-for="(project, index) in displayedProjects" :key="index">
+                                    <tr>
+                                        <td>
+                                            <div class="form-check check-primary">
+                                                <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                                <label class="form-check-label" for="defaultCheck1"></label>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <!-- Badge logic for status -->
-                                        <span :class="{
+                                        </td>
+                                        <td><span x-text="project.projectID"></span></td>
+                                        <td>
+                                            <h6 class="mb-1"><a class="text-black link link-primary flex-grow-1" href="/apps-projects-overview" x-text="project.projectName"></a></h6>
+                                            <p x-text="project.clientName" class="fs-sm"></p>
+                                        </td>
+                                        <td>
+                                            <div class="flex ml-3 -space-x-3 grow">
+                                                <template x-for="assignee in project.assignees">
+                                                    <a href="#!" class="avatar-hover" title="avatar link">
+                                                        <img class="border-2 border border-2 border-white rounded-circle size-8" :src="assignee.image" alt="">
+                                                    </a>
+                                                </template>
+                                            </div>
+                                        </td>
+                                        <td x-text="project.dueDate"></td>
+                                        <td x-text="`$${project.totalAmount}`"></td>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <p x-text="`${project.progress}%`"></p>
+                                                <div class="progress progress-1 w-100" role="progressbar" aria-label="Example with label" aria-valuenow="project.progress" aria-valuemin="0" aria-valuemax="100">
+                                                    <div class="progress-bar" :style="`width: ${project.progress}%`"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <!-- Badge logic for status -->
+                                            <span :class="{
                                             'badge bg-secondary-subtle text-secondary border border-secondary-subtle': project.status === 'Active',
                                             'badge bg-danger-subtle text-danger border border-danger-subtle': project.status === 'On Hold',
                                             'badge bg-warning-subtle text-warning border border-warning-subtle': project.status === 'Pending',
                                             'badge bg-success-subtle text-success border border-success-subtle': project.status === 'Completed'
                                         }" x-text="project.status"></span>
-                                    </td>
-                                    <td class="whitespace-nowrap">
-                                        <div class="dropdown">
-                                            <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
-                                                <i class="ri-more-2-fill"></i>
-                                            </button>
-                                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                                                <li>
-                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
-                                                        <i class="ri-eye-line"></i> 
-                                                        <span>Overview</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
-                                                        <i class="ri-pencil-line"></i> 
-                                                        <span>Edit</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
-                                                        <i class="ri-delete-bin-line"></i>
-                                                        <span>Delete</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </template>
-                        </tbody>
-                    </table>
+                                        </td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="dropdown">
+                                                <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li>
+                                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                            <i class="ri-eye-line"></i>
+                                                            <span>Overview</span>
+                                                        </a>
+                                                    </li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                            <i class="ri-pencil-line"></i>
+                                                            <span>Edit</span>
+                                                        </a>
+                                                    </li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                            <i class="ri-delete-bin-line"></i>
+                                                            <span>Delete</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+
+                                                <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered modal-xs">
+                                                        <div class="modal-content p-7 text-center">
+                                                            <div class="size-14 bg-danger-subtle rounded-circle d-flex justify-content-center align-items-center mx-auto mb-4">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" class="lucide lucide-trash-2 size-6 text-danger">
+                                                                    <path d="M3 6h18"></path>
+                                                                    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                                                    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                                                    <line x1="10" x2="10" y1="11" y2="17"></line>
+                                                                    <line x1="14" x2="14" y1="11" y2="17"></line>
+                                                                </svg>
+                                                            </div>
+                                                            <h5 class="mb-4 lh-base">Are you sure you want to delete this project ?</h5>
+                                                            <div class="d-flex justify-content-center align-items-center gap-2">
+                                                                <button class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+                                                                <button class="btn btn-link link-primary text-dark" data-bs-dismiss="modal">Cancel</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <p>Showing <b>11-20</b> of <b>27</b> Results</p>
+                    </div>
+                    <div class="col-6 justify-content-end d-flex">
+                        <nav aria-label="...">
+                            <ul class="pagination pagination-active-primary d-flex gap-2 mb-0">
+                                <li class="page-item pagination-primary ">
+                                    <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                        <i data-lucide="chevron-left" class="size-5"></i>
+                                        <span>Prev</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                <li class="page-item" aria-current="page">
+                                    <a class="page-link rounded-2 page-number" href="#">2</a>
+                                </li>
+                                <li class="page-item"><a class="page-link page-number rounded-2" href="#">3</a></li>
+                                <li class="page-item pagination-primary ">
+                                    <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                        <span>Next</span>
+                                        <i data-lucide="chevron-right" class="size-5"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
-             
+
         </div>
 
     </div>
@@ -549,3 +571,4 @@
 </body>
 
 </html>
+

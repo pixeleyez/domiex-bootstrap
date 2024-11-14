@@ -1,0 +1,1272 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Grid View" }}
+
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Grid View" sub-title="Projects" }}
+    <div class="d-flex flex-wrap align-items-center gap-5 mb-5">
+        <div class="flex-shrink-0">
+            <h6 class="card-title">My Projects (<span>27</span>)</h6>
+        </div>
+        <div class="mx-auto">
+            <div class="position-relative w-80">
+                <input type="text" class="form-control ps-9 pe-4" placeholder="Search for projects..." @input="filterProjects" x-model="searchTerm">
+                <div class="position-absolute top-50 translate-middle-y d-flex align-items-center text-muted">
+                    <i data-lucide="search" class="size-4 ms-3"></i>
+                </div>
+            </div>
+        </div>
+        <div class="flex-shrink-0">
+            <button type="button" class="btn btn-primary d-flex justify-content-center align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                <i data-lucide="circle-plus" class="size-4"></i>Add Project
+            </button>
+            <div class="modal fade" id="addprojectModal" tabindex="-1" aria-labelledby="addprojectModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title" id="addprojectModalLabel">Add project</h6>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" x-data="{
+                            projectTitle: '',
+                            clientName: '',
+                            dueDate: '',
+                            totalAmount: '',
+                            progress: 0,
+                            assignee: '',
+                            status: '',
+                            error: '',
+                            validateForm() {
+                                this.error = '';  // Reset error state
+                        
+                                if (this.projectTitle.trim() === '') {
+                                    this.error = 'Project name is required.';
+                                    return false;
+                                }
+                        
+                                if (this.clientName.trim() === '') {
+                                    this.error = 'Client name is required.';
+                                    return false;
+                                }
+                        
+                                if (this.dueDate.trim() === '') {
+                                    this.error = 'Due date is required.';
+                                    return false;
+                                }
+                        
+                                if (this.totalAmount === '' || isNaN(this.totalAmount) || parseFloat(this.totalAmount) <= 0) {
+                                    this.error = 'Total amount must be a positive number.';
+                                    return false;
+                                }
+                        
+                                const parsedProgress = parseInt(this.progress, 10);
+                                if (isNaN(parsedProgress) || parsedProgress < 0 || parsedProgress > 100) {
+                                    this.error = 'Progress must be between 0 and 100.';
+                                    return false;
+                                }
+                        
+                                if (this.assignee === '') {
+                                    this.error = 'Please select an assignee.';
+                                    return false;
+                                }
+                        
+                                if (this.status === '') {
+                                    this.error = 'Please select a status.';
+                                    return false;
+                                }
+                        
+                                return true;
+                            },
+                        
+                            clearError() {
+                                this.error = '';
+                            }
+                        }">
+                            <div class="row g-4">
+                                <div class="col-12">
+                                    <label for="projectTitleInput" class="form-label fw-medium">Project Title</label>
+                                    <input type="text" class="form-control" id="projectTitleInput" placeholder="Project Title" x-model="projectTitle" @input="clearError()" />
+                                    <p x-show="error && projectTitle === ''" class="text-sm text-danger" x-text="error"></p>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="clientName" class="form-label fw-medium">Client Name</label>
+                                    <input type="text" class="form-control" id="clientName" placeholder="Enter Name" x-model="clientName" @input="clearError()" />
+                                    <p x-show="error && clientName === ''" class="text-sm text-danger" x-text="error"></p>
+                                </div>
+
+                                <div class="col-6">
+                                    <label for="dueDateInput" class="form-label fw-medium">Due Date</label>
+                                    <input data-provider="flatpickr" data-date-format="d M, Y" type="text" placeholder="Select due date" class="form-control form-input flatpickr-input active" readonly="readonly" x-model="dueDate" @input="clearError()" />
+                                    <p x-show="error && dueDate === ''" class="text-sm text-danger" x-text="error"></p>
+                                </div>
+
+                                <div class="col-6">
+                                    <label for="totalAmountInput" class="form-label fw-medium">Total Amount ($)</label>
+                                    <input type="number" class="form-control" id="totalAmountInput" placeholder="$00.00" x-model="totalAmount" @input="clearError()" />
+                                    <p x-show="error && (totalAmount === '' || isNaN(totalAmount) || parseFloat(totalAmount) <= 0)" class="text-sm text-danger" x-text="error"></p>
+                                </div>
+
+                                <div class="col-12" x-data="{
+                                    progress: 0,
+                                    error: '',
+                                    validateProgress() {
+                                        const parsedValue = parseInt(this.progress, 10);
+                                        if (isNaN(parsedValue)) {
+                                            this.progress = '';
+                                        } else if (parsedValue > 100) {
+                                            this.progress = 100;
+                                            this.error = 'Progress must be between 0 and 100.';
+                                        } else {
+                                            this.progress = parsedValue;
+                                            this.error = '';
+                                        }
+                                    }
+                                }">
+                                    <label for="progressInput" class="form-label fw-medium">% Complete</label>
+                                    <input type="text" class="form-control" id="progressInput" x-model="progress" @input="validateProgress()" />
+                                    <p x-show="error && (progress === '' || isNaN(progress) || progress < 0 || progress > 100)" class="text-sm text-danger" x-text="error"></p>
+                                    <div class="progress progress-1 mt-3" role="progressbar" aria-label="Example with label" :aria-valuenow="progress" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar progress-gradient progress-gradient-secondary rounded-5" :style="'width: ' + (progress > 100 ? 0.1 : progress < 0.1 ? 100 : progress) + '%'" :aria-valuenow="progress"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="assignedSelect" class="form-label fw-medium">Assignee To</label>
+                                    <div id="assignedSelect"></div>
+                                    <p x-show="error && assignee === ''" class="text-sm text-danger" x-text="error"></p>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="statusSelect" class="form-label fw-medium">Status</label>
+                                    <div id="statusSelect2"></div>
+                                    <p x-show="error && status === ''" class="text-sm text-danger" x-text="error"></p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-end mt-5 gap-2">
+                                <button class="btn btn-active-danger d-flex justify-content-center align-items-center" data-bs-dismiss="modal">
+                                    <i data-lucide="x" class="size-4 me-1"></i> Close
+                                </button>
+                                <button class="btn btn-primary" @click="if (validateForm()) { /* Add project logic here */ }">
+                                    Add project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xs">
+            <div class="modal-content p-7 text-center">
+                <div class="size-14 bg-danger-subtle rounded-circle d-flex justify-content-center align-items-center mx-auto mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" class="lucide lucide-trash-2 size-6 text-danger">
+                        <path d="M3 6h18"></path>
+                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                        <line x1="10" x2="10" y1="11" y2="17"></line>
+                        <line x1="14" x2="14" y1="11" y2="17"></line>
+                    </svg>
+                </div>
+                <h5 class="mb-4 lh-base">Are you sure you want to delete this project ?</h5>
+                <div class="d-flex justify-content-center align-items-center gap-2">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+                    <button class="btn btn-link link-primary text-dark" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="basic-tabs">
+        <ul class="nav nav-tabs px-3" id="myJustifyTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active fw-medium" id="justify-Projects-tab" data-bs-toggle="tab" data-bs-target="#justify-Projects-tab-pane" type="button" role="tab" aria-controls="justify-Projects-tab-pane" aria-selected="true">All Projects</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-medium" id="justify-Active-tab" data-bs-toggle="tab" data-bs-target="#justify-Active-tab-pane" type="button" role="tab" aria-controls="justify-Active-tab-pane" aria-selected="false">Active</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-medium" id="justify-Pending-tab" data-bs-toggle="tab" data-bs-target="#justify-Pending-tab-pane" type="button" role="tab" aria-controls="justify-Pending-tab-pane" aria-selected="false">Pending</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-medium" id="justify-OnHold-tab" data-bs-toggle="tab" data-bs-target="#justify-OnHold-tab-pane" type="button" role="tab" aria-controls="justify-OnHold-tab-pane" aria-selected="false">On Hold</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-medium" id="justify-Completed-tab" data-bs-toggle="tab" data-bs-target="#justify-Completed-tab-pane" type="button" role="tab" aria-controls="justify-Completed-tab-pane" aria-selected="false">Completed</button>
+            </li>
+        </ul>
+
+        <div class="tab-content row mt-4" id="myJustifyTabContent">
+            <div class="tab-pane show active" id="justify-Projects-tab-pane" role="tabpanel" aria-labelledby="justify-Projects-tab" tabindex="0">
+                <div x-data="{
+                    projects: [
+                        {
+                            id: 1,
+                            name: 'Chat Application',
+                            assignedTo: [
+                                { name: 'John Doe', avatar: 'assets/images/avatar/user-14.png' },
+                                { name: 'Jane Smith', avatar: 'assets/images/avatar/user-16.png' }
+                            ],
+                            dueDate: '15 June, 2024',
+                            totalAmount: '18,000',
+                            progress: 18,
+                            image: 'assets/images/brands/img-01.png',
+                            status: 'Active'
+                        },
+                        {
+                            id: 2,
+                            name: 'E-commerce Platform',
+                            assignedTo: [
+                                { name: 'Sam Williams', avatar: 'assets/images/avatar/user-17.png' },
+                                { name: 'Nina Johnson', avatar: 'assets/images/avatar/user-15.png' },
+                                { name: 'David Lee', avatar: 'assets/images/avatar/user-19.png' }
+                            ],
+                            dueDate: '25 July, 2024',
+                            totalAmount: '25,000',
+                            progress: 41,
+                            image: 'assets/images/brands/img-02.png',
+                            status: 'On Hold'
+                        },
+                        {
+                            id: 3,
+                            name: 'Corporate Website',
+                            assignedTo: [
+                                { name: 'ABC Corp', avatar: 'assets/images/avatar/user-16.png' },
+                                { name: 'Nina Johnson', avatar: 'assets/images/avatar/user-12.png' }
+                            ],
+                            dueDate: '30 May, 2024',
+                            totalAmount: '10,000',
+                            progress: 75,
+                            image: 'assets/images/brands/img-03.png',
+                            status: 'Pending'
+                        },
+                        {
+                            id: 4,
+                            name: 'Mobile App',
+                            assignedTo: [
+                                { name: 'XYZ Ltd', avatar: 'assets/images/avatar/user-17.png' },
+                                { name: 'David Lee', avatar: 'assets/images/avatar/user-18.png' },
+                                { name: 'ABC Corp', avatar: 'assets/images/avatar/user-14.png' }
+                            ],
+                            dueDate: '10 Aug, 2024',
+                            totalAmount: '30,000',
+                            progress: 59,
+                            image: 'assets/images/brands/img-04.png',
+                            status: 'Active'
+                        },
+                        {
+                            id: 5,
+                            name: 'Digital Marketing',
+                            assignedTo: [
+                                { name: 'Marketing Inc', avatar: 'assets/images/avatar/user-13.png' }
+                            ],
+                            dueDate: '5 Sept, 2024',
+                            totalAmount: '15,000',
+                            progress: 100,
+                            image: 'assets/images/brands/img-05.png',
+                            status: 'Completed'
+                        },
+                        {
+                            id: 6,
+                            name: 'SEO Optimization',
+                            assignedTo: [
+                                { name: 'Tech Solutions', avatar: 'assets/images/avatar/user-13.png' },
+                                { name: 'XYZ Ltd', avatar: 'assets/images/avatar/user-18.png' },
+                            ],
+                            dueDate: '5 Sept, 2024',
+                            totalAmount: '15,000',
+                            progress: 50,
+                            image: 'assets/images/brands/img-06.png',
+                            status: 'Active'
+                        },
+                        {
+                            id: 7,
+                            name: 'Social Media Campaign',
+                            assignedTo: [
+                                { name: 'Brandify', avatar: 'assets/images/avatar/user-12.png' },
+                                { name: 'XYZ Ltd', avatar: 'assets/images/avatar/user-18.png' },
+                                { name: 'Tech Solutions', avatar: 'assets/images/avatar/user-14.png' },
+                            ],
+                            dueDate: '10 July, 2024',
+                            totalAmount: '8,000',
+                            progress: 30,
+                            image: 'assets/images/brands/img-07.png',
+                            status: 'On Hold'
+                        },
+                        {
+                            id: 8,
+                            name: 'API Integration',
+                            assignedTo: [
+                                { name: 'DevHouse', avatar: 'assets/images/avatar/user-17.png' },
+                                { name: 'XYZ Ltd', avatar: 'assets/images/avatar/user-16.png' },
+                            ],
+                            dueDate: '5 Aug, 2024',
+                            totalAmount: '20,000',
+                            progress: 60,
+                            image: 'assets/images/brands/img-08.png',
+                            status: 'Pending'
+                        },
+                        {
+                            id: 9,
+                            name: 'Data Analysis',
+                            assignedTo: [
+                                { name: 'Data Analysis', avatar: 'assets/images/avatar/user-11.png' },
+                                { name: 'XYZ Ltd', avatar: 'assets/images/avatar/user-18.png' },
+                                { name: 'Tech Solutions', avatar: 'assets/images/avatar/user-16.png' },
+                            ],
+                            dueDate: '15 May, 2024',
+                            totalAmount: '25,000',
+                            progress: 80,
+                            image: 'assets/images/brands/img-09.png',
+                            status: 'Active'
+                        },
+                        {
+                            id: 10,
+                            name: 'AI Model Development',
+                            assignedTo: [
+                                { name: 'AI Innovators', avatar: 'assets/images/avatar/user-11.png' },
+                            ],
+                            dueDate: '1 Sept, 2024',
+                            totalAmount: '50,000',
+                            progress: 100,
+                            image: 'assets/images/brands/img-10.png',
+                            status: 'Completed'
+                        },
+                        {
+                            id: 11,
+                            name: 'Cloud Migration',
+                            assignedTo: [
+                                { name: 'Cloudy Inc.', avatar: 'assets/images/avatar/user-12.png' },
+                                { name: 'AI Innovators', avatar: 'assets/images/avatar/user-15.png' },
+                            ],
+                            dueDate: '20 Oct, 2024',
+                            totalAmount: '35,000',
+                            progress: 70,
+                            image: 'assets/images/brands/img-11.png',
+                            status: 'Active'
+                        },
+                        {
+                            id: 12,
+                            name: 'Cybersecurity Audit',
+                            assignedTo: [
+                                { name: 'SecureIT', avatar: 'assets/images/avatar/user-18.png' },
+                                { name: 'Cloudy Inc.', avatar: 'assets/images/avatar/user-17.png' },
+                                { name: 'XYZ Ltd', avatar: 'assets/images/avatar/user-16.png' },
+                            ],
+                            dueDate: '30 June, 2024',
+                            totalAmount: '22,000',
+                            progress: 65,
+                            image: 'assets/images/brands/img-12.png',
+                            status: 'On Hold'
+                        }
+                    ]
+                }">
+                    <div class="row g-5">
+                        <template x-for="project in projects" :key="project.id">
+                            <div class="col-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="dropdown float-end">
+                                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                <i class="ri-more-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-eye-line"></i>
+                                                        <span>Overview</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="size-12 border d-flex justify-content-center align-items-center mb-4 rounded">
+                                            <img :src="project.image" alt="" class="size-8">
+                                        </div>
+                                        <h6 class="mb-1" x-text="project.name"></h6>
+                                        <p x-text="project.assignedTo[0].name"></p>
+                                        <div class="row mt-3">
+                                            <div class="col-6 p-2 text-center border-end">
+                                                <h6 class="mb-1" x-text="project.dueDate"></h6>
+                                                <p>Due Date</p>
+                                            </div>
+                                            <div class="col-6 p-2 text-center">
+                                                <h6 class="mb-1" x-text="`$${project.totalAmount}`"></h6>
+                                                <p>Total Amount</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-5">
+                                            <p class="mb-2 text-gray-500 dark:text-dark-500">Project <span x-text="project.progress + '%'"></span> completed</p>
+                                            <div class="progress progress-1" role="progressbar" :aria-valuenow="project.progress" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar progress-gradient progress-gradient-secondary" :style="'width: ' + project.progress + '%'"></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2 mt-5">
+                                            <p class="me-3">Assigned To:</p>
+                                            <div class="d-flex align-items-center flex-grow-1">
+                                                <template x-for="user in project.assignedTo" :key="user.name">
+                                                    <a href="#!" class="avatar-hover">
+                                                        <img :src="user.avatar" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                                    </a>
+                                                </template>
+                                            </div>
+                                            <span class="flex-shrink-0" :class="{
+                                                  'badge bg-secondary-subtle text-secondary border border-secondary-subtle': project.status === 'Active',
+                                                  'badge bg-orange-subtle text-orange border border-orange-subtle': project.status === 'On Hold',
+                                                  'badge bg-warning-subtle text-warning border border-warning-subtle': project.status === 'Pending',
+                                                  'badge bg-success-subtle text-success border border-success-subtle': project.status === 'Completed'
+                                              }" class="badge ms-1" x-text="project.status"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-6">
+                        <p>Showing <b>1-12</b> of <b>27</b> Results</p>
+                    </div>
+                    <div class="col-6 justify-content-end d-flex">
+                        <nav aria-label="...">
+                            <ul class="pagination pagination-active-primary d-flex gap-2 mb-0">
+                                <li class="page-item pagination-primary ">
+                                    <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                        <i data-lucide="chevron-left" class="size-5"></i>
+                                        <span>Prev</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                <li class="page-item" aria-current="page">
+                                    <a class="page-link rounded-2 page-number" href="#">2</a>
+                                </li>
+                                <li class="page-item"><a class="page-link page-number rounded-2" href="#">3</a></li>
+                                <li class="page-item pagination-primary ">
+                                    <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                        <span>Next</span>
+                                        <i data-lucide="chevron-right" class="size-5"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Tab Content -->
+            <div class="tab-pane" id="justify-Active-tab-pane" role="tabpanel" aria-labelledby="justify-Active-tab" tabindex="0">
+                <div x-data="{
+                        projects: [
+                            {
+                                id: 1,
+                                name: 'Chat Application',
+                                assignedTo: [
+                                    { name: 'John Doe', avatar: 'assets/images/avatar/user-14.png' },
+                                    { name: 'Jane Smith', avatar: 'assets/images/avatar/user-16.png' }
+                                ],
+                                dueDate: '15 June, 2024',
+                                totalAmount: '18,000',
+                                progress: 18,
+                                image: 'assets/images/brands/img-01.png',
+                                status: 'Active'
+                            },
+                            {
+                                id: 2,
+                                name: 'Mobile App',
+                                assignedTo: [
+                                    { name: 'XYZ Ltd', avatar: 'assets/images/avatar/user-17.png' },
+                                    { name: 'David Lee', avatar: 'assets/images/avatar/user-18.png' },
+                                    { name: 'ABC Corp', avatar: 'assets/images/avatar/user-14.png' }
+                                ],
+                                dueDate: '10 Aug, 2024',
+                                totalAmount: '30,000',
+                                progress: 59,
+                                image: 'assets/images/brands/img-04.png',
+                                status: 'Active'
+                            },
+                            {
+                                id: 3,
+                                name: 'SEO Optimization',
+                                assignedTo: [
+                                    { name: 'Tech Solutions', avatar: 'assets/images/avatar/user-13.png' },
+                                    { name: 'XYZ Ltd', avatar: 'assets/images/avatar/user-18.png' },
+                                ],
+                                dueDate: '5 Sept, 2024',
+                                totalAmount: '15,000',
+                                progress: 50,
+                                image: 'assets/images/brands/img-06.png',
+                                status: 'Active'
+                            },
+                            {
+                                id: 4,
+                                name: 'Data Analysis',
+                                assignedTo: [
+                                    { name: 'Data Analysis', avatar: 'assets/images/avatar/user-11.png' },
+                                    { name: 'XYZ Ltd', avatar: 'assets/images/avatar/user-18.png' },
+                                    { name: 'Tech Solutions', avatar: 'assets/images/avatar/user-16.png' },
+                                ],
+                                dueDate: '15 May, 2024',
+                                totalAmount: '25,000',
+                                progress: 80,
+                                image: 'assets/images/brands/img-09.png',
+                                status: 'Active'
+                            },
+                            {
+                                id: 5,
+                                name: 'Cloud Migration',
+                                assignedTo: [
+                                    { name: 'Cloudy Inc.', avatar: 'assets/images/avatar/user-12.png' },
+                                    { name: 'AI Innovators', avatar: 'assets/images/avatar/user-15.png' },
+                                ],
+                                dueDate: '20 Oct, 2024',
+                                totalAmount: '35,000',
+                                progress: 70,
+                                image: 'assets/images/brands/img-11.png',
+                                status: 'Active'
+                            }, 
+                            {
+                                id: 6,
+                                name: 'Blockchain Development',
+                                assignedTo: [
+                                    { name: 'BlockTech', avatar: 'assets/images/avatar/user-14.png' },
+                                    { name: 'Nina Johnson', avatar: 'assets/images/avatar/user-19.png' },
+                                ],
+                                dueDate: '15 July, 2024',
+                                totalAmount: '40,000',
+                                progress: 50,
+                                image: 'assets/images/brands/img-13.png',
+                                status: 'Active'
+                            },
+                            {
+                                id: 7,
+                                name: 'VR Training Program',
+                                assignedTo: [
+                                    { name: 'Immersive Learning', avatar: 'assets/images/avatar/user-11.png' },
+                                    { name: 'Nina Johnson', avatar: 'assets/images/avatar/user-13.png' },
+                                ],
+                                dueDate: '1 Nov, 2024',
+                                totalAmount: '55,000',
+                                progress: 40,
+                                image: 'assets/images/brands/img-14.png',
+                                status: 'Active'
+                            },
+                            {
+                                id: 8,
+                                name: 'IoT Implementation',
+                                assignedTo: [
+                                    { name: 'SmartHome', avatar: 'assets/images/avatar/user-17.png' },
+                                    { name: 'Nina Johnson', avatar: 'assets/images/avatar/user-11.png' },
+                                ],
+                                dueDate: '15 Jan, 2025',
+                                totalAmount: '60,000',
+                                progress: 25,
+                                image: 'assets/images/brands/img-16.png',
+                                status: 'Active'
+                            },
+                            {
+                                id: 9,
+                                name: 'HR Management System',
+                                assignedTo: [
+                                    { name: 'HR Innovate', avatar: 'assets/images/avatar/user-11.png' },
+                                    { name: 'Nina Johnson', avatar: 'assets/images/avatar/user-12.png' },
+                                    { name: 'SmartHome', avatar: 'assets/images/avatar/user-13.png' },
+                                ],
+                                dueDate: '20 April, 2025',
+                                totalAmount: '38,000',
+                                progress: 88,
+                                image: 'assets/images/brands/img-19.png',
+                                status: 'Active'
+                            },
+                            {
+                                id: 10,
+                                name: 'Machine Learning Model',
+                                assignedTo: [
+                                    { name: 'DataScience Inc.', avatar: 'assets/images/avatar/user-11.png' },
+                                    { name: 'Nina Johnson', avatar: 'assets/images/avatar/user-15.png' },
+                                ],
+                                dueDate: '10 June, 2025',
+                                totalAmount: '55,000',
+                                progress: 45,
+                                image: 'assets/images/brands/img-21.png',
+                                status: 'Active'
+                            },
+                            {
+                                id: 11,
+                                name: 'Mobile Game Development',
+                                assignedTo: [
+                                    { name: 'Game Studio.', avatar: 'assets/images/avatar/user-19.png' },
+                                    { name: 'DataScience Inc.', avatar: 'assets/images/avatar/user-18.png' },
+                                    { name: 'Nina Johnson', avatar: 'assets/images/avatar/user-14.png' },
+                                ],
+                                dueDate: '5 Aug, 2025',
+                                totalAmount: '70,000',
+                                progress: 75,
+                                image: 'assets/images/brands/img-23.png',
+                                status: 'Active'
+                            },
+                            {
+                                id: 12,
+                                name: 'Product Launch',
+                                assignedTo: [
+                                    { name: 'Marketing Agency', avatar: 'assets/images/avatar/user-16.png' },
+                                    { name: 'DataScience Inc.', avatar: 'assets/images/avatar/user-14.png' },
+                                    { name: 'Nina Johnson', avatar: 'assets/images/avatar/user-13.png' },
+                                ],
+                                dueDate: '30 Oct, 2025',
+                                totalAmount: '35,000',
+                                progress: 65,
+                                image: 'assets/images/brands/img-25.png',
+                                status: 'Active'
+                            },
+                        ]
+                    }">
+                    <div class="row g-5">
+                        <template x-for="project in projects" :key="project.id">
+                            <div class="col-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="dropdown float-end">
+                                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                <i class="ri-more-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-eye-line"></i>
+                                                        <span>Overview</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="size-12 border d-flex justify-content-center align-items-center mb-4 rounded">
+                                            <img :src="project.image" alt="" class="size-8">
+                                        </div>
+                                        <h6 class="mb-1" x-text="project.name"></h6>
+                                        <p x-text="project.assignedTo[0].name"></p>
+                                        <div class="row mt-3">
+                                            <div class="col-6 p-2 text-center border-end">
+                                                <h6 class="mb-1" x-text="project.dueDate"></h6>
+                                                <p>Due Date</p>
+                                            </div>
+                                            <div class="col-6 p-2 text-center">
+                                                <h6 class="mb-1" x-text="`$${project.totalAmount}`"></h6>
+                                                <p>Total Amount</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-5">
+                                            <p class="mb-2 text-gray-500 dark:text-dark-500">Project <span x-text="project.progress + '%'"></span> completed</p>
+                                            <div class="progress progress-1" role="progressbar" :aria-valuenow="project.progress" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar progress-gradient progress-gradient-secondary" :style="'width: ' + project.progress + '%'"></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2 mt-5">
+                                            <p class="me-3">Assigned To:</p>
+                                            <div class="d-flex align-items-center flex-grow-1">
+                                                <template x-for="user in project.assignedTo" :key="user.name">
+                                                    <a href="#!" class="avatar-hover">
+                                                        <img :src="user.avatar" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                                    </a>
+                                                </template>
+                                            </div>
+                                            <span class="flex-shrink-0" :class="{
+                                                      'badge bg-secondary-subtle text-secondary border border-secondary-subtle': project.status === 'Active',
+                                                      'badge bg-orange-subtle text-orange border border-orange-subtle': project.status === 'On Hold',
+                                                      'badge bg-warning-subtle text-warning border border-warning-subtle': project.status === 'Pending',
+                                                      'badge bg-success-subtle text-success border border-success-subtle': project.status === 'Completed'
+                                                  }" class="badge ms-1" x-text="project.status"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-6">
+                        <p>Showing <b>1-12</b> of <b>13</b> Results</p>
+                    </div>
+                    <div class="col-6 justify-content-end d-flex">
+                        <nav aria-label="...">
+                            <ul class="pagination pagination-active-primary d-flex gap-2 mb-0">
+                                <li class="page-item pagination-primary ">
+                                    <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                        <i data-lucide="chevron-left" class="size-5"></i>
+                                        <span>Prev</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                <li class="page-item" aria-current="page">
+                                    <a class="page-link rounded-2 page-number" href="#">2</a>
+                                </li>
+                                <li class="page-item pagination-primary ">
+                                    <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                        <span>Next</span>
+                                        <i data-lucide="chevron-right" class="size-5"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pending Tab Content -->
+            <div class="tab-pane" id="justify-Pending-tab-pane" role="tabpanel" aria-labelledby="justify-Pending-tab" tabindex="0">
+                <div x-data="{
+                    projects: [
+                        {
+                            id: 1,
+                            name: 'Corporate Website',
+                            assignedTo: [
+                                { name: 'ABC Corp', avatar: 'assets/images/avatar/user-16.png' },
+                                { name: 'Jane Smith', avatar: 'assets/images/avatar/user-12.png' }
+                            ],
+                            dueDate: '30 May, 2024',
+                            totalAmount: '10,000',
+                            progress: 75,
+                            image: 'assets/images/brands/img-03.png',
+                            status: 'Pending'
+                        },
+                        {
+                            id: 2,
+                            name: 'API Integration',
+                            assignedTo: [
+                                { name: 'DevHouse', avatar: 'assets/images/avatar/user-17.png' },
+                                { name: 'David Lee', avatar: 'assets/images/avatar/user-16.png' },
+                            ],
+                            dueDate: '5 Aug, 2024',
+                            totalAmount: '20,000',
+                            progress: 60,
+                            image: 'assets/images/brands/img-08.png',
+                            status: 'Pending'
+                        },
+                        {
+                            id: 3,
+                            name: 'ERP System',
+                            assignedTo: [
+                                { name: 'Enterprise Solutions', avatar: 'assets/images/avatar/user-19.png' },
+                                { name: 'XYZ Ltd', avatar: 'assets/images/avatar/user-20.png' },
+                            ],
+                            dueDate: '10 March, 2025',
+                            totalAmount: '75,000',
+                            progress: 60,
+                            image: 'assets/images/brands/img-18.png',
+                            status: 'Pending'
+                        },
+                        {
+                            id: 4,
+                            name: 'Website Redesign',
+                            assignedTo: [
+                                { name: 'Creative Design', avatar: 'assets/images/avatar/user-13.png' },
+                                { name: 'XYZ Ltd', avatar: 'assets/images/avatar/user-16.png' },
+                            ],
+                            dueDate: '20 July, 2025',
+                            totalAmount: '20,000',
+                            progress: 60,
+                            image: 'assets/images/brands/img-22.png',
+                            status: 'Pending'
+                        },
+                    ]
+                }">
+                    <div class="row g-5">
+                        <template x-for="project in projects" :key="project.id">
+                            <div class="col-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="dropdown float-end">
+                                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                <i class="ri-more-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-eye-line"></i>
+                                                        <span>Overview</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="size-12 border d-flex justify-content-center align-items-center mb-4 rounded">
+                                            <img :src="project.image" alt="" class="size-8">
+                                        </div>
+                                        <h6 class="mb-1" x-text="project.name"></h6>
+                                        <p x-text="project.assignedTo[0].name"></p>
+                                        <div class="row mt-3">
+                                            <div class="col-6 p-2 text-center border-end">
+                                                <h6 class="mb-1" x-text="project.dueDate"></h6>
+                                                <p>Due Date</p>
+                                            </div>
+                                            <div class="col-6 p-2 text-center">
+                                                <h6 class="mb-1" x-text="`$${project.totalAmount}`"></h6>
+                                                <p>Total Amount</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-5">
+                                            <p class="mb-2 text-gray-500 dark:text-dark-500">Project <span x-text="project.progress + '%'"></span> completed</p>
+                                            <div class="progress progress-1" role="progressbar" :aria-valuenow="project.progress" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar progress-gradient progress-gradient-secondary" :style="'width: ' + project.progress + '%'"></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2 mt-5">
+                                            <p class="me-3">Assigned To:</p>
+                                            <div class="d-flex align-items-center flex-grow-1">
+                                                <template x-for="user in project.assignedTo" :key="user.name">
+                                                    <a href="#!" class="avatar-hover">
+                                                        <img :src="user.avatar" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                                    </a>
+                                                </template>
+                                            </div>
+                                            <span class="flex-shrink-0" :class="{
+                                                  'badge bg-secondary-subtle text-secondary border border-secondary-subtle': project.status === 'Active',
+                                                  'badge bg-orange-subtle text-orange border border-orange-subtle': project.status === 'On Hold',
+                                                  'badge bg-warning-subtle text-warning border border-warning-subtle': project.status === 'Pending',
+                                                  'badge bg-success-subtle text-success border border-success-subtle': project.status === 'Completed'
+                                              }" class="badge ms-1" x-text="project.status"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-6">
+                        <p>Showing <b>1-4</b> of <b>4</b> Results</p>
+                    </div>
+                    <div class="col-6 justify-content-end d-flex">
+                        <nav aria-label="...">
+                            <ul class="pagination pagination-active-primary d-flex gap-2 mb-0">
+                                <li class="page-item pagination-primary ">
+                                    <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                        <i data-lucide="chevron-left" class="size-5"></i>
+                                        <span>Prev</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                <li class="page-item pagination-primary ">
+                                    <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                        <span>Next</span>
+                                        <i data-lucide="chevron-right" class="size-5"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <!-- On Hold Tab Content -->
+            <div class="tab-pane" id="justify-OnHold-tab-pane" role="tabpanel" aria-labelledby="justify-OnHold-tab" tabindex="0">
+                <div x-data="{
+                    projects: [
+                        {
+                            id: 1,
+                            name: 'E-commerce Platform',
+                            assignedTo: [
+                                { name: 'Sam Williams', avatar: 'assets/images/avatar/user-17.png' },
+                                { name: 'Nina Johnson', avatar: 'assets/images/avatar/user-15.png' },
+                                { name: 'David Lee', avatar: 'assets/images/avatar/user-19.png' }
+                            ],
+                            dueDate: '25 July, 2024',
+                            totalAmount: '25,000',
+                            progress: 41,
+                            image: 'assets/images/brands/img-02.png',
+                            status: 'On Hold'
+                        },
+                        {
+                            id: 2,
+                            name: 'Social Media Campaign',
+                            assignedTo: [
+                                { name: 'Brandify', avatar: 'assets/images/avatar/user-12.png' },
+                                { name: 'XYZ Ltd', avatar: 'assets/images/avatar/user-18.png' },
+                                { name: 'Tech Solutions', avatar: 'assets/images/avatar/user-14.png' },
+                            ],
+                            dueDate: '10 July, 2024',
+                            totalAmount: '8,000',
+                            progress: 30,
+                            image: 'assets/images/brands/img-07.png',
+                            status: 'On Hold'
+                        },
+                        {
+                            id: 3,
+                            name: 'Cybersecurity Audit',
+                            assignedTo: [
+                                { name: 'SecureIT', avatar: 'assets/images/avatar/user-18.png' },
+                                { name: 'XYZ Ltd', avatar: 'assets/images/avatar/user-17.png' },
+                                { name: 'Tech Solutions', avatar: 'assets/images/avatar/user-16.png' },
+                            ],
+                            dueDate: '30 June, 2024',
+                            totalAmount: '22,000',
+                            progress: 65,
+                            image: 'assets/images/brands/img-12.png',
+                            status: 'On Hold'
+                        },
+                        {
+                            id: 4,
+                            name: 'Marketing Automation',
+                            assignedTo: [
+                                { name: 'MarketPro', avatar: 'assets/images/avatar/user-15.png' },
+                            ],
+                            dueDate: '25 Feb, 2025',
+                            totalAmount: '15,000',
+                            progress: 55,
+                            image: 'assets/images/brands/img-17.png',
+                            status: 'On Hold'
+                        },
+                        {
+                            id: 5,
+                            name: 'Data Migration',
+                            assignedTo: [
+                                { name: 'Cloud Storage', avatar: 'assets/images/avatar/user-12.png' },
+                                { name: 'XYZ Ltd', avatar: 'assets/images/avatar/user-11.png' },
+                            ],
+                            dueDate: '15 Sept, 2025',
+                            totalAmount: '25,000',
+                            progress: 50,
+                            image: 'assets/images/brands/img-24.png',
+                            status: 'On Hold'
+                        },
+                    ]
+                }">
+                    <div class="row g-5">
+                        <template x-for="project in projects" :key="project.id">
+                            <div class="col-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="dropdown float-end">
+                                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                <i class="ri-more-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-eye-line"></i>
+                                                        <span>Overview</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="size-12 border d-flex justify-content-center align-items-center mb-4 rounded">
+                                            <img :src="project.image" alt="" class="size-8">
+                                        </div>
+                                        <h6 class="mb-1" x-text="project.name"></h6>
+                                        <p x-text="project.assignedTo[0].name"></p>
+                                        <div class="row mt-3">
+                                            <div class="col-6 p-2 text-center border-end">
+                                                <h6 class="mb-1" x-text="project.dueDate"></h6>
+                                                <p>Due Date</p>
+                                            </div>
+                                            <div class="col-6 p-2 text-center">
+                                                <h6 class="mb-1" x-text="`$${project.totalAmount}`"></h6>
+                                                <p>Total Amount</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-5">
+                                            <p class="mb-2 text-gray-500 dark:text-dark-500">Project <span x-text="project.progress + '%'"></span> completed</p>
+                                            <div class="progress progress-1" role="progressbar" :aria-valuenow="project.progress" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar progress-gradient progress-gradient-secondary" :style="'width: ' + project.progress + '%'"></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2 mt-5">
+                                            <p class="me-3">Assigned To:</p>
+                                            <div class="d-flex align-items-center flex-grow-1">
+                                                <template x-for="user in project.assignedTo" :key="user.name">
+                                                    <a href="#!" class="avatar-hover">
+                                                        <img :src="user.avatar" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                                    </a>
+                                                </template>
+                                            </div>
+                                            <span class="flex-shrink-0" :class="{
+                                                  'badge bg-secondary-subtle text-secondary border border-secondary-subtle': project.status === 'Active',
+                                                  'badge bg-orange-subtle text-orange border border-orange-subtle': project.status === 'On Hold',
+                                                  'badge bg-warning-subtle text-warning border border-warning-subtle': project.status === 'Pending',
+                                                  'badge bg-success-subtle text-success border border-success-subtle': project.status === 'Completed'
+                                              }" class="badge ms-1" x-text="project.status"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-6">
+                        <p>Showing <b>1-5</b> of <b>5</b> Results</p>
+                    </div>
+                    <div class="col-6 justify-content-end d-flex">
+                        <nav aria-label="...">
+                            <ul class="pagination pagination-active-primary d-flex gap-2 mb-0">
+                                <li class="page-item pagination-primary ">
+                                    <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                        <i data-lucide="chevron-left" class="size-5"></i>
+                                        <span>Prev</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                <li class="page-item pagination-primary ">
+                                    <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                        <span>Next</span>
+                                        <i data-lucide="chevron-right" class="size-5"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Completed Tab Content -->
+            <div class="tab-pane" id="justify-Completed-tab-pane" role="tabpanel" aria-labelledby="justify-Completed-tab" tabindex="0">
+                <div x-data="{
+                    projects: [
+                        {
+                            id: 1,
+                            name: 'Digital Marketing',
+                            assignedTo: [
+                                { name: 'Marketing Inc', avatar: 'assets/images/avatar/user-13.png' }
+                            ],
+                            dueDate: '5 Sept, 2024',
+                            totalAmount: '15,000',
+                            progress: 100,
+                            image: 'assets/images/brands/img-05.png',
+                            status: 'Completed'
+                        },
+                        {
+                            id: 2,
+                            name: 'AI Model Development',
+                            assignedTo: [
+                                { name: 'AI Innovators', avatar: 'assets/images/avatar/user-11.png' },
+                            ],
+                            dueDate: '1 Sept, 2024',
+                            totalAmount: '50,000',
+                            progress: 100,
+                            image: 'assets/images/brands/img-10.png',
+                            status: 'Completed'
+                        },
+                        {
+                            id: 3,
+                            name: 'Customer Portal',
+                            assignedTo: [
+                                { name: 'CustomerFirst', avatar: 'assets/images/avatar/user-12.png' },
+                                { name: 'XYZ Ltd', avatar: 'assets/images/avatar/user-14.png' },
+                                { name: 'Tech Solutions', avatar: 'assets/images/avatar/user-18.png' },
+                            ],
+                            dueDate: '5 Dec, 2024',
+                            totalAmount: '28,000',
+                            progress: 100,
+                            image: 'assets/images/brands/img-15.png',
+                            status: 'Completed'
+                        },
+                        {
+                            id: 4,
+                            name: 'Financial Analysis Tool',
+                            assignedTo: [
+                                { name: 'Finance Experts', avatar: 'assets/images/avatar/user-16.png' },
+                                { name: 'CustomerFirst', avatar: 'assets/images/avatar/user-14.png' },
+                            ],
+                            dueDate: '1 May, 2025',
+                            totalAmount: '29,000',
+                            progress: 100,
+                            image: 'assets/images/brands/img-20.png',
+                            status: 'Completed'
+                        },
+                        {
+                            id: 5,
+                            name: 'Inventory Management System',
+                            assignedTo: [
+                                { name: 'Retail Solutions', avatar: 'assets/images/avatar/user-19.png' },
+                                { name: 'XYZ Ltd', avatar: 'assets/images/avatar/user-12.png' },
+                            ],
+                            dueDate: '10 Nov, 2025',
+                            totalAmount: '40,000',
+                            progress: 100,
+                            image: 'assets/images/brands/img-26.png',
+                            status: 'Completed'
+                        },
+                    ]
+                }">
+                    <div class="row g-5">
+                        <template x-for="project in projects" :key="project.id">
+                            <div class="col-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="dropdown float-end">
+                                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                <i class="ri-more-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-eye-line"></i>
+                                                        <span>Overview</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="size-12 border d-flex justify-content-center align-items-center mb-4 rounded">
+                                            <img :src="project.image" alt="" class="size-8">
+                                        </div>
+                                        <h6 class="mb-1" x-text="project.name"></h6>
+                                        <p x-text="project.assignedTo[0].name"></p>
+                                        <div class="row mt-3">
+                                            <div class="col-6 p-2 text-center border-end">
+                                                <h6 class="mb-1" x-text="project.dueDate"></h6>
+                                                <p>Due Date</p>
+                                            </div>
+                                            <div class="col-6 p-2 text-center">
+                                                <h6 class="mb-1" x-text="`$${project.totalAmount}`"></h6>
+                                                <p>Total Amount</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-5">
+                                            <p class="mb-2 text-gray-500 dark:text-dark-500">Project <span x-text="project.progress + '%'"></span> completed</p>
+                                            <div class="progress progress-1" role="progressbar" :aria-valuenow="project.progress" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar progress-gradient progress-gradient-secondary" :style="'width: ' + project.progress + '%'"></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2 mt-5">
+                                            <p class="me-3">Assigned To:</p>
+                                            <div class="d-flex align-items-center flex-grow-1">
+                                                <template x-for="user in project.assignedTo" :key="user.name">
+                                                    <a href="#!" class="avatar-hover">
+                                                        <img :src="user.avatar" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                                    </a>
+                                                </template>
+                                            </div>
+                                            <span class="flex-shrink-0" :class="{
+                                                  'badge bg-secondary-subtle text-secondary border border-secondary-subtle': project.status === 'Active',
+                                                  'badge bg-orange-subtle text-orange border border-orange-subtle': project.status === 'On Hold',
+                                                  'badge bg-warning-subtle text-warning border border-warning-subtle': project.status === 'Pending',
+                                                  'badge bg-success-subtle text-success border border-success-subtle': project.status === 'Completed'
+                                              }" class="badge ms-1" x-text="project.status"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-6">
+                        <p>Showing <b>1-5</b> of <b>5</b> Results</p>
+                    </div>
+                    <div class="col-6 justify-content-end d-flex">
+                        <nav aria-label="...">
+                            <ul class="pagination pagination-active-primary d-flex gap-2 mb-0">
+                                <li class="page-item pagination-primary ">
+                                    <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                        <i data-lucide="chevron-left" class="size-5"></i>
+                                        <span>Prev</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                <li class="page-item pagination-primary ">
+                                    <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                        <span>Next</span>
+                                        <i data-lucide="chevron-right" class="size-5"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/projects/list-view.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
