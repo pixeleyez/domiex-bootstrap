@@ -59,54 +59,46 @@ File: Main Css File
 @import "custom/components/advanced-tree";
 @import "custom/components/advanced-highlight";
 @import "custom/components/advanced-mask";
-
-// Icon
-@import "custom/components/icons-lucide";
 @import "custom/components/icons-boxicon";
+@import "custom/components/icons-lucide";
 
 // Forms
-@import "custom/components/form-basic-input";
-@import "custom/components/form-input-group";
-@import "custom/components/form-file-input";
-@import "custom/components/form-select";
-@import "custom/components/form-pickers";
-@import "custom/components/form-range";
-@import "custom/components/form-switches";
-@import "custom/components/form-checkbox-radio";
-@import "custom/components/form-input-spin";
-@import "custom/components/form-recaptcha";
-@import "custom/components/form-editor";
-@import "custom/components/form-wizard-basic";
-
-// Tabel
-@import "custom/components/table-base";
-@import "custom/components/table-datatables-basic";
+@import "custom/forms/form-basic-input";
+@import "custom/forms/form-input-group";
+@import "custom/forms/form-file-input";
+@import "custom/forms/form-select";
+@import "custom/forms/form-pickers";
+@import "custom/forms/form-range";
+@import "custom/forms/form-switches";
+@import "custom/forms/form-checkbox-radio";
+@import "custom/forms/form-input-spin";
+@import "custom/forms/form-recaptcha";
+@import "custom/forms/form-editor";
+@import "custom/forms/form-wizard-basic";
+@import "custom/forms/table-base";
+@import "custom/forms/table-datatables-basic";
 
 // Pages
-@import "custom/components/pages-account-settings";
-@import "custom/components/pages-account-security";
-@import "custom/components/pages-account-billing-plan";
-@import "custom/components/pages-user";
-@import "custom/components/pages-user-activity";
-@import "custom/components/pages-user-documents";
-@import "custom/components/pages-user-projects";
-@import "custom/components/pages-pricing";
-@import "custom/components/pages-contact-us";
-@import "custom/components/pages-licenses";
-@import "custom/components/pages-coming-soon";
-@import "custom/components/pages-help-center";
+@import "custom/pages/pages-account-settings";
+@import "custom/pages/pages-account-security";
+@import "custom/pages/pages-account-billing-plan";
+@import "custom/pages/pages-user";
+@import "custom/pages/pages-user-activity";
+@import "custom/pages/pages-user-projects";
+@import "custom/pages/pages-pricing";
+@import "custom/pages/pages-contact-us";
+@import "custom/pages/pages-licenses";
+@import "custom/pages/pages-coming-soon";
+@import "custom/pages/pages-help-center";
+@import "custom/pages/widgets-cards";
+@import "custom/pages/widgets-banners";
+@import "custom/pages/widgets-charts";
+@import "custom/pages/auth";
+@import "custom/pages/auth-signin-modern";
+@import "custom/pages/auth-signin-creative";
 
-// Widgets
-@import "custom/components/widgets-cards";
-@import "custom/components/widgets-banners";
-@import "custom/components/widgets-charts";
-
-// Authentication
-@import "custom/components/auth";
-@import "custom/components/auth-signin-modern";
-@import "custom/components/auth-signin-creative";
-
-// File Manager
-@import "custom/components/apps-projects-list";
-@import "custom/components/apps-projects-overview";
-@import "custom/components/apps-projects-roadmap";
+// Apps
+@import "custom/apps/apps-projects-list";
+@import "custom/apps/apps-projects-overview";
+@import "custom/apps/apps-projects-roadmap";
+@import "custom/apps/apps-crm-lead";

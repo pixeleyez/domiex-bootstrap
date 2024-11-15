@@ -1,0 +1,33 @@
+.timeline-month{
+    i{
+        color: $gray-400;
+    }
+    &::before{
+        content: '';
+        width: .5rem;
+        height: calc(100% - 0.3125rem);
+        background-color: $gray-100;
+        @include position(absolute, .5rem, null, null, .875rem);
+        border-radius: .375rem; 
+    }
+}
+
+.timeline-section{
+    position: relative;
+    &::before{
+        content: '';
+        height: 1px;
+        width: 1.75rem;
+        @include position(absolute, .875rem, null, null, 1.25rem);
+        background-color: $gray-200;
+        z-index: 0;
+    }
+    &::after{
+        content: '';
+        width: .75rem;
+        height: .75rem; 
+        @include position(absolute, .5rem, null, null, .75rem);
+        background-color: $primary;
+        border-radius: 3.125rem;
+    }
+}

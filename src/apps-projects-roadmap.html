@@ -23,9 +23,9 @@
     <div class="position-relative mb-6">
         <div class="card">
             <div class="position-relative overflow-hidden rounded bg-primary bg-opacity-10 custom-box">
-                <div class="bordered-square bordered-position4 border-color-primary size-96 position-absolute top-0 start-0"></div>
-                <div class="bordered-square bordered-position5 border-color-success size-80 position-absolute top-50 start-50 translate-middle"></div>
-                <div class="bordered-square bordered-position6 border-color-pink size-40 position-absolute top-100 start-100 translate-middle"></div>
+                <div class="bordered-square bordered-position4 border-color-primary size-96"></div>
+                <div class="bordered-square bordered-position5 border-color-success size-80"></div>
+                <div class="bordered-square bordered-position6 border-color-pink size-40"></div>
             </div>
             <div class="card-body">
                 <div class="d-flex flex-wrap gap-5 align-items-center mb-6">
@@ -282,34 +282,34 @@
                 <div>
                     <ul class="nav nav-pills nav-text-black">
                         <li class="nav-item">
-                            <a class="nav-link fw-medium active" aria-current="page">
+                            <a href="apps-projects-overview.html" class="nav-link fw-medium">
                                 <i data-lucide="eye" class="size-4 me-1"></i>
                                 Overview
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" aria-current="page">
+                            <a href="apps-projects-roadmap.html" class="nav-link fw-medium active">
                                 <i data-lucide="sparkles" class="size-4 me-1"></i>
                                 RoadMap
                             </a>
                         </li>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" aria-current="page">
+                            <a href="apps-projects-task.html" class="nav-link fw-medium">
                                 <i data-lucide="align-left" class="size-4 me-1"></i>
                                 Tasks
                             </a>
                         </li>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" aria-current="page">
+                            <a href="apps-projects-files.html" class="nav-link fw-medium">
                                 <i data-lucide="file-text" class="size-4 me-1"></i>
                                 Files
                             </a>
                         </li>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" aria-current="page">
+                            <a href="apps-projects-users.html" class="nav-link fw-medium">
                                 <i data-lucide="user-round" class="size-4 me-1"></i>
                                 Users
                             </a>
@@ -322,141 +322,163 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <div class="position-relative">
-                            <div class="d-inline-block px-5 py-2 bg-light rounded-pill mb-4">
-                                <i class="text-dark ri-circle-fill"></i> Project RoadMap
+                        <div class="position-relative timeline-month">
+                            <div class="d-inline-block px-5 py-2 bg-light rounded-pill position-relative">
+                                <i class="ri-circle-fill"></i> Project RoadMap
                             </div>
-                            <div class="ps-10 timeline-section position-relative">
-                                <div class="timeline-date bg-light text-muted d-inline-block py-1 px-3 rounded border mb-3">
+                            <div class="ps-10 mt-6 timeline-section position-relative">
+                                <div class="timeline-date position-relative bg-light text-muted d-inline-block py-1 px-3 rounded border mb-5">
                                     Phase 1: Data Collection and Preparation (Month 1-2)
                                 </div>
                                 <div class="mb-4">
                                     <div class="timeline-box bg-light border rounded p-4 mb-3">
-                                        <h6>Define Data Requirements:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>Identify the specific data needed for the project.</li>
-                                            <li>Collaborate with stakeholders to understand their data needs.</li>
+                                        <h6 class="mb-3">Define Data Requirements:</h6>
+                                        <ul class="list-group-disc mb-0 d-flex flex-column gap-2">
+                                            <li>Identify the specific data needed for the project, including customer demographics, transaction history, web interaction logs, marketing campaign data, and product catalog details.</li>
+                                            <li>Collaborate with stakeholders to understand their data needs and ensure all relevant information is collected.</li>
                                         </ul>
                                     </div>
                                     <div class="timeline-box bg-light border rounded p-4 mb-3">
-                                        <h6>Data Source Identification and Access:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>Determine the internal and external data sources.</li>
-                                            <li>Ensure access to data warehouses and third-party providers.</li>
+                                        <h6 class="mb-3">Data Source Identification and Access:</h6>
+                                        <ul class="list-group-disc mb-0 d-flex flex-column gap-2">
+                                            <li>Determine the internal and external data sources that will provide the required data.</li>
+                                            <li>Ensure access to databases, data warehouses, and third-party data providers.</li>
+                                            <li>Set up necessary data pipelines for continuous data flow if required.</li>
                                         </ul>
                                     </div>
                                     <div class="timeline-box bg-light border rounded p-4 mb-3">
-                                        <h6>Data Extraction:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>Extract data using appropriate tools and techniques.</li>
-                                            <li>Use SQL, APIs, and ETL tools for data extraction.</li>
+                                        <h6 class="mb-3">Data Extraction:</h6>
+                                        <ul class="list-group-disc mb-0 d-flex flex-column gap-2">
+                                            <li>Extract data from identified sources using appropriate tools and techniques.</li>
+                                            <li>Use SQL, APIs, web scraping, or ETL (Extract, Transform, Load) tools to gather the data.</li>
+                                            <li>Ensure extraction processes are efficient and minimize disruptions to live systems.</li>
                                         </ul>
                                     </div>
                                     <div class="timeline-box bg-light border rounded p-4 mb-3">
-                                        <h6>Data Cleaning:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>Remove duplicates and handle missing values.</li>
-                                            <li>Standardize formats and units for consistency.</li>
+                                        <h6 class="mb-3">Data Cleaning:</h6>
+                                        <ul class="list-group-disc mb-0 d-flex flex-column gap-2">
+                                            <li>Remove duplicates, correct errors, and handle missing values in the datasets.</li>
+                                            <li>Standardize data formats and units to ensure consistency.</li>
+                                            <li>Identify and resolve any discrepancies or anomalies in the data.</li>
                                         </ul>
                                     </div>
                                     <div class="timeline-box bg-light border rounded p-4 mb-3">
-                                        <h6>Data Quality Assurance:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>Conduct thorough checks to ensure data integrity.</li>
-                                            <li>Implement validation rules and audits.</li>
+                                        <h6 class="mb-3">Data Quality Assurance:</h6>
+                                        <ul class="list-group-disc mb-0 d-flex flex-column gap-2">
+                                            <li>Conduct thorough quality checks to ensure the integrity and reliability of the data.</li>
+                                            <li>Implement validation rules and perform audits to confirm data accuracy.</li>
+                                            <li>Document the data cleaning and transformation processes for transparency and reproducibility.</li>
                                         </ul>
                                     </div>
                                     <div class="timeline-box bg-light border rounded p-4 mb-3">
-                                        <h6>Data Privacy and Security:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>Implement encryption and access controls.</li>
-                                            <li>Ensure compliance with regulations like GDPR.</li>
+                                        <h6 class="mb-3">Data Privacy and Security:</h6>
+                                        <ul class="list-group-disc mb-0 d-flex flex-column gap-2">
+                                            <li>Implement data encryption and access control mechanisms to protect sensitive information.</li>
+                                            <li>Ensure compliance with relevant data protection regulations such as GDPR or CCPA.</li>
+                                            <li>Anonymize or pseudonymize personal data where necessary to safeguard user privacy.</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                
-                            <div class="ps-10 timeline-section position-relative">
-                                <div class="timeline-date bg-light text-muted py-1 px-3.5 rounded border mb-3">
+                            <div class="ps-10 mt-6 timeline-section position-relative">
+                                <div class="timeline-date position-relative bg-light text-muted d-inline-block py-1 px-3 rounded border mb-5">
                                     Phase 2: Model Development (Month 3-5)
                                 </div>
                                 <div class="mb-4">
                                     <div class="timeline-box bg-light border rounded p-4 mb-3">
-                                        <h6>Define Problem Statements:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>Clearly define problems each model aims to solve.</li>
+                                        <h6 class="mb-3">Define Problem Statements:</h6>
+                                        <ul class="list-group-disc mb-3 d-flex flex-column gap-2">
+                                            <li>Clearly define the specific problems each model aims to solve (e.g., customer behavior prediction, sales forecasting, recommendation system).</li>
                                         </ul>
-                                        <h6>Select Appropriate Algorithms:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>Select suitable machine learning algorithms.</li>
+                                        <h6 class="mb-3">Select Appropriate Algorithms:</h6>
+                                        <ul class="list-group-disc mb-3 d-flex flex-column gap-2">
+                                            <li>Research and select suitable machine learning algorithms for each problem statement.</li>
+                                            <li>Consider a variety of models such as regression, classification, clustering, and recommendation algorithms.</li>
                                         </ul>
-                                        <h6>Design Model Architecture:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>Design architecture for each model.</li>
+                                        <h6 class="mb-3">Design Model Architecture:</h6>
+                                        <ul class="list-group-disc mb-3 d-flex flex-column gap-2">
+                                            <li>Design the architecture for each model, including input features, layers (for neural networks), and output formats.</li>
+                                            <li>Document the rationale behind the chosen architectures.</li>
                                         </ul>
-                                        <h6>Prepare Training and Validation Datasets:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>Split the data into training, validation, and test sets.</li>
+                                        <h6 class="mb-3">Prepare Training and Validation Datasets:</h6>
+                                        <ul class="list-group-disc mb-3 d-flex flex-column gap-2">
+                                            <li>Split the preprocessed data into training, validation, and test sets.</li>
+                                            <li>Ensure data splits maintain representative distributions and avoid data leakage.</li>
                                         </ul>
-                                        <h6>Develop Model Training Pipelines:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>Implement training pipelines using ML frameworks.</li>
+                                        <h6 class="mb-3">Develop Model Training Pipelines:</h6>
+                                        <ul class="list-group-disc mb-3 d-flex flex-column gap-2">
+                                            <li>Implement training pipelines using selected machine learning frameworks (e.g., TensorFlow, PyTorch, Scikit-Learn).</li>
+                                            <li>Automate data preprocessing steps within the training pipelines.</li>
                                         </ul>
                                     </div>
                                     <div class="timeline-box bg-light border rounded p-4 mb-3">
-                                        <h6>Tools and Technologies:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>TensorFlow, PyTorch, Scikit-Learn.</li>
-                                            <li>Pandas, NumPy for data processing.</li>
-                                            <li>Cloud computing, Git for version control.</li>
+                                        <h6 class="mb-3">Tools and Technologies:</h6>
+                                        <ul class="list-group-disc mb-3 d-flex flex-column gap-2">
+                                            <li>Machine Learning Frameworks (e.g., TensorFlow, PyTorch, Scikit-Learn)</li>
+                                            <li>Data Processing Tools (e.g., Pandas, NumPy)</li>
+                                            <li>Model Training Infrastructure (e.g., GPUs, cloud computing resources)</li>
+                                            <li>Version Control Systems (e.g., Git)</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                
-                            <div class="ps-10 timeline-section position-relative">
-                                <div class="timeline-date bg-light text-muted py-1 px-3.5 rounded border mb-3">
+                            <div class="ps-10 mt-6 timeline-section position-relative">
+                                <div class="timeline-date position-relative bg-light text-muted d-inline-block py-1 px-3 rounded border mb-5">
                                     Phase 3: Integration and Deployment (Month 6-7)
                                 </div>
                                 <div class="mb-4">
                                     <div class="timeline-box bg-light border rounded p-4 mb-3">
-                                        <h6>Integration Planning and Initial Setup:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>Develop Integration Plan.</li>
-                                            <li>Collaborate with the development team.</li>
+                                        <h6 class="mb-3">Integration Planning and Initial Setup</h6>
+                                        <ul class="ps-0 d-flex flex-column gap-2 list-group-numbered mb-3">
+                                            <li class="list-group-item">Develop Integration Plan</li>
+                                            <li class="list-group-item">Collaborate with Development Team</li>
+                                            <li class="list-group-item">Setup Development and Testing Environments</li>
+                                            <li class="list-group-item">API Development</li>
                                         </ul>
-                                        <h6>Model Integration and Testing:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>Integrate models into the platform.</li>
-                                            <li>Conduct functional testing and UI integration.</li>
+                                        <h6 class="mb-3">Model Integration and Testing</h6>
+                                        <ul class="ps-0 d-flex flex-column gap-2 list-group-numbered mb-3">
+                                            <li class="list-group-item">Integrate Models into the Platform</li>
+                                            <li class="list-group-item">Functional Testing</li>
+                                            <li class="list-group-item">User Interface Integration</li>
+                                            <li class="list-group-item">Security and Access Control</li>
                                         </ul>
-                                        <h6>Deployment in Staging Environment:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>Deploy models in staging for performance testing.</li>
+                                        <h6 class="mb-3">Deployment in Staging Environment</h6>
+                                        <ul class="ps-0 d-flex flex-column gap-2 list-group-numbered mb-3">
+                                            <li class="list-group-item">Deploy Models in Staging</li>
+                                            <li class="list-group-item">Conduct Performance Testing</li>
+                                            <li class="list-group-item">User Acceptance Testing (UAT)</li>
+                                            <li class="list-group-item">Finalize Documentation</li>
                                         </ul>
-                                        <h6>Production Deployment and Monitoring:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>Final review and approval for production.</li>
-                                            <li>Monitor and maintain post-deployment.</li>
+                                        <h6 class="mb-3">Production Deployment and Monitoring</h6>
+                                        <ul class="ps-0 d-flex flex-column gap-2 list-group-numbered mb-3">
+                                            <li class="list-group-item">Final Review and Approval</li>
+                                            <li class="list-group-item">Production Deployment</li>
+                                            <li class="list-group-item">Monitoring and Maintenance Setup</li>
+                                            <li class="list-group-item">Post-Deployment Support</li>
+                                            <li class="list-group-item">Iterative Improvements</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                
-                            <div class="ps-10 timeline-section position-relative">
-                                <div class="timeline-date bg-light text-muted py-1 px-3.5 rounded border mb-3">
+                            <div class="ps-10 mt-6 timeline-section position-relative">
+                                <div class="timeline-date position-relative bg-light text-muted d-inline-block py-1 px-3 rounded border mb-5">
                                     Phase 4: User Interface and Reporting (Month 8-9)
                                 </div>
                                 <div class="mb-4">
                                     <div class="timeline-box bg-light border rounded p-4 mb-3">
-                                        <h6>Requirements Gathering and Design Planning:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>Stakeholder interviews and define UI/UX requirements.</li>
+                                        <h6 class="mb-3">Requirements Gathering and Design Planning</h6>
+                                        <ul class="ps-0 d-flex flex-column gap-2 list-group-numbered mb-3">
+                                            <li class="list-group-item">Stakeholder Interviews and Surveys</li>
+                                            <li class="list-group-item">Define UI/UX Requirements</li>
+                                            <li class="list-group-item">Design Mockups and Prototypes</li>
+                                            <li class="list-group-item">Review and Feedback</li>
                                         </ul>
-                                        <h6>User Interface Development:</h6>
-                                        <ul class="list-unstyled">
-                                            <li>Front-End Development and UI Testing.</li>
-                                            <li>Integrate with AI models and implement user authentication.</li>
+                                        <h6 class="mb-3">User Interface Development</h6>
+                                        <ul class="ps-0 d-flex flex-column gap-2 list-group-numbered mb-3">
+                                            <li class="list-group-item">Front-End Development</li>
+                                            <li class="list-group-item">Integration with AI Models</li>
+                                            <li class="list-group-item">User Authentication and Access Control</li>
+                                            <li class="list-group-item">UI Testing</li>
                                         </ul>
                                     </div>
                                 </div>
