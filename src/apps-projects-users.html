@@ -2,9 +2,9 @@
 
 <head>
 
-    {{> partials/title-meta title="Overview" }}
+    {{> partials/title-meta title="User" }}
 
-
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
     {{> partials/head-css}}
 
 
@@ -282,7 +282,7 @@
                 <div>
                     <ul class="nav nav-pills nav-text-black">
                         <li class="nav-item">
-                            <a href="apps-projects-overview.html" class="nav-link fw-medium active">
+                            <a href="apps-projects-overview.html" class="nav-link fw-medium">
                                 <i data-lucide="eye" class="size-4 me-1"></i>
                                 Overview
                             </a>
@@ -309,7 +309,7 @@
                         </li>
                         </li>
                         <li class="nav-item">
-                            <a href="apps-projects-users.html" class="nav-link fw-medium">
+                            <a href="apps-projects-users.html" class="nav-link fw-medium active">
                                 <i data-lucide="user-round" class="size-4 me-1"></i>
                                 Users
                             </a>
@@ -318,72 +318,91 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h6 class="card-title mb-0">Project Overview</h6>
-                    </div>
-                    <div class="card-body">
-                        <p class="mb-3">The goal of this project is to develop an advanced AI model capable of predictive analytics within the e-commerce domain. This model will leverage machine learning techniques to analyze customer behavior, forecast sales trends, and optimize marketing strategies, ultimately enhancing the overall customer experience and boosting revenue for e-commerce platforms.</p>
-
-                        <h6 class="mb-2">Objectives:</h6>
-                        <ul class="mb-5 list-group-circle d-flex gap-2 flex-column">
-                            <li>Customer Behavior Analysis</li>
-                            <li>Sales Forecasting</li>
-                            <li>Marketing Optimization</li>
-                            <li>Personalized Recommendations</li>
-                            <li>Performance Monitoring and Evaluation</li>
-                        </ul>
-
-                        <h6 class="mb-2">Deliverables:</h6>
-                        <ul class="mb-5 list-group-circle d-flex gap-2 flex-column">
-                            <li>Data Requirements Document</li>
-                            <li>Data Extraction Scripts</li>
-                            <li>Cleaned and Transformed Datasets</li>
-                            <li>Data Quality Report</li>
-                            <li>Data Storage Setup</li>
-                        </ul>
-                    </div>
+        <div>
+            <div class="d-flex align-items-center justify-content-between">
+                <h6 class="mb-0">Users(14)</h6>
+                <div class="w-36">
+                    <div id="sample-select"></div>
                 </div>
             </div>
-            <div class="col-8">
-                <div class="card">
-                    <div class="card-header">
-                        <h6 class="card-title mb-0">Working Hours</h6>
+            <div x-data="{
+                users: [
+                    { name: 'Victor Proulx', image: 'assets/images/avatar/user-11.png', role: 'Web Designer', task: '15', earning: '$8,500' },
+                    { name: 'Sabine Eichel', image: 'assets/images/avatar/user-13.png', role: 'ASP.Net Developer', task: '04', earning: '$4,987' },
+                    { name: 'Diana Huber', image: 'assets/images/avatar/user-15.png', role: 'React Developer', task: '19', earning: '$9,065' },
+                    { name: 'Robert Foerster', image: 'assets/images/avatar/user-14.png', role: 'Laravel Developer', task: '08', earning: '$11,000' },
+                    { name: 'Emily Clarke', image: 'assets/images/avatar/user-16.png', role: 'UI/UX Designer', task: '22', earning: '$7,250' },
+                    { name: 'James Smith', image: 'assets/images/avatar/user-17.png', role: 'Java Developer', task: '10', earning: '$10,500' },
+                    { name: 'Olivia Brown', image: 'assets/images/avatar/user-18.png', role: 'PHP Developer', task: '13', earning: '$6,800' },
+                    { name: 'Liam Johnson', image: 'assets/images/avatar/user-19.png', role: 'Python Developer', task: '07', earning: '$9,200' }
+                ]
+            }" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 gx-5 mt-4">
+                <template x-for="user in users" :key="user.name">
+                    <div class="col">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <img :src="user.image" alt="" class="mx-auto mb-4 rounded-circle size-14" x-on:load="user.loaded = true" x-on:error="user.loaded = false">
+                                <h6 class="mb-1"><a href="pages-user.html" x-text="user.name" class="card-title"></a></h6>
+                                <p class="mt-1 text-muted" x-text="user.role"></p>
+                                <div class="row g-4 mt-4">
+                                    <div class="col-6">
+                                        <div class="p-3 border border-dashed rounded">
+                                            <h6 x-text="user.task" class="mb-0"></h6>
+                                            <p class="text-muted">Tasks</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="p-3 border border-dashed rounded">
+                                            <h6 x-text="user.earning" class="mb-0"></h6>
+                                            <p class="text-muted">Earning</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <div x-data="workingHoursApp">
-                            <div x-ref="workingHoursChart"></div>
-                        </div>                        
-                    </div>
-                </div>
+                </template>
+
             </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h6 class="card-title mb-0">Task Activities</h6>
-                    </div>
-                    <div class="card-body">
-                        <div x-data="taskActivitiesApp">
-                            <div x-ref="taskActivitiesChart"></div>
-                        </div>                    
-                    </div>
+            <div class="row">
+                <div class="col-6">
+                    <p>Showing <b>11-14</b> of <b>14</b> Results</p>
+                </div>
+                <div class="col-6 justify-content-end d-flex">
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-active-primary d-flex gap-2 mb-0">
+                            <li class="page-item pagination-primary ">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                    <i data-lucide="chevron-left" class="size-5"></i>
+                                    <span>Prev</span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                            <li class="page-item" aria-current="page">
+                                <a class="page-link rounded-2 page-number" href="#">2</a>
+                            </li>
+                            <li class="page-item pagination-primary ">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                    <span>Next</span>
+                                    <i data-lucide="chevron-right" class="size-5"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
     </div>
 
-
-
     {{> partials/footer}}
 </div>
 </div>
 
-{{> partials/vendor-scripts}}
-<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
 
-<script src="assets/js/apps/overview.init.js"></script>
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/users.init.js"></script>
 
 <script type="module" src="assets/js/main.js"></script>
 

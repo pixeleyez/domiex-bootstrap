@@ -2,7 +2,7 @@
 
 <head>
 
-    {{> partials/title-meta title="Overview" }}
+    {{> partials/title-meta title="Task" }}
 
 
     {{> partials/head-css}}
@@ -282,7 +282,7 @@
                 <div>
                     <ul class="nav nav-pills nav-text-black">
                         <li class="nav-item">
-                            <a href="apps-projects-overview.html" class="nav-link fw-medium active">
+                            <a href="apps-projects-overview.html" class="nav-link fw-medium">
                                 <i data-lucide="eye" class="size-4 me-1"></i>
                                 Overview
                             </a>
@@ -295,7 +295,7 @@
                         </li>
                         </li>
                         <li class="nav-item">
-                            <a href="apps-projects-task.html" class="nav-link fw-medium">
+                            <a href="apps-projects-task.html" class="nav-link fw-medium active">
                                 <i data-lucide="align-left" class="size-4 me-1"></i>
                                 Tasks
                             </a>
@@ -319,55 +319,299 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h6 class="card-title mb-0">Project Overview</h6>
+            <div class="col-8">
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="position-relative">
+                                    <div class="position-absolute top-0 z-0 size-10 blur-md bg-blur-primary"></div>
+                                    <i data-lucide="dessert" class="size-10 stroke-1 text-primary"></i>
+                                </div>
+                                <h6 class="mt-6 mb-0">14</h6>
+                                <p class="text-muted">Total Task</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <p class="mb-3">The goal of this project is to develop an advanced AI model capable of predictive analytics within the e-commerce domain. This model will leverage machine learning techniques to analyze customer behavior, forecast sales trends, and optimize marketing strategies, ultimately enhancing the overall customer experience and boosting revenue for e-commerce platforms.</p>
-
-                        <h6 class="mb-2">Objectives:</h6>
-                        <ul class="mb-5 list-group-circle d-flex gap-2 flex-column">
-                            <li>Customer Behavior Analysis</li>
-                            <li>Sales Forecasting</li>
-                            <li>Marketing Optimization</li>
-                            <li>Personalized Recommendations</li>
-                            <li>Performance Monitoring and Evaluation</li>
-                        </ul>
-
-                        <h6 class="mb-2">Deliverables:</h6>
-                        <ul class="mb-5 list-group-circle d-flex gap-2 flex-column">
-                            <li>Data Requirements Document</li>
-                            <li>Data Extraction Scripts</li>
-                            <li>Cleaned and Transformed Datasets</li>
-                            <li>Data Quality Report</li>
-                            <li>Data Storage Setup</li>
-                        </ul>
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="position-relative">
+                                    <div class="position-absolute top-0 z-0 size-10 blur-md bg-blur-secondary"></div>
+                                    <i data-lucide="cross" class="size-10 stroke-1 text-secondary"></i>
+                                </div>
+                                <h6 class="mt-6 mb-0">6</h6>
+                                <p class="text-muted">New Task</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="position-relative">
+                                    <div class="position-absolute top-0 z-0 size-10 blur-md bg-blur-warning"></div>
+                                    <i data-lucide="hourglass" class="size-10 stroke-1 text-warning"></i>
+                                </div>
+                                <h6 class="mt-6 mb-0">5</h6>
+                                <p class="text-muted">Pending Task</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="position-relative">
+                                    <div class="position-absolute top-0 z-0 size-10 blur-md bg-blur-success"></div>
+                                    <i data-lucide="circle-check-big" class="size-10 stroke-1 text-success"></i>
+                                </div>
+                                <h6 class="mt-6 mb-0">3</h6>
+                                <p class="text-muted">Completed Task</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-8">
-                <div class="card">
-                    <div class="card-header">
-                        <h6 class="card-title mb-0">Working Hours</h6>
+                <div class="d-flex align-items-center gap-5">
+                    <h6 class="flex-grow-1">Project Tasks</h6>
+                    <button type="button" class="btn btn-primary flex-shrink-0">Add Task</button>
+                </div>
+                <div class="mt-5">
+                    <div x-data="{
+                        sortBy: '',
+                        sortDirection: 'asc',
+                        currentPage: 1,
+                        projects: [
+                            {   taskName: 'Cleaned and Transformed Datasets', 
+                                createDate: '11 Feb, 2024', 
+                                assignees: [{ image: 'assets/images/avatar/user-16.png' }], 
+                                status: 'New',
+                                priority: 'Low',
+                            },
+                            {   taskName: 'Data Archival Strategy', 
+                                createDate: '20 March, 2024', 
+                                assignees: [{ image: 'assets/images/avatar/user-21.png' }, { image: 'assets/images/avatar/user-27.png' }, { image: 'assets/images/avatar/user-30.png' }], 
+                                status: 'New',
+                                priority: 'Low', 
+                            },
+                            {   taskName: 'Data Backup and Recovery', 
+                                createDate: '02 September, 2024', 
+                                assignees: [{ image: 'assets/images/avatar/user-26.png' }, { image: 'assets/images/avatar/user-28.png' }], 
+                                status: 'Pending',
+                                priority: 'Low', 
+                            },
+                            {   taskName: 'Data Integration', 
+                                createDate: '12 July, 2024', 
+                                assignees: [{ image: 'assets/images/avatar/user-22.png' }, { image: 'assets/images/avatar/user-24.png' }, { image: 'assets/images/avatar/user-15.png' }], 
+                                status: 'Completed',
+                                priority: 'High', 
+                            },
+                            {   taskName: 'Data Quality Assurance', 
+                                createDate: '22 May, 2024', 
+                                assignees: [{ image: 'assets/images/avatar/user-14.png' }, { image: 'assets/images/avatar/user-20.png' }, { image: 'assets/images/avatar/user-19.png' }], 
+                                status: 'Completed',
+                                priority: 'High', 
+                            },
+                        ],
+                        get pageSize() {
+                            return 10;
+                        },
+                        get displayedProjects() {
+                            const startIndex = (this.currentPage - 1) * this.pageSize;
+                            return this.projects.slice(startIndex, startIndex + this.pageSize).sort((a, b) => {
+                                if (!this.sortBy) return 0;
+                                const aValue = a[this.sortBy];
+                                const bValue = b[this.sortBy];
+                                if (aValue < bValue) return this.sortDirection === 'asc' ? -1 : 1;
+                                if (aValue > bValue) return this.sortDirection === 'asc' ? 1 : -1;
+                                return 0;
+                            });
+                        },
+                        get totalPages() {
+                            return Math.ceil(this.projects.length / this.pageSize);
+                        },
+                        sort(field) {
+                            this.sortDirection = (this.sortBy === field && this.sortDirection === 'asc') ? 'desc' : 'asc';
+                            this.sortBy = field;
+                        },
+                        gotoPage(page) {
+                            this.currentPage = page;
+                        },
+                        prevPage() {
+                            if (this.currentPage > 1) this.currentPage--;
+                        },
+                        nextPage() {
+                            if (this.currentPage < this.totalPages) this.currentPage++;
+                        },
+                        get showingStart() {
+                            return (this.currentPage - 1) * this.pageSize + 1;
+                        },
+                        get showingEnd() {
+                            return Math.min(this.currentPage * this.pageSize, this.projects.length);
+                        }
+                    }">
+                        <div class="table-box overflow-x-auto">
+                            <table class="table align-middle">
+                                <thead>
+                                    <tr class="cursor-pointer">
+                                        <th x-on:click="sort('taskName')" class="fw-medium text-dark">
+                                            Task Name <span x-show="sortBy === 'taskName'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                        </th>
+                                        <th x-on:click="sort('createDate')" class="fw-medium text-dark">
+                                            Create Date <span x-show="sortBy === 'createDate'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                        </th>
+                                        <th class="fw-medium text-dark">Assigned To</th>
+                                        <th x-on:click="sort('status')" class="fw-medium text-dark">
+                                            Status <span x-show="sortBy === 'status'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                        </th>
+                                        <th x-on:click="sort('priority')" class="fw-medium text-dark">
+                                            Priority <span x-show="sortBy === 'priority'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span>
+                                        </th>
+                                        <th class="fw-medium text-dark">Actions</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <template x-for="(project, index) in displayedProjects" :key="index">
+                                        <tr>
+                                            <td><span x-text="project.taskName"></span></td>
+                                            <td>
+                                                <span x-text="project.createDate"></span>
+                                            </td>
+                                            <td>
+                                                <div class="flex ml-3 -space-x-3 grow">
+                                                    <template x-for="assignee in project.assignees">
+                                                        <a href="#!" class="avatar-hover" title="avatar link">
+                                                            <img class="border-2 border border-2 border-white rounded-circle size-8" :src="assignee.image" alt="">
+                                                        </a>
+                                                    </template>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span :class="{
+                                                'badge bg-secondary-subtle text-secondary border border-secondary-subtle': project.status === 'New',
+                                                'badge bg-warning-subtle text-warning border border-warning-subtle': project.status === 'Pending',
+                                                'badge bg-success-subtle text-success border border-success-subtle': project.status === 'Completed'
+                                            }" x-text="project.status"></span>
+                                            </td>
+                                            <td>
+                                                <span :class="{
+                                                'badge bg-danger-subtle text-danger border border-danger-subtle': project.priority === 'High',
+                                                'badge bg-success-subtle text-success border border-success-subtle': project.priority === 'Low'
+                                            }" x-text="project.priority"></span>
+                                            </td>
+                                            <td class="whitespace-nowrap">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                        <i class="ri-more-2-fill"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                        <li>
+                                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                                <i class="ri-eye-line"></i>
+                                                                <span>Overview</span>
+                                                            </a>
+                                                        </li>
+                                                        <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                                <i class="ri-pencil-line"></i>
+                                                                <span>Edit</span>
+                                                            </a>
+                                                        </li>
+                                                        <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                                <i class="ri-delete-bin-line"></i>
+                                                                <span>Delete</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <div x-data="workingHoursApp">
-                            <div x-ref="workingHoursChart"></div>
-                        </div>                        
+                    <div class="row">
+                        <div class="col-6">
+                            <p>Showing <b>11-14</b> of <b>14</b> Results</p>
+                        </div>
+                        <div class="col-6 justify-content-end d-flex">
+                            <nav aria-label="...">
+                                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0">
+                                    <li class="page-item pagination-primary ">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <i data-lucide="chevron-left" class="size-5"></i>
+                                            <span>Prev</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                    <li class="page-item" aria-current="page">
+                                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link page-number rounded-2" href="#">3</a></li>
+                                    <li class="page-item pagination-primary ">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <span>Next</span>
+                                            <i data-lucide="chevron-right" class="size-5"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-4">
                 <div class="card">
                     <div class="card-header">
-                        <h6 class="card-title mb-0">Task Activities</h6>
+                        <h6 class="mb-0">To Do Lists</h6>
                     </div>
                     <div class="card-body">
-                        <div x-data="taskActivitiesApp">
-                            <div x-ref="taskActivitiesChart"></div>
-                        </div>                    
+                        <div x-data="todoApp()" class="space-y-3">
+                            <fieldset class="space-y-3">
+                                <h6>Today (<span x-text="todayTasks.length"></span>)</h6>
+                                <template x-for="(task, index) in todayTasks" :key="'today-' + index">
+                                    <div class="d-flex justify-content-between align-items-center gap-5 mb-3">
+                                        <div class="d-flex align-items-center flex-grow-1">
+                                            <input type="checkbox" class="form-check-input" x-model="task.completed">
+                                            <span x-show="!task.editing" @dblclick="enableEditing(task)" class="ms-3 text-dark-emphasis" :class="{'text-decoration-line-through text-dark-emphasis': task.completed}" x-text="task.text"></span>
+                                            <input x-show="task.editing" x-model="task.text" @blur="disableEditing(task)" @keydown.enter="disableEditing(task)" class="form-control ms-3" :ref="'edit-' + index">
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <a href="#!" @click="enableEditing(task)" class="text-dark link link-warning">
+                                                <i class="ri-pencil-line"></i>
+                                            </a>
+                                            <a href="#!" @click="deleteTask(task)" class="text-dark link link-danger">
+                                                <i class="ri-close-line"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </template>
+                    
+                                <h6 class="mt-4">Yesterday (<span x-text="yesterdayTasks.length"></span>)</h6>
+                                <template x-for="(task, index) in yesterdayTasks" :key="'yesterday-' + index">
+                                    <div class="d-flex justify-content-between align-items-center gap-5 mb-3">
+                                        <div class="d-flex align-items-center flex-grow-1">
+                                            <input type="checkbox" class="form-check-input" x-model="task.completed">
+                                            <span x-show="!task.editing" @dblclick="enableEditing(task)" class="ms-3 text-dark-emphasis" :class="{'text-decoration-line-through text-dark-emphasis': task.completed}" x-text="task.text"></span>
+                                            <input x-show="task.editing" x-model="task.text" @blur="disableEditing(task)" @keydown.enter="disableEditing(task)" class="form-control ms-3" :ref="'edit-' + index">
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <a href="#!" @click="enableEditing(task)" class="text-dark link link-warning">
+                                                <i class="ri-pencil-line"></i>
+                                            </a>
+                                            <a href="#!" @click="deleteTask(task)" class="text-dark link link-danger">
+                                                <i class="ri-close-line"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </template>
+                            </fieldset>
+                    
+                            <div class="mt-4">
+                                <input type="text" placeholder="Add new task..." x-model="newTask" @keydown.enter="addTask" class="form-control">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -380,10 +624,10 @@
 </div>
 </div>
 
-{{> partials/vendor-scripts}}
-<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
 
-<script src="assets/js/apps/overview.init.js"></script>
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/tasks.init.js"></script>
 
 <script type="module" src="assets/js/main.js"></script>
 

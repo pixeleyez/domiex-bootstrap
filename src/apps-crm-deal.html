@@ -1,0 +1,79 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Deal" }}
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Deal" sub-title="CRM" }}
+
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <div class="position-relative">
+            <input type="text" class="form-control ps-9 pe-4" placeholder="Search for ..." @input="filtercontacts" x-model="searchTerm">
+            <div class="position-absolute top-50 translate-middle-y d-flex align-items-center text-muted">
+                <i data-lucide="search" class="size-4 ms-3"></i>
+            </div>
+        </div>
+        <div class="d-flex flex-wrap gap-2">
+            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active fw-medium" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pill-home" type="button" role="tab" aria-controls="pill-home" aria-selected="true"><i data-lucide="gallery-vertical-end" class="size-5"></i></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link fw-medium" id="pills-service-tab" data-bs-toggle="pill" data-bs-target="#pill-service" type="button" role="tab" aria-controls="pill-service" aria-selected="false"><i data-lucide="list" class="size-5"></i></button>
+                </li>
+            </ul>
+            <div class="dropdown">
+                <button class="btn btn-light text-dark" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                    <i data-lucide="filter" class="size-4"></i> Sort By
+                </button>
+                <ul class="dropdown-menu shadow-sm dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item fw-medium" href="#!">No Sorting</a></li>
+                    <li><a class="dropdown-item fw-medium" href="#!">Alphabetical (A -> Z)</a></li>
+                    <li><a class="dropdown-item fw-medium" href="#!">Reverse Alphabetical (Z -> A)</a></li>
+                    <li><a class="dropdown-item fw-medium" href="#!">Status</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content mt-4" id="myPillTabContent">
+        <div class="tab-pane  show active" id="pill-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+            <p class="text-dark">The Admin Dashboard displays tabs for multiple pages that provide a personalized view of BI performance, data correctness, required cube maintenance, and required administrative actions. These pages contain the results of detailed analyses, represented by links, images, graphs, pie charts, and BI reports.</p>
+        </div>
+        <div class="tab-pane " id="pill-service" role="tabpanel" aria-labelledby="pills-service-tab" tabindex="0">
+            <p class="text-dark">A service administrator is responsible for overseeing all aspects of the work order for a service department. Your job duties include coordinating with the service manager on the completion of customer work orders, putting together billing for work completed, and reviewing time cards for service employees.</p>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/lead.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
