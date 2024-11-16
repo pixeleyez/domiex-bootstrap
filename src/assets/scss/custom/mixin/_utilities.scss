@@ -11,6 +11,11 @@ $utilities: map-merge(
             class: w,
             values: $custom-width 
         ),
+        "max-width": (
+            property: max-width,
+            class: max-w,
+            values: $custom-max-width 
+        ),
         "border": (
             property: border,
             responsive: true,
