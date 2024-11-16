@@ -4,7 +4,6 @@
 
     {{> partials/title-meta title="Deal" }}
 
-    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
 
     {{> partials/head-css}}
 
@@ -31,12 +30,12 @@
             </div>
         </div>
         <div class="d-flex flex-wrap gap-2">
-            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+            <ul class="nav nav-pills deal-tab p-0 gap-2" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active fw-medium" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pill-home" type="button" role="tab" aria-controls="pill-home" aria-selected="true"><i data-lucide="gallery-vertical-end" class="size-5"></i></button>
+                    <button class="nav-link deal-tab fw-medium btn btn-icon"  id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#pill-card" type="button" role="tab" aria-controls="pill-home" aria-selected="true"><i data-lucide="gallery-vertical-end" class="size-5"></i></button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link fw-medium" id="pills-service-tab" data-bs-toggle="pill" data-bs-target="#pill-service" type="button" role="tab" aria-controls="pill-service" aria-selected="false"><i data-lucide="list" class="size-5"></i></button>
+                    <button class="nav-link deal-tab active fw-medium btn btn-icon" id="pills-list-tab" data-bs-toggle="pill" data-bs-target="#pill-list" type="button" role="tab" aria-controls="pill-service" aria-selected="false"><i data-lucide="list" class="size-5"></i></button>
                 </li>
             </ul>
             <div class="dropdown">
@@ -54,23 +53,578 @@
         </div>
     </div>
     <div class="tab-content mt-4" id="myPillTabContent">
-        <div class="tab-pane  show active" id="pill-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-            <p class="text-dark">The Admin Dashboard displays tabs for multiple pages that provide a personalized view of BI performance, data correctness, required cube maintenance, and required administrative actions. These pages contain the results of detailed analyses, represented by links, images, graphs, pie charts, and BI reports.</p>
+        <div class="tab-pane" id="pill-card" role="tabpanel" aria-labelledby="pills-card-tab" tabindex="0">
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="size-12 rounded border d-flex justify-content-center align-items-center">
+                                    <img src="assets/images/brands/img-02.png" alt="" class="size-7">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Marketing Strategy Review</a></h6>
+                                    <p><span>$12,500</span><span>- <span>15 Apr 2024</span></span></p>
+                                </div>
+                            </div>
+                            <span>MarketBoost Inc.</span>
+                            <p>Review and update marketing strategies for Q2.</p>
+                            <div class="d-flex align-items-center gap-2 flex-wrap my-4">
+                                <span class="badge bg-pink-subtle text-pink border border-pink-subtle">Expired</span>
+                                <span class="badge bg-success-subtle text-success border border-success-subtle">Active</span>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <button class="btn btn-dashed-warning" data-bs-toggle="modal" data-bs-target="#messageModal"><i class="ri-message-2-line me-1"></i>Message</button>
+                                <button class="btn btn-dashed-primary" data-bs-toggle="modal" data-bs-target="#callModal2"><i class="ri-phone-line me-1"></i>Call</button>
+                                <button class="btn btn-light btn-icon"><i data-lucide="trash" class="size-4 text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="size-12 rounded border d-flex justify-content-center align-items-center">
+                                    <img src="assets/images/brands/img-03.png" alt="" class="size-7">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Product Launch Event</a></h6>
+                                    <p><span>$20,000</span><span>- <span>11 Jun 2024</span></span></p>
+                                </div>
+                            </div>
+                            <span>TechNex Corporation</span>
+                            <p>Plan and execute the launch event for our new product line.</p>
+                            <div class="d-flex align-items-center gap-2 flex-wrap my-4">
+                                <span class="badge bg-pink-subtle text-pink border border-pink-subtle">Expired</span>
+                                <span class="badge bg-light-subtle text-dark border border-light-subtle">Unactive</span>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <button class="btn btn-dashed-warning" data-bs-toggle="modal" data-bs-target="#messageModal"><i class="ri-message-2-line me-1"></i>Message</button>
+                                <button class="btn btn-dashed-primary" data-bs-toggle="modal" data-bs-target="#callModal2"><i class="ri-phone-line me-1"></i>Call</button>
+                                <button class="btn btn-light btn-icon"><i data-lucide="trash" class="size-4 text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="size-12 rounded border d-flex justify-content-center align-items-center">
+                                    <img src="assets/images/brands/img-04.png" alt="" class="size-7">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Quarterly Financial Review</a></h6>
+                                    <p><span>$18,200</span><span>- <span>28 May 2024</span></span></p>
+                                </div>
+                            </div>
+                            <span>FinanceWise Ltd.</span>
+                            <p>Review financial performance for the first quarter of 2024.</p>
+                            <div class="d-flex align-items-center gap-2 flex-wrap my-4">
+                                <span class="badge bg-pink-subtle text-pink border border-pink-subtle">Expired</span>
+                                <span class="badge bg-success-subtle text-success border border-success-subtle">Active</span>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <button class="btn btn-dashed-warning" data-bs-toggle="modal" data-bs-target="#messageModal"><i class="ri-message-2-line me-1"></i>Message</button>
+                                <button class="btn btn-dashed-primary" data-bs-toggle="modal" data-bs-target="#callModal2"><i class="ri-phone-line me-1"></i>Call</button>
+                                <button class="btn btn-light btn-icon"><i data-lucide="trash" class="size-4 text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="size-12 rounded border d-flex justify-content-center align-items-center">
+                                    <img src="assets/images/brands/img-05.png" alt="" class="size-7">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Client Meeting</a></h6>
+                                    <p><span>$8,500</span><span>- <span>05 Jun 2024</span></span></p>
+                                </div>
+                            </div>
+                            <span>Client Solutions Inc.</span>
+                            <p>Meeting with potential clients to discuss project requirements.</p>
+                            <div class="d-flex align-items-center gap-2 flex-wrap my-4">
+                                <span class="badge bg-pink-subtle text-pink border border-pink-subtle">Expired</span>
+                                <span class="badge bg-light-subtle text-dark border border-light-subtle">Unactive</span>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <button class="btn btn-dashed-warning" data-bs-toggle="modal" data-bs-target="#messageModal"><i class="ri-message-2-line me-1"></i>Message</button>
+                                <button class="btn btn-dashed-primary" data-bs-toggle="modal" data-bs-target="#callModal2"><i class="ri-phone-line me-1"></i>Call</button>
+                                <button class="btn btn-light btn-icon"><i data-lucide="trash" class="size-4 text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="size-12 rounded border d-flex justify-content-center align-items-center">
+                                    <img src="assets/images/brands/img-06.png" alt="" class="size-7">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Website Redesign</a></h6>
+                                    <p><span>$14,000</span><span>- <span>01 May 2024</span></span></p>
+                                </div>
+                            </div>
+                            <span>WebWorks Ltd.</span>
+                            <p>Redesign the company website for better user experience.</p>
+                            <div class="d-flex align-items-center gap-2 flex-wrap my-4">
+                                <span class="badge bg-pink-subtle text-pink border border-pink-subtle">Expired</span>
+                                <span class="badge bg-success-subtle text-success border border-success-subtle">Active</span>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <button class="btn btn-dashed-warning" data-bs-toggle="modal" data-bs-target="#messageModal"><i class="ri-message-2-line me-1"></i>Message</button>
+                                <button class="btn btn-dashed-primary" data-bs-toggle="modal" data-bs-target="#callModal2"><i class="ri-phone-line me-1"></i>Call</button>
+                                <button class="btn btn-light btn-icon"><i data-lucide="trash" class="size-4 text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="size-12 rounded border d-flex justify-content-center align-items-center">
+                                    <img src="assets/images/brands/img-07.png" alt="" class="size-7">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Employee Training Program</a></h6>
+                                    <p><span>$10,000</span><span>- <span>01 Jun 2024</span></span></p>
+                                </div>
+                            </div>
+                            <span>TalentHub Solutions</span>
+                            <p>Develop and implement a comprehensive training program for employees.</p>
+                            <div class="d-flex align-items-center gap-2 flex-wrap my-4">
+                                <span class="badge bg-pink-subtle text-pink border border-pink-subtle">Expired</span>
+                                <span class="badge bg-success-subtle text-success border border-success-subtle">Active</span>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <button class="btn btn-dashed-warning" data-bs-toggle="modal" data-bs-target="#messageModal"><i class="ri-message-2-line me-1"></i>Message</button>
+                                <button class="btn btn-dashed-primary" data-bs-toggle="modal" data-bs-target="#callModal2"><i class="ri-phone-line me-1"></i>Call</button>
+                                <button class="btn btn-light btn-icon"><i data-lucide="trash" class="size-4 text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="size-12 rounded border d-flex justify-content-center align-items-center">
+                                    <img src="assets/images/brands/img-08.png" alt="" class="size-7">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Social Media Campaign</a></h6>
+                                    <p><span>$16,500</span><span>- <span>10 May 2024</span></span></p>
+                                </div>
+                            </div>
+                            <span>SocialNet Inc.</span>
+                            <p>Launch a targeted social media campaign to increase brand visibility.</p>
+                            <div class="d-flex align-items-center gap-2 flex-wrap my-4">
+                                <span class="badge bg-pink-subtle text-pink border border-pink-subtle">Expired</span>
+                                <span class="badge bg-light-subtle text-dark border border-light-subtle">Unactive</span>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <button class="btn btn-dashed-warning" data-bs-toggle="modal" data-bs-target="#messageModal"><i class="ri-message-2-line me-1"></i>Message</button>
+                                <button class="btn btn-dashed-primary" data-bs-toggle="modal" data-bs-target="#callModal2"><i class="ri-phone-line me-1"></i>Call</button>
+                                <button class="btn btn-light btn-icon"><i data-lucide="trash" class="size-4 text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="size-12 rounded border d-flex justify-content-center align-items-center">
+                                    <img src="assets/images/brands/img-09.png" alt="" class="size-7">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Supply Chain Optimization</a></h6>
+                                    <p><span>$22,000</span><span>- <span>01 Jun 2024</span></span></p>
+                                </div>
+                            </div>
+                            <span>LogiTech Solutions</span>
+                            <p>Optimize the supply chain to reduce costs and improve efficiency.</p>
+                            <div class="d-flex align-items-center gap-2 flex-wrap my-4">
+                                <span class="badge bg-pink-subtle text-pink border border-pink-subtle">Expired</span>
+                                <span class="badge bg-light-subtle text-dark border border-light-subtle">Unactive</span>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <button class="btn btn-dashed-warning" data-bs-toggle="modal" data-bs-target="#messageModal"><i class="ri-message-2-line me-1"></i>Message</button>
+                                <button class="btn btn-dashed-primary" data-bs-toggle="modal" data-bs-target="#callModal2"><i class="ri-phone-line me-1"></i>Call</button>
+                                <button class="btn btn-light btn-icon"><i data-lucide="trash" class="size-4 text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-6">
+                    <p>Showing <b>1-8</b> of <b>15</b> Results</p>
+                </div>
+                <div class="col-6 justify-content-end d-flex">
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-active-primary d-flex gap-2 mb-0">
+                            <li class="page-item pagination-primary ">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                    <i data-lucide="chevron-left" class="size-5"></i>
+                                    <span>Prev</span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                            <li class="page-item" aria-current="page">
+                                <a class="page-link rounded-2 page-number" href="#">2</a>
+                            </li>
+                            <li class="page-item pagination-primary ">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                    <span>Next</span>
+                                    <i data-lucide="chevron-right" class="size-5"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
-        <div class="tab-pane " id="pill-service" role="tabpanel" aria-labelledby="pills-service-tab" tabindex="0">
-            <p class="text-dark">A service administrator is responsible for overseeing all aspects of the work order for a service department. Your job duties include coordinating with the service manager on the completion of customer work orders, putting together billing for work completed, and reviewing time cards for service employees.</p>
+        <div class="tab-pane show active" id="pill-list" role="tabpanel" aria-labelledby="pills-list-tab" tabindex="0">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-between">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="size-12 rounded border d-flex justify-content-center align-items-center">
+                                    <img src="assets/images/brands/img-02.png" alt="" class="size-7">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Marketing Strategy Review</a></h6>
+                                    <p>$12,500</p>
+                                </div>
+                            </div>
+                            <p class="w-28">15 Apr 2024</p>
+                            <p class="w-28 text-truncate">MarketBoost Inc.</p>
+                            <div class="d-flex gap-2 w-28">
+                                <div><span class="badge bg-pink-subtle text-pink border border-pink-subtle">Expired</span></div>
+                                <div><span class="badge bg-success-subtle text-success border border-success-subtle">Active</span></div>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <button class="btn btn-dashed-warning" data-bs-toggle="modal" data-bs-target="#messageModal"><i class="ri-message-2-line me-1"></i>Message</button>
+                                <button class="btn btn-dashed-primary" data-bs-toggle="modal" data-bs-target="#callModal2"><i class="ri-phone-line me-1"></i>Call</button>
+                                <button class="btn btn-light btn-icon"><i data-lucide="trash" class="size-4 text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-between">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="size-12 rounded border d-flex justify-content-center align-items-center">
+                                    <img src="assets/images/brands/img-03.png" alt="" class="size-7">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Product Launch Event</a></h6>
+                                    <p>$20,000</p>
+                                </div>
+                            </div>
+                            <p class="w-28">11 Jun 2024</p>
+                            <p class="w-28 text-truncate">TechNex Corporation</p>
+                            <div class="d-flex gap-2 w-28">
+                                <div><span class="badge bg-pink-subtle text-pink border border-pink-subtle">Expired</span></div>
+                                <div><span class="badge bg-light-subtle text-dark border border-light-subtle">Unactive</span></div>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <button class="btn btn-dashed-warning" data-bs-toggle="modal" data-bs-target="#messageModal"><i class="ri-message-2-line me-1"></i>Message</button>
+                                <button class="btn btn-dashed-primary" data-bs-toggle="modal" data-bs-target="#callModal2"><i class="ri-phone-line me-1"></i>Call</button>
+                                <button class="btn btn-light btn-icon"><i data-lucide="trash" class="size-4 text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-between">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="size-12 rounded border d-flex justify-content-center align-items-center">
+                                    <img src="assets/images/brands/img-04.png" alt="" class="size-7">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Quarterly Financial Review</a></h6>
+                                    <p>$18,200</p>
+                                </div>
+                            </div>
+                            <p class="w-28">28 May 2024</p>
+                            <p class="w-28 text-truncate">FinanceWise Ltd.</p>
+                            <div class="d-flex gap-2 w-28">
+                                <div><span class="badge bg-pink-subtle text-pink border border-pink-subtle">Expired</span></div>
+                                <div><span class="badge bg-success-subtle text-success border border-success-subtle">Active</span></div>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <button class="btn btn-dashed-warning" data-bs-toggle="modal" data-bs-target="#messageModal"><i class="ri-message-2-line me-1"></i>Message</button>
+                                <button class="btn btn-dashed-primary" data-bs-toggle="modal" data-bs-target="#callModal2"><i class="ri-phone-line me-1"></i>Call</button>
+                                <button class="btn btn-light btn-icon"><i data-lucide="trash" class="size-4 text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-between">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="size-12 rounded border d-flex justify-content-center align-items-center">
+                                    <img src="assets/images/brands/img-05.png" alt="" class="size-7">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Client Meeting</a></h6>
+                                    <p>$8,500</p>
+                                </div>
+                            </div>
+                            <p class="w-28">05 Jun 2024</p>
+                            <p class="w-28 text-truncate">Client Solutions In</p>
+                            <div class="d-flex gap-2 w-28">
+                                <div><span class="badge bg-pink-subtle text-pink border border-pink-subtle">Expired</span></div>
+                                <div><span class="badge bg-light-subtle text-dark border border-light-subtle">Unactive</span></div>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <button class="btn btn-dashed-warning" data-bs-toggle="modal" data-bs-target="#messageModal"><i class="ri-message-2-line me-1"></i>Message</button>
+                                <button class="btn btn-dashed-primary" data-bs-toggle="modal" data-bs-target="#callModal2"><i class="ri-phone-line me-1"></i>Call</button>
+                                <button class="btn btn-light btn-icon"><i data-lucide="trash" class="size-4 text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-between">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="size-12 rounded border d-flex justify-content-center align-items-center">
+                                    <img src="assets/images/brands/img-06.png" alt="" class="size-7">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Website Redesign</a></h6>
+                                    <p>$14,000</p>
+                                </div>
+                            </div>
+                            <p class="w-28">01 May 2024</p>
+                            <p class="w-28 text-truncate">WebWorks Ltd.</p>
+                            <div class="d-flex gap-2 w-28">
+                                <div><span class="badge bg-pink-subtle text-pink border border-pink-subtle">Expired</span></div>
+                                <div><span class="badge bg-success-subtle text-success border border-success-subtle">Active</span></div>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <button class="btn btn-dashed-warning" data-bs-toggle="modal" data-bs-target="#messageModal"><i class="ri-message-2-line me-1"></i>Message</button>
+                                <button class="btn btn-dashed-primary" data-bs-toggle="modal" data-bs-target="#callModal2"><i class="ri-phone-line me-1"></i>Call</button>
+                                <button class="btn btn-light btn-icon"><i data-lucide="trash" class="size-4 text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-between">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="size-12 rounded border d-flex justify-content-center align-items-center">
+                                    <img src="assets/images/brands/img-07.png" alt="" class="size-7">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Employee Training Program</a></h6>
+                                    <p>$10,000</p>
+                                </div>
+                            </div>
+                            <p class="w-28">01 Jun 2024</p>
+                            <p class="w-28 text-truncate">TalentHub Soluti</p>
+                            <div class="d-flex gap-2 w-28">
+                                <div><span class="badge bg-pink-subtle text-pink border border-pink-subtle">Expired</span></div>
+                                <div><span class="badge bg-success-subtle text-success border border-success-subtle">Active</span></div>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <button class="btn btn-dashed-warning" data-bs-toggle="modal" data-bs-target="#messageModal"><i class="ri-message-2-line me-1"></i>Message</button>
+                                <button class="btn btn-dashed-primary" data-bs-toggle="modal" data-bs-target="#callModal2"><i class="ri-phone-line me-1"></i>Call</button>
+                                <button class="btn btn-light btn-icon"><i data-lucide="trash" class="size-4 text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-between">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="size-12 rounded border d-flex justify-content-center align-items-center">
+                                    <img src="assets/images/brands/img-08.png" alt="" class="size-7">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Social Media Campaign</a></h6>
+                                    <p>$16,500</p>
+                                </div>
+                            </div>
+                            <p class="w-28">10 May 2024</p>
+                            <p class="w-28 text-truncate">SocialNet Inc.</p>
+                            <div class="d-flex gap-2 w-28">
+                                <div><span class="badge bg-pink-subtle text-pink border border-pink-subtle">Expired</span></div>
+                                <div><span class="badge bg-light-subtle text-dark border border-light-subtle">Unactive</span></div>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <button class="btn btn-dashed-warning" data-bs-toggle="modal" data-bs-target="#messageModal"><i class="ri-message-2-line me-1"></i>Message</button>
+                                <button class="btn btn-dashed-primary" data-bs-toggle="modal" data-bs-target="#callModal2"><i class="ri-phone-line me-1"></i>Call</button>
+                                <button class="btn btn-light btn-icon"><i data-lucide="trash" class="size-4 text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-between">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="size-12 rounded border d-flex justify-content-center align-items-center">
+                                    <img src="assets/images/brands/img-08.png" alt="" class="size-7">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Supply Chain Optimization</a></h6>
+                                    <p>$22,000</p>
+                                </div>
+                            </div>
+                            <p class="w-28">01 Jun 2024</p>
+                            <p class="w-28 text-truncate">LogiTech Solutio</p>
+                            <div class="d-flex gap-2 w-28">
+                                <div><span class="badge bg-pink-subtle text-pink border border-pink-subtle">Expired</span></div>
+                                <div><span class="badge bg-light-subtle text-dark border border-light-subtle">Unactive</span></div>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <button class="btn btn-dashed-warning" data-bs-toggle="modal" data-bs-target="#messageModal"><i class="ri-message-2-line me-1"></i>Message</button>
+                                <button class="btn btn-dashed-primary" data-bs-toggle="modal" data-bs-target="#callModal2"><i class="ri-phone-line me-1"></i>Call</button>
+                                <button class="btn btn-light btn-icon"><i data-lucide="trash" class="size-4 text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-6">
+                    <p>Showing <b>1-8</b> of <b>15</b> Results</p>
+                </div>
+                <div class="col-6 justify-content-end d-flex">
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-active-primary d-flex gap-2 mb-0">
+                            <li class="page-item pagination-primary ">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                    <i data-lucide="chevron-left" class="size-5"></i>
+                                    <span>Prev</span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                            <li class="page-item" aria-current="page">
+                                <a class="page-link rounded-2 page-number" href="#">2</a>
+                            </li>
+                            <li class="page-item pagination-primary ">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                    <span>Next</span>
+                                    <i data-lucide="chevron-right" class="size-5"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Message Modal -->
+    <div class="modal fade" id="messageModal" aria-hidden="true" aria-labelledby="messageModal" tabindex="-1">
+        <div class="modal-dialog modal-sm position-absolute end-0 bottom-0 m-5 w-100">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex align-items-center gap-2 p-2 bg-light rounded-3">
+                        <button data-bs-dismiss="modal" class="px-2 text-muted btn btn-link">
+                            <i data-lucide="chevron-left"></i>
+                        </button>
+                        <img src="assets/images/avatar/user-15.png" alt="" class="rounded-circle size-10">
+                        <div class="flex-grow-1">
+                            <h6 class="mb-0">Sophia Mia</h6>
+                            <p class="fs-12">Active</p>
+                        </div>
+                        <button type="button" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#callModal2" class="p-0 btn btn-sub-danger btn-icon border-0">
+                            <i data-lucide="phone" class="size-5"></i>
+                        </button>
+                    </div>
+                    <div x-data="chatApp()" class="mt-6 d-flex flex-column gap-3">
+                        <div id="message-container" data-simplebar>
+                            <div class="d-flex flex-column gap-3">
+                                <template x-for="message in messages" :key="message.id">
+                                    <div :class="message.isSender ? 'd-flex gap-2 justify-content-start' : 'd-flex gap-2 justify-content-end'">
+                                        <template x-if="message.isSender">
+                                            <img src="assets/images/avatar/user-15.png" alt="" class="rounded-circle size-10 flex-shrink-0">
+                                        </template>
+                                        <div :class="message.isSender ? 'py-2 px-3 fw-medium rounded-top-2 rounded-end-2 bg-light max-w-64' : 'py-2 px-3 fw-medium rounded-top-2 rounded-start-2 bg-primary-subtle max-w-64'">
+                                            <p x-text="message.text" class="m-0"></p>
+                                        </div>
+                                        <template x-if="!message.isSender">
+                                            <img src="assets/images/avatar/user-17.png" alt="" class="rounded-circle size-10 flex-shrink-0">
+                                        </template>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+
+                        <div class="position-relative mt-2">
+                            <input type="text" placeholder="Say something..." id="messageInput" x-model="newMessage" class="form-control pe-5" @keydown.enter="sendMessage">
+                            <div class="position-absolute top-50 end-1 translate-middle-y">
+                                <button type="button" @click="sendMessage" class="btn btn-primary d-flex align-items-center justify-content-center rounded-2 p-2">
+                                    <i data-lucide="send-horizontal" class="size-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call Modal -->
+    <div class="modal fade" id="callModal2" aria-hidden="true" aria-labelledby="callModal2" tabindex="-1">
+        <div class="modal-dialog modal-xs position-absolute end-0 bottom-0 m-5">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="p-2 border rounded size-12 flex-shrink-0 d-flex justify-content-center align-items-center">
+                            <img src="assets/images/avatar/user-15.png" alt="" class="size-8">
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Marketing Strategy Review</h6>
+                            <p class="fs-sm">Calling...</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mt-4">
+                        <div x-data="{ isMuted: false }">
+                            <button type="button" @click="isMuted = !isMuted" class="btn btn-active-light btn-icon text-dark">
+                                <i x-show="isMuted" data-lucide="mic-off" class="size-5"></i>
+                                <i x-show="!isMuted" data-lucide="mic" class="size-5"></i>
+                            </button>
+                        </div>
+
+                        <button type="button" class="btn btn-active-light btn-icon text-dark"><i data-lucide="pause" class="size-5"></i></button>
+                        <button type="button" class="btn btn-active-light btn-icon text-dark"> <i data-lucide="disc" class="size-5"></i></button>
+                        <button type="button" class="btn btn-active-danger btn-icon text-danger border-0" data-bs-dismiss="modal"><i data-lucide="phone" class="size-5"></i></button>
+                        <button type="button" class="btn btn-active-light btn-icon text-dark"><i data-lucide="settings" class="size-5"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     {{> partials/footer}}
 </div>
 </div>
 
-<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
 
 {{> partials/vendor-scripts}}
 
-<script src="assets/js/apps/lead.init.js"></script>
+<script src="assets/js/apps/deal.init.js"></script>
 
 <script type="module" src="assets/js/main.js"></script>
 

@@ -20,9 +20,9 @@
 
 <div class="container-fluid">
     {{> partials/page-heading title="Help Center" sub-title="Pages" }}
-    <div class="row">
+    <div class="row g-5">
         <!-- Column 1 (Tabs) -->
-        <div class="col-lg-3">
+        <div class="col-3">
             <div class="card">
                 <div class="card-body d-flex flex-column">
                     <h6>Search for a Question</h6>
@@ -34,7 +34,6 @@
                         </div>
                     </div>
 
-                    <!-- Tab Navigation -->
                     <section class=" simplebar-height" id="customScroll" data-simplebar>
                         <ul class="nav nav-pills flex-column mb-4" id="myTabs" role="tablist">
                             <li class="nav-item" role="presentation">
@@ -54,15 +53,15 @@
                             </li>
                         </ul>
                     </section>
-                    
-                    <!-- Contact Us Section -->
+
+                    <!-- closed Us Section -->
                     <div class="position-relative px-4 py-3 rounded bg-primary text-white mt-4">
                         <h6 class="mb-4">Do you still need our help?</h6>
-                        <button data-modal-target="contactModal" class="btn btn-primary text-white position-relative">
+                        <button data-modal-target="closedModal" class="btn btn-primary text-white position-relative">
                             <span class="d-inline-block position-absolute inset-0 overflow-hidden rounded-xl">
                                 <span class="d-inline-block position-absolute inset-0 rounded-xl bg-gradient opacity-0 transition-opacity duration-500 group-hover/effect:opacity-100"></span>
                             </span>
-                            <span>Contact Us
+                            <span>closed Us
                                 <i data-lucide="move-right" class="size-4"></i>
                             </span>
                         </button>
@@ -70,8 +69,38 @@
                 </div>
             </div>
         </div>
+        <div class="col-9">
+            <div class="basic-tabs">
+                <ul class="nav nav-tabs px-3" id="myJustifyTab" role="tablist">
+                    <li class="nav-item " role="presentation">
+                        <button class="nav-link active fw-medium" id="justify-allTickets-tab" data-bs-toggle="tab" data-bs-target="#justify-allTickets-tab-pane" type="button" role="tab" aria-controls="justify-allTickets-tab-pane" aria-selected="true">All Tickets</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link fw-medium" id="justify-active-tab" data-bs-toggle="tab" data-bs-target="#justify-active-tab-pane" type="button" role="tab" aria-controls="justify-active-tab-pane" aria-selected="false">Active</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link fw-medium" id="justify-closed-tab" data-bs-toggle="tab" data-bs-target="#justify-closed-tab-pane" type="button" role="tab" aria-controls="justify-closed-tab-pane" aria-selected="false">Closed</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link fw-medium" id="justify-delete-tab" data-bs-toggle="tab" data-bs-target="#justify-delete-tab-pane" type="button" role="tab" aria-controls="justify-delete-tab-pane" aria-selected="false">Deleted</button>
+                    </li>
+                </ul>
 
-    
+                <div class="tab-content mt-4" id="myJustifyTabContent">
+                    <div class="tab-pane  show active" id="justify-allTickets-tab-pane" role="tabpanel" aria-labelledby="justify-allTickets-tab" tabindex="0">
+                    </div>
+                    <div class="tab-pane " id="justify-active-tab-pane" role="tabpanel" aria-labelledby="justify-active-tab" tabindex="0">
+                        <p class="text-dark">A active administrator is responsible for overseeing all aspects of the work order for a active department. Your job duties include coordinating with the active manager on the completion of customer work orders, putting together billing for work completed, and reviewing time cards for active employees.</p>
+                    </div>
+                    <div class="tab-pane " id="justify-closed-tab-pane" role="tabpanel" aria-labelledby="justify-closed-tab" tabindex="0">
+                        <p class="text-dark">The official business definition of a closed Administrator is an individual responsible for managing the closed database of an organization. This includes the maintenance of closed information, the creation of closed groups, and the organization of closed information into categories.</p>
+                    </div>
+                    <div class="tab-pane " id="justify-delete-tab-pane" role="tabpanel" aria-labelledby="justify-delete-tab" tabindex="0">
+                        <p class="text-dark">The official business definition of a closed Administrator is an individual responsible for managing the closed database of an organization. This includes the maintenance of closed information, the creation of closed groups, and the organization of closed information into categories.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     {{> partials/footer}}

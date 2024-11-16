@@ -3,6 +3,8 @@
 <head>
 
     {{> partials/title-meta title="Highlight Code" }}
+
+    
     {{> partials/head-css}}
 
 </head>
@@ -19,20 +21,32 @@
     {{> partials/page-heading title="Highlight Code" sub-title="UI" }}
     <div class="row">
 
-        <!-- HTML Highlight Code -->
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
                     <h6 class="mb-0 card-title d-flex">HTML Highlight Code</h6>
                 </div>
                 <div class="card-body">
-                    <pre>
-                        <deckgo-highlight-code language="html">
-                            <code slot="code">
-                                &lt;button class="btn btn-primary"&gt;Primary Button&lt;/button&gt;
-                            </code>
-                        </deckgo-highlight-code>
-                    </pre>
+                    <pre><deckgo-highlight-code lang="js" class="!my-0"><code slot="code">&lt;div x-data=&quot;{ 
+    baseButtons: [
+            { text: 'Primary', color: 'btn-primary'}, 
+            { text: 'Purple', color: 'btn-purple'}, 
+            { text: 'Green', color: 'btn-green'}, 
+            { text: 'Red', color: 'btn-red'}, 
+            { text: 'Yellow', color: 'btn-yellow'}, 
+            { text: 'Sky', color: 'btn-sky'}, 
+            { text: 'Pink', color: 'btn-pink'}, 
+            { text: 'Indigo', color: 'btn-indigo'}, 
+            { text: 'Orange', color: 'btn-orange'}, 
+            { text: 'Dark', color: 'btn-gray'}, 
+            { text: 'Light', color: 'bg-gray-200 text-gray-800 border-gray-200 hover:bg-gray-300 hover:text-gray-800 hover:border-gray-300 focus:bg-gray-300 focus:text-gray-800 focus:border-gray-300'}, 
+        ] 
+}&quot; class=&quot;flex flex-wrap gap-4&quot;&gt;
+    &lt;template x-for=&quot;(button, index) in baseButtons&quot; :key=&quot;index&quot;&gt;
+        &lt;button :class=&quot;button.color + ' btn'&quot; x-text=&quot;button.text&quot;&gt;
+        &lt;/button&gt;
+    &lt;/template&gt;
+&lt;/div&gt;</code></deckgo-highlight-code></pre>
                 </div>
             </div>
         </div>
@@ -42,15 +56,13 @@
 </div>
 </div>
 
+
+<script type="module" src="https://unpkg.com/@deckdeckgo/highlight-code@latest/dist/deckdeckgo-highlight-code/deckdeckgo-highlight-code.esm.js"></script>
+
 {{> partials/vendor-scripts}}
 
-<!-- <script src="assets/libs/@deckdeckgo/highlight-code/dist/esm/deckdeckgo-highlight-code.js"></script> -->
 <script type="module" src="assets/js/main.js"></script>
 
-<script>
-   import { defineCustomElements as deckDeckGoElements } from '@deckdeckgo/core/dist/loader';
-   deckDeckGoElements();
-</script>
 
 </body>
 
