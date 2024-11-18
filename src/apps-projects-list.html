@@ -41,87 +41,89 @@
                                     <h6 class="modal-title" id="addprojectModalLabel">Add project</h6>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body" x-data="{
-                                    projectTitle: '',
-                                    clientName: '',
-                                    dueDate: '',
-                                    totalAmount: '',
-                                    progress: 0,
-                                    assignee: '',
-                                    status: '',
-                                    error: '',
-                                    validateForm() {
-                                        this.error = '';  // Reset error state
-                                
-                                        if (this.projectTitle.trim() === '') {
-                                            this.error = 'Project name is required.';
-                                            return false;
+                                <div class="modal-body">
+                                    <form action="#!">
+                                        <div x-data="{
+                                        projectTitle: '',
+                                        clientName: '',
+                                        dueDate: '',
+                                        totalAmount: '',
+                                        progress: 0,
+                                        assignee: '',
+                                        status: '',
+                                        error: '',
+                                        validateForm() {
+                                            this.error = '';  // Reset error state
+                                    
+                                            if (this.projectTitle.trim() === '') {
+                                                this.error = 'Project name is required.';
+                                                return false;
+                                            }
+                                    
+                                            if (this.clientName.trim() === '') {
+                                                this.error = 'Client name is required.';
+                                                return false;
+                                            }
+                                    
+                                            if (this.dueDate.trim() === '') {
+                                                this.error = 'Due date is required.';
+                                                return false;
+                                            }
+                                    
+                                            if (this.totalAmount === '' || isNaN(this.totalAmount) || parseFloat(this.totalAmount) <= 0) {
+                                                this.error = 'Total amount must be a positive number.';
+                                                return false;
+                                            }
+                                    
+                                            const parsedProgress = parseInt(this.progress, 10);
+                                            if (isNaN(parsedProgress) || parsedProgress < 0 || parsedProgress > 100) {
+                                                this.error = 'Progress must be between 0 and 100.';
+                                                return false;
+                                            }
+                                    
+                                            if (this.assignee === '') {
+                                                this.error = 'Please select an assignee.';
+                                                return false;
+                                            }
+                                    
+                                            if (this.status === '') {
+                                                this.error = 'Please select a status.';
+                                                return false;
+                                            }
+                                    
+                                            return true;
+                                        },
+                                    
+                                        clearError() {
+                                            this.error = '';
                                         }
-                                
-                                        if (this.clientName.trim() === '') {
-                                            this.error = 'Client name is required.';
-                                            return false;
-                                        }
-                                
-                                        if (this.dueDate.trim() === '') {
-                                            this.error = 'Due date is required.';
-                                            return false;
-                                        }
-                                
-                                        if (this.totalAmount === '' || isNaN(this.totalAmount) || parseFloat(this.totalAmount) <= 0) {
-                                            this.error = 'Total amount must be a positive number.';
-                                            return false;
-                                        }
-                                
-                                        const parsedProgress = parseInt(this.progress, 10);
-                                        if (isNaN(parsedProgress) || parsedProgress < 0 || parsedProgress > 100) {
-                                            this.error = 'Progress must be between 0 and 100.';
-                                            return false;
-                                        }
-                                
-                                        if (this.assignee === '') {
-                                            this.error = 'Please select an assignee.';
-                                            return false;
-                                        }
-                                
-                                        if (this.status === '') {
-                                            this.error = 'Please select a status.';
-                                            return false;
-                                        }
-                                
-                                        return true;
-                                    },
-                                
-                                    clearError() {
-                                        this.error = '';
-                                    }
-                                }">
-                                    <div class="row g-4">
-                                        <div class="col-12">
-                                            <label for="projectTitleInput" class="form-label fw-medium">Project Title</label>
-                                            <input type="text" class="form-control" id="projectTitleInput" placeholder="Project Title" x-model="projectTitle" @input="clearError()" />
-                                            <p x-show="error && projectTitle === ''" class="text-sm text-danger" x-text="error"></p>
-                                        </div>
+                                    }">
+                                            <div class="row g-4">
+                                                <div class="col-12">
+                                                    <label for="projectTitleInput" class="form-label fw-medium">Project Title</label>
+                                                    <input type="text" class="form-control" id="projectTitleInput" placeholder="Project Title" x-model="projectTitle" @input="clearError()" />
+                                                    <p x-show="error && projectTitle === ''" class="text-sm text-danger" x-text="error"></p>
+                                                </div>
 
-                                        <div class="col-12">
-                                            <label for="clientName" class="form-label fw-medium">Client Name</label>
-                                            <input type="text" class="form-control" id="clientName" placeholder="Enter Name" x-model="clientName" @input="clearError()" />
-                                            <p x-show="error && clientName === ''" class="text-sm text-danger" x-text="error"></p>
-                                        </div>
+                                                <div class="col-12">
+                                                    <label for="clientName" class="form-label fw-medium">Client Name</label>
+                                                    <input type="text" class="form-control" id="clientName" placeholder="Enter Name" x-model="clientName" @input="clearError()" />
+                                                    <p x-show="error && clientName === ''" class="text-sm text-danger" x-text="error"></p>
+                                                </div>
 
-                                        <div class="col-6">
-                                            <label for="dueDateInput" class="form-label fw-medium">Due Date</label>
-                                            <input data-provider="flatpickr" data-date-format="d M, Y" type="text" placeholder="Select due date" class="form-control form-input flatpickr-input active" readonly="readonly" x-model="dueDate" @input="clearError()" />
-                                            <p x-show="error && dueDate === ''" class="text-sm text-danger" x-text="error"></p>
-                                        </div>
+                                                <div class="col-6">
+                                                    <label for="dueDateInput" class="form-label fw-medium">Due Date</label>
+                                                    <input data-provider="flatpickr" data-date-format="d M, Y" type="text" placeholder="Select due date" class="form-control form-input flatpickr-input active" readonly="readonly" x-model="dueDate" @input="clearError()" />
+                                                    <p x-show="error && dueDate === ''" class="text-sm text-danger" x-text="error"></p>
+                                                </div>
 
-                                        <div class="col-6">
-                                            <label for="totalAmountInput" class="form-label fw-medium">Total Amount ($)</label>
-                                            <input type="number" class="form-control" id="totalAmountInput" placeholder="$00.00" x-model="totalAmount" @input="clearError()" />
-                                            <p x-show="error && (totalAmount === '' || isNaN(totalAmount) || parseFloat(totalAmount) <= 0)" class="text-sm text-danger" x-text="error"></p>
-                                        </div>
+                                                <div class="col-6">
+                                                    <label for="totalAmountInput" class="form-label fw-medium">Total Amount ($)</label>
+                                                    <input type="number" class="form-control" id="totalAmountInput" placeholder="$00.00" x-model="totalAmount" @input="clearError()" />
+                                                    <p x-show="error && (totalAmount === '' || isNaN(totalAmount) || parseFloat(totalAmount) <= 0)" class="text-sm text-danger" x-text="error"></p>
+                                                </div>
 
-                                        <div class="col-12" x-data="{
+                                                <div class="col-12" x-data="{
                                             progress: 0,
                                             error: '',
                                             validateProgress() {
@@ -137,27 +139,28 @@
                                                 }
                                             }
                                         }">
-                                            <label for="progressInput" class="form-label fw-medium">% Complete</label>
-                                            <input type="text" class="form-control" id="progressInput" x-model="progress" @input="validateProgress()" />
-                                            <p x-show="error && (progress === '' || isNaN(progress) || progress < 0 || progress > 100)" class="text-sm text-danger" x-text="error"></p>
-                                            <div class="progress progress-1 mt-3" role="progressbar" aria-label="Example with label" :aria-valuenow="progress" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="progress-bar progress-gradient progress-gradient-secondary rounded-5" :style="'width: ' + (progress > 100 ? 0.1 : progress < 0.1 ? 100 : progress) + '%'" :aria-valuenow="progress"></div>
+                                                    <label for="progressInput" class="form-label fw-medium">% Complete</label>
+                                                    <input type="text" class="form-control" id="progressInput" x-model="progress" @input="validateProgress()" />
+                                                    <p x-show="error && (progress === '' || isNaN(progress) || progress < 0 || progress > 100)" class="text-sm text-danger" x-text="error"></p>
+                                                    <div class="progress progress-1 mt-3" role="progressbar" aria-label="Example with label" :aria-valuenow="progress" aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar progress-gradient progress-gradient-secondary rounded-5" :style="'width: ' + (progress > 100 ? 0.1 : progress < 0.1 ? 100 : progress) + '%'" :aria-valuenow="progress"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <label for="assignedSelect" class="form-label fw-medium">Assignee To</label>
+                                                    <div id="assignedSelect"></div>
+                                                    <p x-show="error && assignee === ''" class="text-sm text-danger" x-text="error"></p>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <label for="statusSelect" class="form-label fw-medium">Status</label>
+                                                    <div id="statusSelect2"></div>
+                                                    <p x-show="error && status === ''" class="text-sm text-danger" x-text="error"></p>
+                                                </div>
                                             </div>
                                         </div>
-
-                                        <div class="col-12">
-                                            <label for="assignedSelect" class="form-label fw-medium">Assignee To</label>
-                                            <div id="assignedSelect"></div>
-                                            <p x-show="error && assignee === ''" class="text-sm text-danger" x-text="error"></p>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <label for="statusSelect" class="form-label fw-medium">Status</label>
-                                            <div id="statusSelect2"></div>
-                                            <p x-show="error && status === ''" class="text-sm text-danger" x-text="error"></p>
-                                        </div>
-                                    </div>
-
+                                    </form>
                                     <div class="d-flex justify-content-end mt-5 gap-2">
                                         <button class="btn btn-active-danger d-flex justify-content-center align-items-center" data-bs-dismiss="modal">
                                             <i data-lucide="x" class="size-4 me-1"></i> Close
@@ -523,7 +526,7 @@
                 </div>
                 <div class="row">
                     <div class="col-6">
-                        <p>Showing <b>11-20</b> of <b>27</b> Results</p>
+                        <p>Showing <b class="me-1">11-20</b> of <b class="ms-1">27</b> Results</p>
                     </div>
                     <div class="col-6 justify-content-end d-flex">
                         <nav aria-label="...">
@@ -571,4 +574,3 @@
 </body>
 
 </html>
-

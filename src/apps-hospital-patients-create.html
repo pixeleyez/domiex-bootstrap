@@ -1,0 +1,191 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Create Patient" }}
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Create Patient" sub-title="Patients" }}
+
+    <div class="card">
+        <div class="card-header">
+            <h6 class="card-title mb-0">Patient Personal Details</h6>
+        </div>
+        <div class="card-body">
+            <form action="#!" x-data="submit">
+                <div class="row g-5">
+                    <div class="col-4">
+                        <label for="firstNameInput" class="form-label fw-medium fw-medium">First Name <span class="text-danger">*</span></label>
+                        <input type="text" id="firstNameInput" class="form-control" placeholder="Enter your first name" pattern="[A-Za-z ]+" title="Only letters and spaces allowed" required>
+                    </div>
+                    <div class="col-4">
+                        <label for="middleNameInput" class="form-label fw-medium fw-medium">Middle Name</label>
+                        <input type="text" id="middleNameInput" class="form-control" placeholder="Enter your middle name" pattern="[A-Za-z ]+" title="Only letters and spaces allowed">
+                    </div>
+                    <div class="col-4">
+                        <label for="lastNameInput" class="form-label fw-medium fw-medium">Last Name <span class="text-danger">*</span></label>
+                        <input type="text" id="lastNameInput" class="form-control" placeholder="Enter your last name" pattern="[A-Za-z ]+" title="Only letters and spaces allowed" required>
+                    </div>
+                    <div class="col-4">
+                        <label for="dateOfBirthInput" class="form-label fw-medium fw-medium">Date of Birth <span class="text-danger">*</span></label>
+                        <input type="text" id="dateOfBirthInput" class="form-control" placeholder="Select date" data-provider="flatpickr" data-date-format="d M, Y">
+                    </div>
+                    <div class="col-4">
+                        <label for="ageInput" class="form-label fw-medium fw-medium">Age <span class="text-danger">*</span></label>
+                        <input type="number" id="ageInput" minlength="1" maxlength="100" class="form-control" placeholder="0" required>
+                    </div>
+                    <div class="col-4">
+                        <label for="genderSelect" class="form-label fw-medium fw-medium">Gender <span class="text-danger">*</span></label>
+                        <div id="genderSelect"></div>
+                    </div>
+                    <div class="col-4">
+                        <label for="weightInput" class="form-label fw-medium fw-medium">Weight (KG) <span class="text-danger">*</span></label>
+                        <input type="text" id="weightInput" class="form-control" placeholder="0 kg" required>
+                    </div>
+                    <div class="col-4">
+                        <label for="heightInput" class="form-label fw-medium fw-medium">Height <span class="text-danger">*</span></label>
+                        <input type="text" id="heightInput" class="form-control" placeholder="0' 0'" required>
+                    </div>
+                    <div class="col-4">
+                        <label for="bloodPressureInput" class="form-label fw-medium fw-medium">Blood Pressure <span class="text-danger">*</span></label>
+                        <input type="text" id="bloodPressureInput" class="form-control" placeholder="Blood pressure" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="phoneNumber" class="form-label fw-medium fw-medium">Phone Number <span class="text-danger">*</span></label>
+                        <div class="flex form-control">
+                            <select id="countries" class="bg-transparent outline-none cursor-pointer">
+                                
+                            </select>
+                            <input x-ref="phoneInput" type="text" class="w-full p-3 bg-transparent border-gray-200 outline-none ltr:ml-3 rtl:mr-3 ltr:border-l-2 dark:border-dark-800 rtl:border-r-2" :placeholder="selectedFormat" required>
+                        </div>
+                    </div>                
+                    <div class="col-6">
+                        <label for="emergencyNumber" class="form-label fw-medium fw-medium">Emergency Number <span class="text-danger">*</span></label>
+                        <div x-data="intCodesComponent" x-init="initialize()" class="flex form-control">
+                            <select id="countries" class="bg-transparent outline-none cursor-pointer dark:bg-dark-900 ltr:pl-3 rtl:pr-3" x-model="selectedDialCode" @change="onSelectChangeHandler">
+                                <template x-for="country in intCodes" :key="country.code">
+                                    <option :value="country.dial_code" x-text="country.name"></option>
+                                </template>
+                            </select>
+                            <input x-ref="phoneInput" type="text" class="w-full p-3 bg-transparent border-gray-200 outline-none ltr:ml-3 rtl:mr-3 dark:border-dark-800 ltr:border-l-2 rtl:border-r-2" :placeholder="selectedFormat">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <label for="emailInput" class="form-label fw-medium fw-medium">Email <span class="text-danger">*</span></label>
+                        <input type="email" id="emailInput" class="form-control" placeholder="example@pixeleyez.com" required>
+                    </div>
+                    <div class="col-4">
+                        <label for="occupationInput" class="form-label fw-medium fw-medium">Occupation <span class="text-danger">*</span></label>
+                        <input type="text" id="occupationInput" class="form-control" placeholder="Enter your occupation" pattern="[A-Za-z ]+" title="Only letters and spaces allowed" required>
+                    </div>
+                    <div class="col-4">
+                        <label for="cityInput" class="form-label fw-medium fw-medium">City <span class="text-danger">*</span></label>
+                        <input type="text" id="cityInput" class="form-control" placeholder="Enter city name" pattern="[A-Za-z ]+" title="Only letters and spaces allowed" required>
+                    </div>
+                    <div class="col-4">
+                        <label for="stateInput" class="form-label fw-medium fw-medium">State Name <span class="text-danger">*</span></label>
+                        <input type="text" id="stateInput" class="form-control" placeholder="Enter state name" pattern="[A-Za-z ]+" title="Only letters and spaces allowed" required>
+                    </div>
+                    <div class="col-4">
+                        <label for="countryInput" class="form-label fw-medium fw-medium">Country Name <span class="text-danger">*</span></label>
+                        <input type="text" id="countryInput" class="form-control" placeholder="Enter country name" pattern="[A-Za-z ]+" title="Only letters and spaces allowed" required>
+                    </div>
+                    <div class="col-4">
+                        <label for="zipCodeInput" class="form-label fw-medium fw-medium">Zip Code <span class="text-danger">*</span></label>
+                        <input type="number" id="zipCodeInput" class="form-control" placeholder="000 000" required>
+                    </div>
+                    <div class="col-3">
+                        <label for="familyDoctorName" class="form-label fw-medium fw-medium">Family Doctor</label>
+                        <input type="text" id="familyDoctorName" class="form-control" placeholder="Enter doctor name" pattern="[A-Za-z ]+" title="Only letters and spaces allowed" required>
+                    </div>
+                    <div class="col-3">
+                        <label for="referringDoctorName" class="form-label fw-medium fw-medium">Referring Doctor</label>
+                        <input type="text" id="referringDoctorName" class="form-control" placeholder="Referring doctor" pattern="[A-Za-z ]+" title="Only letters and spaces allowed" required>
+                    </div>
+                    <div class="col-3">
+                        <label for="assignedDoctorName" class="form-label fw-medium fw-medium">Assigned Doctor</label>
+                        <input type="text" id="assignedDoctorName" class="form-control" placeholder="Assigned doctor" pattern="[A-Za-z ]+" title="Only letters and spaces allowed" required>
+                    </div>
+                    <div class="col-3">
+                        <label for="pharmacyDoctorName" class="form-label fw-medium fw-medium">Pharmacy Name</label>
+                        <input type="text" id="pharmacyDoctorName" class="form-control" placeholder="Pharmacy Name" pattern="[A-Za-z ]+" title="Only letters and spaces allowed" required>
+                    </div>
+                    <div class="col-span-12">
+                        <div class="d-flex justify-content-end gap-2">
+                            <button class="btn btn-primary">Submit Now</button>
+                            <button type="reset" class="btn btn-light text-dark">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h6 class="card-title">Insurance Information</h6>
+        </div>
+        <div class="card-body">
+            <form action="#!" x-data="submit">
+                <div class="row g-5">
+                    <div class="col-4">
+                        <label for="insuranceProviderInput" class="form-label fw-medium">Insurance Provider <span class="text-danger">*</span></label>
+                        <input type="text" id="insuranceProviderInput" class="form-control" placeholder="Insurance provider" pattern="[A-Za-z ]+" title="Only letters and spaces allowed" required>
+                    </div>
+                    <div class="col-4">
+                        <label for="policyNumberInput" class="form-label fw-medium">Policy Number <span class="text-danger">*</span></label>
+                        <input type="text" id="policyNumberInput" class="form-control" placeholder="000 0000 0000 0000 000" pattern="^[A-Za-z0-9]+$" title="Policy number can only contain letters and numbers" required>
+                    </div>
+                    <div class="col-4">
+                        <label for="startDateInput" class="form-label fw-medium">Start Date <span class="text-danger">*</span></label>
+                        <input type="text" id="startDateInput" class="form-control" placeholder="Select Date">
+                    </div>
+                    <div class="col-4">
+                        <label for="effectiveDateInput" class="form-label fw-medium">Effective Date <span class="text-danger">*</span></label>
+                        <input type="text" id="effectiveDateInput" class="form-control" placeholder="Select Date">
+                    </div>
+                    <div class="col-span-12">
+                        <div class="d-flex justify-content-end gap-2">
+                            <button class="btn btn-primary">Save Now</button>
+                            <button type="reset" class="btn btn-light text-dark">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/imask@6.0.7/dist/imask.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/hospital/patients/create.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

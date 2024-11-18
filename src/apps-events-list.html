@@ -2,7 +2,7 @@
 
 <head>
 
-    {{> partials/title-meta title="Contact" }}
+    {{> partials/title-meta title="List View" }}
 
     <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
     <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
@@ -22,35 +22,36 @@
 
 <div class="container-fluid">
 
-    {{> partials/page-heading title="Contact" sub-title="CRM" }}
+    {{> partials/page-heading title="List View" sub-title="Events" }}
 
-        <div class="d-flex justify-content-between align-items-center">
-            <h6 class="flex-grow-1">Event Listings (<span>33</span>)</h6>
-            <div class="d-flex gap-2">
-                <div class="dropdown">
-                    <button class="btn btn-light text-dark btn-icon" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
-                        <i data-lucide="sliders-horizontal" class="size-4"></i>
-                    </button>
-                    <ul class="dropdown-menu shadow-sm dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item fw-medium" href="#!">No Sorting</a></li>
-                        <li><a class="dropdown-item fw-medium" href="#!">Alphabetical (A -> Z)</a></li>
-                        <li><a class="dropdown-item fw-medium" href="#!">Reverse Alphabetical (Z -> A)</a></li>
-                        <li><a class="dropdown-item fw-medium" href="#!">Status</a></li>
-
-                    </ul>
-                </div>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#leadCreateModal">
-                    <i data-lucide="plus" class="size-4 me-1"></i>Add New Event
+    <div class="d-flex justify-content-between align-items-center">
+        <h6 class="flex-grow-1">Event Listings (<span>33</span>)</h6>
+        <div class="d-flex gap-2">
+            <div class="dropdown">
+                <button class="btn btn-light text-dark btn-icon" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                    <i data-lucide="sliders-horizontal" class="size-4"></i>
                 </button>
-                <div class="modal fade" id="leadCreateModal" tabindex="-1" aria-labelledby="leadCreateModalLabel" aria-hidden="true">
-                    <div class="modal-dialog  modal-dialog-centered">
-                        <div class="p-2 modal-content">
-                            <div class="modal-header">
-                                <h6 class="mb-0">Add New Event</h6>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="p-0 modal-body">
-                                <div class="p-4">
+                <ul class="dropdown-menu shadow-sm dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item fw-medium" href="#!">No Sorting</a></li>
+                    <li><a class="dropdown-item fw-medium" href="#!">Alphabetical (A -> Z)</a></li>
+                    <li><a class="dropdown-item fw-medium" href="#!">Reverse Alphabetical (Z -> A)</a></li>
+                    <li><a class="dropdown-item fw-medium" href="#!">Status</a></li>
+
+                </ul>
+            </div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#leadCreateModal">
+                <i data-lucide="plus" class="size-4 me-1"></i>Add New Event
+            </button>
+            <div class="modal fade" id="leadCreateModal" tabindex="-1" aria-labelledby="leadCreateModalLabel" aria-hidden="true">
+                <div class="modal-dialog  modal-dialog-centered">
+                    <div class="p-2 modal-content">
+                        <div class="modal-header">
+                            <h6 class="mb-0">Add New Event</h6>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="p-0 modal-body">
+                            <div class="p-4">
+                                <form action="#!">
                                     <div x-data="{
                                         eventName: '', location: '', email: '', totalPeople: '', status: '', price: '', image: null, eventDate: '', eventDuration: '',
                                         errors: {},
@@ -75,201 +76,196 @@
                                         <!-- Image Upload -->
                                         <div class="col-12 mb-4">
                                             <label class="form-label fw-medium">Event Logo</label>
-                                            <label class="d-flex justify-content-center align-items-center flex-column bg-light rounded border" style="height: 128px;">
-                                                <img x-show="image" :src="image" class="rounded-circle w-100 h-100 object-cover">
+                                            <label class="d-flex justify-content-center align-items-center flex-column bg-light rounded border h-32">
+                                                <img x-show="image" :src="image" class="size-24 object-cover">
                                                 <i x-show="!image" data-lucide="upload" class="text-dark"></i>
                                                 <input type="file" class="d-none" @change="image = URL.createObjectURL($event.target.files[0]); clearError('image')" />
-                                                <p class="mt-3">Upload Your Event Logo</p>
+                                                <p x-show="!image" class="mt-3">Upload Your Event Logo</p>
                                             </label>
+
                                             <p x-show="errors.image" class="text-sm text-danger" x-text="errors.image"></p>
                                         </div>
-                                    
+
                                         <!-- Event Name -->
                                         <div class="col-12 mb-4">
                                             <label class="form-label fw-medium">Event Name</label>
                                             <input type="text" x-model="eventName" class="form-control" @input="clearError('eventName')" />
                                             <p x-show="errors.eventName" class="text-sm text-danger" x-text="errors.eventName"></p>
                                         </div>
-                                    
+
                                         <!-- Event Date -->
                                         <div class="col-6 mb-4">
                                             <label class="form-label fw-medium">Event Date</label>
                                             <input type="text" x-model="eventDate" class="form-control flatpickr-input" placeholder="" data-provider="flatpickr" data-date-format="d M, Y" readonly @input="clearError('eventDate')" />
                                             <p x-show="errors.eventDate" class="text-sm text-danger" x-text="errors.eventDate"></p>
                                         </div>
-                                    
+
                                         <!-- Event Duration -->
                                         <div class="col-6 mb-4">
                                             <label class="form-label fw-medium">Event Duration</label>
                                             <input type="text" x-model="eventDuration" class="form-control flatpickr-input" placeholder="" data-provider="timepickr" data-min-time="10:30" data-max-time="12:30" readonly @input="clearError('eventDuration')" />
                                             <p x-show="errors.eventDuration" class="text-sm text-danger" x-text="errors.eventDuration"></p>
                                         </div>
-                                    
+
                                         <!-- Total People -->
                                         <div class="col-6 mb-4">
                                             <label class="form-label fw-medium">Total People</label>
                                             <input type="number" x-model="totalPeople" placeholder="0" class="form-control" @input="clearError('totalPeople')" />
                                             <p x-show="errors.totalPeople" class="text-sm text-danger" x-text="errors.totalPeople"></p>
                                         </div>
-                                    
+
                                         <!-- Price -->
                                         <div class="col-6 mb-4">
                                             <label class="form-label fw-medium">Price</label>
                                             <input type="number" x-model="price" class="form-control" placeholder="$00.00" @input="clearError('price')" />
                                             <p x-show="errors.price" class="text-sm text-danger" x-text="errors.price"></p>
                                         </div>
-                                    
+
                                         <!-- Location -->
                                         <div class="col-12 mb-4">
                                             <label class="form-label fw-medium">Location</label>
                                             <input type="text" x-model="location" class="form-control" @input="clearError('location')" />
                                             <p x-show="errors.location" class="text-sm text-danger" x-text="errors.location"></p>
                                         </div>
-                                    
+
                                         <!-- Event Type -->
                                         <div class="col-6 mb-4">
                                             <label class="form-label fw-medium">Event Type</label>
-                                            <div id="StatusSelect"  @change="clearError('type')"></div>
+                                            <div id="eventTypeSelect" @change="clearError('type')"></div>
                                             <p x-show="errors.type" class="text-sm text-danger" x-text="errors.type"></p>
                                         </div>
                                         <!-- Event Status -->
                                         <div class="col-6 mb-4">
                                             <label class="form-label fw-medium">Event Status</label>
-                                            <div id="eventTypeSelect"  @change="clearError('status')"></div>
+                                            <div id="StatusSelect" @change="clearError('status')"></div>
                                             <p x-show="errors.status" class="text-sm text-danger" x-text="errors.status"></p>
                                         </div>
-                                    
+
                                         <!-- Action Buttons -->
                                         <div class="d-flex justify-content-end gap-2 mt-4">
                                             <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal">Cancel</button>
                                             <button type="button" class="btn btn-primary" @click="if (validate()) { alert('Form is valid and ready for submission!') }">Add Event</button>
                                         </div>
-                                    </div>   
-                                </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div x-data="{
+    </div>
+    <div x-data="{
             events: [
-                { image:'assets/images/brands/img-01.png', eventName: 'Wearable Tech Expo', eventDate: '21 Jan, 2024', peopleSize: 500, location: 'San Jose, CA', eventType: 'Offline', price: '$599', status: 'Published' },
-                { image:'assets/images/brands/img-02.png', eventName: 'Virtual Reality Expo', eventDate: '22 Oct 2024', peopleSize: 300, location: 'Orlando, FL', eventType: 'Online', price: '$399', status: 'Coming Soon' },
-                { image:'assets/images/brands/img-03.png', eventName: 'Tech Innovations Summit', eventDate: '15 Jun 2024', peopleSize: 500, location: 'New York, NY', eventType: 'Offline', price: '$899', status: 'Published' },
-                { image:'assets/images/brands/img-04.png', eventName: 'Startup Pitch Event', eventDate: '10 Jul 2024', peopleSize: 200, location: 'Raleigh, NC', eventType: 'Offline', price: '$299', status: 'Expired' },
-                { image:'assets/images/brands/img-05.png', eventName: 'Space Technology Forum', eventDate: '15 Dec 2024', peopleSize: 400, location: 'Houston, TX', eventType: 'Offline', price: '$799', status: 'Published' },
-                { image:'assets/images/brands/img-06.png', eventName: 'Smart Home Conference', eventDate: '15 Oct 2024', peopleSize: 500, location: 'Columbus, OH', eventType: 'Online', price: '$399', status: 'Coming Soon' },
-                { image:'assets/images/brands/img-07.png', eventName: 'Smart Cities Conference', eventDate: '10 Sept 2024', peopleSize: 600, location: 'Las Vegas, NV', eventType: 'Offline', price: '$999', status: 'Published' },
-                { image:'assets/images/brands/img-08.png', eventName: 'SaaS Growth Conference', eventDate: '20 Nov 2024', peopleSize: 600, location: 'Portland, OR', eventType: 'Offline', price: '$799', status: 'Published' },
-                { image:'assets/images/brands/img-09.png', eventName: 'Robotics Conference', eventDate: '03 Nov 2024', peopleSize: 600, location: 'Pittsburgh, PA', eventType: 'Online', price: '$499', status: 'Coming Soon' }
+                { image:'assets/images/brands/img-01.png', eventName: 'Tech Innovations Summit', eventDate: '21 Jan, 2024', peopleSize: 500, location: 'San Jose, CA', eventType: 'Offline', price: '$599', status: 'Published' },
+                { image:'assets/images/brands/img-02.png', eventName: 'Marketing Strategies 2024', eventDate: '22 Oct 2024', peopleSize: 300, location: 'Orlando, FL', eventType: 'Online', price: '$399', status: 'Published' },
+                { image:'assets/images/brands/img-03.png', eventName: 'AI & Machine Learning Expo', eventDate: '15 Jun 2024', peopleSize: 500, location: 'New York, NY', eventType: 'Offline', price: '$899', status: 'Coming Soon' },
+                { image:'assets/images/brands/img-04.png', eventName: 'Blockchain World Conference', eventDate: '10 Jul 2024', peopleSize: 200, location: 'Raleigh, NC', eventType: 'Offline', price: '$299', status: 'Published' },
+                { image:'assets/images/brands/img-05.png', eventName: 'Cybersecurity Summit', eventDate: '15 Dec 2024', peopleSize: 400, location: 'Houston, TX', eventType: 'Offline', price: '$799', status: 'Published' },
+                { image:'assets/images/brands/img-06.png', eventName: 'Healthcare Innovations Forum', eventDate: '15 Oct 2024', peopleSize: 500, location: 'Columbus, OH', eventType: 'Online', price: '$399', status: 'Coming Soon' },
+                { image:'assets/images/brands/img-07.png', eventName: 'E-commerce Trends 2024', eventDate: '10 Sept 2024', peopleSize: 600, location: 'Las Vegas, NV', eventType: 'Offline', price: '$999', status: 'Published' },
+                { image:'assets/images/brands/img-08.png', eventName: 'Fintech Conference', eventDate: '20 Nov 2024', peopleSize: 600, location: 'Portland, OR', eventType: 'Offline', price: '$799', status: 'Expired' },
+                { image:'assets/images/brands/img-09.png', eventName: 'Digital Transformation Summit', eventDate: '03 Nov 2024', peopleSize: 600, location: 'Pittsburgh, PA', eventType: 'Online', price: '$499', status: 'Published' },
+                { image:'assets/images/brands/img-10.png', eventName: 'Green Technology Expo', eventDate: '15 Aug 2024', peopleSize: 500, location: 'Denver, CO', eventType: 'Online', price: '$599', status: 'Coming Soon' }
             ],
             sortBy: 'eventName',
-            sortDirection: 'asc',
+            sortDirection: 'desc',
             sort(field) {
-                if (this.sortBy === field) {
-                    this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
-                } else {
-                    this.sortBy = field;
-                    this.sortDirection = 'asc';
-                }
+                this.sortBy = this.sortBy === field ? this.sortBy : field;
+                this.sortDirection = this.sortBy === field ? (this.sortDirection === 'asc' ? 'desc' : 'asc') : 'desc';
             },
             sortedEvents() {
                 return this.events.slice().sort((a, b) => {
-                    const aValue = a[this.sortBy];
-                    const bValue = b[this.sortBy];
-        
-                    if (aValue < bValue) return this.sortDirection === 'asc' ? -1 : 1;
-                    if (aValue > bValue) return this.sortDirection === 'asc' ? 1 : -1;
-                    return 0;
+                    const aValue = a[this.sortBy], bValue = b[this.sortBy];
+                    return (aValue > bValue ? 1 : (aValue < bValue ? -1 : 0)) * (this.sortDirection === 'asc' ? 1 : -1);
                 });
             }
         }" class="mt-5">
-            <table class="table">
-                <thead>
-                    <tr class="table-light border-bottom">
-                        <!-- Column headers with sorting -->
-                        <th x-on:click="sort('eventName')" class="fw-medium text-dark cursor-pointer">Event Name <span x-show="sortBy === 'eventName'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span> </th>
-                        <th x-on:click="sort('eventDate')" class="fw-medium text-dark cursor-pointer">Event Date <span x-show="sortBy === 'eventDate'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
-                        <th x-on:click="sort('peopleSize')" class="fw-medium text-dark cursor-pointer">People Size <span x-show="sortBy === 'peopleSize'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
-                        <th x-on:click="sort('location')" class="fw-medium text-dark cursor-pointer">Location <span x-show="sortBy === 'location'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
-                        <th x-on:click="sort('eventType')" class="fw-medium text-dark cursor-pointer">Event Type <span x-show="sortBy === 'eventType'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
-                        <th x-on:click="sort('price')" class="fw-medium text-dark cursor-pointer">Price <span x-show="sortBy === 'price'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
-                        <th x-on:click="sort('status')" class="fw-medium text-dark cursor-pointer">Status <span x-show="sortBy === 'status'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
-                        <th class="!font-medium">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <template x-for="event in sortedEvents()" :key="event.eventName">
-                        <tr>
-                            <td>
-                                <div class="d-flex align-items-center gap-2">
-                                    <div class="size-9 border d-flex justify-content-center align-items-center">
-                                        <img :src="event.image" alt="" class="size-7">
-                                    </div>
-                                    <h6 class="mb-0"><a href="#!" class="text-black" x-text="event.eventName"></a></h6>
+        <table class="table">
+            <thead>
+                <tr class="table-light border-bottom">
+                    <th x-on:click="sort('eventName')" class="fw-medium text-dark cursor-pointer">Event Name <span x-show="sortBy === 'eventName'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                    <th x-on:click="sort('eventDate')" class="fw-medium text-dark cursor-pointer">Event Date <span x-show="sortBy === 'eventDate'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                    <th x-on:click="sort('peopleSize')" class="fw-medium text-dark cursor-pointer">People Size <span x-show="sortBy === 'peopleSize'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                    <th x-on:click="sort('location')" class="fw-medium text-dark cursor-pointer">Location <span x-show="sortBy === 'location'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                    <th x-on:click="sort('eventType')" class="fw-medium text-dark cursor-pointer">Event Type <span x-show="sortBy === 'eventType'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                    <th x-on:click="sort('price')" class="fw-medium text-dark cursor-pointer">Price <span x-show="sortBy === 'price'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                    <th x-on:click="sort('status')" class="fw-medium text-dark cursor-pointer">Status <span x-show="sortBy === 'status'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                    <th class="fw-medium text-dark">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template x-for="event in sortedEvents()" :key="event.eventName">
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="size-9 border d-flex justify-content-center align-items-center">
+                                    <img :src="event.image" alt="" class="size-7">
                                 </div>
-                            </td>
-                            <td x-text="event.eventDate"></td>
-                            <td x-text="event.peopleSize"></td>
-                            <td x-text="event.location"></td>
-                            <td x-text="event.eventType"></td>
-                            <td x-text="event.price"></td>
-                            <td>
-                                <span :class="{
+                                <h6 class="mb-0"><a href="#!" class="text-black" x-text="event.eventName"></a></h6>
+                            </div>
+                        </td>
+                        <td x-text="event.eventDate"></td>
+                        <td x-text="event.peopleSize"></td>
+                        <td x-text="event.location"></td>
+                        <td x-text="event.eventType"></td>
+                        <td x-text="event.price"></td>
+                        <td>
+                            <span :class="{
                                     'badge bg-success-subtle text-success border border-success-subtle': event.status === 'Published',
                                     'badge bg-warning-subtle text-warning border border-warning-subtle': event.status === 'Coming Soon',
                                     'badge bg-danger-subtle text-danger border border-danger-subtle': event.status === 'Expired',
                                 }" x-text="event.status"></span>
-                            </td>
-                            <td>
-                                <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="ri-more-2-fill"></i></i>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="#!"><i class="me-3 ri-eye-line"></i><span>Overview</span></a></li>
-                                    <li><a class="dropdown-item" href="#!"><i class="me-3 ri-pencil-line"></i><span>Edit</span></a></li>
-                                    <li><a class="dropdown-item" href="#!"><i class="me-3 ri-delete-bin-line"></i><span>Delete</span></a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </template>
-                </tbody>
-            </table>
+                        </td>
+                        <td>
+                            <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="ri-more-2-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#!"><i class="me-3 ri-eye-line"></i><span>Overview</span></a></li>
+                                <li><a class="dropdown-item" href="#!"><i class="me-3 ri-pencil-line"></i><span>Edit</span></a></li>
+                                <li><a class="dropdown-item" href="#!"><i class="me-3 ri-delete-bin-line"></i><span>Delete</span></a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-6">
+            <p>Showing <b class="me-1">1-10</b> of <b class="ms-1">33</b> Results</p>
         </div>
-        <div class="row mb-5">
-            <div class="col-6">
-                <p>Showing <b>1-10</b> of <b>33</b> Results</p>
-            </div>
-            <div class="col-6 justify-content-end d-flex">
-                <nav aria-label="...">
-                    <ul class="pagination pagination-active-primary d-flex gap-2 mb-0">
-                        <li class="page-item pagination-primary ">
-                            <a class="page-link rounded-2 d-flex align-items-center gap-1">
-                                <i data-lucide="chevron-left" class="size-5"></i>
-                                <span>Prev</span>
-                            </a>
-                        </li>
-                        <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
-                        <li class="page-item" aria-current="page">
-                            <a class="page-link rounded-2 page-number" href="#">2</a>
-                        </li>
-                        <li class="page-item" aria-current="page">
-                            <a class="page-link rounded-2 page-number" href="#">3</a>
-                        </li>
-                        <li class="page-item" aria-current="page">
-                            <a class="page-link rounded-2 page-number" href="#">4</a>
-                        </li>
-                        <li class="page-item pagination-primary ">
-                            <a class="page-link rounded-2 d-flex align-items-center gap-1">
-                                <span>Next</span>
-                                <i data-lucide="chevron-right" class="size-5"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+        <div class="col-6 justify-content-end d-flex">
+            <nav aria-label="...">
+                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0">
+                    <li class="page-item pagination-primary ">
+                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                            <i data-lucide="chevron-left" class="size-5"></i>
+                            <span>Prev</span>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                    </li>
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link rounded-2 page-number" href="#">3</a>
+                    </li>
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link rounded-2 page-number" href="#">4</a>
+                    </li>
+                    <li class="page-item pagination-primary ">
+                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                            <span>Next</span>
+                            <i data-lucide="chevron-right" class="size-5"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
+    </div>
 
 
     {{> partials/footer}}
@@ -281,7 +277,7 @@
 
 {{> partials/vendor-scripts}}
 
-<script src="assets/js/apps/list.init.js"></script>
+<script src="assets/js/apps/events/list.init.js"></script>
 
 <script type="module" src="assets/js/main.js"></script>
 

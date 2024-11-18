@@ -1,0 +1,677 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Grid View" }}
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Grid View" sub-title="Events" }}
+
+    <div class="d-flex justify-content-between align-items-center">
+        <h6 class="flex-grow-1">Event Listings (<span>33</span>)</h6>
+        <div class="d-flex gap-2">
+            <div class="dropdown">
+                <button class="btn btn-light text-dark btn-icon" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                    <i data-lucide="sliders-horizontal" class="size-4"></i>
+                </button>
+                <ul class="dropdown-menu shadow-sm dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item fw-medium" href="#!">No Sorting</a></li>
+                    <li><a class="dropdown-item fw-medium" href="#!">Alphabetical (A -> Z)</a></li>
+                    <li><a class="dropdown-item fw-medium" href="#!">Reverse Alphabetical (Z -> A)</a></li>
+                    <li><a class="dropdown-item fw-medium" href="#!">Status</a></li>
+
+                </ul>
+            </div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#leadCreateModal">
+                <i data-lucide="plus" class="size-4 me-1"></i>Add New Event
+            </button>
+            <div class="modal fade" id="leadCreateModal" tabindex="-1" aria-labelledby="leadCreateModalLabel" aria-hidden="true">
+                <div class="modal-dialog  modal-dialog-centered">
+                    <div class="p-2 modal-content">
+                        <div class="modal-header">
+                            <h6 class="mb-0">Add New Event</h6>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="p-0 modal-body">
+                            <div class="p-4">
+                                <form action="#!">
+                                    <div x-data="{
+                                        eventName: '', location: '', email: '', totalPeople: '', status: '', price: '', image: null, eventDate: '', eventDuration: '',
+                                        errors: {},
+                                    
+                                        validate() {
+                                            this.errors = {};
+                                            if (!this.eventName) this.errors.eventName = 'Event Name is required.';
+                                            if (!this.location) this.errors.location = 'Location is required.';
+                                            if (!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(this.email)) this.errors.email = 'Valid Email is required.';
+                                            if (!/^\+\(\d{3}\) \d{4} \d{4}$/.test(this.totalPeople)) this.errors.totalPeople = 'People size is required.';
+                                            if (!this.type) this.errors.type = 'Event Type is required.';
+                                            if (!this.status) this.errors.status = 'Event Status is required.';
+                                            if (!this.price) this.errors.price = 'Price is required.';
+                                            if (!this.image) this.errors.image = 'Image is required.';
+                                            if (!this.eventDate) this.errors.eventDate = 'Event Date is required.';
+                                            if (!this.eventDuration) this.errors.eventDuration = 'Event Duration is required.';
+                                            return Object.keys(this.errors).length === 0;
+                                        },
+                                    
+                                        clearError(field) { this.errors[field] = '' }
+                                    }" class="row">
+                                        <!-- Image Upload -->
+                                        <div class="col-12 mb-4">
+                                            <label class="form-label fw-medium">Event Logo</label>
+                                            <label class="d-flex justify-content-center align-items-center flex-column bg-light rounded border h-32">
+                                                <img x-show="image" :src="image" class="size-24 object-cover">
+                                                <i x-show="!image" data-lucide="upload" class="text-dark"></i>
+                                                <input type="file" class="d-none" @change="image = URL.createObjectURL($event.target.files[0]); clearError('image')" />
+                                                <p x-show="!image" class="mt-3">Upload Your Event Logo</p>
+                                            </label>
+
+                                            <p x-show="errors.image" class="text-sm text-danger" x-text="errors.image"></p>
+                                        </div>
+
+                                        <!-- Event Name -->
+                                        <div class="col-12 mb-4">
+                                            <label class="form-label fw-medium">Event Name</label>
+                                            <input type="text" x-model="eventName" class="form-control" @input="clearError('eventName')" />
+                                            <p x-show="errors.eventName" class="text-sm text-danger" x-text="errors.eventName"></p>
+                                        </div>
+
+                                        <!-- Event Date -->
+                                        <div class="col-6 mb-4">
+                                            <label class="form-label fw-medium">Event Date</label>
+                                            <input type="text" x-model="eventDate" class="form-control flatpickr-input" placeholder="" data-provider="flatpickr" data-date-format="d M, Y" readonly @input="clearError('eventDate')" />
+                                            <p x-show="errors.eventDate" class="text-sm text-danger" x-text="errors.eventDate"></p>
+                                        </div>
+
+                                        <!-- Event Duration -->
+                                        <div class="col-6 mb-4">
+                                            <label class="form-label fw-medium">Event Duration</label>
+                                            <input type="text" x-model="eventDuration" class="form-control flatpickr-input" placeholder="" data-provider="timepickr" data-min-time="10:30" data-max-time="12:30" readonly @input="clearError('eventDuration')" />
+                                            <p x-show="errors.eventDuration" class="text-sm text-danger" x-text="errors.eventDuration"></p>
+                                        </div>
+
+                                        <!-- Total People -->
+                                        <div class="col-6 mb-4">
+                                            <label class="form-label fw-medium">Total People</label>
+                                            <input type="number" x-model="totalPeople" placeholder="0" class="form-control" @input="clearError('totalPeople')" />
+                                            <p x-show="errors.totalPeople" class="text-sm text-danger" x-text="errors.totalPeople"></p>
+                                        </div>
+
+                                        <!-- Price -->
+                                        <div class="col-6 mb-4">
+                                            <label class="form-label fw-medium">Price</label>
+                                            <input type="number" x-model="price" class="form-control" placeholder="$00.00" @input="clearError('price')" />
+                                            <p x-show="errors.price" class="text-sm text-danger" x-text="errors.price"></p>
+                                        </div>
+
+                                        <!-- Location -->
+                                        <div class="col-12 mb-4">
+                                            <label class="form-label fw-medium">Location</label>
+                                            <input type="text" x-model="location" class="form-control" @input="clearError('location')" />
+                                            <p x-show="errors.location" class="text-sm text-danger" x-text="errors.location"></p>
+                                        </div>
+
+                                        <!-- Event Type -->
+                                        <div class="col-6 mb-4">
+                                            <label class="form-label fw-medium">Event Type</label>
+                                            <div id="eventTypeSelect" @change="clearError('type')"></div>
+                                            <p x-show="errors.type" class="text-sm text-danger" x-text="errors.type"></p>
+                                        </div>
+                                        <!-- Event Status -->
+                                        <div class="col-6 mb-4">
+                                            <label class="form-label fw-medium">Event Status</label>
+                                            <div id="StatusSelect" @change="clearError('status')"></div>
+                                            <p x-show="errors.status" class="text-sm text-danger" x-text="errors.status"></p>
+                                        </div>
+
+                                        <!-- Action Buttons -->
+                                        <div class="d-flex justify-content-end gap-2 mt-4">
+                                            <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-primary" @click="if (validate()) { alert('Form is valid and ready for submission!') }">Add Event</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-5.png" alt="" class="size-12 rounded-circle flex-shrink-0">
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="text-black">Declan Grieve</a></h6>
+                            <p class="fs-sm">Sun, 19 May 2024, 10:00 am</p>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                <i class="ri-more-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu shadow-sm">
+                                <li>
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-eye-line"></i>
+                                        <span>Overview</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-pencil-line"></i>
+                                        <span>Edit</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-delete-bin-line"></i>
+                                        <span>Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <img src="assets/images/event/img-01.jpg" alt="" class="w-100 h-48 rounded object-fit-cover">
+                    </div>
+                    <div class="d-flex mt-5 gap-3">
+                        <div>
+                            <div class="size-16 mx-auto mb-3 text-danger rounded-2 bg-danger-subtle border border-danger-subtle d-flex flex-column justify-content-center align-items-center">
+                                <p class="mb-0.5 text-danger">Sun</p>
+                                <h3 class="mb-0 fs-2xl">19</h3>
+                            </div>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookEventModal">
+                                Book
+                            </button>
+                        </div>
+                        <div>
+                            <h6><a href="#!" class="link link-primary text-black mb-1">Tech Innovations Summit</a></h6>
+                            <p class="mb-2"><span>19 May 2024</span><span class="ps-2 ms-2 border-start">San Francisco, CA</span></p>
+                            <p class="mb-1">Contributors</p>
+                            <div class="d-flex align-items-center flex-grow-1">
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-5.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-20.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-13.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-20.png" alt="" class="size-12 rounded-circle flex-shrink-0">
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="text-black">Callum Burston</a></h6>
+                            <p class="fs-sm">Mon, 24 Jun 2024, 9:00 am</p>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                <i class="ri-more-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu shadow-sm">
+                                <li>
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-eye-line"></i>
+                                        <span>Overview</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-pencil-line"></i>
+                                        <span>Edit</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-delete-bin-line"></i>
+                                        <span>Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <img src="assets/images/event/img-02.jpg" alt="" class="w-100 h-48 rounded object-fit-cover">
+                    </div>
+                    <div class="d-flex mt-5 gap-3">
+                        <div>
+                            <div class="size-16 mx-auto mb-3 text-danger rounded-2 bg-danger-subtle border border-danger-subtle d-flex flex-column justify-content-center align-items-center">
+                                <p class="mb-0.5 text-danger">Mon</p>
+                                <h3 class="mb-0 fs-2xl">24</h3>
+                            </div>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookEventModal">
+                                Book
+                            </button>
+                        </div>
+                        <div>
+                            <h6><a href="#!" class="link link-primary text-black mb-1">Health and Wellness Expo</a></h6>
+                            <p class="mb-2"><span>24 Jun 2024</span><span class="ps-2 ms-2 border-start">New York, NY</span></p>
+                            <p class="mb-1">Contributors</p>
+                            <div class="d-flex align-items-center flex-grow-1">
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-20.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-5.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-10.png" alt="" class="size-12 rounded-circle flex-shrink-0">
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="text-black">Sophia Adams</a></h6>
+                            <p class="fs-sm">Mon, 15 Jul 2024, 1:30 pm</p>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                <i class="ri-more-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu shadow-sm">
+                                <li>
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-eye-line"></i>
+                                        <span>Overview</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-pencil-line"></i>
+                                        <span>Edit</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-delete-bin-line"></i>
+                                        <span>Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <img src="assets/images/event/img-03.jpg" alt="" class="w-100 h-48 rounded object-fit-cover">
+                    </div>
+                    <div class="d-flex mt-5 gap-3">
+                        <div>
+                            <div class="size-16 mx-auto mb-3 text-danger rounded-2 bg-danger-subtle border border-danger-subtle d-flex flex-column justify-content-center align-items-center">
+                                <p class="mb-0.5 text-danger">Mon</p>
+                                <h3 class="mb-0 fs-2xl">15</h3>
+                            </div>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookEventModal">
+                                Book
+                            </button>
+                        </div>
+                        <div>
+                            <h6><a href="#!" class="link link-primary text-black mb-1">Marketing Conference</a></h6>
+                            <p class="mb-2"><span>15 Jul 2024</span><span class="ps-2 ms-2 border-start">Los Angeles, CA</span></p>
+                            <p class="mb-1">Contributors</p>
+                            <div class="d-flex align-items-center flex-grow-1">
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-10.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-15.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-15.png" alt="" class="size-12 rounded-circle flex-shrink-0">
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="text-black">Ethan Thompson</a></h6>
+                            <p class="fs-sm">Sat, 03 Aug 2024, 11:00 am</p>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                <i class="ri-more-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu shadow-sm">
+                                <li>
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-eye-line"></i>
+                                        <span>Overview</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-pencil-line"></i>
+                                        <span>Edit</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-delete-bin-line"></i>
+                                        <span>Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <img src="assets/images/event/img-04.jpg" alt="" class="w-100 h-48 rounded object-fit-cover">
+                    </div>
+                    <div class="d-flex mt-5 gap-3">
+                        <div>
+                            <div class="size-16 mx-auto mb-3 text-danger rounded-2 bg-danger-subtle border border-danger-subtle d-flex flex-column justify-content-center align-items-center">
+                                <p class="mb-0.5 text-danger">Sat</p>
+                                <h3 class="mb-0 fs-2xl">3</h3>
+                            </div>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookEventModal">
+                                Book
+                            </button>
+                        </div>
+                        <div>
+                            <h6><a href="#!" class="link link-primary text-black mb-1">Product Launch Event</a></h6>
+                            <p class="mb-2"><span>03 Aug 2024</span><span class="ps-2 ms-2 border-start">Chicago, IL</span></p>
+                            <p class="mb-1">Contributors</p>
+                            <div class="d-flex align-items-center flex-grow-1">
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-10.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-15.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-25.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-25.png" alt="" class="size-12 rounded-circle flex-shrink-0">
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="text-black">Ava Wilson</a></h6>
+                            <p class="fs-sm">Sun, 08 Sept 2024, 10:30 am</p>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                <i class="ri-more-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu shadow-sm">
+                                <li>
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-eye-line"></i>
+                                        <span>Overview</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-pencil-line"></i>
+                                        <span>Edit</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-delete-bin-line"></i>
+                                        <span>Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <img src="assets/images/event/img-05.jpg" alt="" class="w-100 h-48 rounded object-fit-cover">
+                    </div>
+                    <div class="d-flex mt-5 gap-3">
+                        <div>
+                            <div class="size-16 mx-auto mb-3 text-danger rounded-2 bg-danger-subtle border border-danger-subtle d-flex flex-column justify-content-center align-items-center">
+                                <p class="mb-0.5 text-danger">Sun</p>
+                                <h3 class="mb-0 fs-2xl">8</h3>
+                            </div>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookEventModal">
+                                Book
+                            </button>
+                        </div>
+                        <div>
+                            <h6><a href="#!" class="link link-primary text-black mb-1">Business Networking Summit</a></h6>
+                            <p class="mb-2"><span>08 Sept 2024</span><span class="ps-2 ms-2 border-start">Houston, TX</span></p>
+                            <p class="mb-1">Contributors</p>
+                            <div class="d-flex align-items-center flex-grow-1">
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-20.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-25.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-30.png" alt="" class="size-12 rounded-circle flex-shrink-0">
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="text-black">Olivia Roberts</a></h6>
+                            <p class="fs-sm">Sat, 12 Oct 2024, 3:00 pm</p>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                <i class="ri-more-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu shadow-sm">
+                                <li>
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-eye-line"></i>
+                                        <span>Overview</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-pencil-line"></i>
+                                        <span>Edit</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-delete-bin-line"></i>
+                                        <span>Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <img src="assets/images/event/img-06.jpg" alt="" class="w-100 h-48 rounded object-fit-cover">
+                    </div>
+                    <div class="d-flex mt-5 gap-3">
+                        <div>
+                            <div class="size-16 mx-auto mb-3 text-danger rounded-2 bg-danger-subtle border border-danger-subtle d-flex flex-column justify-content-center align-items-center">
+                                <p class="mb-0.5 text-danger">Sat</p>
+                                <h3 class="mb-0 fs-2xl">12</h3>
+                            </div>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookEventModal">
+                                Book
+                            </button>
+                        </div>
+                        <div>
+                            <h6><a href="#!" class="link link-primary text-black mb-1">Art Exhibition</a></h6>
+                            <p class="mb-2"><span>12 Oct 2024</span><span class="ps-2 ms-2 border-start">London, UK</span></p>
+                            <p class="mb-1">Contributors</p>
+                            <div class="d-flex align-items-center flex-grow-1">
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-30.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-35.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-40.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-6">
+            <p>Showing <b class="me-1">1-10</b> of <b class="ms-1">33</b> Results</p>
+        </div>
+        <div class="col-6 justify-content-end d-flex">
+            <nav aria-label="...">
+                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0">
+                    <li class="page-item pagination-primary ">
+                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                            <i data-lucide="chevron-left" class="size-5"></i>
+                            <span>Prev</span>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                    </li>
+                    <li class="page-item pagination-primary ">
+                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                            <span>Next</span>
+                            <i data-lucide="chevron-right" class="size-5"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Book Modal -->
+    <div class="modal fade" id="bookEventModal" tabindex="-1" aria-labelledby="bookEventModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="mb-0">Tech Innovations Summit</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-5.png" alt="" class="size-12 rounded-circle flex-shrink-0">
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="text-black">Declan Grieve</a></h6>
+                            <p class="fs-sm">Sun, 19 May 2024, 10:00 am</p>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <img src="assets/images/event/img-01.jpg" alt="" class="w-100 h-48 rounded object-fit-cover">
+                    </div>
+                    <div class="d-flex mt-5 gap-3">
+                        <div>
+                            <div class="size-16 mx-auto mb-3 text-danger rounded-2 bg-danger-subtle border border-danger-subtle d-flex flex-column justify-content-center align-items-center">
+                                <p class="mb-0.5 text-danger">Sun</p>
+                                <h3 class="mb-0 fs-2xl">19</h3>
+                            </div>
+                        </div>
+                        <div>
+                            <h6><a href="#!" class="link link-primary text-black mb-1">Tech Innovations Summit</a></h6>
+                            <p class="mb-2"><span>19 May 2024</span><span class="ps-2 ms-2 border-start">San Francisco, CA</span></p>
+                            <p class="mb-1">Contributors</p>
+                            <div class="d-flex align-items-center flex-grow-1">
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-5.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-20.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-13.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <form x-data="bookEventModal()" @input="calculatePrice()" action="#!">
+                        <div class="row g-5">
+                            <div class="col-12">
+                                <label for="fullNameInput" class="form-label fw-medium">Full Name</label>
+                                <input type="text" placeholder="Enter Full Name" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <label for="totalTicketInput" class="form-label fw-medium">Total Tickets</label>
+                                <input type="number" x-model="totalTickets" value="0" class="form-control" id="totalTicketInput">
+                            </div>
+                            <div class="col-6">
+                                <label for="pricePerTicketInput" class="form-label fw-medium">Price per Ticket</label>
+                                <input type="number" x-model="pricePerTicket" value="500" class="form-control" id="pricePerTicketInput">
+                            </div>
+                            <div class="col-6">
+                                <label for="totalAmountInput" class="form-label fw-medium">Total Amount</label>
+                                <input type="text" x-model="totalAmount" value="0" class="form-control" id="totalAmountInput" readonly>
+                            </div>
+                            <div class="col-12 text-end">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Book Now</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/events/grid.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>

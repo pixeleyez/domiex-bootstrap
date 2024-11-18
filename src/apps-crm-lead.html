@@ -41,8 +41,8 @@
                         <div class="p-0 modal-body">
                             <div class="h-24 w-100 rounded-top square modal-square"></div>
                             <div class="p-4">
-
-                                <div class="-mt-16 row" x-data="{
+                                <form action="#!">
+                                    <div class="-mt-16 row" x-data="{
                                     fullName: '', email: '', phone: '', status: '', image: null,
                                     fullNameError: '', emailError: '', phoneError: '', statusError: '', imageError: '',
                                 
@@ -62,36 +62,34 @@
                                         if (field) this[`${field}Error`] = '';
                                     }
                                 }">
-                                    <!-- Image Upload -->
-                                    <div class="col-12 mb-4">
-                                        <label class="d-flex justify-content-center align-items-center border border-2 border-white bg-light size-24 d-inline-block rounded-circle">
-                                            <img x-show="image" :src="image" class="rounded-circle w-100 h-100 object-cover">
-                                            <i x-show="!image" data-lucide="upload" class="text-dark"></i>
-                                            <input type="file" class="d-none" @change="image = URL.createObjectURL($event.target.files[0]); clearError('image')" />
-                                        </label>
-                                        <p x-show="imageError" class="text-sm text-danger" x-text="imageError"></p>
-                                    </div>
+                                        <!-- Image Upload -->
+                                        <div class="col-12 mb-4">
+                                            <label class="d-flex justify-content-center align-items-center border border-2 border-white bg-light size-24 d-inline-block rounded-circle">
+                                                <img x-show="image" :src="image" class="rounded-circle w-100 h-100 object-cover">
+                                                <i x-show="!image" data-lucide="upload" class="text-dark"></i>
+                                                <input type="file" class="d-none" @change="image = URL.createObjectURL($event.target.files[0]); clearError('image')" />
+                                            </label>
+                                            <p x-show="imageError" class="text-sm text-danger" x-text="imageError"></p>
+                                        </div>
 
-                                    <!-- Full Name Field -->
-                                    <div class="col-12 mb-4">
-                                        <label for="name" class="form-label fw-medium">Full Name</label>
-                                        <input type="text" x-model="fullName" placeholder="Full Name" class="form-control" @input="clearError('fullName')" />
-                                        <p x-show="fullNameError" class="text-sm text-danger" x-text="fullNameError"></p>
-                                    </div>
+                                        <!-- Full Name Field -->
+                                        <div class="col-12 mb-4">
+                                            <label for="name" class="form-label fw-medium">Full Name</label>
+                                            <input type="text" x-model="fullName" placeholder="Full Name" class="form-control" @input="clearError('fullName')" />
+                                            <p x-show="fullNameError" class="text-sm text-danger" x-text="fullNameError"></p>
+                                        </div>
 
-                                    <!-- Email Field -->
-                                    <div class="col-12 mb-4">
-                                        <label for="email" class="form-label fw-medium">Email</label>
-                                        <input type="text" x-model="email" placeholder="support@pixeleyez.com" class="form-control" @input="clearError('email')" />
-                                        <p x-show="emailError" class="text-sm text-danger" x-text="emailError"></p>
-                                    </div>
+                                        <!-- Email Field -->
+                                        <div class="col-12 mb-4">
+                                            <label for="email" class="form-label fw-medium">Email</label>
+                                            <input type="text" x-model="email" placeholder="support@pixeleyez.com" class="form-control" @input="clearError('email')" />
+                                            <p x-show="emailError" class="text-sm text-danger" x-text="emailError"></p>
+                                        </div>
 
-                                    <!-- Phone Number Field -->
-                                    <div class="col-12 mb-4">
-                                        <label for="phone" class="form-label fw-medium">Phone Number</label>
-                                        <input type="text" 
-                                        x-model="phone" 
-                                        @input="
+                                        <!-- Phone Number Field -->
+                                        <div class="col-12 mb-4">
+                                            <label for="phone" class="form-label fw-medium">Phone Number</label>
+                                            <input type="text" x-model="phone" @input="
                                             phone = phone.replace(/[^0-9]/g, ''); 
                                             if (phone.length > 0) phone = '+' + phone;
                                             if (phone.length > 1) phone = phone.slice(0, 1) + '(' + phone.slice(1);
@@ -100,29 +98,24 @@
                                             if (phone.length > 11) phone = phone.slice(0, 11) + ' ' + phone.slice(11);
                                             if (phone.length > 16) phone = phone.slice(0, 16);
                                             clearError('phone');
-                                        " 
-                                        placeholder="+(000) 0000 0000" 
-                                        maxlength="19" 
-                                        class="form-control" 
-                                        aria-label="Phone number" 
-                                 />
-                                        <p x-show="phoneError" class="text-sm text-danger" x-text="phoneError"></p>
-                                    </div>
+                                        " placeholder="+(000) 0000 0000" maxlength="19" class="form-control" aria-label="Phone number" />
+                                            <p x-show="phoneError" class="text-sm text-danger" x-text="phoneError"></p>
+                                        </div>
 
-                                    <!-- Status Field -->
-                                    <div class="col-6 mb-4">
-                                        <label for="status" class="form-label fw-medium">Status</label>
-                                        <div id="statusSelect2" x-model="status" @change="clearError('status')"></div>
-                                        <p x-show="statusError" class="text-sm text-danger" x-text="statusError"></p>
-                                    </div>
+                                        <!-- Status Field -->
+                                        <div class="col-6 mb-4">
+                                            <label for="status" class="form-label fw-medium">Status</label>
+                                            <div id="statusSelect2" x-model="status" @change="clearError('status')"></div>
+                                            <p x-show="statusError" class="text-sm text-danger" x-text="statusError"></p>
+                                        </div>
 
-                                    <!-- Submit Button -->
-                                    <div class="d-flex justify-content-end gap-2 mt-4">
-                                        <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal"><i data-lucide="x" class="size-4 me-1"></i>Close</button>
-                                        <button type="button" class="btn btn-primary" @click="if (validateForm()) { alert('Form is valid and ready for submission!') }">Add Lead</button>
+                                        <!-- Submit Button -->
+                                        <div class="d-flex justify-content-end gap-2 mt-4">
+                                            <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal"><i data-lucide="x" class="size-4 me-1"></i>Close</button>
+                                            <button type="button" class="btn btn-primary" @click="if (validateForm()) { alert('Form is valid and ready for submission!') }">Add Lead</button>
+                                        </div>
                                     </div>
-                                </div>
-
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -135,7 +128,7 @@
                     <div class="w-350">
                         <div class="bg-light rounded p-5">
                             <h6 class="mb-4">New <span class="badge bg-info-subtle text-info  border border-info-subtle ms-1">10</span></h6>
-                            <section class="lead-simplebar px-5" id="customScroll" data-simplebar>
+                            <section class="main-simplebar lead-simplebar px-5" id="customScroll" data-simplebar>
                                 <div x-data="{
                                 leads: [
                                     {name: 'Charles Carter', image: 'assets/images/avatar/user-4.png',email: 'charles@gmail.com',phone: '+(145) 0128 2303', date: '30 May, 2024',time: '1:30 PM'},
@@ -184,7 +177,7 @@
                     <div class="w-350">
                         <div class="bg-light rounded p-5">
                             <h6 class="mb-4">Hot <span class="badge bg-danger-subtle text-danger  border border-danger-subtle ms-1">5</span></h6>
-                            <section class="lead-simplebar px-5" id="customScroll" data-simplebar>
+                            <section class="main-simplebar lead-simplebar px-5" id="customScroll" data-simplebar>
                                 <div x-data="{
                                 leads: [
                                     {name: 'Ashton Abigail', image: 'assets/images/avatar/user-2.png',email: 'ashton@gmail.com',phone: '+(145) 0128 2301', date: '28 May, 2024',time: '3:45 PM'},
@@ -227,7 +220,7 @@
                     <div class="w-350">
                         <div class="bg-light rounded p-5">
                             <h6 class="mb-4">Pending <span class="badge bg-success-subtle text-success  border border-success-subtle ms-1">5</span></h6>
-                            <section class="lead-simplebar px-5" id="customScroll" data-simplebar>
+                            <section class="main-simplebar lead-simplebar px-5" id="customScroll" data-simplebar>
                                 <div x-data="{
                                 leads: [
                                     {name: 'Bethany Bennett', image: 'assets/images/avatar/user-3.png',email: 'bethany@gmail.com',phone: '+(145) 0128 2302', date: '29 May, 2024',time: '10:00 PM'},
@@ -270,7 +263,7 @@
                     <div class="w-350">
                         <div class="bg-light rounded p-5">
                             <h6 class="mb-4">Lost <span class="badge bg-secondary-subtle text-secondary  border border-secondary-subtle ms-1">3</span></h6>
-                            <section class="lead-simplebar px-5" id="customScroll" data-simplebar>
+                            <section class="main-simplebar lead-simplebar px-5" id="customScroll" data-simplebar>
                                 <div x-data="{
                                 leads: [
                                     {name: 'Ethan Evans', image: 'assets/images/avatar/user-6.png',email: 'ethan@gmail.com',phone: '+(145) 0128 2305', date: '1 June, 2024',time: '11:15 PM'},

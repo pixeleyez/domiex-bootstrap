@@ -1,0 +1,250 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Overview" }}
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Overview" sub-title="Events" }}
+
+    <div class="row">
+        <div class="col-9">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Event Details</h6>
+                </div>
+                <div class="card-body">
+                    <div class="mb-5">
+                        <img src="assets/images/event/overview.jpg" alt="" class="object-fit-cover w-100 rounded-2 h-72">
+                    </div>
+                    <div class="d-flex mt-5 gap-3 mb-5">
+                        <div>
+                            <div class="size-16 mx-auto mb-3 text-danger rounded-2 bg-danger-subtle border border-danger-subtle d-flex flex-column justify-content-center align-items-center">
+                                <p class="mb-0.5 text-danger">Sun</p>
+                                <h3 class="mb-0 fs-2xl">19</h3>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6><a href="#!" class="link link-primary text-black mb-1">Tech Innovations Summit</a></h6>
+                            <p class="mb-2"><span>19 May 2024</span><span class="ps-2 ms-2 border-start">San Francisco, CA</span></p>
+                            <p class="mb-2">Contributors & Sponsors</p>
+                            <div class="d-flex flex-grow-1">
+                                <div class="translateY-hover"><img class="border border-2 border-white rounded-circle size-8" alt="" src="assets/images/avatar/user-5.png"></div>
+                                <div class="translateY-hover"><img class="border border-2 border-white rounded-circle size-8" alt="" src="assets/images/avatar/user-20.png"></div>
+                                <div class="translateY-hover"><img class="border border-2 border-white rounded-circle size-8" alt="" src="assets/images/avatar/user-13.png"></div>
+                                <div class="translateY-hover"><img class="border border-2 border-white rounded-circle size-8" alt="" src="assets/images/avatar/user-14.png"></div>
+                                <div class="translateY-hover"><img class="border border-2 border-white rounded-circle size-8" alt="" src="assets/images/avatar/user-15.png"></div>
+                                <div class="translateY-hover"><img class="border border-2 border-white rounded-circle size-8" alt="" src="assets/images/avatar/user-18.png"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#bookEventModal">
+                                Book Now <i data-lucide="ticket-minus" class="size-5 ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="mb-3 text-gray-500 dark:text-dark-500">Join us for an unforgettable experience filled with live performances, vibrant energy, and a celebration of music and culture. This year, we're bringing together some of the biggest names in the industry, alongside emerging artists, to create a diverse and dynamic lineup that promises to entertain and inspire.</p>
+                    <h6 class="mb-3">Event Highlights:</h6>
+                    <ul class="mb-4 text-muted d-flex flex-column gap-2 list-group-disc list-group-success">
+                        <li><span class="fw-medium text-black">Live Performances:</span> Enjoy non-stop music from top artists across multiple stages.</li>
+                        <li><span class="fw-medium text-black">Food and Drinks:</span> Savor delicious cuisine and refreshing beverages from local vendors.</li>
+                        <li><span class="fw-medium text-black">Workshops and Activities:</span> Participate in interactive workshops and activities for all ages.</li>
+                        <li><span class="fw-medium text-black">Merchandise:</span> Get your hands on exclusive festival merchandise and memorabilia.</li>
+                    </ul>
+                    <h6 class="mb-3">Details:</h6>
+                    <ul class="mb-4 text-muted d-flex flex-column gap-2 list-group-disc list-group-success">
+                        <li><span class="fw-medium text-black">Date:</span> 20 Dec 2024</li>
+                        <li><span class="fw-medium text-black">Time:</span> 2:30 pm</li>
+                        <li><span class="fw-medium text-black">Location:</span> Sydney, Australia</li>
+                        <li><span class="fw-medium text-black">Tickets Price:</span> $599.00</li>
+                    </ul>
+                    <h6 class="mb-3">Additional Information:</h6>
+                    <ul class="mb-4 text-muted d-flex flex-column gap-2 list-group-disc list-group-success">
+                        <li><span class="fw-medium text-black">Parking:</span> On-site parking available with a shuttle service to the festival grounds.</li>
+                        <li><span class="fw-medium text-black">Accommodations:</span> Partner hotels offering special festival rates for attendees. Check our website for more details.</li>
+                        <li><span class="fw-medium text-black">Accessibility:</span> The event is fully accessible with dedicated areas for wheelchair users and assistance for those with disabilities.</li>
+                        <li><span class="fw-medium text-black">Safety Measures:</span> We prioritize your safety with on-site medical facilities, security personnel, and clear signage throughout the venue.</li>
+                    </ul>
+                    <h6 class="mb-3">How to Prepare:</h6>
+                    <ul class="mb-4 text-muted d-flex flex-column gap-2 list-group-disc list-group-success">
+                        <li><span class="fw-medium text-black">Plan Ahead:</span> Check the schedule and plan which performances you want to catch.</li>
+                        <li><span class="fw-medium text-black">Stay Hydrated:</span> Bring a reusable water bottle and stay hydrated throughout the event.</li>
+                        <li><span class="fw-medium text-black">Dress Comfortably:</span> Wear comfortable clothing and shoes suitable for outdoor activities.</li>
+                        <li><span class="fw-medium text-black">Stay Connected:</span> Follow us on social media for live updates and announcements.</li>
+                    </ul>
+                    <h6 class="mb-1">Sustainability Initiatives:</h6>
+                    <p class="mb-3 text-gray-500 dark:text-dark-500">We are committed to making this festival environmentally friendly:</p>
+                    <ul class="mb-4 text-muted d-flex flex-column gap-2 list-group-disc list-group-success">
+                        <li><span class="fw-medium text-black">Recycling Stations:</span> Easily accessible recycling bins throughout the venue.</li>
+                        <li><span class="fw-medium text-black">Eco-friendly Products:</span> Encouraging the use of biodegradable and recyclable materials by our vendors.</li>
+                        <li><span class="fw-medium text-black">Green Transportation:</span> Promoting the use of public transport, biking, and carpooling to reduce the festival’s carbon footprint.</li>
+                    </ul>
+                    <p class="mb-2">Don’t miss out on the music event of the year! Gather your friends and family and come create lasting memories with us.</p>
+                    <h6 class="mb-2">Get your tickets now and be part of the magic!</h6>
+                    <p>For more information, visit our website or contact us at PixelEyez. We can’t wait to see you there!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <button class="btn btn-primary w-100"><i data-lucide="pencil" class="size-4 me-1"></i> Edit Event</button>
+            <div class="mt-5 card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Invitation Status</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="invitationApp">
+                        <div x-ref="invitationChart"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 p-3 text-center border-end">
+                            <h6 class="mb-1">1800</h6>
+                            <p>Sent</p>
+                        </div>
+                        <div class="col-6 p-3 text-center">
+                            <h6 class="mb-1">1593</h6>
+                            <p>Accept</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="card-title mb-0">Ticket Sale</h6>
+                    <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                        <a class="link link-danger text-dark badge border text-dark d-flex align-items-center cursor-pointer" @click="open = !open" aria-expanded="open">
+                            <span>Last Week</span>
+                            <i class="ri-arrow-down-s-line fs-6 fw-medium lh-sm" :class="{'rotate': open}"></i>
+                        </a>
+                        <div x-show="open" style="display: none;" class="dropdown-menu  dropdown-menu-end show position-absolute end-0">
+                            <a class="dropdown-item" href="#">Last Week</a>
+                            <a class="dropdown-item" href="#">Last Month</a>
+                            <a class="dropdown-item" href="#">Last Year</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div x-data="ticketSaleApp">
+                        <div x-ref="ticketSaleChart"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Location</h6>
+                </div>
+                <div class="card-body">
+                    <div class="ratio ratio-4x3">
+                        <iframe class="w-full border-0 rounded-2" title="video" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d424146.7072578641!2d150.60233714782865!3d-33.847234937864414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b129838f39a743f%3A0x3017d681632a850!2sSydney%20NSW%2C%20Australia!5e0!3m2!1sen!2sin!4v1716460671830!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book Modal -->
+    <div class="modal fade" id="bookEventModal" tabindex="-1" aria-labelledby="bookEventModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="mb-0">Tech Innovations Summit</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-1.png" alt="" class="size-12 rounded-circle flex-shrink-0">
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="text-black">Declan Grieve</a></h6>
+                            <p class="fs-sm">Fir, 20 Dec 2024, 3:30 pm</p>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <img src="assets/images/event/overview.jpg" alt="" class="w-100 h-48 rounded object-fit-cover">
+                    </div>
+                    <div class="d-flex mt-5 gap-3">
+                        <div>
+                            <div class="size-16 mx-auto mb-3 text-danger rounded-2 bg-danger-subtle border border-danger-subtle d-flex flex-column justify-content-center align-items-center">
+                                <p class="mb-0.5 text-danger">Fri</p>
+                                <h3 class="mb-0 fs-2xl">20</h3>
+                            </div>
+                        </div>
+                        <div>
+                            <h6><a href="#!" class="link link-primary text-black mb-1">Annual Music Festival!</a></h6>
+                            <p class="mb-2"><span>20 Dec 2024</span><span class="ps-2 ms-2 border-start">Sydney, Australia</span></p>
+                            <p class="mb-1">Contributors</p>
+                            <div class="d-flex align-items-center flex-grow-1">
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-11.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-12.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                                <a href="#!" class="avatar-hover" title="avatar-link">
+                                    <img src="assets/images/avatar/user-13.png" alt="" class="border-2 border border-2 border-white rounded-circle size-8">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <form x-data="bookEventModal()" @input="calculatePrice()" action="#!">
+                        <div class="row g-5">
+                            <div class="col-12">
+                                <label for="fullNameInput" class="form-label fw-medium">Full Name</label>
+                                <input type="text" placeholder="Enter Full Name" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <label for="totalTicketInput" class="form-label fw-medium">Total Tickets</label>
+                                <input type="number" x-model="totalTickets" value="0" class="form-control" id="totalTicketInput">
+                            </div>
+                            <div class="col-6">
+                                <label for="pricePerTicketInput" class="form-label fw-medium">Price per Ticket</label>
+                                <input type="number" x-model="pricePerTicket" value="599" class="form-control" id="pricePerTicketInput">
+                            </div>
+                            <div class="col-6">
+                                <label for="totalAmountInput" class="form-label fw-medium">Total Amount</label>
+                                <input type="text" x-model="totalAmount" value="0" class="form-control" id="totalAmountInput" readonly>
+                            </div>
+                            <div class="col-12 text-end">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Book Now</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+{{> partials/vendor-scripts}}
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script src="assets/js/apps/events/overview.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>
