@@ -45,8 +45,8 @@
                             <div class="p-0 modal-body">
                                 <div class="h-24 w-100 rounded-top square modal-square"></div>
                                 <div class="p-4">
-
-                                    <div class="-mt-16 row" x-data="{
+                                    <form action="#!">
+                                        <div class="-mt-16 row" x-data="{
                                         fullName: '', companyName: '', role: '', email: '', phone: '', status: '', website: '', image: null,
                                         fullNameError: '', companyNameError: '', roleError: '', emailError: '', phoneError: '', statusError: '', websiteError: '', imageError: '',
                                     
@@ -69,48 +69,48 @@
                                             if (field) this[`${field}Error`] = '';
                                         }
                                     }">
-                                        <!-- Image Upload -->
-                                        <div class="col-12 mb-4">
-                                            <label class="d-flex justify-content-center align-items-center border border-2 border-white bg-light size-24 d-inline-block rounded-circle">
-                                                <img x-show="image" :src="image" class="rounded-circle w-100 h-100 object-cover">
-                                                <i x-show="!image" data-lucide="upload" class="text-dark"></i>
-                                                <input type="file" class="d-none" @change="image = URL.createObjectURL($event.target.files[0]); clearError('image')" />
-                                            </label>
-                                            <p x-show="imageError" class="text-sm text-danger" x-text="imageError"></p>
-                                        </div>
+                                            <!-- Image Upload -->
+                                            <div class="col-12 mb-4">
+                                                <label class="d-flex justify-content-center align-items-center border border-2 border-white bg-light size-24 d-inline-block rounded-circle">
+                                                    <img x-show="image" :src="image" class="rounded-circle w-100 h-100 object-cover">
+                                                    <i x-show="!image" data-lucide="upload" class="text-dark"></i>
+                                                    <input type="file" class="d-none" @change="image = URL.createObjectURL($event.target.files[0]); clearError('image')" />
+                                                </label>
+                                                <p x-show="imageError" class="text-sm text-danger" x-text="imageError"></p>
+                                            </div>
 
-                                        <!-- Full Name Field -->
-                                        <div class="col-12 mb-4">
-                                            <label for="name" class="form-label fw-medium">Full Name</label>
-                                            <input type="text" x-model="fullName" placeholder="Full Name" class="form-control" @input="clearError('fullName')" />
-                                            <p x-show="fullNameError" class="text-sm text-danger" x-text="fullNameError"></p>
-                                        </div>
+                                            <!-- Full Name Field -->
+                                            <div class="col-12 mb-4">
+                                                <label for="name" class="form-label fw-medium">Full Name</label>
+                                                <input type="text" x-model="fullName" placeholder="Full Name" class="form-control" @input="clearError('fullName')" />
+                                                <p x-show="fullNameError" class="text-sm text-danger" x-text="fullNameError"></p>
+                                            </div>
 
-                                        <!-- Company Name Field -->
-                                        <div class="col-12 mb-4">
-                                            <label for="companyName" class="form-label fw-medium">Company Name</label>
-                                            <input type="text" x-model="companyName" placeholder="Company Name" class="form-control" @input="clearError('companyName')" />
-                                            <p x-show="companyNameError" class="text-sm text-danger" x-text="companyNameError"></p>
-                                        </div>
+                                            <!-- Company Name Field -->
+                                            <div class="col-12 mb-4">
+                                                <label for="companyName" class="form-label fw-medium">Company Name</label>
+                                                <input type="text" x-model="companyName" placeholder="Company Name" class="form-control" @input="clearError('companyName')" />
+                                                <p x-show="companyNameError" class="text-sm text-danger" x-text="companyNameError"></p>
+                                            </div>
 
-                                        <!-- Role Field -->
-                                        <div class="col-12 mb-4">
-                                            <label for="role" class="form-label fw-medium">Role</label>
-                                            <input type="text" x-model="role" placeholder="Role" class="form-control" @input="clearError('role')" />
-                                            <p x-show="roleError" class="text-sm text-danger" x-text="roleError"></p>
-                                        </div>
+                                            <!-- Role Field -->
+                                            <div class="col-12 mb-4">
+                                                <label for="role" class="form-label fw-medium">Role</label>
+                                                <input type="text" x-model="role" placeholder="Role" class="form-control" @input="clearError('role')" />
+                                                <p x-show="roleError" class="text-sm text-danger" x-text="roleError"></p>
+                                            </div>
 
-                                        <!-- Email Field -->
-                                        <div class="col-12 mb-4">
-                                            <label for="email" class="form-label fw-medium">Email</label>
-                                            <input type="text" x-model="email" placeholder="support@pixeleyez.com" class="form-control" @input="clearError('email')" />
-                                            <p x-show="emailError" class="text-sm text-danger" x-text="emailError"></p>
-                                        </div>
+                                            <!-- Email Field -->
+                                            <div class="col-12 mb-4">
+                                                <label for="email" class="form-label fw-medium">Email</label>
+                                                <input type="text" x-model="email" placeholder="support@pixeleyez.com" class="form-control" @input="clearError('email')" />
+                                                <p x-show="emailError" class="text-sm text-danger" x-text="emailError"></p>
+                                            </div>
 
-                                        <!-- Phone Number Field -->
-                                        <div class="col-12 mb-4">
-                                            <label for="phone" class="form-label fw-medium">Phone Number</label>
-                                            <input type="text" x-model="phone" @input="
+                                            <!-- Phone Number Field -->
+                                            <div class="col-12 mb-4">
+                                                <label for="phone" class="form-label fw-medium">Phone Number</label>
+                                                <input type="text" x-model="phone" @input="
                                                 phone = phone.replace(/[^0-9]/g, ''); 
                                                 if (phone.length > 0) phone = '+' + phone;
                                                 if (phone.length > 1) phone = phone.slice(0, 1) + '(' + phone.slice(1);
@@ -120,29 +120,30 @@
                                                 if (phone.length > 16) phone = phone.slice(0, 16);
                                                 clearError('phone');
                                             " placeholder="+(000) 0000 0000" maxlength="19" class="form-control" aria-label="Phone number" />
-                                            <p x-show="phoneError" class="text-sm text-danger" x-text="phoneError"></p>
-                                        </div>
+                                                <p x-show="phoneError" class="text-sm text-danger" x-text="phoneError"></p>
+                                            </div>
 
-                                        <!-- Website Field -->
-                                        <div class="col-6 mb-4">
-                                            <label for="website" class="form-label fw-medium">Website</label>
-                                            <input type="text" x-model="website" placeholder="www.pixeleyez.com" class="form-control" @input="clearError('website')" />
-                                            <p x-show="websiteError" class="text-sm text-danger" x-text="websiteError"></p> <!-- Display website error -->
-                                        </div>
+                                            <!-- Website Field -->
+                                            <div class="col-6 mb-4">
+                                                <label for="website" class="form-label fw-medium">Website</label>
+                                                <input type="text" x-model="website" placeholder="www.pixeleyez.com" class="form-control" @input="clearError('website')" />
+                                                <p x-show="websiteError" class="text-sm text-danger" x-text="websiteError"></p> <!-- Display website error -->
+                                            </div>
 
-                                        <!-- Status Field -->
-                                        <div class="col-6 mb-4">
-                                            <label for="status" class="form-label fw-medium">Status</label>
-                                            <div id="statusSelect2" x-model="status" @change="clearError('status')"></div>
-                                            <p x-show="statusError" class="text-sm text-danger" x-text="statusError"></p>
-                                        </div>
+                                            <!-- Status Field -->
+                                            <div class="col-6 mb-4">
+                                                <label for="status" class="form-label fw-medium">Status</label>
+                                                <div id="statusSelect2" x-model="status" @change="clearError('status')"></div>
+                                                <p x-show="statusError" class="text-sm text-danger" x-text="statusError"></p>
+                                            </div>
 
-                                        <!-- Submit Button -->
-                                        <div class="d-flex justify-content-end gap-2 mt-4">
-                                            <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal"><i data-lucide="x" class="size-4 me-1"></i>Close</button>
-                                            <button type="button" class="btn btn-primary" @click="if (validateForm()) { alert('Form is valid and ready for submission!') }">Add Lead</button>
+                                            <!-- Submit Button -->
+                                            <div class="d-flex justify-content-end gap-2 mt-4">
+                                                <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal"><i data-lucide="x" class="size-4 me-1"></i>Close</button>
+                                                <button type="button" class="btn btn-primary" @click="if (validateForm()) { alert('Form is valid and ready for submission!') }">Add Lead</button>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -430,7 +431,7 @@
             </div>
             <div class="row">
                 <div class="col-6">
-                    <p>Showing <b>1-10</b> of <b>18</b> Results</p>
+                    <p>Showing <b class="me-1">1-10</b> of <b class="ms-1">18</b> Results</p>
                 </div>
                 <div class="col-6 justify-content-end d-flex">
                     <nav aria-label="...">

@@ -1,0 +1,755 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="List View" }}
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="List View" sub-title="Patients" }}
+
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="position-relative">
+            <input type="text" class="form-control ps-9 pe-4" placeholder="Search for patients ..." @input="filtercontacts" x-model="searchTerm">
+            <div class="position-absolute top-50 translate-middle-y d-flex align-items-center text-muted">
+                <i data-lucide="search" class="size-4 ms-3"></i>
+            </div>
+        </div>
+        <div class="d-flex flex-wrap gap-2">
+            <button type="button" class="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <i data-lucide="sliders-horizontal" class="size-4 text-dark me-1"></i>
+                <span class="text-muted">Filters</span>
+            </button>
+            <a href="apps-hospital-patients-create.html" class="btn btn-primary">
+                <i data-lucide="circle-plus" class="size-4 me-1"></i>Add Patient
+            </a>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dropdown float-end">
+                        <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li>
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-1.png" alt="" class="rounded-2 flex-shrink-0 size-20">
+                        <div>
+                            <h6 class="cursor-pointer">John Doe</h6>
+                            <p class="mb-1"><i class="ri-mail-line me-2"></i><span>john@pixeleyez.com</span></p>
+                            <p><i class="ri-phone-line me-2"></i><span>+1 555 123 4567</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dropdown float-end">
+                        <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li>
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-2.png" alt="" class="rounded-2 flex-shrink-0 size-20">
+                        <div>
+                            <h6 class="cursor-pointer">Jane Smith</h6>
+                            <p class="mb-1"><i class="ri-mail-line me-2"></i><span>jane@pixeleyez.com</span></p>
+                            <p><i class="ri-phone-line me-2"></i><span>+44 20 7946 0958</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dropdown float-end">
+                        <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li>
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-3.png" alt="" class="rounded-2 flex-shrink-0 size-20">
+                        <div>
+                            <h6 class="cursor-pointer">Alice Johnson</h6>
+                            <p class="mb-1"><i class="ri-mail-line me-2"></i><span>alice@pixeleyez.com</span></p>
+                            <p><i class="ri-phone-line me-2"></i><span> +61 2 9374 4000</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dropdown float-end">
+                        <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li>
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-4.png" alt="" class="rounded-2 flex-shrink-0 size-20">
+                        <div>
+                            <h6 class="cursor-pointer">Robert Brown</h6>
+                            <p class="mb-1"><i class="ri-mail-line me-2"></i><span>robert@pixeleyez.com</span></p>
+                            <p><i class="ri-phone-line me-2"></i><span> +49 30 123456</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dropdown float-end">
+                        <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li>
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-5.png" alt="" class="rounded-2 flex-shrink-0 size-20">
+                        <div>
+                            <h6 class="cursor-pointer">Robert Brown</h6>
+                            <p class="mb-1"><i class="ri-mail-line me-2"></i><span>emily@pixeleyez.com</span></p>
+                            <p><i class="ri-phone-line me-2"></i><span>+33 1 42 68 53 00</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dropdown float-end">
+                        <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li>
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-6.png" alt="" class="rounded-2 flex-shrink-0 size-20">
+                        <div>
+                            <h6 class="cursor-pointer">Michael Wilson</h6>
+                            <p class="mb-1"><i class="ri-mail-line me-2"></i><span>michael@pixeleyez.com</span></p>
+                            <p><i class="ri-phone-line me-2"></i><span>+34 91 123 45 67</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dropdown float-end">
+                        <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li>
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-7.png" alt="" class="rounded-2 flex-shrink-0 size-20">
+                        <div>
+                            <h6 class="cursor-pointer">Sarah Moore</h6>
+                            <p class="mb-1"><i class="ri-mail-line me-2"></i><span>sarah@pixeleyez.com</span></p>
+                            <p><i class="ri-phone-line me-2"></i><span>+81 3 1234 5678</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dropdown float-end">
+                        <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li>
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-8.png" alt="" class="rounded-2 flex-shrink-0 size-20">
+                        <div>
+                            <h6 class="cursor-pointer">James Taylor</h6>
+                            <p class="mb-1"><i class="ri-mail-line me-2"></i><span>james@pixeleyez.com</span></p>
+                            <p><i class="ri-phone-line me-2"></i><span>+91 22 1234 5678</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dropdown float-end">
+                        <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li>
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-9.png" alt="" class="rounded-2 flex-shrink-0 size-20">
+                        <div>
+                            <h6 class="cursor-pointer">Laura Anderson</h6>
+                            <p class="mb-1"><i class="ri-mail-line me-2"></i><span>laura@pixeleyez.com</span></p>
+                            <p><i class="ri-phone-line me-2"></i><span>+7 495 123-45-67</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dropdown float-end">
+                        <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li>
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-10.png" alt="" class="rounded-2 flex-shrink-0 size-20">
+                        <div>
+                            <h6 class="cursor-pointer">David Thomas</h6>
+                            <p class="mb-1"><i class="ri-mail-line me-2"></i><span>david@pixeleyez.com</span></p>
+                            <p><i class="ri-phone-line me-2"></i><span>+55 11 1234-5678</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dropdown float-end">
+                        <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li>
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-11.png" alt="" class="rounded-2 flex-shrink-0 size-20">
+                        <div>
+                            <h6 class="cursor-pointer">Jessica Lee</h6>
+                            <p class="mb-1"><i class="ri-mail-line me-2"></i><span>jessica@pixeleyez.com</span></p>
+                            <p><i class="ri-phone-line me-2"></i><span>+27 11 123 4567</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dropdown float-end">
+                        <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li>
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-12.png" alt="" class="rounded-2 flex-shrink-0 size-20">
+                        <div>
+                            <h6 class="cursor-pointer">Daniel Martin</h6>
+                            <p class="mb-1"><i class="ri-mail-line me-2"></i><span>daniel@pixeleyez.com</span></p>
+                            <p><i class="ri-phone-line me-2"></i><span>+65 6 1234 567</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dropdown float-end">
+                        <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li>
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-13.png" alt="" class="rounded-2 flex-shrink-0 size-20">
+                        <div>
+                            <h6 class="cursor-pointer">Sophia Harris</h6>
+                            <p class="mb-1"><i class="ri-mail-line me-2"></i><span>sophia@pixeleyez.com</span></p>
+                            <p><i class="ri-phone-line me-2"></i><span>+39 06 123 4567</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dropdown float-end">
+                        <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li>
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-14.png" alt="" class="rounded-2 flex-shrink-0 size-20">
+                        <div>
+                            <h6 class="cursor-pointer">Matthew Clark</h6>
+                            <p class="mb-1"><i class="ri-mail-line me-2"></i><span>matthew@pixeleyez.com</span></p>
+                            <p><i class="ri-phone-line me-2"></i><span>+52 55 1234 5678</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dropdown float-end">
+                        <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li>
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-15.png" alt="" class="rounded-2 flex-shrink-0 size-20">
+                        <div>
+                            <h6 class="cursor-pointer">Olivia Lewis</h6>
+                            <p class="mb-1"><i class="ri-mail-line me-2"></i><span>olivia@pixeleyez.com</span></p>
+                            <p><i class="ri-phone-line me-2"></i><span>+86 10 1234 5678</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dropdown float-end">
+                        <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                            <i class="ri-more-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li>
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="assets/images/avatar/user-16.png" alt="" class="rounded-2 flex-shrink-0 size-20">
+                        <div>
+                            <h6 class="cursor-pointer">Andrew Walker</h6>
+                            <p class="mb-1"><i class="ri-mail-line me-2"></i><span>andrew@pixeleyez.com</span></p>
+                            <p><i class="ri-phone-line me-2"></i><span>+31 20 123 4567</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-6">
+            <p>Showing <b class="me-1">1-16</b>of<b class="ms-1">33</b> Results</p>
+        </div>
+        <div class="col-6 justify-content-end d-flex">
+            <nav aria-label="...">
+                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0">
+                    <li class="page-item pagination-primary ">
+                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                            <i data-lucide="chevron-left" class="size-5"></i>
+                            <span>Prev</span>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                    </li>
+                    <li class="page-item pagination-primary ">
+                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                            <span>Next</span>
+                            <i data-lucide="chevron-right" class="size-5"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header border-bottom">
+            <h6 class="mb-0">Patients Filters</h6>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="position-relative mb-5">
+                <input type="text" class="form-control ps-9 pe-4" placeholder="Search for patients ..." @input="filtercontacts" x-model="searchTerm">
+                <div class="position-absolute top-50 translate-middle-y d-flex align-items-center text-muted">
+                    <i data-lucide="search" class="size-4 ms-3"></i>
+                </div>
+            </div>
+            <div class="mb-5">
+                <label for="fullNameInput" class="form-label">Doctors</label>
+                <div id="doctorsSelect"></div>
+            </div>
+            <div class="mb-5">
+                <label for="fullNameInput" class="form-label">Patient Status</label>
+                <div id="patientStatusSelect"></div>
+            </div>
+            <div class="mb-5">
+                <label for="fullNameInput" class="form-label">Insurance</label>
+                <div id="insuranceSelect"></div>
+            </div>
+            <div class="mb-5">
+                <label for="fullNameInput" class="form-label">City</label>
+                <div id="citySelect"></div>
+            </div>
+            <div class="mb-5">
+                <label for="fullNameInput" class="form-label">Gender</label>
+                <div id="genderSelect"></div>
+            </div>
+        </div>
+        <div class="offcanvas-footer border-top">
+            <div class="d-flex justify-content-between align-items-center">
+                <button type="button" class="btn btn-sub-light text-dark">Reset</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+                    Filters <i data-lucide="move-right" class="size-4 ms-1"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/hospital/patients/list-view.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

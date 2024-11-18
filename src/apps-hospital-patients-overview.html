@@ -1,0 +1,400 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Overview" }}
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Overview" sub-title="Patients" }}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex gap-5">
+                        <div class="flex-shrink-0">
+                            <img src="assets/images/avatar/user-5.png" alt="" class="rounded-2 size-40">
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1 fs-16">Alice Johnson</h6>
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="d-flex align-items-center">
+                                    <i class="me-1 ri-user-3-line"></i>
+                                    <p>Female</p>
+                                </span>
+                                <span class="d-flex align-items-center">
+                                    <i class="me-1 ri-briefcase-line"></i>
+                                    <p>Accountant</p>
+                                </span>
+                                <span class="d-flex align-items-center">
+                                    <i class="me-1 ri-map-pin-2-line"></i>
+                                    <p>California</p>
+                                </span>
+                                <span class="d-flex align-items-center">
+                                    <i class="me-1 ri-calendar-event-line"></i>
+                                    <p>13 Dec, 1998 (25 Years)</p>
+                                </span>
+                            </div>
+                            <div class="d-flex flex-wrap mt-5 gap-5">
+                                <div class="p-4 border border-dashed rounded-2 w-36 text-center">
+                                    <h4 class="mb-1 fs-xl">26 <small class="fs-sm text-dark fw-normal">May, 2024</small></h4>
+                                    <p>Appo. Date</p>
+                                </div>
+                                <div class="p-4 border border-dashed rounded-2 w-36 text-center">
+                                    <h4 class="mb-1 fs-xl">115/50</h4>
+                                    <p>Blood Pressure</p>
+                                </div>
+                                <div class="p-4 border border-dashed rounded-2 w-36 text-center">
+                                    <h4 class="mb-1 fs-xl">B+</h4>
+                                    <p>Blood Group</p>
+                                </div>
+                                <div class="p-4 border border-dashed rounded-2 w-36 text-center">
+                                    <h4 class="mb-1 fs-xl">86<small class="fs-sm text-dark fw-normal ms-1">kg</small></h4>
+                                    <p>Weight</p>
+                                </div>
+                                <div class="p-4 border border-dashed rounded-2 w-36 text-center">
+                                    <h4 class="mb-1 fs-xl">178<small class="fs-sm text-dark fw-normal ms-1">cm</small></h4>
+                                    <p>Height</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <div class="d-flex gap-2 align-items-center">
+                                <button class="btn btn-icon btn-sub-success"><i data-lucide="phone" class="size-4"></i></button>
+                                <button class="btn btn-icon btn-sub-secondary"><i data-lucide="messages-square" class="size-4"></i></button>
+                                <button class="btn btn-primary"><i data-lucide="pencil" class="size-4 me-1"></i>Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <div class="row g-5">
+                            <div class="col-3">
+                                <p class="mb-1">Family Doctor</p>
+                                <h6>Dr. Vernon Locklin</h6>
+                            </div>
+                            <div class="col-3">
+                                <p class="mb-1">Assigned Doctor</p>
+                                <h6>Dr. Ellie Maggie</h6>
+                            </div>
+                            <div class="col-3">
+                                <p class="mb-1">Referring Doctor</p>
+                                <h6>Dr. Jasper Liewald</h6>
+                            </div>
+                            <div class="col-3">
+                                <p class="mb-1">Pharmacy Name</p>
+                                <h6>PixalEyez Pharmacy</h6>
+                            </div>
+                            <div class="col-3">
+                                <div class="whitespace-normal">
+                                    <p class="mb-1">Full Address</p>
+                                    <h6 class="lh-base">Apt. 757 866 Truman Ridge, Bashirianside, OH 34623-2200</h6>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <p class="mb-1">Phone Number</p>
+                                <h6>+33 1 42 68 53 00</h6>
+                            </div>
+                            <div class="col-3">
+                                <p class="mb-1">Emergency Number</p>
+                                <h6>+34 91 123 45 67</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Timeline</h6>
+                </div>
+                <div class="card-body">
+                    <section class="main-simplebar h-80 px-5" id="customScroll" data-simplebar>
+                        <ul class="timeline p-0">
+                            <li class="timeline-primary pb-3">
+                                <span class="badge bg-light-subtle text-dark  border border-dark-subtle">19 June, 2024 - 11:15 AM</span>
+                                <h6 class="mt-3 mb-1">Follow Up </h6>
+                                <p class="text-sm text-gray-500 dark:text-dark-500">Follow-up for rash, prescribed antihistamine</p>
+                            </li>
+                            <li class="timeline-primary pb-3">
+                                <span class="badge bg-light-subtle text-dark  border border-dark-subtle">25 May, 2024 - 09:00 AM</span>
+                                <h6 class="mt-3 mb-1">Appointment</h6>
+                                <p class="text-sm text-gray-500 dark:text-dark-500">Annual physical check-up</p>
+                            </li>
+                            <li class="timeline-primary pb-3">
+                                <span class="badge bg-light-subtle text-dark  border border-dark-subtle">21 May, 2024 - 03:30 PM</span>
+                                <h6 class="mt-3 mb-1">Lab Test</h6>
+                                <p class="text-sm text-gray-500 dark:text-dark-500">Blood test: Complete Blood Count (CBC)</p>
+                            </li>
+                            <li class="timeline-primary pb-3">
+                                <span class="badge bg-light-subtle text-dark  border border-dark-subtle">05 May, 2024 - 10:00 AM</span>
+                                <h6 class="mt-3 mb-1">Medication Start</h6>
+                                <p class="text-sm text-gray-500 dark:text-dark-500">Prescribed Atorvastatin 20mg for high cholesterol</p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Insurance Overview</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="d-flex align-items-center justify-content-center rounded-circle text-primary bg-primary-subtle size-12">
+                            <i data-lucide="heart-handshake" class="size-5"></i>
+                        </div>
+                        <div class="grow">
+                            <h6 class="mb-2">HealthCare Insurance</h6>
+                            <p class="text-gray-500 dark:text-dark-500">#157-PE9871-541</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-success-subtle border-success-subtle card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="grow">
+                            <img src="assets/images/others/insurance.png" alt="" class="size-14">
+                            <h6 class="mt-5 mb-1">Get peace of mind with the right insurance coverage.</h6>
+                            <p class="mb-3">Receive your personalized quote in just a few clicks!</p>
+                            <button type="button" class="btn btn-success">Buy Insurance</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <h6 class="mb-0">Reports</h6>
+                    <a href="#!" type="button" class="link fw-medium" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i data-lucide="plus" class="me-1 size-4"></i>Add Report
+                    </a>
+                </div>
+                <div class="pb-0">
+                    <table class="table table-striped-even table-borderless align-middle mb-0">
+                        <tbody>
+                            <tr>
+                                <td>X-Ray</td>
+                                <td>29 May, 2024</td>
+                                <td>Dr. Smith</td>
+                                <td><span class="bg-warning-subtle text-warning  border border-warning-subtle badge">Pending</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <button class="btn btn-sub-secondary size-8 rounded-circle btn-icon"><i class="ri-download-2-line"></i></button>
+                                        <button class="btn btn-sub-danger size-8 rounded-circle btn-icon"><i class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Blood Test</td>
+                                <td>05 May, 2024</td>
+                                <td>Dr. Johnson</td>
+                                <td><span class="bg-success-subtle text-success  border border-success-subtle badge">Completed</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <button class="btn btn-sub-secondary size-8 rounded-circle btn-icon"><i class="ri-download-2-line"></i></button>
+                                        <button class="btn btn-sub-danger size-8 rounded-circle btn-icon"><i class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>MRI</td>
+                                <td>05 Feb, 2024</td>
+                                <td>Dr. Williams</td>
+                                <td><span class="bg-success-subtle text-success  border border-success-subtle badge">Completed</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <button class="btn btn-sub-secondary size-8 rounded-circle btn-icon"><i class="ri-download-2-line"></i></button>
+                                        <button class="btn btn-sub-danger size-8 rounded-circle btn-icon"><i class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>CT Scan</td>
+                                <td>09 June, 2024</td>
+                                <td>Dr. Brown</td>
+                                <td><span class="bg-secondary-subtle text-secondary  border border-secondary-subtle badge">In Progress</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <button class="btn btn-sub-secondary size-8 rounded-circle btn-icon"><i class="ri-download-2-line"></i></button>
+                                        <button class="btn btn-sub-danger size-8 rounded-circle btn-icon"><i class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ultrasound</td>
+                                <td>19 Jan, 2024</td>
+                                <td>Dr. Wilson</td>
+                                <td><span class="bg-success-subtle text-success  border border-success-subtle badge">Completed</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <button class="btn btn-sub-secondary size-8 rounded-circle btn-icon"><i class="ri-download-2-line"></i></button>
+                                        <button class="btn btn-sub-danger size-8 rounded-circle btn-icon"><i class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="row mt-4 px-5">
+                        <div class="col-6">
+                            <p>Showing <b class="me-1">1-5</b> of <b class="ms-1">6</b> Results</p>
+                        </div>
+                        <div class="col-6 justify-content-end d-flex">
+                            <nav aria-label="...">
+                                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0">
+                                    <li class="page-item pagination-primary ">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <i data-lucide="chevron-left" class="size-5"></i>
+                                            <span>Prev</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                    <li class="page-item" aria-current="page">
+                                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                                    </li>
+                                    <li class="page-item pagination-primary ">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <span>Next</span>
+                                            <i data-lucide="chevron-right" class="size-5"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Reports Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="mb-0">Add Report</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#!">
+                        <div x-data="{
+                            reportType: '', recommendations: '', clientDetail: '', status: '', impression: '', reportDate: '', doctorName: '',
+                            errors: {},
+                    
+                            validate() {
+                                this.errors = {};
+                                if (!this.reportType) this.errors.reportType = 'Report type is required.';
+                                if (!this.reportDate) this.errors.reportDate = 'Report date is required.';
+                                if (!this.doctorName) this.errors.doctorName = 'Doctor name is required.';
+                                if (!this.clientDetail) this.errors.clientDetail = 'Client details are required.'; // Fix here
+                                if (!this.impression) this.errors.impression = 'Impression is required.';
+                                if (!this.recommendations) this.errors.recommendations = 'Recommendations are required.';
+                                if (!this.status) this.errors.status = 'Status is required.';
+                                return Object.keys(this.errors).length === 0;
+                            },
+                    
+                            clearError(field) { this.errors[field] = '' }
+                        }" class="row g-5">
+
+                            <!-- Report Type -->
+                            <div class="col-12">
+                                <label class="form-label fw-medium">Report Type <span class="text-danger">*</span></label>
+                                <div id="reportTypeSelect"></div>
+                                <p x-show="errors.reportType" class="text-sm text-danger" x-text="errors.reportType"></p>
+                            </div>
+
+                            <!-- Report Date -->
+                            <div class="col-12">
+                                <label class="form-label fw-medium">Date <span class="text-danger">*</span></label>
+                                <input data-provider="flatpickr" data-date-format="d M, Y" type="text" placeholder="Select date" class="form-control form-input flatpickr-input active" readonly="readonly">
+                                <p x-show="errors.reportDate" class="text-sm text-danger" x-text="errors.reportDate"></p>
+                            </div>
+
+                            <!-- Doctor Name -->
+                            <div class="col-12">
+                                <label class="form-label fw-medium">Doctor <span class="text-danger">*</span></label>
+                                <input type="text" x-model="doctorName" class="form-control" placeholder="Enter doctor name" readonly @input="clearError('doctorName')" />
+                                <p x-show="errors.doctorName" class="text-sm text-danger" x-text="errors.doctorName"></p>
+                            </div>
+
+                            <!-- Client Details (Text Area) -->
+                            <div class="col-12">
+                                <label class="form-label fw-medium">Clinical Details</label>
+                                <textarea rows="3" x-model="clientDetail" placeholder="Enter your description" class="form-control" @input="clearError('clientDetail')"></textarea>
+                                <p x-show="errors.clientDetail" class="text-sm text-danger" x-text="errors.clientDetail"></p> <!-- Fix here -->
+                            </div>
+
+                            <!-- Impressions -->
+                            <div class="col-6">
+                                <label class="form-label fw-medium">Impressions</label>
+                                <input type="number" x-model="impression" class="form-control" placeholder="Impressions" @input="clearError('impression')" />
+                                <p x-show="errors.impression" class="text-sm text-danger" x-text="errors.impression"></p>
+                            </div>
+
+                            <!-- Recommendations -->
+                            <div class="col-6">
+                                <label class="form-label fw-medium">Recommendations</label>
+                                <div id="recommendationsSelect"></div>
+                                <p x-show="errors.recommendations" class="text-sm text-danger" x-text="errors.recommendations"></p>
+                            </div>
+
+                            <!-- Status -->
+                            <div class="col-12">
+                                <label class="form-label fw-medium">Status <span class="text-danger">*</span></label>
+                                <div id="statusSelect" @change="clearError('status')"></div>
+                                <p x-show="errors.status" class="text-sm text-danger" x-text="errors.status"></p>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="d-flex justify-content-end gap-2">
+                                <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary" @click="if (validate()) { alert('Form is valid and ready for submission!') }">Add Event</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/hospital/patients/overview.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

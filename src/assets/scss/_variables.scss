@@ -1546,7 +1546,7 @@ $offcanvas-horizontal-width:        320px;
 $offcanvas-vertical-height:         30vh;
 $offcanvas-transition-duration:     .3s;
 $offcanvas-border-color:            $modal-content-border-color;
-$offcanvas-border-width:            $modal-content-border-width;
+$offcanvas-border-width:            none;
 $offcanvas-title-line-height:       $modal-title-line-height;
 $offcanvas-bg-color:                var(--#{$prefix}body-bg);
 $offcanvas-color:                   var(--#{$prefix}body-color);
@@ -1606,10 +1606,10 @@ $custom-width: (
   100: 100%,
   auto: auto
 );
-$custom-max-width: ( 
-  8: 2rem,
-  36: 9rem,
-  64: 16rem,
+$custom-height: ( 
+  32: 8rem,
+  40: 10rem,
+  48: 12rem,
   72: 18rem,
   80: 20rem,
   25: 25%,
@@ -1617,6 +1617,16 @@ $custom-max-width: (
   75: 75%,
   100: 100%,
   auto: auto
+);
+$custom-max-width: ( 
+  8: 2rem,
+  36: 9rem,
+  64: 16rem,
+  72: 18rem,
+  80: 20rem,
+);
+$custom-max-height: ( 
+  44: 11rem,
 );
 
 $custom-list-styles: (
