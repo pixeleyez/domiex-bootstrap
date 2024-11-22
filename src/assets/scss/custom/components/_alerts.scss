@@ -77,7 +77,6 @@
 }
 
 // Icons Alerts
-
 .alert-border-primary {
     border: 1px solid var(--#{$prefix}gray-200);
     border-top: 4px solid var(--#{$prefix}primary);
@@ -167,17 +166,19 @@
 }
 
 // Basic Alerts
-.alert-icon-box{
+.alert-icon-box {
     height: map-get($spacers, 9);
 }
-.basic-alert{
+
+.basic-alert {
     height: 2.5rem;
     width: 2.5rem;
     @include flexStyle(center, center);
-    border: 4px solid map-get($colors, "white"); 
+    border: 4px solid map-get($colors, "white");
     @include position(absolute, -1.25rem, null, null, map-get($position-values, 50));
     transform: translateX(-50%);
-    i{
+
+    i {
         font-size: 1.125rem;
         line-height: $line-height-lg;
     }
