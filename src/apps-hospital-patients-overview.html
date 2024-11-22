@@ -4,8 +4,6 @@
 
     {{> partials/title-meta title="Overview" }}
 
-    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
-    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
 
     {{> partials/head-css}}
 
@@ -129,22 +127,22 @@
                     <section class="main-simplebar h-80 px-5" id="customScroll" data-simplebar>
                         <ul class="timeline p-0">
                             <li class="timeline-primary pb-3">
-                                <span class="badge bg-light-subtle text-dark  border border-dark-subtle">19 June, 2024 - 11:15 AM</span>
+                                <span class="badge bg-dark-subtle text-dark  border border-dark-subtle">19 June, 2024 - 11:15 AM</span>
                                 <h6 class="mt-3 mb-1">Follow Up </h6>
                                 <p class="text-sm text-gray-500 dark:text-dark-500">Follow-up for rash, prescribed antihistamine</p>
                             </li>
                             <li class="timeline-primary pb-3">
-                                <span class="badge bg-light-subtle text-dark  border border-dark-subtle">25 May, 2024 - 09:00 AM</span>
+                                <span class="badge bg-dark-subtle text-dark  border border-dark-subtle">25 May, 2024 - 09:00 AM</span>
                                 <h6 class="mt-3 mb-1">Appointment</h6>
                                 <p class="text-sm text-gray-500 dark:text-dark-500">Annual physical check-up</p>
                             </li>
                             <li class="timeline-primary pb-3">
-                                <span class="badge bg-light-subtle text-dark  border border-dark-subtle">21 May, 2024 - 03:30 PM</span>
+                                <span class="badge bg-dark-subtle text-dark  border border-dark-subtle">21 May, 2024 - 03:30 PM</span>
                                 <h6 class="mt-3 mb-1">Lab Test</h6>
                                 <p class="text-sm text-gray-500 dark:text-dark-500">Blood test: Complete Blood Count (CBC)</p>
                             </li>
                             <li class="timeline-primary pb-3">
-                                <span class="badge bg-light-subtle text-dark  border border-dark-subtle">05 May, 2024 - 10:00 AM</span>
+                                <span class="badge bg-dark-subtle text-dark  border border-dark-subtle">05 May, 2024 - 10:00 AM</span>
                                 <h6 class="mt-3 mb-1">Medication Start</h6>
                                 <p class="text-sm text-gray-500 dark:text-dark-500">Prescribed Atorvastatin 20mg for high cholesterol</p>
                             </li>
@@ -175,7 +173,7 @@
                     <div class="d-flex align-items-center gap-3">
                         <div class="grow">
                             <img src="assets/images/others/insurance.png" alt="" class="size-14">
-                            <h6 class="mt-5 mb-1">Get peace of mind with the right insurance coverage.</h6>
+                            <h6 class="mt-5 mb-1 lh-base">Get peace of mind with the right insurance coverage.</h6>
                             <p class="mb-3">Receive your personalized quote in just a few clicks!</p>
                             <button type="button" class="btn btn-success">Buy Insurance</button>
                         </div>
@@ -192,81 +190,186 @@
                     </a>
                 </div>
                 <div class="pb-0">
-                    <table class="table table-striped-even table-borderless align-middle mb-0">
-                        <tbody>
-                            <tr>
-                                <td>X-Ray</td>
-                                <td>29 May, 2024</td>
-                                <td>Dr. Smith</td>
-                                <td><span class="bg-warning-subtle text-warning  border border-warning-subtle badge">Pending</span></td>
-                                <td>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <button class="btn btn-sub-secondary size-8 rounded-circle btn-icon"><i class="ri-download-2-line"></i></button>
-                                        <button class="btn btn-sub-danger size-8 rounded-circle btn-icon"><i class="ri-delete-bin-line"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Blood Test</td>
-                                <td>05 May, 2024</td>
-                                <td>Dr. Johnson</td>
-                                <td><span class="bg-success-subtle text-success  border border-success-subtle badge">Completed</span></td>
-                                <td>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <button class="btn btn-sub-secondary size-8 rounded-circle btn-icon"><i class="ri-download-2-line"></i></button>
-                                        <button class="btn btn-sub-danger size-8 rounded-circle btn-icon"><i class="ri-delete-bin-line"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>MRI</td>
-                                <td>05 Feb, 2024</td>
-                                <td>Dr. Williams</td>
-                                <td><span class="bg-success-subtle text-success  border border-success-subtle badge">Completed</span></td>
-                                <td>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <button class="btn btn-sub-secondary size-8 rounded-circle btn-icon"><i class="ri-download-2-line"></i></button>
-                                        <button class="btn btn-sub-danger size-8 rounded-circle btn-icon"><i class="ri-delete-bin-line"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>CT Scan</td>
-                                <td>09 June, 2024</td>
-                                <td>Dr. Brown</td>
-                                <td><span class="bg-secondary-subtle text-secondary  border border-secondary-subtle badge">In Progress</span></td>
-                                <td>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <button class="btn btn-sub-secondary size-8 rounded-circle btn-icon"><i class="ri-download-2-line"></i></button>
-                                        <button class="btn btn-sub-danger size-8 rounded-circle btn-icon"><i class="ri-delete-bin-line"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ultrasound</td>
-                                <td>19 Jan, 2024</td>
-                                <td>Dr. Wilson</td>
-                                <td><span class="bg-success-subtle text-success  border border-success-subtle badge">Completed</span></td>
-                                <td>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <button class="btn btn-sub-secondary size-8 rounded-circle btn-icon"><i class="ri-download-2-line"></i></button>
-                                        <button class="btn btn-sub-danger size-8 rounded-circle btn-icon"><i class="ri-delete-bin-line"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <section class="h-96 card-body pt-0" id="customScroll" data-simplebar>
+                        <div class="table-box">
+                            <table class="table table-striped-even table-borderless align-middle">
+                                <div>
+                                    <tbody>
+                                        <tr>
+                                            <td>X-Ray</td>
+                                            <td>29 May, 2024</td>
+                                            <td>Dr. Smith</td>
+                                            <td><span class="bg-warning-subtle text-warning  border border-warning-subtle badge">Pending</span></td>
+                                            <td>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <button class="btn btn-sub-secondary rounded-circle size-8  btn-icon"><i class="ri-download-2-line"></i></button>
+                                                    <button class="btn btn-sub-danger rounded-circle size-8 btn-icon"><i class="ri-delete-bin-line"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Blood Test</td>
+                                            <td>05 May, 2024</td>
+                                            <td>Dr. Johnson</td>
+                                            <td><span class="bg-success-subtle text-success  border border-success-subtle badge">Completed</span></td>
+                                            <td>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <button class="btn btn-sub-secondary size-8 rounded-circle btn-icon"><i class="ri-download-2-line"></i></button>
+                                                    <button class="btn btn-sub-danger size-8 rounded-circle btn-icon"><i class="ri-delete-bin-line"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>MRI</td>
+                                            <td>05 Feb, 2024</td>
+                                            <td>Dr. Williams</td>
+                                            <td><span class="bg-success-subtle text-success  border border-success-subtle badge">Completed</span></td>
+                                            <td>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <button class="btn btn-sub-secondary size-8 rounded-circle btn-icon"><i class="ri-download-2-line"></i></button>
+                                                    <button class="btn btn-sub-danger size-8 rounded-circle btn-icon"><i class="ri-delete-bin-line"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>CT Scan</td>
+                                            <td>09 June, 2024</td>
+                                            <td>Dr. Brown</td>
+                                            <td><span class="bg-secondary-subtle text-secondary  border border-secondary-subtle badge">In Progress</span></td>
+                                            <td>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <button class="btn btn-sub-secondary size-8 rounded-circle btn-icon"><i class="ri-download-2-line"></i></button>
+                                                    <button class="btn btn-sub-danger size-8 rounded-circle btn-icon"><i class="ri-delete-bin-line"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ultrasound</td>
+                                            <td>19 Jan, 2024</td>
+                                            <td>Dr. Wilson</td>
+                                            <td><span class="bg-success-subtle text-success  border border-success-subtle badge">Completed</span></td>
+                                            <td>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <button class="btn btn-sub-secondary size-8 rounded-circle btn-icon"><i class="ri-download-2-line"></i></button>
+                                                    <button class="btn btn-sub-danger size-8 rounded-circle btn-icon"><i class="ri-delete-bin-line"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </div>
+                            </table>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <div>
+                                <p>Showing <b class="me-1">1-5</b> of <b class="ms-1">6</b> Results</p>
+                            </div>
+                            <div class="justify-content-end d-flex">
+                                <nav aria-label="...">
+                                    <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                                        <li class="page-item pagination-primary disabled">
+                                            <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                                <i data-lucide="chevron-left" class="size-5"></i>
+                                                <span>Prev</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                        <li class="page-item" aria-current="page">
+                                            <a class="page-link rounded-2 page-number" href="#">2</a>
+                                        </li>
+                                        <li class="page-item pagination-primary ">
+                                            <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                                <span>Next</span>
+                                                <i data-lucide="chevron-right" class="size-5"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
+                </div>
 
-                    <div class="row mt-4 px-5">
-                        <div class="col-6">
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Medicine History</h6>
+                </div>
+                <section class="h-96 card-body pt-0" id="customScroll" data-simplebar>
+                    <div x-data="{
+                        medicines: [
+                            { date: '2024-01-01', time: '08:00 AM', medicineName: 'Aspirin', dosage: '81mg', frequency: 'Daily', startDate: '2024-01-01', endDate: '-', prescribingDoctor: 'Dr. Smith', reasonCondition: 'Heart Health', notes: 'Taken with food' },
+                            { date: '2024-01-15', time: '09:30 AM', medicineName: 'Metformin', dosage: '500mg', frequency: 'Twice a day', startDate: '2024-01-01', endDate: '-', prescribingDoctor: 'Dr. Johnson', reasonCondition: 'Diabetes', notes: 'After meals' },
+                            { date: '2024-02-01', time: '06:00 PM', medicineName: 'Atorvastatin', dosage: '20mg', frequency: 'Daily', startDate: '2024-02-01', endDate: '-', prescribingDoctor: 'Dr. Brown', reasonCondition: 'High Cholesterol', notes: 'Before bedtime' },
+                            { date: '2024-03-01', time: '12:00 PM', medicineName: 'Antihistamine', dosage: '10mg', frequency: 'As needed', startDate: '2024-03-05', endDate: '-', prescribingDoctor: 'Dr. Lee', reasonCondition: 'Allergy', notes: 'For rash' },
+                            { date: '2024-07-05', time: '08:00 AM', medicineName: 'Albuterol Inhaler', dosage: '-', frequency: 'As needed', startDate: '2024-07-05', endDate: '2025-07-09', prescribingDoctor: 'Dr. Patel', reasonCondition: 'Asthma', notes: 'Use for symptoms' }
+                        ],
+                        sortBy: 'date',              
+                        sortDirection: 'asc',
+                        sort(field) {
+                            this.sortBy = this.sortBy === field ? this.sortBy : field;
+                            this.sortDirection = this.sortBy === field ? (this.sortDirection === 'asc' ? 'desc' : 'asc') : 'asc';
+                        },
+                        sortedmedicines() {
+                            return this.medicines.slice().sort((a, b) => {
+                                const aValue = a[this.sortBy], bValue = b[this.sortBy];
+                                return (aValue > bValue ? 1 : (aValue < bValue ? -1 : 0)) * (this.sortDirection === 'asc' ? 1 : -1);
+                            });
+                        }
+                    }" class="table-box">
+                        <table class="table table-borderless align-middle">
+                            <div>
+                                <thead>
+                                    <tr class="table-light border-bottom">
+                                        <th x-on:click="sort('date')" class="fw-medium text-dark cursor-pointer">Date <span x-show="sortBy === 'date'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                        <th x-on:click="sort('time')" class="fw-medium text-dark cursor-pointer">Time <span x-show="sortBy === 'time'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                        <th x-on:click="sort('medicineName')" class="fw-medium text-dark cursor-pointer">Medicine Name <span x-show="sortBy === 'medicineName'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                        <th x-on:click="sort('dosage')" class="fw-medium text-dark cursor-pointer">Dosage <span x-show="sortBy === 'dosage'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                        <th x-on:click="sort('frequency')" class="fw-medium text-dark cursor-pointer">Frequency <span x-show="sortBy === 'frequency'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                        <th x-on:click="sort('startDate')" class="fw-medium text-dark cursor-pointer">Start Date <span x-show="sortBy === 'startDate'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                        <th x-on:click="sort('endDate')" class="fw-medium text-dark cursor-pointer">End Date <span x-show="sortBy === 'endDate'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                        <th x-on:click="sort('prescribingDoctor')" class="fw-medium text-dark cursor-pointer">Prescribing Doctor <span x-show="sortBy === 'prescribingDoctor'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                        <th x-on:click="sort('reasonCondition')" class="fw-medium text-dark cursor-pointer">Reason/Condition <span x-show="sortBy === 'reasonCondition'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                        <th x-on:click="sort('notes')" class="fw-medium text-dark cursor-pointer">Notes <span x-show="sortBy === 'notes'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                        <th class="fw-medium text-dark">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template x-for="(medicine, index) in sortedmedicines()" :key="medicine.date">
+                                        <tr>
+                                            <td x-text="medicine.date"></td>
+                                            <td x-text="medicine.time"></td>
+                                            <td x-text="medicine.medicineName"></td>
+                                            <td x-text="medicine.dosage"></td>
+                                            <td x-text="medicine.frequency"></td>
+                                            <td x-text="medicine.startDate"></td>
+                                            <td x-text="medicine.endDate"></td>
+                                            <td x-text="medicine.prescribingDoctor"></td>
+                                            <td x-text="medicine.reasonCondition"></td>
+                                            <td x-text="medicine.notes"></td>
+                                            <td>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <button class="btn btn-sub-secondary size-8 rounded-circle btn-icon"><i class="ri-pencil-line"></i></button>
+                                                    <button class="btn btn-sub-danger size-8 rounded-circle btn-icon"><i class="ri-delete-bin-line"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </div>
+                        </table>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <div>
                             <p>Showing <b class="me-1">1-5</b> of <b class="ms-1">6</b> Results</p>
                         </div>
-                        <div class="col-6 justify-content-end d-flex">
+                        <div class="justify-content-end d-flex">
                             <nav aria-label="...">
-                                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0">
-                                    <li class="page-item pagination-primary ">
+                                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                                         <li class="page-item pagination-primary disabled">
                                         <a class="page-link rounded-2 d-flex align-items-center gap-1">
-                                            <i data-lucide="chevron-left" class="size-5"></i>
+                                            <i data-lucide="chevron-left" class="size-4"></i>
                                             <span>Prev</span>
                                         </a>
                                     </li>
@@ -277,15 +380,138 @@
                                     <li class="page-item pagination-primary ">
                                         <a class="page-link rounded-2 d-flex align-items-center gap-1">
                                             <span>Next</span>
-                                            <i data-lucide="chevron-right" class="size-5"></i>
+                                            <i data-lucide="chevron-right" class="size-4"></i>
                                         </a>
                                     </li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
+                </section>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Appointments History</h6>
                 </div>
-
+                <section class="h-96 card-body pt-0" id="customScroll" data-simplebar>
+                    <div class="table-box">
+                        <table class="table align-middle">
+                            <div>
+                                <tbody>
+                                    <tr>
+                                        <td>07 June, 2024</td>
+                                        <td>Annual physical exam</td>
+                                        <td>09:00 AM</td>
+                                        <td>General Medicine</td>
+                                        <td>Routine check-up</td>
+                                        <td>Dr. Michael Johnson</td>
+                                        <td><span class="bg-warning-subtle text-warning  border border-warning-subtle badge">Pending</span></td>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <button class="btn btn-sub-light text-dark size-8  btn-icon"><i class="ri-eye-line"></i></button>
+                                                <button class="btn btn-sub-light text-dark size-8  btn-icon"><i class="ri-pencil-line"></i></button>
+                                                <button class="btn btn-sub-danger size-8 btn-icon"><i class="ri-delete-bin-line"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>08 June, 2024</td>
+                                        <td>Dermatology consultation</td>
+                                        <td>02:00 PM</td>
+                                        <td>Dermatology</td>
+                                        <td>Skin condition evaluation</td>
+                                        <td>Dr. Sarah Evans</td>
+                                        <td><span class="bg-warning-subtle text-warning  border border-warning-subtle badge">Pending</span></td>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <button class="btn btn-sub-light text-dark size-8  btn-icon"><i class="ri-eye-line"></i></button>
+                                                <button class="btn btn-sub-light text-dark size-8  btn-icon"><i class="ri-pencil-line"></i></button>
+                                                <button class="btn btn-sub-danger size-8 btn-icon"><i class="ri-delete-bin-line"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>09 June, 2024</td>
+                                        <td>Physical therapy session</td>
+                                        <td>11:30 AM</td>
+                                        <td>Physical Therapy</td>
+                                        <td>Rehabilitation exercises</td>
+                                        <td>Dr. John Williams</td>
+                                        <td><span class="bg-success-subtle text-success  border border-success-subtle badge">Completed</span></td>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <button class="btn btn-sub-light text-dark size-8  btn-icon"><i class="ri-eye-line"></i></button>
+                                                <button class="btn btn-sub-light text-dark size-8  btn-icon"><i class="ri-pencil-line"></i></button>
+                                                <button class="btn btn-sub-danger size-8 btn-icon"><i class="ri-delete-bin-line"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>10 June, 2024</td>
+                                        <td>Eye examination</td>
+                                        <td>03:30 PM</td>
+                                        <td>Ophthalmology</td>
+                                        <td>Vision check-up</td>
+                                        <td>Dr. Emily Martinez</td>
+                                        <td><span class="bg-success-subtle text-success  border border-success-subtle badge">Completed</span></td>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <button class="btn btn-sub-light text-dark size-8  btn-icon"><i class="ri-eye-line"></i></button>
+                                                <button class="btn btn-sub-light text-dark size-8  btn-icon"><i class="ri-pencil-line"></i></button>
+                                                <button class="btn btn-sub-danger size-8 btn-icon"><i class="ri-delete-bin-line"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>11 June, 2024</td>
+                                        <td>Psychiatry consultation</td>
+                                        <td>10:00 AM</td>
+                                        <td>Psychiatry</td>
+                                        <td>Mental health evaluation</td>
+                                        <td>Dr. James Anderson</td>
+                                        <td><span class="bg-success-subtle text-success  border border-success-subtle badge">Completed</span></td>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <button class="btn btn-sub-light text-dark size-8  btn-icon"><i class="ri-eye-line"></i></button>
+                                                <button class="btn btn-sub-light text-dark size-8  btn-icon"><i class="ri-pencil-line"></i></button>
+                                                <button class="btn btn-sub-danger size-8 btn-icon"><i class="ri-delete-bin-line"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </div>
+                        </table>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <div>
+                            <p>Showing <b class="me-1">1-5</b> of <b class="ms-1">6</b> Results</p>
+                        </div>
+                        <div class="justify-content-end d-flex">
+                            <nav aria-label="...">
+                                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                                         <li class="page-item pagination-primary disabled">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <i data-lucide="chevron-left" class="size-4"></i>
+                                            <span>Prev</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                    <li class="page-item" aria-current="page">
+                                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                                    </li>
+                                    <li class="page-item pagination-primary ">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <span>Next</span>
+                                            <i data-lucide="chevron-right" class="size-4"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
@@ -301,7 +527,7 @@
                 <div class="modal-body">
                     <form action="#!">
                         <div x-data="{
-                            reportType: '', recommendations: '', clientDetail: '', status: '', impression: '', reportDate: '', doctorName: '',
+                            reportType: '', recommendations: '', clientDetail: '', endDate: '', impression: '', reportDate: '', doctorName: '',
                             errors: {},
                     
                             validate() {
@@ -312,7 +538,7 @@
                                 if (!this.clientDetail) this.errors.clientDetail = 'Client details are required.'; // Fix here
                                 if (!this.impression) this.errors.impression = 'Impression is required.';
                                 if (!this.recommendations) this.errors.recommendations = 'Recommendations are required.';
-                                if (!this.status) this.errors.status = 'Status is required.';
+                                if (!this.endDate) this.errors.endDate = 'endDate is required.';
                                 return Object.keys(this.errors).length === 0;
                             },
                     
@@ -361,11 +587,11 @@
                                 <p x-show="errors.recommendations" class="text-sm text-danger" x-text="errors.recommendations"></p>
                             </div>
 
-                            <!-- Status -->
+                            <!-- endDate -->
                             <div class="col-12">
-                                <label class="form-label fw-medium">Status <span class="text-danger">*</span></label>
-                                <div id="statusSelect" @change="clearError('status')"></div>
-                                <p x-show="errors.status" class="text-sm text-danger" x-text="errors.status"></p>
+                                <label class="form-label fw-medium">endDate <span class="text-danger">*</span></label>
+                                <div id="endDateSelect" @change="clearError('endDate')"></div>
+                                <p x-show="errors.endDate" class="text-sm text-danger" x-text="errors.endDate"></p>
                             </div>
 
                             <!-- Action Buttons -->
@@ -385,14 +611,9 @@
 </div>
 </div>
 
-<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
-
-<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
-
 {{> partials/vendor-scripts}}
 
 <script src="assets/js/apps/hospital/patients/overview.init.js"></script>
-
 <script type="module" src="assets/js/main.js"></script>
 
 </body>

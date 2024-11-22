@@ -1,0 +1,156 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Add Leave" }}
+
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Add Leave" sub-title="Staff" }}
+
+    <div class="row">
+        <div class="col-9">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Create Leave Request</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row g-5" x-data="{
+                        leaveTypeSelect: '', contactNumber: '', emergencyNumber: '', startDateInput: '', endDateInput: '', totalDays: '',
+                        leaveTypeSelectError: '', contactNumberError: '', emergencyNumberError: '', startDateInputError: '', endDateInputError: '', totalDaysError: '',
+                
+                        valistLeaveForm() {
+                            this.leaveTypeSelectError = this.contactNumberError = this.emergencyNumberError = this.startDateInputError = this.endDateInputError = this.totalDaysError = '';
+                            if (!this.leaveTypeSelect) this.leaveTypeSelectError = 'Leave Type is required.';
+                            if (!this.contactNumber) this.contactNumberError = 'Contact Number is required.';
+                            if (!this.emergencyNumber) this.emergencyNumberError = 'Emergency Number is required.';
+                            if (!this.startDateInput) this.startDateInputError = 'Start Date is required.';
+                            if (!this.endDateInput) this.endDateInputError = 'End Date is required.';
+                            if (!this.totalDays) this.totalDaysError = 'Total Days is required.';
+                            return !this.leaveTypeSelectError && !this.contactNumberError && !this.emergencyNumberError && !this.startDateInputError && !this.endDateInputError && !this.totalDaysError;
+                        },
+                
+                        clearError(field) {
+                            if (field) this[`${field}Error`] = '';
+                        }
+                    }">
+                        <div class="col-12">
+                            <label for="leaveTypeSelect" class="form-label fw-medium">Leave Type <span class="text-danger">*</span></label>
+                            <div id="leaveTypeSelect" x-model="leaveTypeSelect" @change="clearError('leaveTypeSelect')"></div>
+                            <p x-show="leaveTypeSelectError" class="text-sm text-danger" x-text="leaveTypeSelectError"></p>
+                        </div>
+                        <div class="col-6">
+                            <label for="contactNumber" class="form-label fw-medium">Contact Number <span class="text-danger">*</span></label>
+                            <input type="number" x-model="contactNumber" placeholder="Enter your contact number" class="form-control" @input="clearError('contactNumber')" />
+                            <p x-show="contactNumberError" class="text-sm text-danger" x-text="contactNumberError"></p>
+                        </div>
+                        <div class="col-6">
+                            <label for="emergencyNumber" class="form-label fw-medium">Emergency Number <span class="text-danger">*</span></label>
+                            <input type="number" x-model="emergencyNumber" placeholder="Enter your emergency number" class="form-control" @input="clearError('emergencyNumber')" />
+                            <p x-show="emergencyNumberError" class="text-sm text-danger" x-text="emergencyNumberError"></p>
+                        </div>
+                        <div class="col-4">
+                            <label for="startDate" class="form-label fw-medium">Start Date <span class="text-danger">*</span></label>
+                            <input data-provider="flatpickr" data-date-format="d M, Y" type="text" placeholder="YYYY-MM-DD" x-model="startDateInput" class="form-control form-input flatpickr-input active" readonly="readonly" @input="clearError('startDateInput')" />
+                            <p x-show="startDateInputError" class="text-sm text-danger" x-text="startDateInputError"></p>
+                        </div>
+                        <div class="col-4">
+                            <label for="endDate" class="form-label fw-medium">End Date <span class="text-danger">*</span></label>
+                            <input data-provider="flatpickr" data-date-format="d M, Y" type="text" placeholder="YYYY-MM-DD" x-model="endDateInput" class="form-control form-input flatpickr-input active" readonly="readonly" @input="clearError('endDateInput')" />
+                            <p x-show="endDateInputError" class="text-sm text-danger" x-text="endDateInputError"></p>
+                        </div>
+                        <div class="col-4">
+                            <label for="totalDays" class="form-label fw-medium">Total Days <span class="text-danger">*</span></label>
+                            <input type="number" x-model="totalDays" placeholder="0" class="form-control" @input="clearError('totalDays')" />
+                            <p x-show="totalDaysError" class="text-sm text-danger" x-text="totalDaysError"></p>
+                        </div>
+                        <div class="col-12">
+                            <label for="totalDays" class="form-label fw-medium">Total Days <span class="text-danger">*</span></label>
+                            <label for="totalDays" class="form-label fw-medium">Total Days <span class="text-danger">*</span></label>
+                            <textarea rows="3" x-model="totalDays" placeholder="Enter Total Days" class="form-control" @input="clearError('totalDays')"></textarea>
+                            <p x-show="totalDaysError" class="text-sm text-danger" x-text="totalDaysError"></p>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex gap-2 align-items-center justify-content-end">
+                                <button type="reset" @click="clearError('contactNumber'); clearError('emergencyNumber'); clearError('startDateInput'); clearError('endDateInput'); clearError('totalDays')" class="btn btn-light text-dark">Reset</button>
+                                <button class="btn btn-primary" @click="if (valistLeaveForm()) { alert('Form is valid and ready for submission!') }">Apply Leave Request</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 col-xxl-3">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Leave Summary</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-sm table-borderless">
+                        <tbody>
+                            <tr>
+                                <td class="text-muted">Casual Leave</td>
+                                <td class="fw-medium">11</td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted">Sick Leave</td>
+                                <td class="fw-medium">1</td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted">Maternity Leave</td>
+                                <td class="fw-medium">1</td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted">Emergency Leave</td>
+                                <td class="fw-medium">2</td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted">Vacation Leave</td>
+                                <td class="fw-medium">3</td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted">Total Leave</td>
+                                <td class="fw-medium">18</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/hospital/staff/create-leave.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

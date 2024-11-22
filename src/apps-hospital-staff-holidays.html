@@ -1,0 +1,321 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Holidays" }}
+
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Holidays" sub-title="Staff" }}
+
+    <div class="row">
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body bg-light-subtle">
+                    <div class="mx-5 mb-4">
+                        <img src="assets/images/hospital/img-01.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="space-y-4">
+                        <div class="d-flex align-items-center mb-4 ps-5 position-relative">
+                            <span class="position-absolute top-0 mt-2 start-0 bg-primary rounded-circle size-2"></span>
+                            <div>
+                                <p class="mb-3 badge bg-dark-subtle text-dark  border border-dark-subtle">Today - 21 Jan, 2024</p>
+                                <h6 class="mb-0">World Religion Day</h6>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4 ps-5 position-relative">
+                            <span class="position-absolute top-0 mt-2 start-0 bg-warning rounded-circle size-2"></span>
+                            <div>
+                                <p class="mb-3 badge bg-dark-subtle text-dark  border border-dark-subtle">Upcoming - 04 Feb, 2024</p>
+                                <h6 class="mb-0">World Cancer Day</h6>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4 ps-5 position-relative">
+                            <span class="position-absolute top-0 mt-2 start-0 bg-danger rounded-circle size-2"></span>
+                            <div>
+                                <p class="mb-3 badge bg-dark-subtle text-dark  border border-dark-subtle">Upcoming - 25 May, 2024</p>
+                                <h6 class="mb-0">African Liberation Day</h6>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4 ps-5 position-relative">
+                            <span class="position-absolute top-0 mt-2 start-0 bg-danger rounded-circle size-2"></span>
+                            <div>
+                                <p class="mb-3 badge bg-dark-subtle text-dark  border border-dark-subtle">Upcoming - 29 Sep, 2024</p>
+                                <h6 class="mb-0">World Heart Day</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h6 class="card-title mb-0">Holiday</h6>
+                        <div>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addHolidayModal">
+                                <i data-lucide="circle-plus" class="size-4 me-2"></i>Add Holiday
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <section class="card-body pt-0" id="customScroll" data-simplebar>
+                    <div x-data="{
+                        medicines: [
+                            { name: 'New Years Day',  date: '1 Jan 2024', day: 'Monday'},
+                            { name: 'Martin Luther King Jr. Day',  date: '15 Jan 2024', day: 'Monday'},
+                            { name: 'Groundhog Day',  date: '2 Feb 2024', day: 'Friday'},
+                            { name: 'Valentines Day',  date: '14 Feb 2024', day: 'Wednesday'},
+                            { name: 'Presidents Day',  date: '19 Feb 2024', day: 'Monday'},
+                            { name: 'St. Patricks Day',  date: '17 Mar 2024', day: 'Sunday'},
+                            { name: 'Easter',  date: '31 Mar 2024', day: 'Sunday'},
+                            { name: 'April Fools Day',  date: '1 Apr 2024', day: 'Monday'},
+                            { name: 'Earth Day',  date: '22 Apr 2024', day: 'Monday'},
+                            { name: 'Cinco de Mayo',  date: '5 May 2024', day: 'Sunday'},
+                            ],
+                        sortBy: 'staff.name',              
+                        sortDirection: 'asc',
+                        sort(field) {
+                            this.sortBy = this.sortBy === field ? this.sortBy : field;
+                            this.sortDirection = this.sortBy === field ? (this.sortDirection === 'asc' ? 'desc' : 'asc') : 'asc';
+                        },
+                        sortedmedicines() {
+                            return this.medicines.slice().sort((a, b) => {
+                                const aValue = this.getNestedValue(a, this.sortBy),
+                                      bValue = this.getNestedValue(b, this.sortBy);
+                                return (aValue > bValue ? 1 : (aValue < bValue ? -1 : 0)) * (this.sortDirection === 'asc' ? 1 : -1);
+                            });
+                        },
+                        getNestedValue(obj, path) {
+                            return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+                        }
+                    }" class="table-box">
+                        <table class="table table-borderless align-middle">
+                            <thead>
+                                <tr class="table-light border-bottom">
+                                    <th x-on:click="sort('name')" class="fw-medium text-dark cursor-pointer">Holiday Name <span x-show="sortBy === 'name'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                    <th x-on:click="sort('date')" class="fw-medium text-dark cursor-pointer">Date <span x-show="sortBy === 'date'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                    <th x-on:click="sort('day')" class="fw-medium text-dark cursor-pointer">Day <span x-show="sortBy === 'day'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                    <th class="fw-medium text-dark">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template x-for="(medicine, index) in sortedmedicines()" :key="medicine.name">
+                                    <tr>
+                                        <td x-text="medicine.name"></td>
+                                        <td x-text="medicine.day"></td>
+                                        <td x-text="medicine.date"></td>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#HolidayModal"><i class="ri-pencil-line"></i></button>
+                                                <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <div>
+                            <p>Showing <b class="me-1">1-5</b> of <b class="ms-1">6</b> Results</p>
+                        </div>
+                        <div class="justify-content-end d-flex">
+                            <nav aria-label="...">
+                                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                                    <li class="page-item pagination-primary disabled">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <i data-lucide="chevron-left" class="size-4"></i>
+                                            <span>Prev</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                    <li class="page-item" aria-current="page">
+                                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                                    </li>
+                                    <li class="page-item" aria-current="page">
+                                        <a class="page-link rounded-2 page-number" href="#">3</a>
+                                    </li>
+                                    <li class="page-item pagination-primary ">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <span>Next</span>
+                                            <i data-lucide="chevron-right" class="size-4"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Holiday Modal -->
+    <div class="modal fade" id="addHolidayModal" tabindex="-1" aria-labelledby="addHolidayModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="p-2 modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="addprojectModalLabel">Add Holiday</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#!">
+                        <div class="row g-4" x-data="{
+                            holidayInput: '', dateInput: '', daysInput: '',
+                            holidayInputError: '', dateInputError: '', daysInputError: '',
+                        
+                            valinameForm() {
+                                this.holidayInputError = this.dateInputError = this.daysInputError;
+                        
+                                if (!this.holidayInput) this.holidayInputError = 'Full Name is required.';
+                                if (!this.dateInput) this.dateInputError = 'Date is required.'; 
+                                if (!this.daysInput) this.daysInputError = 'Days is required.';
+                        
+                                return !this.holidayInputError && !this.dateInputError && !this.daysInputError;
+                            },
+                        
+                            clearError(field) {
+                                if (field) this[`${field}Error`] = '';
+                            }
+                        }">
+                            <div class="col-12">
+                                <label for="name" class="form-label fw-medium">Holiday <span class="text-danger">*</span></label>
+                                <input type="text" x-model="holidayInput" placeholder="Enter holiday name" class="form-control" @input="clearError('holidayInput')" />
+                                <p x-show="holidayInputError" class="text-sm text-danger" x-text="holidayInputError"></p>
+                            </div>
+                            <div class="col-12">
+                                <label for="dateInput" class="form-label fw-medium">Date <span class="text-danger">*</span></label>
+                                <input data-provider="flatpickr" x-model="dateInput" data-date-format="d M, Y" type="text" placeholder="Select date" class="form-control form-input flatpickr-input active" readonly="readonly" @input="clearError('dateInput')" />
+                                <p x-show="dateInputError" class="text-sm text-danger" x-text="dateInputError"></p>
+                            </div>
+                            <div class="col-12">
+                                <label for="daysInput" class="form-label fw-medium">Day Name <span class="text-danger">*</span></label>
+                                <input type="text" x-model="daysInput" placeholder="Enter date name" class="form-control" @input="clearError('daysInput')" />
+                                <p x-show="daysInputError" class="text-sm text-danger" x-text="daysInputError"></p>
+                            </div>
+                            <div class="d-flex justify-content-end gap-2 mt-4">
+                                <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal"><i data-lucide="x" class="size-4 me-1"></i>Close</button>
+                                <button type="button" class="btn btn-primary" @click="if (valinameForm()) {}">Add Holidays</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Holiday Modal -->
+    <div class="modal fade" id="HolidayModal" tabindex="-1" aria-labelledby="HolidayModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="p-2 modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="addprojectModalLabel">Add Holiday</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#!">
+                        <div class="row g-4" x-data="{
+                                holidayInput: '', dateInput: '', daysInput: '',
+                                holidayInputError: '', dateInputError: '', daysInputError: '',
+                            
+                                valinameForm() {
+                                    this.holidayInputError = this.dateInputError = this.daysInputError;
+                            
+                                    if (!this.holidayInput) this.holidayInputError = 'Full Name is required.';
+                                    if (!this.dateInput) this.dateInputError = 'Date is required.'; 
+                                    if (!this.daysInput) this.daysInputError = 'Days is required.';
+                            
+                                    return !this.holidayInputError && !this.dateInputError && !this.daysInputError;
+                                },
+                            
+                                clearError(field) {
+                                    if (field) this[`${field}Error`] = '';
+                                }
+                            }">
+                            <div class="col-12">
+                                <label for="name" class="form-label fw-medium">Holiday <span class="text-danger">*</span></label>
+                                <input type="text" x-model="holidayInput" value="St. Patrick's Day" class="form-control" @input="clearError('holidayInput')" />
+                                <p x-show="holidayInputError" class="text-sm text-danger" x-text="holidayInputError"></p>
+                            </div>
+                            <div class="col-12">
+                                <label for="dateInput" class="form-label fw-medium">Date <span class="text-danger">*</span></label>
+                                <input data-provider="flatpickr" x-model="dateInput" data-date-format="d M, Y" type="text" value="2024-03-17" class="form-control form-input flatpickr-input active" readonly="readonly" @input="clearError('dateInput')" />
+                                <p x-show="dateInputError" class="text-sm text-danger" x-text="dateInputError"></p>
+                            </div>
+                            <div class="col-12">
+                                <label for="daysInput" class="form-label fw-medium">Day Name <span class="text-danger">*</span></label>
+                                <input type="text" x-model="daysInput" value="Sunday" class="form-control" @input="clearError('daysInput')" />
+                                <p x-show="daysInputError" class="text-sm text-danger" x-text="daysInputError"></p>
+                            </div>
+                            <div class="d-flex justify-content-end gap-2 mt-4">
+                                <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal"><i data-lucide="x" class="size-4 me-1"></i>Close</button>
+                                <button type="button" class="btn btn-primary" @click="if (valinameForm()) {}">Add Holidays</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xs">
+            <div class="modal-content p-7 text-center">
+                <div class="size-14 bg-danger-subtle rounded-circle d-flex justify-content-center align-items-center mx-auto mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" class="lucide lucide-trash-2 size-6 text-danger">
+                        <path d="M3 6h18"></path>
+                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                        <line x1="10" x2="10" y1="11" y2="17"></line>
+                        <line x1="14" x2="14" y1="11" y2="17"></line>
+                    </svg>
+                </div>
+                <h5 class="mb-4 lh-base">Are you sure you want to delete this staff ?</h5>
+                <div class="d-flex justify-content-center align-items-center gap-2">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+                    <button class="btn btn-link link-primary text-dark" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/hospital/staff/create-leave.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

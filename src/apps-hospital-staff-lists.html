@@ -1,0 +1,320 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="List View" }}
+
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="List View" sub-title="Staff" }}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-grow-1">
+                        <h6 class="card-title mb-0">Staff List</h6>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addstaffModal">
+                            <i data-lucide="circle-plus" class="size-4 me-2"></i>Add Staff
+                        </button>
+                    </div>
+                </div>
+                <section class="card-body pt-0" id="customScroll" data-simplebar>
+                    <div x-data="{
+                        medicines: [
+                            { staffID: 'PES-1595', staff: { image: 'assets/images/avatar/user-3.png', name: 'Linda Sharp', role: 'Merchandiser, retail' }, department: 'Radiology', email: 'fitzgeraldwilliam@gmail.com', phone: '+1 555 123 4567', date: '20 Feb 2021'},
+                            { staffID: 'PES-1596', staff: { image: 'assets/images/avatar/user-2.png', name: 'Lori Reynolds', role: 'Clinical molecular geneticist' }, department: 'Orthopedics', email: 'wdavidson@warren.org', phone: '+44 20 7946 0958', date: '26 Jan 2020'},
+                            { staffID: 'PES-1597', staff: { image: 'assets/images/avatar/user-1.png', name: 'Paige Williamson', role: 'Product manager' }, department: 'Orthopedics', email: 'reneehawkins@king-gonzalez.com', phone: '+61 2 9374 4000', date: '30 Dec 2022'},
+                            { staffID: 'PES-1598', staff: { image: 'assets/images/avatar/user-24.png', name: 'Russell Hunt', role: 'Ophthalmologist' }, department: 'Neurology', email: 'connie92@gonzalez.com', phone: '+49 30 123456', date: '21 Sept 2021'},
+                            { staffID: 'PES-1599', staff: { image: 'assets/images/avatar/user-25.png', name: 'Theresa Thomas', role: 'Cytogeneticist' }, department: 'Orthopedics', email: 'eric30@yahoo.com', phone: '+33 1 42 68 53 00', date: '4 Sept 2020'},
+                            { staffID: 'PES-1600', staff: { image: 'assets/images/avatar/user-26.png', name: 'Caitlin Werner', role: 'Geneticist, molecular' }, department: 'Orthopedics', email: 'kevintaylor@gmail.com', phone: '+34 91 123 45 67', date: '7 Mar 2020'},
+                            { staffID: 'PES-1601', staff: { image: 'assets/images/avatar/user-23.png', name: 'Stephanie Nguyen', role: 'Multimedia programmer' }, department: 'Cardiology', email: 'melaniebaker@yahoo.com', phone: '+49 40 123456', date: '28 Apr 2022'},
+                            { staffID: 'PES-1602', staff: { image: 'assets/images/avatar/user-24.png', name: 'Kelli Miller', role: 'Mechanical engineer' }, department: 'Cardiology', email: 'smithmary@gmail.com', phone: '+81 3 1234 5678', date: '9 Jun 2020'},
+                            { staffID: 'PES-1603', staff: { image: 'assets/images/avatar/user-22.png', name: 'Nicholas Velasquez', role: 'Accounting technician' }, department: 'Radiology', email: 'henry54@yahoo.com', phone: '+91 22 1234 5678', date: '19 Feb 2021'},
+                            { staffID: 'PES-1604', staff: { image: 'assets/images/avatar/user-28.png', name: 'Lydia James', role: 'Surveyor, commercial/residential' }, department: 'Radiology', email: 'patricia63@yahoo.com', phone: '+55 11 1234-5678', date: '9 Aug 2020'},
+                        ],
+                        sortBy: 'staff.name',              
+                        sortDirection: 'asc',
+                        sort(field) {
+                            this.sortBy = this.sortBy === field ? this.sortBy : field;
+                            this.sortDirection = this.sortBy === field ? (this.sortDirection === 'asc' ? 'desc' : 'asc') : 'asc';
+                        },
+                        sortedmedicines() {
+                            return this.medicines.slice().sort((a, b) => {
+                                const aValue = this.getNestedValue(a, this.sortBy),
+                                      bValue = this.getNestedValue(b, this.sortBy);
+                                return (aValue > bValue ? 1 : (aValue < bValue ? -1 : 0)) * (this.sortDirection === 'asc' ? 1 : -1);
+                            });
+                        },
+                        getNestedValue(obj, path) {
+                            return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+                        }
+                    }" class="table-box">
+                        <table class="table table-borderless align-middle">
+                            <thead>
+                                <tr class="table-light border-bottom">
+                                    <th x-on:click="sort('staffID')" class="fw-medium text-dark cursor-pointer">ID <span x-show="sortBy === 'staffID'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                    <th x-on:click="sort('staff.name')" class="fw-medium text-dark cursor-pointer">Staff Name <span x-show="sortBy === 'staff.name'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                    <th x-on:click="sort('department')" class="fw-medium text-dark cursor-pointer">Department <span x-show="sortBy === 'department'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                    <th x-on:click="sort('email')" class="fw-medium text-dark cursor-pointer">Email <span x-show="sortBy === 'email'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                    <th x-on:click="sort('phone')" class="fw-medium text-dark cursor-pointer">Phone <span x-show="sortBy === 'phone'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                    <th x-on:click="sort('date')" class="fw-medium text-dark cursor-pointer">Joining Date <span x-show="sortBy === 'date'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                    <th class="fw-medium text-dark">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template x-for="(medicine, index) in sortedmedicines()" :key="medicine.staffID">
+                                    <tr>
+                                        <td x-text="medicine.staffID"></td>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-3">
+                                                <img :src="medicine.staff.image" alt="" class="size-10 rounded-circle">
+                                                <div>
+                                                    <h6 class="mb-1"><a href="#!" x-text="medicine.staff.name" class="text-black"></a></h6>
+                                                    <p x-text="medicine.staff.role" class="fs-sm"></p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td x-text="medicine.department"></td>
+                                        <td x-text="medicine.email"></td>
+                                        <td x-text="medicine.phone"></td>
+                                        <td x-text="medicine.date"></td>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#staffModal"><i class="ri-pencil-line"></i></button>
+                                                <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <div>
+                            <p>Showing <b class="me-1">1-5</b> of <b class="ms-1">6</b> Results</p>
+                        </div>
+                        <div class="justify-content-end d-flex">
+                            <nav aria-label="...">
+                                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                                         <li class="page-item pagination-primary disabled">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <i data-lucide="chevron-left" class="size-4"></i>
+                                            <span>Prev</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                    <li class="page-item" aria-current="page">
+                                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                                    </li>
+                                    <li class="page-item pagination-primary ">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <span>Next</span>
+                                            <i data-lucide="chevron-right" class="size-4"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Staff Modal -->
+    <div class="modal fade" id="addstaffModal" tabindex="-1" aria-labelledby="addstaffModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="p-2 modal-content">
+                <div class="h-24 w-100 rounded-top square modal-square"></div>
+                <div class="p-4">
+                    <form action="#!">
+                        <div class="-mt-16 row" x-data="{
+                        fullName: '', role: '', email: '', phone: '', Department: '', joinstaffID: '', image: null,
+                        fullNameError: '', roleError: '', emailError: '', phoneError: '', DepartmentError: '', joinstaffIDError: '', imageError: '',
+                    
+                        valistaffIDForm() {
+                            this.fullNameError = this.roleError = this.emailError = this.phoneError = this.DepartmentError = this.joinstaffIDError = this.imageError = '';
+                    
+                            if (!this.fullName) this.fullNameError = 'Full Name is required.';
+                            if (!this.role) this.roleError = 'Role is required.'; 
+                            if (!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(this.email)) this.emailError = 'Email is required.';
+                            if (!/^\+\(\d{3}\) \d{4} \d{4}$/.test(this.phone)) this.phoneError = 'Phone must be in format +(000) 0000 0000.';
+                            if (!this.Department) this.DepartmentError = 'Department is required.';
+                            if (!this.joinstaffID) this.joinstaffIDError = 'joinstaffID is required.';
+                            if (!this.image) this.imageError = 'Image is required.';
+                    
+                            return !this.fullNameError && !this.roleError && !this.emailError && !this.phoneError && !this.DepartmentError && !this.joinstaffIDError && !this.imageError;
+                        },
+                    
+                        clearError(field) {
+                            if (field) this[`${field}Error`] = '';
+                        }
+                    }">
+                            <div class="col-12 mb-4">
+                                <label class="d-flex justify-content-center align-items-center border border-2 border-white bg-light size-24 d-inline-block rounded-circle">
+                                    <img x-show="image" :src="image" class="rounded-circle w-100 h-100 object-cover">
+                                    <i x-show="!image" data-lucide="upload" class="text-dark"></i>
+                                    <input type="file" class="d-none" @change="image = URL.createObjectURL($event.target.files[0]); clearError('image')" />
+                                </label>
+                                <p x-show="imageError" class="text-sm text-danger" x-text="imageError"></p>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="name" class="form-label fw-medium">Full Name</label>
+                                <input type="text" x-model="fullName" placeholder="Full Name" class="form-control" @input="clearError('fullName')" />
+                                <p x-show="fullNameError" class="text-sm text-danger" x-text="fullNameError"></p>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="role" class="form-label fw-medium">Role</label>
+                                <input type="text" x-model="role" placeholder="Role" class="form-control" @input="clearError('role')" />
+                                <p x-show="roleError" class="text-sm text-danger" x-text="roleError"></p>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="Department" class="form-label fw-medium">Department</label>
+                                <div id="departmentSelect" placeholder="Select Department" x-model="Department" @change="clearError('Department')"></div>
+                                <p x-show="DepartmentError" class="text-sm text-danger" x-text="DepartmentError"></p>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="email" class="form-label fw-medium">Email</label>
+                                <input type="text" x-model="email" placeholder="support@pixeleyez.com" class="form-control" @input="clearError('email')" />
+                                <p x-show="emailError" class="text-sm text-danger" x-text="emailError"></p>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="phone" class="form-label fw-medium">Phone Number</label>
+                                <input type="text" x-model="phone" @input="
+                                phone = phone.replace(/[^0-9]/g, ''); 
+                                if (phone.length > 0) phone = '+' + phone;
+                                if (phone.length > 1) phone = phone.slice(0, 1) + '(' + phone.slice(1);
+                                if (phone.length > 5) phone = phone.slice(0, 5) + ')' + phone.slice(5);
+                                if (phone.length > 6) phone = phone.slice(0, 6) + ' ' + phone.slice(6);
+                                if (phone.length > 11) phone = phone.slice(0, 11) + ' ' + phone.slice(11);
+                                if (phone.length > 16) phone = phone.slice(0, 16);
+                                clearError('phone');
+                            " placeholder="+(000) 0000 0000" maxlength="19" class="form-control" aria-label="Phone number" />
+                                <p x-show="phoneError" class="text-sm text-danger" x-text="phoneError"></p>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="joinstaffID" class="form-label fw-medium">Joining Date</label>
+                                <input type="text" x-model="joinstaffID" placeholder="Select staffID" class="form-control" @input="clearError('joinstaffID')" />
+                                <p x-show="joinstaffIDError" class="text-sm text-danger" x-text="joinstaffIDError"></p>
+                            </div>
+                            <div class="d-flex justify-content-end gap-2 mt-4">
+                                <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal"><i data-lucide="x" class="size-4 me-1"></i>Close</button>
+                                <button type="button" class="btn btn-primary" @click="if (valistaffIDForm()) { alert('Form is valid and ready for submission!') }">Add Staff</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Staff Modal -->
+    <div class="modal fade" id="staffModal" tabindex="-1" aria-labelledby="staffModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="p-2 modal-content">
+                <div class="h-24 w-100 rounded-top square modal-square"></div>
+                <div class="p-4">
+                    <form action="#!">
+                        <div class="-mt-16 row">
+                            <div class="col-12 mb-4">
+                                <label class="d-flex justify-content-center align-items-center border border-2 border-white bg-light size-24 d-inline-block rounded-circle">
+                                    <img src="assets/images/avatar/user-3.png" class="rounded-circle w-100 h-100 object-cover">
+                                    <input type="file" class="d-none" @change="image = URL.createObjectURL($event.target.files[0]); clearError('image')" />
+                                </label>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="name" class="form-label fw-medium">Full Name</label>
+                                <input type="text" value="Linda Sharp" class="form-control">
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="role" class="form-label fw-medium">Role</label>
+                                <input type="text" value="Merchandiser, retail" class="form-control">
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="Department" class="form-label fw-medium">Department</label>
+                                <div id="staffSelect"></div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="email" class="form-label fw-medium">Email</label>
+                                <input type="text" value="fitzgeraldwilliam@gmail.com" class="form-control">
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="phone" class="form-label fw-medium">Phone Number</label>
+                                <input type="text" value="+1 555 123 4567" maxlength="19" class="form-control" aria-label="Phone number" />
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="joiningDateInput" class="form-label fw-medium">Joining Date</label>
+                                <input data-provider="flatpickr" data-date-format="d M, Y" type="text" value="2021-02-20" class="form-control form-input flatpickr-input active" readonly="readonly">
+                            </div>
+                            <div class="d-flex justify-content-end gap-2 mt-4">
+                                <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal"><i data-lucide="x" class="size-4 me-1"></i>Close</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Update Staff</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xs">
+            <div class="modal-content p-7 text-center">
+                <div class="size-14 bg-danger-subtle rounded-circle d-flex justify-content-center align-items-center mx-auto mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" class="lucide lucide-trash-2 size-6 text-danger">
+                        <path d="M3 6h18"></path>
+                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                        <line x1="10" x2="10" y1="11" y2="17"></line>
+                        <line x1="14" x2="14" y1="11" y2="17"></line>
+                    </svg>
+                </div>
+                <h5 class="mb-4 lh-base">Are you sure you want to delete this staff ?</h5>
+                <div class="d-flex justify-content-center align-items-center gap-2">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+                    <button class="btn btn-link link-primary text-dark" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/hospital/staff/list.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

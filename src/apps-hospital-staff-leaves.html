@@ -1,0 +1,221 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Leave Management" }}
+
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Leave Management" sub-title="Staff" }}
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="d-flex align-items-center gap-4 card-body">
+                    <div class="d-flex justify-content-center align-items-center text-success fs-xl rounded-2 bg-success-subtle size-14"> 0 </div>
+                    <p>Available Leaves</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="d-flex align-items-center gap-4 card-body">
+                    <div class="d-flex justify-content-center align-items-center text-secondary fs-xl rounded-2 bg-secondary-subtle size-14"> 7 </div>
+                    <p>Used Leaves</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="d-flex align-items-center gap-4 card-body">
+                    <div class="d-flex justify-content-center align-items-center text-warning fs-xl rounded-2 bg-warning-subtle size-14"> 7 </div>
+                    <p>Pending Leaves Request</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="d-flex align-items-center gap-4 card-body">
+                    <div class="d-flex justify-content-center align-items-center text-danger fs-xl rounded-2 bg-danger-subtle size-14"> 1 </div>
+                    <p>Rejected Leaves</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="d-flex align-items-center gap-4 card-body">
+                    <div class="d-flex justify-content-center align-items-center text-info fs-xl rounded-2 bg-info-subtle size-14"> 15 </div>
+                    <p>Total Leaves</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header d-flex justify-items-between gap-4 align-items-center">
+            <h6 class="card-title flex-grow-1 mb-0">Leaves</h6>
+            <div class="flex-shrink-0">
+                <a href="apps-hospital-staff-leave-add.html" class="btn btn-link btn-primary">New Request</a>
+            </div>
+        </div>
+        <div class="card-header">
+            <div class="row">
+                <div class="col-4">
+                    <div class="position-relative">
+                        <input type="text" class="form-control ps-9 pe-4" placeholder="Leave Type reason">
+                        <div class="position-absolute top-50 translate-middle-y d-flex align-items-center text-muted">
+                            <i data-lucide="search" class="size-4 ms-3"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <input data-provider="flatpickr" data-ID-format="d M, Y" type="text" placeholder="Select ID range" class="form-control form-input flatpickr-input active" readonly="readonly">
+                </div>
+                <div class="col-3">
+                    <div id="statusSelect"></div>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-light text-dark w-100"><i data-lucide="filter" class="size-4 me-1"></i>Filter Now</button>
+                </div>
+            </div>
+        </div>
+        <section class="h-96 card-body pt-0" id="customScroll" data-simplebar>
+            <div x-data="{
+                medicines: [
+                    { ID: 'PEA-15015', leaveType: 'Vacation', startDate: '15 June, 2024', endDate: '21 June, 2024', totalDays: '7', reason: 'Family vacation', dateRequested: '12 June, 2024', dateApproved: '14 June, 2024', status: 'Pending' },
+                    { ID: 'PEA-15016', leaveType: 'Sick Leave', startDate: '10 July, 2024', endDate: '14 July, 2024', totalDays: '5', reason: 'Medical', approvedBy: 'HR', dateRequested: '8 July, 2024', dateApproved: '9 July, 2024', status: 'Approved' },
+                    { ID: 'PEA-15017', leaveType: 'Personal', startDate: '1 Aug, 2024', endDate: '3 Aug, 2024', totalDays: '3', reason: 'Personal reasons', approvedBy: 'Manager', dateRequested: '28 July, 2024', dateApproved: '30 July, 2024', status: 'Approved' },
+                    { ID: 'PEA-15018', leaveType: 'Vacation', startDate: '20 Aug, 2024', endDate: '27 Aug, 2024', totalDays: '8	', reason: 'Travel', dateRequested: '15 Aug, 2024', dateApproved: '18 Aug, 2024', status: 'Pending' },
+                    { ID: 'PEA-15019', leaveType: 'Maternity Leave', startDate: '5 Sep, 2024', endDate: '5 Sep, 2024', totalDays: '1', reason: 'Mom Birthday', approvedBy: 'HR', dateRequested: '1 Sep, 2024', dateApproved: '3 Sep, 2024', status: 'Approved' },
+                    { ID: 'PEA-15020', leaveType: 'Sick Leave', startDate: '12 Sep, 2024', endDate: '16 Sep, 2024', totalDays: '5', reason: 'Surgery recovery', dateRequested: '10 Sep, 2024', dateApproved: '11 Sep, 2024', status: 'Pending' },
+                    { ID: 'PEA-15021', leaveType: 'Vacation', startDate: '1 Oct, 2024', endDate: '10 Oct, 2024', totalDays: '10', reason: 'Honeymoon', approvedBy: 'Admin', dateRequested: '25 Sep, 2024', dateApproved: '28 Sep, 2024', status: 'Approved' },
+                    { ID: 'PEA-15022', leaveType: 'Personal', startDate: '20 Oct, 2024', endDate: '22 Oct, 2024', totalDays: '3', reason: 'Personal reasons', approvedBy: 'Manager', dateRequested: '18 Oct, 2024', dateApproved: '19 Oct, 2024', status: 'Rejected' },
+                    { ID: 'PEA-15023', leaveType: 'Sick Leave', startDate: '5 Nov, 2024', endDate: '7 Nov, 2024', totalDays: '3', reason: 'Flu', approvedBy: 'HR', dateRequested: '3 Nov, 2024', dateApproved: '4 Nov, 2024', status: 'Approved' },
+                    { ID: 'PEA-15024', leaveType: 'Vacation', startDate: '15 Nov, 2024', endDate: '22 Nov, 2024	', totalDays: '8', reason: 'Holiday', approvedBy: 'HR', dateRequested: '10 Nov, 2024', dateApproved: '12 Nov, 2024', status: 'Pending' },
+                ],
+                sortBy: 'ID',              
+                sortDirection: 'asc',
+                sort(field) {
+                    this.sortBy = this.sortBy === field ? this.sortBy : field;
+                    this.sortDirection = this.sortBy === field ? (this.sortDirection === 'asc' ? 'desc' : 'asc') : 'asc';
+                },
+                sortedmedicines() {
+                    return this.medicines.slice().sort((a, b) => {
+                        const aValue = a[this.sortBy], bValue = b[this.sortBy];
+                        return (aValue > bValue ? 1 : (aValue < bValue ? -1 : 0)) * (this.sortDirection === 'asc' ? 1 : -1);
+                    });
+                }
+            }" class="table-box">
+                <table class="table table-borderless align-middle">
+                    <div>
+                        <thead>
+                            <tr class="table-light border-bottom">
+                                <th x-on:click="sort('ID')" class="fw-medium text-dark cursor-pointer">ID <span x-show="sortBy === 'ID'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                <th x-on:click="sort('leaveType')" class="fw-medium text-dark cursor-pointer">Leave Type <span x-show="sortBy === 'leaveType'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                <th x-on:click="sort('startDate')" class="fw-medium text-dark cursor-pointer">Start Date <span x-show="sortBy === 'startDate'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                <th x-on:click="sort('endDate')" class="fw-medium text-dark cursor-pointer">End Date <span x-show="sortBy === 'endDate'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                <th x-on:click="sort('totalDays')" class="fw-medium text-dark cursor-pointer">Days <span x-show="sortBy === 'totalDays'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                <th x-on:click="sort('reason')" class="fw-medium text-dark cursor-pointer">Reason <span x-show="sortBy === 'reason'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                <th x-on:click="sort('approvedBy')" class="fw-medium text-dark cursor-pointer">Approved By	 <span x-show="sortBy === 'approvedBy'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                <th x-on:click="sort('dateRequested')" class="fw-medium text-dark cursor-pointer">Request Date <span x-show="sortBy === 'dateRequested'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                <th x-on:click="sort('dateApproved')" class="fw-medium text-dark cursor-pointer">Approved Date <span x-show="sortBy === 'dateApproved'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                <th x-on:click="sort('status')" class="fw-medium text-dark cursor-pointer">Status <span x-show="sortBy === 'status'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                <th class="fw-medium text-dark">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template x-for="(medicine, index) in sortedmedicines()" :key="medicine.ID">
+                                <tr>
+                                    <td x-text="medicine.ID"></td>
+                                    <td x-text="medicine.leaveType"></td>
+                                    <td x-text="medicine.startDate"></td>
+                                    <td x-text="medicine.endDate"></td>
+                                    <td x-text="medicine.totalDays"></td>
+                                    <td x-text="medicine.reason"></td>
+                                    <td x-text="medicine.approvedBy"></td>
+                                    <td x-text="medicine.dateRequested"></td>
+                                    <td x-text="medicine.dateApproved"></td>
+                                    <td>
+                                        <span :class="{
+                                                'badge bg-success-subtle text-success border border-success-subtle': medicine.status === 'Approved',
+                                                'badge bg-warning-subtle text-warning border border-warning-subtle': medicine.status === 'Pending',
+                                                'badge bg-danger-subtle text-danger border border-danger-subtle': medicine.status === 'Rejected',
+                                            }" x-text="medicine.status"></span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-success size-8 btn-icon"><i class="ri-check-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-danger size-8 btn-icon"><i class="ri-close-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </div>
+                </table>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+                <div>
+                    <p>Showing <b class="me-1">1-10</b>of<b class="ms-1">15</b> Results</p>
+                </div>
+                <div class="justify-content-end d-flex">
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                            <li class="page-item pagination-primary disabled">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                    <i data-lucide="chevron-left" class="size-5"></i>
+                                    <span>Prev</span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                            <li class="page-item" aria-current="page">
+                                <a class="page-link rounded-2 page-number" href="#">2</a>
+                            </li>
+                            <li class="page-item pagination-primary ">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                    <span>Next</span>
+                                    <i data-lucide="chevron-right" class="size-5"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>  
+    </div>
+
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/hospital/staff/leaves.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

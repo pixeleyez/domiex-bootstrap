@@ -169,6 +169,7 @@
     height: map-get($spacers, 10);
     @include flexStyle(center, center);
     padding: 0;
+    border: none;
 }
 .icon-button {
     height: map-get($avatar-sizes, 4);
