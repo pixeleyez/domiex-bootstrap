@@ -1,24 +1,21 @@
 // comman css
 
 .btn-navigation {
+    box-shadow: 0 10px 15px -3px #0000001a;
     position: relative;
     display: inline-flex;
-    box-shadow: 0 10px 15px -3px #0000001a;
 
-    .icon-color {
+    a {
         color: $gray-500;
         padding: 1.5rem 1rem;
         position: relative;
-
-        svg {
-            margin: 0 3.625rem;
-        }
+        flex-grow: 1;
+        text-align: center;
     }
 }
 
 // Bottom Navigation
 .navigation-primary {
-
     &.active {
         color: $primary;
     }
@@ -65,68 +62,36 @@
     }
 }
 
-// Border Navigation
-.navigation-success {
-
-    &::before {
-        content: '';
-        @include position(absolute, null, null, 0, 50%);
-        width: 0;
-        height: 0.125rem;
-        background-color: $success;
-        transform: translateX(-50%);
-    }
-
-    &.active {
-        color: $success;
-
+@each $state in map-keys($theme-colors) {
+    .navigation-border-#{$state} {
         &::before {
-            width: 100%;
-
-        }
-    }
-
-    &:hover {
-        color: $success;
-        transition: $transition-base;
-
-        &::before {
-            width: 100%;
+            content: '';
+            @include position(absolute, null, null, 0, 50%);
+            width: 0;
+            height: 0.125rem;
+            background-color: var(--#{$prefix}#{$state});
+            transform: translateX(-50%);
             transition: $transition-base;
-            transition-duration: .2s;
-        }
-    }
-}
-
-// Border Navigation
-.navigation-animate-primary {
-
-    &::before {
-        content: '';
-        @include position(absolute, 0, null, null, 50%);
-        width: 0;
-        height: 0.125rem;
-        background-color: $primary;
-        transform: translateX(-50%);
-    }
-
-    &.active {
-        color: $primary;
-
-        &::before {
-            width: 100%;
+            transition-duration: .3s;
 
         }
-    }
+        &.top-border::before{
+            @include position(absolute, 0, null, null, 50%);
+        }
+        &.active {
+            color: var(--#{$prefix}#{$state});
 
-    &:hover {
-        color: $primary;
-        transition: $transition-base;
-
-        &::before {
-            width: 100%;
+            &::before {
+                width: 100%;
+            }
+        }
+        &:hover {
+            color: var(--#{$prefix}#{$state});
             transition: $transition-base;
-            transition-duration: .2s;
+
+            &::before {
+                width: 100%;
+            }
         }
     }
 }

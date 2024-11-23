@@ -24,22 +24,7 @@ import pt from '/assets/images/flag/pt.svg';
 AOS.init();
 
 
-// document.getElementById('liveAlertBtn').addEventListener('click', function () {
-// 	const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
 
-// 	// Check if an alert is already present
-// 	if (!alertPlaceholder.querySelector('.alert')) {
-// 		// Create the alert element
-// 		const alert = document.createElement('div');
-// 		alert.className = 'alert alert-primary alert-dismissible fade show';
-// 		alert.role = 'alert';
-// 		alert.innerHTML = 'You have successfully completed this thing! ' +
-// 			'<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="ri-close-fill"></i></button>';
-
-// 		// Append the alert to the placeholder
-// 		alertPlaceholder.appendChild(alert);
-// 	}
-// });
 
 document.querySelectorAll('button[data-toast]').forEach(button => {
     button.addEventListener('click', () => {

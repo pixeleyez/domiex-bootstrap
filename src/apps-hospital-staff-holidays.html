@@ -6,8 +6,6 @@
 
     <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
 
-    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
-
     {{> partials/head-css}}
 
 
@@ -125,7 +123,7 @@
                                         <td x-text="medicine.date"></td>
                                         <td>
                                             <div class="d-flex align-items-center gap-2">
-                                                <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#HolidayModal"><i class="ri-pencil-line"></i></button>
+                                                <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#holidayModal"><i class="ri-pencil-line"></i></button>
                                                 <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
                                             </div>
                                         </td>
@@ -226,26 +224,26 @@
     </div>
 
     <!-- Holiday Modal -->
-    <div class="modal fade" id="HolidayModal" tabindex="-1" aria-labelledby="HolidayModalLabel" aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-centered">
+    <div class="modal fade" id="holidayModal" tabindex="-1" aria-labelledby="holidayModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="p-2 modal-content">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="addprojectModalLabel">Add Holiday</h6>
+                    <h6 class="modal-title" id="holidayModalLabel">Add Holiday</h6>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="#!">
                         <div class="row g-4" x-data="{
-                                holidayInput: '', dateInput: '', daysInput: '',
+                                holidayInput: 'St. Patrick\'s Day', dateInput: '2024-03-17', daysInput: 'Sunday',
                                 holidayInputError: '', dateInputError: '', daysInputError: '',
                             
-                                valinameForm() {
-                                    this.holidayInputError = this.dateInputError = this.daysInputError;
-                            
-                                    if (!this.holidayInput) this.holidayInputError = 'Full Name is required.';
-                                    if (!this.dateInput) this.dateInputError = 'Date is required.'; 
-                                    if (!this.daysInput) this.daysInputError = 'Days is required.';
-                            
+                                validateForm() {
+                                    this.holidayInputError = this.dateInputError = this.daysInputError = '';
+                                    
+                                    if (!this.holidayInput) this.holidayInputError = 'Holiday Name is required.';
+                                    if (!this.dateInput) this.dateInputError = 'Date is required.';
+                                    if (!this.daysInput) this.daysInputError = 'Day is required.';
+                                    
                                     return !this.holidayInputError && !this.dateInputError && !this.daysInputError;
                                 },
                             
@@ -254,31 +252,33 @@
                                 }
                             }">
                             <div class="col-12">
-                                <label for="name" class="form-label fw-medium">Holiday <span class="text-danger">*</span></label>
-                                <input type="text" x-model="holidayInput" value="St. Patrick's Day" class="form-control" @input="clearError('holidayInput')" />
+                                <label for="holidayInput" class="form-label fw-medium">Holiday <span class="text-danger">*</span></label>
+                                <input type="text" id="holidayInput" x-model="holidayInput" class="form-control" @input="clearError('holidayInput')" />
                                 <p x-show="holidayInputError" class="text-sm text-danger" x-text="holidayInputError"></p>
                             </div>
                             <div class="col-12">
                                 <label for="dateInput" class="form-label fw-medium">Date <span class="text-danger">*</span></label>
-                                <input data-provider="flatpickr" x-model="dateInput" data-date-format="d M, Y" type="text" value="2024-03-17" class="form-control form-input flatpickr-input active" readonly="readonly" @input="clearError('dateInput')" />
+                                <input data-provider="flatpickr" x-model="dateInput" data-date-format="d M, Y" type="text" class="form-control flatpickr-input active" readonly @input="clearError('dateInput')" />
                                 <p x-show="dateInputError" class="text-sm text-danger" x-text="dateInputError"></p>
                             </div>
                             <div class="col-12">
                                 <label for="daysInput" class="form-label fw-medium">Day Name <span class="text-danger">*</span></label>
-                                <input type="text" x-model="daysInput" value="Sunday" class="form-control" @input="clearError('daysInput')" />
+                                <input type="text" id="daysInput" x-model="daysInput" class="form-control" @input="clearError('daysInput')" />
                                 <p x-show="daysInputError" class="text-sm text-danger" x-text="daysInputError"></p>
                             </div>
                             <div class="d-flex justify-content-end gap-2 mt-4">
-                                <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal"><i data-lucide="x" class="size-4 me-1"></i>Close</button>
-                                <button type="button" class="btn btn-primary" @click="if (valinameForm()) {}">Add Holidays</button>
+                                <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal">
+                                    <i data-lucide="x" class="size-4 me-1"></i>Close
+                                </button>
+                                <button type="button" class="btn btn-primary" @click="if (validateForm()) { /* Handle the add holidays logic here */ }">Add Holidays</button>
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
     </div>
+    
 
     <!-- Delete Modal -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -293,7 +293,7 @@
                         <line x1="14" x2="14" y1="11" y2="17"></line>
                     </svg>
                 </div>
-                <h5 class="mb-4 lh-base">Are you sure you want to delete this staff ?</h5>
+                <h5 class="mb-4 lh-base">Are you sure you want to delete this holiday ?</h5>
                 <div class="d-flex justify-content-center align-items-center gap-2">
                     <button class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
                     <button class="btn btn-link link-primary text-dark" data-bs-dismiss="modal">Cancel</button>
@@ -307,8 +307,6 @@
 </div>
 
 <script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
-
-<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
 
 {{> partials/vendor-scripts}}
 

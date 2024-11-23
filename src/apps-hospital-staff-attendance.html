@@ -1,0 +1,255 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Attendance" }}
+
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Attendance" sub-title="Staff" }}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex  gap-5">
+                        <div class="flex-shrink-0">
+                            <img src="assets/images/avatar/user-3.png" alt="" class="size-40 rounded-2">
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1 fs-16">Linda Sharp</h6>
+                            <div class="d-flex align-items-center gap-3">
+                                <div>
+                                    <i class="ri-user-3-line me-1"></i>
+                                    <span class="text-muted">Female</span>
+                                </div>
+                                <div>
+                                    <i class="ri-briefcase-line me-1"></i>
+                                    <span class="text-muted">Merchandiser, retail</span>
+                                </div>
+                                <div>
+                                    <i class="ri-map-pin-2-line me-1"></i>
+                                    <span class="text-muted">California</span>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-5 mt-5">
+                                <div class="p-3 text-center border w-36 border-dashed rounded">
+                                    <h5 class="mb-1 fs-lg lh-base">1 <small class="fs-sm text-muted fw-normal">hr</small> 48 <small class="fs-sm text-muted fw-normal">m</small> 37 <small class="fs-sm text-muted fw-normal">s</small></h5>
+                                    <p class="text-muted">Today Timing</p>
+                                </div>
+                                <div class="p-3 text-center border w-36 border-dashed rounded">
+                                    <h5 class="mb-1 fs-lg lh-base">20 <small class="fs-sm fw-normal text-muted">Feb, 2021</small></h5>
+                                    <p class="text-muted">Joining Date</p>
+                                </div>
+                                <div class="p-3 text-center border w-36 border-dashed rounded">
+                                    <h5 class="mb-1 fs-lg lh-base">13 <small class="fs-sm fw-normal text-muted">Dec, 1998</small></h5>
+                                    <p class="text-muted">Birthday Date</p>
+                                </div>
+                                <div class="p-3 text-center border w-36 border-dashed rounded">
+                                    <h5 class="mb-1 fs-lg lh-base">25 <small class="fs-sm fw-normal text-muted">Years</small></h5>
+                                    <p class="text-muted">Age</p>
+                                </div>
+                                <div class="p-3 text-center border w-36 border-dashed rounded">
+                                    <h5 class="mb-1 fs-lg lh-base">Radiology</h5>
+                                    <p class="text-muted">Department</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="d-flex align-items-start gap-2 flex-shrink-0">
+                            <button class="btn btn-sub-success text-success btn-icon" title="phone"><i data-lucide="phone" class="size-4"></i></button>
+                            <button class="btn btn-sub-secondary text-secondary btn-icon" title="phone"><i data-lucide="messages-square" class="size-4"></i></button>
+                            <button class="btn btn-primary" title="phone"><i data-lucide="pencil" class="size-4 me-2"></i>Edit</button>
+                        </div>
+                    </div>
+                    <h6 class="mt-5">Summary Overview</h6>
+                    <div class="row mt-1 g-5">
+                        <div class="col-12 col-md-6 col-xl-4 col-xxl-3 mb-0 mt-3">
+                            <div class="card border-dashed border mb-0">
+                                <div class="card-body">
+                                    <h6 class="mb-2">208 hr 30 min (292hr)</h6>
+                                    <p class="text-muted">Total Working Time (Monthly)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-4 col-xxl-3 mb-0 mt-3">
+                            <div class="card border-dashed border mb-0">
+                                <div class="card-body">
+                                    <h6 class="mb-2">5 hr 15 min</h6>
+                                    <p class="text-muted">Total Delay (Monthly)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-4 col-xxl-3 mb-0 mt-3">
+                            <div class="card border-dashed border mb-0">
+                                <div class="card-body">
+                                    <h6 class="mb-2 text-danger">-5 hr 15 min</h6>
+                                    <p class="text-muted">Total Delay (Monthly)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                            <div class="row g-5">
+                                <div class="col-6 mb-0 mt-3">
+                                    <div class="card border-dashed border mb-0">
+                                        <div class="card-body">
+                                            <h6 class="mb-2">3</h6>
+                                            <p class="text-muted">Missed Shift</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-0 mt-3">
+                                    <div class="card border-dashed border mb-0">
+                                        <div class="card-body">
+                                            <h6 class="mb-2">2</h6>
+                                            <p class="text-muted">Absence</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title flex-grow-1 mb-0">Attendance List</h5>
+                    <button class="btn btn-primary">Start Timing</button>
+                </div>
+                <div class="card-body">
+                    <section class="card-body pt-0" id="customScroll" data-simplebar>
+                        <div x-data="{
+                            attendances: [
+                                { date: '1 Jan 2024', checkInTime: '8:15 am', checkOutTime: '5:10 pm', workedTime: '8 hrs 55 min', differenceTime: '-1 hrs 55 min', status: 'Present' },
+                                { date: '2 Jan 2024', checkInTime: '9:00 am', checkOutTime: '6:00 pm', workedTime: '9 hrs 0 min', differenceTime: '0 hrs 0 min', status: 'Late' },
+                                { date: '3 Jan 2024', checkInTime: '8:00 am', checkOutTime: '5:00 pm', workedTime: '9 hrs 0 min', differenceTime: '0 hrs 0 min', status: 'Present' },
+                                { date: '4 Jan 2024', checkInTime: '8:00 am', checkOutTime: '5:10 pm', workedTime: '9 hrs 10 min', differenceTime: '0 hrs 10 min', status: 'Present' },
+                                { date: '5 Jan 2024', checkInTime: '8:15 am', checkOutTime: '5:30 pm', workedTime: '9 hrs 15 min', differenceTime: '0 hrs 15 min', status: 'Present' }
+                            ],
+                            sortBy: 'date',
+                            sortDirection: 'asc',
+                            sort(field) {
+                                this.sortBy = this.sortBy === field ? this.sortBy : field;
+                                this.sortDirection = this.sortBy === field ? (this.sortDirection === 'asc' ? 'desc' : 'asc') : 'asc';
+                            },
+                            sortedattendances() {
+                                return this.attendances.slice().sort((a, b) => {
+                                    const aValue = this.getNestedValue(a, this.sortBy),
+                                          bValue = this.getNestedValue(b, this.sortBy);
+                                    return (aValue > bValue ? 1 : (aValue < bValue ? -1 : 0)) * (this.sortDirection === 'asc' ? 1 : -1);
+                                });
+                            },
+                            getNestedValue(obj, path) {
+                                return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+                            }
+                        }" class="table-box">
+                            <table class="table table-borderless align-middle">
+                                <thead>
+                                    <tr class="table-light border-bottom">
+                                        <th x-on:click="sort('date')" class="fw-medium text-dark cursor-pointer">Date <span x-show="sortBy === 'date'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                        <th class="fw-medium text-dark cursor-pointer">Shift Time</th>
+                                        <th x-on:click="sort('checkInTime')" class="fw-medium text-dark cursor-pointer">Check In <span x-show="sortBy === 'checkInTime'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                        <th x-on:click="sort('checkOutTime')" class="fw-medium text-dark cursor-pointer">Check Out <span x-show="sortBy === 'checkOutTime'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                        <th x-on:click="sort('workedTime')" class="fw-medium text-dark cursor-pointer">Worked Time <span x-show="sortBy === 'workedTime'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                        <th x-on:click="sort('differenceTime')" class="fw-medium text-dark cursor-pointer">Difference <span x-show="sortBy === 'differenceTime'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                        <th x-on:click="sort('status')" class="fw-medium text-dark cursor-pointer">Status <span x-show="sortBy === 'status'" x-text="sortDirection === 'asc' ? '↑' : '↓'"></span></th>
+                                        <th class="fw-medium text-dark">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template x-for="(attendance, index) in sortedattendances()" :key="attendance.date">
+                                        <tr>
+                                            <td x-text="attendance.date"></td>
+                                            <td><div class="badge bg-light text-dark border border-dark-subtle">9 hrs Shift</div></td>
+                                            <td x-text="attendance.checkInTime"></td>
+                                            <td x-text="attendance.checkOutTime"></td>
+                                            <td x-text="attendance.workedTime"></td>
+                                            <td x-text="attendance.differenceTime"></td>
+                                            <td>
+                                                <span :class="{
+                                                    'badge bg-success-subtle text-success border border-success-subtle': attendance.status === 'Present',
+                                                    'badge bg-warning-subtle text-warning border border-warning-subtle': attendance.status === 'Late',
+                                                    'badge bg-danger-subtle text-danger border border-danger-subtle': attendance.status === 'Absent',
+                                                }" x-text="attendance.status"></span>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#holidayModal"><i class="ri-pencil-line"></i></button>
+                                                    <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <div>
+                                <p>Showing <b class="me-1">1-5</b> of <b class="ms-1">6</b> Results</p>
+                            </div>
+                            <div class="justify-content-end d-flex">
+                                <nav aria-label="...">
+                                    <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                                        <li class="page-item pagination-primary disabled">
+                                            <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                                <i data-lucide="chevron-left" class="size-4"></i>
+                                                <span>Prev</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link rounded-2 page-number" href="#">2</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link rounded-2 page-number" href="#">3</a>
+                                        </li>
+                                        <li class="page-item pagination-primary">
+                                            <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                                <span>Next</span>
+                                                <i data-lucide="chevron-right" class="size-4"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/hospital/staff/create-leave.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
