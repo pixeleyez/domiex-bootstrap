@@ -119,16 +119,16 @@
                 <div class="card-body">
                     <div x-data="{ 
                                 alerts: [
-                                    { text: 'This is a basic alert message',   color: 'alert-solid-primary' }, 
-                                    { text: 'This is a basic alert message',    color: 'alert-solid-secondary' },
-                                    { text: 'This is a basic alert message',     color: 'alert-solid-success' }, 
-                                    { text: 'This is a basic alert message',   color: 'alert-solid-danger' }, 
-                                    { text: 'This is a basic alert message',   color: 'alert-solid-info' }, 
-                                    { text: 'This is a basic alert message',       color: 'alert-solid-warning' },
-                                    { text: 'This is a basic alert message',       color: 'alert-solid-indigo' },
-                                    { text: 'This is a basic alert message',    color: 'alert-solid-pink' }, 
-                                    { text: 'This is a basic alert message',    color: 'alert-solid-orange' },
-                                    { text: 'This is a basic alert message',    color: 'alert-solid-dark' }
+                                    { text: 'This is a basic alert message', color: 'alert-solid-primary' }, 
+                                    { text: 'This is a basic alert message', color: 'alert-solid-secondary' },
+                                    { text: 'This is a basic alert message', color: 'alert-solid-success' }, 
+                                    { text: 'This is a basic alert message', color: 'alert-solid-danger' }, 
+                                    { text: 'This is a basic alert message', color: 'alert-solid-info' }, 
+                                    { text: 'This is a basic alert message', color: 'alert-solid-warning' },
+                                    { text: 'This is a basic alert message', color: 'alert-solid-indigo' },
+                                    { text: 'This is a basic alert message', color: 'alert-solid-pink' }, 
+                                    { text: 'This is a basic alert message', color: 'alert-solid-orange' },
+                                    { text: 'This is a basic alert message', color: 'alert-solid-dark' }
                                 ] 
                             }" class="d-flex flex-column gap-2">
                         <template x-for="(alert, index) in alerts" :key="index">
@@ -245,13 +245,12 @@
                 </div>
                 <div class="card-body">
                     <div class="row g-2">
-
                         <div class="col-lg-6">
-                            <div x-data="{ isOpen: true }" x-show="isOpen" class="alert alert-dismissible p-5 alert-border-primary">
+                            <div id="updateAlert" class="alert alert-dismissible p-5 icon-alert icon-alert-primary">
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="ri-close-fill"></i></button>
-                                <div class="alert-discription gap-3">
-                                    <div class="rounded-circle icon-alert flex-shrink-0">
-                                        <i data-lucide="alert-triangle"></i>
+                                <div class="d-flex gap-3">
+                                    <div class="rounded-circle icon flex-shrink-0 size-11">
+                                        <i data-lucide="alert-triangle" class="size-5 text-primary"></i>
                                     </div>
                                     <div class="discription">
                                         <h6 class="mb-1">New update available!</h6>
@@ -259,18 +258,17 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-end align-content-center gap-3 mt-3">
-                                    <button x-on:click="isOpen = false" class="btn btn-active-dark">Close</button>
+                                    <button type="button" class="btn btn-active-dark" data-bs-dismiss="alert">Close</button>
                                     <button class="btn btn-primary">Refresh</button>
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-lg-6">
-                            <div x-data="{ isOpen: true }" x-show="isOpen" class="alert alert-dismissible p-5 alert-border-success">
+                            <div id="updateAlert" class="alert alert-dismissible p-5 icon-alert icon-alert-success">
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="ri-close-fill"></i></button>
-                                <div class="alert-discription gap-3">
-                                    <div class="rounded-circle icon-alert flex-shrink-0">
-                                        <i data-lucide="alert-triangle"></i>
+                                <div class="d-flex gap-3">
+                                    <div class="rounded-circle icon flex-shrink-0 size-11">
+                                        <i data-lucide="alert-triangle" class="size-5 text-success"></i>
                                     </div>
                                     <div class="discription">
                                         <h6 class="mb-1">New update available!</h6>
@@ -278,18 +276,17 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-end align-content-center gap-3 mt-3">
-                                    <button x-on:click="isOpen = false" class="btn btn-active-dark">Close</button>
-                                    <button class="btn btn-success">Refresh</button>
+                                    <button type="button" class="btn btn-active-dark" data-bs-dismiss="alert">Close</button>
+                                    <button class="btn btn-success">Publish Now</button>
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-lg-6">
-                            <div x-data="{ isOpen: true }" x-show="isOpen" class="alert alert-dismissible p-5 alert-border-warning">
+                            <div id="updateAlert" class="alert alert-dismissible p-5 icon-alert icon-alert-warning">
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="ri-close-fill"></i></button>
-                                <div class="alert-discription gap-3">
-                                    <div class="rounded-circle icon-alert flex-shrink-0">
-                                        <i data-lucide="alert-triangle"></i>
+                                <div class="d-flex gap-3">
+                                    <div class="rounded-circle icon flex-shrink-0 size-11">
+                                        <i data-lucide="alert-triangle" class="size-5 text-warning"></i>
                                     </div>
                                     <div class="discription">
                                         <h6 class="mb-1">New update available!</h6>
@@ -297,18 +294,17 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-end align-content-center gap-3 mt-3">
-                                    <button x-on:click="isOpen = false" class="btn btn-active-dark">Close</button>
-                                    <button class="btn btn-warning">Refresh</button>
+                                    <button type="button" class="btn btn-active-dark" data-bs-dismiss="alert">Close</button>
+                                    <button class="btn btn-warning">Yes, Update</button>
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-lg-6">
-                            <div x-data="{ isOpen: true }" x-show="isOpen" class="alert alert-dismissible p-5 alert-border-danger">
+                            <div id="updateAlert" class="alert alert-dismissible p-5 icon-alert icon-alert-danger">
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="ri-close-fill"></i></button>
-                                <div class="alert-discription gap-3">
-                                    <div class="rounded-circle icon-alert flex-shrink-0">
-                                        <i data-lucide="alert-triangle"></i>
+                                <div class="d-flex gap-3">
+                                    <div class="rounded-circle icon flex-shrink-0 size-11">
+                                        <i data-lucide="alert-triangle" class="size-5 text-danger"></i>
                                     </div>
                                     <div class="discription">
                                         <h6 class="mb-1">New update available!</h6>
@@ -316,12 +312,11 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-end align-content-center gap-3 mt-3">
-                                    <button x-on:click="isOpen = false" class="btn btn-active-dark">Close</button>
-                                    <button class="btn btn-danger">Refresh</button>
+                                    <button type="button" class="btn btn-active-dark" data-bs-dismiss="alert">Close</button>
+                                    <button class="btn btn-danger">Yes, Delete</button>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -336,10 +331,10 @@
 
                         <div class="col-lg-3">
                             <div class="border rounded overflow-hidden">
-                                <div class="alert-icon-box bg-primary"></div>
+                                <div class="h-9 bg-primary"></div>
                                 <div class="p-5 position-relative">
-                                    <div class="basic-alert bg-primary rounded-circle">
-                                        <i class="ri-spam-line text-white"></i>
+                                    <div class="basic-alert bg-primary rounded-circle size-10">
+                                        <i class="ri-spam-line text-white fs-lg lh-lg"></i>
                                     </div>
                                     <div class="text-center">
                                         <h6 class="mt-4 mb-1">Info</h6>
@@ -356,10 +351,10 @@
                         
                         <div class="col-lg-3">
                             <div class="border rounded overflow-hidden">
-                                <div class="alert-icon-box bg-danger"></div>
+                                <div class="h-9 bg-danger"></div>
                                 <div class="p-5 position-relative">
-                                    <div class="basic-alert bg-danger rounded-circle">
-                                        <i class="ri-spam-line text-white"></i>
+                                    <div class="basic-alert bg-danger rounded-circle size-10">
+                                        <i class="ri-spam-line text-white fs-lg lh-lg"></i>
                                     </div>
                                     <div class="text-center">
                                         <h6 class="mt-4 mb-1">Attention</h6>
@@ -375,10 +370,10 @@
                               
                         <div class="col-lg-3">
                             <div class="border rounded overflow-hidden">
-                                <div class="alert-icon-box bg-success"></div>
+                                <div class="h-9 bg-success"></div>
                                 <div class="p-5 position-relative">
-                                    <div class="basic-alert bg-success rounded-circle">
-                                        <i class="ri-alert-line text-white"></i>
+                                    <div class="basic-alert bg-success rounded-circle size-10">
+                                        <i class="ri-alert-line text-white fs-lg lh-lg"></i>
                                     </div>
                                     <div class="text-center">
                                         <h6 class="mt-4 mb-1">Success</h6>
@@ -394,10 +389,10 @@
                               
                         <div class="col-lg-3">
                             <div class="border rounded overflow-hidden">
-                                <div class="alert-icon-box bg-warning"></div>
+                                <div class="h-9 bg-warning"></div>
                                 <div class="p-5 position-relative">
-                                    <div class="basic-alert bg-warning rounded-circle">
-                                        <i class="ri-alert-line text-white"></i>
+                                    <div class="basic-alert bg-warning rounded-circle size-10">
+                                        <i class="ri-alert-line text-white fs-lg lh-lg"></i>
                                     </div>
                                     <div class="text-center">
                                         <h6 class="mt-4 mb-1">Warning</h6>
@@ -423,6 +418,8 @@
 
 
 {{> partials/vendor-scripts}}
+
+<script src="assets/js/components/alert.init.js"></script>
 
 <script type="module" src="assets/js/main.js"></script>
 

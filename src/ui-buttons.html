@@ -111,6 +111,36 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">3D Buttons</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="{ 
+                                baseButtons: [
+                                    { text: 'Primary', color: 'btn-3D-primary'}, 
+                                    { text: 'Secondary', color: 'btn-3D-secondary'}, 
+                                    { text: 'Success', color: 'btn-3D-success'}, 
+                                    { text: 'Danger', color: 'btn-3D-danger'}, 
+                                    { text: 'Warning', color: 'btn-3D-warning'}, 
+                                    { text: 'Info', color: 'btn-3D-info'}, 
+                                    { text: 'Pink', color: 'btn-3D-pink'}, 
+                                    { text: 'Indigo', color: 'btn-3D-indigo'}, 
+                                    { text: 'Orange', color: 'btn-3D-orange'}, 
+                                    { text: 'Dark', color: 'btn-3D-dark'}, 
+                                    { text: 'Light', color: 'btn-3D-light'}, 
+                                ] 
+                            }" class="d-flex flex-wrap gap-4">
+                        <template x-for="(button, index) in baseButtons" :key="index">
+                            <button :class="button.color + ' btn'" x-text="button.text">
+                            </button>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end col-->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
                     <h6 class="mb-0 card-title d-flex">Outline Dashed Style</h6>
                 </div>
                 <div class="card-body">
@@ -166,36 +196,6 @@
             </div>
         </div>
         <!--end col-->
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header">
-                    <h6 class="mb-0 card-title d-flex">3D Buttons</h6>
-                </div>
-                <div class="card-body">
-                    <div x-data="{ 
-                                baseButtons: [
-                                    { text: 'Primary', color: 'btn-3D-primary'}, 
-                                    { text: 'Secondary', color: 'btn-3D-secondary'}, 
-                                    { text: 'Success', color: 'btn-3D-success'}, 
-                                    { text: 'Danger', color: 'btn-3D-danger'}, 
-                                    { text: 'Warning', color: 'btn-3D-warning'}, 
-                                    { text: 'Info', color: 'btn-3D-info'}, 
-                                    { text: 'Pink', color: 'btn-3D-pink'}, 
-                                    { text: 'Indigo', color: 'btn-3D-indigo'}, 
-                                    { text: 'Orange', color: 'btn-3D-orange'}, 
-                                    { text: 'Dark', color: 'btn-3D-dark'}, 
-                                    { text: 'Light', color: 'btn-3D-light'}, 
-                                ] 
-                            }" class="d-flex flex-wrap gap-4">
-                        <template x-for="(button, index) in baseButtons" :key="index">
-                            <button :class="button.color + ' btn'" x-text="button.text">
-                            </button>
-                        </template>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--end col-->
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-header">
@@ -226,12 +226,15 @@
                 </div>
                 <div class="card-body">
                     <div class="d-flex gap-4">
-                        <button class="btn btn-secondary position-relative">
-                            <span class="social-icon d-flex align-items-center justify-content-center"><i data-lucide="twitch" class=" "></i></span>
-                            Twitch
-                        </button>
-                        <button class="btn btn-primary">Small</button>
-                        <button class="btn btn-danger">Medium</button>
+                        <button class="btn btn-secondary d-flex align-items-center btn-icon-overlay position-relative">
+                            <span class="icon"><i data-lucide="twitch" class="size-4"></i></span>Twitch
+                        </button>                        
+                        <button class="btn btn-info d-flex align-items-center btn-icon-overlay position-relative">
+                            <span class="icon"><i data-lucide="twitter" class="size-4"></i></span>Twitter
+                        </button>                        
+                        <button class="btn btn-danger d-flex align-items-center btn-icon-overlay right position-relative">
+                            <span class="icon"><i data-lucide="twitter" class="size-4"></i></span>Twitter
+                        </button>                        
                     </div>
                 </div>
             </div>
@@ -261,35 +264,31 @@
                 </div>
                 <div class="card-body">
                     <div class="d-flex gap-4 flex-wrap align-items-center">
-                        <div x-data="{ loadingButton: false, isActive: false }">
-                            <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-primary btn-icon-text">
-                                <span x-show="!isActive">Active</span>
-                                <span x-show="isActive" style="display: none;">Unactive</span>
-                                <span class="spinner-border" x-show="loadingButton"></span>
+                        <div>
+                            <button class="btn btn-primary btn-icon-text toggleButton">
+                                <div class="btn-content">
+                                    <span class="activeText">Active</span>
+                                    <span class="unactiveText" style="display: none;">Unactive</span>
+                                    <span class="spinner-border spinner-sm ms-1 loadingSpinner" style="display: none;"></span>
+                                </div>
+                            </button>
+                        </div>   
+                        <div>
+                            <button class="btn btn-secondary btn-icon-text toggleButton">
+                                <div class="btn-content">
+                                    <span class="activeText">Launching</span>
+                                    <span class="unactiveText" style="display: none;">Welcome to Domiex 😍</span>
+                                    <span class="spinner-border spinner-sm ms-1 loadingSpinner" style="display: none;"></span>
+                                </div>
                             </button>
                         </div>
-                        <div x-data="{ loadingButton: false, isActive: false }">
-                            <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-secondary btn-icon-text">
-                                <span x-show="!isActive">Launching</span>
-                                <span x-show="isActive" style="display: none;">Welcome to Domiex 😍</span>
-                                <span class="spinner-border" x-show="loadingButton"></span>
-                            </button>
-                        </div>
-                        <div x-data="{ loadingButton: false, isActive: false }">
-                            <button @click="loadingButton = true; setTimeout(() => { loadingButton = false; isActive = !isActive; }, 2000)" class="btn btn-pink d-flex align-items-center gap-2">
-                                <span x-show="!isActive">
-                                    <div class="d-flex align-content-center gap-2">
-                                        <i class="ri-user-add-line"></i>
-                                        <span>Follow</span>
-                                    </div>
-                                </span>
-                                <span x-show="isActive" style="display: none;">
-                                    <div class="d-flex align-content-center gap-2">
-                                        <i class="ri-user-unfollow-line"></i>
-                                        <span>UnFollow</span>
-                                    </div>
-                                </span>
-                                <span class="spinner-border spinner-border-sm" x-show="loadingButton" role="status" aria-hidden="true"></span>
+                        <div>
+                            <button class="btn btn-pink btn-icon-text toggleButton">
+                                <div class="btn-content">
+                                    <span class="activeText"><i class="ri-user-add-line me-2"></i>Follow</span>
+                                    <span class="unactiveText" style="display: none;"><i class="ri-user-add-line me-2"></i>Unfollow</span>
+                                    <span class="spinner-border spinner-sm ms-1 loadingSpinner" style="display: none;"></span>
+                                </div>
                             </button>
                         </div>
                     </div>
@@ -403,6 +402,8 @@
 
 
 {{> partials/vendor-scripts}}
+
+<script src="assets/js/components/buttons.init.js"></script>
 
 <script type="module" src="assets/js/main.js"></script>
 

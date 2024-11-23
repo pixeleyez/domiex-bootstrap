@@ -134,73 +134,102 @@
 // Button Size
 
 .btn.btn-xs {
-    padding: map-get($spacers, 1) map-get($spacers, 2);
-    font-size: .6875rem;
+    padding: 0.125rem 0.5rem;
+    font-size: 0.6875rem;
 }
 
 .btn.btn-md {
-    padding: map-get($spacers, 2) map-get($spacers, 4);
-    font-size: map-get($font-sizes, '12');
+    padding: 0.5rem 1rem;
+    font-size: 12px;
 }
+
 .btn.btn-lg {
-    padding: map-get($spacers, 2) map-get($spacers, 6);
-    font-size: map-get($font-sizes, '16');
+    padding: 0.75rem 1.75rem;
+    font-size: 1rem;
 }
 
 // Loading Buttons
-
-.spinner-border{
-    height: $spinner-width-sm;
-    width: $spinner-width-sm; 
+.spinner-border {
+    &.spinner-sm {
+        height: $spinner-width-sm;
+        width: $spinner-width-sm;
+    }
 }
 
 // Icon Overlay with Text
-.social-icon {
-    @include position(absolute, 0, null, 0, 0);
-    width: 2.438rem;
-    background-color: white;
-    opacity: 0.25;
+.btn-icon-overlay {
+    padding-left: 4rem;
+
+    &.right {
+        padding-right: 4rem;
+        padding-left: 1.5rem;
+
+        .icon {
+            right: 0;
+            left: auto;
+        }
+    }
+
+    .icon {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        @include flexStyle(center, center);
+        width: 2.375rem;
+        background-color: #ffffff1a;
+    }
 }
 
 // Icon Buttons
 
-.btn.btn-icon {
-    width: map-get($spacers, 10);
-    height: map-get($spacers, 10);
-    @include flexStyle(center, center);
-    padding: 0;
-    border: none;
+.btn {
+    &.btn-icon {
+        width: 2.5625rem;
+        height: 2.5625rem;
+        @include flexStyle(center, center);
+        padding: 0;
+        border: none;
+
+        i {
+            line-height: 2;
+        }
+    }
 }
+
 .icon-button {
     height: map-get($avatar-sizes, 4);
-    width:  map-get($avatar-sizes, 4); 
+    width: map-get($avatar-sizes, 4);
 }
 
 // end row
 .dark-button {
-    background-color: $gray-800;
+    background-color: $gray-700;
+
     &:hover {
         background-color: $gray-900;
     }
 }
+
 .background-hover {
     background-image: radial-gradient(75% 100% at 50% 0%, rgba(56, 189, 248, 0.6) 0%, rgba(56, 189, 248, 0) 75%);
     opacity: 0;
     transition: $btn-transition;
-    &:hover{
+
+    &:hover {
         opacity: 100;
     }
 }
 
 // hover effect
-$btn-transition: transform .5s ease; 
+$btn-transition: transform .5s ease;
 
 .btn-translate-up {
     transform: translateY(0);
     transition: $btn-transition;
 
     &:hover {
-        transform: translateY(-0.125rem); 
+        transform: translateY(-0.125rem);
     }
 }
 
@@ -209,7 +238,7 @@ $btn-transition: transform .5s ease;
     transition: $btn-transition;
 
     &:hover {
-        transform: translateY(0.125rem); 
+        transform: translateY(0.125rem);
     }
 }
 
