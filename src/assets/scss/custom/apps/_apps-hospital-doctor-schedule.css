@@ -1,0 +1,1 @@
+.appoinment-card{position:relative}.appoinment-card::before{content:"";position:absolute;top:1.25rem;left:-0.125rem;border-radius:9999px;background-color:#dc3545;height:3rem;width:.125rem}

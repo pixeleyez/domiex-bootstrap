@@ -1,0 +1,14 @@
+@each $state in map-keys($theme-colors) {
+    .appoinment-#{$state} {
+        &::before {
+            background-color: var(--#{$prefix}#{$state});
+            content: '';
+            position: absolute;
+            top: 1.25rem;
+            left: -0.125rem;
+            border-radius: 9999px;
+            height: 3rem;
+            width: 0.125rem;
+        }
+    }
+}
