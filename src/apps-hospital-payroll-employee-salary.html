@@ -1,0 +1,283 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Employee Salary" }}
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Employee Salary" sub-title="Payroll" }}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="card-title flex-grow-1">Employee</h6>
+                    <button type="button" class="btn btn-primary flex-shrink-0">Download</button>
+                </div>
+                <section class="h-96 card-body pt-0" id="customScroll" data-simplebar>
+                    <div class="table-box">
+                        <table class="table align-middle">
+                            <thead>
+                                <tr class="table-light border-bottom">
+                                    <th class="fw-medium text-dark">Employee Name</th>
+                                    <th class="fw-medium text-dark">Email</th>
+                                    <th class="fw-medium text-dark">Phone Number</th>
+                                    <th class="fw-medium text-dark">Department</th>
+                                    <th class="fw-medium text-dark">Monthly Salary</th>
+                                    <th class="fw-medium text-dark">Status</th>
+                                    <th class="fw-medium text-dark">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Mark Johnson</td>
+                                    <td>mark@pixeleyez.com</td>
+                                    <td>512-464-3203</td>
+                                    <td>Radiology</td>
+                                    <td>$13,000</td>
+                                    <td>
+                                        <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Failed</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Christopher Lee</td>
+                                    <td>lee@pixeleyez.org</td>
+                                    <td>563-496-7765</td>
+                                    <td>Ophthalmology</td>
+                                    <td>$13,500</td>
+                                    <td>
+                                        <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Failed</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Benjamin Garcia</td>
+                                    <td>benjamin@pixeleyez.org</td>
+                                    <td>210-555-0199</td>
+                                    <td>Psychiatry</td>
+                                    <td>$14,800</td>
+                                    <td>
+                                        <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Failed</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>David Anderson</td>
+                                    <td>anderson@pixeleyez.org</td>
+                                    <td>312-836-8072</td>
+                                    <td>Urology</td>
+                                    <td>$14,500</td>
+                                    <td>
+                                        <span class="badge bg-warning-subtle text-warning border border-warning-subtle">Pending</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Charlotte Martinez</td>
+                                    <td>charlotte@pixeleyez.com</td>
+                                    <td>305-555-0196 </td>
+                                    <td>Rheumatology</td>
+                                    <td>$15,400</td>
+                                    <td>
+                                        <span class="badge bg-warning-subtle text-warning border border-warning-subtle">Pending</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Sophia Wilson</td>
+                                    <td>wilson@pixeleyez.com</td>
+                                    <td>423-386-0823</td>
+                                    <td>Neurology</td>
+                                    <td>$16,000</td>
+                                    <td>
+                                        <span class="badge bg-warning-subtle text-warning border border-warning-subtle">Pending</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Michael Brown</td>
+                                    <td>brown@pixeleyez.org</td>
+                                    <td>706-766-2961</td>
+                                    <td>Pediatrics</td>
+                                    <td>$12,000</td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle">Successful</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Emma Taylor</td>
+                                    <td>emma@pixeleyez.com</td>
+                                    <td>216-420-1175</td>
+                                    <td>Dermatology</td>
+                                    <td>$13,000</td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle">Successful</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Liam Robinson</td>
+                                    <td>liam@pixeleyez.org</td>
+                                    <td>512-555-0178</td>
+                                    <td>Hematology</td>
+                                    <td>$13,700</td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle">Successful</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Rachel Green</td>
+                                    <td>rachel@pixeleyez.com</td>
+                                    <td>330-733-0164</td>
+                                    <td>Gastroenterology</td>
+                                    <td>$14,000</td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle">Successful</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <div>
+                            <p>Showing <b class="me-1">1-10</b>of<b class="ms-1">15</b> Results</p>
+                        </div>
+                        <div class="justify-content-end d-flex">
+                            <nav aria-label="...">
+                                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                                    <li class="page-item pagination-primary disabled">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <i data-lucide="chevron-left" class="size-5"></i>
+                                            <span>Prev</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                    <li class="page-item" aria-current="page">
+                                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                                    </li>
+                                    <li class="page-item" aria-current="page">
+                                        <a class="page-link rounded-2 page-number" href="#">3</a>
+                                    </li>
+                                    <li class="page-item pagination-primary ">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <span>Next</span>
+                                            <i data-lucide="chevron-right" class="size-5"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xs">
+            <div class="modal-content p-7 text-center">
+                <div class="size-14 bg-danger-subtle rounded-circle d-flex justify-content-center align-items-center mx-auto mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" class="lucide lucide-trash-2 size-6 text-danger">
+                        <path d="M3 6h18"></path>
+                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                        <line x1="10" x2="10" y1="11" y2="17"></line>
+                        <line x1="14" x2="14" y1="11" y2="17"></line>
+                    </svg>
+                </div>
+                <h5 class="mb-4 lh-base">Are you sure you want to delete this employee ?</h5>
+                <div class="d-flex justify-content-center align-items-center gap-2">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+                    <button class="btn btn-link link-primary text-dark" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script src="assets/js/apps/hospital/departments.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

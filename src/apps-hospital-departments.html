@@ -1,0 +1,375 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Doctor Schedule" }}
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Departments" sub-title="Hospital" }}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <h4 class="card-title mb-0 flex-grow-1">Employee</h4>
+                    <p class="text-muted flex-shrink-0">Number of Staff according to department</p>
+                </div>
+                <div class="card-body">
+                    <div x-data="distributedColumnApp">
+                        <div x-ref="distributedColumnChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <h4 class="card-title mb-0 flex-grow-1">Department List</h4>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addDepartmentModal"><i data-lucide="circle-plus" class="size-4 me-2"></i>Add Department</button>
+                </div>
+                <section class="h-96 card-body pt-0" id="customScroll" data-simplebar>
+                    <div class="table-box">
+                        <table class="table align-middle">
+                            <thead>
+                                <tr class="table-light border-bottom">
+                                    <th class="fw-medium text-dark">ID</th>
+                                    <th class="fw-medium text-dark">Department Name</th>
+                                    <th class="fw-medium text-dark">Doctor</th>
+                                    <th class="fw-medium text-dark">Total Employee</th>
+                                    <th class="fw-medium text-dark">Head of Dept.</th>
+                                    <th class="fw-medium text-dark">Status</th>
+                                    <th class="fw-medium text-dark">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>PED-1</td>
+                                    <td>Cardiology</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <span class="size-10 rounded-circle bg-light d-flex justify-content-center align-items-center text-dark fw-semibold fs-sm">MT</span>
+                                            <div>
+                                                <h6 class="mb-1"><a href="#!" class="text-black">Dr. Mark Thompson</a></h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>08</td>
+                                    <td><a href="#!" class="link link-primary text-dark">Dr. Sarah Patel</a></td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle">Active</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#overviewModal"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PED-2</td>
+                                    <td>Dermatology</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="assets/images/avatar/user-22.png" alt="" class="size-10 rounded-circle ">
+                                            <div>
+                                                <h6 class="mb-1"><a href="#!" class="text-black">Dr. Emily Chen</a></h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>07</td>
+                                    <td><a href="#!" class="link link-primary text-dark">Dr. Benjamin Davis</a></td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle">Active</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#overviewModal"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PED-3</td>
+                                    <td>Pediatrics</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <span class="size-10 rounded-circle bg-light d-flex justify-content-center align-items-center text-dark fw-semibold fs-sm">JR</span>
+                                            <div>
+                                                <h6 class="mb-1"><a href="#!" class="text-black">Dr. Jennifer Ramirez</a></h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>12</td>
+                                    <td><a href="#!" class="link link-primary text-dark">Dr. Daniel Smith</a></td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle">Active</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#overviewModal"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PED-4</td>
+                                    <td>Neurology</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <span class="size-10 rounded-circle bg-light d-flex justify-content-center align-items-center text-dark fw-semibold fs-sm">RE</span>
+                                            <div>
+                                                <h6 class="mb-1"><a href="#!" class="text-black">Dr. Rebecca Evans</a></h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>07</td>
+                                    <td><a href="#!" class="link link-primary text-dark">Dr. Andrew Clark</a></td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle">Active</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#overviewModal"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PED-5</td>
+                                    <td>Ophthalmology</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="assets/images/avatar/user-23.png" alt="" class="size-10 rounded-circle ">
+                                            <div>
+                                                <h6 class="mb-1"><a href="#!" class="text-black">Dr. Sophia Lee</a></h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>06</td>
+                                    <td><a href="#!" class="link link-primary text-dark">Dr. David Wong</a></td>
+                                    <td>
+                                        <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Unactive</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#overviewModal"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <div>
+                            <p>Showing <b class="me-1">1-10</b>of<b class="ms-1">15</b> Results</p>
+                        </div>
+                        <div class="justify-content-end d-flex">
+                            <nav aria-label="...">
+                                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                                    <li class="page-item pagination-primary disabled">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <i data-lucide="chevron-left" class="size-5"></i>
+                                            <span>Prev</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                    <li class="page-item" aria-current="page">
+                                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                                    </li>
+                                    <li class="page-item" aria-current="page">
+                                        <a class="page-link rounded-2 page-number" href="#">3</a>
+                                    </li>
+                                    <li class="page-item pagination-primary ">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <span>Next</span>
+                                            <i data-lucide="chevron-right" class="size-5"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Staff Modal -->
+    <div class="modal fade" id="addDepartmentModal" tabindex="-1" aria-labelledby="addDepartmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="p-2 modal-content">
+                <div class="h-24 w-100 rounded-top square modal-square"></div>
+                <div class="p-4">
+                    <form action="#!">
+                        <div class="-mt-16 row" x-data="{
+                            departmentNameInput: '', doctorInput: '', totalEmployeeInput: '', headOfDeptInput: '', Department: '', statusSelect: '', image: null,
+                            departmentNameInputError: '', doctorInputError: '', totalEmployeeInputError: '', headOfDeptInputError: '', DepartmentError: '', statusSelectError: '', imageError: '',
+                        
+                            valistaffIDForm() {
+                                this.departmentNameInputError = this.doctorInputError = this.totalEmployeeInputError = this.headOfDeptInputError = this.DepartmentError = this.statusSelectError = this.imageError = '';
+                        
+                                if (!this.departmentNameInput) this.departmentNameInputError = 'Department name is required.';
+                                if (!this.doctorInput) this.doctorInputError = 'Doctor name is required.';
+                                if (!this.totalEmployeeInput) this.totalEmployeeInputError = 'Total Employee number is required.';
+                                if (!this.Department) this.DepartmentError = 'Department is required.';
+                                if (!this.headOfDeptInput) this.headOfDeptInputError = 'Role is required..';
+                                if (!this.statusSelect) this.statusSelectError = 'Status is required.';
+                                if (!this.image) this.imageError = 'Image is required.';
+                        
+                                return !this.departmentNameInputError && !this.doctorInputError && !this.totalEmployeeInputError && !this.headOfDeptInputError && !this.DepartmentError && !this.statusSelectError && !this.imageError;
+                            },
+                        
+                            clearError(field) {
+                                if (field) this[`${field}Error`] = '';
+                            }
+                        }">
+                            <div class="col-12 mb-4">
+                                <label class="d-flex justify-content-center align-items-center border border-2 border-white bg-light size-24 d-inline-block rounded-circle">
+                                    <img x-show="image" :src="image" class="rounded-circle w-100 h-100 object-cover">
+                                    <i x-show="!image" data-lucide="upload" class="text-dark"></i>
+                                    <input type="file" class="d-none" @change="image = URL.createObjectURL($event.target.files[0]); clearError('image')" />
+                                </label>
+                                <p x-show="imageError" class="text-sm text-danger" x-text="imageError"></p>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="departmentNameInput" class="form-label fw-medium">Department Name</label>
+                                <input type="text" x-model="departmentNameInput" placeholder="Department Name" class="form-control" @input="clearError('departmentNameInput')" />
+                                <p x-show="departmentNameInputError" class="text-sm text-danger" x-text="departmentNameInputError"></p>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="doctorInput" class="form-label fw-medium">Doctor</label>
+                                <input type="text" x-model="doctorInput" placeholder="Enter doctor name" class="form-control" @input="clearError('doctorInput')" />
+                                <p x-show="doctorInputError" class="text-sm text-danger" x-text="doctorInputError"></p>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="totalEmployeeInput" class="form-label fw-medium">Total Employee</label>
+                                <input type="number" x-model="totalEmployeeInput" placeholder="0" class="form-control" @input="clearError('totalEmployeeInput')" />
+                                <p x-show="totalEmployeeInputError" class="text-sm text-danger" x-text="totalEmployeeInputError"></p>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="headOfDeptInput" class="form-label fw-medium">Head of Dept.</label>
+                                <input type="text" x-model="headOfDeptInput" placeholder="Head of Dept." class="form-control" @input="clearError('headOfDeptInput')" />
+                                <p x-show="headOfDeptInputError" class="text-sm text-danger" x-text="headOfDeptInputError"></p>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="statusSelect" class="form-label fw-medium">Status</label>
+                                <div id="statusSelect" type="text" x-model="statusSelect" placeholder="Select Status" @input="clearError('statusSelect')"></div>
+                                <p x-show="statusSelectError" class="text-sm text-danger" x-text="statusSelectError"></p>
+                            </div>
+                            <div class="d-flex justify-content-end gap-2 mt-4">
+                                <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal"><i data-lucide="x" class="size-4 me-1"></i>Close</button>
+                                <button type="button" class="btn btn-primary" @click="if (valistaffIDForm()) { alert('Form is valid and ready for submission!') }">Add Department</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Staff Modal -->
+    <div class="modal fade" id="addDepartmentModal" tabindex="-1" aria-labelledby="addDepartmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="p-2 modal-content">
+                <div class="h-24 w-100 rounded-top square modal-square"></div>
+                <div class="p-4">
+                    <form action="#!">
+                        <div class="-mt-16 row"  x-data="{
+                            image: null,
+                        }">
+                            <div class="col-12 mb-4">
+                                <label class="d-flex justify-content-center align-items-center border border-2 border-white bg-light size-24 d-inline-block rounded-circle">
+                                    <img x-show="image" :src="image" class="rounded-circle w-100 h-100 object-cover">
+                                    <i x-show="!image" data-lucide="upload" class="text-dark"></i>
+                                    <input type="file" class="d-none" @change="image = URL.createObjectURL($event.target.files[0]); clearError('image')" />
+                                </label>
+                                <p x-show="imageError" class="text-sm text-danger" x-text="imageError"></p>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="departmentNameInput" class="form-label fw-medium">Department Name</label>
+                                <input type="text" value="Cardiology" class="form-control">
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="doctorInput" class="form-label fw-medium">Doctor</label>
+                                <input type="text" value="Dr. Mark Thompson" class="form-control">
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="totalEmployeeInput" class="form-label fw-medium">Total Employee</label>
+                                <input type="number" value="08" class="form-control">
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="headOfDeptInput" class="form-label fw-medium">Head of Dept.</label>
+                                <input type="text" value="Dr. Sarah Patel" class="form-control">
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="statusSelect" class="form-label fw-medium">Status</label>
+                                <div id="statusSelect" type="text" placeholder="Select Status"></div>
+                            </div>
+                            <div class="d-flex justify-content-end gap-2 mt-4">
+                                <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal"><i data-lucide="x" class="size-4 me-1"></i>Close</button>
+                                <button type="button" class="btn btn-primary">Add Department</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xs">
+            <div class="modal-content p-7 text-center">
+                <div class="size-14 bg-danger-subtle rounded-circle d-flex justify-content-center align-items-center mx-auto mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" class="lucide lucide-trash-2 size-6 text-danger">
+                        <path d="M3 6h18"></path>
+                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                        <line x1="10" x2="10" y1="11" y2="17"></line>
+                        <line x1="14" x2="14" y1="11" y2="17"></line>
+                    </svg>
+                </div>
+                <h5 class="mb-4 lh-base">Are you sure you want to delete this department ?</h5>
+                <div class="d-flex justify-content-center align-items-center gap-2">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+                    <button class="btn btn-link link-primary text-dark" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script src="assets/js/apps/hospital/departments.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

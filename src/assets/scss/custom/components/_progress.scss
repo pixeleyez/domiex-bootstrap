@@ -7,24 +7,21 @@
     transform: translateX(-100%);
 }
 
-    @each $state in map-keys($theme-colors) {
-        .progress-gradient {
-            background: var(--#{$prefix}progress-bar-bg);
-        }
+.progress-gradient {
+    background: var(--#{$prefix}progress-bar-bg);
+}
 
-        .progress-gradient-primary {
-            --#{$prefix}progress-bar-bg: linear-gradient(90deg, var(--#{$prefix}primary), var(--#{$prefix}success));
-        }
+.progress-gradient-primary {
+    --#{$prefix}progress-bar-bg: linear-gradient(90deg, var(--#{$prefix}primary), var(--#{$prefix}success));
+}
 
-        .progress-gradient-info {
-            --#{$prefix}progress-bar-bg: linear-gradient(90deg,  var(--#{$prefix}primary), var(--#{$prefix}info-text-emphasis), var(--#{$prefix}info));
-        }
+.progress-gradient-info {
+    --#{$prefix}progress-bar-bg: linear-gradient(90deg,  var(--#{$prefix}primary), var(--#{$prefix}info-text-emphasis), var(--#{$prefix}info));
+}
 
-        .progress-gradient-indigo {
-            --#{$prefix}progress-bar-bg: linear-gradient(90deg, var(--#{$prefix}indigo), var(--#{$prefix}secondary));
-        }
-    }
-
+.progress-gradient-indigo {
+    --#{$prefix}progress-bar-bg: linear-gradient(90deg, var(--#{$prefix}indigo), var(--#{$prefix}secondary));
+}
     $progress-heights: (
     1: 0.5rem,
     2: 0.625rem,

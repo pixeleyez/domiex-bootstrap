@@ -1,0 +1,12 @@
+.today-gradient{
+    background: linear-gradient(to right, rgba($warning-500, .15), rgba($success-500, .15));
+}
+.new-gradient{
+    background: linear-gradient(to right, rgba($info-500, .15), rgba($success-500, .15));
+}
+.cancel-gradient{
+    background: linear-gradient(to right, rgba($danger-500, .15), rgba($pink-500, .15));
+}
+.total-gradient{
+    background: linear-gradient(to right, rgba($secondary-500, .15), rgba($pink-500, .15));
+}

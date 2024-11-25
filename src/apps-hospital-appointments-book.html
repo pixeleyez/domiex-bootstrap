@@ -1,0 +1,371 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Book" }}
+
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+
+    <link rel="stylesheet" href="assets/libs/virtual-select-plugin/dist/virtual-select.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Book" sub-title="Appointments" }}
+
+    <div class="row">
+        <div class="col-9">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title mb-0">Appointment Book</h4>
+                </div>
+                <div class="card-body">
+                    <form action="#!">
+                        <div class="row g-5" x-data="{
+                            patientNameInput: '', emailInput: '', phoneNumberInput: '', selectDateInput: '', doctorSelect:'', treatmentInput:'',
+                            patientNameInputError: '', emailInputError: '', phoneNumberInputError: '', selectDateInputError: '', doctorSelectError:'', treatmentInputError:'', startTimeError: '', 
+                    
+                            valistLeaveForm() {
+                                this.patientNameInputError = this.emailInputError = this.phoneNumberInputError = this.selectDateInputError = this.startTimeError = '';
+                                if (!this.patientNameInput) this.patientNameInputError = 'Patient name is required.';
+                                if (!this.emailInput) this.emailInputError = 'Email is required.';
+                                if (!this.phoneNumberInput) this.phoneNumberInputError = 'Phone is required.';
+                                if (!this.selectDateInput) this.selectDateInputError = 'Date is required.';
+                                else if (new Date(this.selectDateInput) < new Date()) this.selectDateInputError = 'Start date cannot be in the past.';
+                                if (!this.treatmentInput) this.treatmentInputError = 'Treatment is required.';
+                                if (!this.doctorSelect) this.doctorSelectError = 'Doctor name is required.';
+                                if (!this.startTime) this.startTimeError = 'StartTime is required.';
+                                if (!this.endTime) this.endTimeError = 'endTime is required.';
+                                return !this.patientNameInputError && !this.emailInputError && !this.phoneNumberInputError && !this.selectDateInputError && !this.treatmentInputError && !this.startTimeError;
+                            },
+                    
+                            clearError(field) {
+                                if (field) this[`${field}Error`] = '';
+                            }
+                        }">
+                          
+                            <div class="col-12">
+                                <label for="patientNameInput" class="form-label fw-medium">Patient Name</label>
+                                <input type="text" x-model="patientNameInput" placeholder="Enter your emergency number" class="form-control" @input="clearError('patientNameInput')" />
+                                <p x-show="patientNameInputError" class="text-sm text-danger" x-text="patientNameInputError"></p>
+                            </div>
+                            <div class="col-4">
+                                <label for="emailInput" class="form-label fw-medium">Email</label>
+                                <input type="email" x-model="emailInput" placeholder="Enter your email" class="form-control" @input="clearError('emailInput')" />
+                                <p x-show="emailInputError" class="text-sm text-danger" x-text="emailInputError"></p>
+                            </div>
+                            <div class="col-4">
+                                <label for="phoneNumberInput" class="form-label fw-medium">Phone Number</label>
+                                <input type="number" x-model="phoneNumberInput" placeholder="(00) 000 00 0000" class="form-control" @input="clearError('phoneNumberInput')" />
+                                <p x-show="phoneNumberInputError" class="text-sm text-danger" x-text="phoneNumberInputError"></p>
+                            </div>
+                            <div class="col-4">
+                                <label for="selectDateInput" class="form-label fw-medium">Select Date</label>
+                                <input data-provider="flatpickr" data-date-format="d M, Y" type="text" placeholder="Select Date" class="form-control form-input flatpickr-input active" readonly="readonly"  @input="clearError('selectDateInput')">
+                                <p x-show="selectDateInputError" class="text-sm text-danger" x-text="selectDateInputError"></p>
+                            </div>
+                            <div class="col-12">
+                                <label for="doctorSelect" class="form-label fw-medium">Start Time</label>
+                                <div class="d-flex flex-wrap gap-2 gap-md-5">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio1" class="d-none form-check-input" name="startTime" type="radio" x-model="startTime">
+                                        <label for="timeRadio1" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            09:00 AM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio2" class="d-none form-check-input" name="startTime" type="radio" x-model="startTime">
+                                        <label for="timeRadio2" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            09:30 AM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio3" class="d-none form-check-input" name="startTime" type="radio" x-model="startTime" disabled>
+                                        <label for="timeRadio3" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            10:00 AM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio4" class="d-none form-check-input" name="startTime" type="radio" x-model="startTime">
+                                        <label for="timeRadio4" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            10:30 AM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio5" class="d-none form-check-input" name="startTime" type="radio" x-model="startTime">
+                                        <label for="timeRadio5" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            11:00 AM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio6" class="d-none form-check-input" name="startTime" type="radio" x-model="startTime">
+                                        <label for="timeRadio6" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            11:30 AM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio7" class="d-none form-check-input" name="startTime" type="radio" x-model="startTime">
+                                        <label for="timeRadio7" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            12:00 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio8" class="d-none form-check-input" name="startTime" type="radio" x-model="startTime">
+                                        <label for="timeRadio8" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            12:30 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio9" class="d-none form-check-input" name="startTime" type="radio" x-model="startTime">
+                                        <label for="timeRadio9" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            01:00 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio10" class="d-none form-check-input" name="startTime" type="radio" x-model="startTime">
+                                        <label for="timeRadio10" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            01:30 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio11" class="d-none form-check-input" name="startTime" type="radio" x-model="startTime">
+                                        <label for="timeRadio11" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            02:00 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio12" class="d-none form-check-input" name="startTime" type="radio" x-model="startTime">
+                                        <label for="timeRadio12" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            02:30 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio13" class="d-none form-check-input" name="startTime" type="radio" x-model="startTime" disabled>
+                                        <label for="timeRadio13" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            03:00 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio14" class="d-none form-check-input" name="startTime" type="radio" x-model="startTime">
+                                        <label for="timeRadio14" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            03:30 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio15" class="d-none form-check-input" name="startTime" type="radio"  x-model="startTime">
+                                        <label for="timeRadio15" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            04:00 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio16" class="d-none form-check-input" name="startTime" type="radio"  x-model="startTime">
+                                        <label for="timeRadio16" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            04:30 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio17" class="d-none form-check-input" name="startTime" type="radio"  x-model="startTime">
+                                        <label for="timeRadio17" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            05:00 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio18" class="d-none form-check-input" name="startTime" type="radio"  x-model="startTime">
+                                        <label for="timeRadio18" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            05:30 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio19" class="d-none form-check-input" name="startTime" type="radio"  x-model="startTime">
+                                        <label for="timeRadio19" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            06:00 PM
+                                        </label>
+                                    </div>
+                                </div>
+                                <p x-show="startTimeError" class="text-sm text-danger" x-text="startTimeError"></p>
+                            </div>
+                            <div class="col-12">
+                                <label for="doctorSelect" class="form-label fw-medium">Start Time</label>
+                                <div class="d-flex flex-wrap gap-2 gap-md-5">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio1" class="d-none form-check-input" name="endTime" type="radio" x-model="endTime">
+                                        <label for="timeRadio1" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            09:00 AM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio2" class="d-none form-check-input" name="endTime" type="radio" x-model="endTime">
+                                        <label for="timeRadio2" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            09:30 AM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio3" class="d-none form-check-input" name="endTime" type="radio" x-model="endTime" disabled>
+                                        <label for="timeRadio3" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            10:00 AM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio4" class="d-none form-check-input" name="endTime" type="radio" x-model="endTime">
+                                        <label for="timeRadio4" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            10:30 AM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio5" class="d-none form-check-input" name="endTime" type="radio" x-model="endTime">
+                                        <label for="timeRadio5" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            11:00 AM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio6" class="d-none form-check-input" name="endTime" type="radio" x-model="endTime">
+                                        <label for="timeRadio6" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            11:30 AM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio7" class="d-none form-check-input" name="endTime" type="radio" x-model="endTime">
+                                        <label for="timeRadio7" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            12:00 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio8" class="d-none form-check-input" name="endTime" type="radio" x-model="endTime">
+                                        <label for="timeRadio8" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            12:30 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio9" class="d-none form-check-input" name="endTime" type="radio" x-model="endTime">
+                                        <label for="timeRadio9" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            01:00 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio10" class="d-none form-check-input" name="startTime" type="radio" x-model="endTime">
+                                        <label for="timeRadio10" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            01:30 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio11" class="d-none form-check-input" name="endTime" type="radio" x-model="endTime">
+                                        <label for="timeRadio11" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            02:00 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio12" class="d-none form-check-input" name="endTime" type="radio" x-model="endTime">
+                                        <label for="timeRadio12" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            02:30 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio13" class="d-none form-check-input" name="endTime" type="radio" x-model="endTime" disabled>
+                                        <label for="timeRadio13" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            03:00 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio14" class="d-none form-check-input" name="endTime" type="radio" x-model="endTime">
+                                        <label for="timeRadio14" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            03:30 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio15" class="d-none form-check-input" name="endTime" type="radio"  x-model="endTime">
+                                        <label for="timeRadio15" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            04:00 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio16" class="d-none form-check-input" name="endTime" type="radio"  x-model="endTime">
+                                        <label for="timeRadio16" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            04:30 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio17" class="d-none form-check-input" name="endTime" type="radio"  x-model="endTime">
+                                        <label for="timeRadio17" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            05:00 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio18" class="d-none form-check-input" name="endTime" type="radio"  x-model="endTime">
+                                        <label for="timeRadio18" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            05:30 PM
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <input id="timeRadio19" class="d-none form-check-input" name="endTime" type="radio"  x-model="endTime">
+                                        <label for="timeRadio19" class="form-check-label px-3 py-1 border rounded-2 lh-sm">
+                                            06:00 PM
+                                        </label>
+                                    </div>
+                                </div>
+                                <p x-show="endTimeError" class="text-sm text-danger" x-text="endTimeError"></p>
+                            </div>
+                            <div class="col-12">
+                                <label for="doctorSelect" class="form-label fw-medium">Doctor Name</label>
+                                <div id="doctorSelect"></div>
+                                <p x-show="doctorSelectError" class="text-sm text-danger" x-text="doctorSelectError"></p>
+                            </div>
+                            <div class="col-12">
+                                <label for="treatmentInput" class="form-label fw-medium">Treatment</label>
+                                <textarea rows="3" x-model="selectDateInput" placeholder="Enter Total Days" class="form-control" @input="clearError('treatmentInput')"></textarea>
+                                <p x-show="treatmentInputError" class="text-sm text-danger" x-text="treatmentInputError"></p>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex gap-2 align-items-center justify-content-end">
+                                    <button type="reset" @click="clearError('contactNumber'); clearError('patientNameInput'); clearError('emailInput'); clearError('phoneNumberInput'); clearError('selectDateInput'); clearError('startTime')" class="btn btn-light text-dark">Reset</button>
+                                    <button class="btn btn-primary" @click="if (valistLeaveForm()) {}">Apply Leave Request</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card border border-success-subtle">
+                <div class="card-body bg-success-subtle">
+                    <h6 class="mb-3">Hospital Hours</h6>
+
+                    <p class="mb-2 text-muted">Monday - Friday 09:00AM - 06:00PM</p>
+                    <p class="mb-4 text-muted">Saturday 09:00AM - 03:00PM</p>
+
+                    <h6 class="mb-3">Sunday Closed</h6>
+                    <p class="text-danger">* Every 2nd, 4th Saturday and all govt holidays are closed.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+<script src="assets/libs/virtual-select-plugin/dist/virtual-select.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/hospital/appointments/list.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
