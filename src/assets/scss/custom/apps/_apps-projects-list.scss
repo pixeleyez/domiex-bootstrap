@@ -7,3 +7,11 @@
         width: 13rem;
     }
 }
+
+th.sorted-asc::after {
+    content: " ↑";
+}
+
+th.sorted-desc::after {
+    content: " ↓";
+}

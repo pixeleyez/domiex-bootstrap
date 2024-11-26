@@ -1,35 +1,35 @@
 .vscomp-ele{
-    max-width: 100% ;
+max-width: 100% !important;
 }
 .vscomp-toggle-button{
-    padding: 8px 30px 8px 10px ;
-    border-radius: $border-radius;
+    padding: 8px 30px 8px 10px !important;
+    border-radius: $border-radius !important;
 }
 .vscomp-wrapper.focused .vscomp-toggle-button,
 .vscomp-wrapper:focus .vscomp-toggle-button{
-    border-color: $primary;
-    box-shadow: $box-shadow ;
+    border-color: $primary !important;
+    box-shadow: $box-shadow !important;
 }
-.vscomp-option.focused{
-    background-color: $gray-100 ;
+.vscomp-option.selected, .vscomp-option.focused{
+    background-color: #F3F4F6 !important;
 }
 .vscomp-search-wrapper{
-    box-shadow: $box-shadow ;
+    box-shadow: $box-shadow !important;
 }
 .vscomp-wrapper .checkbox-icon::after{
-    border-width: 1px ;
-    border-color: #e9e9e9 ;
+    border-width: 1px !important;
+    border-color: #e9e9e9 !important;
 }
 .vscomp-wrapper.multiple .vscomp-option.selected .checkbox-icon::after{
      border-color: $primary ;
-     border-left-color: rgba(0, 0, 0, 0) ;
-     border-top-color: rgba(0, 0, 0, 0) ;
+     border-left-color: rgba(0, 0, 0, 0) !important;
+     border-top-color: rgba(0, 0, 0, 0) !important;
  }
  .vscomp-wrapper .checkbox-icon.checked::after{
     border-color: $dark ;
-    border-left-color: rgba(0, 0, 0, 0) ;
-    border-top-color: rgba(0, 0, 0, 0) ;
+    border-left-color: rgba(0, 0, 0, 0) !important;
+    border-top-color: rgba(0, 0, 0, 0) !important;
  }
  .vscomp-dropbox-container{
-    z-index: 9999 ;
+    z-index: 9999 !important;
  }
