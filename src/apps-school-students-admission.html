@@ -1,0 +1,365 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="List View" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="List View" sub-title="Students" }}
+
+    <div class="row">
+        <div class="col-9">
+            <div class="card">
+                <div class="card-header">
+                    <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active fw-medium" id="pills-personalDetailsForm-tab" data-bs-toggle="pill" data-bs-target="#pill-personalDetailsForm" type="button" role="tab" aria-controls="pill-personalDetailsForm" aria-selected="true">Personal Details</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-medium" id="pills-personalDetailsForm2-tab" data-bs-toggle="pill" data-bs-target="#pill-personalDetailsForm2" type="button" role="tab" aria-controls="pill-personalDetailsForm2" aria-selected="false">Personal Details</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-medium" id="pills-educationalBackgroundForm-tab" data-bs-toggle="pill" data-bs-target="#pill-educationalBackgroundForm" type="button" role="tab" aria-controls="pill-educationalBackgroundForm" aria-selected="false">Educational Background</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-medium" id="pills-documents-tab" data-bs-toggle="pill" data-bs-target="#pill-documents" type="button" role="tab" aria-controls="pill-documents" aria-selected="false">Documents</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-medium" id="pills-applicationOverview-tab" data-bs-toggle="pill" data-bs-target="#pill-applicationOverview" type="button" role="tab" aria-controls="pill-applicationOverview" aria-selected="false">Application Overview</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="myPillTabContent">
+                        <div class="tab-pane  show active" id="pill-personalDetailsForm" role="tabpanel" aria-labelledby="pills-personalDetailsForm-tab" tabindex="0">
+                            <form action="#!" id="personalDetailsForm">
+                                <h6 class="mb-3">Personal Details</h6>
+                                <div class="row g-5">
+                                    <div class="col-12 col-sm-6 col-xxl-4">
+                                        <label for="firstNameInput" class="form-label fw-medium">First Name</label>
+                                        <input type="text" id="firstNameInput" class="form-control" placeholder="Enter your first name">
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-xxl-4">
+                                        <label for="middleNameInput" class="form-label fw-medium">Middle Name</label>
+                                        <input type="text" id="middleNameInput" class="form-control" placeholder="Enter your middle name">
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-xxl-4">
+                                        <label for="lastNameInput" class="form-label fw-medium">Last Name</label>
+                                        <input type="text" id="lastNameInput" class="form-control" placeholder="Enter your last name">
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-xxl-4">
+                                        <label for="genderSelect" class="form-label fw-medium">Gender</label>
+                                        <div id="genderSelect"></div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-xxl-4">
+                                        <label for="ageInput" class="form-label fw-medium">Age</label>
+                                        <input type="number" id="ageInput" class="form-control" placeholder="Enter your age" required>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-xxl-4">
+                                        <label for="dateOfBirthInput" class="form-label fw-medium">Date of Birth</label>
+                                        <input type="text" id="dateOfBirthInput" class="form-control" placeholder="Select date" readonly>
+                                    </div>
+                                </div>
+                            
+                                <h6 class="mt-6 mb-3">Contact Details</h6>
+                                <div class="row g-5">
+                                    <div class="col-12 col-md-6">
+                                        <label for="mobileNumberInput" class="form-label fw-medium">Mobile Number</label>
+                                        <input type="number" id="mobileNumberInput" class="form-control" placeholder="Enter your mobile number" required>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="alternativeMobileNumberInput" class="form-label fw-medium">Alternative Mobile Number</label>
+                                        <input type="number" id="alternativeMobileNumberInput" class="form-control" placeholder="Enter your mobile number">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="emailIDInput" class="form-label fw-medium">Email ID</label>
+                                        <input type="email" id="emailIDInput" class="form-control" placeholder="example@pixeleyez.com" required>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="nationalityInput" class="form-label fw-medium">Nationality</label>
+                                        <input type="text" id="nationalityInput" class="form-control" placeholder="Enter your nationality" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="addressInput" class="form-label fw-medium">Permanent Address</label>
+                                        <input type="text" id="addressInput" class="form-control" placeholder="Enter your address" required>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <label for="cityInput" class="form-label fw-medium">City</label>
+                                        <input type="text" id="cityInput" class="form-control" placeholder="Enter your city" required>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <label for="countryInput" class="form-label fw-medium">Country</label>
+                                        <input type="text" id="countryInput" class="form-control" placeholder="Enter your country" required>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <label for="pinCodeInput" class="form-label fw-medium">Pin Code</label>
+                                        <input type="number" id="pinCodeInput" class="form-control" placeholder="Enter your pincode" required>
+                                    </div>
+                                </div>
+                            
+                                <div class="d-flex flex-wrap justify-content-end gap-2 mt-5">
+                                    <button type="button" class="btn btn-primary">
+                                        Save to Next
+                                        <i data-lucide="move-right" class="ms-1 size-4"></i>
+                                    </button>
+                                </div>
+                            </form>    
+                        </div>
+                        <div class="tab-pane " id="pill-personalDetailsForm2" role="tabpanel" aria-labelledby="pills-personalDetailsForm2-tab" tabindex="0">
+                            <form action="#!" id="guardianDetailsForm">
+                                <div class="row g-5">
+                                    <div class="col-12 col-sm-4">
+                                        <label for="fatherNameInput" class="form-label fw-medium">Father Name</label>
+                                        <input type="text" id="fatherNameInput" class="form-control" placeholder="Enter your father name" required>
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <label for="montherNameInput" class="form-label fw-medium">Mother Name</label>
+                                        <input type="text" id="montherNameInput" class="form-control" placeholder="Enter your mother name" required>
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <label for="otherRelativeNameInput" class="form-label fw-medium">Other Relative Name</label>
+                                        <input type="text" id="otherRelativeNameInput" class="form-control" placeholder="Enter your relative name" required>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <label for="gdmobileNumberInput" class="form-label fw-medium">Mobile Number</label>
+                                        <input type="number" id="gdmobileNumberInput" class="form-control" placeholder="Enter your mobile number" required>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <label for="alternativegdMobileNumberInput" class="form-label fw-medium">Alternative Mobile Number</label>
+                                        <input type="number" id="alternativegdMobileNumberInput" class="form-control" placeholder="Enter your mobile number">
+                                    </div>
+                                </div>
+                            
+                                <div class="d-flex justify-content-end gap-2 mt-5">
+                                    <button type="button" class="btn btn-light" @click="openTab = 1">
+                                        <i data-lucide="move-left" class="size-4 me-1"></i>
+                                        Previous
+                                    </button>
+                                    <button type="button" class="btn btn-primary" @click="if(validateGuardianDetails()){openTab = 3}">
+                                        Save to Next
+                                        <i data-lucide="move-right" class="size-4 ms-1"></i>
+                                    </button>
+                                </div>
+                            </form>
+                            
+                        </div>
+                        <div class="tab-pane " id="pill-educationalBackgroundForm" role="tabpanel" aria-labelledby="pills-educationalBackgroundForm-tab" tabindex="0">
+                            <form action="#!" id="educationalBackgroundForm">
+                                <h6 class="mb-3">High School</h6>
+                                <div class="row g-5">
+                                    <div class="col-12 col-sm-4">
+                                        <label for="highSchoolNameInput" class="form-label fw-medium">Name</label>
+                                        <input type="text" id="highSchoolNameInput" class="form-control" placeholder="High school name" required>
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <label for="graduationYearInput" class="form-label fw-medium">Graduation Year</label>
+                                        <input type="number" id="graduationYearInput" class="form-control" placeholder="Years" required>
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <label for="gpaInput" class="form-label fw-medium">GPA</label>
+                                        <input type="number" id="gpaInput" class="form-control" placeholder="GPA" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="majorFocusInput" class="form-label fw-medium">Major/Focus</label>
+                                        <input type="text" id="majorFocusInput" class="form-control" placeholder="Major/Focus" required>
+                                    </div>
+                                </div>
+                            
+                                <h6 class="mt-5 mb-3">Undergraduate Institution</h6>
+                                <div class="row g-5">
+                                    <div class="col-12 col-sm-4">
+                                        <label for="instituteNameInput" class="form-label fw-medium">Institute Name</label>
+                                        <input type="text" id="instituteNameInput" class="form-control" placeholder="Institute name" required>
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <label for="underGraduationYearInput" class="form-label fw-medium">Graduation Year</label>
+                                        <input type="number" id="underGraduationYearInput" class="form-control" placeholder="Years" required>
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <label for="underGpaInput" class="form-label fw-medium">GPA</label>
+                                        <input type="number" id="underGpaInput" class="form-control" placeholder="GPA" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="underMajorFocusInput" class="form-label fw-medium">Major/Focus</label>
+                                        <input type="text" id="underMajorFocusInput" class="form-control" placeholder="Major/Focus" required>
+                                    </div>
+                                </div>
+                            
+                                <h6 class="mt-5 mb-3">Academic Achievements</h6>
+                                <div class="row g-5">
+                                    <div class="col-12 col-sm-4">
+                                        <label for="honorsAwardsInput" class="form-label fw-medium">Honors/Awards</label>
+                                        <input type="text" id="honorsAwardsInput" class="form-control">
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <label for="extracurricularActivitiesInput" class="form-label fw-medium">Extracurricular Activities</label>
+                                        <input type="text" id="extracurricularActivitiesInput" class="form-control">
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <label for="leadershipRolesInput" class="form-label fw-medium">Leadership Roles</label>
+                                        <input type="text" id="leadershipRolesInput" class="form-control">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="publicationsResearchInput" class="form-label fw-medium">Publications/Research</label>
+                                        <input type="text" id="publicationsResearchInput" class="form-control">
+                                    </div>
+                                </div>
+                            
+                                <div class="d-flex justify-content-end gap-2 mt-5">
+                                    <button type="button" class="btn btn-light text-dark" @click="openTab = 2">
+                                        <i data-lucide="move-left" class="size-4 me-1"></i>
+                                        Previous
+                                    </button>
+                                    <button type="button" class="btn btn-primary" @click="if(validateEducationalBackground()){openTab = 4}">
+                                        Save to Next
+                                        <i data-lucide="move-right" class="size-4 ms-1"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane " id="pill-documents" role="tabpanel" aria-labelledby="pills-documents-tab" tabindex="0">
+                            <form action="#!" x-data="{
+                                image: null,
+                            }" class="row">
+                                
+                                <div class="col-12 mb-4">
+                                    <label class="form-label fw-medium">Passport-sized Photograph</label>
+                                    <label class="d-flex justify-content-center align-items-center flex-column bg-light rounded border size-36">
+                                        <img x-show="image" :src="image" class="w-100 h-100 object-cover rounded">
+                                        <i x-show="!image" data-lucide="upload" class="text-dark"></i>
+                                        <input type="file" class="d-none" @change="image = URL.createObjectURL($event.target.files[0])" />
+                                        <p x-show="!image" class="mt-3 mb-1 text-center text-muted">Passport Size</p>
+                                        <span x-show="!image" class="text-muted">144 x 144</span>
+                                    </label>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">High School Transcript</label>
+                                    <label class="d-flex justify-content-center align-items-center flex-column bg-light rounded border p-4 h-28 w-100">
+                                        <img x-show="image" :src="image" class=" h-28 object-cover rounded">
+                                        <i x-show="!image" data-lucide="upload" class="text-dark"></i>
+                                        <input type="file" class="d-none" @change="image = URL.createObjectURL($event.target.files[0])" />
+                                        <p x-show="!image" class="mt-3 mb-1 text-center text-muted">Drag and drop your certificate</p>
+                                        <span x-show="!image" class="text-muted">only allowed pdf, png files.</span>
+                                    </label>
+                                </div>
+                                <div class="d-flex justify-content-end gap-2 mt-5">
+                                    <button type="button" class="btn btn-light text-dark" @click="openTab = 2">
+                                        <i data-lucide="move-left" class="size-4 me-1"></i>
+                                        Previous
+                                    </button>
+                                    <button type="button" class="btn btn-primary" @click="if(validateEducationalBackground()){openTab = 4}">
+                                        Save to Next
+                                        <i data-lucide="move-right" class="size-4 ms-1"></i>
+                                    </button>
+                                </div>
+                            </form>                      
+                        </div>
+                        <div class="tab-pane " id="pill-applicationOverview" role="tabpanel" aria-labelledby="pills-applicationOverview-tab" tabindex="0">
+                            <form action="#!">
+                                <h6 class="mb-3">Application Overview</h6>
+                                <div class="row g-5">
+                                    <div class="col-12 col-sm-6">
+                                        <label for="applicationIDInput" class="form-label fw-medium">Application ID</label>
+                                        <input type="text" id="applicationIDInput" class="form-control" value="#PEA-1478A5487956236" readonly>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <label for="referenceNumberInput" class="form-label fw-medium">Reference Number</label>
+                                        <input type="text" id="referenceNumberInput" class="form-control" placeholder="#PEA-000A0000000000">
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <label for="dateOfaAplicationSelect" class="form-label fw-medium">Date of Application Submission</label>
+                                        <input type="text" id="dateOfaAplicationSelect" class="form-control" value="23 June, 2024" readonly>
+                                    </div>
+                                    <div class="col-12 col-sm-6 d-inline-block">
+                                        <label for="dateOfaAplicationSelect" class="form-label fw-medium">Current Status</label>
+                                        <div><span class="badge bg-success-subtle text-success  border border-success-subtle">Submitted</span></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end gap-2 mt-5">
+                                    <button type="button" class="btn btn-light text-dark" @click="openTab = 2">
+                                        <i data-lucide="move-left" class="size-4 me-1"></i>
+                                        Previous
+                                    </button>
+                                    <button type="button" class="btn btn-primary" @click="if(validateEducationalBackground()){openTab = 4}">
+                                        Save to Next
+                                        <i data-lucide="move-right" class="size-4 ms-1"></i>
+                                    </button>
+                                </div>
+                            </form>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Fees Structure</h5>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-danger mb-4">
+                        <span>If the fees are not paid before 01 Aug, 2024, the application will be automatically rejected</span>
+                    </div>
+                    <form action="#!">
+                        <div class="row g-3 align-items-center">
+                            <div class="col-12 col-sm-4">
+                                <label for="courseFrees" class="form-label mb-0 fw-medium">Course Fees</label>
+                            </div>
+                            <div class="col-12 col-sm-8">
+                                <input type="number" id="courseFrees" class="form-control" placeholder="$0">
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <label for="paidAmount" class="form-label mb-0 fw-medium">Paid Amount</label>
+                            </div>
+                            <div class="col-12 col-sm-8">
+                                <input type="number" id="paidAmount" class="form-control" placeholder="$0">
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <label for="statuSelect" class="form-label mb-0 fw-medium">Status</label>
+                            </div>
+                            <div class="col-12 col-sm-8">
+                               <div id="statusSelect"></div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <label for="paidVia" class="form-label mb-0 fw-medium">Paid Via</label>
+                            </div>
+                            <div class="col-12 col-sm-8">
+                                <input type="text" id="paidVia" class="form-control" placeholder="N/A">
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 mt-5">
+                            <button class="btn btn-light text-dark">View Receipt</button>
+                            <button class="btn btn-primary">Add Account</button>
+                        </div>
+                    </form>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/school/students/admission.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

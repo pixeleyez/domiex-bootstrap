@@ -19,20 +19,112 @@
 
 <div class="container-fluid">
 
-    {{> partials/page-heading title="List View" sub-title="Students" }}
+    {{> partials/page-heading title="List View" sub-title="Parents" }}
 
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <div class="position-relative">
-                        <input type="text" class="form-control ps-9 pe-4" placeholder="Search student, class etc. ..." @input="filtercontacts" x-model="searchTerm">
-                        <div class="position-absolute top-50 translate-middle-y d-flex align-items-center text-muted">
-                            <i data-lucide="search" class="size-4 ms-3"></i>
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="position-relative">
+                                <input type="text" class="form-control ps-9 pe-4" placeholder="Search student, class etc. ..." @input="filtercontacts" x-model="searchTerm">
+                                <div class="position-absolute top-50 translate-middle-y d-flex align-items-center text-muted">
+                                    <i data-lucide="search" class="size-4 ms-3"></i>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <button type="button" class="btn btn-primary flex-shrink-0">Download</button>
+                        <div class="col-9">
+                            <div class="float-end">
+                                <button type="button" class="btn btn-primary flex-shrink-0"  data-bs-toggle="modal" data-bs-target="#leadCreateModal"><i data-lucide="circle-plus" class="size-4 me-1"></i> Add Parents</button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="leadCreateModal" tabindex="-1" aria-labelledby="leadCreateModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="p-2 modal-content">
+                                            <div class="p-0 modal-body">
+                                                <div class="h-24 w-100 rounded-top square modal-square"></div>
+                                                <div class="p-4">
+                                                    <form action="#!">
+                                                        <div class="-mt-16 row g-4" x-data="{
+                                                        parentsInput: '', studentNameInput: '', relationInput: '', email: '', phone: '', occupationInput: '', genderSelect: '', phonenumberInput:'', image: null,
+                                                        parentsInputError: '', studentNameInputError: '', relationInputError: '', emailError: '', phoneError: '', occupationInputError: '', genderSelectError: '', phonenumberInputError:'', imageError: '',
+                                                    
+                                                        validateForm() {
+                                                            this.parentsInputError = this.studentNameInputError = this.relationInputError = this.emailError = this.phoneError = this.occupationInputError = this.genderSelectError = this.phonenumberInputError = this.imageError = '';
+                                                    
+                                                            if (!this.parentsInput) this.parentsInputError = 'Full Name is required.';
+                                                            if (!this.studentNameInput) this.studentNameInputError = 'Student name is required.';
+                                                            if (!this.relationInput) this.relationInputError = 'Relation is required.'; 
+                                                            if (!this.genderSelect) this.genderSelectError = 'Gender is required.';
+                                                            if (!/^\+\(\d{3}\) \d{4} \d{4}$/.test(this.phone)) this.phoneError = 'Phone must be in format +(000) 0000 0000.';
+                                                            if (!this.occupationInput) this.occupationInputError = 'Occupation is required.';
+                                                            if (!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(this.email)) this.emailError = 'Email is required.';
+                                                            if (!this.phonenumberInput) this.phonenumberInputError = 'Phone number is required.';
+                                                            if (!this.image) this.imageError = 'Image is required.';
+                                                    
+                                                            return !this.parentsInputError && !this.studentNameInputError && !this.relationInputError && !this.emailError && !this.phoneError && !this.occupationInputError && !this.genderSelectError && !this.phonenumberInputError && !this.imageError;
+                                                        },
+                                                    
+                                                        clearError(field) {
+                                                            if (field) this[`${field}Error`] = '';
+                                                        }
+                                                    }">
+                                                            <div class="col-12">
+                                                                <label class="d-flex justify-content-center align-items-center border border-2 border-white bg-light size-24 d-inline-block rounded-circle">
+                                                                    <img x-show="image" :src="image" class="rounded-circle w-100 h-100 object-cover">
+                                                                    <i x-show="!image" data-lucide="upload" class="text-dark"></i>
+                                                                    <input type="file" class="d-none" @change="image = URL.createObjectURL($event.target.files[0]); clearError('image')" />
+                                                                </label>
+                                                                <p x-show="imageError" class="text-sm text-danger" x-text="imageError"></p>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <label for="name" class="form-label fw-medium">Parents Name</label>
+                                                                <input type="text" x-model="parentsInput" placeholder="Parents Name" class="form-control" @input="clearError('parentsInput')" />
+                                                                <p x-show="parentsInputError" class="text-sm text-danger" x-text="parentsInputError"></p>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <label for="studentNameInput" class="form-label fw-medium">Student Name</label>
+                                                                <input type="text" x-model="studentNameInput" placeholder="Student Name" class="form-control" @input="clearError('studentNameInput')" />
+                                                                <p x-show="studentNameInputError" class="text-sm text-danger" x-text="studentNameInputError"></p>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label for="relationInput" class="form-label fw-medium">Relation</label>
+                                                                <input type="text" x-model="relationInput" placeholder="Relation" class="form-control" @input="clearError('relationInput')" />
+                                                                <p x-show="relationInputError" class="text-sm text-danger" x-text="relationInputError"></p>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label for="email" class="form-label fw-medium">Gender</label>
+                                                                <div id="genderSelect" x-model="status" @change="clearError('status')"></div>
+                                                                <p x-show="genderSelectError" class="text-sm text-danger" x-text="genderSelectError"></p>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <label for="occupationInput" class="form-label fw-medium">Occupation</label>
+                                                                <input type="text" x-model="occupationInput" placeholder="Occupation" class="form-control" @input="clearError('occupationInput')" />
+                                                                <p x-show="occupationInputError" class="text-sm text-danger" x-text="occupationInputError"></p>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label for="genderSelect" class="form-label fw-medium">Email</label>
+                                                                <input type="text" x-model="genderSelect" placeholder="Enter your email" class="form-control" @input="clearError('genderSelect')" />
+                                                                <p x-show="emailError" class="text-sm text-danger" x-text="emailError"></p>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label for="phonenumberInput" class="form-label fw-medium">Phone Number</label>
+                                                                <input type="text" x-model="phonenumberInput" placeholder="Enter your phone number" class="form-control" @input="clearError('phonenumberInput')" />
+                                                                <p x-show="phonenumberInputError" class="text-sm text-danger" x-text="phonenumberInputError"></p>
+                                                            </div>
+                                                            <div class="d-flex justify-content-end gap-2 mt-4">
+                                                                <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal"><i data-lucide="x" class="size-4 me-1"></i>Close</button>
+                                                                <button type="button" class="btn btn-primary" @click="if (validateForm()) { alert('Form is valid and ready for submission!') }">Add Lead</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <section class="h-96 card-body pt-0" id="customScroll" data-simplebar>
@@ -344,7 +436,7 @@
 
 {{> partials/vendor-scripts}}
 
-<script src="assets/js/apps/school/students/list-view.init.js"></script>
+<script src="assets/js/apps/school/parents/list-view.init.js"></script>
 
 <script type="module" src="assets/js/main.js"></script>
 

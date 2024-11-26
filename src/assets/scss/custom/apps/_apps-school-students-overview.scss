@@ -1,0 +1,43 @@
+.excellence-award {
+    background: linear-gradient(to top, rgba($warning-500, .10), rgba($warning-500, .0));
+}
+
+.recognition-award {
+    background: linear-gradient(to top, rgba($success-500, .10), rgba($success-500, .0));
+}
+
+@each $state in map-keys($theme-colors) {
+    .achivment-ring-#{$state} {
+        border: 1px solid rgba(var(--#{$prefix}#{$state}-rgb), .15);
+    }
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    display: none;
+}
+.achivementSwiper:hover .achivement-navigation {
+    opacity: 1;
+    visibility: visible;
+}
+.achivement-navigation {
+    transition: $transition-base;
+    opacity: 0;
+    visibility: hidden;
+    .swiper-button-prev:before {
+        content: '\ea64';
+        font-family: "RemixIcon";
+    }
+
+    .swiper-button-next:before {
+        content: '\ea6e';
+        font-family: "RemixIcon";
+    }
+}
+.stroke-current{
+    stroke: currentColor;
+}
+.quiz{
+    transform-origin: center;
+    transform: rotate(-90deg);
+}

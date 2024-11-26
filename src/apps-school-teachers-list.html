@@ -19,143 +19,125 @@
 
 <div class="container-fluid">
 
-    {{> partials/page-heading title="List View" sub-title="Students" }}
+    {{> partials/page-heading title="List View" sub-title="Teachers" }}
+    <div class="row g-5">
+        <div class="col-12 col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-center align-items-center border rounded-circle border-warning-subtle bg-warning-subtle size-12">
+                        <i data-lucide="archive" class="size-5 icon-warning"></i>
+                    </div>
+                    <div class="mt-4">
+                        <h6 class="mb-2">English teacher of the month</h6>
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="assets/images/avatar/user-11.png" alt="" class="rounded-circle size-6">
+                            <p class="text-muted">Ronnie Gunderson</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-center align-items-center border rounded-circle border-info-subtle bg-info-subtle size-12">
+                        <i data-lucide="blend" class="size-5 icon-info"></i>
+                    </div>
+                    <div class="mt-4">
+                        <h6 class="mb-2">Physics teacher of the month</h6>
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="assets/images/avatar/user-15.png" alt="" class="rounded-circle size-6">
+                            <p class="text-muted">April Lovell</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-center align-items-center border rounded-circle border-success-subtle bg-success-subtle size-12">
+                        <i data-lucide="container" class="size-5 icon-success"></i>
+                    </div>
+                    <div class="mt-4">
+                        <h6 class="mb-2">History teacher of the month</h6>
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="assets/images/avatar/user-16.png" alt="" class="rounded-circle size-6">
+                            <p class="text-muted">Elisa Harris</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-center align-items-center border rounded-circle border-danger-subtle bg-danger-subtle size-12">
+                        <i data-lucide="cross" class="size-5 icon-danger"></i>
+                    </div>
+                    <div class="mt-4">
+                        <h6 class="mb-2">Biology teacher of the month</h6>
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="assets/images/avatar/user-17.png" alt="" class="rounded-circle size-6">
+                            <p class="text-muted">Jeanne Lane</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <div class="position-relative">
-                        <input type="text" class="form-control ps-9 pe-4" placeholder="Search student, class etc. ..." @input="filtercontacts" x-model="searchTerm">
-                        <div class="position-absolute top-50 translate-middle-y d-flex align-items-center text-muted">
-                            <i data-lucide="search" class="size-4 ms-3"></i>
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="position-relative">
+                                <input type="text" class="form-control ps-9 pe-4" placeholder="Search for ..." @input="filtercontacts" x-model="searchTerm">
+                                <div class="position-absolute top-50 translate-middle-y d-flex align-items-center text-muted">
+                                    <i data-lucide="search" class="size-4 ms-3"></i>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <button type="button" class="btn btn-primary flex-shrink-0">Download</button>
+                        <div class="col-9">
+                            <div class="text-end">
+                                <button type="button" class="btn btn-primary flex-shrink-0"><i data-lucide="circle-plus" class="size-4 me-1"></i>Add Teacher</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <section class="h-96 card-body pt-0" id="customScroll" data-simplebar>
                     <div class="table-box">
-                        <table class="table align-middle">
+                        <table class="table align-middle table-borderless">
                             <thead>
                                 <tr class="table-light border-bottom">
                                     <th class="fw-medium text-dark">ID</th>
-                                    <th class="fw-medium text-dark">Student Name</th>
-                                    <th class="fw-medium text-dark">Gender</th>
-                                    <th class="fw-medium text-dark">Roll No</th>
-                                    <th class="fw-medium text-dark">Class</th>
+                                    <th class="fw-medium text-dark">Teacher Name</th>
                                     <th class="fw-medium text-dark">Email</th>
                                     <th class="fw-medium text-dark">Phone</th>
-                                    <th class="fw-medium text-dark">Birth Of Date</th>
+                                    <th class="fw-medium text-dark">Salary</th>
+                                    <th class="fw-medium text-dark">Experience</th>
+                                    <th class="fw-medium text-dark">Title</th>
                                     <th class="fw-medium text-dark">Joining Date</th>
                                     <th class="fw-medium text-dark">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>PES-1606</td>
-                                    <td>
-                                        <div class="d-flex align-items-center gap-3">
-                                            <img src="assets/images/avatar/user-11.png" alt="" class="size-8 rounded-pill">
-                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Ava Davis</a></h6>
-                                        </div>
-                                    </td>
-                                    <td>Male</td>
-                                    <td>29</td>
-                                    <td>10 (10)</td>
-                                    <td>ava@gmail.com</td>
-                                    <td>+1 741 65 2257</td>
-                                    <td>25 Oct, 2004</td>
-                                    <td>1 Jun 2024</td>
-                                    <td>
-                                        <div class="d-flex align-items-center gap-2">
-                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
-                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>PES-1596</td>
-                                    <td>
-                                        <div class="d-flex align-items-center gap-3">
-                                            <img src="assets/images/avatar/user-5.png" alt="" class="size-8 rounded-pill">
-                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Silvia Hoover</a></h6>
-                                        </div>
-                                    </td>
-                                    <td>Female</td>
-                                    <td>48</td>
-                                    <td>11 (B)</td>
-                                    <td>silvia@gmail.com</td>
-                                    <td>+54 4514 45785</td>
-                                    <td>22 Dec, 2006</td>
-                                    <td>19 May 2024</td>
-                                    <td>
-                                        <div class="d-flex align-items-center gap-2">
-                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
-                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>PES-1597</td>
-                                    <td>
-                                        <div class="d-flex align-items-center gap-3">
-                                            <div class="size-8 rounded-pill bg-light d-flex justify-content-center align-items-center fs-12 fw-semibold text-dark">RF</div>
-                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Robert Ferguson</a></h6>
-                                        </div>
-                                    </td>
-                                    <td>Male</td>
-                                    <td>32</td>
-                                    <td>11 (A) </td>
-                                    <td>robert@gmail.com</td>
-                                    <td>+245 15 145 74</td>
-                                    <td>15 June, 2002</td>
-                                    <td>2 Jun 2024</td>
-                                    <td>
-                                        <div class="d-flex align-items-center gap-2">
-                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
-                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>PES-1598</td>
-                                    <td>
-                                        <div class="d-flex align-items-center gap-3">
-                                            <div class="size-8 rounded-pill bg-light d-flex justify-content-center align-items-center fs-12 fw-semibold text-dark">EB</div>
-                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Emily Brown</a></h6>
-                                        </div>
-                                    </td>
-                                    <td>Female</td>
-                                    <td>20</td>
-                                    <td>9</td>
-                                    <td>emily@gmail.com</td>
-                                    <td>+1 625 15 1523</td>
-                                    <td>10 Feb, 2004</td>
-                                    <td>18 Jun 2024</td>
-                                    <td>
-                                        <div class="d-flex align-items-center gap-2">
-                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
-                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>PES-1599</td>
+                                    <td>PET-2553</td>
                                     <td>
                                         <div class="d-flex align-items-center gap-3">
                                             <img src="assets/images/avatar/user-3.png" alt="" class="size-8 rounded-pill">
-                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Michael Johnson</a></h6>
+                                            <h6 class="mb-0"><a href="apps-school-teachers-overview.html" class="text-black">John Doe</a></h6>
                                         </div>
                                     </td>
-                                    <td>Male</td>
-                                    <td>8</td>
-                                    <td>10 (A)</td>
-                                    <td>michael@gmail.com</td>
-                                    <td>+1 712 25 1525</td>
-                                    <td>05 Mar, 2007</td>
-                                    <td>15 Jun 2024</td>
+                                    <td>john@pixeleyez.com</td>
+                                    <td>+1234567890</td>
+                                    <td>$50,000</td>
+                                    <td>10 years</td>
+                                    <td><span class="badge bg-primary-subtle text-primary border border-primary-subtle">Teacher</span></td>
+                                    <td>13 Jul 2024</td>
                                     <td>
                                         <div class="d-flex align-items-center gap-2">
                                             <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
@@ -164,20 +146,19 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>PES-1600</td>
+                                    <td>PET-2552</td>
                                     <td>
                                         <div class="d-flex align-items-center gap-3">
-                                            <div class="size-8 rounded-pill bg-light d-flex justify-content-center align-items-center fs-12 fw-semibold text-dark">JL</div>
-                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Jessica Lee</a></h6>
+                                            <img src="assets/images/avatar/user-2.png" alt="" class="size-8 rounded-pill">
+                                            <h6 class="mb-0"><a href="apps-school-teachers-overview.html" class="text-black">Jane Smith</a></h6>
                                         </div>
                                     </td>
-                                    <td>Female</td>
-                                    <td>16</td>
-                                    <td>12 (A)</td>
-                                    <td>jessica@gmail.com</td>
-                                    <td>+1 845 35 1623</td>
-                                    <td>25 Apr, 2004</td>
-                                    <td>12 Jun 2024</td>
+                                    <td>jane@pixeleyez.com</td>
+                                    <td>+1234567891</td>
+                                    <td>$55,000</td>
+                                    <td>8 years</td>
+                                    <td><span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Professor</span></td>
+                                    <td>14 Jul 2024</td>
                                     <td>
                                         <div class="d-flex align-items-center gap-2">
                                             <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
@@ -186,20 +167,82 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>PES-1601</td>
+                                    <td>PET-2553</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="assets/images/avatar/user-3.png" alt="" class="size-8 rounded-pill">
+                                            <h6 class="mb-0"><a href="apps-school-teachers-overview.html" class="text-black">Michael Johnson</a></h6>
+                                        </div>
+                                    </td>
+                                    <td>michael@pixeleyez.com</td>
+                                    <td>+1234567892</td>
+                                    <td>$60,000</td>
+                                    <td>12 years</td>
+                                    <td><span class="badge bg-warning-subtle text-warning border border-warning-subtle">Assistant</span></td>
+                                    <td>13 Jul 2024</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PET-2554</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="assets/images/avatar/user-4.png" alt="" class="size-8 rounded-pill">
+                                            <h6 class="mb-0"><a href="apps-school-teachers-overview.html" class="text-black">Emily Davis</a></h6>
+                                        </div>
+                                    </td>
+                                    <td>davis@pixeleyez.com</td>
+                                    <td>+1234567893</td>
+                                    <td>$52,000</td>
+                                    <td>9 years</td>
+                                    <td><span class="badge bg-danger-subtle text-danger border border-danger-subtle">Lecturer</span></td>
+                                    <td>12 Jul 2024</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PET-2555</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="assets/images/avatar/user-5.png" alt="" class="size-8 rounded-pill">
+                                            <h6 class="mb-0"><a href="apps-school-teachers-overview.html" class="text-black">James Brown</a></h6>
+                                        </div>
+                                    </td>
+                                    <td>james@pixeleyez.com</td>
+                                    <td>+1234567894</td>
+                                    <td>$48,000</td>
+                                    <td>7 years</td>
+                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Instructor</span></td>
+                                    <td>11 Jul 2024</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PET-2556</td>
                                     <td>
                                         <div class="d-flex align-items-center gap-3">
                                             <img src="assets/images/avatar/user-6.png" alt="" class="size-8 rounded-pill">
-                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Daniel Harris</a></h6>
+                                            <h6 class="mb-0"><a href="apps-school-teachers-overview.html" class="text-black">Patricia Wilson</a></h6>
                                         </div>
                                     </td>
-                                    <td>Female</td>
-                                    <td>49</td>
-                                    <td>11 (B)</td>
-                                    <td>daniel@gmail.com</td>
-                                    <td>+1 945 15 1627</td>
-                                    <td>20 May, 2006</td>
-                                    <td>10 Jun 2024</td>
+                                    <td>patricia@pixeleyez.com</td>
+                                    <td>+1234567895</td>
+                                    <td>$54,000</td>
+                                    <td>11 years</td>
+                                    <td><span class="badge bg-orange-subtle text-orange border border-orange-subtle">Senior Lecturer</span></td>
+                                    <td>10 Jul 2024</td>
                                     <td>
                                         <div class="d-flex align-items-center gap-2">
                                             <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
@@ -208,20 +251,19 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>PES-1602</td>
+                                    <td>PET-2557</td>
                                     <td>
                                         <div class="d-flex align-items-center gap-3">
-                                            <div class="size-8 rounded-pill bg-light d-flex justify-content-center align-items-center fs-12 fw-semibold text-dark">OM</div>
-                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Olivia Martin</a></h6>
+                                            <img src="assets/images/avatar/user-7.png" alt="" class="size-8 rounded-pill">
+                                            <h6 class="mb-0"><a href="apps-school-teachers-overview.html" class="text-black">Robert Martinez</a></h6>
                                         </div>
                                     </td>
-                                    <td>Male</td>
-                                    <td>57</td>
-                                    <td>10 (B)</td>
-                                    <td>olivia@gmail.com</td>
-                                    <td>+1 741 25 1823</td>
-                                    <td>14 Jun, 2007</td>
-                                    <td>8 Jun 2024</td>
+                                    <td>martinez@pixeleyez.com</td>
+                                    <td>+1234567896</td>
+                                    <td>$58,000</td>
+                                    <td>15 years</td>
+                                    <td><span class="badge bg-light text-dark border border-dark-subtle">Associate Professor</span></td>
+                                    <td>9 Jul 2024</td>
                                     <td>
                                         <div class="d-flex align-items-center gap-2">
                                             <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
@@ -230,20 +272,19 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>PES-1603</td>
+                                    <td>PET-2558</td>
                                     <td>
                                         <div class="d-flex align-items-center gap-3">
                                             <img src="assets/images/avatar/user-8.png" alt="" class="size-8 rounded-pill">
-                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Ethan Wilson</a></h6>
+                                            <h6 class="mb-0"><a href="apps-school-teachers-overview.html" class="text-black">Linda Anderson</a></h6>
                                         </div>
                                     </td>
-                                    <td>Female</td>
-                                    <td>16</td>
-                                    <td>12 (A)</td>
-                                    <td>ethan@gmail.com</td>
-                                    <td>+1 815 35 1923</td>
-                                    <td>30 Jul, 2004</td>
-                                    <td>6 Jun 2024</td>
+                                    <td>anderson@pixeleyez.com</td>
+                                    <td>+1234567897</td>
+                                    <td>$51,000</td>
+                                    <td>10 years</td>
+                                    <td><span class="badge bg-danger-subtle text-danger border border-danger-subtle">Lecturer</span></td>
+                                    <td>8 Jul 2024</td>
                                     <td>
                                         <div class="d-flex align-items-center gap-2">
                                             <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
@@ -252,20 +293,40 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>PES-1604</td>
+                                    <td>PET-2559</td>
                                     <td>
                                         <div class="d-flex align-items-center gap-3">
                                             <img src="assets/images/avatar/user-9.png" alt="" class="size-8 rounded-pill">
-                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Sophia Moore</a></h6>
+                                            <h6 class="mb-0"><a href="apps-school-teachers-overview.html" class="text-black">Thomas Lee</a></h6>
                                         </div>
                                     </td>
-                                    <td>Female</td>
-                                    <td>49</td>
-                                    <td>11 (B)</td>
-                                    <td>sophia@gmail.com</td>
-                                    <td>+1 912 45 2025</td>
-                                    <td>05 Aug, 2006</td>
-                                    <td>4 Jun 2024</td>
+                                    <td>thomas@pixeleyez.com</td>
+                                    <td>+1234567898</td>
+                                    <td>$57,000</td>
+                                    <td>13 years</td>
+                                    <td><span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Professor</span></td>
+                                    <td>7 Jul 2024</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
+                                            <button class="btn btn-sub-light text-dark size-8 btn-icon" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="ri-delete-bin-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PET-2560</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="assets/images/avatar/user-10.png" alt="" class="size-8 rounded-pill">
+                                            <h6 class="mb-0"><a href="apps-school-teachers-overview.html" class="text-black">Barbara Hernandez</a></h6>
+                                        </div>
+                                    </td>
+                                    <td>barbara@pixeleyez.com</td>
+                                    <td>+1234567899</td>
+                                    <td>$53,000</td>
+                                    <td>9 years</td>
+                                    <td><span class="badge bg-orange-subtle text-orange border border-orange-subtle">Senior Lecturer</span></td>
+                                    <td>6 Jul 2024</td>
                                     <td>
                                         <div class="d-flex align-items-center gap-2">
                                             <button class="btn btn-sub-light text-dark size-8 btn-icon"><i class="ri-pencil-line"></i></button>
@@ -293,15 +354,6 @@
                                     <li class="page-item" aria-current="page">
                                         <a class="page-link rounded-2 page-number" href="#">2</a>
                                     </li>
-                                    <li class="page-item" aria-current="page">
-                                        <a class="page-link rounded-2 page-number" href="#">3</a>
-                                    </li>
-                                    <li class="page-item" aria-current="page">
-                                        <a class="page-link rounded-2 page-number" href="#">4</a>
-                                    </li>
-                                    <li class="page-item" aria-current="page">
-                                        <a class="page-link rounded-2 page-number" href="#">5</a>
-                                    </li>
                                     <li class="page-item pagination-primary ">
                                         <a class="page-link rounded-2 d-flex align-items-center gap-1">
                                             <span>Next</span>
@@ -317,6 +369,7 @@
         </div>
     </div>
     <!-- end row -->
+     
     <!-- Delete Modal -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xs">
@@ -330,7 +383,7 @@
                         <line x1="14" x2="14" y1="11" y2="17"></line>
                     </svg>
                 </div>
-                <h5 class="mb-4 lh-base">Are you sure you want to delete this parents ?</h5>
+                <h5 class="mb-4 lh-base">Are you sure you want to delete this teacher ?</h5>
                 <div class="d-flex justify-content-center align-items-center gap-2">
                     <button class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
                     <button class="btn btn-link link-primary text-dark" data-bs-dismiss="modal">Cancel</button>
