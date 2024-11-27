@@ -6,6 +6,10 @@
         font-size: 15px;
     }
 
+    &.card-h-100 {
+        height: calc(100% - 20px);
+    }
+
 }
 
 .basic-card {

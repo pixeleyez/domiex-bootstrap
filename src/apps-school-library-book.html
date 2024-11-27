@@ -1,0 +1,435 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Book Library" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Book Library" sub-title="School" }}
+
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="row justify-content-between">
+                <div class="col-3">
+                    <div class="position-relative">
+                        <input type="text" class="form-control px-4" placeholder="Search for ..." @input="filtercontacts" x-model="searchTerm">
+                        <button class="btn btn-light btn-icon position-absolute end-0 top-50 translate-middle-y d-flex align-items-center text-muted">
+                            <i data-lucide="search" class="size-5"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-4 gap-5">
+                    <div class="d-flex align-items-center gap-5">
+                        <div id="sortBySelect" placeholder="Sort By" class="w-50"></div>
+                        <button class="btn btn-primary w-50" data-bs-toggle="modal" data-bs-target="#bookOverviewModal"><i data-lucide="circle-plus" class="size-4 me-1"></i> Add Book</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end row -->
+    <div class="row">
+        <div class="col-3">
+            <div class="card">
+                <div class="d-flex align-items-center gap-3 card-body">
+                    <img src="https://dmaxxx.netlify.app/assets/images/img-0110.jpg" alt="" class="h-40 rounded-3 cursor-pointer" data-bs-toggle="modal" data-bs-target="#bookOverviewModal">
+                    <div class="overflow-hidden flex-grow-1">
+                        <h6 class="mb-1 text-truncate"><a href="#!" class="link link-primary text-black lh-base">Swan Song</a></h6>
+                        <p class="mb-2 text-muted">By <a href="#!" class="link link-success text-dark">David Grann</a></p>
+                        <div class="text-warning d-flex gap-1 mb-2">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <span class="text-dark-emphasis"> (98)</span>
+                        </div>
+                        <h5 class="mb-2 fs-lg lh-base">$47.99</h5>
+                        <button type="button" class="w-100 btn btn-sub-danger">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="d-flex align-items-center gap-3 card-body">
+                    <img src="assets/images/school/book/img-02.jpg" alt="" class="h-40 rounded-3 cursor-pointer" data-bs-toggle="modal" data-bs-target="#bookOverviewModal">
+                    <div class="overflow-hidden flex-grow-1">
+                        <h6 class="mb-1 text-truncate"><a href="#!" class="link link-primary text-black lh-base">The Wager: A Tale of Shipwreck, Mutiny and Murder</a></h6>
+                        <p class="mb-2 text-muted">By <a href="#!" class="link link-success text-dark">Elin Hilderbrand</a></p>
+                        <div class="text-warning d-flex gap-1 mb-2">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <span class="text-dark-emphasis"> (147)</span>
+                        </div>
+                        <h5 class="mb-2 fs-lg lh-base">$29.99</h5>
+                        <button type="button" class="w-100 btn btn-sub-danger">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="d-flex align-items-center gap-3 card-body">
+                    <img src="assets/images/school/book/img-03.jpg" alt="" class="h-40 rounded-3 cursor-pointer" data-bs-toggle="modal" data-bs-target="#bookOverviewModal">
+                    <div class="overflow-hidden flex-grow-1">
+                        <h6 class="mb-1 text-truncate"><a href="#!" class="link link-primary text-black lh-base">The Friday Afternoon Club: A Family Memoir</a></h6>
+                        <p class="mb-2 text-muted">By <a href="#!" class="link link-success text-dark">Griffin Dunne</a></p>
+                        <div class="text-warning d-flex gap-1 mb-2">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-fill"></i>
+                            <span class="text-dark-emphasis"> (213)</span>
+                        </div>
+                        <h5 class="mb-2 fs-lg lh-base">$30</h5>
+                        <button type="button" class="w-100 btn btn-sub-danger">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="d-flex align-items-center gap-3 card-body">
+                    <img src="assets/images/school/book/img-04.jpg" alt="" class="h-40 rounded-3 cursor-pointer" data-bs-toggle="modal" data-bs-target="#bookOverviewModal">
+                    <div class="overflow-hidden flex-grow-1">
+                        <h6 class="mb-1 text-truncate"><a href="#!" class="link link-primary text-black lh-base">Not in Love</a></h6>
+                        <p class="mb-2 text-muted">By <a href="#!" class="link link-success text-dark">Ali Hazelwood</a></p>
+                        <div class="text-warning d-flex gap-1 mb-2">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-fill"></i>
+                            <span class="text-dark-emphasis"> (97)</span>
+                        </div>
+                        <h5 class="mb-2 fs-lg lh-base">$17.99</h5>
+                        <button type="button" class="w-100 btn btn-sub-danger">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="d-flex align-items-center gap-3 card-body">
+                    <img src="assets/images/school/book/img-05.jpg" alt="" class="h-40 rounded-3 cursor-pointer" data-bs-toggle="modal" data-bs-target="#bookOverviewModal">
+                    <div class="overflow-hidden flex-grow-1">
+                        <h6 class="mb-1 text-truncate"><a href="#!" class="link link-primary text-black lh-base">This Summer Will Be Different</a></h6>
+                        <p class="mb-2 text-muted">By <a href="#!" class="link link-success text-dark">Carley Fortune</a></p>
+                        <div class="text-warning d-flex gap-1 mb-2">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-fill"></i>
+                            <span class="text-dark-emphasis"> (179)</span>
+                        </div>
+                        <h5 class="mb-2 fs-lg lh-base">$21</h5>
+                        <button type="button" class="w-100 btn btn-sub-danger">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="d-flex align-items-center gap-3 card-body">
+                    <img src="assets/images/school/book/img-06.jpg" alt="" class="h-40 rounded-3 cursor-pointer" data-bs-toggle="modal" data-bs-target="#bookOverviewModal">
+                    <div class="overflow-hidden flex-grow-1">
+                        <h6 class="mb-1 text-truncate"><a href="#!" class="link link-primary text-black lh-base">Reckless</a></h6>
+                        <p class="mb-2 text-muted">By <a href="#!" class="link link-success text-dark">Lauren Roberts</a></p>
+                        <div class="text-warning d-flex gap-1 mb-2">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-fill"></i>
+                            <span class="text-dark-emphasis"> (236)</span>
+                        </div>
+                        <h5 class="mb-2 fs-lg lh-base">$39.99</h5>
+                        <button type="button" class="w-100 btn btn-sub-danger">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="d-flex align-items-center gap-3 card-body">
+                    <img src="assets/images/school/book/img-07.jpg" alt="" class="h-40 rounded-3 cursor-pointer" data-bs-toggle="modal" data-bs-target="#bookOverviewModal">
+                    <div class="overflow-hidden flex-grow-1">
+                        <h6 class="mb-1 text-truncate"><a href="#!" class="link link-primary text-black lh-base">Evenings and Weekends: A Novel</a></h6>
+                        <p class="mb-2 text-muted">By <a href="#!" class="link link-success text-dark">Oisín McKenna</a></p>
+                        <div class="text-warning d-flex gap-1 mb-2">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-fill"></i>
+                            <span class="text-dark-emphasis"> (46)</span>
+                        </div>
+                        <h5 class="mb-2 fs-lg lh-base">$21.49</h5>
+                        <button type="button" class="w-100 btn btn-sub-danger">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="d-flex align-items-center gap-3 card-body">
+                    <img src="assets/images/school/book/img-08.jpg" alt="" class="h-40 rounded-3 cursor-pointer" data-bs-toggle="modal" data-bs-target="#bookOverviewModal">
+                    <div class="overflow-hidden flex-grow-1">
+                        <h6 class="mb-1 text-truncate"><a href="#!" class="link link-primary text-black lh-base">One Dark Window</a></h6>
+                        <p class="mb-2 text-muted">By <a href="#!" class="link link-success text-dark">Rachel Gillig</a></p>
+                        <div class="text-warning d-flex gap-1 mb-2">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-fill"></i>
+                            <span class="text-dark-emphasis"> (74)</span>
+                        </div>
+                        <h5 class="mb-2 fs-lg lh-base">$49.99</h5>
+                        <button type="button" class="w-100 btn btn-sub-danger">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="d-flex align-items-center gap-3 card-body">
+                    <img src="assets/images/school/book/img-09.jpg" alt="" class="h-40 rounded-3 cursor-pointer" data-bs-toggle="modal" data-bs-target="#bookOverviewModal">
+                    <div class="overflow-hidden flex-grow-1">
+                        <h6 class="mb-1 text-truncate"><a href="#!" class="link link-primary text-black lh-base">Two Twisted Crowns</a></h6>
+                        <p class="mb-2 text-muted">By <a href="#!" class="link link-success text-dark">Rachel Gillig</a></p>
+                        <div class="text-warning d-flex gap-1 mb-2">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-fill"></i>
+                            <span class="text-dark-emphasis"> (39)</span>
+                        </div>
+                        <h5 class="mb-2 fs-lg lh-base">$17.49</h5>
+                        <button type="button" class="w-100 btn btn-sub-danger">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="d-flex align-items-center gap-3 card-body">
+                    <img src="assets/images/school/book/img-10.jpg" alt="" class="h-40 rounded-3 cursor-pointer" data-bs-toggle="modal" data-bs-target="#bookOverviewModal">
+                    <div class="overflow-hidden flex-grow-1">
+                        <h6 class="mb-1 text-truncate"><a href="#!" class="link link-primary text-black lh-base">All the Colors of the Dark</a></h6>
+                        <p class="mb-2 text-muted">By <a href="#!" class="link link-success text-dark">Chris Whitaker</a></p>
+                        <div class="text-warning d-flex gap-1 mb-2">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-fill"></i>
+                            <span class="text-dark-emphasis"> (798)</span>
+                        </div>
+                        <h5 class="mb-2 fs-lg lh-base">$33.49</h5>
+                        <button type="button" class="w-100 btn btn-sub-danger">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="d-flex align-items-center gap-3 card-body">
+                    <img src="assets/images/school/book/img-11.jpg" alt="" class="h-40 rounded-3 cursor-pointer" data-bs-toggle="modal" data-bs-target="#bookOverviewModal">
+                    <div class="overflow-hidden flex-grow-1">
+                        <h6 class="mb-1 text-truncate"><a href="#!" class="link link-primary text-black lh-base">Hexed</a></h6>
+                        <p class="mb-2 text-muted">By <a href="#!" class="link link-success text-dark"> Emily McIntire</a></p>
+                        <div class="text-warning d-flex gap-1 mb-2">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-fill"></i>
+                            <span class="text-dark-emphasis"> (465)</span>
+                        </div>
+                        <h5 class="mb-2 fs-lg lh-base">$14.67</h5>
+                        <button type="button" class="w-100 btn btn-sub-danger">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="d-flex align-items-center gap-3 card-body">
+                    <img src="assets/images/school/book/img-12.jpg" alt="" class="h-40 rounded-3 cursor-pointer" data-bs-toggle="modal" data-bs-target="#bookOverviewModal">
+                    <div class="overflow-hidden flex-grow-1">
+                        <h6 class="mb-1 text-truncate"><a href="#!" class="link link-primary text-black lh-base">The Creative Act: A Way of Being</a></h6>
+                        <p class="mb-2 text-muted">By <a href="#!" class="link link-success text-dark">Rick Rubin</a></p>
+                        <div class="text-warning d-flex gap-1 mb-2">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-fill"></i>
+                            <span class="text-dark-emphasis"> (341)</span>
+                        </div>
+                        <h5 class="mb-2 fs-lg lh-base">$25.32</h5>
+                        <button type="button" class="w-100 btn btn-sub-danger">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <p class="text-muted">Showing <b class="me-1">1-12</b>of<b class="ms-1">14</b> Results</p>
+            </div>
+            <div class="justify-content-end d-flex">
+                <nav aria-label="...">
+                    <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                        <li class="page-item pagination-primary disabled">
+                            <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                <i data-lucide="chevron-left" class="size-5"></i>
+                                <span>Prev</span>
+                            </a>
+                        </li>
+                        <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                        <li class="page-item" aria-current="page">
+                            <a class="page-link rounded-2 page-number" href="#">2</a>
+                        </li>
+                        <li class="page-item pagination-primary ">
+                            <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                <span>Next</span>
+                                <i data-lucide="chevron-right" class="size-5"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Book Modal -->
+    <div class="modal fade" id="bookOverviewModal" tabindex="-1" aria-labelledby="bookOverviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="p-2 modal-content">
+                <div class="modal-header">
+                    <h6 class="mb-0">Add Book</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="p-0 modal-body">
+                    <div class="p-4">
+                        <form action="#!">
+                            <div class="row g-4" x-data="{
+                                bookTitleInput: '', writerNameInput: '', priceInput: '', image: null,
+                                bookTitleInputError: '', writerNameInputError: '', priceInputError: '', imageError: '',
+                        
+                                validateForm() {
+                                    this.bookTitleInputError = this.writerNameInputError = this.priceInputError = this.imageError;
+                                    if (!this.bookTitleInput) this.bookTitleInputError = 'Title is required.';
+                                    if (!this.writerNameInput) this.writerNameInputError = 'Author is required.';
+                                    if (!this.priceInput) this.priceInputError = 'Price is required.';
+                                    if (!this.image) this.imageError = 'Image is required.';
+                        
+                                    return !this.bookTitleInputError && !this.writerNameInputError && !this.priceInputError && !this.imageError;
+                                },
+                        
+                            }">
+                                <div class="col-12">
+                                    <div class="d-flex justify-content-center">
+                                        <label class="d-inline-flex mx-auto align-items-center justify-content-center border bg-light h-44 rounded-2">
+                                            <img x-show="image" :src="image" class="rounded-circle h-100 object-cover">
+                                            <div x-show="!image" class="d-flex flex-column align-items-center mx-8 text-dark">
+                                                <i x-show="!image" data-lucide="upload"></i>
+                                                <div x-show="!image" class="mt-2">Book Poster</div>
+                                            </div>
+                                            <input type="file" class="d-none" @change="handleImageUpload($event)" />
+                                        </label>
+                                    </div>
+                                    <p x-show="imageError" class="text-sm text-danger text-center" x-text="imageError"></p>
+                                    <p x-show="imageDimensionsError" class="text-sm text-danger text-center" x-text="imageDimensionsError"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Book Title</label>
+                                    <input type="text" x-model="bookTitleInput" class="form-control" placeholder="Enter book title" />
+                                    <p x-show="bookTitleInputError" class="text-sm text-danger" x-text="bookTitleInputError"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Writer Name</label>
+                                    <input type="text" x-model="writerNameInput" class="form-control" placeholder="Enter writer name" />
+                                    <p x-show="writerNameInputError" class="text-sm text-danger" x-text="writerNameInputError"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Price</label>
+                                    <input type="text" x-model="priceInput" class="form-control" placeholder="$00.00" />
+                                    <p x-show="priceInputError" class="text-sm text-danger" x-text="priceInputError"></p>
+                                </div>
+                                <div class="d-flex justify-content-end gap-2 mt-4">
+                                    <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal"><i data-lucide="x" class="size-4 me-1"></i>Close</button>
+                                    <button type="button" class="btn btn-primary" @click="if (validateForm()) { alert('Form is valid and ready for submission!') }">Add Book</button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book Overview Modal -->
+    <div class="modal fade" id="bookOverviewModal" tabindex="-1" aria-labelledby="bookOverviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="mb-0">Book Overview</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img src="assets/images/school/book/img-01.jpg" alt="" class="h-44 rounded-2">
+                    </div>
+                    <div class="text-warning d-flex gap-1 mb-2">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span class="text-dark-emphasis"> (98)</span>
+                    </div>
+                    <h6 class="mb-1 text-truncate"><a href="#!" class="link link-primary text-black lh-base">Swan Song</a></h6>
+                    <p class="mb-2 text-muted">By <a href="#!" class="link link-success text-dark">David Grann</a></p>
+                    <h5 class="mb-2 lh-base fs-lg">$47.99</h5>
+                    <button type="button" class="w-100 btn btn-sub-danger">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/school/library/book-list.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

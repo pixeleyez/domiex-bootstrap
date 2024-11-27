@@ -1,0 +1,356 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Students" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Students" sub-title="Attendances" }}
+
+    <div class="row g-4">
+        <div class="col-7">
+            <h6 class="mb-1 lh-base">Attendance History</h6>
+            <p class="mb-5 text-muted">
+                <i data-lucide="sun-medium" class="size-4"></i> Today Mon, July 8, 2024
+            </p>
+            <div class="btn-group">
+                <button type="button" class="btn border">
+                    <i data-lucide="dot" class="size-6 text-success"></i>
+                    <strong>On Time</strong>
+                    <span class="text-muted">80%</span>
+                </button>
+                <button type="button" class="btn border">
+                    <i data-lucide="dot" class="size-6 text-danger"></i>
+                    <strong>Late</strong>
+                    <span class="text-muted">10%</span>
+                </button>
+                <button type="button" class="btn border">
+                    <i data-lucide="dot" class="size-6 text-danger"></i>
+                    <strong>Absent</strong>
+                    <span class="text-muted">10%</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="d-flex justify-content-end gap-3 mb-3">
+                <img src="assets/images/avatar/user-14.png" alt="User Image" class="rounded-circle size-10">
+                <div>
+                    <h6 class="mb-0">Michael Johnson</h6>
+                    <p class="text-muted">Class: 12 (A)</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <p class="mb-2 text-muted">Total Attendance</p>
+                    <h5 class="mb-0"><span>21</span></h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <p class="mb-2 text-muted">Absent Attendance</p>
+                    <h5 class="mb-0"><span>3</span></h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <p class="mb-2 text-muted">Late Attendance</p>
+                    <h5 class="mb-0"><span>5</span></h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <p class="mb-2 text-muted">Total Hours</p>
+                    <h5 class="mb-0"><span>178</span></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h6 class="mb-3">Attendance List</h6>
+    <div class="row">
+        <div class="col-4 attendance-list-success">
+            <div class="card attendance-list">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <h6 class="flex-grow-1 mb-0">Thu, July 04, 2024</h6>
+                        <span class="badge bg-success-subtle text-success  border border-success-subtle">On Time</span>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check In</p>
+                            <h6>9:00 AM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check Out</p>
+                            <h6>6:00 PM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Total</p>
+                            <h6>9hr</h6>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <p class="flex-grow-1">Notes:</p>
+                        <p class="text-muted">Well Done</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 attendance-list-success">
+            <div class="card attendance-list">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <h6 class="flex-grow-1 mb-0">Wed, July 03, 2024</h6>
+                        <span class="badge bg-success-subtle text-success  border border-success-subtle">On Time</span>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check In</p>
+                            <h6>9:15 AM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check Out</p>
+                            <h6>5:45 PM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Total</p>
+                            <h6>7:30hr</h6>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <p class="flex-grow-1">Notes:</p>
+                        <p class="text-muted">Well Done</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 attendance-list-orange">
+            <div class="card attendance-list">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <h6 class="flex-grow-1 mb-0">Tue, July 02, 2024</h6>
+                        <span class="badge bg-orange-subtle text-orange border border-orange-subtle">Late</span>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check In</p>
+                            <h6>9:00 AM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check Out</p>
+                            <h6>5:00 PM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Total</p>
+                            <h6>8hr</h6>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <p class="flex-grow-1">Notes:</p>
+                        <p class="text-muted">Traffic Issue</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 attendance-list-success">
+            <div class="card attendance-list">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <h6 class="flex-grow-1 mb-0">Mon, July 01, 2024</h6>
+                        <span class="badge bg-success-subtle text-success border border-success-subtle">On Time</span>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check In</p>
+                            <h6>8:45 AM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check Out</p>
+                            <h6>6:00 PM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Total</p>
+                            <h6>9:15hr</h6>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <p class="flex-grow-1">Notes:</p>
+                        <p class="text-muted">Well Done</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 attendance-list-dark">
+            <div class="card attendance-list">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <h6 class="flex-grow-1 mb-0">Sun, Jun 30, 2024</h6>
+                        <span class="badge bg-dark-subtle text-dark border border-dark-subtle">Holiday</span>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check In</p>
+                            <h6>9:00 AM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check Out</p>
+                            <h6>5:00 PM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Total</p>
+                            <h6>8hr</h6>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <p class="flex-grow-1">Notes:</p>
+                        <p class="text-muted">Well Done</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 attendance-list-success">
+            <div class="card attendance-list">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <h6 class="flex-grow-1 mb-0">Sat, Jun 29, 2024</h6>
+                        <span class="badge bg-success-subtle text-success border border-success-subtle">On Time</span>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check In</p>
+                            <h6>9:00 AM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check Out</p>
+                            <h6>6:00 PM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Total</p>
+                            <h6>9hr</h6>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <p class="flex-grow-1">Notes:</p>
+                        <p class="text-muted">Well Done</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 attendance-list-orange">
+            <div class="card attendance-list">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <h6 class="flex-grow-1 mb-0">Fri, Jun 28, 2024</h6>
+                        <span class="badge bg-orange-subtle text-orange border border-orange-subtle">Late</span>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check In</p>
+                            <h6>9:30 AM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check Out</p>
+                            <h6>6:00 PM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Total</p>
+                            <h6>8:30hr</h6>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <p class="flex-grow-1">Notes:</p>
+                        <p class="text-muted">Traffic Issue</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 attendance-list-success">
+            <div class="card attendance-list">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <h6 class="flex-grow-1 mb-0">Thu, Jun 27, 2024</h6>
+                        <span class="badge bg-success-subtle text-success border border-success-subtle">On Time</span>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check In</p>
+                            <h6>9:00 AM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check Out</p>
+                            <h6>5:00 PM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Total</p>
+                            <h6>8hr</h6>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <p class="flex-grow-1">Notes:</p>
+                        <p class="text-muted">Well Done</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 attendance-list-success">
+            <div class="card attendance-list">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <h6 class="flex-grow-1 mb-0">Wed, Jun 26, 2024</h6>
+                        <span class="badge bg-success-subtle text-success border border-success-subtle">On Time</span>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check In</p>
+                            <h6>9:00 AM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Check Out</p>
+                            <h6>6:00 PM</h6>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-1 text-muted">Total</p>
+                            <h6>9hr</h6>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <p class="flex-grow-1">Notes:</p>
+                        <p class="text-muted">Well Done</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/school/library/book-list.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
