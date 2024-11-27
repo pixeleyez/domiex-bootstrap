@@ -1,0 +1,19 @@
+@each $state in map-keys($theme-colors){
+    .attendance-list-#{$state}{
+        .card{
+            &.attendance-list{
+                border-top: 2px solid var(--#{$prefix}#{$state});
+            }
+        }
+    }
+}
+
+/* Circle Progress Customization */
+.stroke-light {
+    stroke: rgba($info-500, .10);
+}
+
+.stroke-primary {
+    stroke: $info-500;
+    stroke-linecap: round;
+}

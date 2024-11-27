@@ -1,0 +1,244 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Question" }}
+
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Question" sub-title="Exam" }}
+
+    <div class="row g-3 mb-4 justify-content-between">
+        <div class="col-4">
+            <div class="position-relative">
+                <input type="text" class="form-control px-4" placeholder="Search for ..." @input="filtercontacts" x-model="searchTerm">
+                <button class="btn btn-sub-success btn-icon position-absolute end-0 top-50 translate-middle-y d-flex align-items-center text-success">
+                    <i data-lucide="search" class="size-5"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col-1 d-none">
+            <button class="btn btn-danger btn-icon"><i data-lucide="trash" class="size-4"></i></button>
+        </div>
+        <div class="col-7">
+            <div class="row justify-content-end align-items-center">
+                <div class="col-3">
+                    <div id="sortBySelect" placeholder="Sort By"></div>
+                </div>
+                <div class="col-3">
+                    <button type="button" class="w-100 btn btn-primary" data-bs-toggle="modal" data-bs-target="#addQuestionModal">
+                        Create New Question
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">
+                    <div class="form-check check-primary">
+                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                    </div>
+                </th>
+                <th scope="col" class="text-dark fw-medium">Questions</th>
+                <th scope="col" class="text-dark fw-medium">Option</th>
+                <th scope="col" class="text-dark fw-medium">Item Type</th>
+                <th scope="col" class="text-dark fw-medium">Difficult</th>
+                <th scope="col" class="text-dark fw-medium">Status</th>
+                <th scope="col" class="text-dark fw-medium">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="border">
+                <td>
+                    <div class="form-check check-primary">
+                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                    </div>
+                </td>
+                <td><a href="#!" class="text-black fw-semibold">What is an important factor of management information system?</a></td>
+                <td><a href="#!" class="text-dark link link-primary">Show All</a></td>
+                <td>MCQ</td>
+                <td>Hard</td>
+                <td><span class="badge bg-success-subtle text-success  border border-success-subtle">New</span></td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                            <i class="ri-more-2-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li>
+                                <a href="#!" class="px-4 py-1 lh-lg d-flex gap-2 align-items-center link link-primary text-dark">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="px-4 py-1 lh-lg d-flex gap-2 align-items-center link link-primary text-dark">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="px-4 py-1 lh-lg d-flex gap-2 align-items-center link link-danger text-dark">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                
+            </tr>
+            <tr class="border">
+                <td>
+                    <div class="form-check check-primary">
+                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                    </div>
+                </td>
+                <td><a href="#!" class="text-black fw-semibold">The data Flow Diagram is the basic component of …………… system</a></td>
+                <td><a href="#!" class="text-dark link link-primary">Show All</a></td>
+                <td>MCQ</td>
+                <td>Hard</td>
+                <td><span class="badge bg-success-subtle text-success  border border-success-subtle">New</span></td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                            <i class="ri-more-2-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li>
+                                <a href="#!" class="px-4 py-1 lh-lg d-flex gap-2 align-items-center link link-primary text-dark">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="px-4 py-1 lh-lg d-flex gap-2 align-items-center link link-primary text-dark">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="px-4 py-1 lh-lg d-flex gap-2 align-items-center link link-danger text-dark">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                
+            </tr>
+            <tr class="border">
+                <td>
+                    <div class="form-check check-primary">
+                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                    </div>
+                </td>
+                <td><a href="#!" class="text-black fw-semibold">A desirable property of module is</a></td>
+                <td><a href="#!" class="text-dark link link-primary">Show All</a></td>
+                <td>MCQ</td>
+                <td>Hard</td>
+                <td><span class="badge bg-success-subtle text-success  border border-success-subtle">New</span></td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                            <i class="ri-more-2-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li>
+                                <a href="#!" class="px-4 py-1 lh-lg d-flex gap-2 align-items-center link link-primary text-dark">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="px-4 py-1 lh-lg d-flex gap-2 align-items-center link link-primary text-dark">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="px-4 py-1 lh-lg d-flex gap-2 align-items-center link link-danger text-dark">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                
+            </tr>
+            <tr class="border">
+                <td>
+                    <div class="form-check check-primary">
+                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                    </div>
+                </td>
+                <td><a href="#!" class="text-black fw-semibold">Which of the following UML diagrams has a static view?</a></td>
+                <td><a href="#!" class="text-dark link link-primary">Show All</a></td>
+                <td>MCQ</td>
+                <td>Medium</td>
+                <td><span class="badge bg-light text-dark border border-dark-subtle">Old</span></td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                            <i class="ri-more-2-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li>
+                                <a href="#!" class="px-4 py-1 lh-lg d-flex gap-2 align-items-center link link-primary text-dark">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                <a href="#!" class="px-4 py-1 lh-lg d-flex gap-2 align-items-center link link-primary text-dark">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <a href="#!" class="px-4 py-1 lh-lg d-flex gap-2 align-items-center link link-danger text-dark">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                
+            </tr>
+        </tbody>
+    </table>
+
+    {{> partials/footer}}
+</div>
+
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/school/exam/question.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
