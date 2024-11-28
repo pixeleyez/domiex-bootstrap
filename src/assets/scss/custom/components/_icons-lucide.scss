@@ -34,7 +34,7 @@
 
 @each $state in map-keys($theme-colors) {
     .icon-#{$state} {
-        fill: rgba(var(--#{$prefix}#{$state}-rgb), 0.2);
+        fill: rgba(var(--#{$prefix}#{$state}-rgb), 0.1);
         color: var(--#{$prefix}#{$state});
     }
 

@@ -1,12 +1,11 @@
 .border-separate {
     border-collapse: separate;
-
     tr td ,
     tr th {
         border: 1px solid $gray-200;
     }
     &.border-spacing-2{
-        border-spacing: .5rem;
+        border-spacing: .5rem .5rem;
     }
 }
 

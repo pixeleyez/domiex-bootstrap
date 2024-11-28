@@ -93,3 +93,8 @@
 		}
 	}
 }
+.form-check-input:checked + .form-check-label {
+	background-color: $primary-500; 
+	color: $body-bg;              
+	border-color: $primary-500;
+}
