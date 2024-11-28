@@ -1,0 +1,215 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Create Invoice" }}
+
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Create Invoice" sub-title="Invoices" }}
+
+    <div class="card">
+        <div class="card-header">
+            <div class="align-items-center gap-3 d-flex">
+                <h6 class="flex-grow-1 mb-0">Create Invoice</h6>
+                <div class="d-flex flex-wrap items-center gap-2 shrink-0">
+                    <button class="btn btn-light text-dark"><i data-lucide="rotate-ccw" class="size-4"></i> Reset</button>
+                    <button class="btn btn-sub-success"><i data-lucide="printer" class="size-4"></i> Print Invoice</button>
+                    <button class="btn btn-primary">Save Invoice</button>
+                </div>
+            </div>
+        </div>
+        <div class="p-0 modal-body">
+            <div class="p-4">
+                <form action="#!">
+                    <div x-data="{
+                        companyNameInput: '', companyEmailInput:'', invoiceDateInput: '', dueDateInput: '', invoiceStatus: '', cardNumberInput: '', expiryDateInput: '', statusSelect:'',
+                        errors: {},
+                        validate() {
+                            this.errors = {};
+                            if (!this.companyNameInput) this.errors.companyNameInput = 'Company name is required';
+                            if (!this.companyEmailInput) this.errors.companyEmailInput = 'Invalid email format';
+                            if (!this.invoiceDateInput) this.errors.invoiceDateInput = 'Invoice date is required';
+                            if (!this.dueDateInput) this.errors.dueDateInput = 'Due date is required';
+                            if (!this.invoiceStatus) this.errors.invoiceStatus = 'Status is required';
+                            if (!this.cardHolderNameInput) this.errors.cardHolderNameInput = 'Card holder name is required';
+                            if (!this.cardNumberInput) this.errors.cardNumberInput = 'Card number must be in the format 0000 0000 0000 0000';
+                            if (!this.expiryDateInput || !/^\d{2}\/\d{4}$/.test(this.expiryDateInput)) this.errors.expiryDateInput = 'Expiry date must be in the format MM/YYYY';
+                            if (!this.cvvInput) this.errors.cvvInput = 'CVV must be a 3 or 4 digit number';
+                            if (!this.statusSelect) this.errors.statusSelect = 'Status is required';
+                            return Object.keys(this.errors).length === 0;
+                        },
+                        clearError(field) { this.errors[field] = '' },
+                        formatCardNumber() {
+                            let value = this.cardNumberInput.replace(/\D/g, '').slice(0, 16);
+                            if (value.length >= 5) value = value.slice(0, 4) + ' ' + value.slice(4);
+                            if (value.length >= 10) value = value.slice(0, 9) + ' ' + value.slice(9); 
+                            if (value.length >= 15) value = value.slice(0, 14) + ' ' + value.slice(14); 
+                            this.cardNumberInput = value; 
+                        },
+                        formatExpiryDate() {
+                            let value = this.expiryDateInput.replace(/\D/g, '').slice(0, 6);
+                            if (value.length >= 3) value = value.slice(0, 2) + '/' + value.slice(2);
+                            this.expiryDateInput = value;
+                        }
+                    }" class="row g-4">
+                        <div class="col-4">
+                            <label class="form-label fw-medium">Company Name</label>
+                            <input type="text" x-model="companyNameInput" class="form-control" @input="clearError('companyNameInput')" />
+                            <p x-show="errors.companyNameInput" class="text-sm text-danger" x-text="errors.companyNameInput"></p>
+                        </div>
+                        <div class="col-4">
+                            <label class="form-label fw-medium">Email</label>
+                            <input type="email" x-model="companyEmailInput" class="form-control" @input="clearError('companyEmailInput')" />
+                            <p x-show="errors.companyEmailInput" class="text-sm text-danger" x-text="errors.companyEmailInput"></p>
+                        </div>
+                        <div class="col-4">
+                            <label class="form-label fw-medium">Phone Number</label>
+                            <input type="email" class="form-control" />
+                        </div>
+                        <div class="col-3">
+                            <label class="form-label fw-medium">Phone Number</label>
+                            <input type="email" class="form-control" disabled value="#PEI-15485" />
+                        </div>
+                        <div class="col-3">
+                            <label class="form-label fw-medium">Invoice Date</label>
+                            <input type="date" x-model="invoiceDateInput" class="form-control" @input="clearError('invoiceDateInput')" />
+                            <p x-show="errors.invoiceDateInput" class="text-sm text-danger" x-text="errors.invoiceDateInput"></p>
+                        </div>
+                        <div class="col-3">
+                            <label class="form-label fw-medium">Payment Due Date</label>
+                            <input type="date" x-model="dueDateInput" class="form-control" @input="clearError('dueDateInput')" />
+                            <p x-show="errors.dueDateInput" class="text-sm text-danger" x-text="errors.dueDateInput"></p>
+                        </div>
+                        <div class="col-3">
+                            <label class="form-label fw-medium">Payment Due Date</label>
+                            <div id="invoiceStatus" x-model="invoiceStatus" @input="clearError('invoiceStatus')"></div>
+                            <p x-show="errors.invoiceStatus" class="text-sm text-danger" x-text="errors.invoiceStatus"></p>
+                        </div>
+                        <table class="table table-borderless align-middle">
+                            <thead>
+                                <tr class="border-bottom">
+                                    <th scope="col">#</th>
+                                    <th scope="col">Products Info</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Unit Price</th>
+                                    <th scope="col">Discount (%)</th>
+                                    <th scope="col">Total Amount</th>
+                                </tr>  
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <input type="text" placeholder="Enter Product Name" class="form-control">
+                                        <input type="text" placeholder="Category" class="form-control mt-2 mb-3">
+                                        <a href="#!" class="link link-danger text-dark"><i class="ri-delete-bin-line"></i> Delete Item</a>
+                                    </td>
+                                    <td>
+                                        <div x-data="{ count: 1 }" class="input-group-spin input-spin-primary">
+                                            <button @click="count--" class="input-spin-minus" type="button">
+                                                <i data-lucide="minus" class="size-4"></i>
+                                            </button>
+                                            <input type="text" x-model="count" class="form-control" readonly>
+                                            <button @click="count++" class="input-spin-plus" type="button">
+                                                <i data-lucide="plus" class="size-4"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" placeholder="$0.00" class="form-control"></td>
+                                    <td><input type="number" placeholder="0%" class="form-control"></td>
+                                    <td> <input type="number" placeholder="$0.00" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">
+                                        <button class="btn btn-primary"><i class="ri-add-line"></i>Add Item</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end" colspan="5">Sub Total</td>
+                                    <td><input type="text" x-model="subtotal" class="form-control" readonly="" value="0.00"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end" colspan="5">Vat Amount (6%)</td>
+                                    <td><input type="text" x-model="subtotal" class="form-control" readonly="" value="0.00"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end" colspan="5">Discount (10%)</td>
+                                    <td><input type="text" x-model="subtotal" class="form-control" readonly="" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end" colspan="5">Shipping Charge</td>
+                                    <td><input type="text" x-model="subtotal" class="form-control" readonly="" value="0.00"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end" colspan="5">Shipping Charge</td>
+                                    <td><input type="text" x-model="subtotal" class="form-control" readonly="" value="0.00"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h6 class="mt-5">Payment Method</h6>
+                        <div class="col-12">
+                            <label class="form-label fw-medium">Card Holder Name</label>
+                            <input type="text" x-model="cardHolderNameInput" class="form-control" placeholder="Card Holder Name" maxlength="19" @input="clearError('cardHolderNameInput')" />
+                            <p x-show="errors.cardHolderNameInput" class="text-sm text-danger" x-text="errors.cardHolderNameInput"></p>
+                        </div>
+                        <div class="col-4">
+                            <label class="form-label fw-medium">Card Number</label>
+                            <input type="text" x-model="cardNumberInput" class="form-control" placeholder="0000 0000 0000 0000" maxlength="19" @input="clearError('cardNumberInput'); formatCardNumber()" />
+                            <p x-show="errors.cardNumberInput" class="text-sm text-danger" x-text="errors.cardNumberInput"></p>
+                        </div>
+                        <div class="col-4">
+                            <label class="form-label fw-medium">Expiry Date</label>
+                            <input type="text" x-model="expiryDateInput" class="form-control" placeholder="MM/YYYY" maxlength="7" @input="clearError('expiryDateInput'); formatExpiryDate()" @blur="clearError('expiryDateInput')" />
+                            <p x-show="errors.expiryDateInput" class="text-sm text-danger" x-text="errors.expiryDateInput"></p>
+                        </div>
+                        <div class="col-4">
+                            <label class="form-label fw-medium">CVV</label>
+                            <input type="text" x-model="cvvInput" class="form-control" placeholder="000" maxlength="3" @input="clearError('cvvInput')" />
+                            <p x-show="errors.cvvInput" class="text-sm text-danger" x-text="errors.cvvInput"></p>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label fw-medium">Terms & Conditions</label>
+                            <textarea class="form-control" rows="3" placeholder="Enter your terms"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                            <button type="button" class="btn btn-light text-dark" data-bs-dismiss="modal"><i data-lucide="rotate-ccw" class="size-4"></i> Reset</button>
+                            <button type="button" class="btn btn-primary" @click="if (validate()) { alert('Form is valid and ready for submission!') }">Submit</button>
+                        </div>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+
+    {{> partials/footer}}
+</div>
+
+<script type="module" src="assets/libs/apexcharts/create.init.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/invoices/grid.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1591,48 +1591,17 @@ $avatar-sizes: (
   36: 9rem,
   40: 10rem,
   44: 11rem,
-  64: 16rem,
-  80: 20rem,
-  96: 24rem,
-);
-$custom-width: ( 
-  8: 2rem,
-  28: 7rem,
-  36: 9rem,
-  64: 16rem,
-  72: 18rem,
-  80: 20rem,
-  25: 25%,
-  50: 50%,
-  75: 75%,
-  100: 100%,
-  auto: auto
-);
-$custom-height: ( 
-  9: 2.25rem,
-  32: 8rem,
-  40: 10rem,
-  44: 11rem,
   48: 12rem,
-  72: 18rem,
-  80: 20rem,
-  25: 25%,
-  50: 50%,
-  75: 75%,
-  100: 100%,
-  auto: auto
-);
-$custom-max-width: ( 
-  8: 2rem,
-  28: 7rem,
-  36: 9rem,
   64: 16rem,
   72: 18rem,
   80: 20rem,
   96: 24rem,
-);
-$custom-max-height: ( 
-  44: 11rem,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+  auto: auto,
+  6xl: 72rem,
 );
 
 $custom-list-styles: (

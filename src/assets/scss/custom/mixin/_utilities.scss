@@ -9,22 +9,22 @@ $utilities: map-merge(
         "width": (
             property: width,
             class: w,
-            values: $custom-width 
+            values: $avatar-sizes 
         ),
         "height": (
             property: height,
             class: h,
-            values: $custom-height 
+            values: $avatar-sizes 
         ),
         "max-width": (
             property: max-width,
             class: max-w,
-            values: $custom-max-width 
+            values: $avatar-sizes 
         ),
         "max-height": (
             property: max-height,
             class: max-h,
-            values: $custom-max-height 
+            values: $avatar-sizes 
         ),
         "border": (
             property: border,

@@ -252,44 +252,44 @@
                                 },
                             
                                 clearError(field) { this.errors[field] = '' }
-                            }" class="row">
-                                <div class="col-12 mb-4">
+                            }" class="row g-4">
+                                <div class="col-12">
                                     <label class="form-label fw-medium">Test Name</label>
                                     <input type="text" x-model="testNameInput" placeholder="Test Name" class="form-control" @input="clearError('testNameInput')" />
                                     <p x-show="errors.testNameInput" class="text-sm text-danger" x-text="errors.testNameInput"></p>
                                 </div>
-                                <div class="col-12 mb-4">
+                                <div class="col-12">
                                     <label class="form-label fw-medium">Test Category</label>
                                     <div id="testCategorySelect" placeholder="Select Category" @input="clearError('testCategorySelect')"></div>
                                     <p x-show="errors.testCategorySelect" class="text-sm text-danger" x-text="errors.testCategorySelect"></p>
                                 </div>
-                                <div class="col-12 mb-4">
+                                <div class="col-12">
                                     <label class="form-label fw-medium">Test Type</label>
                                     <div id="testTypeSelect" placeholder="Select Category" @input="clearError('testTypeSelect')"></div>
                                     <p x-show="errors.testTypeSelect" class="text-sm text-danger" x-text="errors.testTypeSelect"></p>
                                 </div>
-                                <div class="col-12 mb-4">
+                                <div class="col-12">
                                     <label class="form-label fw-medium">Total People</label>
                                     <div id="classSelect" placeholder="Select Class" @input="clearError('classSelect')"></div>
                                     <p x-show="errors.classSelect" class="text-sm text-danger" x-text="errors.classSelect"></p>
                                 </div>
-                                <div class="col-6 mb-4">
+                                <div class="col-6">
                                     <label class="form-label fw-medium">Start Date</label>
                                     <input data-provider="flatpickr" data-date-format="d M, Y" type="text" placeholder="YYYY-MM-DD" class="form-control form-input flatpickr-input active" readonly="readonly" @input="clearError('startDateSelect')" />
                                     <p x-show="errors.startDateSelect" class="text-sm text-danger" x-text="errors.startDateSelect"></p>
                                 </div>
-                                <div class="col-6 mb-4">
+                                <div class="col-6">
                                     <label class="form-label fw-medium">endDateSelect</label>
                                     <input data-provider="flatpickr" data-date-format="d M, Y" type="text" placeholder="YYYY-MM-DD" class="form-control form-input flatpickr-input active" readonly="readonly" @input="clearError('endDateSelect')" />
                                     <p x-show="errors.endDateSelect" class="text-sm text-danger" x-text="errors.endDateSelect"></p>
                                 </div>
-                                <div class="col-12 mb-4">
+                                <div class="col-12">
                                     <label class="form-label fw-medium">Event Type</label>
                                     <div id="statusSelect" @change="clearError('statusSelect')"></div>
                                     <p x-show="errors.statusSelect" class="text-sm text-danger" x-text="errors.statusSelect"></p>
                                 </div>
                                 <div class="d-flex justify-content-end gap-2 mt-4">
-                                    <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal"><i data-lucide="x" class="size-4 me-1"></i>Close</button>
                                     <button type="button" class="btn btn-primary" @click="if (validate()) { alert('Form is valid and ready for submission!') }">Add Exam Schedule</button>
                                 </div>
                             </div>

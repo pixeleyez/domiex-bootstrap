@@ -1,0 +1,566 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Grid View" }}
+
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Grid View" sub-title="Invoice" }}
+
+    <div class="row">
+        <div class="col-2">
+            <div class="card card-h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-center rounded-modern mb-4 flex-shrink-0 size-16 bg-gradient-b-success">
+                        <i data-lucide="circle-check-big" class="size-9 stroke-1 icon-success"></i>
+                    </div>
+                    <h5 class="mb-1 lh-base">16</h5>
+                    <p class="mb-4">Paid Invoice</p>
+                    <p class="text-muted align-middle">
+                        <span class="badge bg-success-subtle text-success border border-success-subtle">36.56%</span> This month
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="card card-h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-center rounded-modern mb-4 flex-shrink-0 size-16 bg-gradient-b-pink">
+                        <i data-lucide="circle-alert" class="size-9 stroke-1 icon-pink"></i>
+                    </div>
+                    <h5 class="mb-1 lh-base">8</h5>
+                    <p class="mb-4">Unpaid Invoice</p>
+                    <p class="text-muted align-middle">
+                        <span class="badge bg-success-subtle text-success border border-success-subtle">17.78%</span> This month
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="card card-h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-center rounded-modern mb-4 flex-shrink-0 size-16 bg-gradient-b-warning">
+                        <i data-lucide="hourglass" class="size-9 stroke-1 icon-warning"></i>
+                    </div>
+                    <h5 class="mb-1 lh-base">12</h5>
+                    <p class="mb-4">Pending Invoice</p>
+                    <p class="text-muted align-middle">
+                        <span class="badge bg-success-subtle text-success border border-success-subtle">26.67%</span> This month
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="card card-h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-center rounded-modern mb-4 flex-shrink-0 size-16 bg-gradient-b-danger">
+                        <i data-lucide="x" class="size-9 stroke-1 icon-danger"></i>
+                    </div>
+                    <h5 class="mb-1 lh-base">9</h5>
+                    <p class="mb-4">Overdue Invoice</p>
+                    <p class="text-muted align-middle">
+                        <span class="badge bg-success-subtle text-success border border-success-subtle">20.00%</span> This month
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card card-h-100">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="mb-0">Invoice Status</h6>
+                    <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                        <a class="link link-danger text-dark badge border text-dark d-flex align-items-center cursor-pointer py-1" @click="open = !open" aria-expanded="open">
+                            <span>Last Week</span>
+                            <i class="ri-arrow-down-s-line fs-6 fw-medium lh-sm" :class="{'rotate': open}"></i>
+                        </a>
+                        <div x-show="open" style="display: none;" class="dropdown-menu  dropdown-menu-end show position-absolute end-0">
+                            <a class="dropdown-item" href="#">Last Week</a>
+                            <a class="dropdown-item" href="#">Last Month</a>
+                            <a class="dropdown-item" href="#">Last Year</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div x-data="simpleDonutApp">
+                        <div data-chart-colors="[bg-green-500, bg-sky-500, bg-yellow-500, bg-red-500, bg-purple-500]" x-ref="simpleDonutChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-center mb-4 gap-3">
+        <div class="flex-grow-1">
+            <h6 class="mb-1">All Invoices</h6>
+            <p class="text-muted">Manage your invoice</p>
+        </div>
+        <div class="w-44 flex-shrink-0">
+            <div id="sampleSelect" placeholder="Invoice Type"></div>
+        </div>
+        <button class="btn btn-light text-dark flex-shrink-0">Filters</button>
+        <a href="apps-invoice-create.html" class="btn btn-primary flex-shrink-0">Create Invoice</a>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-5">
+                        <h6 class="flex-grow-1 mb-0">Invoice <span id="invoice-id">PEI-15475</span></h6>
+                        <div class="dropdown float-end">
+                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                <i class="ri-more-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu shadow-sm dropdown-menu-end">
+                                <li>
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-eye-line"></i>
+                                        <span>Overview</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-pencil-line"></i>
+                                        <span>Edit</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-delete-bin-line"></i>
+                                        <span>Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-3 border rounded-1">
+                        <p class="mb-2 lh-base text-muted" id="invoice-content">Front End Development</p>
+                        <div class="row">
+                            <div class="col-6 p-2 text-center border-end">
+                                <h6 class="mb-1 lh-base">$154.98</h6>
+                                <p class="text-muted">Total Amount</p>
+                            </div>
+                            <div class="col-6 p-2 text-center">
+                                <h6 class="mb-1 lh-base">23 May, 2024</h6>
+                                <p class="text-muted">Due Date</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center gap-2">
+                            <img id="invoice-image" src="assets/images/avatar/user-1.png" alt="" class="rounded-circle size-8 flex-shrink-0">
+                            <a href="#!" class="fw-medium text-black flex-grow-1 link link-primary" id="client-name">John Doe</a>
+                            <span id="invoice-status" class="badge bg-success-subtle border border-success-subtle text-success">Paid</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-5">
+                        <h6 class="flex-grow-1 mb-0">Invoice <span id="invoice-id">PEI-15476</span></h6>
+                        <div class="dropdown float-end">
+                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                <i class="ri-more-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu shadow-sm dropdown-menu-end">
+                                <li>
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-eye-line"></i>
+                                        <span>Overview</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-pencil-line"></i>
+                                        <span>Edit</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-delete-bin-line"></i>
+                                        <span>Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-3 border rounded-1">
+                        <p class="mb-2 lh-base text-muted" id="invoice-content">Laravel Development</p>
+                        <div class="row">
+                            <div class="col-6 p-2 text-center border-end">
+                                <h6 class="mb-1 lh-base">$200.00</h6>
+                                <p class="text-muted">Total Amount</p>
+                            </div>
+                            <div class="col-6 p-2 text-center">
+                                <h6 class="mb-1 lh-base">24 May, 2024</h6>
+                                <p class="text-muted">Due Date</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center gap-2">
+                            <img id="invoice-image" src="assets/images/avatar/user-2.png" alt="" class="rounded-circle size-8 flex-shrink-0">
+                            <a href="#!" class="fw-medium text-black flex-grow-1 link link-primary" id="client-name">Jane Smith</a>
+                            <span id="invoice-status" class="badge bg-pink-subtle border border-pink-subtle text-pink">Unpaid</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-5">
+                        <h6 class="flex-grow-1 mb-0">Invoice <span id="invoice-id">PEI-15477</span></h6>
+                        <div class="dropdown float-end">
+                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                <i class="ri-more-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu shadow-sm dropdown-menu-end">
+                                <li>
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-eye-line"></i>
+                                        <span>Overview</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-pencil-line"></i>
+                                        <span>Edit</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-delete-bin-line"></i>
+                                        <span>Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-3 border rounded-1">
+                        <p class="mb-2 lh-base text-muted" id="invoice-content">Web Designing</p>
+                        <div class="row">
+                            <div class="col-6 p-2 text-center border-end">
+                                <h6 class="mb-1 lh-base">$350.75</h6>
+                                <p class="text-muted">Total Amount</p>
+                            </div>
+                            <div class="col-6 p-2 text-center">
+                                <h6 class="mb-1 lh-base">25 May, 2024</h6>
+                                <p class="text-muted">Due Date</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center gap-2">
+                            <img id="invoice-image" src="assets/images/avatar/user-3.png" alt="" class="rounded-circle size-8 flex-shrink-0">
+                            <a href="#!" class="fw-medium text-black flex-grow-1 link link-primary" id="client-name">Alice Johnson</a>
+                            <span id="invoice-status" class="badge bg-success-subtle border border-success-subtle text-success">Paid</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-5">
+                        <h6 class="flex-grow-1 mb-0">Invoice <span id="invoice-id">PEI-15478</span></h6>
+                        <div class="dropdown float-end">
+                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                <i class="ri-more-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu shadow-sm dropdown-menu-end">
+                                <li>
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-eye-line"></i>
+                                        <span>Overview</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-pencil-line"></i>
+                                        <span>Edit</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-delete-bin-line"></i>
+                                        <span>Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-3 border rounded-1">
+                        <p class="mb-2 lh-base text-muted" id="invoice-content">Crop top Sweater Clothing</p>
+                        <div class="row">
+                            <div class="col-6 p-2 text-center border-end">
+                                <h6 class="mb-1 lh-base">$410.00</h6>
+                                <p class="text-muted">Total Amount</p>
+                            </div>
+                            <div class="col-6 p-2 text-center">
+                                <h6 class="mb-1 lh-base">26 May, 2024</h6>
+                                <p class="text-muted">Due Date</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center gap-2">
+                            <img id="invoice-image" src="assets/images/avatar/user-4.png" alt="" class="rounded-circle size-8 flex-shrink-0">
+                            <a href="#!" class="fw-medium text-black flex-grow-1 link link-primary" id="client-name">Bob Brown</a>
+                            <span id="invoice-status" class="badge bg-danger-subtle border border-danger-subtle text-danger">Overdue</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-5">
+                        <h6 class="flex-grow-1 mb-0">Invoice <span id="invoice-id">PEI-15479</span></h6>
+                        <div class="dropdown float-end">
+                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                <i class="ri-more-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu shadow-sm dropdown-menu-end">
+                                <li>
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-eye-line"></i>
+                                        <span>Overview</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-pencil-line"></i>
+                                        <span>Edit</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-delete-bin-line"></i>
+                                        <span>Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-3 border rounded-1">
+                        <p class="mb-2 lh-base text-muted" id="invoice-content">Bra Lace Crop top</p>
+                        <div class="row">
+                            <div class="col-6 p-2 text-center border-end">
+                                <h6 class="mb-1 lh-base">$100.25</h6>
+                                <p class="text-muted">Total Amount</p>
+                            </div>
+                            <div class="col-6 p-2 text-center">
+                                <h6 class="mb-1 lh-base">27 May, 2024</h6>
+                                <p class="text-muted">Due Date</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center gap-2">
+                            <img id="invoice-image" src="assets/images/avatar/user-5.png" alt="" class="rounded-circle size-8 flex-shrink-0">
+                            <a href="#!" class="fw-medium text-black flex-grow-1 link link-primary" id="client-name">Charlie Davis</a>
+                            <span id="invoice-status" class="badge bg-pink-subtle border border-pink-subtle text-pink">Unpaid</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-5">
+                        <h6 class="flex-grow-1 mb-0">Invoice <span id="invoice-id">PEI-15480</span></h6>
+                        <div class="dropdown float-end">
+                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                <i class="ri-more-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu shadow-sm dropdown-menu-end">
+                                <li>
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-eye-line"></i>
+                                        <span>Overview</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-pencil-line"></i>
+                                        <span>Edit</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-delete-bin-line"></i>
+                                        <span>Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-3 border rounded-1">
+                        <p class="mb-2 lh-base text-muted" id="invoice-content">Asp.Net Services</p>
+                        <div class="row">
+                            <div class="col-6 p-2 text-center border-end">
+                                <h6 class="mb-1 lh-base">$250.50</h6>
+                                <p class="text-muted">Total Amount</p>
+                            </div>
+                            <div class="col-6 p-2 text-center">
+                                <h6 class="mb-1 lh-base">28 May, 2024</h6>
+                                <p class="text-muted">Due Date</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center gap-2">
+                            <img id="invoice-image" src="assets/images/avatar/user-6.png" alt="" class="rounded-circle size-8 flex-shrink-0">
+                            <a href="#!" class="fw-medium text-black flex-grow-1 link link-primary" id="client-name">Emily Clark</a>
+                            <span id="invoice-status" class="badge bg-warning-subtle border border-warning-subtle text-warning">Pending</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-5">
+                        <h6 class="flex-grow-1 mb-0">Invoice <span id="invoice-id">PEI-15481</span></h6>
+                        <div class="dropdown float-end">
+                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                <i class="ri-more-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu shadow-sm dropdown-menu-end">
+                                <li>
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-eye-line"></i>
+                                        <span>Overview</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-pencil-line"></i>
+                                        <span>Edit</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-delete-bin-line"></i>
+                                        <span>Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-3 border rounded-1">
+                        <p class="mb-2 lh-base text-muted" id="invoice-content">Yellow women shoes</p>
+                        <div class="row">
+                            <div class="col-6 p-2 text-center border-end">
+                                <h6 class="mb-1 lh-base">$300.00</h6>
+                                <p class="text-muted">Total Amount</p>
+                            </div>
+                            <div class="col-6 p-2 text-center">
+                                <h6 class="mb-1 lh-base">29 May, 2024</h6>
+                                <p class="text-muted">Due Date</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center gap-2">
+                            <img id="invoice-image" src="assets/images/avatar/user-7.png" alt="" class="rounded-circle size-8 flex-shrink-0">
+                            <a href="#!" class="fw-medium text-black flex-grow-1 link link-primary" id="client-name">David Martinez</a>
+                            <span id="invoice-status" class="badge bg-success-subtle border border-success-subtle text-success">Paid</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-5">
+                        <h6 class="flex-grow-1 mb-0">Invoice <span id="invoice-id">PEI-15482</span></h6>
+                        <div class="dropdown float-end">
+                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                <i class="ri-more-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu shadow-sm dropdown-menu-end">
+                                <li>
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-eye-line"></i>
+                                        <span>Overview</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-pencil-line"></i>
+                                        <span>Edit</span>
+                                    </a>
+                                </li>
+                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-delete-bin-line"></i>
+                                        <span>Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-3 border rounded-1">
+                        <p class="mb-2 lh-base text-muted" id="invoice-content">Tote bag Leather Handbag Dolce</p>
+                        <div class="row">
+                            <div class="col-6 p-2 text-center border-end">
+                                <h6 class="mb-1 lh-base">$120.75</h6>
+                                <p class="text-muted">Total Amount</p>
+                            </div>
+                            <div class="col-6 p-2 text-center">
+                                <h6 class="mb-1 lh-base">30 May, 2024</h6>
+                                <p class="text-muted">Due Date</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center gap-2">
+                            <img id="invoice-image" src="assets/images/avatar/user-8.png" alt="" class="rounded-circle size-8 flex-shrink-0">
+                            <a href="#!" class="fw-medium text-black flex-grow-1 link link-primary" id="client-name">Sophia Garcia</a>
+                            <span id="invoice-status" class="badge bg-warning-subtle border border-warning-subtle text-warning">Pending</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/invoices/grid.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
