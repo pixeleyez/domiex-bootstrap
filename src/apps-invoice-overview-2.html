@@ -24,8 +24,10 @@
     {{> partials/page-heading title="Overview" sub-title="Invoice" }}
 
     <div class="max-w-6xl mx-auto"> 
-        <div class="card">
-            <div class="card-body p-10">
+        <div class="card position-relative">
+            <div class="position-absolute top-0 start-0 end-0 bottom-0 h-100 w-100 bg-gradient-t-primary blur-md"></div>
+            <div class="h-40 bg-primary position-absolute top-0 end-0 w-96 z-0 rounded-bl-full"></div>
+            <div class="card-body p-10 ">
                 <div class="row mb-5">
                     <div class="col-md-6">
                         <a href="#!">
@@ -34,14 +36,14 @@
                         </a>
                         <h6 class="mt-3">Invoice #PEI-15485</h6>
                     </div>
-                    <div class="col-md-6 text-md-end">
-                        <p class="text-muted">Support Email: <a href="mailto:support@pixeleyez.com" class="fw-semibold text-dark-emphasis">support@pixeleyez.com</a></p>
-                        <p class="text-muted mt-2">Invoice Date: <span class="fw-semibold text-dark-emphasis">28 May, 2024</span></p>
-                        <p class="text-muted mt-2">Due Date: <span class="fw-semibold text-dark-emphasis">02 June, 2024</span></p>
+                    <div class="col-md-6 text-md-end position-relative text-white">
+                        <p>Support Email: <a href="mailto:support@pixeleyez.com" class="fw-semibold text-white">support@pixeleyez.com</a></p>
+                        <p class="mt-2">Invoice Date: <span class="fw-semibold">28 May, 2024</span></p>
+                        <p class="mt-2">Due Date: <span class="fw-semibold">02 June, 2024</span></p>
                     </div>
                 </div>
     
-                <div class="row">
+                <div class="row mb-6">
                     <div class="col-md-6">
                         <p class="mb-1 lh-base text-muted">From Address</p>
                         <h6 class="mb-2">Martin Riedel</h6>
@@ -162,7 +164,7 @@ Fosses-la-Ville, Belgium - 4823</pre>
                     </div>
                 </div>
             </div>
-            <div class="card-footer bg-light d-flex justify-content-between">
+            <div class="card-footer bg-light d-flex justify-content-between border-info-subtle bg-info-subtle">
                 <h6 class="mb-0">Thank you for purchasing Domiex Admin &amp; Dashboards</h6>
                 <a href="#!" class="text-black">+(021) 1452 023 021</a>
             </div>

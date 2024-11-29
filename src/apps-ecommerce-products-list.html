@@ -1,0 +1,681 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Product List" }}
+
+    <link rel="stylesheet" href="assets/libs/nouislider/dist/nouislider.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Product List" sub-title="Ecommerce" }}
+
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex flex-wrap align-items-center gap-5">
+                <div class="flex-grow-1">
+                    <h6 class="mb-1 card-title">Product List</h6>
+                    <p class="text-muted">Track your store's progress to boost your sales.</p>
+                </div>
+                <div class="d-flex flex-wrap gap-2 flex-shrink-0">
+                    <button class="btn btn-light text-dark" @click="exportTable"><i data-lucide="download" class="size-4 me-1"></i> Export</button>
+                    <a class="btn btn-primary" href="apps-ecommerce-create-products.html"><i data-lucide="plus" class="size-4"></i> Add Product</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="position-relative">
+                    <input type="text" class="form-control ps-9 pe-4" placeholder="Search for ..." @input="filtercontacts" x-model="searchTerm">
+                    <div class="position-absolute top-50 translate-middle-y d-flex align-items-center">
+                        <i data-lucide="search" class="size-4 ms-3 icon-dark"></i>
+                    </div>
+                </div>
+                <div class="d-flex gap-2">
+                    <div id="sampleSelect"></div>
+                    <div class="dropdown flex-shrink-0">
+                        <button class="btn btn-light text-dark" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                            <i data-lucide="filter" class="size-4 me-1"></i> Filters
+                        </button>
+                        <ul class="dropdown-menu shadow-sm dropdown-menu-end p-3 w-64" aria-labelledby="dropdownMenuButton">
+                            <h6 class="mb-4">Filter Options</h6>
+                            <form action="">
+                                <h6 class="mb-2 fs-sm">Status</h6>
+                                <div class="d-flex gap-4 align-items-center mb-4">
+                                    <div class="form-check check-primary">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Published
+                                        </label>
+                                    </div>
+                                    <div class="form-check check-primary">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Inactive
+                                        </label>
+                                    </div>
+                                </div>
+                                <label class="mb-3 form-label fw-medium">Price Range</label>
+                                <div id="slider"></div>
+                                <div class="d-flex align-items-center justify-content-end gap-2 pt-1 mt-5">
+                                    <button type="reset" class="btn-sm btn btn-light text-dark">Reset</button>
+                                    <button type="submit" class="btn-sm btn btn-primary">Apply</button>
+                                </div>
+                            </form>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body pt-0">
+            <section class="table-box" id="customScroll" data-simplebar>
+                <table class="table table-hover ">
+                    <thead>
+                        <tr class="table-light border-bottom">
+                            <th scope="col">
+                                <div class="form-check check-primary">
+                                    <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                </div>
+                            </th>
+                            <th scope="col" class="text-dark fw-medium">Product ID</th>
+                            <th scope="col" class="text-dark fw-medium">Product</th>
+                            <th scope="col" class="text-dark fw-medium">Category</th>
+                            <th scope="col" class="text-dark fw-medium">Stock</th>
+                            <th scope="col" class="text-dark fw-medium">Price</th>
+                            <th scope="col" class="text-dark fw-medium">QTY</th>
+                            <th scope="col" class="text-dark fw-medium">Revenue</th>
+                            <th scope="col" class="text-dark fw-medium">status</th>
+                            <th scope="col" class="text-dark fw-medium">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="align-middle">
+                        <tr>
+                            <td>
+                                <div class="form-check check-primary">
+                                    <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                </div>
+                            </td>
+                            <td><a href="#!" class="link link-primary text-dark">PEP-19115</a></td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="d-flex align-items-center size-9 border rounded-1 p-1">
+                                        <img src="assets/images/products/img-01.png" alt="" class="img-fluid">
+                                    </div>
+                                    <a href="apps-ecommerce-product-overview.html" class="text-black fw-semibold">Blouse Ruffle Tube top</a>
+                                </div>
+                            </td>
+                            <td>Fashion</td>
+                            <td>
+                                <div class="form-check form-switch p-0 switch-softColor-secondary">
+                                    <input type="checkbox" id="switch-softColor-2" checked /><label class="label" for="switch-softColor-2"></label>
+                                </div>
+                            </td>
+                            <td>$14.99</td>
+                            <td>154</td>
+                            <td>$15,236</td>
+                            <td><span class="badge bg-success-subtle border border-success-subtle text-success">Published</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                        <i class="ri-more-2-fill"></i>
+                                    </button>
+                                    <ul class="dropdown-menu shadow-sm">
+                                        <li>
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-eye-line"></i>
+                                                <span>Overview</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-pencil-line"></i>
+                                                <span>Edit</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-delete-bin-line"></i>
+                                                <span>Delete</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check check-primary">
+                                    <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                </div>
+                            </td>
+                            <td><a href="#!" class="link link-primary text-dark">PEP-19116</a></td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="d-flex align-items-center size-9 border rounded-1 p-1">
+                                        <img src="assets/images/products/img-02.png" alt="" class="img-fluid">
+                                    </div>
+                                    <a href="apps-ecommerce-product-overview.html" class="text-black fw-semibold">Gold-colored locket watch</a>
+                                </div>
+                            </td>
+                            <td>Watch</td>
+                            <td>
+                                <div class="form-check form-switch p-0 switch-softColor-secondary">
+                                    <input type="checkbox" id="switch-softColor-2" checked /><label class="label" for="switch-softColor-2"></label>
+                                </div>
+                            </td>
+                            <td>$59.99</td>
+                            <td>187</td>
+                            <td>$18,956</td>
+                            <td><span class="badge bg-success-subtle border border-success-subtle text-success">Published</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                        <i class="ri-more-2-fill"></i>
+                                    </button>
+                                    <ul class="dropdown-menu shadow-sm">
+                                        <li>
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-eye-line"></i>
+                                                <span>Overview</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-pencil-line"></i>
+                                                <span>Edit</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-delete-bin-line"></i>
+                                                <span>Delete</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check check-primary">
+                                    <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                </div>
+                            </td>
+                            <td><a href="#!" class="link link-primary text-dark">PEP-19117</a></td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="d-flex align-items-center size-9 border rounded-1 p-1">
+                                        <img src="assets/images/products/img-03.png" alt="" class="img-fluid">
+                                    </div>
+                                    <a href="apps-ecommerce-product-overview.html" class="text-black fw-semibold">Spar Men Black Running Shoes</a>
+                                </div>
+                            </td>
+                            <td>Footwear</td>
+                            <td>
+                                <div class="form-check form-switch p-0 switch-softColor-secondary">
+                                    <input type="checkbox" id="switch-softColor-2" /><label class="label" for="switch-softColor-2"></label>
+                                </div>
+                            </td>
+                            <td>$35.78</td>
+                            <td>487</td>
+                            <td>$0</td>
+                            <td><span class="badge bg-light border border-dark-subtle text-dark">Inactive</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                        <i class="ri-more-2-fill"></i>
+                                    </button>
+                                    <ul class="dropdown-menu shadow-sm">
+                                        <li>
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-eye-line"></i>
+                                                <span>Overview</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-pencil-line"></i>
+                                                <span>Edit</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-delete-bin-line"></i>
+                                                <span>Delete</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check check-primary">
+                                    <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                </div>
+                            </td>
+                            <td><a href="#!" class="link link-primary text-dark">PEP-19118</a></td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="d-flex align-items-center size-9 border rounded-1 p-1">
+                                        <img src="assets/images/products/img-04.png" alt="" class="img-fluid">
+                                    </div>
+                                    <a href="apps-ecommerce-product-overview.html" class="text-black fw-semibold">Crop top Sweater Clothing</a>
+                                </div>
+                            </td>
+                            <td>Fashion</td>
+                            <td>
+                                <div class="form-check form-switch p-0 switch-softColor-secondary">
+                                    <input type="checkbox" id="switch-softColor-2" /><label class="label" for="switch-softColor-2"></label>
+                                </div>
+                            </td>
+                            <td>$29.49</td>
+                            <td>177</td>
+                            <td>$4,265</td>
+                            <td><span class="badge bg-light border border-dark-subtle text-dark">Inactive</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                        <i class="ri-more-2-fill"></i>
+                                    </button>
+                                    <ul class="dropdown-menu shadow-sm">
+                                        <li>
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-eye-line"></i>
+                                                <span>Overview</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-pencil-line"></i>
+                                                <span>Edit</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-delete-bin-line"></i>
+                                                <span>Delete</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check check-primary">
+                                    <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                </div>
+                            </td>
+                            <td><a href="#!" class="link link-primary text-dark">PEP-19119</a></td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="d-flex align-items-center size-9 border rounded-1 p-1">
+                                        <img src="assets/images/products/img-05.png" alt="" class="img-fluid">
+                                    </div>
+                                    <a href="apps-ecommerce-product-overview.html" class="text-black fw-semibold">Sleeve Clothing Leggings</a>
+                                </div>
+                            </td>
+                            <td>Fashion</td>
+                            <td>
+                                <div class="form-check form-switch p-0 switch-softColor-secondary">
+                                    <input type="checkbox" id="switch-softColor-2" checked /><label class="label" for="switch-softColor-2"></label>
+                                </div>
+                            </td>
+                            <td>$22.00</td>
+                            <td>183</td>
+                            <td>$7,465</td>
+                            <td><span class="badge bg-success-subtle border border-success-subtle text-success">Published</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                        <i class="ri-more-2-fill"></i>
+                                    </button>
+                                    <ul class="dropdown-menu shadow-sm">
+                                        <li>
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-eye-line"></i>
+                                                <span>Overview</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-pencil-line"></i>
+                                                <span>Edit</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-delete-bin-line"></i>
+                                                <span>Delete</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check check-primary">
+                                    <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                </div>
+                            </td>
+                            <td><a href="#!" class="link link-primary text-dark">PEP-19120</a></td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="d-flex align-items-center size-9 border rounded-1 p-1">
+                                        <img src="assets/images/products/img-06.png" alt="" class="img-fluid">
+                                    </div>
+                                    <a href="apps-ecommerce-product-overview.html" class="text-black fw-semibold">Bra Lace Crop top</a>
+                                </div>
+                            </td>
+                            <td>Fashion</td>
+                            <td>
+                                <div class="form-check form-switch p-0 switch-softColor-secondary">
+                                    <input type="checkbox" id="switch-softColor-2" checked /><label class="label" for="switch-softColor-2"></label>
+                                </div>
+                            </td>
+                            <td>$29.99</td>
+                            <td>326</td>
+                            <td>$9,613</td>
+                            <td><span class="badge bg-success-subtle border border-success-subtle text-success">Published</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                        <i class="ri-more-2-fill"></i>
+                                    </button>
+                                    <ul class="dropdown-menu shadow-sm">
+                                        <li>
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-eye-line"></i>
+                                                <span>Overview</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-pencil-line"></i>
+                                                <span>Edit</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-delete-bin-line"></i>
+                                                <span>Delete</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check check-primary">
+                                    <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                </div>
+                            </td>
+                            <td><a href="#!" class="link link-primary text-dark">PEP-19121</a></td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="d-flex align-items-center size-9 border rounded-1 p-1">
+                                        <img src="assets/images/products/img-07.png" alt="" class="img-fluid">
+                                    </div>
+                                    <a href="apps-ecommerce-product-overview.html" class="text-black fw-semibold">Yellow women shoes</a>
+                                </div>
+                            </td>
+                            <td>Footwear</td>
+                            <td>
+                                <div class="form-check form-switch p-0 switch-softColor-secondary">
+                                    <input type="checkbox" id="switch-softColor-2" /><label class="label" for="switch-softColor-2"></label>
+                                </div>
+                            </td>
+                            <td>$36.87</td>
+                            <td>147</td>
+                            <td>$11,074</td>
+                            <td><span class="badge bg-light border border-dark-subtle text-dark">Inactive</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                        <i class="ri-more-2-fill"></i>
+                                    </button>
+                                    <ul class="dropdown-menu shadow-sm">
+                                        <li>
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-eye-line"></i>
+                                                <span>Overview</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-pencil-line"></i>
+                                                <span>Edit</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-delete-bin-line"></i>
+                                                <span>Delete</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check check-primary">
+                                    <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                </div>
+                            </td>
+                            <td><a href="#!" class="link link-primary text-dark">PEP-19122</a></td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="d-flex align-items-center size-9 border rounded-1 p-1">
+                                        <img src="assets/images/products/img-08.png" alt="" class="img-fluid">
+                                    </div>
+                                    <a href="apps-ecommerce-product-overview.html" class="text-black fw-semibold">Tote bag Leather Handbag Dolce</a>
+                                </div>
+                            </td>
+                            <td>Bags</td>
+                            <td>
+                                <div class="form-check form-switch p-0 switch-softColor-secondary">
+                                    <input type="checkbox" id="switch-softColor-2" checked /><label class="label" for="switch-softColor-2"></label>
+                                </div>
+                            </td>
+                            <td>$79.99</td>
+                            <td>98</td>
+                            <td>$19,803</td>
+                            <td><span class="badge bg-success-subtle border border-success-subtle text-success">Published</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                        <i class="ri-more-2-fill"></i>
+                                    </button>
+                                    <ul class="dropdown-menu shadow-sm">
+                                        <li>
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-eye-line"></i>
+                                                <span>Overview</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-pencil-line"></i>
+                                                <span>Edit</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-delete-bin-line"></i>
+                                                <span>Delete</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check check-primary">
+                                    <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                </div>
+                            </td>
+                            <td><a href="#!" class="link link-primary text-dark">PEP-19123</a></td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="d-flex align-items-center size-9 border rounded-1 p-1">
+                                        <img src="assets/images/products/img-09.png" alt="" class="img-fluid">
+                                    </div>
+                                    <a href="apps-ecommerce-product-overview.html" class="text-black fw-semibold">Hoodie Jacket Letterman Sleeve Coat</a>
+                                </div>
+                            </td>
+                            <td>Fashion</td>
+                            <td>
+                                <div class="form-check form-switch p-0 switch-softColor-secondary">
+                                    <input type="checkbox" id="switch-softColor-2" checked /><label class="label" for="switch-softColor-2"></label>
+                                </div>
+                            </td>
+                            <td>$44.49</td>
+                            <td>246</td>
+                            <td>$9,961</td>
+                            <td><span class="badge bg-success-subtle border border-success-subtle text-success">Published</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                        <i class="ri-more-2-fill"></i>
+                                    </button>
+                                    <ul class="dropdown-menu shadow-sm">
+                                        <li>
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-eye-line"></i>
+                                                <span>Overview</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-pencil-line"></i>
+                                                <span>Edit</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-delete-bin-line"></i>
+                                                <span>Delete</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-white">
+                            <td>
+                                <div class="form-check check-primary">
+                                    <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                </div>
+                            </td>
+                            <td><a href="#!" class="link link-primary text-dark">PEP-19124</a></td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="d-flex align-items-center size-9 border rounded-1 p-1">
+                                        <img src="assets/images/products/img-10.png" alt="" class="img-fluid">
+                                    </div>
+                                    <a href="apps-ecommerce-product-overview.html" class="text-black fw-semibold">Straw hat Cap Cowboy hat Sun hat</a>
+                                </div>
+                            </td>
+                            <td>Accessories</td>
+                            <td>
+                                <div class="form-check form-switch p-0 switch-softColor-secondary">
+                                    <input type="checkbox" id="switch-softColor-2" /><label class="label" for="switch-softColor-2"></label>
+                                </div>
+                            </td>
+                            <td>$24.99</td>
+                            <td>213</td>
+                            <td>$6,087</td>
+                            <td><span class="badge bg-light border border-dark-subtle text-dark">Inactive</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                        <i class="ri-more-2-fill"></i>
+                                    </button>
+                                    <ul class="dropdown-menu shadow-sm">
+                                        <li>
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-eye-line"></i>
+                                                <span>Overview</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#addprojectModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-pencil-line"></i>
+                                                <span>Edit</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                <i class="ri-delete-bin-line"></i>
+                                                <span>Delete</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <p class="text-muted">Showing <b class="me-1">1-10</b>of<b class="ms-1">15</b> Results</p>
+                </div>
+                <div class="justify-content-end d-flex">
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                            <li class="page-item pagination-primary disabled">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                    <i data-lucide="chevron-left" class="size-5"></i>
+                                    <span>Prev</span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                            <li class="page-item" aria-current="page">
+                                <a class="page-link rounded-2 page-number" href="#">2</a>
+                            </li>
+                            <li class="page-item pagination-primary ">
+                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                    <span>Next</span>
+                                    <i data-lucide="chevron-right" class="size-5"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+<script src="assets/libs/nouislider/dist/nouislider.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/ecommerce/product-list.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

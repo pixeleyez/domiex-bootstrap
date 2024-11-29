@@ -16,14 +16,17 @@
 .swiper-button-next:after {
     display: none;
 }
+
 .achivementSwiper:hover .achivement-navigation {
     opacity: 1;
     visibility: visible;
 }
+
 .achivement-navigation {
     transition: $transition-base;
     opacity: 0;
     visibility: hidden;
+
     .swiper-button-prev:before {
         content: '\ea64';
         font-family: "RemixIcon";
@@ -34,10 +37,23 @@
         font-family: "RemixIcon";
     }
 }
-.stroke-current{
+
+.stroke-current {
     stroke: currentColor;
 }
-.quiz{
+
+.quiz {
     transform-origin: center;
     transform: rotate(-90deg);
+}
+
+.rounded-bl-full{
+    border-bottom-left-radius: 9999px;
+}
+
+.-rotate-90{
+    transform: rotate(-90deg);
+}
+.origin-center {
+    transform-origin: center;
 }

@@ -23,7 +23,7 @@
 
     <div class="row">
         <div class="col-9">
-            <div class="card">
+            <div class="card card-h-100">
                 <div class="card-body">
                     <div class="d-flex gap-4 mb-5 position-relative">
                         <img src="assets/images/avatar/user-4.png" alt="" class="rounded-md rounded-2 size-36 flex-shrink-0">
@@ -180,27 +180,92 @@
             </div>
         </div><!-- end col -->
         <div class="col-3">
-            <div class="card">
+            <div class="card card-h-100">
                 <div class="card-header">
                     <h6 class="mb-0">Pending Quiz</h6>
                 </div>
                 <div class="card-body">
                     <div>
                         <div class="d-flex align-items-center gap-3">
-                            <div class="position-relative size-12 flex-shrink-0">
-                                <svg class="w-100 h-100" width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-info-subtle" stroke-width="3"></circle>
-                                    <g class="quiz">
-                                        <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-info" stroke-width="3" stroke-dasharray="100" :stroke-dashoffset="progress"></circle>
+                            <div class="d-flex justify-content-center align-items-center position-relative size-12 mx-auto">
+                                <svg class="w-100 h-100" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="18" cy="18" r="16" fill="none" class="stroke-light" stroke-width="3"></circle>
+                                    <g class="origin-center -rotate-90">
+                                        <circle cx="18" cy="18" r="16" fill="none" class="stroke-primary" stroke-width="3" stroke-dasharray="100" stroke-dashoffset="68.35"></circle>
                                     </g>
                                 </svg>
-                                <!-- Percentage Text -->
                                 <div class="position-absolute top-50 start-50 translate-middle">
-                                    <span class="fs-12 fw-bold text-center text-dark">32%</span>
+                                    <span class="fs-12 fw-bold text-center">32%</span>
                                 </div>
                             </div>
                             <div class="overflow-hidden flex-grow-1">
-                                <h6 class="mb-1 text-truncate"><a href="#" class="text-black">Trivia Time: Fun Facts and Figures</a></h6>
+                                <h6 class="mb-1 text-truncate lh-base"><a href="#" class="text-black">Trivia Time: Fun Facts and Figures</a></h6>
+                                <div class="d-flex align-items-center gap-3">
+                                    <p class="text-muted flex-grow-1">Expert: <i class="text-warning ri-star-s-fill"></i> <i class="text-warning ri-star-s-fill"></i> <i class="text-warning ri-star-s-fill"></i></p>
+                                    <button type="button" class="btn btn-success btn-sm"><i class="ri-play-line"></i> Start</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex justify-content-center align-items-center position-relative size-12 mx-auto">
+                                <svg class="w-100 h-100" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="18" cy="18" r="16" fill="none" class="stroke-light" stroke-width="3"></circle>
+                                    <g class="origin-center -rotate-90">
+                                        <circle cx="18" cy="18" r="16" fill="none" class="stroke-primary" stroke-width="3" stroke-dasharray="100" stroke-dashoffset="48.35"></circle>
+                                    </g>
+                                </svg>
+                                <div class="position-absolute top-50 start-50 translate-middle">
+                                    <span class="fs-12 fw-bold text-center">52%</span>
+                                </div>
+                            </div>
+                            <div class="overflow-hidden flex-grow-1">
+                                <h6 class="mb-1 text-truncate lh-base"><a href="#" class="text-black">Chemistry Conundrums: Elemental Quiz</a></h6>
+                                <div class="d-flex align-items-center gap-3">
+                                    <p class="text-muted flex-grow-1">Expert: <i class="text-warning ri-star-s-fill"></i> <i class="ri-star-s-fill"></i> <i class="ri-star-s-fill"></i></p>
+                                    <button type="button" class="btn btn-success btn-sm"><i class="ri-play-line"></i> Start</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex justify-content-center align-items-center position-relative size-12 mx-auto">
+                                <svg class="w-100 h-100" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="18" cy="18" r="16" fill="none" class="stroke-light" stroke-width="3"></circle>
+                                    <g class="origin-center -rotate-90">
+                                        <circle cx="18" cy="18" r="16" fill="none" class="stroke-primary" stroke-width="3" stroke-dasharray="100" stroke-dashoffset="90.35"></circle>
+                                    </g>
+                                </svg>
+                                <div class="position-absolute top-50 start-50 translate-middle">
+                                    <span class="fs-12 fw-bold text-center">10%</span>
+                                </div>
+                            </div>
+                            <div class="overflow-hidden flex-grow-1">
+                                <h6 class="mb-1 text-truncate lh-base"><a href="#" class="text-black">A Mathematics Challenge</a></h6>
+                                <div class="d-flex align-items-center gap-3">
+                                    <p class="text-muted flex-grow-1">Expert: <i class="text-warning ri-star-s-fill"></i> <i class="text-warning ri-star-s-fill"></i> <i class="ri-star-s-fill"></i></p>
+                                    <button type="button" class="btn btn-success btn-sm"><i class="ri-play-line"></i> Start</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex justify-content-center align-items-center position-relative size-12 mx-auto">
+                                <svg class="w-100 h-100" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="18" cy="18" r="16" fill="none" class="stroke-light" stroke-width="3"></circle>
+                                    <g class="origin-center -rotate-90">
+                                        <circle cx="18" cy="18" r="16" fill="none" class="stroke-primary" stroke-width="3" stroke-dasharray="100" stroke-dashoffset="5.35"></circle>
+                                    </g>
+                                </svg>
+                                <div class="position-absolute top-50 start-50 translate-middle">
+                                    <span class="fs-12 fw-bold text-center">95%</span>
+                                </div>
+                            </div>
+                            <div class="overflow-hidden flex-grow-1">
+                                <h6 class="mb-1 text-truncate lh-base"><a href="#" class="text-black">The Digital World Quiz</a></h6>
                                 <div class="d-flex align-items-center gap-3">
                                     <p class="text-muted flex-grow-1">Expert: <i class="text-warning ri-star-s-fill"></i> <i class="text-warning ri-star-s-fill"></i> <i class="text-warning ri-star-s-fill"></i></p>
                                     <button type="button" class="btn btn-success btn-sm"><i class="ri-play-line"></i> Start</button>
@@ -212,7 +277,7 @@
             </div>
         </div><!-- end col -->
         <div class="col-3">
-            <div class="card">
+            <div class="card card-h-100">
                 <div class="card-header">
                     <h6 class="mb-0">Upcoming Lecture</h6>
                 </div>

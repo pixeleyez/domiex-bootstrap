@@ -35,3 +35,18 @@ document.addEventListener("DOMContentLoaded", function() {
         header.classList.add(newOrder === 'asc' ? 'sorted-asc' : 'sorted-desc');
     }
 });
+
+//sorting Select
+VirtualSelect.init({
+    ele: "#sortingByClass",
+    options: [
+        { label: "12 (A)", value: "12 (A)" },
+        { label: "12 (B)", value: "12 (B)" },
+        { label: "11 (A)", value: "11 (A)" },
+        { label: "11 (B)", value: "11 (B)" },
+        { label: "10 (A)", value: "10 (A)" },
+        { label: "10 (B)", value: "10 (B)" },
+        { label: "9", value: "9" },
+        { label: "8", value: "8" }
+    ],
+});

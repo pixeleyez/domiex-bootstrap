@@ -1,9 +1,5 @@
-.fill-primary{
-    fill: $primary;
-}
-.fill-pink{
-    fill: $pink;
-}
-.fill-info{
-    fill: $info;
+@each $state in map-keys($theme-colors) {
+    .fill-#{$state}{
+        fill: var(--#{$prefix}#{$state});
+    }
 }
