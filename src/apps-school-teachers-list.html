@@ -102,12 +102,12 @@
                         </div>
                         <div class="col-9">
                             <div class="text-end">
-                                <button type="button" class="btn btn-primary flex-shrink-0"><i data-lucide="circle-plus" class="size-4 me-1"></i>Add Teacher</button>
+                                <button type="button" class="btn btn-primary flex-shrink-0" data-bs-toggle="modal" data-bs-target="#addTeacherModal"><i data-lucide="circle-plus" class="size-4 me-1"></i>Add Teacher</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <section class="h-96 card-body pt-0" id="customScroll" data-simplebar>
+                <section class="card-body pt-0" id="customScroll" data-simplebar>
                     <div class="table-box">
                         <table class="table align-middle table-borderless">
                             <thead>
@@ -369,7 +369,90 @@
         </div>
     </div>
     <!-- end row -->
-     
+
+    <!-- Modal -->
+    <div class="modal fade" id="addTeacherModal" tabindex="-1" aria-labelledby="addTeacherModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="p-2 modal-content">
+                <div class="modal-header">
+                    <h6 class="mb-0">Add Teacher</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="p-0 modal-body">
+                    <div class="p-4">
+                        <form action="#!">
+                            <div x-data="{
+                                teacherNameInput: '',emailInput: '', titleSelect: '', phoneInput: '',  salaryInput: '', experienceInput: '', lastSchoolNameInput:'', joiningDateSelect:'',
+                                errors: {},
+                            
+                                validate() {
+                                    this.errors = {};
+                                    if (!this.titleSelect) this.errors.titleSelect = 'Title is required.';
+                                    if (!this.teacherNameInput) this.errors.teacherNameInput = 'Teacher name is required.';
+                                    if (!this.emailInput) this.errors.emailInput = 'Email is required.';
+                                    if (!this.phoneInput) this.errors.phoneInput = 'Phone is required..';
+                                    if (!this.salaryInput) this.errors.salaryInput = 'Salary is required.';
+                                    if (!this.experienceInput) this.errors.experienceInput = 'Experience is required.';
+                                    if (!this.lastSchoolNameInput) this.errors.lastSchoolNameInput = 'Last school is required.';
+                                    if (!this.joiningDateSelect) this.errors.joiningDateSelect = 'Date is required.';
+                                    return Object.keys(this.errors).length === 0;
+                                },
+                            
+                                clearError(field) { this.errors[field] = '' }
+                            }" class="row g-4">
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Title</label>
+                                    <div id="titleSelect" placeholder="Select Class" @input="clearError('titleSelect')"></div>
+                                    <p x-show="errors.titleSelect" class="text-sm text-danger" x-text="errors.titleSelect"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Teacher Name</label>
+                                    <input type="text" x-model="teacherNameInput" placeholder="Test Name" class="form-control" @input="clearError('teacherNameInput')" />
+                                    <p x-show="errors.teacherNameInput" class="text-sm text-danger" x-text="errors.teacherNameInput"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Email</label>
+                                    <input type="email" x-model="emailInput" placeholder="name@pixeleyez.com" class="form-control" @input="clearError('emailInput')" />
+                                    <p x-show="errors.emailInput" class="text-sm text-danger" x-text="errors.emailInput"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Phone</label>
+                                    <div id="phoneInput" placeholder="Select Class" @input="clearError('phoneInput')"></div>
+                                    <input type="text" x-model="emailInput" placeholder="+1012456789" class="form-control" @input="clearError('emailInput')" />
+                                    <p x-show="errors.phoneInput" class="text-sm text-danger" x-text="errors.phoneInput"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Salary ($)</label>
+                                    <input type="text" x-model="salaryInput" placeholder="$0" class="form-control" @input="clearError('salaryInput')" />
+                                    <p x-show="errors.salaryInput" class="text-sm text-danger" x-text="errors.salaryInput"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Experience (Years)</label>
+                                    <input type="text" x-model="experienceInput" placeholder="0 Years" class="form-control" @input="clearError('experienceInput')" />
+                                    <p x-show="errors.experienceInput" class="text-sm text-danger" x-text="errors.experienceInput"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Last School Name</label>
+                                    <input type="text" x-model="lastSchoolNameInput" placeholder="School name" class="form-control" @input="clearError('lastSchoolNameInput')" />
+                                    <p x-show="errors.lastSchoolNameInput" class="text-sm text-danger" x-text="errors.lastSchoolNameInput"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Joining Date</label>
+                                    <input data-provider="flatpickr" data-date-format="d M, Y" type="text" placeholder="DD-MM-YYYY" class="form-control form-input flatpickr-input active"  x-model="joiningDateSelect" readonly="readonly"  @input="clearError('joiningDateSelect')">
+                                    <p x-show="errors.joiningDateSelect" class="text-sm text-danger" x-text="errors.joiningDateSelect"></p>
+                                </div>
+                                <div class="d-flex justify-content-end gap-2 mt-4">
+                                    <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal"><i data-lucide="x" class="size-4 me-1"></i>Close</button>
+                                    <button type="button" class="btn btn-primary" @click="if (validate()) { alert('Form is valid and ready for submission!') }">Add Teacher</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Delete Modal -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xs">
@@ -397,7 +480,7 @@
 
 {{> partials/vendor-scripts}}
 
-<script src="assets/js/apps/school/students/list-view.init.js"></script>
+<script src="assets/js/apps/school/teachers/teachers-list.init.js"></script>
 
 <script type="module" src="assets/js/main.js"></script>
 

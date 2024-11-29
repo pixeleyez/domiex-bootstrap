@@ -1,3 +1,8 @@
 .offcanvas-footer{
     padding: $offcanvas-padding-y $offcanvas-padding-x;
 }
+.offcanvas-body {
+    max-height: calc(100vh - 132px); 
+    overflow-y: auto;
+    padding-right: 1.25rem;
+}

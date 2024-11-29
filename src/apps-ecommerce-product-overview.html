@@ -1,0 +1,193 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Product Overview" }}
+
+    <link rel="stylesheet" href="assets/libs/nouislider/dist/nouislider.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Product Overview" sub-title="Ecommerce" }}
+
+    <div class="d-flex flex-wrap align-items-center gap-5 mb-5">
+        <div class="flex-grow-1">
+            <h6 class="mb-1 card-title">Add New Products</h6>
+        </div>
+        <div class="d-flex flex-wrap gap-2 flex-shrink-0">
+            <button class="btn btn-light text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i data-lucide="trash-2" class="size-4 me-1"></i> Delete</button>
+            <a class="btn btn-primary"><i data-lucide="plus" class="size-4 me-1"></i> Add Product</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <div class="card">
+                <div class="card-body" x-data="{ count: 1, basePrice: 99.99, discount: 0.5 }">
+                    <div class="d-flex justify-content-between align-items-center mb-5">
+                        <p class="mb-0"><span class="badge bg-light text-dark border border-dark-subtle"><i data-lucide="heart" class="size-4 me-1 text-danger fill-danger"></i> Wishlist</span></p>
+                        <div class="d-flex align-items-center">
+                            <a href="/apps-ecommerce-create-products" class="btn btn-link link-primary p-0 pe-2 text-dark">
+                                <i data-lucide="pencil" class="size-4"></i> Edit
+                            </a>
+                            <a href="#!" class="btn btn-link link-danger p-0 text-dark ps-2 border-start">
+                                <i data-lucide="trash-2" class="size-4"></i> Delete
+                            </a>
+                        </div>
+                    </div>
+                    <h5 class="mb-3">Collection Ruffled Cotton Top</h5>
+                    <div class="d-flex mb-5">
+                        <p class="mb-0 pe-3"><i class="text-warning ri-star-half-line align-bottom"></i> 4.8</p>
+                        <p class="mb-0 px-3 border-start border-end">149 Reviews</p>
+                        <p class="mb-0 ps-3">4789 Sales</p>
+                    </div>
+            
+                    <div class="d-flex align-items-center gap-2 mt-3 fs-xl fw-semibold">
+                        $<span x-text="((basePrice * count) * (1 - discount)).toFixed(2)">749.92</span>
+                        <small class="text-muted text-decoration-line-through fw-normal fs-16">$<span x-text="(basePrice * count).toFixed(2)">99.99</span></small>
+                        <span class="badge bg-danger-subtle border border-danger-subtle text-danger">50%</span>
+                    </div>
+            
+                    <div class="row row-cols-1 row-cols-sm-2">
+                        <div class="col">
+                            <h6 class="mt-5">Select Colors</h6>
+                            <div class="d-flex gap-2 mt-2">
+                                <a href="#!" class="btn btn-primary p-0 achivment-ring-light rounded-circle size-6"><i class="ri-check-line"></i></a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h6 class="mt-5">Select Size</h6>
+                            <div class="d-flex gap-2 mt-3">
+                                <a href="#!" class="text-muted fw-semibold">S</a>
+                                <a href="#!" class="text-muted fw-semibold">M</a>
+                                <a href="#!" class="text-muted fw-semibold">L</a>
+                                <a href="#!" class="text-muted fw-semibold">XL</a>
+                                <a href="#!" class="text-muted fw-semibold">2XL</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-5">
+                        <div class="d-flex border rounded w-32 p-1 text-center">
+                            <button @click="if (count > 1) count--" class="btn btn-sub-primary px-2 border-0 size-8 d-flex justify-content-center align-items-center">
+                                <i data-lucide="minus" class="size-4"></i>
+                            </button>
+                            <input type="text" x-model="count" class="form-control text-center border-0 h-8" readonly>
+                            <button @click="count++" class="btn btn-sub-primary px-2 border-0 size-8 d-flex justify-content-center align-items-center">
+                                <i data-lucide="plus" class="size-4"></i>
+                            </button>
+                        </div>
+                    </div>
+            
+                    <div class="d-flex gap-2 mb-5">
+                        <button type="button" class="btn btn-danger w-36">Buy Now</button>
+                        <button type="button" class="btn btn-light text-dark w-36">Add to Cart</button>
+                    </div>
+            
+                    <h6 class="mb-2">Available Offers</h6>
+                    <div x-data="{ showMore: false }" class="mb-5">
+                        <ul class="list-unstyled">
+                            <li><span class="fw-bold">Bank Offer</span> Get ₹50 instant discount on first Domiex UPI txn on order of ₹200 and above <a href="javascript:void(0);" class="text-decoration-none" x-show="!showMore" @click.prevent="showMore = true">Show More</a><a href="javascript:void(0);" class="text-decoration-none" x-show="showMore" @click.prevent="showMore = false">Show Less</a></li>
+                            <li x-show="showMore"><span class="fw-bold">Bank Offer</span> Get ₹100 cashback on order of ₹1000 and above using ICICI cards</li>
+                            <li x-show="showMore"><span class="fw-bold">Bank Offer</span> Get ₹20 off on Domiex Credit Card payments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0"><i data-lucide="eye" class="size-4 me-2"></i><span class="align-middle">Product Card Preview</span></h6>
+                </div>
+                <div class="card-body bg-light">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="p-5 bg-light-subtle position-relative">
+                                <a href="#!" class="link link-danger text-black rounded-circle d-flex justify-content-center align-items-center position-absolute end-0 size-10 bg-white me-5"><i class="fs-lg ri-heart-line"></i></a>
+                                <div class="swiper simplepaginationSwiper mx-5 swiper-success">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide text-center">
+                                            <img src="assets/images/products/img-06.png" alt="" class="size-64 w-75">
+                                        </div>
+                                        <div class="swiper-slide text-center">
+                                            <img src="assets/images/products/img-04.png" alt="" class="size-64 w-75">
+                                        </div>
+                                        <div class="swiper-slide text-center">
+                                            <img src="assets/images/products/img-05.png" alt="" class="size-64 w-75">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination py-2"></div>
+                                </div>
+                            </div>
+                            <div class="mt-5">
+                                <h5 class="mb-2 lh-base fs-lg">$36.87</h5>
+                                <h6 class="mb-1 lh-base"><a href="#!" class="link link-primary text-black">Bra Lace Crop top</a></h6>
+                                <p class="text-muted">Fashion</p>
+                            
+                                <div class="d-flex flex-wrap align-items-center gap-2">
+                                    <div class="d-flex align-items-center gap-1 mt-3 flex-grow-1">
+                                        <div class="form-check check-primary ">
+                                            <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
+                                        </div>
+                                        <div class="form-check check-pink ">
+                                            <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
+                                        </div>
+                                        <div class="form-check check-success ">
+                                            <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
+                                        </div>
+                                        <div class="form-check check-danger ">
+                                            <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
+                                        </div>
+                                    </div>
+                                    
+                            
+                                    <div class="d-flex align-items-center gap-2 mt-3 font-weight-medium">
+                                        <a href="#!" class="text-muted fw-semibold active text-success" role="button">S</a>
+                                        <a href="#!" class="text-muted fw-semibold" role="button">M</a>
+                                        <a href="#!" class="text-muted fw-semibold" role="button">L</a>
+                                        <a href="#!" class="text-muted fw-semibold" role="button">XL</a>
+                                        <a href="#!" class="text-muted fw-semibold" role="button">2XL</a>
+                                    </div>
+                                </div>
+                            
+                                <div class="d-flex gap-2 mt-4">
+                                    <a class="w-100 btn btn-primary" href="/apps-ecommerce-shop-cart">Buy Now</a>
+                                    <a href="#!" class="btn btn-light text-dark btn-icon">
+                                       <i data-lucide="shopping-basket" class="size-5"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{> partials/footer}}
+</div>
+
+<script src="assets/libs/nouislider/dist/nouislider.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/ecommerce/product-create.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
