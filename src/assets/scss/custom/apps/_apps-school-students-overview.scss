@@ -17,25 +17,25 @@
     display: none;
 }
 
-.achivementSwiper:hover .achivement-navigation {
-    opacity: 1;
-    visibility: visible;
+.swiper-button-prev:before {
+    content: '\ea64';
+    font-family: "RemixIcon";
 }
 
-.achivement-navigation {
+.swiper-button-next:before {
+    content: '\ea6e';
+    font-family: "RemixIcon";
+}
+
+.hover-navigation {
     transition: $transition-base;
     opacity: 0;
     visibility: hidden;
+}
 
-    .swiper-button-prev:before {
-        content: '\ea64';
-        font-family: "RemixIcon";
-    }
-
-    .swiper-button-next:before {
-        content: '\ea6e';
-        font-family: "RemixIcon";
-    }
+.achivementSwiper:hover .hover-navigation {
+    opacity: 1;
+    visibility: visible;
 }
 
 .stroke-current {
@@ -47,13 +47,14 @@
     transform: rotate(-90deg);
 }
 
-.rounded-bl-full{
+.rounded-bl-full {
     border-bottom-left-radius: 9999px;
 }
 
-.-rotate-90{
+.-rotate-90 {
     transform: rotate(-90deg);
 }
+
 .origin-center {
     transform-origin: center;
 }

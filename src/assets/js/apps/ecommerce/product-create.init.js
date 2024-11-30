@@ -59,7 +59,7 @@ VirtualSelect.init({
     showValueAsTags: true,
 });
 
-var swiper = new Swiper(".simplepaginationSwiper", {
+var swiper = new Swiper(".productSlider", {
     pagination: {
         el: ".swiper-pagination",
         clickable: true,

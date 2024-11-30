@@ -1,33 +1,42 @@
-.input-group-spin {
+.input-spin-group {
     width: 8rem;
-    height: 2.5rem;
-    @include flexStyle;
-    border: 1px solid $gray-200;
-    border-radius: $border-radius;
+    @include flexStyle(center, center);
 
-    .form-control {
-        width: 3rem;
-        height: 100%;
-        text-align: center;
-        font-weight: 500;
+    .input-spin {
         border-radius: 0;
         padding: 0;
-        border-top-width: 0;
-        border-bottom-width: 0;
+        text-align: center;
+    }
 
-        &:focus {
-            border-color: $gray-200;
-        }
+    .form-control{
+        display: block;
+        height: 2.5rem;
+        width: 100%;
     }
 
     .input-spin-plus,
     .input-spin-minus {
-        min-width: 2.5rem;
-        height: 100%;
-        border: 0;
+        display: flex;
+        width: 2.5rem;
+        height: 2.5rem;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $gray-200;
         background-color: transparent;
-        padding: 0;
     }
+}
+
+.input-spin-group .input-spin-minus:where([dir=ltr], [dir=ltr] *) {
+    border-top-left-radius: .375rem;
+    border-bottom-left-radius: .375rem;
+    border-right-width: 0px;
+}
+
+.input-spin-group .input-spin-plus:where([dir=ltr], [dir=ltr] *) {
+    border-top-right-radius: .375rem;
+    border-bottom-right-radius: .375rem;
+    border-left-width: 0px;
 }
 
 @each $state in map-keys($theme-colors) {
@@ -39,50 +48,11 @@
             }
         }
     }
-
     .input-solid-#{$state} {
-
-        .input-spin-plus,
+        .input-spin-plus, 
         .input-spin-minus {
             background-color: var(--#{$prefix}#{$state});
             color: $body-bg;
         }
-
-        .input-spin-minus {
-            border-top-left-radius: $border-radius;
-            border-bottom-left-radius: $border-radius;
-        }
-
-        .input-spin-plus {
-            border-top-right-radius: $border-radius;
-            border-bottom-right-radius: $border-radius;
-        }
-    }
-
-    .input-Boxed-#{$state} {
-        .input-group-spin {
-            height: 40px !important;
-        }
-
-        .input-spin-plus,
-        .input-spin-minus {
-            min-width: 34px;
-            background-color: var(--#{$prefix}#{$state}-bg-subtle);
-            color: var(--#{$prefix}#{$state});
-            border-radius: $border-radius;
-        }
-
-        .form-control {
-            border-left-width: 0;
-            border-right-width: 0;
-        }
-
-    }
-}
-
-.input-borderless {
-    .form-control {
-        border-left-width: 0;
-        border-right-width: 0;
     }
 }
