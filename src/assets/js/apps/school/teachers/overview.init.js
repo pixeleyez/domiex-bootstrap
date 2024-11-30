@@ -95,3 +95,12 @@ document.addEventListener("alpine:init", () => {
         }
     }));
 });
+
+var swiper = new Swiper(".achivementSwiper", {
+    loop: true,
+    spaceBetween: 0,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+});

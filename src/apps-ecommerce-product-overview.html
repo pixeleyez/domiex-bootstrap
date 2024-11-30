@@ -4,7 +4,7 @@
 
     {{> partials/title-meta title="Product Overview" }}
 
-    <link rel="stylesheet" href="assets/libs/nouislider/dist/nouislider.min.css">
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
 
     {{> partials/head-css}}
 
@@ -23,15 +23,6 @@
 
     {{> partials/page-heading title="Product Overview" sub-title="Ecommerce" }}
 
-    <div class="d-flex flex-wrap align-items-center gap-5 mb-5">
-        <div class="flex-grow-1">
-            <h6 class="mb-1 card-title">Add New Products</h6>
-        </div>
-        <div class="d-flex flex-wrap gap-2 flex-shrink-0">
-            <button class="btn btn-light text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i data-lucide="trash-2" class="size-4 me-1"></i> Delete</button>
-            <a class="btn btn-primary"><i data-lucide="plus" class="size-4 me-1"></i> Add Product</a>
-        </div>
-    </div>
     <div class="row">
         <div class="col-8">
             <div class="card">
@@ -53,29 +44,55 @@
                         <p class="mb-0 px-3 border-start border-end">149 Reviews</p>
                         <p class="mb-0 ps-3">4789 Sales</p>
                     </div>
-            
+
                     <div class="d-flex align-items-center gap-2 mt-3 fs-xl fw-semibold">
                         $<span x-text="((basePrice * count) * (1 - discount)).toFixed(2)">749.92</span>
                         <small class="text-muted text-decoration-line-through fw-normal fs-16">$<span x-text="(basePrice * count).toFixed(2)">99.99</span></small>
                         <span class="badge bg-danger-subtle border border-danger-subtle text-danger">50%</span>
                     </div>
-            
+
+
                     <div class="row row-cols-1 row-cols-sm-2">
                         <div class="col">
                             <h6 class="mt-5">Select Colors</h6>
-                            <div class="d-flex gap-2 mt-2">
-                                <a href="#!" class="btn btn-primary p-0 achivment-ring-light rounded-circle size-6"><i class="ri-check-line"></i></a>
+                            <div x-data="{ selected: null }" class="d-flex gap-2 align-items-center mt-2 flex-grow-1">
+                                <a href="#!" @click="selected = 'primary'" :class="{'border-primary': selected === 'primary'}" class="d-flex align-items-center justify-content-center border rounded-circle size-6 border-2 border-white chart-icon-ring-dark bg-primary" style="outline-offset: 0px;">
+                                    <i x-show="selected === 'primary'" class="size-4 text-white" data-lucide="check"></i>
+                                </a>
+                                <a href="#!" @click="selected = 'dark'" :class="{'border-dark': selected === 'dark'}" class="d-flex align-items-center justify-content-center border rounded-circle bg-dark size-6 border-2 border-white text-white chart-icon-ring-dark" style="outline-offset: 0px;">
+                                    <i x-show="selected === 'dark'" class="size-4 text-white" data-lucide="check"></i>
+                                </a>
+                                <a href="#!" @click="selected = 'pink'" :class="{'border-pink': selected === 'pink'}" class="d-flex align-items-center justify-content-center border bg-pink rounded-circle size-6 border-2 border-white text-white chart-icon-ring-dark" style="outline-offset: 0px;">
+                                    <i x-show="selected === 'pink'" class="size-4 text-white" data-lucide="check"></i>
+                                </a>
+                                <a href="#!" @click="selected = 'success'" :class="{'border-success': selected === 'success'}" class="d-flex align-items-center justify-content-center border bg-success rounded-circle size-6 border-2 border-white text-white chart-icon-ring-dark" style="outline-offset: 0px;">
+                                    <i x-show="selected === 'success'" class="size-4 text-white" data-lucide="check"></i>
+                                </a>
+                                <a href="#!" @click="selected = 'danger'" :class="{'border-danger': selected === 'danger'}" class="d-flex align-items-center justify-content-center border bg-danger rounded-circle size-6 border-2 border-white text-white chart-icon-ring-dark" style="outline-offset: 0px;">
+                                    <i x-show="selected === 'danger'" class="size-4 text-white" data-lucide="check"></i>
+                                </a>
                             </div>
                         </div>
                         <div class="col">
                             <h6 class="mt-5">Select Size</h6>
                             <div class="d-flex gap-2 mt-3">
-                                <a href="#!" class="text-muted fw-semibold">S</a>
-                                <a href="#!" class="text-muted fw-semibold">M</a>
-                                <a href="#!" class="text-muted fw-semibold">L</a>
-                                <a href="#!" class="text-muted fw-semibold">XL</a>
-                                <a href="#!" class="text-muted fw-semibold">2XL</a>
+                                <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                    S
+                                </a>
+                                <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                    M
+                                </a>
+                                <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                    L
+                                </a>
+                                <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                    XL
+                                </a>
+                                <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                    2XL
+                                </a>
                             </div>
+
                         </div>
                     </div>
                     <div class="my-5">
@@ -89,102 +106,759 @@
                             </button>
                         </div>
                     </div>
-            
+
                     <div class="d-flex gap-2 mb-5">
                         <button type="button" class="btn btn-danger w-36">Buy Now</button>
                         <button type="button" class="btn btn-light text-dark w-36">Add to Cart</button>
                     </div>
-            
-                    <h6 class="mb-2">Available Offers</h6>
-                    <div x-data="{ showMore: false }" class="mb-5">
-                        <ul class="list-unstyled">
-                            <li><span class="fw-bold">Bank Offer</span> Get ₹50 instant discount on first Domiex UPI txn on order of ₹200 and above <a href="javascript:void(0);" class="text-decoration-none" x-show="!showMore" @click.prevent="showMore = true">Show More</a><a href="javascript:void(0);" class="text-decoration-none" x-show="showMore" @click.prevent="showMore = false">Show Less</a></li>
-                            <li x-show="showMore"><span class="fw-bold">Bank Offer</span> Get ₹100 cashback on order of ₹1000 and above using ICICI cards</li>
-                            <li x-show="showMore"><span class="fw-bold">Bank Offer</span> Get ₹20 off on Domiex Credit Card payments</li>
+                    <div class="mb-5">
+                        <h6 class="mb-2">Available Offers</h6>
+                        <ul class="list-group-circle list-borderless d-flex flex-column gap-2 text-dark mb-3">
+                            <li><span class="fw-semibold">Bank Offer</span> Get ₹50 instant discount on first Domiex UPI txn on order of ₹200 and above <a href="#!" class="link link-danger text-dark">T&C</a></li>
+                            <li><span class="fw-semibold">Bank Offer</span> 5% Cashback on Domiex Axis Bank Card <a href="#!" class="link link-danger text-dark">T&C</a></li>
+                            <li><span class="fw-semibold">Special Price</span> Get extra ₹7000 off (price inclusive of cashback/coupon) <a href="#!" class="link link-danger text-dark">T&C</a></li>
+                            <li><span class="fw-semibold">Freebie </span> Flat ₹1000 off on Cleartrip hotels booking along with 300 coins on booking <a href="#!" class="link link-danger text-dark">T&C</a></li>
                         </ul>
+                        <a href="#!" class="link link-danger text-dark">Show More <i class="ri-arrow-down-s-line"></i></a>
+                    </div>
+                    <h6 class="mb-1">Product Overview</h6>
+                    <p class="text-muted mb-4">We work with monitoring programmes to ensure compliance with our social, environmental and health and safety standards for our products. To assess compliance, we have developed a programme of audits and continuous improvement plans.</p>
+                    <div>
+                        <table class="mb-3 w-100 border-space-y-2">
+                            <tbody>
+                                <tr>
+                                    <th>Neck</th>
+                                    <td>U Neck</td>
+                                </tr>
+                                <tr>
+                                    <th>Sleeve Style</th>
+                                    <td>Sleeveless</td>
+                                </tr>
+                                <tr>
+                                    <th>Sleeve Length</th>
+                                    <td>Sleeveless</td>
+                                </tr>
+                                <tr>
+                                    <th>Fit</th>
+                                    <td>Regular</td>
+                                </tr>
+                                <tr>
+                                    <th>Fabric</th>
+                                    <td>Cotton Blend</td>
+                                </tr>
+                                <tr>
+                                    <th>Type</th>
+                                    <td>Cami Top</td>
+                                </tr>
+                                <tr>
+                                    <th>Pattern</th>
+                                    <td>Self Design</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="#!" class="link link-danger text-dark">Show More <i class="ri-arrow-down-s-line"></i></a>
                     </div>
                 </div>
             </div>
-            
-        </div>
-        <div class="col-4">
             <div class="card">
-                <div class="card-header">
-                    <h6 class="card-title mb-0"><i data-lucide="eye" class="size-4 me-2"></i><span class="align-middle">Product Card Preview</span></h6>
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="mb-0">Ratings & Reviews</h6>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addReviewModal"><i data-lucide="plus" class="size-4 me-2"></i>New Review</button>
                 </div>
-                <div class="card-body bg-light">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="p-5 bg-light-subtle position-relative">
-                                <a href="#!" class="link link-danger text-black rounded-circle d-flex justify-content-center align-items-center position-absolute end-0 size-10 bg-white me-5"><i class="fs-lg ri-heart-line"></i></a>
-                                <div class="swiper simplepaginationSwiper mx-5 swiper-success">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide text-center">
-                                            <img src="assets/images/products/img-06.png" alt="" class="size-64 w-75">
+                <div class="card-body">
+                    <div>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td class="align-top">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="assets/images/avatar/user-1.png" alt="" class="size-16 flex-shrink-0 rounded-2">
+                                            <div>
+                                                <h6 class="mb-1 text-truncate">
+                                                    <a href="#!" class="link link-primary text-black">John Doe</a>
+                                                </h6>
+                                                <p class="mb-1 fs-sm text-truncate">24 May, 2024</p>
+                                                <p class="fs-sm text-muted">Location: <span>New York</span></p>
+                                            </div>
                                         </div>
-                                        <div class="swiper-slide text-center">
-                                            <img src="assets/images/products/img-04.png" alt="" class="size-64 w-75">
+                                    </td>
+                                    <td>
+                                        <div class="max-w-550px">
+                                            <div class="d-flex align-items-center gap-2 mb-3">
+                                                <div class="text-warning d-flex align-items-center">
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-half-fill"></i>
+                                                </div>
+                                                <h6 class="mb-0">(4.5)</h6>
+                                            </div>
+                                            <h6 class="mb-1">Code Quality</h6>
+                                            <p class="text-muted">Was a really good move to add this as part of our project, we had great comments from the business regarding design and user experience. Install with no dependency issues or deprecated packages and was really good overall.</p>
                                         </div>
-                                        <div class="swiper-slide text-center">
-                                            <img src="assets/images/products/img-05.png" alt="" class="size-64 w-75">
+                                    </td>
+                                    <td class="align-top">
+                                        <div class="dropdown float-end">
+                                            <button class="btn btn-light btn-icon text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li data-bs-toggle="modal" data-bs-target="#addReviewModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                    </div>
-                                    <div class="swiper-pagination py-2"></div>
-                                </div>
-                            </div>
-                            <div class="mt-5">
-                                <h5 class="mb-2 lh-base fs-lg">$36.87</h5>
-                                <h6 class="mb-1 lh-base"><a href="#!" class="link link-primary text-black">Bra Lace Crop top</a></h6>
-                                <p class="text-muted">Fashion</p>
-                            
-                                <div class="d-flex flex-wrap align-items-center gap-2">
-                                    <div class="d-flex align-items-center gap-1 mt-3 flex-grow-1">
-                                        <div class="form-check check-primary ">
-                                            <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-top">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="assets/images/avatar/user-2.png" alt="" class="size-16 flex-shrink-0 rounded-2">
+                                            <div>
+                                                <h6 class="mb-1 text-truncate">
+                                                    <a href="#!" class="link link-primary text-black">Jane Smith</a>
+                                                </h6>
+                                                <p class="mb-1 fs-sm text-truncate">22 May, 2024</p>
+                                                <p class="fs-sm text-muted">Location: <span>Los Angeles</span></p>
+                                            </div>
                                         </div>
-                                        <div class="form-check check-pink ">
-                                            <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
+                                    </td>
+                                    <td>
+                                        <div class="max-w-550px">
+                                            <div class="d-flex align-items-center gap-2 mb-3">
+                                                <div class="text-warning d-flex align-items-center">
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                </div>
+                                                <h6 class="mb-0">(5)</h6>
+                                            </div>
+                                            <h6 class="mb-1">Documentation Quality</h6>
+                                            <p class="text-muted">Excellent product! Exceeded all my expectations. Highly recommend to anyone looking for quality.</p>
                                         </div>
-                                        <div class="form-check check-success ">
-                                            <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
+                                    </td>
+                                    <td class="align-top">
+                                        <div class="dropdown float-end">
+                                            <button class="btn btn-light btn-icon text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li data-bs-toggle="modal" data-bs-target="#addReviewModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <div class="form-check check-danger ">
-                                            <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-top">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="assets/images/avatar/user-3.png" alt="" class="size-16 flex-shrink-0 rounded-2">
+                                            <div>
+                                                <h6 class="mb-1 text-truncate">
+                                                    <a href="#!" class="link link-primary text-black">Michael Brown</a>
+                                                </h6>
+                                                <p class="mb-1 fs-sm text-truncate">20 May, 2024</p>
+                                                <p class="fs-sm text-muted">Location: <span>Chicago</span></p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    
-                            
-                                    <div class="d-flex align-items-center gap-2 mt-3 font-weight-medium">
-                                        <a href="#!" class="text-muted fw-semibold active text-success" role="button">S</a>
-                                        <a href="#!" class="text-muted fw-semibold" role="button">M</a>
-                                        <a href="#!" class="text-muted fw-semibold" role="button">L</a>
-                                        <a href="#!" class="text-muted fw-semibold" role="button">XL</a>
-                                        <a href="#!" class="text-muted fw-semibold" role="button">2XL</a>
-                                    </div>
-                                </div>
-                            
-                                <div class="d-flex gap-2 mt-4">
-                                    <a class="w-100 btn btn-primary" href="/apps-ecommerce-shop-cart">Buy Now</a>
-                                    <a href="#!" class="btn btn-light text-dark btn-icon">
-                                       <i data-lucide="shopping-basket" class="size-5"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            
+                                    </td>
+                                    <td>
+                                        <div class="max-w-550px">
+                                            <div class="d-flex align-items-center gap-2 mb-3">
+                                                <div class="text-warning d-flex align-items-center">
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-half-fill"></i>
+                                                    <i class="ri-star-line"></i>
+                                                </div>
+                                                <h6 class="mb-0">(3.5)</h6>
+                                            </div>
+                                            <h6 class="mb-1">Design Quality</h6>
+                                            <p class="text-muted">The product is decent but has some room for improvement. The installation was smooth, but some features were a bit underwhelming.</p>
+                                        </div>
+                                    </td>
+                                    <td class="align-top">
+                                        <div class="dropdown float-end">
+                                            <button class="btn btn-light btn-icon text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li data-bs-toggle="modal" data-bs-target="#addReviewModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-top">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="assets/images/avatar/user-4.png" alt="" class="size-16 flex-shrink-0 rounded-2">
+                                            <div>
+                                                <h6 class="mb-1 text-truncate">
+                                                    <a href="#!" class="link link-primary text-black">Emily Davis</a>
+                                                </h6>
+                                                <p class="mb-1 fs-sm text-truncate">18 May, 2024</p>
+                                                <p class="fs-sm text-muted">Location: <span>Houston</span></p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="max-w-550px">
+                                            <div class="d-flex align-items-center gap-2 mb-3">
+                                                <div class="text-warning d-flex align-items-center">
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-line"></i>
+                                                    <i class="ri-star-line"></i>
+                                                    <i class="ri-star-line"></i>
+                                                </div>
+                                                <h6 class="mb-0">(2)</h6>
+                                            </div>
+                                            <h6 class="mb-1">Flexibility</h6>
+                                            <p class="text-muted">Not very satisfied with the product. It did not meet my expectations and had several issues during installation.</p>
+                                        </div>
+                                    </td>
+                                    <td class="align-top">
+                                        <div class="dropdown float-end">
+                                            <button class="btn btn-light btn-icon text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li data-bs-toggle="modal" data-bs-target="#addReviewModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-top">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="assets/images/avatar/user-5.png" alt="" class="size-16 flex-shrink-0 rounded-2">
+                                            <div>
+                                                <h6 class="mb-1 text-truncate">
+                                                    <a href="#!" class="link link-primary text-black">Emily Davis</a>
+                                                </h6>
+                                                <p class="mb-1 fs-sm text-truncate">18 May, 2024</p>
+                                                <p class="fs-sm text-muted">Location: <span>Phoenix</span></p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="max-w-550px">
+                                            <div class="d-flex align-items-center gap-2 mb-3">
+                                                <div class="text-warning d-flex align-items-center">
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-line"></i>
+                                                </div>
+                                                <h6 class="mb-0">(4)</h6>
+                                            </div>
+                                            <h6 class="mb-1">Code Quality</h6>
+                                            <p class="text-muted">Good product overall, but there are a few bugs that need to be addressed. Customer support was helpful in resolving some issues.</p>
+                                        </div>
+                                    </td>
+                                    <td class="align-top">
+                                        <div class="dropdown float-end">
+                                            <button class="btn btn-light btn-icon text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li data-bs-toggle="modal" data-bs-target="#addReviewModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-top">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="assets/images/avatar/user-6.png" alt="" class="size-16 flex-shrink-0 rounded-2">
+                                            <div>
+                                                <h6 class="mb-1 text-truncate">
+                                                    <a href="#!" class="link link-primary text-black">Sarah Lee</a>
+                                                </h6>
+                                                <p class="mb-1 fs-sm text-truncate">12 May, 2024</p>
+                                                <p class="fs-sm text-muted">Location: <span>San Francisco</span></p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="max-w-550px">
+                                            <div class="d-flex align-items-center gap-2 mb-3">
+                                                <div class="text-warning d-flex align-items-center">
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-half-fill"></i>
+                                                </div>
+                                                <h6 class="mb-0">(4)</h6>
+                                            </div>
+                                            <h6 class="mb-1">Customizability</h6>
+                                            <p class="text-muted">Great product with excellent features. The user interface is very intuitive and easy to navigate.</p>
+                                        </div>
+                                    </td>
+                                    <td class="align-top">
+                                        <div class="dropdown float-end">
+                                            <button class="btn btn-light btn-icon text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li data-bs-toggle="modal" data-bs-target="#addReviewModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-top">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="assets/images/avatar/user-7.png" alt="" class="size-16 flex-shrink-0 rounded-2">
+                                            <div>
+                                                <h6 class="mb-1 text-truncate">
+                                                    <a href="#!" class="link link-primary text-black">David Johnson</a>
+                                                </h6>
+                                                <p class="mb-1 fs-sm text-truncate">10 May, 2024</p>
+                                                <p class="fs-sm text-muted">Location: <span>Miami</span></p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="max-w-550px">
+                                            <div class="d-flex align-items-center gap-2 mb-3">
+                                                <div class="text-warning d-flex align-items-center">
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-half-fill"></i>
+                                                    <i class="ri-star-line"></i>
+                                                </div>
+                                                <h6 class="mb-0">(3.5)</h6>
+                                            </div>
+                                            <h6 class="mb-1">Code Quality</h6>
+                                            <p class="text-muted">The product is average. It works as expected but lacks some advanced features that competitors offer.</p>
+                                        </div>
+                                    </td>
+                                    <td class="align-top">
+                                        <div class="dropdown float-end">
+                                            <button class="btn btn-light btn-icon text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li data-bs-toggle="modal" data-bs-target="#addReviewModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-top">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="assets/images/avatar/user-8.png" alt="" class="size-16 flex-shrink-0 rounded-2">
+                                            <div>
+                                                <h6 class="mb-1 text-truncate">
+                                                    <a href="#!" class="link link-primary text-black">Nancy Adams</a>
+                                                </h6>
+                                                <p class="mb-1 fs-sm text-truncate">8 May, 2024</p>
+                                                <p class="fs-sm text-muted">Location: <span>Seattle</span></p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="max-w-550px">
+                                            <div class="d-flex align-items-center gap-2 mb-3">
+                                                <div class="text-warning d-flex align-items-center">
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-fill"></i>
+                                                    <i class="ri-star-half-fill"></i>
+                                                </div>
+                                                <h6 class="mb-0">(4.5)</h6>
+                                            </div>
+                                            <h6 class="mb-1">Design Quality</h6>
+                                            <p class="text-muted">Had some issues with the product initially, but customer support was able to help resolve them. Still, it's not as seamless as I hoped.</p>
+                                        </div>
+                                    </td>
+                                    <td class="align-top">
+                                        <div class="dropdown float-end">
+                                            <button class="btn btn-light btn-icon text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li data-bs-toggle="modal" data-bs-target="#addReviewModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center my-5">
+                        <div>
+                            <p class="text-muted">Showing <b class="me-1">1-10</b>of<b class="ms-1">15</b> Results</p>
+                        </div>
+                        <div class="justify-content-end d-flex">
+                            <nav aria-label="...">
+                                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                                    <li class="page-item pagination-primary disabled">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <i data-lucide="chevron-left" class="size-5"></i>
+                                            <span>Prev</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                    <li class="page-item" aria-current="page">
+                                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                                    </li>
+                                    <li class="page-item" aria-current="page">
+                                        <a class="page-link rounded-2 page-number" href="#">3</a>
+                                    </li>
+                                    <li class="page-item" aria-current="page">
+                                        <a class="page-link rounded-2 page-number" href="#">4</a>
+                                    </li>
+                                    <li class="page-item pagination-primary ">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <span>Next</span>
+                                            <i data-lucide="chevron-right" class="size-5"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="bg-light-subtle">
+                        <div class="swiper previewImages">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/images/products/img-25.png" alt="" class="w-417px">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/images/products/img-26.png" alt="" class="w-417px">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/images/products/img-27.png" alt="" class="w-417px">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/images/products/img-28.png" alt="" class="w-417px">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/images/products/img-29.png" alt="" class="w-417px">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/images/products/img-30.png" alt="" class="w-417px">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="swiper-button-next fs-4xl size-10 rounded-circle bg-white"></div>
+                                <div class="swiper-button-prev fs-4xl size-10 rounded-circle bg-white"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body d-flex align-items-center gap-3">
+                    <div class="size-14 d-flex justify-content-center align-items-center border flex-shrink-0 rounded-pill">
+                        <i data-lucide="store" class="icon-info"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <a href="#!" class="lh-base mb-1">
+                            <span class="text-black fw-semibold">PixelEyez Infotech LLP</span>
+                            <i data-lucide="badge-check" class="size-4 ms-1 icon-info"></i>
+                        </a>
+                        <p class="fw-medium">
+                            <i class="ri-star-half-line text-warning"></i>4.8
+                        </p>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <button class="btn btn-secondary">View Store</button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center gap-3 mb-5">
+                <h6 class="mb-0 flex-grow-1">Recent Product</h6>
+                <a href="apps-ecommerce-products-list.html" class="link link-primary text-dark">View All</a>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="p-5 bg-light-subtle position-relative">
+                        <a href="#!" class="link link-danger text-black rounded-circle d-flex justify-content-center align-items-center position-absolute end-0 size-10 bg-white me-5"><i class="fs-lg ri-heart-line"></i></a>
+                        <div class="swiper productSlider mx-5 swiper-success">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide text-center">
+                                    <img src="assets/images/products/img-06.png" alt="" class="size-64 w-75">
+                                </div>
+                                <div class="swiper-slide text-center">
+                                    <img src="assets/images/products/img-04.png" alt="" class="size-64 w-75">
+                                </div>
+                                <div class="swiper-slide text-center">
+                                    <img src="assets/images/products/img-05.png" alt="" class="size-64 w-75">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination py-2"></div>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <h5 class="mb-2 lh-base fs-lg">$36.87</h5>
+                        <h6 class="mb-1 lh-base"><a href="#!" class="link link-primary text-black">Bra Lace Crop top</a></h6>
+                        <p class="text-muted">Fashion</p>
+
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                            <div class="d-flex align-items-center gap-1 mt-3 flex-grow-1">
+                                <div class="form-check check-primary ">
+                                    <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
+                                </div>
+                                <div class="form-check check-pink ">
+                                    <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
+                                </div>
+                                <div class="form-check check-success ">
+                                    <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
+                                </div>
+                                <div class="form-check check-danger ">
+                                    <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
+                                </div>
+                            </div>
+
+
+                            <div class="d-flex align-items-center gap-2 mt-3 font-weight-medium">
+                                <a href="#!" class="text-muted fw-semibold active text-success" role="button">S</a>
+                                <a href="#!" class="text-muted fw-semibold" role="button">M</a>
+                                <a href="#!" class="text-muted fw-semibold" role="button">L</a>
+                                <a href="#!" class="text-muted fw-semibold" role="button">XL</a>
+                                <a href="#!" class="text-muted fw-semibold" role="button">2XL</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-2 mt-4">
+                            <a class="w-100 btn btn-primary" href="/apps-ecommerce-shop-cart">Buy Now</a>
+                            <a href="#!" class="btn btn-light text-dark btn-icon">
+                                <i data-lucide="shopping-basket" class="size-5"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addReviewModal" tabindex="-1" aria-labelledby="addReviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="p-2 modal-content">
+                <div class="modal-header">
+                    <h6 class="mb-0">Add Teacher</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="p-0 modal-body">
+                    <div class="p-4">
+                        <form action="#!">
+                            <div x-data="{
+                                    rating: '',locationInput: '', userNameInput: '', createDateInput:'', titleInput: '',  writeReviewInput: '',
+                                    errors: {},
+                                
+                                    validate() {
+                                        this.errors = {};
+                                        if (!this.rating) this.errors.rating = 'Star rating must be between 1 and 5.';
+                                        if (!this.userNameInput) this.errors.userNameInput = 'User name is required.';
+                                        if (!this.createDateInput) this.errors.createDateInput = 'Date is required.';
+                                        if (!this.locationInput) this.errors.locationInput = 'Location is required.';
+                                        if (!this.titleInput) this.errors.titleInput = 'Title is required.';
+                                        if (!this.writeReviewInput) this.errors.writeReviewInput = 'Content is required.';
+                                        return Object.keys(this.errors).length === 0;
+                                    },
+                                
+                                    clearError(field) { this.errors[field] = '' }
+                                }" class="row g-4">
+                                <div class="col-12">
+                                    <h6 class="text-center mb-5">Your Rating?</h6>
+                                    <div x-data="{ rating: 0, hovering: 0 }" class="d-flex justify-content-center gap-3">
+                                        <div class="d-flex justify-content-center w-10 h-2 rounded-pill cursor-pointer" :class="rating >= 1 ? 'bg-warning' : 'bg-light'" @click="rating = 1" @mouseover="hovering = 1" @mouseleave="hovering = 0">
+                                            <p x-show="rating === 1" class="mt-4 fs-2xl">😒</p>
+                                        </div>
+                                        <div class="d-flex justify-content-center w-10 h-2 rounded-pill cursor-pointer" :class="rating >= 2 ? 'bg-warning' : 'bg-light'" @click="rating = 2" @mouseover="hovering = 2" @mouseleave="hovering = 0">
+                                            <p x-show="rating === 2" class="mt-4 fs-2xl">🤨</p>
+                                        </div>
+                                        <div class="d-flex justify-content-center w-10 h-2 rounded-pill cursor-pointer" :class="rating >= 3 ? 'bg-warning' : 'bg-light'" @click="rating = 3" @mouseover="hovering = 3" @mouseleave="hovering = 0">
+                                            <p x-show="rating === 3" class="mt-4 fs-2xl">😊</p>
+                                        </div>
+                                        <div class="d-flex justify-content-center w-10 h-2 rounded-pill cursor-pointer" :class="rating >= 4 ? 'bg-warning' : 'bg-light'" @click="rating = 4" @mouseover="hovering = 4" @mouseleave="hovering = 0">
+                                            <p x-show="rating === 4" class="mt-4 fs-2xl">😚</p>
+                                        </div>
+                                        <div class="d-flex justify-content-center w-10 h-2 rounded-pill cursor-pointer" :class="rating >= 5 ? 'bg-warning' : 'bg-light'" @click="rating = 5" @mouseover="hovering = 5" @mouseleave="hovering = 0">
+                                            <p x-show="rating === 5" class="mt-4 fs-2xl">🥰</p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-10">
+                                        <label class="form-label fw-medium">Rating Input:</label>
+                                        <input type="number" x-model="rating" value="0" class="form-control" @input="clearError('rating')" />
+                                        <p x-show="errors.rating" class="text-sm text-danger" x-text="errors.rating"></p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">User Name</label>
+                                    <input type="email" x-model="userNameInput" placeholder="name@pixeleyez.com" class="form-control" @input="clearError('userNameInput')" />
+                                    <p x-show="errors.userNameInput" class="text-sm text-danger" x-text="errors.userNameInput"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Create Date</label>
+                                    <input data-provider="flatpickr" data-date-format="d M, Y" type="text" placeholder="DD-MM-YYYY" class="form-control form-input flatpickr-input active" x-model="createDateInput" readonly="readonly" @input="clearError('createDateInput')">
+                                    <p x-show="errors.createDateInput" class="text-sm text-danger" x-text="errors.createDateInput"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Location</label>
+                                    <input type="email" x-model="locationInput" placeholder="Location" class="form-control" @input="clearError('locationInput')" />
+                                    <p x-show="errors.locationInput" class="text-sm text-danger" x-text="errors.locationInput"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Title</label>
+                                    <div id="titleInput" placeholder="Select Class" @input="clearError('titleInput')"></div>
+                                    <input type="text" x-model="titleInput" placeholder="Review title" class="form-control" @input="clearError('titleInput')" />
+                                    <p x-show="errors.titleInput" class="text-sm text-danger" x-text="errors.titleInput"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Write your Content</label>
+                                    <input type="text" x-model="writeReviewInput" placeholder="Write your discription" class="form-control" @input="clearError('writeReviewInput')" />
+                                    <p x-show="errors.writeReviewInput" class="text-sm text-danger" x-text="errors.writeReviewInput"></p>
+                                </div>
+
+                                <div class="d-flex justify-content-end gap-2 mt-4">
+                                    <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary" @click="if (validate()) {}">Add review</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xs">
+            <div class="modal-content p-7 text-center">
+                <div class="size-14 bg-danger-subtle rounded-circle d-flex justify-content-center align-items-center mx-auto mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" class="lucide lucide-trash-2 size-6 text-danger">
+                        <path d="M3 6h18"></path>
+                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                        <line x1="10" x2="10" y1="11" y2="17"></line>
+                        <line x1="14" x2="14" y1="11" y2="17"></line>
+                    </svg>
+                </div>
+                <h5 class="mb-4 lh-base">Are you sure you want to delete this Review ?</h5>
+                <div class="d-flex justify-content-center align-items-center gap-2">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+                    <button class="btn btn-link link-primary text-dark" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     {{> partials/footer}}
 </div>
 
-<script src="assets/libs/nouislider/dist/nouislider.min.js"></script>
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
 
 {{> partials/vendor-scripts}}
 
-<script src="assets/js/apps/ecommerce/product-create.init.js"></script>
+<script src="assets/js/apps/ecommerce/product-overview.init.js"></script>
 
 <script type="module" src="assets/js/main.js"></script>
 

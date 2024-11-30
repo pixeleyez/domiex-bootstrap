@@ -4,7 +4,6 @@
 
     {{> partials/title-meta title="Input Spin" }}
 
-    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
 
     {{> partials/head-css}}
 
@@ -31,56 +30,56 @@
                 </div>
                 <div class="card-body">
                     <div class="d-flex flex-wrap gap-3">
-                        <div x-data="{ count: 1 }" class="input-group-spin input-spin-primary">
+                        <div x-data="{ count: 1 }" class="input-spin-group input-spin-primary">
                             <button @click="count--" class="input-spin-minus" type="button">
                                 <i data-lucide="minus" class="size-4"></i>
                             </button>
-                            <input type="text" x-model="count" class="form-control" readonly>
+                            <input type="text" x-model="count" class="input-spin form-control" readonly>
+                            <button @click="count++" class="input-spin-plus input-spin" type="button">
+                                <i data-lucide="plus" class="size-4"></i>
+                            </button>
+                        </div>
+                        <div x-data="{ count: 1 }" class="input-spin-group input-spin-secondary">
+                            <button @click="count--" class="input-spin-minus" type="button">
+                                <i data-lucide="minus" class="size-4"></i>
+                            </button>
+                            <input type="text" x-model="count" class="input-spin form-control" readonly>
                             <button @click="count++" class="input-spin-plus" type="button">
                                 <i data-lucide="plus" class="size-4"></i>
                             </button>
                         </div>
-                        <div x-data="{ count: 1 }" class="input-group-spin input-spin-secondary">
+                        <div x-data="{ count: 1 }" class="input-spin-group input-spin-success">
                             <button @click="count--" class="input-spin-minus" type="button">
                                 <i data-lucide="minus" class="size-4"></i>
                             </button>
-                            <input type="text" x-model="count" class="form-control" readonly>
+                            <input type="text" x-model="count" class="input-spin form-control" readonly>
                             <button @click="count++" class="input-spin-plus" type="button">
                                 <i data-lucide="plus" class="size-4"></i>
                             </button>
                         </div>
-                        <div x-data="{ count: 1 }" class="input-group-spin input-spin-success">
+                        <div x-data="{ count: 1 }" class="input-spin-group input-spin-danger">
                             <button @click="count--" class="input-spin-minus" type="button">
                                 <i data-lucide="minus" class="size-4"></i>
                             </button>
-                            <input type="text" x-model="count" class="form-control" readonly>
+                            <input type="text" x-model="count" class="input-spin form-control" readonly>
                             <button @click="count++" class="input-spin-plus" type="button">
                                 <i data-lucide="plus" class="size-4"></i>
                             </button>
                         </div>
-                        <div x-data="{ count: 1 }" class="input-group-spin input-spin-danger">
+                        <div x-data="{ count: 1 }" class="input-spin-group input-spin-warning">
                             <button @click="count--" class="input-spin-minus" type="button">
                                 <i data-lucide="minus" class="size-4"></i>
                             </button>
-                            <input type="text" x-model="count" class="form-control" readonly>
+                            <input type="text" x-model="count" class="input-spin form-control" readonly>
                             <button @click="count++" class="input-spin-plus" type="button">
                                 <i data-lucide="plus" class="size-4"></i>
                             </button>
                         </div>
-                        <div x-data="{ count: 1 }" class="input-group-spin input-spin-warning">
+                        <div x-data="{ count: 1 }" class="input-spin-group input-spin-info">
                             <button @click="count--" class="input-spin-minus" type="button">
                                 <i data-lucide="minus" class="size-4"></i>
                             </button>
-                            <input type="text" x-model="count" class="form-control" readonly>
-                            <button @click="count++" class="input-spin-plus" type="button">
-                                <i data-lucide="plus" class="size-4"></i>
-                            </button>
-                        </div>
-                        <div x-data="{ count: 1 }" class="input-group-spin input-spin-info">
-                            <button @click="count--" class="input-spin-minus" type="button">
-                                <i data-lucide="minus" class="size-4"></i>
-                            </button>
-                            <input type="text" x-model="count" class="form-control" readonly>
+                            <input type="text" x-model="count" class="input-spin form-control" readonly>
                             <button @click="count++" class="input-spin-plus" type="button">
                                 <i data-lucide="plus" class="size-4"></i>
                             </button>
@@ -98,56 +97,56 @@
                 </div>
                 <div class="card-body">
                     <div class="d-flex flex-wrap gap-3">
-                        <div x-data="{ count: 1 }" class="input-group-spin input-solid-primary">
+                        <div x-data="{ count: 1 }" class="input-spin-group input-solid-primary">
                             <button @click="count--" class="input-spin-minus" type="button">
                                 <i data-lucide="minus" class="size-4"></i>
                             </button>
-                            <input type="text" x-model="count" class="form-control" readonly>
+                            <input type="text" x-model="count" class="input-spin form-control" readonly>
                             <button @click="count++" class="input-spin-plus" type="button">
                                 <i data-lucide="plus" class="size-4"></i>
                             </button>
                         </div>
-                        <div x-data="{ count: 1 }" class="input-group-spin input-solid-secondary">
+                        <div x-data="{ count: 1 }" class="input-spin-group input-solid-secondary">
                             <button @click="count--" class="input-spin-minus" type="button">
                                 <i data-lucide="minus" class="size-4"></i>
                             </button>
-                            <input type="text" x-model="count" class="form-control" readonly>
+                            <input type="text" x-model="count" class="input-spin form-control" readonly>
                             <button @click="count++" class="input-spin-plus" type="button">
                                 <i data-lucide="plus" class="size-4"></i>
                             </button>
                         </div>
-                        <div x-data="{ count: 1 }" class="input-group-spin input-solid-success">
+                        <div x-data="{ count: 1 }" class="input-spin-group input-solid-success">
                             <button @click="count--" class="input-spin-minus" type="button">
                                 <i data-lucide="minus" class="size-4"></i>
                             </button>
-                            <input type="text" x-model="count" class="form-control" readonly>
+                            <input type="text" x-model="count" class="input-spin form-control" readonly>
                             <button @click="count++" class="input-spin-plus" type="button">
                                 <i data-lucide="plus" class="size-4"></i>
                             </button>
                         </div>
-                        <div x-data="{ count: 23 }" class="input-group-spin input-solid-orange">
+                        <div x-data="{ count: 23 }" class="input-spin-group input-solid-orange">
                             <button @click="count--" class="input-spin-minus" type="button">
                                 <i data-lucide="minus" class="size-4"></i>
                             </button>
-                            <input type="text" x-model="count" class="form-control" readonly>
+                            <input type="text" x-model="count" class="input-spin form-control" readonly>
                             <button @click="count++" class="input-spin-plus" type="button">
                                 <i data-lucide="plus" class="size-4"></i>
                             </button>
                         </div>
-                        <div x-data="{ count: 10 }" class="input-group-spin input-solid-warning">
+                        <div x-data="{ count: 10 }" class="input-spin-group input-solid-warning">
                             <button @click="count--" class="input-spin-minus" type="button">
                                 <i data-lucide="minus" class="size-4"></i>
                             </button>
-                            <input type="text" x-model="count" class="form-control" readonly>
+                            <input type="text" x-model="count" class="input-spin form-control" readonly>
                             <button @click="count++" class="input-spin-plus" type="button">
                                 <i data-lucide="plus" class="size-4"></i>
                             </button>
                         </div>
-                        <div x-data="{ count: 5 }" class="input-group-spin input-solid-info">
+                        <div x-data="{ count: 5 }" class="input-spin-group input-solid-info">
                             <button @click="count--" class="input-spin-minus" type="button">
                                 <i data-lucide="minus" class="size-4"></i>
                             </button>
-                            <input type="text" x-model="count" class="form-control" readonly>
+                            <input type="text" x-model="count" class="input-spin form-control" readonly>
                             <button @click="count++" class="input-spin-plus" type="button">
                                 <i data-lucide="plus" class="size-4"></i>
                             </button>
@@ -165,32 +164,89 @@
                 </div>
                 <div class="card-body">
                     <div class="d-flex flex-wrap gap-3">
-                        <div x-data="{ count: 1 }" class="input-group-spin input-borderless p-1">
-                            <button @click="count--" class="input-spin-minus" type="button">
+                        <div x-data="{ count: 1 }" class="input-spin-group input-borderless p-1 border rounded">
+                            <button @click="count--" class="btn px-2 border-0 size-8 d-flex justify-content-center align-items-center" type="button">
                                 <i data-lucide="minus" class="size-4"></i>
                             </button>
-                            <input type="text" x-model="count" class="form-control" readonly>
-                            <button @click="count++" class="input-spin-plus" type="button">
+                            <input type="text" x-model="count" class="input-spin form-control text-center border-0 h-8" readonly>
+                            <button @click="count++" class="btn px-2 border-0 size-8 d-flex justify-content-center align-items-center" type="button">
                                 <i data-lucide="plus" class="size-4"></i>
                             </button>
                         </div>
-                        <div x-data="{ count: 1 }" class="input-group-spin input-Boxed-primary">
-                            <button @click="count--" class="input-spin-minus" type="button">
+                        <div x-data="{ count: 1 }" class="input-spin-group input-borderless p-1 border rounded">
+                            <button @click="count--" class="btn btn-sub-primary px-2 border-0 size-8 d-flex justify-content-center align-items-center" type="button">
                                 <i data-lucide="minus" class="size-4"></i>
                             </button>
-                            <input type="text" x-model="count" class="form-control" readonly>
-                            <button @click="count++" class="input-spin-plus" type="button">
+                            <input type="text" x-model="count" class="input-spin form-control text-center border-0 h-8" readonly>
+                            <button @click="count++" class="btn btn-sub-primary px-2 border-0 size-8 d-flex justify-content-center align-items-center" type="button">
                                 <i data-lucide="plus" class="size-4"></i>
                             </button>
                         </div>
-                        <div x-data="{ count: 1 }" class="input-group-spin input-Boxed-secondary">
-                            <button @click="count--" class="input-spin-minus" type="button">
+                        <div x-data="{ count: 1 }" class="input-spin-group input-borderless p-1 border rounded">
+                            <button @click="count--" class="btn btn-sub-secondary px-2 border-0 size-8 d-flex justify-content-center align-items-center" type="button">
                                 <i data-lucide="minus" class="size-4"></i>
                             </button>
-                            <input type="text" x-model="count" class="form-control" readonly>
-                            <button @click="count++" class="input-spin-plus" type="button">
+                            <input type="text" x-model="count" class="input-spin form-control text-center border-0 h-8" readonly>
+                            <button @click="count++" class="btn btn-sub-secondary px-2 border-0 size-8 d-flex justify-content-center align-items-center" type="button">
                                 <i data-lucide="plus" class="size-4"></i>
                             </button>
+                        </div>
+                        <div x-data="{ count: 1 }" class="input-spin-group input-borderless p-1 border rounded">
+                            <button @click="count--" class="btn btn-success px-2 border-0 size-8 d-flex justify-content-center align-items-center" type="button">
+                                <i data-lucide="minus" class="size-4"></i>
+                            </button>
+                            <input type="text" x-model="count" class="input-spin form-control text-center border-0 h-8" readonly>
+                            <button @click="count++" class="btn btn-success px-2 border-0 size-8 d-flex justify-content-center align-items-center" type="button">
+                                <i data-lucide="plus" class="size-4"></i>
+                            </button>
+                        </div>
+                        <div x-data="{ count: 1 }" class="input-spin-group input-borderless p-1 border rounded">
+                            <button @click="count--" class="btn btn-pink px-2 border-0 size-8 d-flex justify-content-center align-items-center" type="button">
+                                <i data-lucide="minus" class="size-4"></i>
+                            </button>
+                            <input type="text" x-model="count" class="input-spin form-control text-center border-0 h-8" readonly>
+                            <button @click="count++" class="btn btn-pink px-2 border-0 size-8 d-flex justify-content-center align-items-center" type="button">
+                                <i data-lucide="plus" class="size-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skin Example -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0 card-title d-flex">Skin Example</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-3">
+                        <div x-data="{ count: 10 }" class="d-flex align-items-center">
+                            <div class="d-flex align-items-center w-20 p-1 border rounded">
+                                <div class="d-flex flex-column">
+                                    <button @click="count++" class="btn btn-link link-primary border-0 text-dark p-0 d-flex align-items-center justify-content-center">
+                                      <i data-lucide="chevron-up" class="size-4"></i>
+                                    </button>
+                                    <button @click="count--" class="btn btn-link link-primary border-0 text-dark p-0 d-flex align-items-center justify-content-center">
+                                        <i data-lucide="chevron-down" class="size-4"></i>
+                                    </button>
+                                </div>
+                                <input type="text" x-model="count" class="form-control h-8 p-0 text-center border-0" readonly>
+                            </div>
+                        </div>
+                        <div x-data="{ count: 20 }" class="d-flex align-items-center">
+                            <div class="d-flex align-items-center w-20 p-1 border rounded">
+                                <input type="text" x-model="count" class="form-control h-8 p-0 text-center border-0" readonly>
+                                <div class="d-flex flex-column">
+                                    <button @click="count++" class="btn btn-link link-primary border-0 text-dark p-0 d-flex align-items-center justify-content-center">
+                                      <i data-lucide="chevron-up" class="size-4"></i>
+                                    </button>
+                                    <button @click="count--" class="btn btn-link link-primary border-0 text-dark p-0 d-flex align-items-center justify-content-center">
+                                        <i data-lucide="chevron-down" class="size-4"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -202,10 +258,8 @@
 </div>
 </div>
 
-<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
 
 {{> partials/vendor-scripts}}
-
 
 <script type="module" src="assets/js/main.js"></script>
 

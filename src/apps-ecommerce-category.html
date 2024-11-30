@@ -1,0 +1,613 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Category List" }}
+
+    <link rel="stylesheet" href="assets/libs/nouislider/dist/nouislider.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Category List" sub-title="Ecommerce" }}
+
+    <div class="row">
+        <div class="col-8">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-4">
+                            <h6 class="card-title mb-0">Category List</h6>
+                        </div>
+                        <div class="col-4">
+                            <div class="position-relative">
+                                <input type="text" class="form-control ps-9 pe-4" placeholder="Search for ..." @input="filtercontacts" x-model="searchTerm">
+                                <div class="position-absolute top-50 translate-middle-y d-flex align-items-center">
+                                    <i data-lucide="search" class="size-4 ms-3 icon-dark"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="table-box">
+                        <table class="table align-middle">
+                            <thead>
+                                <tr class="table-light border-bottom">
+                                    <th class="fw-medium text-dark">
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </th>
+                                    <th class="fw-medium text-dark">Category ID</th>
+                                    <th class="fw-medium text-dark">Category Name</th>
+                                    <th class="fw-medium text-dark">Products</th>
+                                    <th class="fw-medium text-dark">status</th>
+                                    <th class="fw-medium text-dark">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEC-19115</a></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="d-flex align-items-center justify-content-center size-9 border rounded p-1">
+                                                <img src="assets/images/products/img-01.png" alt="" class="img-fluid rounded-pill">
+                                            </div>
+                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Fashion</a></h6>
+                                        </div>
+                                    </td>
+                                    <td>154</td>
+                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Active</span></td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-eye-line"></i>
+                                                        <span>Overview</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEC-19116</a></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="d-flex align-items-center justify-content-center size-9 border rounded p-1">
+                                                <img src="assets/images/products/img-24.png" alt="" class="img-fluid rounded-pill">
+                                            </div>
+                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Electronics</a></h6>
+                                        </div>
+                                    </td>
+                                    <td>187</td>
+                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Active</span></td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-eye-line"></i>
+                                                        <span>Overview</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEC-19117</a></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="d-flex align-items-center justify-content-center size-9 border rounded p-1">
+                                                <img src="assets/images/products/img-03.png" alt="" class="img-fluid rounded-pill">
+                                            </div>
+                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Footwear</a></h6>
+                                        </div>
+                                    </td>
+                                    <td>487</td>
+                                    <td><span class="badge bg-light text-dark border border-dark-subtle">Inactive</span></td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-eye-line"></i>
+                                                        <span>Overview</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEC-19118</a></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="d-flex align-items-center justify-content-center size-9 border rounded p-1">
+                                                <img src="assets/images/products/img-23.png" alt="" class="img-fluid rounded-pill">
+                                            </div>
+                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Furniture</a></h6>
+                                        </div>
+                                    </td>
+                                    <td>177</td>
+                                    <td><span class="badge bg-light text-dark border border-dark-subtle">Inactive</span></td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-eye-line"></i>
+                                                        <span>Overview</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEC-19119</a></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="d-flex align-items-center justify-content-center size-9 border rounded p-1">
+                                                <img src="assets/images/products/img-20.png" alt="" class="img-fluid rounded-pill">
+                                            </div>
+                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Groceries</a></h6>
+                                        </div>
+                                    </td>
+                                    <td>183</td>
+                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Active</span></td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-eye-line"></i>
+                                                        <span>Overview</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEC-19120</a></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="d-flex align-items-center justify-content-center size-9 border rounded p-1">
+                                                <img src="assets/images/products/img-21.png" alt="" class="img-fluid rounded-pill">
+                                            </div>
+                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Books</a></h6>
+                                        </div>
+                                    </td>
+                                    <td>326</td>
+                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Active</span></td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-eye-line"></i>
+                                                        <span>Overview</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEC-19121</a></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="d-flex align-items-center justify-content-center size-9 border rounded p-1">
+                                                <img src="assets/images/products/img-22.png" alt="" class="img-fluid rounded-pill">
+                                            </div>
+                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Food and beverage</a></h6>
+                                        </div>
+                                    </td>
+                                    <td>147</td>
+                                    <td><span class="badge bg-light text-dark border border-dark-subtle">Inactive</span></td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-eye-line"></i>
+                                                        <span>Overview</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEC-19122</a></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="d-flex align-items-center justify-content-center size-9 border rounded p-1">
+                                                <img src="assets/images/products/img-19.png" alt="" class="img-fluid rounded-pill">
+                                            </div>
+                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Jewellery</a></h6>
+                                        </div>
+                                    </td>
+                                    <td>98</td>
+                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Active</span></td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-eye-line"></i>
+                                                        <span>Overview</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEC-19123</a></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="d-flex align-items-center justify-content-center size-9 border rounded p-1">
+                                                <img src="assets/images/products/img-18.png" alt="" class="img-fluid rounded-pill">
+                                            </div>
+                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Sports</a></h6>
+                                        </div>
+                                    </td>
+                                    <td>246</td>
+                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Active</span></td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-eye-line"></i>
+                                                        <span>Overview</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEC-19124</a></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="d-flex align-items-center justify-content-center size-9 border rounded p-1">
+                                                <img src="assets/images/products/img-17.png" alt="" class="img-fluid rounded-pill">
+                                            </div>
+                                            <h6 class="mb-0"><a href="apps-school-students-overview.html" class="text-black">Accessories</a></h6>
+                                        </div>
+                                    </td>
+                                    <td>213 </td>
+                                    <td><span class="badge bg-light text-dark border border-dark-subtle">Inactive</span></td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                <i class="ri-more-2-fill"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow-sm">
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-eye-line"></i>
+                                                        <span>Overview</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-pencil-line"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Add New Category</h5>
+                </div>
+                <div class="card-body">
+                    <form action="#!">
+                        <div x-data="{
+                                categoryNameInput: '', description: '', userNameInput: '', createDateInput:'', writeReviewInput: '',image: null,
+                                errors: {},
+                            
+                                validate() {
+                                    this.errors = {};
+                                    if (!this.categoryNameInput) this.errors.categoryNameInput = 'Category name is required.';
+                                    if (!this.description) this.errors.description = 'Description is required.';
+                                    if (!this.writeReviewInput) this.errors.writeReviewInput = 'Status is required.';
+                                    return Object.keys(this.errors).length === 0;
+                                },
+                            
+                                clearError(field) { this.errors[field] = '' }
+                            }" class="row g-4">
+                            <div class="col-12 mb-4">
+                                <label class="d-flex justify-content-center align-items-center border bg-light size-32 mx-auto d-inline-block rounded p-2">
+                                    <img x-show="image" :src="image" class="w-100 h-100 object-cover">
+                                    <span class="text-dark d-flex flex-column">
+                                        <i x-show="!image" data-lucide="upload" class="mx-auto"></i>
+                                        <span x-show="!image" class="mt-2"> Upload Image</span>
+                                    </span>
+                                    <input type="file" class="d-none" @change="image = URL.createObjectURL($event.target.files[0]); clearError('image')" />
+                                </label>
+                                <p x-show="imageError" class="text-sm text-danger" x-text="imageError"></p>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-medium">Category Name</label>
+                                <input type="email" x-model="categoryNameInput" placeholder="Category Name" class="form-control" @input="clearError('categoryNameInput')" />
+                                <p x-show="errors.categoryNameInput" class="text-sm text-danger" x-text="errors.categoryNameInput"></p>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-medium">Description</label>
+                                <textarea name="description" x-model="description" rows="3" class="form-control" placeholder="Enter your description" @input="clearError('description')"></textarea>
+                                <p x-show="errors.description" class="text-sm text-danger" x-text="errors.description"></p>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-medium">Status</label>
+                                <div id="statusSelect" placeholder="Select" x-model="writeReviewInput" @input="clearError('writeReviewInput')" ></div>
+                                <p x-show="errors.writeReviewInput" class="text-sm text-danger" x-text="errors.writeReviewInput"></p>
+                            </div>
+
+                            <div class="d-flex justify-content-end gap-2 mt-4">
+                                <button type="button" class="btn btn-light text-dark" data-bs-dismiss="modal"><i data-lucide="rotate-ccw" class="size-4 me-2"></i>Reset</button>
+                                <button type="button" class="btn btn-primary" @click="if (validate()) {}">Add review</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xs">
+            <div class="modal-content p-7 text-center">
+                <div class="size-14 bg-danger-subtle rounded-circle d-flex justify-content-center align-items-center mx-auto mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" class="lucide lucide-trash-2 size-6 text-danger">
+                        <path d="M3 6h18"></path>
+                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                        <line x1="10" x2="10" y1="11" y2="17"></line>
+                        <line x1="14" x2="14" y1="11" y2="17"></line>
+                    </svg>
+                </div>
+                <h5 class="mb-4 lh-base">Are you sure you want to delete this Category ?</h5>
+                <div class="d-flex justify-content-center align-items-center gap-2">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+                    <button class="btn btn-link link-primary text-dark" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+<script src="assets/libs/nouislider/dist/nouislider.min.js"></script>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/ecommerce/product-category.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
