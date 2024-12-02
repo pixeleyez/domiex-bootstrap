@@ -1351,7 +1351,7 @@ $modal-footer-border-color:         $modal-header-border-color;
 $modal-footer-border-width:         $modal-header-border-width;
 
 $modal-sm:                          416px;
-$modal-md:                          500px;
+$modal-md:                          480px;
 $modal-lg:                          640px;
 $modal-xl:                          832px;
 
@@ -1522,11 +1522,11 @@ $spinner-border-width-sm: .2em;
 // Close
 
 // scss-docs-start close-variables
-$btn-close-width:            0.75rem;
+$btn-close-width:            1.25rem;
 $btn-close-height:           $btn-close-width;
 $btn-close-padding-x:        none;
 $btn-close-padding-y:        $btn-close-padding-x;
-$btn-close-color:            $black;
+$btn-close-color:            $body-bg;
 $btn-close-bg:               url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>");
 $btn-close-focus-shadow:     none;
 $btn-close-opacity:          .5;

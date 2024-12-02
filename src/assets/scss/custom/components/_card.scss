@@ -64,7 +64,10 @@
         --#{$prefix}link-color-rgb: var(--#{$prefix}#{$state}-rgb);
         --#{prefix}link-hover-color-rgb: var(--#{$prefix}#{$state}-rgb);
     }
-
+    .card-sub-#{$state} {
+        --#{$prefix}card-border-color: var(--#{$prefix}#{$state}-border-subtle);
+        --#{$prefix}card-bg: var(--#{$prefix}#{$state}-bg-subtle);
+    }
     .card-hover-solid-#{$state} {
         --#{$prefix}link-color-rgb: var(--#{$prefix}#{$state}-rgb);
 

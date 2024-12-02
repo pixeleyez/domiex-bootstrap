@@ -82,3 +82,12 @@
         --#{$prefix}nav-link-hover-color: var(--#{$prefix}#{$state});
     }
 }
+
+.tab-light {
+    .nav-link {
+        &.active,
+        &:hover{
+            color: black;
+        }
+    }
+}

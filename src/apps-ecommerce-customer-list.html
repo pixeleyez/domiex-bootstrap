@@ -1,0 +1,296 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="List View" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="List View" sub-title="Customers" }}
+
+    <div class="row mb-5">
+        <div class="col-8">
+            <h6 class="card-title mb-0">Customer List</h6>
+        </div>
+        <div class="col-4">
+            <div class="d-flex gap-3">
+                <div class="position-relative">
+                    <input type="text" class="form-control ps-9 pe-4" placeholder="Search name, email, gender, etc..." @input="filtercontacts" x-model="searchTerm">
+                    <div class="position-absolute top-50 translate-middle-y d-flex align-items-center">
+                        <i data-lucide="search" class="size-4 ms-3 icon-dark"></i>
+                    </div>
+                </div>
+                <button class="btn btn-primary"><i data-lucide="plus" class="size-4 me-2"></i>New Customer</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-box">
+        <table class="table align-middle table-borderless">
+            <thead>
+                <tr class="table-light border-bottom">
+                    <th>
+                        <div class="form-check check-primary">
+                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                        </div>
+                    </th>
+                    <th class="fw-medium text-dark">ID</th>
+                    <th class="fw-medium text-dark">Name</th>
+                    <th class="fw-medium text-dark">Email</th>
+                    <th class="fw-medium text-dark">Phone Number</th>
+                    <th class="fw-medium text-dark">Subscriber</th>
+                    <th class="fw-medium text-dark">Gender</th>
+                    <th class="fw-medium text-dark">Location</th>
+                    <th class="fw-medium text-dark">status</th>
+                    <th class="fw-medium text-dark">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="form-check check-primary">
+                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                        </div>
+                    </td>
+                    <td>PEC-24151</td>
+                    <td>
+                        <div class="d-flex gap-2 align-items-center">
+                            <img src="assets/images/avatar/user-1.png" alt="" class="size-8 rounded-circle">
+                            <a href="#!" class="link link-primary text-black">John Doe</a>
+                        </div>
+                    </td>
+                    <td>john.doe@example.com</td>
+                    <td>+1234567890</td>
+                    <td>Yes</td>
+                    <td>Male</td>
+                    <td>New York</td>
+                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Active</span></td>
+                    <td>
+                        <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                            <i class="ri-more-2-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li data-bs-toggle="modal" data-bs-target="#overviewCustomerModals">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Overview</span>
+                                </a>
+                            </li>
+                            <li data-bs-toggle="modal" data-bs-target="#addCustomerModals">
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                    <i class="ri-delete-bin-line"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="d-flex justify-content-between align-items-center mt-4">
+        <div>
+            <p class="text-muted">Showing <b class="me-1">1-10</b>of<b class="ms-1">15</b> Results</p>
+        </div>
+        <div class="justify-content-end d-flex">
+            <nav aria-label="...">
+                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                    <li class="page-item pagination-primary disabled">
+                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                            <i data-lucide="chevron-left" class="size-5"></i>
+                            <span>Prev</span>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                    </li>
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link rounded-2 page-number" href="#">3</a>
+                    </li>
+                    <li class="page-item pagination-primary ">
+                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                            <span>Next</span>
+                            <i data-lucide="chevron-right" class="size-5"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!--Add Modal -->
+    <div class="modal fade" id="addCustomerModals" tabindex="-1" aria-labelledby="addCustomerModalsLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+                <div class="h-20 bg-light rounded-top-2"></div>
+                <div class="p-0 modal-body">
+                    <div class="p-4">
+                        <form action="#!">
+                            <div x-data="{
+                                orderStatusSelect:'',  image: null, firstNameInput:'', lastNameInput: '', emailInput: '', phoneNumberInput: '', subscriberSelect: '', locationInput:'', statusSelect:'', genderSelect: '',
+                                errors: {},
+                        
+                                validate() {
+                                    this.errors = {}; // reset errors
+                                    if (!this.firstNameInput) this.errors.firstNameInput = 'First name is required.';
+                                    if (!this.lastNameInput) this.errors.lastNameInput = 'Last name is required.';
+                                    if (!this.emailInput) this.errors.emailInput = 'Email is required.';
+                                    if (!this.phoneNumberInput) this.errors.phoneNumberInput = 'Phone number is required.';
+                                    if (!this.subscriberSelect) this.errors.subscriberSelect = 'Subscriber is required.';
+                                    if (!this.locationInput) this.errors.locationInput = 'Location is required.';
+                                    if (!this.statusSelect) this.errors.statusSelect = 'Status is required.';
+                                    if (!this.image) this.errors.imageError = 'Image is required.';
+                                    if (!this.genderSelect) this.errors.genderSelect = 'Gender is required.';  // Add gender validation
+                                    return Object.keys(this.errors).length === 0;
+                                },
+                        
+                                clearError(field) { this.errors[field] = ''; }
+                            }" class="row g-5">
+                                <div class="col-12">
+                                    <label class="d-flex justify-content-center align-items-center border bg-light size-24 d-inline-block rounded-circle -mt-16">
+                                        <img x-show="image" :src="image" class="rounded-circle w-100 h-100 object-cover">
+                                        <i x-show="!image" data-lucide="upload" class="text-dark"></i>
+                                        <input type="file" class="d-none" @change="image = URL.createObjectURL($event.target.files[0]); clearError('imageError')" />
+                                    </label>
+                                    <p x-show="errors.imageError" class="text-sm text-danger" x-text="errors.imageError"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label for="orderIDInput" class="form-label fw-medium">First Name <span class="text-danger">*</span> </label>
+                                    <input type="text" x-model="firstNameInput" id="orderIDInput" class="form-control" placeholder="Enter your first name" @input="clearError('firstNameInput')">
+                                    <p x-show="errors.firstNameInput" class="text-sm text-danger" x-text="errors.firstNameInput"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Last Name <span class="text-danger">*</span></label>
+                                    <input type="text" x-model="lastNameInput" id="lastNameInput" class="form-control" placeholder="Enter your last name" @input="clearError('lastNameInput')">
+                                    <p x-show="errors.lastNameInput" class="text-sm text-danger" x-text="errors.lastNameInput"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Email <span class="text-danger">*</span> </label>
+                                    <input type="text" x-model="emailInput" id="emailInput" class="form-control" placeholder="Enter your email" @input="clearError('emailInput')">
+                                    <p x-show="errors.emailInput" class="text-sm text-danger" x-text="errors.emailInput"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Phone Number <span class="text-danger">*</span> </label>
+                                    <input type="text" x-model="phoneNumberInput" placeholder="000 000 0000" class="form-control" @input="clearError('phoneNumberInput')" />
+                                    <p x-show="errors.phoneNumberInput" class="text-sm text-danger" x-text="errors.phoneNumberInput"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Gender <span class="text-danger">*</span></label>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="form-check radio-primary">
+                                            <input class="form-check-input" type="radio" name="gender" id="maleGender" value="Male" x-model="genderSelect">
+                                            <label class="form-check-label" for="maleGender">Male</label>
+                                        </div>
+                                        <div class="form-check radio-primary">
+                                            <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="Female" x-model="genderSelect">
+                                            <label class="form-check-label" for="femaleGender">Female</label>
+                                        </div>
+                                    </div>
+                                    <p x-show="errors.genderSelect" class="text-sm text-danger" x-text="errors.genderSelect"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Subscriber <span class="text-danger">*</span> </label>
+                                    <div id="subscriberSelect" @input="clearError('subscriberSelect')" x-model="subscriberSelect"></div>
+                                    <p x-show="errors.subscriberSelect" class="text-sm text-danger" x-text="errors.subscriberSelect"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Location <span class="text-danger">*</span></label>
+                                    <input type="text" x-model="locationInput" placeholder="Location" class="form-control" @input="clearError('locationInput')" />
+                                    <p x-show="errors.locationInput" class="text-sm text-danger" x-text="errors.locationInput"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Status <span class="text-danger">*</span></label>
+                                    <div id="statusSelect" @input="clearError('statusSelect')" x-model="statusSelect"></div>
+                                    <p x-show="errors.statusSelect" class="text-sm text-danger" x-text="errors.statusSelect"></p>
+                                </div>
+                                <div class="d-flex justify-content-end gap-2">
+                                    <button type="button" class="btn btn-light text-dark" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary" @click="if (validate()) { alert('Form is valid and ready for submission!') }">Add Customer</button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Overview Modal -->
+    <div class="modal fade" id="overviewCustomerModals" tabindex="-1" aria-labelledby="overviewCustomerModalsLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+                <div class="h-20 bg-light rounded-top-2"></div>
+                <div class="modal-body">
+                    <div class="position-relative d-inline-block">
+                        <div class="position-relative  rounded-circle">
+                            <img src="assets/images/avatar/user-1.png" alt="" class="custom-image rounded-pill size-24 -mt-16">
+                        </div>
+                        <div class="position-absolute border border-2 border-white rounded-pill bg-success avatar-dot size-4"></div>
+                    </div>
+                    <table class="table table-borderless w-100 mt-5">
+                        <tbody>
+                            <tr>
+                                <th class="fw-semibold py-2">Name</th>
+                                <td class="py-2">John Doe</td>
+                            </tr>
+                            <tr>
+                                <th class="fw-semibold py-2">Email</th>
+                                <td class="py-2">john.doe@example.com</td>
+                            </tr>
+                            <tr>
+                                <th class="fw-semibold py-2">Phone Number</th>
+                                <td class="py-2">+1234567890</td>
+                            </tr>
+                            <tr>
+                                <th class="fw-semibold py-2">Subscriber</th>
+                                <td class="py-2">Yes</td>
+                            </tr>
+                            <tr>
+                                <th class="fw-semibold py-2">Location</th>
+                                <td class="py-2">New York</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+                        <button type="button" class="btn btn-light text-dark" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Edit Customer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/ecommerce/customer-list.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
