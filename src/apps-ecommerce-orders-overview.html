@@ -1,0 +1,227 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Overview" }}
+
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Overview" sub-title="Orders" }}
+
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex flex-wrap align-items-center gap-3">
+                <div class="flex-grow-1">
+                    <h6 class="mb-1">Order ID: PEO-14521</h6>
+                    <p class="mb-3 text-muted">Order Date: 01 Sep, 2024</p>
+                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Payment Pending</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn btn-primary d-flex align-items-center btn-icon-overlay position-relative">
+                        <span class="icon"><i data-lucide="circle-arrow-down" class="size-4"></i></span>Download Invoice
+                    </button>
+                    <button class="btn btn-light text-dark mt-3 mt-sm-0">
+                        <i data-lucide="pencil" class="size-4 me-1"></i>
+                        Edit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="row g-2">
+                <div class="col-6 d-flex gap-2 flex-column">
+                    <p class="text-muted">Customer Name: <span class="fw-medium text-black">Isabella Thomas</span></p>
+                    <p class="text-muted">Email: <span class="fw-medium text-black">isabella@pixeleyez.com</span></p>
+                    <p class="text-muted">Phone No: <span class="fw-medium text-black">+(245) 012 345 678</span></p>
+                    <p class="text-muted">Delivery Place: <span class="fw-medium text-black">Home</span></p>
+                    <p class="text-muted">Payment Method: <span class="fw-medium text-black">Online Payment</span></p>
+                </div>
+                <div class="col-6 d-flex gap-2 flex-column">
+                    <p class="text-muted">Address Line: <span class="fw-medium text-black">0588 Macey Ranch</span></p>
+                    <p class="text-muted">City: <span class="fw-medium text-black">Port Blake</span></p>
+                    <p class="text-muted">Country: <span class="fw-medium text-black">New Mexico</span></p>
+                    <p class="text-muted">Pin Code: <span class="fw-medium text-black">96153-1460</span></p>
+                    <p class="text-muted">Delivery Status: <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Shipping</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-borderless align-middle">
+                <thead>
+                    <tr class="border-bottom">
+                        <th scope="col">#</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                    </tr>  
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                           <div class="d-flex align-items-center gap-3">
+                            <div class="size-16 flex-shrink-0 p-2 border rounded-2">
+                                <img src="assets/images/products/img-01.png" alt="" class="img-fluid">
+                            </div>
+                            <div>
+                                <h6 class="mb-2 lh-base">
+                                    <a href="apps-ecommerce-orders-overview.html" class="link link-primary text-black">Blouse Ruffle Tube top</a>
+                                </h6>
+                                <div>
+                                    <a href="#!" class="pe-2 text-black">Fashion</a>
+                                    <span class="px-3 border-start border-end">XL</span>
+                                    <span class="ps-2">Sky Blue</span>
+                                </div>
+                            </div>
+                           </div>
+                        </td>
+                        <td>$14.99</td>
+                        <td>04</td>
+                        <td>$59.96</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                           <div class="d-flex align-items-center gap-3">
+                            <div class="size-16 flex-shrink-0 p-2 border rounded-2">
+                                <img src="assets/images/products/img-04.png" alt="" class="img-fluid">
+                            </div>
+                            <div>
+                                <h6 class="mb-2 lh-base">
+                                    <a href="apps-ecommerce-orders-overview.html" class="link link-primary text-black">Crop top Sweater Clothing</a>
+                                </h6>
+                                <div>
+                                    <a href="#!" class="pe-2 text-black">Fashion</a>
+                                    <span class="px-3 border-start border-end">M</span>
+                                    <span class="ps-2">Pink</span>
+                                </div>
+                            </div>
+                           </div>
+                        </td>
+                        <td>$29.49</td>
+                        <td>06</td>
+                        <td>$176.94</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                           <div class="d-flex align-items-center gap-3">
+                            <div class="size-16 flex-shrink-0 p-2 border rounded-2">
+                                <img src="assets/images/products/img-08.png" alt="" class="img-fluid">
+                            </div>
+                            <div>
+                                <h6 class="mb-2 lh-base">
+                                    <a href="apps-ecommerce-orders-overview.html" class="link link-primary text-black">Tote bag Leather Handbag Dolce</a>
+                                </h6>
+                                <div>
+                                    <a href="#!" class="pe-2 text-black">Bags</a>
+                                    <span class="ps-2 border-start">Red</span>
+                                </div>
+                            </div>
+                           </div>
+                        </td>
+                        <td>$79.99</td>
+                        <td>01</td>
+                        <td>$79.99</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td>Sub Amount</td>
+                        <td>$316.89</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td>Vat Amount (6%)</td>
+                        <td>$19.19</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td>Discount (10%)</td>
+                        <td>-$31.98</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td>Shipping Charge</td>
+                        <td>$35.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td>Total Amount</td>
+                        <td>$339.10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card">
+        <div class="d-flex align-items-center gap-3 card-header">
+            <h6 class="card-title flex-grow-1">Delivery Status</h6>
+            <a class="btn btn-sub-danger" href="/apps-ecommerce-orders-track">Track Order</a>
+        </div>
+        <div class="card-body">
+            <div class="px-4 py-2">
+              <div class="d-flex justify-content-between position-relative timeline">
+                <!-- Timeline Step 1 -->
+                <div class="timeline-step step-done">
+                  <span class="step-text">Order Place</span>
+                </div>
+                <!-- Timeline Step 2 -->
+                <div class="timeline-step step-done">
+                  <span class="step-text">Pickup</span>
+                </div>
+                <!-- Timeline Step 3 -->
+                <div class="timeline-step step-current">
+                  <span class="step-text">Shipped</span>
+                </div>
+                <!-- Timeline Step 4 -->
+                <div class="timeline-step">
+                  <span class="step-text">Out of Delivery</span>
+                </div>
+                <!-- Timeline Step 5 -->
+                <div class="timeline-step step-done">
+                  <span class="step-text">Delivered</span>
+                </div>
+          
+                <!-- Timeline Line -->
+                <div class="timeline-line"></div>
+              </div>
+            </div>
+          </div>
+          
+    </div>
+    
+    {{> partials/footer}}
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+<script src="assets/js/apps/ecommerce/orders-list.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

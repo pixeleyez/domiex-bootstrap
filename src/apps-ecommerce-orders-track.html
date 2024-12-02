@@ -1,0 +1,307 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Order Track" }}
+
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Order Track" sub-title="Orders" }}
+
+    <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h6 class="card-title flex-grow-1">Order Tracking</h6>
+            <div class="flex-shrink-0">
+                <ul class="nav nav-pills tab-light" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link fw-medium" id="pills-overView-tab" data-bs-toggle="pill" data-bs-target="#pill-overView" type="button" role="tab" aria-controls="pill-overView" aria-selected="true">Overview</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active fw-medium" id="pills-mapView-tab" data-bs-toggle="pill" data-bs-target="#pill-mapView" type="button" role="tab" aria-controls="pill-mapView" aria-selected="false">Map View</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="tab-content mt-4" id="myPillTabContent">
+                <div class="tab-pane " id="pill-overView" role="tabpanel" aria-labelledby="pills-overView-tab" tabindex="0">
+                    <div class="row g-3">
+                        <div class="col">
+                            <p class="mb-1 text-muted">Order ID</p>
+                            <h6 class="mb-0"><a href="#!" class="link link-primary text-black">PEO-14521</a></h6>
+                        </div>
+                        <div class="col">
+                            <p class="mb-1 text-muted">Delivery Date</p>
+                            <h6 class="mb-0">08 Sep, 2024</h6>
+                        </div>
+                        <div class="col">
+                            <p class="mb-1 text-muted">Payment Method</p>
+                            <span class="badge bg-secondary-subtle border border-secondary-subtle text-secondary">Shipping</span>
+                        </div>
+                        <div class="col">
+                            <p class="mb-1 text-muted">Courier Partner</p>
+                            <h6 class="mb-0">Pixeleyez Express</h6>
+                        </div>
+                        <div class="col">
+                            <p class="mb-1 text-muted">Delivery Address</p>
+                            <h6 class="mb-0">0588 Macey Ranch, Port Blake, China - 96153-1460</h6>
+                        </div>
+                    </div>
+                    <div class="p-5 bg-light rounded mt-3">
+                        <div class="position-relative" style="height: 8rem;">
+                            <div class="position-absolute top-0 bottom-0" style="left: 5%; width: 2px; background-color: #e0e0e0;">
+                                <div class="position-absolute top-0 size-3 bg-success rounded-circle border border-4 border-white -left-5"></div>
+                            </div>
+                            <div class="position-absolute top-0 bottom-0" style="right: 5%; width: 2px; background-color: #e0e0e0;">
+                                <div class="position-absolute top-0 size-3 bg-dark-subtle rounded-circle border border-4 border-white -left-5"></div>
+                            </div>
+                            <div class="position-relative mx-3">
+                                <img src="assets/images/others/truck.png" alt="" class="position-absolute h-32 animate-pulse" style="left: 22%;">
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 w-100 bg-light">
+                                <div class="progress progress-2">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+                <div class="tab-pane show active" id="pill-mapView" role="tabpanel" aria-labelledby="pills-mapView-tab" tabindex="0">
+                    <div class="row g-3">
+                        <div class="col">
+                            <p class="mb-1 text-muted">Order ID</p>
+                            <h6 class="mb-0"><a href="#!" class="link link-primary text-black">PEO-14521</a></h6>
+                        </div>
+                        <div class="col">
+                            <p class="mb-1 text-muted">Order Status</p>
+                            <span class="badge bg-secondary-subtle border border-secondary-subtle text-secondary">Shipping</span>
+                        </div>
+                        <div class="col">
+                            <p class="mb-1 text-muted">Delivery Date</p>
+                            <h6 class="mb-0">08 Sep, 2024</h6>
+                        </div>
+                        <div class="col">
+                            <p class="mb-1 text-muted">Courier Partner</p>
+                            <h6 class="mb-0">Pixeleyez Express</h6>
+                        </div>
+                        <div class="col">
+                            <p class="mb-1 text-muted">Delivery Address</p>
+                            <h6 class="mb-0">China</h6>
+                        </div>
+                    </div>
+                    <div id="lineStyleMap" class="map-container position-relative h-72 mt-5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-center mb-5">
+        <h6 class="fs-16 flex-grow-1">Recent Orders</h6>
+        <div class="shrink-0">
+            <a class="btn btn-success" href="apps-ecommerce-orders-list.html">
+                <span class="align-center">View All Orders</span>
+                <i data-lucide="move-right" class="size-5 ms-1"></i>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-2">
+                        <p class="text-muted flex-grow-1">Order ID: <a href="#!" class="link-primary text-muted link">PEO-14521</a></p>
+                        <div>
+                            <span class="badge bg-success-subtle border border-success-subtle text-success">Delivered</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-3 mt-4">
+                        <div class="p-1 border rounded-2 size-16 flex-shrink-0">
+                            <img alt="" src="assets/images/products/img-01.png" class="img-fluid">
+                        </div>
+                        <div class="flex-grow-1 overflow-hidden">
+                            <h6 class="mb-1 text-truncate lh-base"><a href="apps-ecommerce-product-overview.html" class="text-black">Blouse Ruffle Tube top</a></h6>
+                            <a class="link link-danger text-muted" href="/apps-ecommerce-orders-overview">
+                                Show Details <i data-lucide="move-right" class="size-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <p class="mt-3 text-muted lh-base">Order Expected Date</p>
+                    <h6 class="mb-0">21 Mar, 2022</h6>
+
+                    <div class="d-flex gap-2 mt-4">
+                        <a class="w-100 btn btn-light text-dark" href="apps-ecommerce-orders-overview.html">
+                            <i class="align-bottom ri-eye-line"></i> Overview
+                        </a>
+                        <button class="w-100 btn btn-primary">Track Order</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-2">
+                        <p class="text-muted flex-grow-1">Order ID: <a href="#!" class="link-primary text-muted link">PEO-14522</a></p>
+                        <div>
+                            <span class="badge bg-warning-subtle border border-warning-subtle text-warning">Pending</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-3 mt-4">
+                        <div class="p-1 border rounded-2 size-16 flex-shrink-0">
+                            <img alt="" src="assets/images/products/img-02.png" class="img-fluid">
+                        </div>
+                        <div class="flex-grow-1 overflow-hidden">
+                            <h6 class="mb-1 text-truncate lh-base"><a href="apps-ecommerce-product-overview.html" class="text-black">Gold-colored locket watch</a></h6>
+                            <a class="link link-danger text-muted" href="/apps-ecommerce-orders-overview">
+                                Show Details <i data-lucide="move-right" class="size-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <p class="mt-3 text-muted lh-base">Order Expected Date</p>
+                    <h6 class="mb-0">09 Apr, 2022</h6>
+
+                    <div class="d-flex gap-2 mt-4">
+                        <a class="w-100 btn btn-light text-dark" href="apps-ecommerce-orders-overview.html">
+                            <i class="align-bottom ri-eye-line"></i> Overview
+                        </a>
+                        <button class="w-100 btn btn-primary">Track Order</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-2">
+                        <p class="text-muted flex-grow-1">Order ID: <a href="#!" class="link-primary text-muted link">PEO-14523</a></p>
+                        <div>
+                            <span class="badge bg-primary-subtle border border-primary-subtle text-primary">New</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-3 mt-4">
+                        <div class="p-1 border rounded-2 size-16 flex-shrink-0">
+                            <img alt="" src="assets/images/products/img-03.png" class="img-fluid">
+                        </div>
+                        <div class="flex-grow-1 overflow-hidden">
+                            <h6 class="mb-1 text-truncate lh-base"><a href="apps-ecommerce-product-overview.html" class="text-black">Spar Men Black Running Shoes</a></h6>
+                            <a class="link link-danger text-muted" href="/apps-ecommerce-orders-overview">
+                                Show Details <i data-lucide="move-right" class="size-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <p class="mt-3 text-muted lh-base">Order Expected Date</p>
+                    <h6 class="mb-0">26 Jun, 2022</h6>
+
+                    <div class="d-flex gap-2 mt-4">
+                        <a class="w-100 btn btn-light text-dark" href="apps-ecommerce-orders-overview.html">
+                            <i class="align-bottom ri-eye-line"></i> Overview
+                        </a>
+                        <button class="w-100 btn btn-primary">Track Order</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-2">
+                        <p class="text-muted flex-grow-1">Order ID: <a href="#!" class="link-primary text-muted link">PEO-14524</a></p>
+                        <div>
+                            <span class="badge bg-success-subtle border border-success-subtle text-success">Delivered</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-3 mt-4">
+                        <div class="p-1 border rounded-2 size-16 flex-shrink-0">
+                            <img alt="" src="assets/images/products/img-04.png" class="img-fluid">
+                        </div>
+                        <div class="flex-grow-1 overflow-hidden">
+                            <h6 class="mb-1 text-truncate lh-base"><a href="apps-ecommerce-product-overview.html" class="text-black">Crop top Sweater Clothing</a></h6>
+                            <a class="link link-danger text-muted" href="/apps-ecommerce-orders-overview">
+                                Show Details <i data-lucide="move-right" class="size-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <p class="mt-3 text-muted lh-base">Order Expected Date</p>
+                    <h6 class="mb-0">07 Aug, 2022</h6>
+                    <div class="d-flex gap-2 mt-4">
+                        <a class="w-100 btn btn-light text-dark" href="apps-ecommerce-orders-overview.html">
+                            <i class="align-bottom ri-eye-line"></i> Overview
+                        </a>
+                        <button class="w-100 btn btn-primary">Track Order</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <p class="text-muted">Showing <b class="me-1">1-10</b>of<b class="ms-1">15</b> Results</p>
+        </div>
+        <div class="justify-content-end d-flex">
+            <nav aria-label="...">
+                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                    <li class="page-item pagination-primary disabled">
+                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                            <i data-lucide="chevron-left" class="size-5"></i>
+                            <span>Prev</span>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                    </li>
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link rounded-2 page-number" href="#">3</a>
+                    </li>
+                    <li class="page-item pagination-primary ">
+                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                            <span>Next</span>
+                            <i data-lucide="chevron-right" class="size-5"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/libs/jsvectormap/jsvectormap.min.js"></script>
+<script src="assets/libs/jsvectormap/maps/world.js"></script>
+
+<script src="assets/js/apps/ecommerce/orders-track-map.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

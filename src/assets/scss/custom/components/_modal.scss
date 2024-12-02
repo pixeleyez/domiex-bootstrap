@@ -3,14 +3,6 @@
     box-shadow:  1px 5px 14px #ffffff4a;
     border: none;
 }
-.modal-header{
-    svg{
-        color: $gray-500;
-        &:hover{
-            color: $danger;
-        }
-    }
-}
 .modal-xs{
     width: 20rem;
 }

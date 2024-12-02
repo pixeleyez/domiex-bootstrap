@@ -1,0 +1,756 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Orders List" }}
+
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Orders List" sub-title="Orders" }}
+
+    <div class="row">
+        <div class="col-3">
+            <div class="card card-sub-primary">
+                <div class="card-body ">
+                    <h6 class="mb-3">New Orders</h6>
+                    <div class="d-flex align-items-center">
+                        <h4 class="mb-0 pe-3 border-end border-dark-subtle fs-xl">345</h4>
+                        <p class="text-muted px-3"><span class="fw-semibold"><i class="ri-arrow-right-up-line"></i><span>19%</span></span> this months</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card card-sub-warning">
+                <div class="card-body ">
+                    <h6 class="mb-3">Pending Orders</h6>
+                    <div class="d-flex align-items-center">
+                        <h4 class="mb-0 pe-3 border-end border-dark-subtle fs-xl">120</h4>
+                        <p class="text-muted px-3"><span class="fw-semibold"><i class="ri-arrow-right-down-line"></i><span>2.98%</span></span> this months</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card card-sub-success">
+                <div class="card-body ">
+                    <h6 class="mb-3">Delivered Orders</h6>
+                    <div class="d-flex align-items-center">
+                        <h4 class="mb-0 pe-3 border-end border-dark-subtle fs-xl">225</h4>
+                        <p class="text-muted px-3"><span class="fw-semibold"><i class="ri-arrow-right-up-line"></i><span>8.56%</span></span> this months</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card card-sub-secondary">
+                <div class="card-body ">
+                    <h6 class="mb-3">Total Orders</h6>
+                    <div class="d-flex align-items-center">
+                        <h4 class="mb-0 pe-3 border-end border-dark-subtle fs-xl">9451</h4>
+                        <p class="text-muted px-3"><span class="fw-semibold"><i class="ri-arrow-right-up-line"></i><span>24.08%</span></span> this months</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end row -->
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-8">
+                    <ul class="nav nav-pills tab-light" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active fw-medium" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pill-order" type="button" role="tab" aria-controls="pill-order" aria-selected="true">All Orders</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-medium" id="pills-new-tab" data-bs-toggle="pill" data-bs-target="#pill-new" type="button" role="tab" aria-controls="pill-new" aria-selected="false">New</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-medium" id="pills-pending-tab" data-bs-toggle="pill" data-bs-target="#pill-pending" type="button" role="tab" aria-controls="pill-pending" aria-selected="false">Pending</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-medium" id="pills-delivered-tab" data-bs-toggle="pill" data-bs-target="#pill-delivered" type="button" role="tab" aria-controls="pill-delivered" aria-selected="false">Pending</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-medium" id="pills-shipping-tab" data-bs-toggle="pill" data-bs-target="#pill-shipping" type="button" role="tab" aria-controls="pill-shipping" aria-selected="false">Pending</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-medium" id="pills-cancelled-tab" data-bs-toggle="pill" data-bs-target="#pill-cancelled" type="button" role="tab" aria-controls="pill-cancelled" aria-selected="false">Pending</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4 d-flex gap-3 justify-content-end align-items-center">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addOrderModal"><i data-lucide="plus" class="size-4 me-2"></i>New Order</button>
+                    <button class="btn btn-light text-dark"><i data-lucide="filter" class="size-4 me-2"></i>Filters</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body pt-0">
+            <div class="tab-content" id="myPillTabContent">
+                <div class="tab-pane  show active" id="pill-order" role="tabpanel" aria-labelledby="pills-order-tab" tabindex="0">
+                    <div class="table-box">
+                        <table class="table align-middle">
+                            <thead>
+                                <tr class="table-light border-bottom">
+                                    <th>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </th>
+                                    <th class="fw-medium text-dark">Order ID</th>
+                                    <th class="fw-medium text-dark">Order Date</th>
+                                    <th class="fw-medium text-dark">Delivered Date</th>
+                                    <th class="fw-medium text-dark">Customers</th>
+                                    <th class="fw-medium text-dark">Product</th>
+                                    <th class="fw-medium text-dark">Payment</th>
+                                    <th class="fw-medium text-dark">Total</th>
+                                    <th class="fw-medium text-dark">QTY</th>
+                                    <th class="fw-medium text-dark">status</th>
+                                    <th class="fw-medium text-dark">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEO-14539</a></td>
+                                    <td>20 Jan, 2024</td>
+                                    <td>27 Jan, 2024</td>
+                                    <td>Logan Hall</td>
+                                    <td>Beanie</td>
+                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Paid</span></td>
+                                    <td>8.99</td>
+                                    <td>1</td>
+                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Delivered</span></td>
+                                    <td>
+                                        <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                            <i class="ri-more-2-fill"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li data-bs-toggle="modal" data-bs-target="#overviewOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-eye-line"></i>
+                                                    <span>Overview</span>
+                                                </a>
+                                            </li>
+                                           <li data-bs-toggle="modal" data-bs-target="#addOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-pencil-line"></i>
+                                                    <span>Edit</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-delete-bin-line"></i>
+                                                    <span>Delete</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEO-14522</a></td>
+                                    <td>02 Apr, 2022</td>
+                                    <td>09 Apr, 2022</td>
+                                    <td>Lucas Nguyen</td>
+                                    <td>Leather Wallet</td>
+                                    <td><span class="badge bg-light text-dark border border-dark-subtle">COD</span></td>
+                                    <td>35.5</td>
+                                    <td>1</td>
+                                    <td><span class="badge bg-warning-subtle text-warning border border-warning-subtle">Pending</span></td>
+                                    <td>
+                                        <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                            <i class="ri-more-2-fill"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li data-bs-toggle="modal" data-bs-target="#overviewOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-eye-line"></i>
+                                                    <span>Overview</span>
+                                                </a>
+                                            </li>
+                                           <li data-bs-toggle="modal" data-bs-target="#addOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-pencil-line"></i>
+                                                    <span>Edit</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-delete-bin-line"></i>
+                                                    <span>Delete</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEO-14523</a></td>
+                                    <td>18 Jun, 2022</td>
+                                    <td>26 Jun, 2022</td>
+                                    <td>Isabella Thomas</td>
+                                    <td>Summer Dress</td>
+                                    <td><span class="badge bg-danger-subtle text-danger border border-danger-subtle">Unpaid</span></td>
+                                    <td>28.75</td>
+                                    <td>2</td>
+                                    <td><span class="badge bg-primary-subtle text-primary border border-primary-subtle">New</span></td>
+                                    <td>
+                                        <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                            <i class="ri-more-2-fill"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li data-bs-toggle="modal" data-bs-target="#overviewOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-eye-line"></i>
+                                                    <span>Overview</span>
+                                                </a>
+                                            </li>
+                                           <li data-bs-toggle="modal" data-bs-target="#addOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-pencil-line"></i>
+                                                    <span>Edit</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-delete-bin-line"></i>
+                                                    <span>Delete</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEO-14524</a></td>
+                                    <td>30 Jul, 2022</td>
+                                    <td>07 Aug, 2022</td>
+                                    <td>Mason Wilson</td>
+                                    <td>Wireless Headphones</td>
+                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Paid</span></td>
+                                    <td>79.99</td>
+                                    <td>1</td>
+                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Delivered</span></td>
+                                    <td>
+                                        <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                            <i class="ri-more-2-fill"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li data-bs-toggle="modal" data-bs-target="#overviewOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-eye-line"></i>
+                                                    <span>Overview</span>
+                                                </a>
+                                            </li>
+                                            <li data-bs-toggle="modal" data-bs-target="#addOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-pencil-line"></i>
+                                                    <span>Edit</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-delete-bin-line"></i>
+                                                    <span>Delete</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEO-14525</a></td>
+                                    <td>12 Sep, 2022</td>
+                                    <td>19 Sep, 2022</td>
+                                    <td>Olivia Brown</td>
+                                    <td>Sunglasses</td>
+                                    <td><span class="badge bg-light text-dark border border-dark-subtle">COD</span></td>
+                                    <td>19.95</td>
+                                    <td>1</td>
+                                    <td><span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Shipping</span></td>
+                                    <td>
+                                        <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                            <i class="ri-more-2-fill"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li data-bs-toggle="modal" data-bs-target="#overviewOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-eye-line"></i>
+                                                    <span>Overview</span>
+                                                </a>
+                                            </li>
+                                           <li data-bs-toggle="modal" data-bs-target="#addOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-pencil-line"></i>
+                                                    <span>Edit</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-delete-bin-line"></i>
+                                                    <span>Delete</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEO-14526</a></td>
+                                    <td>24 Oct, 2022</td>
+                                    <td>31 Oct, 2022</td>
+                                    <td>William Garcia</td>
+                                    <td>Sports Watch</td>
+                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Paid</span></td>
+                                    <td>55</td>
+                                    <td>1</td>
+                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Delivered</span></td>
+                                    <td>
+                                        <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                            <i class="ri-more-2-fill"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li data-bs-toggle="modal" data-bs-target="#overviewOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-eye-line"></i>
+                                                    <span>Overview</span>
+                                                </a>
+                                            </li>
+                                           <li data-bs-toggle="modal" data-bs-target="#addOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-pencil-line"></i>
+                                                    <span>Edit</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-delete-bin-line"></i>
+                                                    <span>Delete</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEO-14527</a></td>
+                                    <td>05 Nov, 2022</td>
+                                    <td>12 Nov, 2022</td>
+                                    <td>Ava Martinez</td>
+                                    <td>Backpack</td>
+                                    <td><span class="badge bg-light text-dark border border-dark-subtle">COD</span></td>
+                                    <td>42.75</td>
+                                    <td>1</td>
+                                    <td><span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Shipping</span></td>
+                                    <td>
+                                        <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                            <i class="ri-more-2-fill"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li data-bs-toggle="modal" data-bs-target="#overviewOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-eye-line"></i>
+                                                    <span>Overview</span>
+                                                </a>
+                                            </li>
+                                           <li data-bs-toggle="modal" data-bs-target="#addOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-pencil-line"></i>
+                                                    <span>Edit</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-delete-bin-line"></i>
+                                                    <span>Delete</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEO-14528</a></td>
+                                    <td>14 Dec, 2022</td>
+                                    <td>22 Dec, 2022</td>
+                                    <td>Liam Clark</td>
+                                    <td>Winter Coat</td>
+                                    <td><span class="badge bg-danger-subtle text-danger border border-danger-subtle">Unpaid</span></td>
+                                    <td>89.99</td>
+                                    <td>1</td>
+                                    <td><span class="badge bg-primary-subtle text-primary border border-primary-subtle">New</span></td>
+                                    <td>
+                                        <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                            <i class="ri-more-2-fill"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li data-bs-toggle="modal" data-bs-target="#overviewOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-eye-line"></i>
+                                                    <span>Overview</span>
+                                                </a>
+                                            </li>
+                                           <li data-bs-toggle="modal" data-bs-target="#addOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-pencil-line"></i>
+                                                    <span>Edit</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-delete-bin-line"></i>
+                                                    <span>Delete</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEO-14529</a></td>
+                                    <td>01 Jan, 2023</td>
+                                    <td>09 Jan, 2023</td>
+                                    <td>Charlotte Lewis</td>
+                                    <td>Scarf</td>
+                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Paid</span></td>
+                                    <td>12.5</td>
+                                    <td>2</td>
+                                    <td><span class="badge bg-warning-subtle text-warning border border-warning-subtle">Pending</span></td>
+                                    <td>
+                                        <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                            <i class="ri-more-2-fill"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li data-bs-toggle="modal" data-bs-target="#overviewOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-eye-line"></i>
+                                                    <span>Overview</span>
+                                                </a>
+                                            </li>
+                                           <li data-bs-toggle="modal" data-bs-target="#addOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-pencil-line"></i>
+                                                    <span>Edit</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-delete-bin-line"></i>
+                                                    <span>Delete</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td><a href="#!" class="link link-primary text-dark">PEO-14530</a></td>
+                                    <td>10 Feb, 2023</td>
+                                    <td>18 Feb, 2023</td>
+                                    <td>James Taylor</td>
+                                    <td>Smartphone Case</td>
+                                    <td><span class="badge bg-light text-dark border border-dark-subtle">COD</span></td>
+                                    <td>15.99</td>
+                                    <td>1</td>
+                                    <td><span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Shipping</span></td>
+                                    <td>
+                                        <button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                            <i class="ri-more-2-fill"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li data-bs-toggle="modal" data-bs-target="#overviewOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-eye-line"></i>
+                                                    <span>Overview</span>
+                                                </a>
+                                            </li>
+                                           <li data-bs-toggle="modal" data-bs-target="#addOrderModal">
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-pencil-line"></i>
+                                                    <span>Edit</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                    <i class="ri-delete-bin-line"></i>
+                                                    <span>Delete</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <div>
+                            <p class="text-muted">Showing <b class="me-1">1-10</b>of<b class="ms-1">15</b> Results</p>
+                        </div>
+                        <div class="justify-content-end d-flex">
+                            <nav aria-label="...">
+                                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                                    <li class="page-item pagination-primary disabled">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <i data-lucide="chevron-left" class="size-5"></i>
+                                            <span>Prev</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                    <li class="page-item" aria-current="page">
+                                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                                    </li>
+                                    <li class="page-item" aria-current="page">
+                                        <a class="page-link rounded-2 page-number" href="#">3</a>
+                                    </li>
+                                    <li class="page-item pagination-primary ">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <span>Next</span>
+                                            <i data-lucide="chevron-right" class="size-5"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane " id="pill-new" role="tabpanel" aria-labelledby="pills-new-tab" tabindex="0">
+                    <p class="text-dark">A new administrator is responsible for overseeing all aspects of the work order for a new department. Your job duties include coordinating with the new manager on the completion of customer work orders, putting together billing for work completed, and reviewing time cards for new employees.</p>
+                </div>
+                <div class="tab-pane " id="pill-pending" role="tabpanel" aria-labelledby="pills-pending-tab" tabindex="0">
+                    <p class="text-dark">The official business definition of a pending Administrator is an individual responsible for managing the pending database of an organization. This includes the maintenance of pending information, the creation of pending groups, and the organization of pending information into categories.</p>
+                </div>
+                <div class="tab-pane " id="pill-delivered" role="tabpanel" aria-labelledby="pills-delivered-tab" tabindex="0">
+                    <p class="text-dark">The official business definition of a pending Administrator is an individual responsible for managing the pending database of an organization. This includes the maintenance of pending information, the creation of pending groups, and the organization of pending information into categories.</p>
+                </div>
+                <div class="tab-pane " id="pill-shipping" role="tabpanel" aria-labelledby="pills-shipping-tab" tabindex="0">
+                    <p class="text-dark">The official business definition of a pending Administrator is an individual responsible for managing the pending database of an organization. This includes the maintenance of pending information, the creation of pending groups, and the organization of pending information into categories.</p>
+                </div>
+                <div class="tab-pane " id="pill-cancelled" role="tabpanel" aria-labelledby="pills-cancelled-tab" tabindex="0">
+                    <p class="text-dark">The official business definition of a pending Administrator is an individual responsible for managing the pending database of an organization. This includes the maintenance of pending information, the creation of pending groups, and the organization of pending information into categories.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Add Modal -->
+    <div class="modal fade" id="addOrderModal" tabindex="-1" aria-labelledby="addOrderModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="mb-0 lh-base">Add Order</h6>
+                    <button type="button" class="btn-close link link-danger text-black" data-bs-dismiss="modal" aria-label="Close"><i data-lucide="x" class="size-5"></i></button>
+                </div>
+                <div class="p-0 modal-body">
+                    <div class="p-4">
+                        <form action="#!">
+                            <div x-data="{
+                                    ordersDate: '',deliveredDate: '', customerNameInput: '', price: '', productNameSelect:'', paymentStatusSelect:'', orderStatusSelect:'',
+                                    errors: {},
+                                
+                                    validate() {
+                                        this.errors = {};
+                                        if (!this.ordersDate) this.errors.ordersDate = 'Order date is required.';
+                                        if (!this.deliveredDate) this.errors.deliveredDate = 'Delivered date is required.';
+                                        if (!this.customerNameInput) this.errors.customerNameInput = 'Full name is required.';
+                                        if (!this.price) this.errors.price = 'Price is required.';
+                                        if (!this.productNameSelect) this.errors.productNameSelect = 'Product name is required.';
+                                        if (!this.paymentStatusSelect) this.errors.paymentStatusSelect = 'Payment is required.';
+                                        if (!this.orderStatusSelect) this.errors.orderStatusSelect = 'Status is required.';
+                                        return Object.keys(this.errors).length === 0;
+                                    },
+                                
+                                    clearError(field) { this.errors[field] = '' }
+                                }" class="row g-4">
+                                <div class="col-12">
+                                    <label for="orderIDInput" class="form-label fw-medium">Order ID</label>
+                                    <input type="text" id="orderIDInput" class="form-control" placeholder="Placeholder" value="Order ID" disabled>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Order Date</label>
+                                    <input data-provider="flatpickr" x-model="ordersDate" data-date-format="d M, Y" type="text" placeholder="YYYY-MM-DD" class="form-control form-input flatpickr-input active" readonly="readonly" @input="clearError('ordersDate')">
+                                    <p x-show="errors.ordersDate" class="text-sm text-danger" x-text="errors.ordersDate"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Delivered Date</label>
+                                    <input data-provider="flatpickr" x-model="deliveredDate" data-date-format="d M, Y" type="text" placeholder="YYYY-MM-DD" class="form-control form-input flatpickr-input active" readonly="readonly" @input="clearError('deliveredDate')">
+                                    <p x-show="errors.deliveredDate" class="text-sm text-danger" x-text="errors.deliveredDate"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Customer Name</label>
+                                    <input type="text" x-model="deliveredDate" placeholder="Customer Name" class="form-control" @input="clearError('deliveredDate')" />
+                                    <p x-show="errors.customerNameInput" class="text-sm text-danger" x-text="errors.customerNameInput"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Quantity</label>
+                                    <div x-data="{ count: 1 }" class="input-spin-group">
+                                        <button @click="count--" class="input-spin-minus" type="button">
+                                            <i data-lucide="minus" class="size-4"></i>
+                                        </button>
+                                        <input type="text" x-model="count" class="input-spin form-control" readonly>
+                                        <button @click="count++" class="input-spin-plus input-spin" type="button">
+                                            <i data-lucide="plus" class="size-4"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Product Amount</label>
+                                    <input type="text" x-model="price" placeholder="Amount" class="form-control" @input="clearError('price')" />
+                                    <p x-show="errors.price" class="text-sm text-danger" x-text="errors.price"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Total Price</label>
+                                    <input type="text" placeholder="Total Amount" class="form-control" />
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Products Name</label>
+                                    <div id="productNameSelect" @input="clearError('productNameSelect')" x-model="productNameSelect"></div>
+                                    <p x-show="errors.productNameSelect" class="text-sm text-danger" x-text="errors.productNameSelect"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Payment Status</label>
+                                    <div id="paymentStatusSelect" @input="clearError('paymentStatusSelect')" x-model="paymentStatusSelect"></div>
+                                    <p x-show="errors.paymentStatusSelect" class="text-sm text-danger" x-text="errors.paymentStatusSelect"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Order Status</label>
+                                    <div id="orderStatusSelect" @input="clearError('orderStatusSelect')" x-model="orderStatusSelect"></div>
+                                    <p x-show="errors.orderStatusSelect" class="text-sm text-danger" x-text="errors.orderStatusSelect"></p>
+                                </div>
+                                <div class="d-flex justify-content-end gap-2 mt-4">
+                                    <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary" @click="if (validate()) { alert('Form is valid and ready for submission!') }">Add Order</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Overview Modal -->
+    <div class="modal fade" id="overviewOrderModal" tabindex="-1" aria-labelledby="overviewOrderModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close link link-danger text-black float-end px-0" data-bs-dismiss="modal" aria-label="Close"><i data-lucide="x" class="size-5"></i></button>
+                    <div class="p-2 border size-24 rounded-2 border-light">
+                        <img src="assets/images/products/img-01.png" alt="" class="img-fluid">
+                    </div>
+                    <h6 class="mt-4 mb-2">Order<a href="#!" class="text-black">PEO-14521</a></h6>
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <p class="mb-1 text-muted lh-base">Customers</p>
+                            <h6 class="mb-0 lh-base">Ella Patel</h6>
+                        </div>
+                        <div class="col-6">
+                            <p class="mb-1 text-muted lh-base">Items</p>
+                            <h6 class="mb-0 lh-base"><a href="#!" class="text-black link link-primary">Denim Jacket</a></h6>
+                        </div>
+                        <div class="col-6">
+                            <p class="mb-1 text-muted lh-base">Order Date</p>
+                            <h6 class="mb-0 lh-base">15 Mar, 2022</h6>
+                        </div>
+                        <div class="col-6">
+                            <p class="mb-1 text-muted lh-base">Delivered Date</p>
+                            <h6 class="mb-0 lh-base">21 Mar, 2022</h6>
+                        </div>
+                        <div class="col-6">
+                            <p class="mb-1 text-muted lh-base">Payment</p>
+                            <span class="badge bg-success-subtle border border-success-subtle text-success">Paid</span>
+                        </div>
+                        <div class="col-6">
+                            <p class="mb-1 text-muted lh-base">Status</p>
+                            <span class="badge bg-success-subtle border border-success-subtle text-success">Delivered</span>
+                        </div>
+                        <div class="col-6">
+                            <p class="mb-1 text-muted lh-base">Product Quantity</p>
+                            <h6 class="mb-0 lh-base">1</h6>
+                        </div>
+                        <div class="col-6">
+                            <p class="mb-1 text-muted lh-base">Total Amount</p>
+                            <h6 class="mb-0 lh-base">45.99</h6>
+                        </div>
+                        <div class="d-flex justify-content-end gap-2 mt-5">
+                            <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary">Edit Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+<script src="assets/js/apps/ecommerce/orders-list.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
