@@ -1,0 +1,290 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Shop Cart" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Shop Cart" sub-title="Ecommerce" }}
+
+    <div class="row">
+        <div class="col-8">
+            <div class="d-flex flex-column flex-md-row align-items-center mb-5">
+                <h6 class="card-title flex-grow-1 mb-0">Shopping Cart</h6>
+                <div x-data="countdownTimer(300)" x-init="startTimer()" class="ms-md-3">
+                    <p class="text-muted">
+                        <span class="fw-semibold text-danger" x-text="minutes + ':' + (seconds < 10 ? '0' + seconds : seconds)">4:06</span>
+                        left until the end of the process
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <button type="button" class="btn-close link link-danger text-black float-end" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-line size-4"></i></button>
+                    <div class="d-flex flex-column flex-sm-row gap-4">
+                        <div class="flex-shrink-0 w-300px bg-light rounded-2">
+                            <img src="assets/images/products/img-04.png" alt="Product Image" class="img-fluid">
+                        </div>
+                        <div class="mt-4 mt-sm-0">
+                            <span class="badge bg-light border border-dark-subtle text-dark">Fashion</span>
+                            <h6 class="mt-2 mb-3"><a href="#!" class="text-black">Crop top Sweater Clothing</a></h6>
+                            <div class="row g-5">
+                                <div class="col">
+                                    <h6 class="mb-0 lh-base">Select Colors</h6>
+                                    <div class="d-flex gap-2 align-items-center mt-2 flex-grow-1">
+                                        <a href="#!" class="d-flex align-items-center justify-content-center border rounded-circle size-6 border-2 border-white chart-icon-ring-dark bg-primary outline-offset-0"></a>
+                                        <a href="#!" class="d-flex align-items-center justify-content-center border rounded-circle bg-dark size-6 border-2 border-white text-white chart-icon-ring-dark outline-offset-0"></a>
+                                        <a href="#!" class="d-flex align-items-center justify-content-center border bg-pink rounded-circle size-6 border-2 border-white text-white chart-icon-ring-dark outline-offset-0"></a>
+                                        <a href="#!" class="d-flex align-items-center justify-content-center border bg-success rounded-circle size-6 border-2 border-white text-white chart-icon-ring-dark outline-offset-0"></a>
+                                        <a href="#!" class="d-flex align-items-center justify-content-center border bg-danger rounded-circle size-6 border-2 border-white text-white chart-icon-ring-dark outline-offset-0"></a>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h6 class="mb-0 lh-base">Select Size</h6>
+                                    <div class="d-flex gap-2 mt-3">
+                                        <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                            S
+                                        </a>
+                                        <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                            M
+                                        </a>
+                                        <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                            L
+                                        </a>
+                                        <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                            XL
+                                        </a>
+                                        <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                            2XL
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <h5 class="d-flex align-items-center gap-2 mt-4">
+                                <span class="fs-lg">$22.12</span>
+                                <p class="text-muted text-decoration-line-through fw-normal fs-sm">$29.49</p>
+                                <span class="badge bg-danger-subtle border border-danger-subtle text-danger">25%</span>
+                            </h5>
+                            <div class="mt-5">
+                                <div x-data="{ count: 1 }" class="input-spin-group input-borderless p-1 border rounded">
+                                    <button @click="count--" class="btn btn-sub-primary px-2 border-0 size-8 d-flex justify-content-center align-items-center" type="button">
+                                        <i data-lucide="minus" class="size-4"></i>
+                                    </button>
+                                    <input type="text" x-model="count" class="input-spin form-control text-center border-0 h-8" readonly>
+                                    <button @click="count++" class="btn btn-sub-primary px-2 border-0 size-8 d-flex justify-content-center align-items-center" type="button">
+                                        <i data-lucide="plus" class="size-4"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <button type="button" class="btn-close link link-danger text-black float-end" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-line size-4"></i></button>
+                    <div class="d-flex flex-column flex-sm-row gap-4">
+                        <div class="flex-shrink-0 w-300px bg-light rounded-2">
+                            <img src="assets/images/products/img-03.png" alt="Product Image" class="img-fluid">
+                        </div>
+                        <div class="mt-4 mt-sm-0">
+                            <span class="badge bg-light border border-dark-subtle text-dark">Footwear</span>
+                            <h6 class="mt-2 mb-3"><a href="#!" class="text-black">Spar Men Black Running Shoes</a></h6>
+                            <div class="row g-5">
+                                <div class="col">
+                                    <h6 class="mb-0 lh-base">Select Colors</h6>
+                                    <div class="d-flex gap-2 align-items-center mt-2 flex-grow-1">
+                                        <a href="#!" class="d-flex align-items-center justify-content-center border rounded-circle bg-dark size-6 border-2 border-white text-white chart-icon-ring-dark outline-offset-0"></a>
+                                        <a href="#!" class="d-flex align-items-center justify-content-center border bg-pink rounded-circle size-6 border-2 border-white text-white chart-icon-ring-dark outline-offset-0"></a>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h6 class="mb-0 lh-base">Select Size</h6>
+                                    <div class="d-flex gap-2 mt-3">
+                                        <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                            6
+                                        </a>
+                                        <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                            7
+                                        </a>
+                                        <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                            8
+                                        </a>
+                                        <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                            9
+                                        </a>
+                                        <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                            10
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <h5 class="d-flex align-items-center gap-2 mt-4">
+                                <span class="fs-lg">$71.56</span>
+                            </h5>
+                            <div class="mt-5">
+                                <div x-data="{ count: 2 }" class="input-spin-group input-borderless p-1 border rounded">
+                                    <button @click="count--" class="btn btn-sub-primary px-2 border-0 size-8 d-flex justify-content-center align-items-center" type="button">
+                                        <i data-lucide="minus" class="size-4"></i>
+                                    </button>
+                                    <input type="text" x-model="count" class="input-spin form-control text-center border-0 h-8" readonly>
+                                    <button @click="count++" class="btn btn-sub-primary px-2 border-0 size-8 d-flex justify-content-center align-items-center" type="button">
+                                        <i data-lucide="plus" class="size-4"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <button type="button" class="btn-close link link-danger text-black float-end" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-line size-4"></i></button>
+                    <div class="d-flex flex-column flex-sm-row gap-4">
+                        <div class="flex-shrink-0 w-300px bg-light rounded-2">
+                            <img src="assets/images/products/img-09.png" alt="Product Image" class="img-fluid">
+                        </div>
+                        <div class="mt-4 mt-sm-0">
+                            <span class="badge bg-light border border-dark-subtle text-dark">Fashion</span>
+                            <h6 class="mt-2 mb-3"><a href="#!" class="text-black">Hoodie Jacket Letterman Sleeve Coat</a></h6>
+                            <div class="row g-5">
+                                <div class="col">
+                                    <h6 class="mb-0 lh-base">Select Colors</h6>
+                                    <div class="d-flex gap-2 align-items-center mt-2 flex-grow-1">
+                                        <a href="#!" class="d-flex align-items-center justify-content-center border rounded-circle bg-primary size-6 border-2 border-white text-white chart-icon-ring-dark outline-offset-0"></a>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h6 class="mb-0 lh-base">Select Size</h6>
+                                    <div class="d-flex gap-2 mt-3">
+                                        <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                            X
+                                        </a>
+                                        <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                            L
+                                        </a>
+                                        <a href="#!" x-data="{ isFocused: false }" :class="{'text-success': isFocused, 'text-muted': !isFocused}" @focus="isFocused = true" @blur="isFocused = false" class="fw-medium">
+                                            XL
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <h5 class="d-flex align-items-center gap-2 mt-4">
+                                <span class="fs-lg">$44.49</span>
+                            </h5>
+                            <div class="mt-5">
+                                <div x-data="{ count: 1 }" class="input-spin-group input-borderless p-1 border rounded">
+                                    <button @click="count--" class="btn btn-sub-primary px-2 border-0 size-8 d-flex justify-content-center align-items-center" type="button">
+                                        <i data-lucide="minus" class="size-4"></i>
+                                    </button>
+                                    <input type="text" x-model="count" class="input-spin form-control text-center border-0 h-8" readonly>
+                                    <button @click="count++" class="btn btn-sub-primary px-2 border-0 size-8 d-flex justify-content-center align-items-center" type="button">
+                                        <i data-lucide="plus" class="size-4"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="position-sticky top-24 mb-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title mb-0">Order Summary</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <label for="discountCode" class="form-label fw-medium">Discount Code</label>
+                            <input type="text" id="discountCode" class="form-control" placeholder="Enter coupon code">
+                        </div>
+                        <table class="table table-borderless mb-0">
+                            <tr>
+                                <th>Sub Amount</th>
+                                <td>$<span>138.17</span></td>
+                            </tr>
+                            <tr>
+                                <th>Vat Amount (6%)</th>
+                                <td>$<span>8.29</span></td>
+                            </tr>
+                            <tr>
+                                <th>Discount (10%)</th>
+                                <td>-$<span>0.00</span></td>
+                            </tr>
+                            <tr>
+                                <th>Shipping Charge</th>
+                                <td>$<span>35.00</span></td>
+                            </tr>
+                            <tr class="border-top">
+                                <th>Total Amount</th>
+                                <td>$<span>181.46</span></td>
+                            </tr>
+                        </table>
+                        <div class="my-4">
+                            <a href="apps-ecommerce-checkout.html" class="btn btn-primary w-100">Checkout Now</a>
+                        </div>
+                        <p class="text-center text-muted">By clicking the "checkout order" button, you agree to the terms of the public offers.</p>
+                    </div>
+                </div>
+                <div class="d-flex gap-4 mb-5">
+                    <div class="d-flex align-items-center justify-content-center bg-light rounded-2 text-dark size-12 flex-shrink-0">
+                        <i data-lucide="truck"></i>
+                    </div>
+                    <div>
+                        <h6 class="mb-1">Free delivery on May 24</h6>
+                        <p class="text-muted">To the address, by courier - with fitting, free of charge for purchases over $500.</p>
+                    </div>
+                </div>
+                <div class="d-flex gap-4 mb-5">
+                    <div class="d-flex align-items-center justify-content-center bg-light rounded-2 text-dark size-12 flex-shrink-0">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <div>
+                        <h6 class="mb-1">Safety</h6>
+                        <p class="text-muted">The security of payments is guaranteed through the use of the SSL protocol. Your bank card details are securely protected during online transactions.</p>
+                    </div>
+                </div>
+                <div class="d-flex gap-4">
+                    <div class="d-flex align-items-center justify-content-center bg-light rounded-2 text-dark size-12 flex-shrink-0">
+                        <i data-lucide="percent"></i>
+                    </div>
+                    <div>
+                        <h6 class="mb-1">5% discount</h6>
+                        <p class="text-muted">When paying online, you receive a 5% discount on your next purchase.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/ecommerce/shop-cart.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

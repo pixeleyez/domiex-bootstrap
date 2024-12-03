@@ -56,19 +56,19 @@
                         <div class="col">
                             <h6 class="mt-5">Select Colors</h6>
                             <div x-data="{ selected: null }" class="d-flex gap-2 align-items-center mt-2 flex-grow-1">
-                                <a href="#!" @click="selected = 'primary'" :class="{'border-primary': selected === 'primary'}" class="d-flex align-items-center justify-content-center border rounded-circle size-6 border-2 border-white chart-icon-ring-dark bg-primary" style="outline-offset: 0px;">
+                                <a href="#!" @click="selected = 'primary'" :class="{'border-primary': selected === 'primary'}" class="d-flex align-items-center justify-content-center border rounded-circle size-6 border-2 border-white chart-icon-ring-dark bg-primary outline-offset-0">
                                     <i x-show="selected === 'primary'" class="size-4 text-white" data-lucide="check"></i>
                                 </a>
-                                <a href="#!" @click="selected = 'dark'" :class="{'border-dark': selected === 'dark'}" class="d-flex align-items-center justify-content-center border rounded-circle bg-dark size-6 border-2 border-white text-white chart-icon-ring-dark" style="outline-offset: 0px;">
+                                <a href="#!" @click="selected = 'dark'" :class="{'border-dark': selected === 'dark'}" class="d-flex align-items-center justify-content-center border rounded-circle bg-dark size-6 border-2 border-white text-white chart-icon-ring-dark outline-offset-0">
                                     <i x-show="selected === 'dark'" class="size-4 text-white" data-lucide="check"></i>
                                 </a>
-                                <a href="#!" @click="selected = 'pink'" :class="{'border-pink': selected === 'pink'}" class="d-flex align-items-center justify-content-center border bg-pink rounded-circle size-6 border-2 border-white text-white chart-icon-ring-dark" style="outline-offset: 0px;">
+                                <a href="#!" @click="selected = 'pink'" :class="{'border-pink': selected === 'pink'}" class="d-flex align-items-center justify-content-center border bg-pink rounded-circle size-6 border-2 border-white text-white chart-icon-ring-dark outline-offset-0">
                                     <i x-show="selected === 'pink'" class="size-4 text-white" data-lucide="check"></i>
                                 </a>
-                                <a href="#!" @click="selected = 'success'" :class="{'border-success': selected === 'success'}" class="d-flex align-items-center justify-content-center border bg-success rounded-circle size-6 border-2 border-white text-white chart-icon-ring-dark" style="outline-offset: 0px;">
+                                <a href="#!" @click="selected = 'success'" :class="{'border-success': selected === 'success'}" class="d-flex align-items-center justify-content-center border bg-success rounded-circle size-6 border-2 border-white text-white chart-icon-ring-dark outline-offset-0">
                                     <i x-show="selected === 'success'" class="size-4 text-white" data-lucide="check"></i>
                                 </a>
-                                <a href="#!" @click="selected = 'danger'" :class="{'border-danger': selected === 'danger'}" class="d-flex align-items-center justify-content-center border bg-danger rounded-circle size-6 border-2 border-white text-white chart-icon-ring-dark" style="outline-offset: 0px;">
+                                <a href="#!" @click="selected = 'danger'" :class="{'border-danger': selected === 'danger'}" class="d-flex align-items-center justify-content-center border bg-danger rounded-circle size-6 border-2 border-white text-white chart-icon-ring-dark outline-offset-0">
                                     <i x-show="selected === 'danger'" class="size-4 text-white" data-lucide="check"></i>
                                 </a>
                             </div>
@@ -617,120 +617,122 @@
             </div>
         </div>
         <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="bg-light-subtle">
-                        <div class="swiper previewImages">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="assets/images/products/img-25.png" alt="" class="w-417px">
+            <div class="position-sticky top-24 mb-5">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="bg-light-subtle">
+                            <div class="swiper previewImages">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="assets/images/products/img-25.png" alt="" class="w-417px">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="assets/images/products/img-26.png" alt="" class="w-417px">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="assets/images/products/img-27.png" alt="" class="w-417px">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="assets/images/products/img-28.png" alt="" class="w-417px">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="assets/images/products/img-29.png" alt="" class="w-417px">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="assets/images/products/img-30.png" alt="" class="w-417px">
+                                    </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/images/products/img-26.png" alt="" class="w-417px">
+                                <div>
+                                    <div class="swiper-button-next fs-4xl size-10 rounded-circle bg-white"></div>
+                                    <div class="swiper-button-prev fs-4xl size-10 rounded-circle bg-white"></div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/images/products/img-27.png" alt="" class="w-417px">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/images/products/img-28.png" alt="" class="w-417px">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/images/products/img-29.png" alt="" class="w-417px">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/images/products/img-30.png" alt="" class="w-417px">
-                                </div>
+                                <div class="swiper-pagination"></div>
                             </div>
-                            <div>
-                                <div class="swiper-button-next fs-4xl size-10 rounded-circle bg-white"></div>
-                                <div class="swiper-button-prev fs-4xl size-10 rounded-circle bg-white"></div>
-                            </div>
-                            <div class="swiper-pagination"></div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-body d-flex align-items-center gap-3">
-                    <div class="size-14 d-flex justify-content-center align-items-center border flex-shrink-0 rounded-pill">
-                        <i data-lucide="store" class="icon-info"></i>
-                    </div>
-                    <div class="flex-grow-1">
-                        <a href="#!" class="lh-base mb-1">
-                            <span class="text-black fw-semibold">PixelEyez Infotech LLP</span>
-                            <i data-lucide="badge-check" class="size-4 ms-1 icon-info"></i>
-                        </a>
-                        <p class="fw-medium">
-                            <i class="ri-star-half-line text-warning"></i>4.8
-                        </p>
-                    </div>
-                    <div class="flex-shrink-0">
-                        <button class="btn btn-secondary">View Store</button>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between align-items-center gap-3 mb-5">
-                <h6 class="mb-0 flex-grow-1">Recent Product</h6>
-                <a href="apps-ecommerce-products-list.html" class="link link-primary text-dark">View All</a>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <div class="p-5 bg-light-subtle position-relative">
-                        <a href="#!" class="link link-danger text-black rounded-circle d-flex justify-content-center align-items-center position-absolute end-0 size-10 bg-white me-5"><i class="fs-lg ri-heart-line"></i></a>
-                        <div class="swiper productSlider mx-5 swiper-success">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide text-center">
-                                    <img src="assets/images/products/img-06.png" alt="" class="size-64 w-75">
-                                </div>
-                                <div class="swiper-slide text-center">
-                                    <img src="assets/images/products/img-04.png" alt="" class="size-64 w-75">
-                                </div>
-                                <div class="swiper-slide text-center">
-                                    <img src="assets/images/products/img-05.png" alt="" class="size-64 w-75">
-                                </div>
-                            </div>
-                            <div class="swiper-pagination py-2"></div>
+                <div class="card">
+                    <div class="card-body d-flex align-items-center gap-3">
+                        <div class="size-14 d-flex justify-content-center align-items-center border flex-shrink-0 rounded-pill">
+                            <i data-lucide="store" class="icon-info"></i>
                         </div>
-                    </div>
-                    <div class="mt-5">
-                        <h5 class="mb-2 lh-base fs-lg">$36.87</h5>
-                        <h6 class="mb-1 lh-base"><a href="#!" class="link link-primary text-black">Bra Lace Crop top</a></h6>
-                        <p class="text-muted">Fashion</p>
-
-                        <div class="d-flex flex-wrap align-items-center gap-2">
-                            <div class="d-flex align-items-center gap-1 mt-3 flex-grow-1">
-                                <div class="form-check check-primary ">
-                                    <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
-                                </div>
-                                <div class="form-check check-pink ">
-                                    <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
-                                </div>
-                                <div class="form-check check-success ">
-                                    <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
-                                </div>
-                                <div class="form-check check-danger ">
-                                    <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
-                                </div>
-                            </div>
-
-
-                            <div class="d-flex align-items-center gap-2 mt-3 font-weight-medium">
-                                <a href="#!" class="text-muted fw-semibold active text-success" role="button">S</a>
-                                <a href="#!" class="text-muted fw-semibold" role="button">M</a>
-                                <a href="#!" class="text-muted fw-semibold" role="button">L</a>
-                                <a href="#!" class="text-muted fw-semibold" role="button">XL</a>
-                                <a href="#!" class="text-muted fw-semibold" role="button">2XL</a>
-                            </div>
-                        </div>
-
-                        <div class="d-flex gap-2 mt-4">
-                            <a class="w-100 btn btn-primary" href="/apps-ecommerce-shop-cart">Buy Now</a>
-                            <a href="#!" class="btn btn-light text-dark btn-icon">
-                                <i data-lucide="shopping-basket" class="size-5"></i>
+                        <div class="flex-grow-1">
+                            <a href="#!" class="lh-base mb-1">
+                                <span class="text-black fw-semibold">PixelEyez Infotech LLP</span>
+                                <i data-lucide="badge-check" class="size-4 ms-1 icon-info"></i>
                             </a>
+                            <p class="fw-medium">
+                                <i class="ri-star-half-line text-warning"></i>4.8
+                            </p>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <button class="btn btn-secondary">View Store</button>
                         </div>
                     </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center gap-3 mb-5">
+                    <h6 class="mb-0 flex-grow-1">Recent Product</h6>
+                    <a href="apps-ecommerce-products-list.html" class="link link-primary text-dark">View All</a>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="p-5 bg-light-subtle position-relative">
+                            <a href="#!" class="link link-danger text-black rounded-circle d-flex justify-content-center align-items-center position-absolute end-0 size-10 bg-white me-5"><i class="fs-lg ri-heart-line"></i></a>
+                            <div class="swiper productSlider mx-5 swiper-success">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide text-center">
+                                        <img src="assets/images/products/img-06.png" alt="" class="size-64 w-75">
+                                    </div>
+                                    <div class="swiper-slide text-center">
+                                        <img src="assets/images/products/img-04.png" alt="" class="size-64 w-75">
+                                    </div>
+                                    <div class="swiper-slide text-center">
+                                        <img src="assets/images/products/img-05.png" alt="" class="size-64 w-75">
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination py-2"></div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <h5 class="mb-2 lh-base fs-lg">$36.87</h5>
+                            <h6 class="mb-1 lh-base"><a href="#!" class="link link-primary text-black">Bra Lace Crop top</a></h6>
+                            <p class="text-muted">Fashion</p>
 
+                            <div class="d-flex flex-wrap align-items-center gap-2">
+                                <div class="d-flex align-items-center gap-1 mt-3 flex-grow-1">
+                                    <div class="form-check check-primary ">
+                                        <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
+                                    </div>
+                                    <div class="form-check check-pink ">
+                                        <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
+                                    </div>
+                                    <div class="form-check check-success ">
+                                        <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
+                                    </div>
+                                    <div class="form-check check-danger ">
+                                        <input class="form-check-input mt-0 rounded-1 size-5" type="checkbox" value="" id="defaultCheck1" checked>
+                                    </div>
+                                </div>
+
+
+                                <div class="d-flex align-items-center gap-2 mt-3 font-weight-medium">
+                                    <a href="#!" class="text-muted fw-semibold active text-success" role="button">S</a>
+                                    <a href="#!" class="text-muted fw-semibold" role="button">M</a>
+                                    <a href="#!" class="text-muted fw-semibold" role="button">L</a>
+                                    <a href="#!" class="text-muted fw-semibold" role="button">XL</a>
+                                    <a href="#!" class="text-muted fw-semibold" role="button">2XL</a>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-2 mt-4">
+                                <a class="w-100 btn btn-primary" href="/apps-ecommerce-shop-cart">Buy Now</a>
+                                <a href="#!" class="btn btn-light text-dark btn-icon">
+                                    <i data-lucide="shopping-basket" class="size-5"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -742,7 +744,7 @@
             <div class="p-2 modal-content">
                 <div class="modal-header">
                     <h6 class="mb-0">Add Teacher</h6>
-                     <button type="button" class="btn-close link link-danger text-black" data-bs-dismiss="modal" aria-label="Close"><i data-lucide="x" class="size-5"></i></button>
+                    <button type="button" class="btn-close link link-danger text-black" data-bs-dismiss="modal" aria-label="Close"><i data-lucide="x" class="size-5"></i></button>
                 </div>
                 <div class="p-0 modal-body">
                     <div class="p-4">
