@@ -129,24 +129,24 @@
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="stockInput" class="form-label fw-medium">Stock</label>
-                            <div x-data="{ count: 0 }" class="input-group-spin input-spin-primary">
+                            <div x-data="{ count: 0 }" class="input-spin-group">
                                 <button @click="count--" class="input-spin-minus" type="button">
                                     <i data-lucide="minus" class="size-4"></i>
                                 </button>
-                                <input type="text" x-model="count" class="form-control" readonly>
-                                <button @click="count++" class="input-spin-plus" type="button">
+                                <input type="text" x-model="count" class="input-spin form-control" readonly>
+                                <button @click="count++" class="input-spin-plus input-spin" type="button">
                                     <i data-lucide="plus" class="size-4"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="quantityInput" class="form-label fw-medium">Quantity</label>
-                            <div x-data="{ count: 0 }" class="input-group-spin input-spin-primary">
+                            <div x-data="{ count: 0 }" class="input-spin-group">
                                 <button @click="count--" class="input-spin-minus" type="button">
                                     <i data-lucide="minus" class="size-4"></i>
                                 </button>
-                                <input type="text" x-model="count" class="form-control" readonly>
-                                <button @click="count++" class="input-spin-plus" type="button">
+                                <input type="text" x-model="count" class="input-spin form-control" readonly>
+                                <button @click="count++" class="input-spin-plus input-spin" type="button">
                                     <i data-lucide="plus" class="size-4"></i>
                                 </button>
                             </div>
@@ -221,7 +221,7 @@
             </div>
         </div>
         <div class="col-4">
-            <div class="card">
+            <div class="card position-sticky top-24">
                 <div class="card-header">
                     <h6 class="card-title mb-0"><i data-lucide="eye" class="size-4 me-2"></i><span class="align-middle">Product Card Preview</span></h6>
                 </div>

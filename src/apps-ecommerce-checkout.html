@@ -1,0 +1,328 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Checkout" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Checkout" sub-title="Ecommerce" }}
+
+    <div class="row">
+        <div class="col-8">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Personal Details</h6>
+                </div>
+                <div class="card-body">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-end gap-2 float-end">
+                                <a href="#!" class="fw-medium link link-primary text-dark" data-bs-toggle="collapse" data-bs-target="#addressFormEdit">
+                                    <i data-lucide="pencil" class="size-4"></i>
+                                    <span class="align-middle">Edit</span>
+                                </a>
+                                <a href="#!" class="fw-medium link link-primary text-dark">
+                                    <i data-lucide="trash-2" class="size-4"></i>
+                                    <span class="align-middle">Delete</span>
+                                </a>
+                            </div>
+                            <span class="badge bg-light border border-dark-subtle text-dark">Home</span>
+                            <h6 class="mt-2 mb-1">Jordan Roughley - 2015184185</h6>
+                            <p class="mb-3 text-muted">13833 Jayda Squares Apt. 849, Sharonville, Washington, USA - 33199 8539</p>
+                            <button class="btn btn-light text-dark">
+                                Select Here
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-end gap-2 float-end">
+                                <a href="#!" class="fw-medium link link-primary text-dark" data-bs-toggle="collapse" data-bs-target="#addressFormEdit">
+                                    <i data-lucide="pencil" class="size-4"></i>
+                                    <span class="align-middle">Edit</span>
+                                </a>
+                                <a href="#!" class="fw-medium link link-primary text-dark">
+                                    <i data-lucide="trash-2" class="size-4"></i>
+                                    <span class="align-middle">Delete</span>
+                                </a>
+                            </div>
+                            <span class="badge bg-light border border-dark-subtle text-dark">Work</span>
+                            <h6 class="mt-2 mb-1">Prof. Ronaldo Funk - 6179419815</h6>
+                            <p class="mb-3 text-muted">6602 Schroeder Ville Apt. 066, Bennytown, USA - 62144 1437</p>
+                            <button class="btn btn-light text-dark">
+                                Select Here
+                            </button>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <button class="btn btn-success" data-bs-toggle="collapse" data-bs-target="#addressForm">Add a New Address</button>
+                    </div>
+                    <div class="collapse collapse-transition" id="addressForm">
+                        <form action="#!">
+                            <h6 class="mb-2 mt-3">Add a New Address</h6>
+                            <div x-data="{
+                                firstName:'', lastName: '', phoneNumber: '', textareaInput2: '', cityDistrictTownInput: '', conutryNameInput:'', statusSelect:'', 
+                                errors: {},
+                        
+                                validate() {
+                                    this.errors = {};
+                                    if (!this.firstName) this.errors.firstName = 'First name is required.';
+                                    if (!this.lastName) this.errors.lastName = 'Last name is required.';
+                                    if (!this.phoneNumber) this.errors.phoneNumber = 'Phone number is required.';
+                                    if (!this.textareaInput2) this.errors.textareaInput2 = 'Address is required.'; 
+                                    if (!this.cityDistrictTownInput) this.errors.cityDistrictTownInput = 'City is required.';
+                                    if (!this.conutryNameInput) this.errors.conutryNameInput = 'Country date is required.';
+                                    if (!this.statusSelect) this.errors.statusSelect = 'Zip code is required.';
+                                    return Object.keys(this.errors).length === 0;
+                                },
+                        
+                                clearError(field) { this.errors[field] = ''; }
+                            }" class="row g-5">
+                                <div class="col-6">
+                                    <label for="orderIDInput" class="form-label fw-medium">First Name</label>
+                                    <input type="text" id="orderIDInput" class="form-control" placeholder="Enter your first name"  x-model="firstName" @input="clearError('firstName')" >
+                                    <p x-show="errors.firstName" class="text-sm text-danger" x-text="errors.firstName"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Last Name</label>
+                                    <input type="text" id="lastName" class="form-control" placeholder="Enter your last name" x-model="lastName" @input="clearError('lastName')">
+                                    <p x-show="errors.lastName" class="text-sm text-danger" x-text="errors.lastName"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Phone Number  </label>
+                                    <input type="number" placeholder="000 000 0000" class="form-control" x-model="phoneNumber" @input="clearError('phoneNumber')"/>
+                                    <p x-show="errors.phoneNumber" class="text-sm text-danger" x-text="errors.phoneNumber" ></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Alternate Phone Number (Optional)</label>
+                                    <input type="text" id="alternatePhoneNumber" class="form-control" placeholder="000 000 0000">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Address (Area and Street)</label>
+                                    <textarea name="textareaInput2" id="textareaInput2" rows="3" class="form-control" placeholder="Area and Street" x-model="textareaInput2" @input="clearError('textareaInput2')"></textarea>
+                                    <p x-show="errors.textareaInput2" class="text-sm text-danger" x-text="errors.textareaInput2"></p>
+                                </div>
+                                <div class="col-4">
+                                    <label class="form-label fw-medium">City/District/Town</label>
+                                    <input type="text" placeholder="Enter city name" class="form-control" x-model="cityDistrictTownInput" @input="clearError('cityDistrictTownInput')"/>
+                                    <p x-show="errors.cityDistrictTownInput" class="text-sm text-danger" x-text="errors.cityDistrictTownInput"></p>
+                                </div>
+                                <div class="col-4">
+                                    <label class="form-label fw-medium">Country Name</label>
+                                    <input type="text" placeholder="Enter country" class="form-control"  x-model="conutryNameInput" @input="clearError('conutryNameInput')"/>
+                                    <p x-show="errors.conutryNameInput" class="text-sm text-danger" x-text="errors.conutryNameInput"></p>
+                                </div>
+                                <div class="col-4">
+                                    <label class="form-label fw-medium">Zip Code</label>
+                                    <input type="text" placeholder="Enter zip code" class="form-control" x-model="statusSelect" @input="clearError('statusSelect')"/>
+                                    <p x-show="errors.statusSelect" class="text-sm text-danger" x-text="errors.statusSelect"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Address Type</label>
+                                    <div class="row g-3">
+                                        <div class="col-6 form-check radio-primary">
+                                            <input class="form-check-input" type="radio" name="gender" id="Home" value="Home">
+                                            <label class="form-check-label" for="Home">Home (All day delivery)</label>
+                                        </div>
+                                        <div class="col-6 form-check radio-primary">
+                                            <input class="form-check-input" type="radio" name="gender" id="Work" value="Work" x-model="genderSelect">
+                                            <label class="form-check-label" for="Work">Work (Delivery between 10 AM - 5 PM)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end gap-2">
+                                    <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary" >Save and Deliver Here</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="collapse collapse-transition" id="addressFormEdit">
+                        <form action="#!">
+                            <h6 class="mb-2 mt-3">Edit Address</h6>
+                            <div class="row g-5">
+                                <div class="col-6">
+                                    <label for="orderIDInput" class="form-label fw-medium">First Name</label>
+                                    <input type="text" id="orderIDInput" class="form-control" value="Jordan">
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Last Name</label>
+                                    <input type="text" id="lastName" class="form-control" value="Roughley">
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Phone Number  </label>
+                                    <input type="number" value="2015184185" class="form-control" />
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Alternate Phone Number (Optional)</label>
+                                    <input type="text" id="alternatePhoneNumber" class="form-control" placeholder="000 000 0000">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Address (Area and Street)</label>
+                                    <textarea name="textareaInput2" id="textareaInput2" rows="3" class="form-control" value="13833 Jayda Squares Apt 849 Sharonville" ></textarea>
+                                </div>
+                                <div class="col-4">
+                                    <label class="form-label fw-medium">City/District/Town</label>
+                                    <input type="text" value="Washington" class="form-control" />
+                                </div>
+                                <div class="col-4">
+                                    <label class="form-label fw-medium">Country Name</label>
+                                    <input type="text" value="USA" class="form-control" />
+                                </div>
+                                <div class="col-4">
+                                    <label class="form-label fw-medium">Zip Code</label>
+                                    <input type="text" value="33199 8539" class="form-control" />
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Address Type</label>
+                                    <div class="row g-3">
+                                        <div class="col-6 form-check radio-primary">
+                                            <input class="form-check-input" type="radio" name="gender" id="maleGender" value="Male" checked>
+                                            <label class="form-check-label" for="maleGender">Home (All day delivery)</label>
+                                        </div>
+                                        <div class="col-6 form-check radio-primary">
+                                            <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="Female">
+                                            <label class="form-check-label" for="femaleGender">Work (Delivery between 10 AM - 5 PM)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end gap-2">
+                                    <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary">Save and Deliver Here</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="position-sticky top-24 mb-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">Order Summary</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <button type="button" class="btn-close link link-danger text-black float-end" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-line size-4"></i></button>
+                            <div class="d-flex flex-column gap-3 flex-md-row mb-3">
+                                <div class="d-flex justify-content-center align-items-center w-16 bg-light rounded-2">
+                                    <img src="assets/images/products/img-04.png" alt="Product Image" class="img-fluid">
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">Crop top Sweater Clothing</h6>
+                                    <p class="mb-2 text-muted">
+                                        <span class="px-2 ps-0 border-end border-muted">1 Qty</span>
+                                        <span class="px-2 border-end border-muted">Pink</span>
+                                        <span class="px-2 ps-0">M</span>
+                                    </p>
+                                    <h5 class="fs-lg mb-0">22.12</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" class="btn-close link link-danger text-black float-end" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-line size-4"></i></button>
+                            <div class="d-flex flex-column gap-3 flex-md-row mb-3">
+                                <div class="d-flex justify-content-center align-items-center w-16 bg-light rounded-2">
+                                    <img src="assets/images/products/img-03.png" alt="Product Image" class="img-fluid">
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">Spar Men Black Running Shoes</h6>
+                                    <p class="mb-2 text-muted">
+                                        <span class="px-2 ps-0 border-end border-muted">2 Qty</span>
+                                        <span class="px-2 border-end border-muted">Black</span>
+                                        <span class="px-2 ps-0">8</span>
+                                    </p>
+                                    <h5 class="fs-lg mb-0">71.56</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" class="btn-close link link-danger text-black float-end" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-line size-4"></i></button>
+                            <div class="d-flex flex-column gap-3 flex-md-row mb-3">
+                                <div class="d-flex justify-content-center align-items-center w-16 bg-light rounded-2">
+                                    <img src="assets/images/products/img-09.png" alt="Product Image" class="img-fluid">
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">Hoodie Jacket Letterman Sleeve Coat</h6>
+                                    <p class="mb-2 text-muted">
+                                        <span class="px-2 ps-0 border-end border-muted">1 Qty</span>
+                                        <span class="px-2 border-end border-muted">Blue</span>
+                                        <span class="px-2 ps-0">L</span>
+                                    </p>
+                                    <h5 class="fs-lg mb-0">44.49</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="discountCode" class="form-label fw-medium">Discount Code</label>
+                            <input type="text" id="discountCode" class="form-control" placeholder="Enter coupon code">
+                        </div>
+                        <table class="table table-borderless mb-0">
+                            <tr>
+                                <th>Sub Amount</th>
+                                <td>$<span>138.17</span></td>
+                            </tr>
+                            <tr>
+                                <th>Vat Amount (6%)</th>
+                                <td>$<span>8.29</span></td>
+                            </tr>
+                            <tr>
+                                <th>Discount (10%)</th>
+                                <td>-$<span>0.00</span></td>
+                            </tr>
+                            <tr>
+                                <th>Shipping Charge</th>
+                                <td>$<span>35.00</span></td>
+                            </tr>
+                            <tr class="border-top">
+                                <th>Total Amount</th>
+                                <td>$<span>181.46</span></td>
+                            </tr>
+                        </table>
+                        <div class="my-4">
+                            <a href="apps-ecommerce-checkout.html" class="btn btn-primary w-100">Checkout Now</a>
+                        </div>
+                        <p class="text-center text-muted">By clicking the "checkout order" button, you agree to the terms of the public offers.</p>
+
+                    </div>
+                </div>
+                <div class="d-flex gap-4 mb-5">
+                    <div class="d-flex align-items-center justify-content-center bg-light rounded-2 text-dark size-12 flex-shrink-0">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <div>
+                        <h6 class="mb-1">Safe and Secure</h6>
+                        <p class="text-muted">Safe and Secure Payments. Easy returns. 100% Authentic products.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

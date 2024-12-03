@@ -1,0 +1,207 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Wishlist" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Wishlist" sub-title="Ecommerce" }}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">💖 Wishlist</h6>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="table-box">
+                        <table class="table table-borderless align-middle">
+                            <thead class="border-bottom">
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Subtotal</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="position-relative d-flex align-items-center justify-content-center p-2 bg-light size-16">
+                                                <button class="position-absolute d-flex align-items-center justify-content-center border-0 bg-white rounded-circle size-4 wishlist-closeBtn">
+                                                    <i class="ri-close-line"></i>
+                                                </button>
+                                                <img alt="" src="assets/images/products/img-08.png" class="img-fluid rounded">
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-1">Tote bag Leather Handbag Dolce</h6>
+                                                <p class="mb-2 text-muted">
+                                                    <span>
+                                                        <span class="px-2 border-end">Red</span>
+                                                        <span class="px-2">M</span>
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>79.99</td>
+                                    <td>
+                                        <div x-data="{ count: 1 }" class="input-spin-group input-spin-primary">
+                                            <button @click="count--" class="input-spin-minus" type="button">
+                                                <i data-lucide="minus" class="size-4"></i>
+                                            </button>
+                                            <input type="text" x-model="count" class="input-spin form-control" readonly>
+                                            <button @click="count++" class="input-spin-plus input-spin" type="button">
+                                                <i data-lucide="plus" class="size-4"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td>79.99</td>
+                                     <td> <a href="apps-ecommerce-shop-cart.html" class="btn btn-link btn-light text-dark"><i class="ri-shopping-cart-line"></i>Add to Cart</a></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="position-relative d-flex align-items-center justify-content-center p-2 bg-light size-16">
+                                                <button class="position-absolute d-flex align-items-center justify-content-center border-0 bg-white rounded-circle size-4 wishlist-closeBtn">
+                                                    <i class="ri-close-line"></i>
+                                                </button>
+                                                <img alt="" src="assets/images/products/img-09.png" class="img-fluid rounded">
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-1">Hoodie Jacket Letterman Sleeve Coat</h6>
+                                                <p class="mb-2 text-muted">
+                                                    <span>
+                                                        <span class="px-2 border-end">Red</span>
+                                                        <span class="px-2">M</span>
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>79.99</td>
+                                    <td>
+                                        <div x-data="{ count: 2 }" class="input-spin-group input-spin-primary">
+                                            <button @click="count--" class="input-spin-minus" type="button">
+                                                <i data-lucide="minus" class="size-4"></i>
+                                            </button>
+                                            <input type="text" x-model="count" class="input-spin form-control" readonly>
+                                            <button @click="count++" class="input-spin-plus input-spin" type="button">
+                                                <i data-lucide="plus" class="size-4"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td>159.98</td>
+                                     <td> <a href="apps-ecommerce-shop-cart.html" class="btn btn-link btn-light text-dark"><i class="ri-shopping-cart-line"></i>Add to Cart</a></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="position-relative d-flex align-items-center justify-content-center p-2 bg-light size-16">
+                                                <button class="position-absolute d-flex align-items-center justify-content-center border-0 bg-white rounded-circle size-4 wishlist-closeBtn">
+                                                    <i class="ri-close-line"></i>
+                                                </button>
+                                                <img alt="" src="assets/images/products/img-10.png" class="img-fluid rounded">
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-1">Straw hat Cap Cowboy hat Sun hat</h6>
+                                                <p class="mb-2 text-muted">
+                                                    <span>
+                                                        <span class="px-2 border-end">Red</span>
+                                                        <span class="px-2">M</span>
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>79.99</td>
+                                    <td>
+                                        <div x-data="{ count: 1 }" class="input-spin-group input-spin-primary">
+                                            <button @click="count--" class="input-spin-minus" type="button">
+                                                <i data-lucide="minus" class="size-4"></i>
+                                            </button>
+                                            <input type="text" x-model="count" class="input-spin form-control" readonly>
+                                            <button @click="count++" class="input-spin-plus input-spin" type="button">
+                                                <i data-lucide="plus" class="size-4"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td>159.98</td>
+                                     <td> <a href="apps-ecommerce-shop-cart.html" class="btn btn-link btn-light text-dark"><i class="ri-shopping-cart-line"></i>Add to Cart</a></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="position-relative d-flex align-items-center justify-content-center p-2 bg-light size-16">
+                                                <button class="position-absolute d-flex align-items-center justify-content-center border-0 bg-white rounded-circle size-4 wishlist-closeBtn">
+                                                    <i class="ri-close-line"></i>
+                                                </button>
+                                                <img alt="" src="assets/images/products/img-11.png" class="img-fluid rounded">
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-1">Sneakers Shoe Nike Basketball</h6>
+                                                <p class="mb-2 text-muted">
+                                                    <span>
+                                                        <span class="px-2 border-end">Red</span>
+                                                        <span class="px-2">M</span>
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>79.99</td>
+                                    <td>
+                                        <div x-data="{ count: 1 }" class="input-spin-group input-spin-primary">
+                                            <button @click="count--" class="input-spin-minus" type="button">
+                                                <i data-lucide="minus" class="size-4"></i>
+                                            </button>
+                                            <input type="text" x-model="count" class="input-spin form-control" readonly>
+                                            <button @click="count++" class="input-spin-plus input-spin" type="button">
+                                                <i data-lucide="plus" class="size-4"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td>239.97</td>
+                                    <td> <a href="apps-ecommerce-shop-cart.html" class="btn btn-link btn-light text-dark"><i class="ri-shopping-cart-line"></i>Add to Cart</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a href="apps-ecommerce-products-grid.html" class="btn btn-link btn-sub-secondary"><i data-lucide="move-left" class="size-5 me-2"></i>Continue Shopping</a>
+                        <a href="apps-ecommerce-shop-cart.html" class="btn btn-link btn-primary">Update to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

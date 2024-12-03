@@ -696,7 +696,7 @@ $form-text-color:                       var(--#{$prefix}secondary-color);
 
 // scss-docs-start form-label-variables
 $form-label-margin-bottom:              .5rem;
-$form-label-font-size:                  null;
+$form-label-font-size:                  0.875rem;
 $form-label-font-style:                 null;
 $form-label-font-weight:                null;
 $form-label-color:                      null;
@@ -1597,6 +1597,7 @@ $avatar-sizes: (
   72: 288px,
   80: 320px,
   96: 384px,
+  300px: 300px,
   417px: 26.0625rem,
   550px: 34.375rem,
   25: 25%,

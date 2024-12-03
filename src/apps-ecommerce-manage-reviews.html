@@ -1,0 +1,206 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Manage Reviews" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Manage Reviews" sub-title="Ecommerce" }}
+
+    <div class="row">
+        <div class="col-8">
+            <h6 class="card-title mb-0">Reviews</h6>
+        </div>
+        <div class="col-4">
+            <div class="d-flex justify-content-end align-items-center gap-3">
+                <div class="position-relative">
+                    <input type="text" class="form-control ps-9 pe-4" placeholder="Search username, date, etc..." @input="filtercontacts" x-model="searchTerm">
+                    <div class="position-absolute top-50 translate-middle-y d-flex align-items-center">
+                        <i data-lucide="search" class="size-4 ms-3 icon-dark"></i>
+                    </div>
+                </div>
+                <button class="btn btn-primary"><i data-lucide="plus" class="size-4 me-2"></i>New Review</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <!-- Total Reviews Section -->
+        <div class="col-12 col-xl-4 px-3 py-4 border-end border-xl-end">
+            <h6 class="mb-5">Total Reviews</h6>
+            <h3><span x-text="totalReviews">28</span> <span class="badge bg-success text-xs align-middle"><span x-text="reviewPercentage">100</span>%</span></h3>
+            <p class="mt-2 text-muted">Growth in reviews this year</p>
+        </div>
+    
+        <!-- Average Rating Section -->
+        <div class="col-12 col-xl-4 px-3 py-4 border-end border-xl-end">
+            <h6 class="mb-5">Average Rating</h6>
+            <div class="d-flex align-items-center gap-3">
+                <h3><span x-text="averageReview">3.8</span></h3>
+                <div class="text-warning">
+                    <template x-for="i in 5" :key="i">
+                        <i x-bind:class="getStarClass(averageReview, i)" class="ri-star-fill"></i>
+                    </template>
+                </div>
+            </div>
+            <p class="mt-2 text-muted">Average rating this year</p>
+        </div>
+    
+        <!-- Review Distribution Section -->
+        <div class="col-12 col-xl-4 px-3 py-4">
+            <div class="d-flex align-items-center gap-2">
+                <p class="shrink-0"><i class="text-warning ri-star-fill"></i> 5</p>
+                <div class="progress w-100" style="height: 1em;">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <h6>4751</h6>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <p class="shrink-0"><i class="text-warning ri-star-fill"></i> 4</p>
+                <div class="progress w-100" style="height: 1em;">
+                    <div class="progress-bar bg-pink" role="progressbar" style="width: 64%;" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <h6>3658</h6>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <p class="shrink-0"><i class="text-warning ri-star-fill"></i> 3</p>
+                <div class="progress w-100" style="height: 1em;">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 51%;" aria-valuenow="51" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <h6>2349</h6>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <p class="shrink-0"><i class="text-warning ri-star-fill"></i> 2</p>
+                <div class="progress w-100" style="height: 1em;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 38%;" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <h6>1472</h6>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <p class="shrink-0"><i class="text-warning ri-star-fill"></i> 1</p>
+                <div class="progress w-100" style="height: 1em;">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <h6>120</h6>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="addReviewModal" tabindex="-1" aria-labelledby="addReviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="p-2 modal-content">
+                <div class="modal-header">
+                    <h6 class="mb-0">Add Teacher</h6>
+                    <button type="button" class="btn-close link link-danger text-black" data-bs-dismiss="modal" aria-label="Close"><i data-lucide="x" class="size-5"></i></button>
+                </div>
+                <div class="p-0 modal-body">
+                    <div class="p-4">
+                        <form action="#!">
+                            <div x-data="{
+                                    rating: '',locationInput: '', userNameInput: '', createDateInput:'', titleInput: '',  writeReviewInput: '',
+                                    errors: {},
+                                
+                                    validate() {
+                                        this.errors = {};
+                                        if (!this.rating) this.errors.rating = 'Star rating must be between 1 and 5.';
+                                        if (!this.userNameInput) this.errors.userNameInput = 'User name is required.';
+                                        if (!this.createDateInput) this.errors.createDateInput = 'Date is required.';
+                                        if (!this.locationInput) this.errors.locationInput = 'Location is required.';
+                                        if (!this.titleInput) this.errors.titleInput = 'Title is required.';
+                                        if (!this.writeReviewInput) this.errors.writeReviewInput = 'Content is required.';
+                                        return Object.keys(this.errors).length === 0;
+                                    },
+                                
+                                    clearError(field) { this.errors[field] = '' }
+                                }" class="row g-4">
+                                <div class="col-12">
+                                    <h6 class="text-center mb-5">Your Rating?</h6>
+                                    <div x-data="{ rating: 0, hovering: 0 }" class="d-flex justify-content-center gap-3">
+                                        <div class="d-flex justify-content-center w-10 h-2 rounded-pill cursor-pointer" :class="rating >= 1 ? 'bg-warning' : 'bg-light'" @click="rating = 1" @mouseover="hovering = 1" @mouseleave="hovering = 0">
+                                            <p x-show="rating === 1" class="mt-4 fs-2xl">😒</p>
+                                        </div>
+                                        <div class="d-flex justify-content-center w-10 h-2 rounded-pill cursor-pointer" :class="rating >= 2 ? 'bg-warning' : 'bg-light'" @click="rating = 2" @mouseover="hovering = 2" @mouseleave="hovering = 0">
+                                            <p x-show="rating === 2" class="mt-4 fs-2xl">🤨</p>
+                                        </div>
+                                        <div class="d-flex justify-content-center w-10 h-2 rounded-pill cursor-pointer" :class="rating >= 3 ? 'bg-warning' : 'bg-light'" @click="rating = 3" @mouseover="hovering = 3" @mouseleave="hovering = 0">
+                                            <p x-show="rating === 3" class="mt-4 fs-2xl">😊</p>
+                                        </div>
+                                        <div class="d-flex justify-content-center w-10 h-2 rounded-pill cursor-pointer" :class="rating >= 4 ? 'bg-warning' : 'bg-light'" @click="rating = 4" @mouseover="hovering = 4" @mouseleave="hovering = 0">
+                                            <p x-show="rating === 4" class="mt-4 fs-2xl">😚</p>
+                                        </div>
+                                        <div class="d-flex justify-content-center w-10 h-2 rounded-pill cursor-pointer" :class="rating >= 5 ? 'bg-warning' : 'bg-light'" @click="rating = 5" @mouseover="hovering = 5" @mouseleave="hovering = 0">
+                                            <p x-show="rating === 5" class="mt-4 fs-2xl">🥰</p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-10">
+                                        <label class="form-label fw-medium">Rating Input:</label>
+                                        <input type="number" x-model="rating" value="0" class="form-control" @input="clearError('rating')" />
+                                        <p x-show="errors.rating" class="text-sm text-danger" x-text="errors.rating"></p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">User Name</label>
+                                    <input type="email" x-model="userNameInput" placeholder="name@pixeleyez.com" class="form-control" @input="clearError('userNameInput')" />
+                                    <p x-show="errors.userNameInput" class="text-sm text-danger" x-text="errors.userNameInput"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Create Date</label>
+                                    <input data-provider="flatpickr" data-date-format="d M, Y" type="text" placeholder="DD-MM-YYYY" class="form-control form-input flatpickr-input active" x-model="createDateInput" readonly="readonly" @input="clearError('createDateInput')">
+                                    <p x-show="errors.createDateInput" class="text-sm text-danger" x-text="errors.createDateInput"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Location</label>
+                                    <input type="email" x-model="locationInput" placeholder="Location" class="form-control" @input="clearError('locationInput')" />
+                                    <p x-show="errors.locationInput" class="text-sm text-danger" x-text="errors.locationInput"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Title</label>
+                                    <div id="titleInput" placeholder="Select Class" @input="clearError('titleInput')"></div>
+                                    <input type="text" x-model="titleInput" placeholder="Review title" class="form-control" @input="clearError('titleInput')" />
+                                    <p x-show="errors.titleInput" class="text-sm text-danger" x-text="errors.titleInput"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Write your Content</label>
+                                    <input type="text" x-model="writeReviewInput" placeholder="Write your discription" class="form-control" @input="clearError('writeReviewInput')" />
+                                    <p x-show="errors.writeReviewInput" class="text-sm text-danger" x-text="errors.writeReviewInput"></p>
+                                </div>
+
+                                <div class="d-flex justify-content-end gap-2 mt-4">
+                                    <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary" @click="if (validate()) {}">Add review</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

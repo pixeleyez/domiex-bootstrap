@@ -1,0 +1,245 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Payment" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Payment" sub-title="Ecommerce" }}
+
+    <div class="row">
+        <div class="col-8">
+            <div class="mb-5 alert alert-success">
+                <div class="d-flex flex-wrap align-items-center gap-3">
+                    <div class="d-flex align-items-center justify-content-center bg-white rounded-circle size-14">
+                        <i data-lucide="user-round-plus"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <h6 class="mb-2 text-black">Invite your friend now by referral code!!</h6>
+                        <p class="text-muted">Maximize your rewards by sharing your unique referral code for exclusive benefits!</p>
+                    </div>
+                    <div class="shrink-0">
+                        <button class="btn btn-success">
+                            <i data-lucide="user-round-plus" class="size-4 me-1"></i>
+                            <span>Invite Now</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <ul class="nav nav-pills tab-light text-black row" id="pills-tab" role="tablist">
+                        <div class="row">
+                            <div class="col-4">
+                                <li class="nav-item border rounded-2" role="presentation">
+                                    <button class="nav-link w-100 active fw-medium d-flex align-items-center gap-3 p-4" id="pills-debitCard-tab" data-bs-toggle="pill" data-bs-target="#pill-debitCard" type="button" role="tab" aria-controls="pill-debitCard" aria-selected="true">
+                                        <img src="assets/images/payment/visa.png" alt="" class="h-6">
+                                        <h6 class="mb-0">Debit / Credit Card</h6>
+                                    </button>
+                                </li>
+                            </div>
+                            <div class="col-4">
+                                <li class="nav-item border rounded-2" role="presentation">
+                                    <button class="nav-link w-100 fw-medium d-flex align-items-center gap-3 p-4" id="pills-bankTransfer-tab" data-bs-toggle="pill" data-bs-target="#pill-bankTransfer" type="button" role="tab" aria-controls="pill-bankTransfer" aria-selected="false">
+                                        <img src="assets/images/payment/bank.png" alt="" class="h-6">
+                                        <h6 class="mb-0">Bank Transfer</h6>
+                                    </button>
+                                </li>
+                            </div>
+                        </div>
+                    </ul>
+                    <div class="tab-content mt-4">
+                        <div class="tab-pane show active " id="pill-debitCard" role="tabpanel" aria-labelledby="pills-debitCard-tab">
+                            <form action="#!">
+                                <h6 class="mb-3">Debit / Credit Card</h6>
+                                <div x-data="{
+                                    cardName:'', debitCreditNumber: '', expiryDate: '', 
+                                    errors: {},
+                            
+                                    validate() {
+                                        this.errors = {}; // reset errors
+                                        if (!this.cardName) this.errors.cardName = 'Card Holder Name is required.';
+                                        if (!this.debitCreditNumber) this.errors.debitCreditNumber = 'Card Number is required.';
+                                        if (!this.expiryDate) this.errors.expiryDate = 'Expiry Date is required.';
+                                        if (!this.cvvInput) this.errors.cvvInput = 'CVV is required.';
+                                        return Object.keys(this.errors).length === 0;
+                                    },
+                            
+                                    clearError(field) { this.errors[field] = ''; }
+                                }" class="row g-5">
+                                    <div class="col-12">
+                                        <label for="orderIDInput" class="form-label fw-medium">Card Holder Name </label>
+                                        <input type="text" x-model="cardName" id="orderIDInput" class="form-control" placeholder="Enter your first name" @input="clearError('cardName')">
+                                        <p x-show="errors.cardName" class="text-sm text-danger" x-text="errors.cardName"></p>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label fw-medium">Debit / Credit Card Number</label>
+                                        <input type="text" class="form-control" id="debitCreditNumber" placeholder="0000 0000 0000 0000" maxlength="19" x-data="{ value: '' }" x-model="value" @input="
+                                                   value = value.replace(/[^0-9]/g, '').slice(0, 19);
+                                                   if (value.length >= 5) value = value.slice(0, 4) + ' ' + value.slice(4);
+                                                   if (value.length >= 10) value = value.slice(0, 9) + ' ' + value.slice(9);
+                                                   if (value.length >= 15) value = value.slice(0, 14) + ' ' + value.slice(14);
+                                                   debitCreditNumber = value;
+                                                   clearError('debitCreditNumber');">
+                                        <p x-show="errors.debitCreditNumber" class="text-sm text-danger" x-text="errors.debitCreditNumber"></p>
+                                    </div>
+                                    <div class="col-6" x-data="{ date: '', formattedDate: '' }">
+                                        <label class="form-label fw-medium">Expiry Date</label>
+                                        <input type="text" x-model="formattedDate" @focus="if (formattedDate === 'MM/YY') formattedDate = ''" @blur="if (formattedDate === '') formattedDate = 'MM/YY'" @input="
+                                                formattedDate = formattedDate.replace(/[^0-9]/g, '');
+                                                if (formattedDate.length >= 2) formattedDate = formattedDate.slice(0, 2) + '/' + formattedDate.slice(2);
+                                                if (formattedDate.length > 5) formattedDate = formattedDate.slice(0, 5); 
+                                                date = formattedDate.replace('/', '');
+                                                clearError('expiryDate');" class="form-control" placeholder="MM/YY">
+                                        <p x-show="errors.expiryDate" class="text-sm text-danger" x-text="errors.expiryDate"></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label fw-medium">CVV</label>
+                                        <input type="text" x-model="cvvInput" class="form-control" placeholder="000" maxlength="3" @input="clearError('cvvInput')" />
+                                        <p x-show="errors.cvvInput" class="text-sm text-danger" x-text="errors.cvvInput"></p>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">Save my card for future</label>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#defaultModal">Pay Now <i data-lucide="move-right" class="ms-1 size-4"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="pill-bankTransfer" role="tabpanel" aria-labelledby="pills-bankTransfer-tab">
+                            <form action="#!">
+                                <h6 class="mb-3">Bank Transfer</h6>
+                                <div x-data="{
+                                    bankHolderName:'', accountNumber: '', confirmAccountNumber: '', bankName:'', 
+                                    errors: {},
+                            
+                                    validate() {
+                                        this.errors = {}; // reset errors
+                                        if (!this.bankHolderName) this.errors.bankHolderName = 'Bank Holder Name is required.';
+                                        if (!this.accountNumber) this.errors.accountNumber = 'Account Number is required.';
+                                        if (!this.confirmAccountNumber) this.errors.confirmAccountNumber = 'Confirm Account Number is required.';
+                                        if (!this.ifscCode) this.errors.ifscCode = 'IFSC Code is required.';
+                                        else if (!/^[A-Z]{4}0[A-Z0-9]{6}$/.test(this.ifscCode)) this.errors.ifscCode = 'Invalid IFSC Code format.';
+                                        if (!this.bankName) this.errors.bankName = 'Bank Name is required.';
+                                        return Object.keys(this.errors).length === 0;
+                                    },
+                            
+                                    clearError(field) { this.errors[field] = ''; }
+                                }" class="row g-5">
+                                    <div class="col-12">
+                                        <label for="orderIDInput" class="form-label fw-medium">Bank Holder Name</label>
+                                        <input type="text" x-model="bankHolderName" id="orderIDInput" class="form-control" placeholder="Enter full name" @input="clearError('bankHolderName')">
+                                        <p x-show="errors.bankHolderName" class="text-sm text-danger" x-text="errors.bankHolderName"></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="orderIDInput" class="form-label fw-medium">Account Number</label>
+                                        <input type="number" x-model="accountNumber" id="orderIDInput" class="form-control" placeholder="Enter account number" @input="clearError('accountNumber')">
+                                        <p x-show="errors.accountNumber" class="text-sm text-danger" x-text="errors.accountNumber"></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="orderIDInput" class="form-label fw-medium">Confirm Account Number</label>
+                                        <input type="number" x-model="confirmAccountNumber" id="orderIDInput" class="form-control" placeholder="Enter confirm account number" @input="clearError('confirmAccountNumber')">
+                                        <p x-show="errors.confirmAccountNumber" class="text-sm text-danger" x-text="errors.confirmAccountNumber"></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="orderIDInput" class="form-label fw-medium">IFSC Code</label>
+                                        <input type="text" x-model="ifscCode" id="orderIDInput" class="form-control" placeholder="IFSC Code" @input="clearError('ifscCode')">
+                                        <p x-show="errors.ifscCode" class="text-sm text-danger" x-text="errors.ifscCode"></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="orderIDInput" class="form-label fw-medium">Bank Name</label>
+                                        <input type="text" x-model="bankName" id="orderIDInput" class="form-control" placeholder="Bank Name" @input="clearError('bankName')">
+                                        <p x-show="errors.bankName" class="text-sm text-danger" x-text="errors.bankName"></p>
+                                    </div>
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#defaultModal">Pay Now <i data-lucide="move-right" class="ms-1 size-4"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Order Summary</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-sm table-borderless mb-0">
+                        <tr>
+                            <th>Sub Amount</th>
+                            <td>$<span> 316.89</span></td>
+                        </tr>
+                        <tr>
+                            <th>Vat Amount (6%)</th>
+                            <td>$<span>19.19</span></td>
+                        </tr>
+                        <tr>
+                            <th>Discount (10%)</th>
+                            <td>-$<span>31.98</span></td>
+                        </tr>
+                        <tr>
+                            <th>Shipping Charge</th>
+                            <td>$<span>35.00</span></td>
+                        </tr>
+                        <tr class="border-top">
+                            <th>Total Amount</th>
+                            <td>$<span>339.10</span></td>
+                        </tr>
+                    </table>
+                    <div class="my-4">
+                        <a href="apps-ecommerce-checkout.html" class="btn btn-primary w-100">Pay $339.10</a>
+                    </div>
+                    <p class="text-center text-muted">100% Money back guarantee</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Default Modal -->
+    <div class="modal fade" id="defaultModal" tabindex="-1" aria-labelledby="defaultModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered modal-sm">
+            <div class="p-8 modal-content text-center purchase-modal-bg">
+                <div class="d-flex align-items-center justify-content-center mx-auto mt-20 mb-4 text-success rounded-circle bg-success-subtle size-14">
+                    <i data-lucide="party-popper" class="size-6"></i>
+                </div>
+                <h5 class="mb-1">Thank you for your purchase.</h5>
+                <p class="mb-4 text-muted">Your payment has been processed successfully!</p>
+                <div class="d-flex align-items-center justify-content-center gap-2">
+                    <a class="btn btn-success" href="apps-ecommerce-products-list.html">Continue Shopping!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

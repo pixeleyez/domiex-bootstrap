@@ -22,6 +22,6 @@ const lineMap = new jsVectorMap({
         }
     ],
     lines: [
-        { from: "Brazil", to: "China" },
+        {from: "Brazil", to: "China" },
     ]
 });
