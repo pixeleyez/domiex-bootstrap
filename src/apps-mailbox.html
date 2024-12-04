@@ -1,0 +1,652 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Mailbox" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div>
+
+    {{> partials/page-heading title="Mailbox" sub-title="Apps" }}
+
+    <div class="d-flex flex-row">
+        <div class="position-static w-80 card rounded-end-0">
+            <div class="card-header">
+                <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                    <img src="assets/images/brands/img-04.png" alt="" class="size-9">
+                    <div class="flex-grow-1">
+                        <h6 class="mb-0">PixelEyez Account</h6>
+                        <p class="text-muted">shopia@pixeleyez.com</p>
+                    </div>
+                    <div class="dropdown float-end flex-shrink-0">
+                        <button class="btn border-0 p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i data-lucide="chevron-down" class="size-4"></i>
+                        </button>
+                        <ul class="dropdown-menu shadow-sm" aria-labelledby="dropdownMenuButton">
+                            <li>
+                                <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addReviewModalEdit">
+                                    <span>Open Folder</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    <span>Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <section class="main-simplebar  px-5" id="customScroll" data-simplebar>
+                    <h6 class="mb-1">Inbox Messages</h6>
+                    <p class="text-muted">1487 messages - 26 unread</p>
+                    <ul class="mt-5 p-0 d-flex flex-column gap-3">
+                        <li>
+                            <a href="#!" class="d-flex gap-2 align-items-center text-dark">
+                                <i data-lucide="inbox" class="size-4"></i>
+                                Inbox
+                                <span class="ms-auto flex-shrink-0 badge bg-light text-dark border border-dark-subtle">12</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!" class="d-flex gap-2 align-items-center text-dark">
+                                <i data-lucide="star" class="size-4"></i>
+                                Starred
+                                <span class="ms-auto flex-shrink-0 badge bg-light text-dark border border-dark-subtle">2</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!" class="d-flex gap-2 align-items-center text-dark">
+                                <i data-lucide="send-horizontal" class="size-4"></i>
+                                Sent
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!" class="d-flex gap-2 align-items-center text-dark">
+                                <i data-lucide="square-pen" class="size-4"></i>
+                                Drafts
+                                <span class="ms-auto flex-shrink-0 badge bg-light text-dark border border-dark-subtle">2</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!" class="d-flex gap-2 align-items-center text-dark">
+                                <i data-lucide="circle-alert" class="size-4"></i>
+                                Spam
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!" class="d-flex gap-2 align-items-center text-dark">
+                                <i data-lucide="trash-2" class="size-4"></i>
+                                Trash
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!" class="d-flex gap-2 align-items-center text-dark">
+                                <i data-lucide="step-forward" class="size-4"></i>
+                                Important
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!" class="d-flex gap-2 align-items-center text-dark">
+                                <i data-lucide="calendar" class="size-4"></i>
+                                Scheduled
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="d-flex mt-4">
+                        <h6 class="flex-grow-1 mb-0">Labels</h6>
+                        <a href="#!" class="d-inline-block flex-shrink-0 link link-primary text-dark"><i data-lucide="plus" class="size-4"></i></a>
+                    </div>
+                    <ul class="mt-5 d-flex flex-column gap-3 mb-0 p-0">
+                        <li>
+                            <a href="#!" class="d-flex gap-2 align-items-center link link-primary text-black">
+                                <i data-lucide="diamond" class="size-4 text-danger"></i>
+                                Team Meetings
+                                <span class="ms-auto text-muted">3</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!" class="d-flex gap-2 align-items-center link link-primary text-black">
+                                <i data-lucide="diamond" class="size-4 text-success"></i>
+                                Application
+                                <span class="ms-auto text-muted">2</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!" class="d-flex gap-2 align-items-center link link-primary text-black">
+                                <i data-lucide="diamond" class="size-4 text-warning"></i>
+                                Developers
+                                <span class="ms-auto text-muted">4</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!" class="d-flex gap-2 align-items-center link link-primary text-black">
+                                <i data-lucide="diamond" class="size-4 text-primary"></i>
+                                Photographer
+                                <span class="ms-auto text-muted">1</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <button type="button" class="w-100 mt-4 btn btn-primary" data-modal-target="addComposeModals" @click="openComposeMail">Compose</button>
+            </div>
+        </div>
+        <!-- slider above -->
+        <div class="rounded-start-0  border-start-0 card flex-grow-1">
+            <div class="card-body px-0">
+                <div data-simplebar>
+                    <div class="d-flex gap-4 px-5">
+                        <a href="#!" class="p-2 text-center main-mail-logo rounded-2 w-24">
+                            <div class="d-flex align-items-center justify-content-center mx-auto mb-1 fs-lg fw-semibold text-dark bg-white border rounded-circle size-12 position-relative">
+                                S
+                                <span class="mail-logo d-flex align-items-center justify-content-center p-0 rounded-circle fs-11 border border-2 border-white size-5 badge bg-primary">5</span>
+                            </div>
+                            <h6 class="fw-medium text-black mb-0 text-truncate">Shopia Mia</h6>
+                        </a>
+                        <a href="#!" class="p-2 text-center main-mail-logo rounded-2 w-24">
+                            <div class="d-flex align-items-center justify-content-center mx-auto mb-1 fs-lg fw-semibold text-dark bg-white border rounded-circle size-12 position-relative">
+                                <img src="assets/images/brands/img-06.png" alt="" class="size-6">
+                            </div>
+                            <h6 class="fw-medium text-black mb-0 text-truncate">Windows Social Media</h6>
+                        </a>
+                        <a href="#!" class="p-2 text-center main-mail-logo rounded-2 w-24">
+                            <div class="d-flex align-items-center justify-content-center mx-auto mb-1 fs-lg fw-semibold text-dark bg-white border rounded-circle size-12 position-relative">
+                                <img src="assets/images/brands/img-08.png" alt="" class="size-6">
+                                <span class="mail-logo d-flex align-items-center justify-content-center p-0 rounded-circle fs-11 border border-2 border-white size-5 badge bg-primary">2</span>
+                            </div>
+                            <h6 class="fw-medium text-black mb-0 text-truncate">Shopify</h6>
+                        </a>
+                        <a href="#!" class="p-2 text-center main-mail-logo rounded-2 w-24">
+                            <div class="d-flex align-items-center justify-content-center mx-auto mb-1 fs-lg fw-semibold text-dark bg-white border rounded-circle size-12 position-relative">
+                                <img src="assets/images/brands/img-20.png" alt="" class="size-6">
+                            </div>
+                            <h6 class="fw-medium text-black mb-0 text-truncate">Payment</h6>
+                        </a>
+                        <a href="#!" class="p-2 text-center main-mail-logo rounded-2 w-24">
+                            <div class="d-flex align-items-center justify-content-center mx-auto mb-1 fs-lg fw-semibold text-dark bg-white border rounded-circle size-12 position-relative">
+                                <img src="assets/images/brands/img-09.png" alt="" class="size-6">
+                            </div>
+                            <h6 class="fw-medium text-black mb-0 text-truncate">Social Media</h6>
+                        </a>
+                        <a href="#!" class="p-2 text-center main-mail-logo rounded-2 w-24">
+                            <div class="d-flex align-items-center justify-content-center mx-auto mb-1 fs-lg fw-semibold text-dark bg-white border rounded-circle size-12 position-relative">
+                                <img src="assets/images/brands/img-17.png" alt="" class="size-6">
+                            </div>
+                            <h6 class="fw-medium text-black mb-0 text-truncate">Romero</h6>
+                        </a>
+                        <a href="#!" class="p-2 text-center main-mail-logo rounded-2 w-24">
+                            <div class="d-flex align-items-center justify-content-center mx-auto mb-1 fs-lg fw-semibold text-dark bg-white border rounded-circle size-12 position-relative">
+                                <img src="assets/images/brands/img-16.png" alt="" class="size-6">
+                            </div>
+                            <h6 class="fw-medium text-black mb-0 text-truncate">Romero</h6>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="d-flex align-items-center gap-2 mb-4 px-5">
+                        <div class="input-check-group shrink-0">
+                            <div class="form-check check-primary">
+                                <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                            </div>
+                        </div>
+                        <h6 class="flex-grow-1 mb-0">Main Inbox <small class="fw-normal text-muted fs-sm ms-1">12 messages</small><small class="fs-sm ms-2 text-gray-400"></small></h6>
+                        <div class="d-flex align-items-center gap-4 flex-shrink-0">
+                            <a href="#!" id="deleteBtn" class="link link-red" style="display: none;"><i data-lucide="trash" class="size-4"></i></a>
+                            <div class="dropdown float-end">
+                                <button class="btn border-0 p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i data-lucide="ellipsis" class="size-5 text-dark"></i>
+                                </button>
+                                <ul class="dropdown-menu w-40 dropdown-menu-start shadow-sm" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addReviewModalEdit">
+                                            <span class="whitespace-normal">Show more messages</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <span class="whitespace-normal">Hide section when empty</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <span class="whitespace-normal">Manage Inbox settings</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <span class="whitespace-normal">Mark all as read</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="#!" class="link link-primary text-dark"><i data-lucide="rotate-ccw" class="size-4"></i></a>
+                            <a href="#!" class="link link-primary text-dark" data-bs-toggle="modal" data-bs-target="#searchMailModal"><i data-lucide="search" class="size-4"></i></a>
+                        </div>
+                    </div>
+                    <div class="h-560px" data-simplebar>
+                        <div class="border-top px-0">
+                            <div class="d-flex gap-3 p-5 border-top">
+                                <div class="self-start mt-3">
+                                    <input id="checkboxBasic1" class="form-check-input" type="checkbox">
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center text-danger rounded-circle size-10">
+                                    <img src="assets/images/avatar/user-11.png" alt="" class="rounded-circle size-10">
+                                </div>
+                                <div class="overflow-hidden flex-grow-1">
+                                    <p class="float-end text-black fs-sm">15 June, 01:22AM</p>
+                                    <h6 class="mb-1">Armand Noto</h6>
+                                    <a href="#!" class="link link-primary text-dark">armand@pixeleyez.com</a>
+                                    <a href="#!" class="d-block mt-3 text-black">
+                                        <h6 class="mb-1">Report - Domiex Projects</h6>
+                                        <p class="text-truncate">Please see the project status in the pdf I attached. The project looks good, and we are confident that we will complete it on time.</p>
+                                    </a>
+                                    <div class="d-flex justify-content-end gap-2 mt-2">
+                                        <span class="badge bg-light text-dark border border-dark-subtle">Inbox</span>
+                                        <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Team Meetings</span>
+                                        <span class="badge bg-warning-subtle text-warning border border-warning-subtle">Developers</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 p-5 border-top">
+                                <div class="self-start mt-3">
+                                    <input id="checkboxBasic1" class="form-check-input" type="checkbox">
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center text-danger rounded-circle size-10">
+                                    <img src="assets/images/avatar/user-13.png" alt="" class="rounded-circle size-10">
+                                </div>
+                                <div class="overflow-hidden flex-grow-1">
+                                    <p class="float-end text-black fs-sm">14 May, 11:05AM</p>
+                                    <h6 class="mb-1">Sherry Shannon</h6>
+                                    <a href="#!" class="link link-primary text-dark">sherry@pixeleyez.com</a>
+                                    <a href="#!" class="d-block mt-3 text-black">
+                                        <h6 class="mb-1">Happy New Years, Shopia</h6>
+                                        <p class="text-truncate">Thank you, Shopia, for always believing in our subscriptions. As a token of appreciation, here is a voucher that you can use in our application.</p>
+                                    </a>
+                                    <div class="d-flex justify-content-end gap-2 mt-2">
+                                        <span class="badge bg-warning-subtle text-warning border border-warning-subtle">Developers</span>
+                                        <span class="badge bg-light text-dark border border-dark-subtle">Inbox</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 p-5 border-top">
+                                <div class="self-start mt-3">
+                                    <input id="checkboxBasic1" class="form-check-input" type="checkbox">
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center text-danger rounded-circle size-10">
+                                    <img src="assets/images/avatar/user-18.png" alt="" class="rounded-circle size-10">
+                                </div>
+                                <div class="overflow-hidden flex-grow-1">
+                                    <p class="float-end text-black fs-sm">26 June, 05:19PM</p>
+                                    <h6 class="mb-1">Joyce Moore</h6>
+                                    <a href="#!" class="link link-primary text-dark">joyce@pixeleyez.com</a>
+                                    <a href="#!" class="d-block mt-3 text-black">
+                                        <h6 class="mb-1">Photographer for our wedding</h6>
+                                        <p class="text-truncate">Hi Shopia! I took a look at your portfolio and it looks amazing.</p>
+                                    </a>
+                                    <div class="d-flex justify-content-end gap-2 mt-2">
+                                        <span class="badge bg-info-subtle text-info border border-info-subtle">Photographer</span>
+                                        <span class="badge bg-light text-dark border border-dark-subtle">Inbox</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 p-5 border-top">
+                                <div class="self-start mt-3">
+                                    <input id="checkboxBasic1" class="form-check-input" type="checkbox">
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center text-danger rounded-circle size-10">
+                                    <div class="rounded-circle size-10 bg-danger-subtle text-danger d-flex justify-content-center align-items-center">BS</div>
+                                </div>
+                                <div class="overflow-hidden flex-grow-1">
+                                    <p class="float-end text-black fs-sm">10 May, 10:58AM</p>
+                                    <h6 class="mb-1">Barbara Sutton</h6>
+                                    <a href="#!" class="link link-primary text-dark">barbara@pixeleyez.com</a>
+                                    <a href="#!" class="d-block mt-3 text-black">
+                                        <h6 class="mb-1">You have a new subscriber</h6>
+                                        <p class="text-truncate">Hey! You've just got a new subscriber on your channel</p>
+                                    </a>
+                                    <div class="d-flex justify-content-end gap-2 mt-2">
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle">Application</span>
+                                        <span class="badge bg-light text-dark border border-dark-subtle">Inbox</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 p-5 border-top">
+                                <div class="self-start mt-3">
+                                    <input id="checkboxBasic1" class="form-check-input" type="checkbox">
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center text-danger rounded-circle size-10">
+                                    <div class="rounded-circle size-10 bg-danger-subtle text-danger d-flex justify-content-center align-items-center">WR</div>
+                                </div>
+                                <div class="overflow-hidden flex-grow-1">
+                                    <p class="float-end text-black fs-sm">14 June, 05:33PM</p>
+                                    <h6 class="mb-1">Walter Rosenbloom</h6>
+                                    <a href="#!" class="link link-primary text-dark">walter@pixeleyez.com</a>
+                                    <a href="#!" class="d-block mt-3 text-black">
+                                        <h6 class="mb-1">Following up on my proposal</h6>
+                                        <p class="text-truncate">Please see the project status in the pdf I attached. The project looks good, and we are confident that we will complete it on time.</p>
+                                    </a>
+                                    <div class="d-flex justify-content-end gap-2 mt-2">
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle">Application</span>
+                                        <span class="badge bg-light text-dark border border-dark-subtle">Inbox</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 p-5 border-top">
+                                <div class="self-start mt-3">
+                                    <input id="checkboxBasic1" class="form-check-input" type="checkbox">
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center text-danger rounded-circle size-10">
+                                    <div class="rounded-circle size-10 bg-danger-subtle text-danger d-flex justify-content-center align-items-center">RG</div>
+                                </div>
+                                <div class="overflow-hidden flex-grow-1">
+                                    <p class="float-end text-black fs-sm">01 July, 02:45PM</p>
+                                    <h6 class="mb-1">Rachel Green</h6>
+                                    <a href="#!" class="link link-primary text-dark">rachel@pixeleyez.com</a>
+                                    <a href="#!" class="d-block mt-3 text-black">
+                                        <h6 class="mb-1">Project Update</h6>
+                                        <p class="text-truncate">Hey team, here is the latest update on the project status.</p>
+                                    </a>
+                                    <div class="d-flex justify-content-end gap-2 mt-2">
+                                        <span class="badge bg-warning-subtle text-warning border border-warning-subtle">Developers</span>
+                                        <span class="badge bg-light text-dark border border-dark-subtle">Inbox</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 p-5 border-top">
+                                <div class="self-start mt-3">
+                                    <input id="checkboxBasic1" class="form-check-input" type="checkbox">
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center text-danger rounded-circle size-10">
+                                    <img src="assets/images/avatar/user-12.png" alt="" class="rounded-circle size-10">
+                                </div>
+                                <div class="overflow-hidden flex-grow-1">
+                                    <p class="float-end text-black fs-sm">03 July, 11:15AM</p>
+                                    <h6 class="mb-1">John Doe</h6>
+                                    <a href="#!" class="link link-primary text-dark">john@pixeleyez.com</a>
+                                    <a href="#!" class="d-block mt-3 text-black">
+                                        <h6 class="mb-1">Meeting Reminder</h6>
+                                        <p class="text-truncate">Don't forget about the meeting tomorrow at 10 AM.</p>
+                                    </a>
+                                    <div class="d-flex justify-content-end gap-2 mt-2">
+                                        <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Team Meetings</span>
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle">Important</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 p-5 border-top">
+                                <div class="self-start mt-3">
+                                    <input id="checkboxBasic1" class="form-check-input" type="checkbox">
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center text-danger rounded-circle size-10">
+                                    <div class="rounded-circle size-10 bg-danger-subtle text-danger d-flex justify-content-center align-items-center">EW</div>
+                                </div>
+                                <div class="overflow-hidden flex-grow-1">
+                                    <p class="float-end text-black fs-sm">05 July, 09:30AM</p>
+                                    <h6 class="mb-1">Emily White</h6>
+                                    <a href="#!" class="link link-primary text-dark">emily@pixeleyez.com</a>
+                                    <a href="#!" class="d-block mt-3 text-black">
+                                        <h6 class="mb-1">Draft - New Marketing Plan</h6>
+                                        <p class="text-truncate">Please review the attached draft of the new marketing plan.</p>
+                                    </a>
+                                    <div class="d-flex justify-content-end gap-2 mt-2">
+                                        <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Marketing</span>
+                                        <span class="badge bg-light text-dark border border-dark-subtle">Drafts</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 p-5 border-top">
+                                <div class="self-start mt-3">
+                                    <input id="checkboxBasic1" class="form-check-input" type="checkbox">
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center text-danger rounded-circle size-10">
+                                    <img src="assets/images/avatar/user-14.png" alt="" class="rounded-circle size-10">
+                                </div>
+                                <div class="overflow-hidden flex-grow-1">
+                                    <p class="float-end text-black fs-sm">07 July, 08:00AM</p>
+                                    <h6 class="mb-1">Mike Johnson</h6>
+                                    <a href="#!" class="link link-primary text-dark">mike@pixeleyez.com</a>
+                                    <a href="#!" class="d-block mt-3 text-black">
+                                        <h6 class="mb-1">Spam Alert</h6>
+                                        <p class="text-truncate">This is a spam email. Please ignore.</p>
+                                    </a>
+                                    <div class="d-flex justify-content-end gap-2 mt-2">
+                                        <span class="badge bg-danger-subtle text-danger border border-danger-subtle">spam</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 p-5 border-top">
+                                <div class="self-start mt-3">
+                                    <input id="checkboxBasic1" class="form-check-input" type="checkbox">
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center text-danger rounded-circle size-10">
+                                    <div class="rounded-circle size-10 bg-danger-subtle text-danger d-flex justify-content-center align-items-center">AC</div>
+                                </div>
+                                <div class="overflow-hidden flex-grow-1">
+                                    <p class="float-end text-black fs-sm">05 July, 09:30AM</p>
+                                    <h6 class="mb-1">Alice Cooper</h6>
+                                    <a href="#!" class="link link-primary text-dark">alice@pixeleyez.com</a>
+                                    <a href="#!" class="d-block mt-3 text-black">
+                                        <h6 class="mb-1">Deleted Email</h6>
+                                        <p class="text-truncate">This email has been moved to trash.</p>
+                                    </a>
+                                    <div class="d-flex justify-content-end gap-2 mt-2">
+                                        <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Trash</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 p-5 border-top">
+                                <div class="self-start mt-3">
+                                    <input id="checkboxBasic1" class="form-check-input" type="checkbox">
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center text-danger rounded-circle size-10">
+                                    <img src="assets/images/avatar/user-15.png" alt="" class="rounded-circle size-10">
+                                </div>
+                                <div class="overflow-hidden flex-grow-1">
+                                    <p class="float-end text-black fs-sm">07 July, 08:00AM</p>
+                                    <h6 class="mb-1">Robert Brown</h6>
+                                    <a href="#!" class="link link-primary text-dark">robert@pixeleyez.com</a>
+                                    <a href="#!" class="d-block mt-3 text-black">
+                                        <h6 class="mb-1">Important Notice</h6>
+                                        <p class="text-truncate">Please read the important notice attached.</p>
+                                    </a>
+                                    <div class="d-flex justify-content-end gap-2 mt-2">
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle">Important</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 p-5 border-top">
+                                <div class="self-start mt-3">
+                                    <input id="checkboxBasic1" class="form-check-input" type="checkbox">
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center text-danger rounded-circle size-10">
+                                    <img src="assets/images/avatar/user-17.png" alt="" class="rounded-circle size-10">
+                                </div>
+                                <div class="overflow-hidden flex-grow-1">
+                                    <p class="float-end text-black fs-sm">13 July, 10:00AM</p>
+                                    <h6 class="mb-1">Sophie Turner</h6>
+                                    <a href="#!" class="link link-primary text-dark">sophie@pixeleyez.com</a>
+                                    <a href="#!" class="d-block mt-3 text-black">
+                                        <h6 class="mb-1">Weekly Update on Domiex Admin & Dashboard Projects</h6>
+                                        <p class="text-truncate">Please find the weekly update attached. Let me know if you need any more details.</p>
+                                    </a>
+                                    <div class="d-flex justify-content-end gap-2 mt-2">
+                                        <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Team Meeting</span>
+                                        <span class="badge bg-warning-subtle text-warning border border-warning-subtle">Developers</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mail section -->
+        <div class="rounded-start-0 w-669px border-start-0 card flex-grow-1">
+            <div class="card-header">
+                <div class="d-flex align-items-center gap-2">
+                    <a href="#!" class="btn btn-icon btn-outline-light">
+                        <i data-lucide="arrow-left" class="size-4 text-dark"></i>
+                    </a>
+                    <a href="#!" class="btn btn-icon btn-outline-light">
+                        <i data-lucide="archive" class="size-4 text-dark"></i>
+                    </a>
+                    <a href="#!" class="btn btn-icon btn-outline-light">
+                        <i data-lucide="octagon-alert" class="size-4 text-dark"></i>
+                    </a>
+                    <div class="d-flex align-items-center gap-1 mx-auto text-muted">
+                        <a href="#!" class="btn btn-icon btn-outline-secondary">
+                            <i data-lucide="chevron-left" class="size-4 text-dark"></i>
+                        </a>
+                        <p class="m-0"><span>1</span> of <span>12</span></p>
+                        <a href="#!" class="btn btn-icon btn-outline-secondary">
+                            <i data-lucide="chevron-right" class="size-4 text-dark"></i>
+                        </a>
+                    </div>
+                    <a href="#!" class="btn btn-icon btn-outline-secondary">
+                        <i data-lucide="reply" class="size-4 text-dark"></i>
+                    </a>
+                    <a href="#!" class="btn btn-icon btn-outline-secondary">
+                        <i data-lucide="clock-3" class="size-4 text-dark"></i>
+                    </a>
+                    <a href="#!" class="btn btn-icon btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                        <i data-lucide="trash-2" class="size-4 text-dark"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="card-body py-0">
+                <div class="h-560px main-simplebar p-5" data-simplebar>
+                    <div>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="d-flex align-items-center justify-content-center text-danger rounded-circle bg-danger/10 shrink-0 size-10">
+                                <img src="https://dmaxxx.netlify.app/assets/images/user-11.png" alt="" class="rounded-circle size-10">
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0">Armand Noto</h6>
+                            </div>
+                            <p class="fs-12 text-muted flex-shrink-0">15 June, 01:22AM</p>
+                        </div>
+                        <div class="mt-5">
+                            <h6 class="mb-3">Report - Domiex Projects</h6>
+                            <div class="space-y-2">
+                                <p>Please see the project status in the pdf I attached. The project looks good, and we are confident that we will complete it on time.</p>
+                            </div>
+                            <div class="row mt-4" id="attachments">
+                                <div class="col-6">
+                                    <a href="#!" class="d-flex align-items-center gap-2 p-2 border border-dashed border-dark-subtle rounded-3">
+                                        <div class="d-flex align-items-center justify-content-center fs-4 text-muted bg-light rounded-circle p-2">
+                                            <i data-lucide="file-text" class="size-4"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="text-black mb-0">shopify-docs.txt</h6>
+                                            <p class="mb-0 fs-sm text-muted">154 kb</p>
+                                        </div>
+                                        <div class="flex-shrink-0">
+                                            <i data-lucide="download" class="size-5 icon-dark"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#!" class="d-flex align-items-center gap-2 p-2 border border-dashed border-dark-subtle rounded-3">
+                                        <div class="d-flex align-items-center justify-content-center fs-4 text-muted bg-light rounded-circle p-2">
+                                            <i data-lucide="image" class="size-4"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="text-black mb-0">main-logo.png</h6>
+                                            <p class="mb-0 fs-sm text-muted">467 kb</p>
+                                        </div>
+                                        <div class="flex-shrink-0">
+                                            <i data-lucide="download" class="size-5 icon-dark"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <p class="mt-4">Best regards,</p>
+                            <p>Armand Noto</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div class="mt-4">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="d-flex align-items-center justify-content-center text-success bg-success/10 rounded-circle shrink-0 size-10">
+                                        <img src="https://dmaxxx.netlify.app/assets/images/user-18.png" alt="" class="rounded-circle size-10">
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h6 class="text-black mb-0">Shopia Mia</h6>
+                                        <a href="#!" class="link link-primary text-dark">shopia@pixeleyez.com</a>
+                                    </div>
+                                    <p class="fs-12 text-muted flex-shrink-0">15 June, 02:00AM</p>
+                                </div>
+                                <div class="mt-5">
+                                    <h6 class="mb-3">Re: Report - Domiex Projects</h6>
+                                    <div class="space-y-2">
+                                        <p>Thanks, Armand. The status looks good. Let's discuss the next steps in our upcoming meeting.</p>
+                                    </div>
+                                    <p class="mt-4">Best regards,</p>
+                                    <p>Shopia Mia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="mb-0 shadow-none card">
+                    <form @submit.prevent="sendEmailReply()">
+                        <div class="p-4">
+                            <div class="d-flex align-items-center gap-2">
+                                <p class="text-muted">To:</p>
+                                <input type="text" class="form-control p-2" placeholder="Type email" x-model="mailform.email">
+                                <a href="#!" class="link-primary">Cc</a>
+                                <a href="#!" class="link-primary">Bcc</a>
+                            </div>
+                        </div>
+                        <div class="p-4 pt-1 card-body">
+                            <textarea class="form-control p-2" rows="3" placeholder="Type something ..." x-model="mailform.message"></textarea>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="shrink-0">
+                                    <label for="sendImages" class="btn btn-outline-secondary btn-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="image" class="lucide lucide-image size-5"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg>
+                                    </label>
+                                    <input type="file" id="sendImages" class="d-none">
+                                </div>
+                                <button type="button" class="link-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="link" class="lucide lucide-link size-5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></button>
+                                <button type="button" class="link-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="pencil" class="lucide lucide-pencil size-5"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></button>
+                                <button type="button" class="link-warning"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="smile" class="lucide lucide-smile size-5"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" x2="9.01" y1="9" y2="9"></line><line x1="15" x2="15.01" y1="9" y2="9"></line></svg></button>
+                                <button type="button" class="ms-auto btn btn-outline-secondary">Draft</button>
+                                <button type="submit" class="btn btn-primary">Send Now</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/file-manager/file-manager.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

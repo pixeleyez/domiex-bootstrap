@@ -21,7 +21,7 @@
 
     {{> partials/page-heading title="Manage Reviews" sub-title="Ecommerce" }}
 
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-8">
             <h6 class="card-title mb-0">Reviews</h6>
         </div>
@@ -39,68 +39,581 @@
     </div>
 
     <div class="row mb-4">
-        <!-- Total Reviews Section -->
-        <div class="col-12 col-xl-4 px-3 py-4 border-end border-xl-end">
+        <div class="col-12 col-xl-4 p-5 ps-0 border-end">
             <h6 class="mb-5">Total Reviews</h6>
-            <h3><span x-text="totalReviews">28</span> <span class="badge bg-success text-xs align-middle"><span x-text="reviewPercentage">100</span>%</span></h3>
+            <h3 class="mb-0 d-flex align-items-center gap-2"><span class="fs-2xl">28</span> <span class="badge bg-success-subtle border border-success-subtle text-success">100%</span></h3>
             <p class="mt-2 text-muted">Growth in reviews this year</p>
         </div>
-    
-        <!-- Average Rating Section -->
-        <div class="col-12 col-xl-4 px-3 py-4 border-end border-xl-end">
+        <div class="col-12 col-xl-4 p-5 border-end">
             <h6 class="mb-5">Average Rating</h6>
             <div class="d-flex align-items-center gap-3">
-                <h3><span x-text="averageReview">3.8</span></h3>
-                <div class="text-warning">
-                    <template x-for="i in 5" :key="i">
-                        <i x-bind:class="getStarClass(averageReview, i)" class="ri-star-fill"></i>
-                    </template>
+                <h3 class="mb-0">3.8</h3>
+                <div class="text-warning d-flex align-items-center">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                    <i class="ri-star-line"></i>
                 </div>
             </div>
             <p class="mt-2 text-muted">Average rating this year</p>
         </div>
-    
-        <!-- Review Distribution Section -->
-        <div class="col-12 col-xl-4 px-3 py-4">
-            <div class="d-flex align-items-center gap-2">
-                <p class="shrink-0"><i class="text-warning ri-star-fill"></i> 5</p>
-                <div class="progress w-100" style="height: 1em;">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <h6>4751</h6>
+        <div class="col-12 col-xl-4 p-5 pe-0">
+            <div class="d-flex align-items-center gap-2 mt-1">
+                <p class="flex-shrink-0"><i class="text-warning ri-star-fill"></i> 5</p>
+                <div class="progress-bar bg-success progress-1" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <h6 class="mb-0">4751</h6>
             </div>
-            <div class="d-flex align-items-center gap-2">
-                <p class="shrink-0"><i class="text-warning ri-star-fill"></i> 4</p>
-                <div class="progress w-100" style="height: 1em;">
-                    <div class="progress-bar bg-pink" role="progressbar" style="width: 64%;" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <h6>3658</h6>
+            <div class="d-flex align-items-center gap-2 mt-1">
+                <p class="flex-shrink-0"><i class="text-warning ri-star-fill"></i> 4</p>
+                <div class="progress-bar bg-pink progress-1" role="progressbar" style="width: 64%;" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"></div>
+                <h6 class="mb-0">3658</h6>
             </div>
-            <div class="d-flex align-items-center gap-2">
-                <p class="shrink-0"><i class="text-warning ri-star-fill"></i> 3</p>
-                <div class="progress w-100" style="height: 1em;">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 51%;" aria-valuenow="51" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <h6>2349</h6>
+            <div class="d-flex align-items-center gap-2 mt-1">
+                <p class="flex-shrink-0"><i class="text-warning ri-star-fill"></i> 3</p>
+                <div class="progress-bar bg-warning progress-1" role="progressbar" style="width: 51%;" aria-valuenow="51" aria-valuemin="0" aria-valuemax="100"></div>
+                <h6 class="mb-0">2349</h6>
             </div>
-            <div class="d-flex align-items-center gap-2">
-                <p class="shrink-0"><i class="text-warning ri-star-fill"></i> 2</p>
-                <div class="progress w-100" style="height: 1em;">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 38%;" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <h6>1472</h6>
+            <div class="d-flex align-items-center gap-2 mt-1">
+                <p class="flex-shrink-0"><i class="text-warning ri-star-fill"></i> 2</p>
+                <div class="progress-bar bg-info progress-1" role="progressbar" style="width: 38%;" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100"></div>
+                <h6 class="mb-0">1472</h6>
             </div>
-            <div class="d-flex align-items-center gap-2">
-                <p class="shrink-0"><i class="text-warning ri-star-fill"></i> 1</p>
-                <div class="progress w-100" style="height: 1em;">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <h6>120</h6>
+            <div class="d-flex align-items-center gap-2 mt-1">
+                <p class="flex-shrink-0"><i class="text-warning ri-star-fill"></i> 1</p>
+                <div class="progress-bar bg-danger progress-1" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                <h6 class="mb-0">120</h6>
             </div>
         </div>
     </div>
-    
 
+    <div class="table-box">
+        <table class="table table-borderless">
+            <tbody>
+                <tr class="gap-2">
+                    <td class="align-top whitespace-nowrap">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/avatar/user-1.png" alt="" class="rounded-2 flex-shrink-0 size-16">
+                            <div class="overflow-hidden flex-grow-1">
+                                <h6 class="mb-1">
+                                    <a href="#!" class="link link-primary text-black">John Doe</a>
+                                </h6>
+                                <p class="mb-1 fs-sm text-truncate">24 May, 2024</p>
+                                <p class="fs-sm text-muted">Location: <span>New York</span></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div class="max-w-550px">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div class="text-warning d-flex align-items-center">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-half-fill"></i>
+                                </div>
+                                <h6 class="mb-0">(4.5)</h6>
+                            </div>
+                            <h6 class="mb-1 lh-base">Code Quality</h6>
+                            <p class="text-muted">Was a really good move to add this as part of our project, we had great comments from the business regarding design and user experience. Install with no dependency issues or deprecated packages and was really good overall.</p>
+                        </div>
+                    </td>
+                    <td class="align-top">
+                        <div class="d-flex align-items-center justify-content-end gap-3">
+                            <button class="btn btn-light text-dark">Direct Message</button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon-text btn-primary btn-icon" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="ri-more-2-fill"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addReviewModalEdit">
+                                            <i class="align-middle me-2 ri-pencil-line"></i> <span>Edit</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <i class="align-middle me-2 ri-delete-bin-line"></i> <span>Delete</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="gap-2">
+                    <td class="align-top whitespace-nowrap">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/avatar/user-2.png" alt="" class="rounded-2 flex-shrink-0 size-16">
+                            <div class="overflow-hidden flex-grow-1">
+                                <h6 class="mb-1">
+                                    <a href="#!" class="link link-primary text-black">Jane Smith</a>
+                                </h6>
+                                <p class="mb-1 fs-sm text-truncate">22 May, 2024</p>
+                                <p class="fs-sm text-muted">Location: <span>Los Angeles</span></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div class="max-w-550px">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div class="text-warning d-flex align-items-center">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <h6 class="mb-0">(5)</h6>
+                            </div>
+                            <h6 class="mb-1 lh-base">Documentation Quality</h6>
+                            <p class="text-muted">Excellent product! Exceeded all my expectations. Highly recommend to anyone looking for quality.</p>
+                        </div>
+                    </td>
+                    <td class="align-top">
+                        <div class="d-flex align-items-center justify-content-end gap-3">
+                            <button class="btn btn-light text-dark">Direct Message</button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon-text btn-primary btn-icon" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="ri-more-2-fill"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addReviewModalEdit">
+                                            <i class="align-middle me-2 ri-pencil-line"></i> <span>Edit</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <i class="align-middle me-2 ri-delete-bin-line"></i> <span>Delete</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="gap-2">
+                    <td class="align-top whitespace-nowrap">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/avatar/user-3.png" alt="" class="rounded-2 flex-shrink-0 size-16">
+                            <div class="overflow-hidden flex-grow-1">
+                                <h6 class="mb-1">
+                                    <a href="#!" class="link link-primary text-black">Michael Brown</a>
+                                </h6>
+                                <p class="mb-1 fs-sm text-truncate">20 May, 2024</p>
+                                <p class="fs-sm text-muted">Location: <span>Chicago</span></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div class="max-w-550px">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div class="text-warning d-flex align-items-center">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-half-fill"></i>
+                                    <i class="ri-star-line"></i>
+                                </div>
+                                <h6 class="mb-0">(3.5)</h6>
+                            </div>
+                            <h6 class="mb-1 lh-base">Design Quality</h6>
+                            <p class="text-muted">The product is decent but has some room for improvement. The installation was smooth, but some features were a bit underwhelming.</p>
+                        </div>
+                    </td>
+                    <td class="align-top">
+                        <div class="d-flex align-items-center justify-content-end gap-3">
+                            <button class="btn btn-light text-dark">Direct Message</button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon-text btn-primary btn-icon" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="ri-more-2-fill"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addReviewModalEdit">
+                                            <i class="align-middle me-2 ri-pencil-line"></i> <span>Edit</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <i class="align-middle me-2 ri-delete-bin-line"></i> <span>Delete</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="gap-2">
+                    <td class="align-top whitespace-nowrap">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/avatar/user-4.png" alt="" class="rounded-2 flex-shrink-0 size-16">
+                            <div class="overflow-hidden flex-grow-1">
+                                <h6 class="mb-1">
+                                    <a href="#!" class="link link-primary text-black">Emily Davis</a>
+                                </h6>
+                                <p class="mb-1 fs-sm text-truncate">18 May, 2024</p>
+                                <p class="fs-sm text-muted">Location: <span>Houston</span></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div class="max-w-550px">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div class="text-warning d-flex align-items-center">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-line"></i>
+                                    <i class="ri-star-line"></i>
+                                    <i class="ri-star-line"></i>
+                                </div>
+                                <h6 class="mb-0">(2)</h6>
+                            </div>
+                            <h6 class="mb-1 lh-base">Flexibility</h6>
+                            <p class="text-muted">Not very satisfied with the product. It did not meet my expectations and had several issues during installation.</p>
+                        </div>
+                    </td>
+                    <td class="align-top">
+                        <div class="d-flex align-items-center justify-content-end gap-3">
+                            <button class="btn btn-light text-dark">Direct Message</button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon-text btn-primary btn-icon" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="ri-more-2-fill"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addReviewModalEdit">
+                                            <i class="align-middle me-2 ri-pencil-line"></i> <span>Edit</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <i class="align-middle me-2 ri-delete-bin-line"></i> <span>Delete</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="gap-2">
+                    <td class="align-top whitespace-nowrap">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/avatar/user-5.png" alt="" class="rounded-2 flex-shrink-0 size-16">
+                            <div class="overflow-hidden flex-grow-1">
+                                <h6 class="mb-1">
+                                    <a href="#!" class="link link-primary text-black">Chris Wilson</a>
+                                </h6>
+                                <p class="mb-1 fs-sm text-truncate">15 May, 2024</p>
+                                <p class="fs-sm text-muted">Location: <span>Phoenix</span></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div class="max-w-550px">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div class="text-warning d-flex align-items-center">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-line"></i>
+                                </div>
+                                <h6 class="mb-0">(4)</h6>
+                            </div>
+                            <h6 class="mb-1 lh-base">Code Quality</h6>
+                            <p class="text-muted">Good product overall, but there are a few bugs that need to be addressed. Customer support was helpful in resolving some issues.</p>
+                        </div>
+                    </td>
+                    <td class="align-top">
+                        <div class="d-flex align-items-center justify-content-end gap-3">
+                            <button class="btn btn-light text-dark">Direct Message</button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon-text btn-primary btn-icon" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="ri-more-2-fill"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addReviewModalEdit">
+                                            <i class="align-middle me-2 ri-pencil-line"></i> <span>Edit</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <i class="align-middle me-2 ri-delete-bin-line"></i> <span>Delete</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="gap-2">
+                    <td class="align-top whitespace-nowrap">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/avatar/user-6.png" alt="" class="rounded-2 flex-shrink-0 size-16">
+                            <div class="overflow-hidden flex-grow-1">
+                                <h6 class="mb-1">
+                                    <a href="#!" class="link link-primary text-black">Sarah Lee</a>
+                                </h6>
+                                <p class="mb-1 fs-sm text-truncate">12 May, 2024</p>
+                                <p class="fs-sm text-muted">Location: <span>San Francisco</span></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div class="max-w-550px">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div class="text-warning d-flex align-items-center">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-half-line"></i>
+                                </div>
+                                <h6 class="mb-0">(4.5)</h6>
+                            </div>
+                            <h6 class="mb-1 lh-base">Customizability</h6>
+                            <p class="text-muted">Great product with excellent features. The user interface is very intuitive and easy to navigate.</p>
+                        </div>
+                    </td>
+                    <td class="align-top">
+                        <div class="d-flex align-items-center justify-content-end gap-3">
+                            <button class="btn btn-light text-dark">Direct Message</button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon-text btn-primary btn-icon" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="ri-more-2-fill"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addReviewModalEdit">
+                                            <i class="align-middle me-2 ri-pencil-line"></i> <span>Edit</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <i class="align-middle me-2 ri-delete-bin-line"></i> <span>Delete</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="gap-2">
+                    <td class="align-top whitespace-nowrap">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/avatar/user-7.png" alt="" class="rounded-2 flex-shrink-0 size-16">
+                            <div class="overflow-hidden flex-grow-1">
+                                <h6 class="mb-1">
+                                    <a href="#!" class="link link-primary text-black">David Johnson</a>
+                                </h6>
+                                <p class="mb-1 fs-sm text-truncate">10 May, 2024</p>
+                                <p class="fs-sm text-muted">Location: <span>Miami</span></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div class="max-w-550px">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div class="text-warning d-flex align-items-center">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-half-line"></i>
+                                    <i class="ri-star-line"></i>
+                                </div>
+                                <h6 class="mb-0">(3.5)</h6>
+                            </div>
+                            <h6 class="mb-1 lh-base">Code Quality</h6>
+                            <p class="text-muted">The product is average. It works as expected but lacks some advanced features that competitors offer.</p>
+                        </div>
+                    </td>
+                    <td class="align-top">
+                        <div class="d-flex align-items-center justify-content-end gap-3">
+                            <button class="btn btn-light text-dark">Direct Message</button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon-text btn-primary btn-icon" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="ri-more-2-fill"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addReviewModalEdit">
+                                            <i class="align-middle me-2 ri-pencil-line"></i> <span>Edit</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <i class="align-middle me-2 ri-delete-bin-line"></i> <span>Delete</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="gap-2">
+                    <td class="align-top whitespace-nowrap">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/avatar/user-8.png" alt="" class="rounded-2 flex-shrink-0 size-16">
+                            <div class="overflow-hidden flex-grow-1">
+                                <h6 class="mb-1">
+                                    <a href="#!" class="link link-primary text-black">Nancy Adams</a>
+                                </h6>
+                                <p class="mb-1 fs-sm text-truncate">8 May, 2024</p>
+                                <p class="fs-sm text-muted">Location: <span>Seattle</span></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div class="max-w-550px">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div class="text-warning d-flex align-items-center">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-half-line"></i>
+                                </div>
+                                <h6 class="mb-0">(4.5)</h6>
+                            </div>
+                            <h6 class="mb-1 lh-base">Design Quality</h6>
+                            <p class="text-muted">Had some issues with the product initially, but customer support was able to help resolve them. Still, it's not as seamless as I hoped.</p>
+                        </div>
+                    </td>
+                    <td class="align-top">
+                        <div class="d-flex align-items-center justify-content-end gap-3">
+                            <button class="btn btn-light text-dark">Direct Message</button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon-text btn-primary btn-icon" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="ri-more-2-fill"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addReviewModalEdit">
+                                            <i class="align-middle me-2 ri-pencil-line"></i> <span>Edit</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <i class="align-middle me-2 ri-delete-bin-line"></i> <span>Delete</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="gap-2">
+                    <td class="align-top whitespace-nowrap">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/avatar/user-9.png" alt="" class="rounded-2 flex-shrink-0 size-16">
+                            <div class="overflow-hidden flex-grow-1">
+                                <h6 class="mb-1">
+                                    <a href="#!" class="link link-primary text-black">Paul White</a>
+                                </h6>
+                                <p class="mb-1 fs-sm text-truncate">5 May, 2024</p>
+                                <p class="fs-sm text-muted">Location: <span>Boston</span></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div class="max-w-550px">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div class="text-warning d-flex align-items-center">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-half-line"></i>
+                                    <i class="ri-star-line"></i>
+                                </div>
+                                <h6 class="mb-0">(3.5)</h6>
+                            </div>
+                            <h6 class="mb-1 lh-base">Feature Availability</h6>
+                            <p class="text-muted">The product did not meet my expectations at all. It was difficult to install and had many bugs.</p>
+                        </div>
+                    </td>
+                    <td class="align-top">
+                        <div class="d-flex align-items-center justify-content-end gap-3">
+                            <button class="btn btn-light text-dark">Direct Message</button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon-text btn-primary btn-icon" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="ri-more-2-fill"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addReviewModalEdit">
+                                            <i class="align-middle me-2 ri-pencil-line"></i> <span>Edit</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <i class="align-middle me-2 ri-delete-bin-line"></i> <span>Delete</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="gap-2">
+                    <td class="align-top whitespace-nowrap">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/avatar/user-10.png" alt="" class="rounded-2 flex-shrink-0 size-16">
+                            <div class="overflow-hidden flex-grow-1">
+                                <h6 class="mb-1">
+                                    <a href="#!" class="link link-primary text-black">Lisa Green</a>
+                                </h6>
+                                <p class="mb-1 fs-sm text-truncate">3 May, 2024</p>
+                                <p class="fs-sm text-muted">Location: <span>Denver</span></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div class="max-w-550px">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div class="text-warning d-flex align-items-center">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <h6 class="mb-0">(5)</h6>
+                            </div>
+                            <h6 class="mb-1 lh-base">Design Quality</h6>
+                            <p class="text-muted">Absolutely fantastic product! It has all the features I need and works flawlessly.</p>
+                        </div>
+                    </td>
+                    <td class="align-top">
+                        <div class="d-flex align-items-center justify-content-end gap-3">
+                            <button class="btn btn-light text-dark">Direct Message</button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon-text btn-primary btn-icon" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="ri-more-2-fill"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addReviewModalEdit">
+                                            <i class="align-middle me-2 ri-pencil-line"></i> <span>Edit</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <i class="align-middle me-2 ri-delete-bin-line"></i> <span>Delete</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
     <!-- Modal -->
     <div class="modal fade" id="addReviewModal" tabindex="-1" aria-labelledby="addReviewModalLabel" aria-hidden="true">
         <div class="modal-dialog  modal-dialog-centered">
@@ -188,6 +701,114 @@
                             </div>
                         </form>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal fade" id="addReviewModalEdit" tabindex="-1" aria-labelledby="addReviewModalEditLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="p-2 modal-content">
+                <div class="modal-header">
+                    <h6 class="mb-0">Add Teacher</h6>
+                    <button type="button" class="btn-close link link-danger text-black" data-bs-dismiss="modal" aria-label="Close"><i data-lucide="x" class="size-5"></i></button>
+                </div>
+                <div class="p-0 modal-body">
+                    <div class="p-4">
+                        <form action="#!">
+                            <div x-data="{
+                                    rating: '4',locationInput: 'New York', userNameInput: 'John Doe', createDateInput:'John Doe', titleInput: 'Code Quality',  writeReviewInput: 'Was a really good move to add this as part of our project, we had great comments from the business regarding design and user experience. Install with no dependency issues or deprecated packages and was really good overall.',
+                                    errors: {},
+                                
+                                    validate() {
+                                        this.errors = {};
+                                        if (!this.rating) this.errors.rating = 'Star rating must be between 1 and 5.';
+                                        if (!this.userNameInput) this.errors.userNameInput = 'User name is required.';
+                                        if (!this.createDateInput) this.errors.createDateInput = 'Date is required.';
+                                        if (!this.locationInput) this.errors.locationInput = 'Location is required.';
+                                        if (!this.titleInput) this.errors.titleInput = 'Title is required.';
+                                        if (!this.writeReviewInput) this.errors.writeReviewInput = 'Content is required.';
+                                        return Object.keys(this.errors).length === 0;
+                                    },
+                                
+                                    clearError(field) { this.errors[field] = '' }
+                                }" class="row g-4">
+                                <div class="col-12">
+                                    <h6 class="text-center mb-5">Your Rating?</h6>
+                                    <div x-data="{ rating: 4, hovering: 0 }" class="d-flex justify-content-center gap-3">
+                                        <div class="d-flex justify-content-center w-10 h-2 rounded-pill cursor-pointer" :class="rating >= 1 ? 'bg-warning' : 'bg-light'" @click="rating = 1" @mouseover="hovering = 1" @mouseleave="hovering = 0">
+                                            <p x-show="rating === 1" class="mt-4 fs-2xl">😒</p>
+                                        </div>
+                                        <div class="d-flex justify-content-center w-10 h-2 rounded-pill cursor-pointer" :class="rating >= 2 ? 'bg-warning' : 'bg-light'" @click="rating = 2" @mouseover="hovering = 2" @mouseleave="hovering = 0">
+                                            <p x-show="rating === 2" class="mt-4 fs-2xl">🤨</p>
+                                        </div>
+                                        <div class="d-flex justify-content-center w-10 h-2 rounded-pill cursor-pointer" :class="rating >= 3 ? 'bg-warning' : 'bg-light'" @click="rating = 3" @mouseover="hovering = 3" @mouseleave="hovering = 0">
+                                            <p x-show="rating === 3" class="mt-4 fs-2xl">😊</p>
+                                        </div>
+                                        <div class="d-flex justify-content-center w-10 h-2 rounded-pill cursor-pointer" :class="rating >= 4 ? 'bg-warning' : 'bg-light'" @click="rating = 4" @mouseover="hovering = 4" @mouseleave="hovering = 0">
+                                            <p x-show="rating === 4" class="mt-4 fs-2xl">😚</p>
+                                        </div>
+                                        <div class="d-flex justify-content-center w-10 h-2 rounded-pill cursor-pointer" :class="rating >= 5 ? 'bg-warning' : 'bg-light'" @click="rating = 5" @mouseover="hovering = 5" @mouseleave="hovering = 0">
+                                            <p x-show="rating === 5" class="mt-4 fs-2xl">🥰</p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-10">
+                                        <label class="form-label fw-medium">Rating Input:</label>
+                                        <input type="number" x-model="rating" value="0" class="form-control" @input="clearError('rating')" />
+                                        <p x-show="errors.rating" class="text-sm text-danger" x-text="errors.rating"></p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">User Name</label>
+                                    <input type="email" x-model="userNameInput" placeholder="name@pixeleyez.com" class="form-control" @input="clearError('userNameInput')" />
+                                    <p x-show="errors.userNameInput" class="text-sm text-danger" x-text="errors.userNameInput"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-medium">Create Date</label>
+                                    <input data-provider="flatpickr" data-date-format="d M, Y" type="text" placeholder="DD-MM-YYYY" class="form-control form-input flatpickr-input active" x-model="createDateInput" readonly="readonly" @input="clearError('createDateInput')">
+                                    <p x-show="errors.createDateInput" class="text-sm text-danger" x-text="errors.createDateInput"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Location</label>
+                                    <input type="email" x-model="locationInput" placeholder="Location" class="form-control" @input="clearError('locationInput')" />
+                                    <p x-show="errors.locationInput" class="text-sm text-danger" x-text="errors.locationInput"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Title</label>
+                                    <div id="titleInput" placeholder="Select Class" @input="clearError('titleInput')"></div>
+                                    <input type="text" x-model="titleInput" placeholder="Review title" class="form-control" @input="clearError('titleInput')" />
+                                    <p x-show="errors.titleInput" class="text-sm text-danger" x-text="errors.titleInput"></p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-medium">Write your Content</label>
+                                    <textarea name="description" x-model="writeReviewInput" rows="3" class="form-control" placeholder="Enter your description" @input="clearError('writeReviewInput')"></textarea>
+                                    <p x-show="errors.writeReviewInput" class="text-sm text-danger" x-text="errors.writeReviewInput"></p>
+                                </div>
+
+                                <div class="d-flex justify-content-end gap-2 mt-4">
+                                    <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary" @click="if (validate()) {}">Add review</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xs">
+            <div class="modal-content p-7 text-center">
+                <div class="size-14 bg-danger-subtle rounded-circle d-flex justify-content-center align-items-center mx-auto mb-4">
+                    <i data-lucide="trash-2" class="size-6 text-danger"></i>
+                </div>
+                <h5 class="mb-4 lh-base">Are you sure you want to delete this Review ?</h5>
+                <div class="d-flex justify-content-center align-items-center gap-2">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+                    <button class="btn btn-link link-primary text-dark" data-bs-dismiss="modal">Cancel</button>
                 </div>
             </div>
         </div>

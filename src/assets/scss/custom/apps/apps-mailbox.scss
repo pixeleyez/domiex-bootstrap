@@ -1,0 +1,13 @@
+.mail-logo{
+    @include position(absolute, null, -.125rem, -.125rem, null);
+}
+.main-mail-logo:hover{
+    background-color: $gray-50;
+    transition: $transition-base;
+}
+.text-gray-400{
+    color: $gray-400;
+}
+.whitespace-normal{
+    white-space: normal;
+}
