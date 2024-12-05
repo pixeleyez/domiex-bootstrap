@@ -1,0 +1,44 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="List View" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="List View" sub-title="Calendar" }}
+
+    <div class="card">
+        <div class="card-body">
+            <div id="listViewCalendar"></div>
+            <div id="dayGridViewCalendar"></div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/libs/fullcalendar/index.global.min.js"></script>
+
+<script src="assets/js/apps/calendar/listview.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

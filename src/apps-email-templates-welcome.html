@@ -1,0 +1,49 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Welcome" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Welcome" sub-title="Templates" }}
+
+    <div class="mb-4">
+        <div class="card max-w-550px mx-auto rounded-2">
+            <div class="card-header text-center text-white p-5 pb-0 welcome-gradient">
+                <h4 class="mb-10px fs-22">Welcome to Domiex</h4>
+                <p class="text-white opacity-75 mb-15px fs-15">Payroll, benefits, taxes &amp; sustainability for your global team.</p>
+                <img src="assets/images/email/templates/welcome.png" alt="Welcome" class="img-fluid">
+            </div>
+            <div class="card-body">
+                <h6 class="fs-lg mb-10px">The Admin &amp; Dashboards Templates use globally</h6>
+                <p class="text-muted mb-3 fs-15">Domiex is a powerful admin dashboard template built with Tailwind CSS. Domiex comes with dozens of functional designs to help you get started quickly. With a wide range of beautiful and a full-screen layout, it's a perfect fit for admin dashboards, CRM, CMS panels &amp; etc.</p>
+                <button type="button" class="btn btn-primary w-100 fs-sm">Learn More</button>
+            </div>
+        </div>
+    </div>
+    
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

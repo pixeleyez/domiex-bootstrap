@@ -1,0 +1,166 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Default" }}
+
+    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Default" sub-title="Calendar" }}
+
+    <div class="d-flex flex-wrap align-items-center gap-2 mb-3" id="external-events">
+        <div id="external-events" class="d-flex align-items-center gap-2 flex-grow-1">
+            <div class="btn bg-secondary py-2 px-4 text-white draggable-event" draggable="true">
+                <div class="fc-event-main fs-13">Events</div>
+            </div>
+            <div class="btn bg-primary py-2 px-4 text-white draggable-event" draggable="true">
+                <div class="fc-event-main fs-13">Personal</div>
+            </div>
+            <div class="btn bg-success py-2 px-4 text-white draggable-event" draggable="true">
+                <div class="fc-event-main fs-13">Meeting</div>
+            </div>
+            <div class="btn bg-info py-2 px-4 text-white draggable-event" draggable="true">
+                <div class="fc-event-mai fs-13n">Festival Function</div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="newEvent" data-bs-toggle="modal" data-bs-target="#addEventModal">
+            <i data-lucide="circle-plus" class="size-4 me-1"></i>
+            Add Event
+        </button>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div id='calendar'></div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="mb-0">Add Event</h6>
+                    <button type="button" class="btn-close link link-danger text-black" data-bs-dismiss="modal" aria-label="Close">
+                        <i data-lucide="x" class="size-5"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#!" x-data="{
+                        eventNameInput: '', ColorSelect: '', locationInput: '', address: '', eventDateInput: '', endEventDateInput: '', eventTimeInput: '',
+                        errors: {},
+    
+                        validate() {
+                            this.errors = {};
+                            if (!this.eventNameInput) this.errors.eventNameInput = 'Event name is required.';
+                            if (!this.eventDateInput) this.errors.eventDateInput = 'Event date is required.';
+                            if (!this.endEventDateInput) this.errors.endEventDateInput = 'End event date is required.';
+                            if (!this.eventTimeInput) this.errors.eventTimeInput = 'Event time is required.';
+                            if (!this.ColorSelect) this.errors.ColorSelect = 'Color is required.';
+                            if (!this.locationInput) this.errors.locationInput = 'Location is required.';
+                            if (!this.guestInput) this.errors.guestInput = 'Valid email is required.';
+                            return Object.keys(this.errors).length === 0;
+                        },
+    
+                        clearError(field) {
+                            this.errors[field] = '';
+                        }
+                    }" @submit.prevent="if(validate()) { alert('Form is valid!') }">
+                        <div class="row g-5">
+                            <div class="col-12">
+                                <label for="eventNameInput" class="form-label fw-medium">Event Name</label>
+                                <input type="text" id="eventNameInput" class="form-control" placeholder="Enter Event Name" x-model="eventNameInput" @input="clearError('eventNameInput')">
+                                <p x-show="errors.eventNameInput" class="text-sm text-danger" x-text="errors.eventNameInput"></p>
+                            </div>
+                            <div class="col-4">
+                                <label for="eventDateInput" class="form-label fw-medium">Event Date</label>
+                                <div class="position-relative">
+                                    <input data-provider="flatpickr" data-date-format="d M, Y" type="text" placeholder="Select date" class="form-control form-input flatpickr-input active ps-9" readonly="readonly" x-model="eventDateInput" @input="clearError('eventDateInput')">
+                                    <div class="position-absolute top-50 translate-middle-y d-flex align-items-center">
+                                        <i data-lucide="calendar-check" class="size-4 ms-3 text-dark"></i>
+                                    </div>
+                                </div>
+                                <p x-show="errors.eventDateInput" class="text-sm text-danger" x-text="errors.eventDateInput"></p>
+                            </div>
+                            <div class="col-4">
+                                <label for="endEventDateInput" class="form-label fw-medium">End Date</label>
+                                <div class="position-relative">
+                                    <input data-provider="flatpickr" data-date-format="d M, Y" type="text" placeholder="Select date" class="form-control form-input flatpickr-input active ps-9" readonly="readonly" x-model="endEventDateInput" @input="clearError('endEventDateInput')">
+                                    <div class="position-absolute top-50 translate-middle-y d-flex align-items-center">
+                                        <i data-lucide="calendar-check" class="size-4 ms-3 text-dark"></i>
+                                    </div>
+                                </div>
+                                <p x-show="errors.endEventDateInput" class="text-sm text-danger" x-text="errors.endEventDateInput"></p>
+                            </div>
+                            <div class="col-4">
+                                <label for="eventTimeInput" class="form-label fw-medium">Event Time</label>
+                                <div class="position-relative">
+                                    <input data-provider="timepickr" data-time-hrs="true" type="text" placeholder="Select time" class="form-control form-input flatpickr-input ps-9" readonly="readonly"  x-model="eventTimeInput" @input="clearError('eventTimeInput')">
+                                    <div class="position-absolute top-50 translate-middle-y d-flex align-items-center">
+                                        <i data-lucide="clock" class="size-4 ms-3 text-dark"></i>
+                                    </div>
+                                </div>
+                                <p x-show="errors.eventTimeInput" class="text-sm text-danger" x-text="errors.eventTimeInput"></p>
+                            </div>
+                            <div class="col-12">
+                                <label for="ColorSelect" class="form-label fw-medium">Color</label>
+                                <div id="ColorSelect" x-model="ColorSelect" @input="clearError('ColorSelect')"></div>
+                                <p x-show="errors.ColorSelect" class="text-sm text-danger" x-text="errors.ColorSelect"></p>
+                            </div>
+                            <div class="col-12">
+                                <label for="locationInput" class="form-label fw-medium">Location</label>
+                                <input type="text" id="locationInput" class="form-control" placeholder="Enter Location" x-model="locationInput" @input="clearError('locationInput')">
+                                <p x-show="errors.locationInput" class="text-sm text-danger" x-text="errors.locationInput"></p>
+                            </div>
+                            <div class="col-12">
+                                <label for="guestInput" class="form-label fw-medium">Add Guests</label>
+                                <div class="position-relative">
+                                    <input type="text" id="guestInput" class="form-control" placeholder ="example@pixeleyez.com" x-model="locationInput" @input="clearError('guestInput')">
+                                    <button type="button" class="btn btn-sub-primary btn-sm position-absolute top-50 translate-middle-y end-1-5" >Add</button>
+                                </div>
+                                <p x-show="errors.guestInput" class="text-sm text-danger" x-text="errors.guestInput"></p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-2 mt-3">
+                            <button type="button" class="btn btn-active-danger" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Create Event</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+<script src="assets/libs/fullcalendar/index.global.min.js"></script>
+
+<script src="assets/js/apps/calendar/default.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

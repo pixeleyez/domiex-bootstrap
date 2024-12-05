@@ -1,0 +1,15 @@
+.welcome-gradient {
+    background: linear-gradient(to top right, $secondary-400, $pink-300, #6ee7b7);
+}
+.news-gradient {
+    background: linear-gradient(to top, $warning-50, rgba($warning, 0));
+}
+.mb-10px{
+    margin-bottom: 0.625rem;
+}
+.mb-15px{
+    margin-bottom: 0.9375rem;
+}
+.h-19px{
+    height: 1.1875rem;
+}
