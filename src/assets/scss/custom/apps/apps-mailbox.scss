@@ -11,3 +11,17 @@
 .whitespace-normal{
     white-space: normal;
 }
+.resize-none{
+    resize: none;
+}
+.inbox-height{
+    max-height: calc(100vh - 14.5rem);
+}
+.shadow-hover:hover{
+    box-shadow: 0 10px 15px -3px #e5e7eb;
+    transition: $transition-base;
+}
+.mailbox-dropdown{
+    top: 1.8125rem !important;
+    left: -17.5625rem !important;
+}

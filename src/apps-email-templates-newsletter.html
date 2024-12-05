@@ -1,0 +1,52 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="NewsLetter" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="NewsLetter" sub-title="Templates" }}
+
+    <div class="card mx-auto max-w-500px rounded-2 border news-gradient">
+        <div class="card-body p-8">
+            <div class="mb-15px text-center">
+                <img src="./assets/images/main-logo.png" alt="" class="img-fluid h-19px">
+            </div>
+            <h6 class="text-center mb-4 max-w-300px fs-2xl fw-bold mx-auto">Shout our with a <span class="text-primary">NewsLetter Projects</span></h6>
+            <img src="assets/images/email/templates/news.png" alt="" class="img-fluid mx-auto d-block">
+            <p class="text-muted text-center my-5 mx-4 fs-15 max-w-400px">Working with an easy-to-use editor will be a domiex. Your future you will thank you.</p>
+            <div class="text-center">
+                <button type="button" class="btn btn-primary d-inline-flex align-items-center">
+                    Start a Project
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="ms-2" style="width: 20px; height: 20px;">
+                        <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

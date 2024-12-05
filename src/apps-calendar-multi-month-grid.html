@@ -1,0 +1,43 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Multi-Month grid" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Multi-Month grid" sub-title="Calendar" }}
+
+    <div class="card">
+        <div class="card-body">
+            <div id='multiMonthGridCalendar'></div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/libs/fullcalendar/index.global.min.js"></script>
+
+<script src="assets/js/apps/calendar/multi-month-grid.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

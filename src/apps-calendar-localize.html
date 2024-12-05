@@ -1,0 +1,46 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Localize" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Localize" sub-title="Calendar" }}
+
+    <div class="card">
+        <div class="card-header">
+            <div id="localizeSelect" placeholder="Select Localize"></div>
+        </div>
+        <div class="card-body">
+            <div id="localizeCalendar"></div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/libs/fullcalendar/index.global.min.js"></script>
+
+<script src="assets/js/apps/calendar/localize.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
