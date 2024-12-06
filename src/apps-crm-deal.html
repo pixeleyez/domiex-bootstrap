@@ -552,14 +552,14 @@
                         </button>
                     </div>
                     <div x-data="chatApp()" class="mt-6 d-flex flex-column gap-3">
-                        <div id="message-container" data-simplebar>
+                        <div id="message-container" class="main-simplebar px-5" data-simplebar>
                             <div class="d-flex flex-column gap-3">
                                 <template x-for="message in messages" :key="message.id">
                                     <div :class="message.isSender ? 'd-flex gap-2 justify-content-start' : 'd-flex gap-2 justify-content-end'">
                                         <template x-if="message.isSender">
                                             <img src="assets/images/avatar/user-15.png" alt="" class="rounded-circle size-10 flex-shrink-0">
                                         </template>
-                                        <div :class="message.isSender ? 'py-2 px-3 fw-medium rounded-top-2 rounded-end-2 bg-light max-w-64' : 'py-2 px-3 fw-medium rounded-top-2 rounded-start-2 bg-primary-subtle max-w-64'">
+                                        <div :class="message.isSender ? 'py-2 px-3 fw-medium text-dark rounded-top-2 rounded-end-2 bg-light max-w-64 fs-sm' : 'py-2 px-3 fs-sm text-primary fw-medium rounded-top-2 rounded-start-2 bg-primary-subtle max-w-64'">
                                             <p x-text="message.text" class="m-0"></p>
                                         </div>
                                         <template x-if="!message.isSender">

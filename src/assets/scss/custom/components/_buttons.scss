@@ -190,6 +190,7 @@
         @include flexStyle(center, center);
         padding: 0;
         border: none;
+        transition: $transition-base;
 
         i {
             line-height: 2;
