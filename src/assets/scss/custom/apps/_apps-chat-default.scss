@@ -1,0 +1,78 @@
+.chatProfile {
+
+    .chatProfile-height {
+        max-height: calc(100vh - 14.1875rem);
+    }
+
+    .custom-link {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .custom-link:hover {
+        box-shadow: 0 0 0 2px $primary;
+        outline-offset: 2px;
+
+    }
+
+    .custom-link:focus {
+        box-shadow: 0 0 0 2px $primary;
+        outline-offset: 2px;
+
+    }
+
+    .custom-link:hover,
+    .custom-link.active {
+        box-shadow: 0 0 0 2px $primary;
+        outline-offset: 2px;
+
+    }
+
+    .custom-link:hover:focus {
+        box-shadow: 0 0 0 2px $primary;
+        outline-offset: 2px;
+    }
+
+    .custom-link:hover {
+        opacity: 1;
+    }
+
+    .custom-link.active {
+        opacity: 1;
+    }
+
+}
+
+.chatList {
+    .chatList-hover {
+        &:hover {
+            background-color: $gray-50;
+            transition: $transition-base;
+        }
+
+        &.active {
+            background-color: rgba(var(--#{$prefix}primary-rgb), 0.1);
+        }
+
+    }
+
+    .unread {
+        color: #0d0d0e !important;
+        font-weight: 500;
+    }
+
+    .chatList-height {
+        max-height: calc(100vh - 22.5rem);
+    }
+}
+
+.meassages {
+    .chat-height {
+        max-height: calc(100vh - 19rem);
+    }
+
+    .chat-toolbar {
+        background: linear-gradient(120deg, rgba(255, 255, 255, 0.5) -8%, rgba(255, 255, 255, 0.01) 120%);
+        backdrop-filter: blur(16px);
+        z-index: 50;
+    }
+}

@@ -1,0 +1,673 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Default Chat" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+
+    {{> partials/page-heading title="Default Chat" sub-title="Chats" }}
+
+    <div class="row">
+        <div class="col-1">
+            <div class="card chatProfile card-h-100">
+                <div class="card-body pb-0">
+                    <section class="main-simplebar chatProfile-height px-5 pb-5" id="customScroll" data-simplebar>
+                        <div class="flex-shrink-0 d-flex flex-column gap-4">
+                            <a href="#!" title="link" class="custom-link position-relative d-flex align-items-center justify-content-center fw-semibold bg-light rounded-circle size-14">
+                                <img src="assets/images/brands/img-02.png" alt="" class="rounded-circle size-9">
+                                <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-3"></span>
+                            </a>
+                            <a href="#!" title="link" class="custom-link position-relative text-black d-flex align-items-center justify-content-center fw-semibold bg-light rounded-circle size-14">
+                                <span>PE</span>
+                                <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-3"></span>
+                            </a>
+                            <a href="#!" title="link" class="custom-link position-relative d-flex align-items-center justify-content-center fw-semibold bg-light rounded-circle size-14">
+                                <img src="assets/images/brands/img-06.png" alt="" class="rounded-circle size-9">
+                                <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-3"></span>
+                            </a>
+                            <a href="#!" title="link" class="custom-link position-relative d-flex align-items-center justify-content-center fw-semibold bg-light rounded-circle size-14">
+                                <img src="assets/images/brands/img-05.png" alt="" class="rounded-circle size-9">
+                                <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-3"></span>
+                            </a>
+                            <a href="#!" title="link" class="custom-link position-relative d-flex align-items-center justify-content-center fw-semibold bg-light rounded-circle size-14">
+                                <img src="assets/images/brands/img-01.png" alt="" class="rounded-circle size-9">
+                                <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-3"></span>
+                            </a>
+                            <a href="#!" title="link" class="custom-link position-relative d-flex align-items-center justify-content-center fw-semibold bg-light rounded-circle size-14">
+                                <img src="assets/images/brands/img-07.png" alt="" class="rounded-circle size-9">
+                                <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-3"></span>
+                            </a>
+                            <a href="#!" title="link" class="custom-link position-relative d-flex align-items-center justify-content-center fw-semibold bg-light rounded-circle size-14">
+                                <img src="assets/images/brands/img-08.png" alt="" class="rounded-circle size-9">
+                                <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-3"></span>
+                            </a>
+                            <a href="#!" title="link" class="custom-link position-relative d-flex align-items-center justify-content-center fw-semibold bg-light rounded-circle size-14">
+                                <span>AI</span>
+                                <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-3"></span>
+                            </a>
+                            <a href="#!" title="link" class="custom-link position-relative d-flex align-items-center justify-content-center fw-semibold bg-light rounded-circle size-14">
+                                <img src="assets/images/brands/img-09.png" alt="" class="rounded-circle size-9">
+                                <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-3"></span>
+                            </a>
+                            <a href="#!" title="link" class="custom-link position-relative d-flex align-items-center justify-content-center fw-semibold bg-light rounded-circle size-14">
+                                <img src="assets/images/brands/img-10.png" alt="" class="rounded-circle size-9">
+                                <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-3"></span>
+                            </a>
+                            <a href="#!" title="link" class="custom-link position-relative d-flex align-items-center justify-content-center fw-semibold bg-light rounded-circle size-14">
+                                <img src="assets/images/brands/img-12.png" alt="" class="rounded-circle size-9">
+                                <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-3"></span>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-3">
+            <div class="card card-h-100">
+                <div class="card-body chatList">
+                    <div class="position-relative">
+                        <input type="text" class="form-control ps-9 pe-4" placeholder="Search for ..." @input="filtercontacts" x-model="searchTerm">
+                        <div class="position-absolute top-50 translate-middle-y d-flex align-items-center">
+                            <i data-lucide="search" class="size-4 ms-3 text-dark"></i>
+                        </div>
+                    </div>
+                    <div class="py-4"><button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#addNewChatModals">Start New Chat</button></div>
+                    <section class="main-simplebar chatList-height pt-2" id="customScroll" data-simplebar>
+                        <ul class="px-0 d-flex flex-column gap-3">
+                            <li>
+                                <a href="#!" class="px-5 py-10px d-flex align-items-center gap-2 chatList-hover active">
+                                    <div class="position-relative size-10 bg-light flex-shrink-0 rounded-circle">
+                                        <img src="assets/images/avatar/user-13.png" alt="" class="img-fluid rounded-circle">
+                                        <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-2-5"></span>
+                                    </div>
+                                    <div class="flex-grow-1 overflow-hidden">
+                                        <h6 class="mb-0 fw-bold">Dawn Teague</h6>
+                                        <p class="text-sm unread custom-text text-dark text-truncate">Hello, How are you?</p>
+                                    </div>
+                                    <div class="flex-shrink-0">
+                                        <span class="badge bg-danger-subtle text-danger">2</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="px-5 py-10px d-flex align-items-center gap-2 chatList-hover">
+                                    <div class="position-relative size-10 bg-light flex-shrink-0 rounded-circle">
+                                        <img src="assets/images/avatar/user-11.png" alt="" class="img-fluid rounded-circle">
+                                        <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-2-5"></span>
+                                    </div>
+                                    <div class="flex-grow-1 overflow-hidden">
+                                        <h6 class="mb-0 fw-bold">David Johnson</h6>
+                                        <p class="text-sm unread custom-text text-dark text-truncate">Here are some of very cute illustration.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="px-5 py-10px d-flex align-items-center gap-2 chatList-hover">
+                                    <div class="position-relative size-10 bg-light flex-shrink-0 rounded-circle">
+                                        <img src="assets/images/avatar/user-18.png" alt="" class="img-fluid rounded-circle">
+                                        <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-2-5"></span>
+                                    </div>
+                                    <div class="flex-grow-1 overflow-hidden">
+                                        <h6 class="mb-0 fw-bold">Andrew Gilbert</h6>
+                                        <p class="text-sm unread custom-text text-dark text-truncate">Use tools like Trello, Asana, or Jira for task management and progress tracking.</p>
+                                    </div>
+                                    <div class="flex-shrink-0">
+                                        <span class="badge bg-danger-subtle text-danger">2</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="px-5 py-10px d-flex align-items-center gap-2 chatList-hover">
+                                    <div class="position-relative size-10 bg-light flex-shrink-0 rounded-circle">
+                                        <img src="assets/images/avatar/user-20.png" alt="" class="img-fluid rounded-circle">
+                                        <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-2-5"></span>
+                                    </div>
+                                    <div class="flex-grow-1 overflow-hidden">
+                                        <h6 class="mb-0 fw-bold">Tyron Derby</h6>
+                                        <p class="text-sm unread custom-text text-dark text-truncate">Regularly review and improve communication practices based on team feedback and project needs.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="px-5 py-10px d-flex align-items-center gap-2 chatList-hover">
+                                    <div class="position-relative size-10 bg-light flex-shrink-0 rounded-circle d-flex justify-content-center align-items-center">
+                                        <span class="fw-semibold">SL</span>
+                                        <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-2-5"></span>
+                                    </div>
+                                    <div class="flex-grow-1 overflow-hidden">
+                                        <h6 class="mb-0 fw-bold">Susan Liles</h6>
+                                        <p class="text-sm unread custom-text text-dark text-truncate">Schedule regular check-ins to address any roadblocks and keep everyone aligned.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="px-5 py-10px d-flex align-items-center gap-2 chatList-hover">
+                                    <div class="position-relative size-10 bg-light flex-shrink-0 rounded-circle d-flex justify-content-center align-items-center">
+                                        <span class="fw-semibold">JD</span>
+                                        <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-2-5"></span>
+                                    </div>
+                                    <div class="flex-grow-1 overflow-hidden">
+                                        <h6 class="mb-0 fw-bold">Josh Doyle</h6>
+                                        <p class="text-sm unread custom-text text-dark text-truncate">No further questions.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="px-5 py-10px d-flex align-items-center gap-2 chatList-hover">
+                                    <div class="position-relative size-10 bg-light flex-shrink-0 rounded-circle">
+                                        <img src="assets/images/avatar/user-3.png" alt="" class="img-fluid rounded-circle">
+                                        <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-2-5"></span>
+                                    </div>
+                                    <div class="flex-grow-1 overflow-hidden">
+                                        <h6 class="mb-0 fw-bold">Nicholas Hope</h6>
+                                        <p class="text-sm unread custom-text text-dark text-truncate">Sure, I can help with that. Let's have a quick call after this meeting to debug the issue.</p>
+                                    </div>
+                                    <div class="flex-shrink-0">
+                                        <span class="badge bg-danger-subtle text-danger">1</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="px-5 py-10px d-flex align-items-center gap-2 chatList-hover">
+                                    <div class="position-relative size-10 bg-light flex-shrink-0 rounded-circle d-flex justify-content-center align-items-center">
+                                        <span class="fw-semibold">LB</span>
+                                        <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-2-5"></span>
+                                    </div>
+                                    <div class="flex-grow-1 overflow-hidden">
+                                        <h6 class="mb-0 fw-bold">Louise Bryan</h6>
+                                        <p class="text-sm unread custom-text text-dark text-truncate">I'll share the meeting minutes and action items shortly.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="px-5 py-10px d-flex align-items-center gap-2 chatList-hover">
+                                    <div class="position-relative size-10 bg-light flex-shrink-0 rounded-circle">
+                                        <img src="assets/images/avatar/user-6.png" alt="" class="img-fluid rounded-circle">
+                                        <span class="status-indicator position-absolute bottom-0 end-1 bg-success border border-2 border-white rounded-circle size-2-5"></span>
+                                    </div>
+                                    <div class="flex-grow-1 overflow-hidden">
+                                        <h6 class="mb-0 fw-bold">Sirkka Hakola</h6>
+                                        <p class="text-sm unread custom-text text-dark text-truncate">Let's reconvene next week for our regular check-in. Have a productive week!</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-8">
+            <div class="card overflow-hidden meassages card-h-100">
+                <div class="card-body py-0">
+                    <section class="main-simplebar chat-height" id="customScroll" data-simplebar>
+                        <div class="card-body d-flex align-items-center gap-3 border-bottom position-sticky top-0 chat-toolbar">
+                            <div class="size-10 flex-shrink-0 rounded-circle bg-light d-flex align-items-center justify-content-center">
+                                <img src="assets/images/avatar/user-13.png" alt="" class="img-fluid rounded-circle">
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1 lh-sm">
+                                    <a href="#!" class="text-black">Dawn Teague</a>
+                                </h6>
+                                <p class="text-muted">Last seen 2 hr</p>
+                            </div>
+                            <button class="btn btn-active-light text-dark btn-icon" data-bs-toggle="modal" data-bs-target="#callModal"><i data-lucide="phone" class="size-5"></i></button>
+                            <button class="btn btn-active-light text-dark btn-icon" data-bs-toggle="modal" data-bs-target="#videoCallModal"><i data-lucide="video" class="size-5"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex flex-column gap-5">
+                                <div class="d-flex align-items-end gap-2 max-w-xl">
+                                    <div class="position-relative size-8 flex-shrink-0 d-flex justify-content-center align-items-center">
+                                        <img src="assets/images/avatar/user-13.png" alt="" class="img-fluid rounded-circle">
+                                        <span class="status-indicator position-absolute bottom-0 end-0 bg-success border border-2 border-white rounded-circle size-2-5"></span>
+                                    </div>
+                                    <div class="flex-grow-1 mb-3">
+                                        <div class="d-flex align-items-end gap-2">
+                                            <div class="flex-grow-1">
+                                                <p class="text-muted mb-1 fs-12">Today, 09:59 AM</p>
+                                                <div class="px-4 py-10px bg-light text-black rounded-top-3 rounded-end-3">We need a new website that allows users to create accounts, browse products, and make purchases. Can you provide a rough timeline and cost estimate?</div>
+                                            </div>
+                                            <div class="dropdown">
+                                                <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                    <i class="ri-more-2-fill text-dark"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                                    <li>
+                                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                            <i class="ri-reply-line"></i>
+                                                            <span>Reply</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                            <i class="ri-delete-bin-line"></i>
+                                                            <span>Delete</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-end gap-2 ms-auto max-w-xl">
+                                    <div class="flex-grow-1 mb-3">
+                                        <div class="d-flex align-items-end gap-2">
+                                            <div class="flex-grow-1">
+                                                <p class="text-muted mb-1 fs-12 text-end">Today, 10:00 AM</p>
+                                                <div class="px-4 py-10px bg-light text-black rounded-top-3 rounded-start-3">Sure, we can help with that. To provide an accurate estimate, we'll need more details on the features you want. Let's schedule a call this week to discuss the specifics, such as the types of products, payment methods, and any design preferences.</div>
+                                            </div>
+                                            <div class="dropdown">
+                                                <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                    <i class="ri-more-2-fill text-dark"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                                    <li>
+                                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                            <i class="ri-reply-line"></i>
+                                                            <span>Reply</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                            <i class="ri-delete-bin-line"></i>
+                                                            <span>Delete</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="position-relative size-8 flex-shrink-0 d-flex justify-content-center align-items-center">
+                                        <img src="assets/images/avatar/user-17.png" alt="" class="img-fluid rounded-circle">
+                                        <span class="status-indicator position-absolute bottom-0 end-0 bg-success border border-2 border-white rounded-circle size-2-5"></span>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-end gap-2 ms-auto max-w-xl">
+                                    <div class="flex-grow-1 mb-3">
+                                        <div class="d-flex align-items-end gap-2">
+                                            <div class="flex-grow-1">
+                                                <p class="text-muted mb-1 fs-12 text-end">Today, 10:15 AM</p>
+                                                <div class="px-4 py-10px bg-light text-black rounded-top-3 rounded-start-3">Got it. I’ll investigate and update you shortly. <a href="#!" class="link-danger">#bug</a></div>
+                                            </div>
+                                            <div class="dropdown">
+                                                <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                    <i class="ri-more-2-fill text-dark"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                                    <li>
+                                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                            <i class="ri-reply-line"></i>
+                                                            <span>Reply</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                            <i class="ri-delete-bin-line"></i>
+                                                            <span>Delete</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="position-relative size-8 flex-shrink-0 d-flex justify-content-center align-items-center">
+                                        <img src="assets/images/avatar/user-17.png" alt="" class="img-fluid rounded-circle">
+                                        <span class="status-indicator position-absolute bottom-0 end-0 bg-success border border-2 border-white rounded-circle size-2-5"></span>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-end gap-2 max-w-xl">
+                                    <div class="position-relative size-8 flex-shrink-0 d-flex justify-content-center align-items-center">
+                                        <img src="assets/images/avatar/user-13.png" alt="" class="img-fluid rounded-circle">
+                                        <span class="status-indicator position-absolute bottom-0 end-0 bg-success border border-2 border-white rounded-circle size-2-5"></span>
+                                    </div>
+                                    <div class="flex-grow-1 mb-3">
+                                        <div class="d-flex align-items-end gap-2">
+                                            <div class="flex-grow-1">
+                                                <p class="text-muted mb-1 fs-12">Today, 10:11 AM</p>
+                                                <div class="px-4 py-10px bg-light text-black rounded-top-3 rounded-end-3">Hi <a href="#!" class=link-primary>@Shopia</a>, can you add the new search feature by Friday? Details are in the #features channel. Thanks! <a href="#!" class="link-primary">#task</a></div>
+                                            </div>
+                                            <div class="dropdown">
+                                                <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                    <i class="ri-more-2-fill text-dark"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                                    <li>
+                                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                            <i class="ri-reply-line"></i>
+                                                            <span>Reply</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                            <i class="ri-delete-bin-line"></i>
+                                                            <span>Delete</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-end gap-2 ms-auto max-w-xl">
+                                    <div class="flex-grow-1 mb-3">
+                                        <div class="d-flex align-items-end gap-2">
+                                            <div class="flex-grow-1">
+                                                <p class="text-muted mb-1 fs-12 text-end">Today, 10:12 AM</p>
+                                                <div class="px-4 py-10px bg-light text-black rounded-top-3 rounded-start-3">Sure, starting on it today. Will update you on the progress.<a href="#!" class="link-primary">#task154</a></div>
+                                            </div>
+                                            <div class="dropdown">
+                                                <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                    <i class="ri-more-2-fill text-dark"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                                    <li>
+                                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                            <i class="ri-reply-line"></i>
+                                                            <span>Reply</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                            <i class="ri-delete-bin-line"></i>
+                                                            <span>Delete</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="position-relative size-8 flex-shrink-0 d-flex justify-content-center align-items-center">
+                                        <img src="assets/images/avatar/user-17.png" alt="" class="img-fluid rounded-circle">
+                                        <span class="status-indicator position-absolute bottom-0 end-0 bg-success border border-2 border-white rounded-circle size-2-5"></span>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-end gap-2 max-w-xl">
+                                    <div class="position-relative size-8 flex-shrink-0 d-flex justify-content-center align-items-center">
+                                        <img src="assets/images/avatar/user-13.png" alt="" class="img-fluid rounded-circle">
+                                        <span class="status-indicator position-absolute bottom-0 end-0 bg-success border border-2 border-white rounded-circle size-2-5"></span>
+                                    </div>
+                                    <div class="flex-grow-1 mb-3">
+                                        <div class="d-flex align-items-end gap-2 mb-3">
+                                            <div class="flex-grow-1">
+                                                <p class="text-muted mb-1 fs-12">Today, 02:39 PM</p>
+                                                <div class="px-4 py-2 bg-light text-black rounded-top-3 rounded-end-3">
+                                                    Hi Shopia, there’s a problem with the mobile view on the homepage. Images aren’t scaling right. Can someone check? <a href="#!" class="link-danger">#bug</a>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown">
+                                                <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                                    <i class="ri-more-2-fill text-dark"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                                    <li>
+                                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                            <i class="ri-reply-line"></i>
+                                                            <span>Reply</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                                            <i class="ri-delete-bin-line"></i>
+                                                            <span>Delete</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row g-2">
+                                            <div class="col-3">
+                                                <a href="#!" title="Gallery Image 1">
+                                                    <img src="https://dmaxxx.netlify.app/assets/images/img-014.jpg" alt="Image 1" class="img-fluid rounded">
+                                                </a>
+                                            </div>
+                                            <div class="col-3">
+                                                <a href="#!" title="Gallery Image 2">
+                                                    <img src="https://dmaxxx.netlify.app/assets/images/img-053.jpg" alt="Image 2" class="img-fluid rounded">
+                                                </a>
+                                            </div>
+                                            <div class="col-3">
+                                                <a href="#!" title="Gallery Image 3" class="p-3 bg-light d-flex align-items-center justify-content-center link-body-emphasis rounded h-100">
+                                                    <h6 class="mb-0">2+</h6>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-2 p-2 border border-200 rounded-3">
+                        <button class="btn btn-outline-secondary btn-icon p-0">
+                            <i data-lucide="audio-lines" class="size-5 text-dark"></i>
+                        </button>
+
+                        <input type="text" class="form-control border-0 flex-grow-1" placeholder="Type something ..." x-model="message" @keydown.enter.prevent="sendMessage(message)">
+
+                        <button class="btn btn-active-primary btn-icon flex-shrink-0"><i data-lucide="send" class="size-5"></i></button>
+                        <div class="flex-shrink-0">
+                            <label for="sendImages" class="btn btn-active-light text-dark btn-icon">
+                                <i data-lucide="image" class="size-5"></i>
+                            </label>
+                            <input type="file" id="sendImages" class="d-none">
+                        </div>
+                        <button class="btn btn-active-light btn-icon flex-shrink-0"> 😊</button>
+
+                        <div class="dropdown">
+                            <button class="btn btn-active-light text-dark btn-icon" type="button" data-bs-toggle="dropdown" aria-expanded="true" title="dropdown-button">
+                                <i data-lucide="ellipsis" class="size-5"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                <li>
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-chat-4-line"></i>
+                                        <span>Clear Chat</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="dropdown-item d-flex gap-3 align-items-center">
+                                        <i class="ri-delete-bin-line"></i>
+                                        <span>Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add New Chat Modal -->
+    <div class="modal fade" id="addNewChatModals" tabindex="-1" aria-labelledby="addNewChatModalsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="mb-0">Add New Chat</h6>
+                    <button type="button" class="btn-close link link-danger text-black" data-bs-dismiss="modal" aria-label="Close"><i data-lucide="x" class="size-5"></i></button>
+                </div>
+                <div class="modal-body">
+                    <div class="position-relative mb-4">
+                        <input type="text" class="form-control ps-9 pe-4" placeholder="Search for ..." @input="filtercontacts" x-model="searchTerm">
+                        <div class="position-absolute top-50 translate-middle-y d-flex align-items-center">
+                            <i data-lucide="search" class="size-4 ms-3 text-dark"></i>
+                        </div>
+                    </div>
+                    <section class="main-simplebar max-h-72 mt-4" id="customScroll" data-simplebar>
+                        <ul class="py-0 d-flex flex-column gap-4">
+                            <li class="mt-4">
+                                <div class="d-flex align-items-center gap-2 chatList-hover active">
+                                    <div class="position-relative size-6 flex-shrink-0 rounded-circle bg-white">
+                                        <img src="assets/images/avatar/user-5.png" alt="" class="img-fluid rounded-circle">
+                                    </div>
+                                    <h6 class="mb-0 flex-grow-1">Auli Ahokas</h6>
+                                    <a href="#!" class="btn btn-xs btn-light text-dark flex-shrink-0">Send <i class="ri-send-plane-2-line align-middle ms-1"></i></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex align-items-center gap-2 chatList-hover active">
+                                    <div class="position-relative size-6 flex-shrink-0 rounded-circle bg-white">
+                                        <img src="assets/images/avatar/user-6.png" alt="" class="img-fluid rounded-circle">
+                                    </div>
+                                    <h6 class="flex-grow-1 mb-0">Sirpa Kolkka</h6>
+                                    <a href="#!" class="btn btn-xs btn-light text-dark flex-shrink-0">Send <i class="ri-send-plane-2-line align-middle ms-1"></i></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex align-items-center gap-2 chatList-hover active">
+                                    <div class="position-relative size-6 flex-shrink-0 rounded-circle bg-white">
+                                        <img src="assets/images/avatar/user-37.png" alt="" class="img-fluid rounded-circle">
+                                    </div>
+                                    <h6 class="flex-grow-1 mb-0">Risto Saraste</h6>
+                                    <a href="#!" class="btn btn-xs btn-light text-dark flex-shrink-0">Send <i class="ri-send-plane-2-line align-middle ms-1"></i></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex align-items-center gap-2 chatList-hover active">
+                                    <div class="position-relative size-6 flex-shrink-0 rounded-circle bg-white">
+                                        <img src="assets/images/avatar/user-36.png" alt="" class="img-fluid rounded-circle">
+                                    </div>
+                                    <h6 class="flex-grow-1 mb-0">Leena Laine</h6>
+                                    <a href="#!" class="btn btn-xs btn-light text-dark flex-shrink-0">Send <i class="ri-send-plane-2-line align-middle ms-1"></i></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex align-items-center gap-2 chatList-hover active">
+                                    <div class="position-relative size-6 flex-shrink-0 rounded-circle bg-white">
+                                        <img src="assets/images/avatar/user-9.png" alt="" class="img-fluid rounded-circle">
+                                    </div>
+                                    <h6 class="flex-grow-1 mb-0">Mikko Virtanen</h6>
+                                    <a href="#!" class="btn btn-xs btn-light text-dark flex-shrink-0">Send <i class="ri-send-plane-2-line align-middle ms-1"></i></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex align-items-center gap-2 chatList-hover active">
+                                    <div class="position-relative size-6 flex-shrink-0 rounded-circle bg-white">
+                                        <img src="assets/images/avatar/user-29.png" alt="" class="img-fluid rounded-circle">
+                                    </div>
+                                    <h6 class="flex-grow-1 mb-0">Tuula Nieminen</h6>
+                                    <a href="#!" class="btn btn-xs btn-light text-dark flex-shrink-0">Send <i class="ri-send-plane-2-line align-middle ms-1"></i></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex align-items-center gap-2 chatList-hover active">
+                                    <div class="position-relative size-6 flex-shrink-0 rounded-circle bg-white">
+                                        <img src="assets/images/avatar/user-31.png" alt="" class="img-fluid rounded-circle">
+                                    </div>
+                                    <h6 class="flex-grow-1 mb-0">Jari Mäkinen</h6>
+                                    <a href="#!" class="btn btn-xs btn-light text-dark flex-shrink-0">Send <i class="ri-send-plane-2-line align-middle ms-1"></i></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex align-items-center gap-2 chatList-hover active">
+                                    <div class="position-relative size-6 flex-shrink-0 rounded-circle bg-white">
+                                        <img src="assets/images/avatar/user-12.png" alt="" class="img-fluid rounded-circle">
+                                    </div>
+                                    <h6 class="flex-grow-1 mb-0">Heidi Kinnunen</h6>
+                                    <a href="#!" class="btn btn-xs btn-light text-dark flex-shrink-0">Send <i class="ri-send-plane-2-line align-middle ms-1"></i></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex align-items-center gap-2 chatList-hover active">
+                                    <div class="position-relative size-6 flex-shrink-0 rounded-circle bg-white">
+                                        <img src="assets/images/avatar/user-21.png" alt="" class="img-fluid rounded-circle">
+                                    </div>
+                                    <h6 class="flex-grow-1 mb-0">Pekka Heikkinen</h6>
+                                    <a href="#!" class="btn btn-xs btn-light text-dark flex-shrink-0">Send <i class="ri-send-plane-2-line align-middle ms-1"></i></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex align-items-center gap-2 chatList-hover active">
+                                    <div class="position-relative size-6 flex-shrink-0 rounded-circle bg-white">
+                                        <img src="assets/images/avatar/user-14.png" alt="" class="img-fluid rounded-circle">
+                                    </div>
+                                    <h6 class="flex-grow-1 mb-0">Kati Laakso</h6>
+                                    <a href="#!" class="btn btn-xs btn-light text-dark flex-shrink-0">Send <i class="ri-send-plane-2-line align-middle ms-1"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call Modal -->
+    <div class="modal fade" id="callModal" aria-hidden="true" aria-labelledby="callModal" tabindex="-1">
+        <div class="modal-dialog modal-xs position-absolute end-0 bottom-0 m-5">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="flex-shrink-0 size-10">
+                            <img src="assets/images/avatar/user-13.png" alt="" class="rounded-circle img-fluid">
+                        </div>
+                        <div>
+                            <h6 class="mb-0">Dawn Teague</h6>
+                            <p class="fs-sm text-muted">Calling...</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mt-4">
+                        <div x-data="{ isMuted: false }">
+                            <button type="button" @click="isMuted = !isMuted" class="btn btn-active-light btn-icon text-dark">
+                                <i x-show="isMuted" data-lucide="mic-off" class="size-5"></i>
+                                <i x-show="!isMuted" data-lucide="mic" class="size-5"></i>
+                            </button>
+                        </div>
+
+                        <button type="button" class="btn btn-active-light btn-icon text-dark"><i data-lucide="pause" class="size-5"></i></button>
+                        <button type="button" class="btn btn-active-light btn-icon text-dark"> <i data-lucide="disc" class="size-5"></i></button>
+                        <button type="button" class="btn btn-active-danger btn-icon text-danger border-0" data-bs-dismiss="modal"><i data-lucide="phone" class="size-5"></i></button>
+                        <button type="button" class="btn btn-active-light btn-icon text-dark"><i data-lucide="settings" class="size-5"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Call Modal -->
+    <div class="modal fade" id="videoCallModal" tabindex="-1" aria-labelledby="videoCallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="position-relative">
+                        <img src="assets/images/chat/video-1.png" alt="" class="img-fluid">
+                        <a href="#!" class="position-absolute bottom-0 end-0 mb-5 me-5">
+                            <img src="assets/images/chat/video-2.png" alt="" class="h-24 rounded-2">
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center gap-2 pt-5">
+                        <button class="btn btn-sub-light text-dark btn-icon"><i data-lucide="mic-off" class="size-5"></i></button>
+                        <button class="btn btn-danger btn-icon"><i data-lucide="phone-missed" class="size-5"></i></button>
+                        <button class="btn btn-sub-light text-dark btn-icon"><i data-lucide="video-off" class="size-5"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/js/apps/"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
