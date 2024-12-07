@@ -6,6 +6,7 @@
         --#{$prefix}pagination-active-border-color: var(--#{$prefix}#{$state});
         --#{$prefix}pagination-hover-color: var(--#{$prefix}#{$state});
     }
+
     .modern-#{$state} {
         --#{$prefix}pagination-color: var(--#{$prefix}#{$state}-contrast-dark);
         --#{$prefix}pagination-active-bg: var(--#{$prefix}#{$state});
@@ -23,6 +24,7 @@
         --#{$prefix}pagination-hover-border-color: rgba(255, 255, 255, 0.185);
         --#{$prefix}pagination-hover-color: white;
     }
+
     .pagination-active-#{$state} {
         --#{$prefix}pagination-color: var(--#{$prefix}#{$state}-contrast-dark);
         --#{$prefix}pagination-active-bg: var(--#{$prefix}#{$state});
@@ -45,6 +47,7 @@
 
     }
 }
+
 .pagination {
     &.pagination-xs {
         .page-link {

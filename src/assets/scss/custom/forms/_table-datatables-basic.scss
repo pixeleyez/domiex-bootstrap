@@ -1,18 +1,45 @@
-table.dataTable.display tbody tr.odd>.sorting_1,
-table.dataTable.display tbody tr.even>.sorting_1,
-table.dataTable.display tbody tr:hover,
-table.dataTable.display tbody tr.odd{
-     background-color: transparent !important;
-}
-table.dataTable tbody td {
-    padding: 0.875rem 0.75rem !important;
-}
-table.dataTable tfoot th{
-    padding: 0.875rem 0.75rem !important;
-    border-top: 1px solid $gray-300 !important;
-    border-bottom: 1px solid $gray-300 !important;
-}
-table.dataTable thead th{
-    border-bottom: 1px solid $gray-300 !important;
-    padding: 0.875rem 0.75rem !important;
+.dt-container {
+    .dt-layout-table {
+        margin-top: 20px !important;
+    }
+
+    .pagination {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: .5rem;
+
+        .page-item:not(:first-child) .page-link {
+            display: flex;
+            width: 2.25rem;
+            height: 2.25rem;
+            align-items: center;
+            justify-content: center;
+            border-radius: .375rem;
+            border-width: 1px;
+        }
+    }
+
+    td.dt-type-numeric,
+    table.dataTable td.dt-type-date,
+    table.dataTable th.dt-type-numeric,
+    table.dataTable th.dt-type-date,
+    table.dataTable td.dt-empty {
+        text-align: left !important;
+    }
+
+    table.dataTable thead:hover>tr>th.dt-orderable-asc:hover,
+    table.dataTable thead>tr>th.dt-orderable-desc:hover {
+        outline: none;
+    }
+    .table-striped-even>tbody>tr:nth-child(even)>td {
+        background-color: #F3F4F6;
+    }
+    .table.hovered tr:hover {
+        background-color: #e5e7eb80;
+    }
+    // .table.hovered tr{
+    //     transition-duration: .2s !important;
+    //     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    // }
 }
