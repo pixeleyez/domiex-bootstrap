@@ -2,7 +2,7 @@
 
 <head>
 
-    {{> partials/title-meta title="Basic" }}
+    {{> partials/title-meta title="Bordered" }}
 
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css" />
     {{> partials/head-css}}
@@ -19,14 +19,14 @@
 {{> partials/page-wrapper}}
 
 <div class="container-fluid">
-    {{> partials/page-heading title="Basic" sub-title="Datatables" }}
+    {{> partials/page-heading title="Bordered" sub-title="Datatables" }}
 
     <div class="card">
         <div class="card-header">
-            <h6 class="card-title mb-0">Basic</h6>
+            <h6 class="card-title mb-0">Bordered</h6>
         </div>
         <div class="card-body">
-            <table id="example" class="table" style="width:100%">
+            <table id="example" class="table table-bordered" style="width:100%">
                 <thead>
                     <tr class="bg-light">
                         <th>Name</th>
