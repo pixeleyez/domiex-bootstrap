@@ -1,0 +1,87 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Heatmap Charts" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Heatmap Charts" sub-title="Apexcharts" }}
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="basicHatmapApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary" x-ref="basicHatmapChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Multiple Colors</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="multiColorHatmapApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-success, bg-pink, bg-info, bg-indigo, bg-secondary, bg-orange, bg-warning" x-ref="multiColorHatmapChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Multiple Colors Flipped</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="multiColorFlippedHatmapApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-success, bg-pink, bg-info, bg-indigo, bg-secondary, bg-orange, bg-warning" x-ref="multiColorFlippedHatmapChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Rounded</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="roundedHatmapApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-success" x-ref="roundedHatmapChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script type="module" src="assets/js/charts/heatmap-chart.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

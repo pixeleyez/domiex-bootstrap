@@ -1,0 +1,63 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Funnel Charts" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Funnel Charts" sub-title="Apexcharts" }}
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Funnel</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="funnelApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary" x-ref="funnelChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Pyramid</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="pyramidApp" dir="ltr">
+                        <div class="!min-h-full" x-ref="pyramidChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script type="module" src="assets/js/charts/funnel-chart.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

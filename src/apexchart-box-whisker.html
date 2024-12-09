@@ -1,0 +1,75 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Box-whisker Charts" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Box-whisker Charts" sub-title="Apexcharts" }}
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="boxWhiskerBasicApp" dir="ltr">
+                        <div  x-ref="boxWhiskerBasicChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Boxplot-Scatter</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="boxplotScatterApp" dir="ltr">
+                        <div  x-ref="boxplotScatterChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Horizontal BoxPlot</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="boxplotHorizontalApp" dir="ltr">
+                        <div  x-ref="boxplotHorizontalChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script src="assets/js/charts/box-whisker-chart.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

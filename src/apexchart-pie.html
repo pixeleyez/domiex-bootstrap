@@ -1,0 +1,129 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Pie/Donuts Charts" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Pie/Donuts Charts" sub-title="Apexcharts" }}
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Simple Pie</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="simplePieApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-uccess, bg-warning, bg-secondary, bg-danger" x-ref="simplePieChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Simple Donut</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="simpleDonutApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-success, bg-warning, bg-danger, bg-secondary" x-ref="simpleDonutChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Donut Update</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="updateDonutApp" dir="ltr">
+                        <div x-ref="chartInstance" class="flex flex-wrap items-center gap-2 mb-3">
+                            <button @click="add" class="btn btn-sub-primary">Add</button>
+                            <button @click="remove" class="btn btn-sub-primary">Remove</button>
+                            <button @click="randomize" class="btn btn-sub-primary">Randomize</button>
+                            <button @click="reset" class="btn btn-sub-primary">Reset</button>
+                        </div>
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-success, bg-warning, bg-danger" x-ref="updateDonutChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Monochrome Pie</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="monochromePieApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-warning" x-ref="monochromePieChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Gradient Donut</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="gradientDonutApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-success, bg-warning, bg-secondary, bg-danger" x-ref="gradientDonutChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Semi Donut</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="semiDonutApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-success, bg-warning, bg-secondary, bg-danger" x-ref="semiDonutChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Donut with Pattern</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="patternDonutApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-success, bg-warning, bg-secondary, bg-danger" x-ref="patternDonutChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script type="module" src="assets/js/charts/pie-chart.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Polar Area Charts" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Polar Area Charts" sub-title="Apexcharts" }}
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="basicPolarApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-success, bg-warning, bg-secondary, bg-danger, bg-danger" x-ref="basicPolarChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Monochrome</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="monochromePolarApp" dir="ltr">
+                        <div class="!min-h-full" x-ref="monochromePolarChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script type="module" src="assets/js/charts/polar-area-chart.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
