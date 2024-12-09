@@ -1,0 +1,100 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Area Charts" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Area Charts" sub-title="Apexcharts" }}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="basicAreaApp" dir="ltr">
+                        <div x-ref="basicAreaChart" data-chart-colors="bg-primary"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Spline Area</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="splineAreaApp" dir="ltr">
+                        <div x-ref="splineAreaChart" data-chart-colors="bg-info, bg-success"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Negative</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="negativeAreaApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary, bg-dark-subtle" data-chart-dark-colors="bg-primary, bg-dark-subtle" x-ref="negativeAreaChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Stacked</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="stackedAreaApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary, bg-success, bg-dark-subtle" data-chart-dark-colors="bg-primary, bg-success, bg-dark-subtle" x-ref="stackedAreaChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Missing / Null values</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="missingAreaApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary" x-ref="missingAreaChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script type="module" src="assets/js/charts/area-chart.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

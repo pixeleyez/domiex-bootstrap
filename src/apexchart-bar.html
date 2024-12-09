@@ -1,0 +1,147 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Bar Charts" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Bar Charts" sub-title="Apexcharts" }}
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="basicBarApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary" x-ref="basicBarChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Grouped</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="groupedBarApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary, bg-info" x-ref="groupedBarChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Stacked Bar</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="stackedBarApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary, bg-success, bg-danger, bg-secondary, bg-info" x-ref="stackedBarChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Stacked Bars 100</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="stackedBar100App" dir="ltr">
+                        <div  data-chart-colors="bg-primary, bg-orange, bg-success, bg-indigo, bg-info" x-ref="stackedBar100Chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Grouped Stacked Bars</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="groupedStackedBarApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary, bg-success, bg-primary, bg-success" x-ref="groupedStackedBarChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Bar with Negative Values</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="negativeValueBarApp" dir="ltr">
+                        <div  data-chart-colors="bg-info, bg-indigo" x-ref="negativeValueBarChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Bar with Markers</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="markersBarApp" dir="ltr">
+                        <div  data-chart-colors="bg-success" x-ref="markersBarChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Reversed Bar Chart</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="reversedBarApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary" x-ref="reversedBarChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Patterned</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="patternedBarApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary, bg-success, bg-danger, bg-secondary" x-ref="patternedBarChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script type="module" src="assets/js/charts/bar-chart.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Radialbar Charts" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Radialbar Charts" sub-title="Apexcharts" }}
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="basicRadialbarApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary" x-ref="basicRadialbarChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Multiple</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="multipleRadialbarApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-success, bg-warning, bg-secondary" x-ref="multipleRadialbarChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Custom Angle Circle</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="customAngleRadialbarApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-success, bg-warning, bg-secondary" x-ref="customAngleRadialbarChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Gradient</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="gradientRadialbarApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-success" x-ref="gradientRadialbarChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Radialbars with Image</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="imageRadialbarApp" dir="ltr">
+                        <div class="!min-h-full" x-ref="imageRadialbarChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Stroked Gauge</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="strokedGaugeRadialbarApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary" x-ref="strokedGaugeRadialbarChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Semi Circle Gauge</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="semiGaugeRadialbarApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-info" x-ref="semiGaugeRadialbarChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script type="module" src="assets/js/charts/radialbar-chart.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

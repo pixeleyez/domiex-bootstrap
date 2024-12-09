@@ -1,0 +1,87 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Timeline Charts" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Timeline Charts" sub-title="Apexcharts" }}
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="basicApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary" x-ref="basicChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Advanced</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="advancedTimelineApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-warning, bg-success" x-ref="advancedTimelineChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Multiple Series – Group Rows</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="multipleGroupTimelineApp" dir="ltr" >
+                        <div class="!min-h-full" x-ref="multipleGroupTimelineChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Dumbbell Chart (Horizontal)</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="dumbbellTimelineApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-success" x-ref="dumbbellTimelineChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script type="module" src="assets/js/charts/timeline-chart.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

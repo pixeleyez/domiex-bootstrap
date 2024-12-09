@@ -1,3 +1,5 @@
+import { Draggable } from '@fullcalendar/interaction';
+
 document.addEventListener('DOMContentLoaded', function() {
   var currentYear = new Date().getFullYear();
   var currentMonth = new Date().getMonth();
@@ -35,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Enabling the drag-and-drop functionality
       drop: function(info) {
           // Handle dropped events
+          console.log("info", info)
           var draggedEvent = info.draggedEl; 
           var eventTitle = draggedEvent.querySelector('.fc-event-main').innerText; 
           var newEvent = {
@@ -56,8 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
   draggableEvents.forEach(function(event) {
       new Draggable(event, {
           eventData: function() {
+            console.log("event", event)
               return {
-                  title: event.querySelector('.fc-event-main').innerText
+                  title: event.querySelector('.fc-event-main') ? event.querySelector('.fc-event-main').innerText : event.parentElement.querySelector('.fc-event-main').innerText
               };
           }
       });

@@ -1,0 +1,171 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Column Charts" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Column Charts" sub-title="Apexcharts" }}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="basicColumnApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary, bg-success, bg-warning" x-ref="basicColumnChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Column with Data Labels</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="labelColumnApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary" x-ref="labelColumnChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Stacked Columns</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="stackedColumnApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary, bg-success, bg-danger, bg-warning" x-ref="stackedColumnChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Stacked Columns 100</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="stackedColumn100App" dir="ltr">
+                        <div  data-chart-colors="bg-primary, bg-success, bg-warning" x-ref="stackedColumn100Chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Grouped Stacked Columns</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="groupStackedColumnApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary, bg-success, bg-primary-subtle, bg-success-subtle" data-chart-dark-colors="bg-primary, bg-success, bg-primary-subtle, bg-success-subtle" x-ref="groupStackedColumnChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Dumbbell Chart</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="dumbbellColumnApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary, bg-pink" x-ref="dumbbellColumnChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Column with Markers</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="markersColumnApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary" x-ref="markersColumnChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Column with Group Label</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="groupLabelColumnApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary" x-ref="groupLabelColumnChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Column with Rotated Labels</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="rotatedLabelColumnApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary" x-ref="rotatedLabelColumnChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Column with Negative Values</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="negativeLabelColumnApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary, bg-warning, bg-danger" x-ref="negativeLabelColumnChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title">Distributed Columns</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="distributedColumnApp" dir="ltr">
+                        <div  data-chart-colors="bg-primary" x-ref="distributedColumnChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script type="module" src="assets/js/charts/column-chart.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
