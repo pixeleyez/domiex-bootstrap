@@ -1,0 +1,81 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Google Maps" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Google Maps" sub-title="Maps" }}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <div id="map" class="w-full" style="height: 350px;"></div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-12">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Track your Location</h6>
+                </div>
+                <div class="card-body">
+                    <div id="geolocation" class="w-full" style="height: 350px;"></div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-12">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Map with LatLang</h6>
+                </div>
+                <div class="card-body">
+                    <div id="latlang-map" class="w-full" style="height: 350px;"></div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-12">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">POI Click Events</h6>
+                </div>
+                <div class="card-body">
+                    <div id="event-map" class="w-full" style="height: 350px;"></div>
+                </div>
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+<script type="module" src="assets/js/maps/gmaps.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_dQ6dcSGTdhjDI7sGD8R74UnqYdnNK88&callback=initMap" defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Bar Charts" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Bar Charts" sub-title="Echarts" }}
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="basicBarApp">
+                        <div class="h-80" x-ref="basicBarChart" data-chart-colors="bg-info, bg-gray-200, bg-gray-800" data-chart-dark-colors="bg-info, bg-gray-800, bg-gray-100"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Axis Align with Tick</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="axisAlignBarApp">
+                        <div class="h-80" x-ref="axisAlignBarChart" id="axisAlignBarChart" data-chart-colors="bg-primary, bg-gray-200, bg-gray-800" data-chart-dark-colors="bg-primary-500, bg-gray-800, bg-gray-100"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Bar with Background</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="backgroundBarApp">
+                        <div class="h-80" x-ref="backgroundBarChart" data-chart-colors="bg-success, bg-gray-200, bg-gray-800, bg-gray-100" data-chart-dark-colors="bg-success, bg-gray-800, bg-gray-100, bg-gray-800"></div>
+                    </div>  
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Set Style of Single Bar</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="singleBarApp">
+                        <div class="h-80" x-ref="singleBarChart" data-chart-colors="bg-primary, bg-secondary, bg-gray-200, bg-gray-800, bg-gray-100" data-chart-dark-colors="bg-primary, bg-secondary, bg-gray-800, bg-gray-100, bg-gray-800"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">World Population</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="worldPopulationBarApp">
+                        <div class="h-80" x-ref="worldPopulationBarChart" data-chart-colors="bg-primary, bg-secondary, bg-gray-200, bg-gray-800, bg-gray-100" data-chart-dark-colors="bg-primary, bg-secondary, bg-gray-800, bg-gray-100, bg-gray-800"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Stacked Bar with borderRadius</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="stackedBorderRadiusBarApp">
+                        <div class="h-80" x-ref="stackedBorderRadiusBarChart" data-chart-colors="bg-primary, bg-secondary, bg-warning, bg-gray-200, bg-gray-800, bg-gray-100" data-chart-dark-colors="bg-primary, bg-secondary, bg-warning, bg-gray-800, bg-gray-100, bg-gray-800"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+
+    <div class="mb-5 text-center">
+        <a href="https://echarts.apache.org/examples/en/index.html#chart-type-bar" target="_blank" class="btn btn-primary">More Example <i data-lucide="move-right" class="d-inline-block ms-1 size-4"></i></a>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/echarts/echarts.min.js"></script>
+
+<script type="module" src="assets/js/charts/echart-bar.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

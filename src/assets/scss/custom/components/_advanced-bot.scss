@@ -1,0 +1,9 @@
+.chatBot-one{
+    background: linear-gradient(to top right, $primary-500, $secondary-500);
+}
+.chatBot-two{
+    background: linear-gradient(to top right, $success-500, $info-500);
+}
+.chatBot-three{
+    background: linear-gradient(to bottom right, rgba($primary-500, 0.2), rgba($success-500, 0.2), rgba($secondary-500, 0.2));
+}

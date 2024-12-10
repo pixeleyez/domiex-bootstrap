@@ -1,0 +1,177 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Bot" }}
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Bot" sub-title="UI Advanced" }}
+
+    <div class="card">
+        <div class="card-header">
+            <h6 class="card-title mb-0">Default ChatBot</h6>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-4">
+                    <div class="d-flex flex-column rounded-3 shadow-sm">
+                        <div class="p-4 text-white chatBot-one rounded-top-2">
+                            <div>
+                                <h6 class="mb-1 fs-16">ChatBot</h6>
+                                <p class="fs-12 text-white opacity-75">Online</p>
+                            </div>
+                        </div>
+                        <section class="h-80 p-4" id="customScroll" data-simplebar>
+                            <div class="d-flex align-items-end">
+                                <div class="size-6 rounded-circle">
+                                    <img src="assets/images/others/bot.png" alt="" class="rounded-circle img-fluid">
+                                </div>
+                                <div class="px-3 py-2 bg-light rounded-top-2 rounded-end-2 ms-2">
+                                    <span>Hello! I am a Domiex chatbot. How can I assist you today?</span>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="p-4">
+                            <div class="d-flex position-relative">
+                                <input type="text" placeholder="Say something..." autocomplete="off" class="form-control rounded-pill pe-5">
+                                <div class="position-absolute top-50 translate-middle-y end-1">
+                                    <button type="button" class="btn btn-primary rounded-circle size-8 p-0">
+                                        <i data-lucide="send-horizontal" class="size-4"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="d-flex flex-column rounded-3 shadow-sm">
+                        <div class="p-4 text-white chatBot-two rounded-top-2">
+                            <div>
+                                <h6 class="mb-1 fs-16">ChatBot</h6>
+                                <p class="fs-12 text-white opacity-75">Online</p>
+                            </div>
+                        </div>
+                        <section class="h-80 p-4" id="customScroll" data-simplebar>
+                            <div class="d-flex align-items-end">
+                                <div class="size-6 rounded-circle">
+                                    <img src="assets/images/others/bot.png" alt="" class="rounded-circle img-fluid">
+                                </div>
+                                <div class="px-3 py-2 bg-light rounded-top-2 rounded-end-2 ms-2">
+                                    <span>Hello! I am a Domiex chatbot. How can I assist you today?</span>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="p-4">
+                            <div class="d-flex position-relative">
+                                <input type="text" placeholder="Say something..." autocomplete="off" class="form-control rounded-pill pe-5">
+                                <div class="position-absolute top-50 translate-middle-y end-1">
+                                    <button type="button" class="btn btn-primary rounded-circle size-8 p-0">
+                                        <i data-lucide="send-horizontal" class="size-4"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="d-flex flex-column rounded-3 shadow-sm">
+                        <div class="p-4 text-black chatBot-three rounded-top-2">
+                            <div>
+                                <h6 class="mb-1 fs-16">ChatBot</h6>
+                                <p class="fs-12 opacity-75">Online</p>
+                            </div>
+                        </div>
+                        <section class="h-80 p-4" id="customScroll" data-simplebar>
+                            <div class="d-flex align-items-end">
+                                <div class="size-6 rounded-circle">
+                                    <img src="assets/images/others/bot.png" alt="" class="rounded-circle img-fluid">
+                                </div>
+                                <div class="px-3 py-2 bg-light rounded-top-2 rounded-end-2 ms-2">
+                                    <span>Hello! I am a Domiex chatbot. How can I assist you today?</span>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="p-4">
+                            <div class="d-flex position-relative">
+                                <input type="text" placeholder="Say something..." autocomplete="off" class="form-control rounded-pill pe-5">
+                                <div class="position-absolute top-50 translate-middle-y end-1">
+                                    <button type="button" class="btn btn-primary rounded-circle size-8 p-0">
+                                        <i data-lucide="send-horizontal" class="size-4"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h6 class="card-title mb-0">Live ChatBot</h6>
+        </div>
+        <div class="card-body">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Live Chatbox</button>
+        </div>
+    </div>
+
+    <!-- Chat Bot Modal -->
+    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog  position-absolute end-0 bottom-0 m-5">
+            <div class="modal-content w-96">
+                <div class="d-flex flex-column rounded-3 shadow-sm">
+                    <div class="p-4 text-white chatBot-one rounded-top-2">
+                        <div>
+                            <h6 class="mb-1 fs-16">ChatBot</h6>
+                            <p class="fs-12 opacity-75">Online</p>
+                        </div>
+                    </div>
+                    <section class="h-80 p-4" id="customScroll" data-simplebar>
+                        <div class="d-flex align-items-end">
+                            <div class="size-6 rounded-circle">
+                                <img src="assets/images/others/bot.png" alt="" class="rounded-circle img-fluid">
+                            </div>
+                            <div class="px-3 py-2 bg-light rounded-top-2 rounded-end-2 ms-2">
+                                <span>Hello! I am a Domiex chatbot. How can I assist you today?</span>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="p-4">
+                        <div class="d-flex position-relative">
+                            <input type="text" placeholder="Say something..." autocomplete="off" class="form-control rounded-pill pe-5">
+                            <div class="position-absolute top-50 translate-middle-y end-1">
+                                <button type="button" class="btn btn-primary rounded-circle size-8 p-0">
+                                    <i data-lucide="send-horizontal" class="size-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+</div>
+</div>
+
+{{> partials/vendor-scripts}}
+
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

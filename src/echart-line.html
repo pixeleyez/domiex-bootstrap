@@ -1,0 +1,115 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Line Charts" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Line Charts" sub-title="Echarts" }}
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="basicLineApp">
+                        <div class="h-80" x-ref="basicLineChart" data-chart-colors="bg-primary, bg-gray-200, bg-gray-800" data-chart-dark-colors="bg-primary, bg-gray-800, bg-gary-100"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Smooth Line</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="smoothLineApp">
+                        <div class="h-80" x-ref="smoothLineChart" data-chart-colors="bg-secondary, bg-gray-200, bg-gray-800" data-chart-dark-colors="bg-secondary, bg-gray-800, bg-gray-100"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Stacked Line Chart</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="stackedLineApp">
+                        <div class="h-80" x-ref="stackedLineChart" data-chart-colors="bg-secondary, bg-warning, bg-info, bg-success, bg-orange, bg-gray-200, bg-gray-800" data-chart-dark-colors="bg-secondary, bg-warning, bg-info, bg-success, bg-orange bg-gray-800, bg-gray-100"></div>
+                    </div> 
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Line Y Category</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="categoryLineApp">
+                        <div class="h-80" x-ref="categoryLineChart" data-chart-colors="bg-secondary, bg-gray-200, bg-gray-800" data-chart-dark-colors="bg-secondary, bg-gray-800, bg-gray-100"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Step Line</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="stepLineApp">
+                        <div class="h-80" x-ref="stepLineChart" data-chart-colors="bg-primary, bg-secondary, bg-success, bg-gray-200, bg-gray-800" data-chart-dark-colors="bg-primary, bg-secondary, bg-success, bg-gray-800, bg-gray-100"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Style Line</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="styleLineApp">
+                        <div class="h-80" x-ref="styleLineChart" data-chart-colors="bg-primary, bg-dark-200, bg-dark-800, bg-danger" data-chart-dark-colors="bg-primary, bg-dark-800, bg-dark-100, bg-danger"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+
+    <div class="mb-5 text-center">
+        <a href="https://echarts.apache.org/examples/en/index.html#chart-type-line" target="_blank" class="btn btn-primary">More Example <i data-lucide="move-right" class="d-inline-block ms-1 size-4"></i></a>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/echarts/echarts.min.js"></script>
+
+<script type="module" src="assets/js/charts/echart-line.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

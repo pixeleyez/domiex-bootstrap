@@ -1,0 +1,91 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Pie Charts" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Pie Charts" sub-title="Echarts" }}
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="basicPieApp">
+                        <div class="h-80" x-ref="basicPieChart" data-chart-colors="bg-primary-subtle, bg-success-subtle, bg-warning-subtle, bg-secondary-subtle, bg-orange-subtle, bg-gray-200, bg-gray-800" data-chart-dark-colors="bg-primary-subtle, bg-success-subtle, bg-warning-subtle, bg-secondary-subtle, bg-orange-subtle, bg-gray-800, bg-gray-100"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Doughnut Chart with Rounded Corner</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="doughnutRoundedPieApp">
+                        <div class="h-80" x-ref="doughnutRoundedPieChart" data-chart-colors="bg-primary-subtle, bg-success-subtle, bg-pink-subtle, bg-secondary-subtle, bg-orange-subtle, bg-gray-200, bg-gray-800, bg-white"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Doughnut Chart</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="doughnutPieApp">
+                        <div class="h-80" x-ref="doughnutPieChart" data-chart-colors="bg-primary-subtle, bg-success-subtle, bg-pink-subtle, bg-secondary-subtle, bg-orange-subtle, bg-gray-200, bg-gray-800, bg-white" data-chart-dark-colors="bg-primary-subtle, bg-success-subtle, bg-pink-subtle, bg-secondary-subtle, bg-orange-subtle, bg-gray-800, bg-gray-100, bg-gray-900"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Doughnut Chart</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="halfDouglasNutApp">
+                        <div class="h-80" x-ref="halfDouglasNutChart" data-chart-colors="bg-primary-subtle, bg-success-subtle, bg-pink-subtle, bg-secondary-subtle, bg-orange-subtle, bg-gray-200, bg-gray-800, bg-white" data-chart-dark-colors="bg-primary-subtle, bg-success-subtle, bg-pink-subtle, bg-secondary-subtle, bg-orange-subtle, bg-gray-800, bg-gray-100, bg-gray-900"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+
+    <div class="mb-5 text-center">
+        <a href="https://echarts.apache.org/examples/en/index.html#chart-type-pie" target="_blank" class="btn btn-primary">More Example <i data-lucide="move-right" class="d-inline-block ms-1 size-4"></i></a>
+    </div>
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/echarts/echarts.min.js"></script>
+
+<script type="module" src="assets/js/charts/echart-pie.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
