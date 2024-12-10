@@ -1,0 +1,115 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Vector" }}
+
+    {{> partials/head-css}}
+
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Vector" sub-title="Maps" }}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Basic</h6>
+                </div>
+                <div class="card-body">
+                    <div id="basicMap" class="h-96 position-relative"></div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Markers</h6>
+                </div>
+                <div class="card-body">
+                    <div id="markersMap" class="h-96 position-relative"></div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Image Marker</h6>
+                </div>
+                <div class="card-body">
+                    <div id="imageMarkersMap" class="h-96 position-relative"></div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Line Style</h6>
+                </div>
+                <div class="card-body">
+                    <div id="lineStyleMap" class="h-96 position-relative"></div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">With Tooltip</h6>
+                </div>
+                <div class="card-body">
+                    <div id="tooltipMap" class="h-96 position-relative"></div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Data Series</h6>
+                </div>
+                <div class="card-body">
+                    <div id="dataSeriesMap" class="h-96 position-relative"></div>
+                </div>
+            </div>
+        </div><!--end col-->
+        <div class="col-6">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Reflect user location</h6>
+                </div>
+                <div class="card-body">
+                    <div id="userLocationMap" class="h-96 position-relative"></div>
+            <div class="flex gap-5">
+                <button id="request-location" class="text-white btn" style="background-color: rgb(0, 162, 255);">Find My Location</button>
+                <button id="clear-location" class="text-white btn" style="background-color: #ef4444;">Clear Location</button>
+            </div>
+            <div id="location-display" style="margin-top: 10px;"></div> 
+                </div>
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+
+    {{> partials/footer}}
+</div>
+
+{{> partials/vendor-scripts}}
+
+<script src="assets/libs/jsvectormap/jsvectormap.min.js"></script>
+<script src="assets/libs/jsvectormap/maps/world.js"></script>
+
+<script type="module" src="assets/js/maps/vector.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

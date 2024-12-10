@@ -26,6 +26,11 @@ $utilities: map-merge(
             class: max-h,
             values: $avatar-sizes 
         ),
+        "bg-gray": (
+            property: background-color,
+            class: bg-gray,
+            values: $grays 
+        ),
         "border": (
             property: border,
             responsive: true,

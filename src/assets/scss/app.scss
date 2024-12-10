@@ -59,6 +59,7 @@ File: Main Css File
 @import "custom/components/advanced-tree";
 @import "custom/components/advanced-highlight";
 @import "custom/components/advanced-mask";
+@import "custom/components/advanced-bot";
 @import "custom/components/icons-boxicon";
 @import "custom/components/icons-lucide";
 
@@ -119,3 +120,6 @@ File: Main Css File
 @import "custom/apps/apps-calendar-default";
 @import "custom/apps/apps-chat-default";
 @import "custom/apps/apps-chat-group";
+
+// Dahboard
+@import "custom/dashboard/index";

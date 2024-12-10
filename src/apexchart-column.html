@@ -22,7 +22,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="card">
+            <div class="card card-h-100">
                 <div class="card-header">
                     <h6 class="card-title">Basic</h6>
                 </div>
@@ -34,7 +34,7 @@
             </div>
         </div><!--end col-->
         <div class="col-12">
-            <div class="card">
+            <div class="card card-h-100">
                 <div class="card-header">
                     <h6 class="card-title">Column with Data Labels</h6>
                 </div>
@@ -46,7 +46,7 @@
             </div>
         </div><!--end col-->
         <div class="col-6">
-            <div class="card">
+            <div class="card card-h-100">
                 <div class="card-header">
                     <h6 class="card-title">Stacked Columns</h6>
                 </div>
@@ -58,7 +58,7 @@
             </div>
         </div><!--end col-->
         <div class="col-6">
-            <div class="card">
+            <div class="card card-h-100">
                 <div class="card-header">
                     <h6 class="card-title">Stacked Columns 100</h6>
                 </div>
@@ -70,7 +70,7 @@
             </div>
         </div><!--end col-->
         <div class="col-12">
-            <div class="card">
+            <div class="card card-h-100">
                 <div class="card-header">
                     <h6 class="card-title">Grouped Stacked Columns</h6>
                 </div>
@@ -82,7 +82,7 @@
             </div>
         </div><!--end col-->
         <div class="col-6">
-            <div class="card">
+            <div class="card card-h-100">
                 <div class="card-header">
                     <h6 class="card-title">Dumbbell Chart</h6>
                 </div>
@@ -94,7 +94,7 @@
             </div>
         </div><!--end col-->
         <div class="col-6">
-            <div class="card">
+            <div class="card card-h-100">
                 <div class="card-header">
                     <h6 class="card-title">Column with Markers</h6>
                 </div>
@@ -106,49 +106,49 @@
             </div>
         </div><!--end col-->
         <div class="col-6">
-            <div class="card">
+            <div class="card card-h-100">
                 <div class="card-header">
                     <h6 class="card-title">Column with Group Label</h6>
                 </div>
                 <div class="card-body">
-                    <div x-data="groupLabelColumnApp" dir="ltr">
-                        <div  data-chart-colors="bg-primary" x-ref="groupLabelColumnChart"></div>
+                    <div x-data="groupLabelColumnApp"  x-init="init()" dir="ltr">
+                        <div data-chart-colors="bg-primary" x-ref="groupLabelColumnChart"></div>
                     </div>
                 </div>
             </div>
         </div><!--end col-->
         <div class="col-6">
-            <div class="card">
+            <div class="card card-h-100">
                 <div class="card-header">
                     <h6 class="card-title">Column with Rotated Labels</h6>
                 </div>
                 <div class="card-body">
                     <div x-data="rotatedLabelColumnApp" dir="ltr">
-                        <div  data-chart-colors="bg-primary" x-ref="rotatedLabelColumnChart"></div>
+                        <div data-chart-colors="bg-primary" x-ref="rotatedLabelColumnChart"></div>
                     </div>
                 </div>
             </div>
         </div><!--end col-->
         <div class="col-6">
-            <div class="card">
+            <div class="card card-h-100">
                 <div class="card-header">
                     <h6 class="card-title">Column with Negative Values</h6>
                 </div>
                 <div class="card-body">
                     <div x-data="negativeLabelColumnApp" dir="ltr">
-                        <div  data-chart-colors="bg-primary, bg-warning, bg-danger" x-ref="negativeLabelColumnChart"></div>
+                        <div data-chart-colors="bg-primary, bg-warning, bg-danger" x-ref="negativeLabelColumnChart"></div>
                     </div>
                 </div>
             </div>
         </div><!--end col-->
         <div class="col-6">
-            <div class="card">
+            <div class="card card-h-100">
                 <div class="card-header">
                     <h6 class="card-title">Distributed Columns</h6>
                 </div>
                 <div class="card-body">
                     <div x-data="distributedColumnApp" dir="ltr">
-                        <div  data-chart-colors="bg-primary" x-ref="distributedColumnChart"></div>
+                        <div data-chart-colors="bg-primary, bg-pink, bg-info, bg-success, bg-warning, bg-secondary, bg-danger, bg-info" x-ref="distributedColumnChart"></div>
                     </div>
                 </div>
             </div>
@@ -159,6 +159,9 @@
 </div>
 
 {{> partials/vendor-scripts}}
+
+<script src="assets/libs/dayjs/dayjs.min.js"></script>
+<script src="assets/libs//dayjs/plugin/quarterOfYear.js"></script>
 
 <script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
 

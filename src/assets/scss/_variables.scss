@@ -42,6 +42,7 @@ $grays: (
   "900": $gray-900
 );
 
+
 // scss-docs-end gray-colors-map
 // fusv-enable
 
@@ -94,6 +95,7 @@ $warning:       $warning-500;
 $danger:        $danger-500;
 $light:         $gray-100;
 $dark:          $gray-500;
+
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -107,8 +109,8 @@ $theme-colors: (
   "light":      $light,
   "dark":       $dark,
   "pink":       $pink,
-  "orange":       $orange,
-  "indigo":       $indigo
+  "orange":     $orange,
+  "indigo":     $indigo,
 );
 // scss-docs-end theme-colors-map
 
@@ -1591,8 +1593,9 @@ $avatar-sizes: (
   32: 8rem,
   36: 9rem,
   40: 10rem,
-  44: 11rem,
-  48: 12rem,
+  44: 176px,
+  48: 192px,
+  52: 13rem,
   56: 14rem,
   64: 256px,
   72: 18rem,
