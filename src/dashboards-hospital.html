@@ -1,0 +1,72 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Hospital" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Hospital" sub-title="Dashboards" }}
+
+    <div class="row">
+        <div class="col-8">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="d-flex align-items-center gap-3 mb-5">
+                                        <h6 class="card-title flex-grow-1 mb-0">Patient Visit</h6>
+                                        <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                                            <a class="link link-danger text-dark badge border text-dark d-flex align-items-center cursor-pointer py-1" @click="open = !open" aria-expanded="open">
+                                                <span>Last Week</span>
+                                                <i class="ri-arrow-down-s-line fs-6 fw-medium lh-sm" :class="{'rotate': open}"></i>
+                                            </a>
+                                            <div x-show="open" style="display: none;" class="dropdown-menu  dropdown-menu-end show position-absolute end-0">
+                                                <a class="dropdown-item" href="#">Last Week</a>
+                                                <a class="dropdown-item" href="#">Last Month</a>
+                                                <a class="dropdown-item" href="#">Last Year</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div x-data="patientVisitApp" dir="ltr">
+                                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-success, bg-warning" x-ref="patientVisitChart"></div>
+                                    </div>
+                                </div><!-- end col -->
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+            </div>
+        </div><!-- end col -->
+    </div>
+
+</div>
+{{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script type="module" src="assets/js/dashboards/hospital.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
