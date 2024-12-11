@@ -1,0 +1,471 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Email" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Email" sub-title="Dashboards" }}
+
+    <div class="row">
+        <div class="col-8">
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="mb-2 text-muted">Emails Sent</p>
+                            <h5 class="mb-2">
+                                <span class="counter" x-data="animatedCounter(48, 500, 0)" x-init="updateCounter" x-text="Math.round(current)"></span>k
+                                <i data-lucide="trending-up" class="size-4 text-success ms-1"></i>
+                                <small class="text-muted fs-sm fw-medium">This year's</small>
+                            </h5>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="mb-2 text-muted">Average Click Rate</p>
+                            <h5 class="mb-2">
+                                <span class="counter" x-data="animatedCounter(32, 500, 0)" x-init="updateCounter" x-text="Math.round(current)"></span>k
+                                <i data-lucide="trending-up" class="size-4 text-success ms-1"></i>
+                                <small class="text-muted fs-sm fw-medium">This year's</small>
+                            </h5>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="mb-2 text-muted">Open Rate</p>
+                            <h5 class="mb-2">
+                                <span class="counter" x-data="animatedCounter(84, 500, 0)" x-init="updateCounter" x-text="Math.round(current)"></span>%
+                                <i data-lucide="trending-down" class="size-4 text-danger ms-1"></i>
+                                <small class="text-muted fs-sm fw-medium">This year's</small>
+                            </h5>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="mb-2 text-muted">Unsubscribe</p>
+                            <h5 class="mb-2">
+                                <span class="counter" x-data="animatedCounter(26, 500, 0)" x-init="updateCounter" x-text="Math.round(current)"></span>%
+                                <i data-lucide="trending-down" class="size-4 text-danger ms-1"></i>
+                                <small class="text-muted fs-sm fw-medium">This year's</small>
+                            </h5>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center gap-3">
+                            <h6 class="card-title flex-grow-1 mb-0">Email Campaign Performance</h6>
+                            <div class="d-flex gap-1 p-1 bg-light rounded-2">
+                                <button type="button" class="btn btn-sm btn-light active">Monthly</button>
+                                <button type="button" class="btn btn-sm btn-light">Weekly</button>
+                                <button type="button" class="btn btn-sm btn-light">Yearly</button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div x-data="labelLineApp" dir="ltr">
+                                <div class="!min-h-full" data-chart-colors="bg-primary, bg-dark-subtle" data-chart-dark-colors="bg-primary, bg-dark-subtle" x-ref="labelLineChart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card overflow-hidden position-relative campaign-card border-0 card-h-100">
+                        <img src="assets/images/dashboards/ecommerce/pattern.png" loading="lazy" alt="" class="position-absolute bottom-0 end-0 opacity-25">
+                        <div class="card-body position-relative">
+                            <h6 class="mb-5">Top Campaign</h6>
+                            <h5 class="mb-2 text-capitalize lh-base fs-lg">Feeling embarrassed by your design skills? Here’s what you can do.</h5>
+                            <p class="mb-8 text-muted">29 June, 2024</p>
+                            <p class="mb-1">Conversion Rate</p>
+                            <h5 class="">
+                                <span class="fs-lg">1097</span>
+                                <i data-lucide="trending-down" class="size-4 ms-2 text-danger"></i>
+                                <small class="text-sm text-muted fs-sm">12.9% This year</small>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card card-h-100 overflow-hidden">
+                        <div class="row g-0 h-100">
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <div x-data="gradientDonutApp" dir="ltr">
+                                        <div class="h-44" data-chart-colors="bg-primary, bg-danger" x-ref="gradientDonutChart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 bg-primary">
+                                <div class="card-body text-center">
+                                    <div x-data="labelColumnApp" dir="ltr">
+                                        <div class="!min-h-full" data-chart-colors="bg-primary-subtle" x-ref="labelColumnChart"></div>
+                                    </div>
+                                    <p class="mt-5 mb-1 text-white opacity-75 lh-base">Total Revenue</p>
+                                    <h5 class="text-white">$<span x-data="animatedCounter(145, 500, 0)" x-init="updateCounter" x-text="Math.round(current)"></span>M</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="card-title flex-grow-1 mb-0">Mail Statistic</h6>
+                    <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i data-lucide="ellipsis" class="size-5"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#!"><span>Weekly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Monthly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Yearly</span></a></li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div x-data="mailStatisticApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-success, bg-danger" x-ref="mailStatisticChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h6 class="card-title flex-grow-1 mb-0">All Time Spending</h6>
+                            <a href="#!" class="badge bg-dark-subtle text-dark">See All <i data-lucide="move-right" class="size-4 ms-1"></i></a>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="mb-0">7.4%</h5>
+                                    <p class="text-muted">Conversion Rate</p>
+                                </div>
+                                <div class="col-6">
+                                    <h5 class="mb-0">48,759</h5>
+                                    <p class="text-muted">Users</p>
+                                </div>
+                            </div>
+                            <div x-data="timeSpendingApp" dir="ltr">
+                                <div class="!min-h-full" data-chart-colors="bg-primary, bg-success" x-ref="timeSpendingChart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="text-muted">Total Customers</p>
+                            <h5 class="mt-6 mb-1 lh-base">1,32,603</h5>
+                            <p class="text-muted"><span class="text-success">0.5%</span> From last week</p>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="text-muted">Bounce Rate</p>
+                            <h5 class="mt-6 mb-1 lh-base">48,314</h5>
+                            <p class="text-muted"><span class="text-success">1.8%</span> From last week</p>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="card-title flex-grow-1 mb-0">Monthly Campaign Stats</h6>
+                    <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i data-lucide="ellipsis" class="size-5"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#!"><span>Weekly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Monthly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Yearly</span></a></li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <table class="table align-middle table-borderless">
+                        <tbody>
+                            <tr>
+                                <td class="py-10px pe-3 ps-0">
+                                    <div class="size-9 bg-success d-flex justify-content-center align-items-center rounded-1 text-white">
+                                        <i data-lucide="mail" class="size-5"></i>
+                                    </div>
+                                </td>
+                                <td class="py-10px pe-3 ps-0">Campaign</td>
+                                <td class="py-10px pe-3 ps-0">48</td>
+                                <td class="py-10px pe-3 ps-0 text-success">0.9%</td>
+                            </tr>
+                            <tr class="py-10px pe-3 ps-0">
+                                <td class="py-10px pe-3 ps-0">
+                                    <div class="size-9 bg-info d-flex justify-content-center align-items-center rounded-1 text-white">
+                                        <i data-lucide="square-mouse-pointer" class="size-5"></i>
+                                    </div>
+                                </td>
+                                <td class="py-10px pe-3 ps-0">Clicked</td>
+                                <td class="py-10px pe-3 ps-0">48.69%</td>
+                                <td class="py-10px pe-3 ps-0 text-success">2.9%</td>
+                            </tr>
+                            <tr class="py-10px pe-3 ps-0">
+                                <td class="py-10px pe-3 ps-0">
+                                    <div class="size-9 bg-orange d-flex justify-content-center align-items-center rounded-1 text-white">
+                                        <i data-lucide="mail" class="size-5"></i>
+                                    </div>
+                                </td>
+                                <td class="py-10px pe-3 ps-0">Emails</td>
+                                <td class="py-10px pe-3 ps-0">47,899</td>
+                                <td class="py-10px pe-3 ps-0 text-success">0.5%</td>
+                            </tr>
+                            <tr class="py-10px pe-3 ps-0">
+                                <td class="py-10px pe-3 ps-0">
+                                    <div class="size-9 bg-warning d-flex justify-content-center align-items-center rounded-1 text-white">
+                                        <i data-lucide="square-arrow-out-up-right" class="size-5"></i>
+                                    </div>
+                                </td>
+                                <td class="py-10px pe-3 ps-0">Opened</td>
+                                <td class="py-10px pe-3 ps-0">71.12%</td>
+                                <td class="py-10px pe-3 ps-0 text-danger">1.7%</td>
+                            </tr>
+                            <tr class="py-10px pe-3 ps-0">
+                                <td class="py-10px pe-3 ps-0">
+                                    <div class="size-9 bg-primary d-flex justify-content-center align-items-center rounded-1 text-white">
+                                        <i data-lucide="user-round-check" class="size-5"></i>
+                                    </div>
+                                </td>
+                                <td class="py-10px pe-3 ps-0">Subscribe</td>
+                                <td class="py-10px pe-3 ps-0">47,165</td>
+                                <td class="py-10px pe-3 ps-0 text-success">0.8%</td>
+                            </tr>
+                            <tr class="py-10px pe-3 ps-0">
+                                <td class="py-10px pe-3 ps-0">
+                                    <div class="size-9 bg-danger d-flex justify-content-center align-items-center rounded-1 text-white">
+                                        <i data-lucide="user-x" class="size-5"></i>
+                                    </div>
+                                </td>
+                                <td class="py-10px pe-3 ps-0">Unsubscribe</td>
+                                <td class="py-10px pe-3 ps-0">287</td>
+                                <td class="py-10px pe-3 ps-0 text-danger">0.4%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-3">
+                            <h6 class="card-title mb-0 flex-grow-1">All Email Performance</h6>
+                        </div>
+                        <div class="col-4">
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="position-relative flex-grow-1">
+                                    <input type="text" class="form-control ps-9 pe-4" placeholder="Search..." @input="filtercontacts" x-model="searchTerm">
+                                    <div class="position-absolute top-50 translate-middle-y d-flex align-items-center">
+                                        <i data-lucide="search" class="size-4 ms-3 text-dark"></i>
+                                    </div>
+                                </div>
+                                <button @click="exportTable" class="btn btn-primary"><i data-lucide="download" class="size-4 me-2"></i>Export</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="table-box">
+                        <table class="table">
+                            <tbody>
+                                <tr class="table-light border-bottom">
+                                    <th class="text-dark fw-medium">
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </th>
+                                    <th class="text-dark fw-medium">Email</th>
+                                    <th class="text-dark fw-medium">Publish Date</th>
+                                    <th class="text-dark fw-medium">Sent</th>
+                                    <th class="text-dark fw-medium">Click Rate (%)</th>
+                                    <th class="text-dark fw-medium">Delivered Rate</th>
+                                    <th class="text-dark fw-medium">Span Report Rate</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td>Financial Services</td>
+                                    <td>03 May, 2024</td>
+                                    <td>4</td>
+                                    <td>3.47%</td>
+                                    <td>7.89%</td>
+                                    <td>0.14%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                        </div>
+                                    </td>
+                                    <td>Healthcare Update</td>
+                                    <td>10 May, 2024</td>
+                                    <td>5</td>
+                                    <td>4.12%</td>
+                                    <td>8.45%</td>
+                                    <td>0.20%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck2">
+                                        </div>
+                                    </td>
+                                    <td>Retail Newsletter</td>
+                                    <td>15 May, 2024</td>
+                                    <td>6</td>
+                                    <td>2.98%</td>
+                                    <td>7.65%</td>
+                                    <td>0.10%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck3">
+                                        </div>
+                                    </td>
+                                    <td>Tech Insights</td>
+                                    <td>20 May, 2024</td>
+                                    <td>7</td>
+                                    <td>5.21%</td>
+                                    <td>9.12%</td>
+                                    <td>0.30%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck4">
+                                        </div>
+                                    </td>
+                                    <td>Travel Deals</td>
+                                    <td>25 May, 2024</td>
+                                    <td>3</td>
+                                    <td>6.34%</td>
+                                    <td>8.79%</td>
+                                    <td>0.25%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck5">
+                                        </div>
+                                    </td>
+                                    <td>Education Weekly</td>
+                                    <td>30 May, 2024</td>
+                                    <td>8</td>
+                                    <td>3.89%</td>
+                                    <td>8.23%</td>
+                                    <td>0.18%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck6">
+                                        </div>
+                                    </td>
+                                    <td>Automotive Trends</td>
+                                    <td>04 June, 2024</td>
+                                    <td>4</td>
+                                    <td>4.50%</td>
+                                    <td>7.95%</td>
+                                    <td>0.12%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check check-primary">
+                                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck7">
+                                        </div>
+                                    </td>
+                                    <td>Fashion Bulletin</td>
+                                    <td>09 June, 2024</td>
+                                    <td>5</td>
+                                    <td>5.78%</td>
+                                    <td>9.34%</td>
+                                    <td>0.15%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center my-5">
+                        <div>
+                            <p class="text-muted">Showing <b class="me-1">1 - 8</b>of<b class="ms-1">15</b> Results</p>
+                        </div>
+                        <div class="justify-content-end d-flex">
+                            <nav aria-label="...">
+                                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                                    <li class="page-item pagination-primary disabled">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <i data-lucide="chevron-left" class="size-5"></i>
+                                            <span>Prev</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                    <li class="page-item" aria-current="page">
+                                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                                    </li>
+                                    <li class="page-item pagination-primary ">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <span>Next</span>
+                                            <i data-lucide="chevron-right" class="size-5"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+    </div>
+</div>
+{{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script type="module" src="assets/js/dashboards/email.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

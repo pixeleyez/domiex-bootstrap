@@ -91,3 +91,13 @@
         }
     }
 }
+.tab-white {
+    .nav-link {
+        &.active{
+            background-color: #fff;
+        }&.active,
+        &:hover{
+            color: black;
+        }
+    }
+}

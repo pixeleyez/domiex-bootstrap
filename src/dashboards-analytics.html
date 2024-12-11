@@ -1,0 +1,777 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Analytics" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Analytics" sub-title="Dashboards" }}
+
+    <div class="row">
+        <div class="col-4">
+            <div class="card card-h-100">
+                <div class="card-body" x-data="salesRevenueApp">
+                    <div class="d-flex gap-3 mb-3">
+                        <div class="d-flex align-items-center justify-content-center text-primary border border-2 border-primary rounded-circle size-12 chart-icon-ring-primary">
+                            <i data-lucide="circle-arrow-up" class=""></i>
+                        </div>
+                        <div>
+                            <p class="mb-1 text-muted">Sales Revenue</p>
+                            <h5>$<span x-data="animatedCounter(145, 500, 0)" x-init="updateCounter" x-text="Math.round(current)"></span>M</h5>
+                        </div>
+                    </div>
+                    <div x-data="salesRevenueApp" dir="ltr">
+                        <div data-chart-colors="bg-primary, bg-dark-subtle" x-ref="salesRevenueChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="card card-h-100">
+                <div class="card-body" x-data="adsRevenueApp">
+                    <div class="d-flex gap-3 mb-3">
+                        <div class="d-flex align-items-center justify-content-center text-danger border border-2 border-danger rounded-circle size-12 chart-icon-ring-danger">
+                            <i data-lucide="activity" class=""></i>
+                        </div>
+                        <div>
+                            <p class="mb-1 text-muted">Ads Revenue</p>
+                            <h5>$<span x-data="animatedCounter(145, 500, 0)" x-init="updateCounter" x-text="Math.round(current)"></span>M</h5>
+                        </div>
+                    </div>
+                    <div x-data="adsRevenueApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-danger, bg-dark-subtle, bg-danger-subtle, bg-danger-subtle, bg-danger-subtle" x-ref="adsRevenueChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-2">
+            <div class="card card-h-100 position-relative">
+                <div class="position-absolute top-0 bottom-0 start-0 end-0">
+                    <svg viewBox="0 0 800 800" opacity="1">
+                        <g fill="none" stroke-width="0.5" class="stroke-success" stroke-linecap="round" stroke-dasharray="52.5 5.5" transform="matrix(1.8,0,0,1.8,-319.99998474121094,-320)">
+                            <line x1="236" y1="400" x2="564" y2="400" transform="rotate(0, 400, 400)" opacity="0.60"></line>
+                            <line x1="213" y1="400" x2="587" y2="400" transform="rotate(5, 400, 400)" opacity="0.29"></line>
+                            <line x1="394" y1="400" x2="406" y2="400" transform="rotate(10, 400, 400)" opacity="0.38"></line>
+                            <line x1="767.5" y1="400" x2="32.5" y2="400" transform="rotate(15, 400, 400)" opacity="0.43"></line>
+                            <line x1="210" y1="400" x2="590" y2="400" transform="rotate(20, 400, 400)" opacity="0.26"></line>
+                            <line x1="760.5" y1="400" x2="39.5" y2="400" transform="rotate(25, 400, 400)" opacity="0.86"></line>
+                            <line x1="263" y1="400" x2="537" y2="400" transform="rotate(30, 400, 400)" opacity="0.82"></line>
+                            <line x1="384.5" y1="400" x2="415.5" y2="400" transform="rotate(35, 400, 400)" opacity="0.83"></line>
+                            <line x1="188" y1="400" x2="612" y2="400" transform="rotate(40, 400, 400)" opacity="0.69"></line>
+                            <line x1="268" y1="400" x2="532" y2="400" transform="rotate(45, 400, 400)" opacity="0.42"></line>
+                            <line x1="710.5" y1="400" x2="89.5" y2="400" transform="rotate(50, 400, 400)" opacity="0.42"></line>
+                            <line x1="209" y1="400" x2="591" y2="400" transform="rotate(55, 400, 400)" opacity="0.69"></line>
+                            <line x1="644.5" y1="400" x2="155.5" y2="400" transform="rotate(60, 400, 400)" opacity="0.68"></line>
+                            <line x1="670" y1="400" x2="130" y2="400" transform="rotate(65, 400, 400)" opacity="0.74"></line>
+                            <line x1="180.5" y1="400" x2="619.5" y2="400" transform="rotate(70, 400, 400)" opacity="0.21"></line>
+                            <line x1="622.5" y1="400" x2="177.5" y2="400" transform="rotate(75, 400, 400)" opacity="0.49"></line>
+                            <line x1="530.5" y1="400" x2="269.5" y2="400" transform="rotate(80, 400, 400)" opacity="0.09"></line>
+                            <line x1="645" y1="400" x2="155" y2="400" transform="rotate(85, 400, 400)" opacity="0.95"></line>
+                            <line x1="460.5" y1="400" x2="339.5" y2="400" transform="rotate(90, 400, 400)" opacity="0.15"></line>
+                            <line x1="482.5" y1="400" x2="317.5" y2="400" transform="rotate(95, 400, 400)" opacity="0.34"></line>
+                            <line x1="182" y1="400" x2="618" y2="400" transform="rotate(100, 400, 400)" opacity="0.49"></line>
+                            <line x1="398" y1="400" x2="402" y2="400" transform="rotate(105, 400, 400)" opacity="0.88"></line>
+                            <line x1="340" y1="400" x2="460" y2="400" transform="rotate(110, 400, 400)" opacity="0.17"></line>
+                            <line x1="437.5" y1="400" x2="362.5" y2="400" transform="rotate(115, 400, 400)" opacity="0.12"></line>
+                            <line x1="173.5" y1="400" x2="626.5" y2="400" transform="rotate(120, 400, 400)" opacity="0.64"></line>
+                            <line x1="513" y1="400" x2="287" y2="400" transform="rotate(125, 400, 400)" opacity="0.27"></line>
+                            <line x1="466.5" y1="400" x2="333.5" y2="400" transform="rotate(130, 400, 400)" opacity="0.17"></line>
+                            <line x1="128.5" y1="400" x2="671.5" y2="400" transform="rotate(135, 400, 400)" opacity="0.67"></line>
+                            <line x1="369" y1="400" x2="431" y2="400" transform="rotate(140, 400, 400)" opacity="0.22"></line>
+                            <line x1="150" y1="400" x2="650" y2="400" transform="rotate(145, 400, 400)" opacity="0.26"></line>
+                            <line x1="520.5" y1="400" x2="279.5" y2="400" transform="rotate(150, 400, 400)" opacity="0.71"></line>
+                            <line x1="443.5" y1="400" x2="356.5" y2="400" transform="rotate(155, 400, 400)" opacity="0.47"></line>
+                            <line x1="734.5" y1="400" x2="65.5" y2="400" transform="rotate(160, 400, 400)" opacity="0.23"></line>
+                            <line x1="569.5" y1="400" x2="230.5" y2="400" transform="rotate(165, 400, 400)" opacity="0.52"></line>
+                            <line x1="541.5" y1="400" x2="258.5" y2="400" transform="rotate(170, 400, 400)" opacity="0.15"></line>
+                            <line x1="405" y1="400" x2="395" y2="400" transform="rotate(175, 400, 400)" opacity="0.19"></line>
+                            <line x1="546.5" y1="400" x2="253.5" y2="400" transform="rotate(180, 400, 400)" opacity="0.18"></line>
+                            <line x1="549" y1="400" x2="251" y2="400" transform="rotate(185, 400, 400)" opacity="0.57"></line>
+                            <line x1="443" y1="400" x2="357" y2="400" transform="rotate(190, 400, 400)" opacity="0.26"></line>
+                            <line x1="308" y1="400" x2="492" y2="400" transform="rotate(195, 400, 400)" opacity="0.91"></line>
+                            <line x1="758.5" y1="400" x2="41.5" y2="400" transform="rotate(200, 400, 400)" opacity="0.25"></line>
+                            <line x1="280" y1="400" x2="520" y2="400" transform="rotate(205, 400, 400)" opacity="0.59"></line>
+                            <line x1="232" y1="400" x2="568" y2="400" transform="rotate(210, 400, 400)" opacity="0.67"></line>
+                            <line x1="326.5" y1="400" x2="473.5" y2="400" transform="rotate(215, 400, 400)" opacity="0.32"></line>
+                            <line x1="337.5" y1="400" x2="462.5" y2="400" transform="rotate(220, 400, 400)" opacity="0.15"></line>
+                            <line x1="622" y1="400" x2="178" y2="400" transform="rotate(225, 400, 400)" opacity="0.51"></line>
+                            <line x1="714.5" y1="400" x2="85.5" y2="400" transform="rotate(230, 400, 400)" opacity="0.44"></line>
+                            <line x1="248" y1="400" x2="552" y2="400" transform="rotate(235, 400, 400)" opacity="0.31"></line>
+                            <line x1="531" y1="400" x2="269" y2="400" transform="rotate(240, 400, 400)" opacity="0.12"></line>
+                            <line x1="147.5" y1="400" x2="652.5" y2="400" transform="rotate(245, 400, 400)" opacity="0.66"></line>
+                            <line x1="131.5" y1="400" x2="668.5" y2="400" transform="rotate(250, 400, 400)" opacity="0.54"></line>
+                            <line x1="150.5" y1="400" x2="649.5" y2="400" transform="rotate(255, 400, 400)" opacity="0.56"></line>
+                            <line x1="677" y1="400" x2="123" y2="400" transform="rotate(260, 400, 400)" opacity="0.26"></line>
+                            <line x1="262.5" y1="400" x2="537.5" y2="400" transform="rotate(265, 400, 400)" opacity="0.62"></line>
+                            <line x1="629.5" y1="400" x2="170.5" y2="400" transform="rotate(270, 400, 400)" opacity="0.89"></line>
+                            <line x1="253.5" y1="400" x2="546.5" y2="400" transform="rotate(275, 400, 400)" opacity="0.94"></line>
+                            <line x1="589" y1="400" x2="211" y2="400" transform="rotate(280, 400, 400)" opacity="0.99"></line>
+                            <line x1="547" y1="400" x2="253" y2="400" transform="rotate(285, 400, 400)" opacity="0.72"></line>
+                            <line x1="418.5" y1="400" x2="381.5" y2="400" transform="rotate(290, 400, 400)" opacity="0.98"></line>
+                            <line x1="575" y1="400" x2="225" y2="400" transform="rotate(295, 400, 400)" opacity="0.33"></line>
+                            <line x1="664" y1="400" x2="136" y2="400" transform="rotate(300, 400, 400)" opacity="0.29"></line>
+                            <line x1="677" y1="400" x2="123" y2="400" transform="rotate(305, 400, 400)" opacity="0.10"></line>
+                            <line x1="423" y1="400" x2="377" y2="400" transform="rotate(310, 400, 400)" opacity="0.20"></line>
+                            <line x1="216" y1="400" x2="584" y2="400" transform="rotate(315, 400, 400)" opacity="0.44"></line>
+                            <line x1="626.5" y1="400" x2="173.5" y2="400" transform="rotate(320, 400, 400)" opacity="0.18"></line>
+                            <line x1="507.5" y1="400" x2="292.5" y2="400" transform="rotate(325, 400, 400)" opacity="0.51"></line>
+                            <line x1="454" y1="400" x2="346" y2="400" transform="rotate(330, 400, 400)" opacity="1.00"></line>
+                            <line x1="342" y1="400" x2="458" y2="400" transform="rotate(335, 400, 400)" opacity="0.12"></line>
+                            <line x1="571.5" y1="400" x2="228.5" y2="400" transform="rotate(340, 400, 400)" opacity="0.46"></line>
+                            <line x1="150.5" y1="400" x2="649.5" y2="400" transform="rotate(345, 400, 400)" opacity="0.55"></line>
+                            <line x1="582.5" y1="400" x2="217.5" y2="400" transform="rotate(350, 400, 400)" opacity="0.27"></line>
+                            <line x1="728" y1="400" x2="72" y2="400" transform="rotate(355, 400, 400)" opacity="0.18"></line>
+                            <line x1="625.5" y1="400" x2="174.5" y2="400" transform="rotate(360, 400, 400)" opacity="0.72"></line>
+                            <line x1="481.5" y1="400" x2="318.5" y2="400" transform="rotate(365, 400, 400)" opacity="0.31"></line>
+                            <line x1="676" y1="400" x2="124" y2="400" transform="rotate(370, 400, 400)" opacity="0.43"></line>
+                            <line x1="586.5" y1="400" x2="213.5" y2="400" transform="rotate(375, 400, 400)" opacity="0.72"></line>
+                        </g>
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <div class="position-relative d-flex flex-column h-100">
+                        <p class="text-muted text-uppercase">Impressions</p>
+                        <div class="text-success my-auto text-center">
+                            <i data-lucide="arrow-up-from-dot" class="text-center icon-success"></i>
+                            <h4 class="mt-2 text-center fs-xl">+39.7%</h4>
+                        </div>
+                        <p class="text-success d-flex align-items-center gap-2"><i data-lucide="eye" class="size-4"></i> 47,859</p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-2">
+            <div class="card card-h-100 position-relative">
+                <div class="position-absolute top-0 bottom-0 start-0 end-0">
+                    <svg viewBox="0 0 800 800" opacity="1">
+                        <g fill="none" stroke-width="0.5" class="stroke-info" stroke-linecap="round" stroke-dasharray="52.5 5.5" transform="matrix(1.8,0,0,1.8,-319.99998474121094,-320)">
+                            <line x1="236" y1="400" x2="564" y2="400" transform="rotate(0, 400, 400)" opacity="0.60"></line>
+                            <line x1="213" y1="400" x2="587" y2="400" transform="rotate(5, 400, 400)" opacity="0.29"></line>
+                            <line x1="394" y1="400" x2="406" y2="400" transform="rotate(10, 400, 400)" opacity="0.38"></line>
+                            <line x1="767.5" y1="400" x2="32.5" y2="400" transform="rotate(15, 400, 400)" opacity="0.43"></line>
+                            <line x1="210" y1="400" x2="590" y2="400" transform="rotate(20, 400, 400)" opacity="0.26"></line>
+                            <line x1="760.5" y1="400" x2="39.5" y2="400" transform="rotate(25, 400, 400)" opacity="0.86"></line>
+                            <line x1="263" y1="400" x2="537" y2="400" transform="rotate(30, 400, 400)" opacity="0.82"></line>
+                            <line x1="384.5" y1="400" x2="415.5" y2="400" transform="rotate(35, 400, 400)" opacity="0.83"></line>
+                            <line x1="188" y1="400" x2="612" y2="400" transform="rotate(40, 400, 400)" opacity="0.69"></line>
+                            <line x1="268" y1="400" x2="532" y2="400" transform="rotate(45, 400, 400)" opacity="0.42"></line>
+                            <line x1="710.5" y1="400" x2="89.5" y2="400" transform="rotate(50, 400, 400)" opacity="0.42"></line>
+                            <line x1="209" y1="400" x2="591" y2="400" transform="rotate(55, 400, 400)" opacity="0.69"></line>
+                            <line x1="644.5" y1="400" x2="155.5" y2="400" transform="rotate(60, 400, 400)" opacity="0.68"></line>
+                            <line x1="670" y1="400" x2="130" y2="400" transform="rotate(65, 400, 400)" opacity="0.74"></line>
+                            <line x1="180.5" y1="400" x2="619.5" y2="400" transform="rotate(70, 400, 400)" opacity="0.21"></line>
+                            <line x1="622.5" y1="400" x2="177.5" y2="400" transform="rotate(75, 400, 400)" opacity="0.49"></line>
+                            <line x1="530.5" y1="400" x2="269.5" y2="400" transform="rotate(80, 400, 400)" opacity="0.09"></line>
+                            <line x1="645" y1="400" x2="155" y2="400" transform="rotate(85, 400, 400)" opacity="0.95"></line>
+                            <line x1="460.5" y1="400" x2="339.5" y2="400" transform="rotate(90, 400, 400)" opacity="0.15"></line>
+                            <line x1="482.5" y1="400" x2="317.5" y2="400" transform="rotate(95, 400, 400)" opacity="0.34"></line>
+                            <line x1="182" y1="400" x2="618" y2="400" transform="rotate(100, 400, 400)" opacity="0.49"></line>
+                            <line x1="398" y1="400" x2="402" y2="400" transform="rotate(105, 400, 400)" opacity="0.88"></line>
+                            <line x1="340" y1="400" x2="460" y2="400" transform="rotate(110, 400, 400)" opacity="0.17"></line>
+                            <line x1="437.5" y1="400" x2="362.5" y2="400" transform="rotate(115, 400, 400)" opacity="0.12"></line>
+                            <line x1="173.5" y1="400" x2="626.5" y2="400" transform="rotate(120, 400, 400)" opacity="0.64"></line>
+                            <line x1="513" y1="400" x2="287" y2="400" transform="rotate(125, 400, 400)" opacity="0.27"></line>
+                            <line x1="466.5" y1="400" x2="333.5" y2="400" transform="rotate(130, 400, 400)" opacity="0.17"></line>
+                            <line x1="128.5" y1="400" x2="671.5" y2="400" transform="rotate(135, 400, 400)" opacity="0.67"></line>
+                            <line x1="369" y1="400" x2="431" y2="400" transform="rotate(140, 400, 400)" opacity="0.22"></line>
+                            <line x1="150" y1="400" x2="650" y2="400" transform="rotate(145, 400, 400)" opacity="0.26"></line>
+                            <line x1="520.5" y1="400" x2="279.5" y2="400" transform="rotate(150, 400, 400)" opacity="0.71"></line>
+                            <line x1="443.5" y1="400" x2="356.5" y2="400" transform="rotate(155, 400, 400)" opacity="0.47"></line>
+                            <line x1="734.5" y1="400" x2="65.5" y2="400" transform="rotate(160, 400, 400)" opacity="0.23"></line>
+                            <line x1="569.5" y1="400" x2="230.5" y2="400" transform="rotate(165, 400, 400)" opacity="0.52"></line>
+                            <line x1="541.5" y1="400" x2="258.5" y2="400" transform="rotate(170, 400, 400)" opacity="0.15"></line>
+                            <line x1="405" y1="400" x2="395" y2="400" transform="rotate(175, 400, 400)" opacity="0.19"></line>
+                            <line x1="546.5" y1="400" x2="253.5" y2="400" transform="rotate(180, 400, 400)" opacity="0.18"></line>
+                            <line x1="549" y1="400" x2="251" y2="400" transform="rotate(185, 400, 400)" opacity="0.57"></line>
+                            <line x1="443" y1="400" x2="357" y2="400" transform="rotate(190, 400, 400)" opacity="0.26"></line>
+                            <line x1="308" y1="400" x2="492" y2="400" transform="rotate(195, 400, 400)" opacity="0.91"></line>
+                            <line x1="758.5" y1="400" x2="41.5" y2="400" transform="rotate(200, 400, 400)" opacity="0.25"></line>
+                            <line x1="280" y1="400" x2="520" y2="400" transform="rotate(205, 400, 400)" opacity="0.59"></line>
+                            <line x1="232" y1="400" x2="568" y2="400" transform="rotate(210, 400, 400)" opacity="0.67"></line>
+                            <line x1="326.5" y1="400" x2="473.5" y2="400" transform="rotate(215, 400, 400)" opacity="0.32"></line>
+                            <line x1="337.5" y1="400" x2="462.5" y2="400" transform="rotate(220, 400, 400)" opacity="0.15"></line>
+                            <line x1="622" y1="400" x2="178" y2="400" transform="rotate(225, 400, 400)" opacity="0.51"></line>
+                            <line x1="714.5" y1="400" x2="85.5" y2="400" transform="rotate(230, 400, 400)" opacity="0.44"></line>
+                            <line x1="248" y1="400" x2="552" y2="400" transform="rotate(235, 400, 400)" opacity="0.31"></line>
+                            <line x1="531" y1="400" x2="269" y2="400" transform="rotate(240, 400, 400)" opacity="0.12"></line>
+                            <line x1="147.5" y1="400" x2="652.5" y2="400" transform="rotate(245, 400, 400)" opacity="0.66"></line>
+                            <line x1="131.5" y1="400" x2="668.5" y2="400" transform="rotate(250, 400, 400)" opacity="0.54"></line>
+                            <line x1="150.5" y1="400" x2="649.5" y2="400" transform="rotate(255, 400, 400)" opacity="0.56"></line>
+                            <line x1="677" y1="400" x2="123" y2="400" transform="rotate(260, 400, 400)" opacity="0.26"></line>
+                            <line x1="262.5" y1="400" x2="537.5" y2="400" transform="rotate(265, 400, 400)" opacity="0.62"></line>
+                            <line x1="629.5" y1="400" x2="170.5" y2="400" transform="rotate(270, 400, 400)" opacity="0.89"></line>
+                            <line x1="253.5" y1="400" x2="546.5" y2="400" transform="rotate(275, 400, 400)" opacity="0.94"></line>
+                            <line x1="589" y1="400" x2="211" y2="400" transform="rotate(280, 400, 400)" opacity="0.99"></line>
+                            <line x1="547" y1="400" x2="253" y2="400" transform="rotate(285, 400, 400)" opacity="0.72"></line>
+                            <line x1="418.5" y1="400" x2="381.5" y2="400" transform="rotate(290, 400, 400)" opacity="0.98"></line>
+                            <line x1="575" y1="400" x2="225" y2="400" transform="rotate(295, 400, 400)" opacity="0.33"></line>
+                            <line x1="664" y1="400" x2="136" y2="400" transform="rotate(300, 400, 400)" opacity="0.29"></line>
+                            <line x1="677" y1="400" x2="123" y2="400" transform="rotate(305, 400, 400)" opacity="0.10"></line>
+                            <line x1="423" y1="400" x2="377" y2="400" transform="rotate(310, 400, 400)" opacity="0.20"></line>
+                            <line x1="216" y1="400" x2="584" y2="400" transform="rotate(315, 400, 400)" opacity="0.44"></line>
+                            <line x1="626.5" y1="400" x2="173.5" y2="400" transform="rotate(320, 400, 400)" opacity="0.18"></line>
+                            <line x1="507.5" y1="400" x2="292.5" y2="400" transform="rotate(325, 400, 400)" opacity="0.51"></line>
+                            <line x1="454" y1="400" x2="346" y2="400" transform="rotate(330, 400, 400)" opacity="1.00"></line>
+                            <line x1="342" y1="400" x2="458" y2="400" transform="rotate(335, 400, 400)" opacity="0.12"></line>
+                            <line x1="571.5" y1="400" x2="228.5" y2="400" transform="rotate(340, 400, 400)" opacity="0.46"></line>
+                            <line x1="150.5" y1="400" x2="649.5" y2="400" transform="rotate(345, 400, 400)" opacity="0.55"></line>
+                            <line x1="582.5" y1="400" x2="217.5" y2="400" transform="rotate(350, 400, 400)" opacity="0.27"></line>
+                            <line x1="728" y1="400" x2="72" y2="400" transform="rotate(355, 400, 400)" opacity="0.18"></line>
+                            <line x1="625.5" y1="400" x2="174.5" y2="400" transform="rotate(360, 400, 400)" opacity="0.72"></line>
+                            <line x1="481.5" y1="400" x2="318.5" y2="400" transform="rotate(365, 400, 400)" opacity="0.31"></line>
+                            <line x1="676" y1="400" x2="124" y2="400" transform="rotate(370, 400, 400)" opacity="0.43"></line>
+                            <line x1="586.5" y1="400" x2="213.5" y2="400" transform="rotate(375, 400, 400)" opacity="0.72"></line>
+                        </g>
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <div class="position-relative d-flex flex-column h-100">
+                        <p class="text-muted text-uppercase">Clicks</p>
+                        <div class="text-info my-auto text-center">
+                            <i data-lucide="mouse-pointer-click" class="text-center icon-info"></i>
+                            <h4 class="mt-2 text-center fs-xl">+4.8%</h4>
+                        </div>
+                        <p class="text-info d-flex align-items-center gap-2"><i data-lucide="mouse" class="size-4"></i> 15,487</p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-3">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Performance</h6>
+                </div>
+                <div class="card-body">
+                    <ul class="nav nav-pills row g-0 bg-light rounded-pill p-6px tab-white" id="pills-tab" role="tablist">
+                        <li class="nav-item col d-flex justify-content-center mt-0" role="presentation">
+                            <button class="nav-link active fw-medium w-100 fs-13 py-1 px-2 rounded-pill" id="-pills-newUser-tab" data-bs-toggle="pill" data-bs-target="#-pill-newUser" type="button" role="tab" aria-controls="-pill-newUser" aria-selected="true">New Users</button>
+                        </li>
+                        <li class="nav-item col d-flex justify-content-center mt-0" role="presentation">
+                            <button class="nav-link fw-medium w-100 fs-13 py-1 px-2 rounded-pill" id="-pills-onlineSales-tab" data-bs-toggle="pill" data-bs-target="#-pill-onlineSales" type="button" role="tab" aria-controls="-pill-onlineSales" aria-selected="false">Online Sales</button>
+                        </li>
+                        <li class="nav-item col d-flex justify-content-center mt-0" role="presentation">
+                            <button class="nav-link fw-medium w-100 fs-13 py-1 px-2 rounded-pill" id="-pills-dailySales-tab" data-bs-toggle="pill" data-bs-target="#-pill-dailySales" type="button" role="tab" aria-controls="-pill-dailySales" aria-selected="false">Daily Sale</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content mt-4" id="myPillTabContent">
+                        <div class="tab-pane  show active" id="-pill-newUser" role="tabpanel" aria-labelledby="-pills-newUser-tab" tabindex="0">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="rounded-circle overflow-hidden size-24">
+                                            <img src="assets/images/avatar/user-13.png" alt="User Avatar" class="img-fluid rounded-circle">
+                                        </div>
+                                        <div>
+                                            <p class="mb-1 text-muted small">Top User</p>
+                                            <h6 class="mb-2">Jabari Mayer</h6>
+                                            <p class="mb-1 text-muted small">Daily Visit</p>
+                                            <h6>244 Clicks</h6>
+                                        </div>
+                                    </div>
+                                    <div class="pt-4 mt-4 border-top border-dashed">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="flex-grow-1">
+                                                <p class="mb-1 text-muted small lh-base">New Users</p>
+                                                <h5 class="fs-lg mb-0 lh-base">+54M</h5>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <span class="text-success fw-medium">
+                                                    <i data-lucide="move-up" class="size-3"></i>
+                                                    9.63%
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-center text-muted mt-3">Increase your email marketing by <span class="text-primary">41%</span> to reach your user acquisition and monthly targets.</p>
+                        </div>
+                        <div class="tab-pane" id="-pill-onlineSales" role="tabpanel" aria-labelledby="-pills-onlineSales-tab" tabindex="0">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="p-3 text-center border border-dashed rounded">
+                                        <p class="mb-1 text-muted small">Landing Products</p>
+                                        <h6 class="mb-0">1154+</h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 text-center border border-dashed rounded">
+                                        <p class="mb-1 text-muted small">Admin Products</p>
+                                        <h6 class="mb-0">2387+</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mt-3 mb-2 text-muted">Average Online Sales</p>
+                            <h5 class="mb-2 fs-lg"><span x-data="animatedCounter(4321, 500, 0)" x-init="updateCounter" x-text="Math.round(current)">4321</span>+</h5>
+                            <div x-data="averageOnlineSalesApp" dir="ltr">
+                                <div class="!min-h-full" data-chart-colors="bg-info" x-ref="averageOnlineSalesChart"></div>
+                            </div>
+                        </div>
+                        <div class="tab-pane " id="-pill-dailySales" role="tabpanel" aria-labelledby="-pills-dailySales-tab" tabindex="0">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="p-3 text-center border border-dashed rounded">
+                                        <p class="mb-1 text-muted small">Landing Products</p>
+                                        <h6 class="mb-0">46+</h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 text-center border border-dashed rounded">
+                                        <p class="mb-1 text-muted small">Admin Products</p>
+                                        <h6 class="mb-0">78+</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mt-3 mb-2 text-muted">Average Weekly Sales</p>
+                            <h5 class="mb-2 fs-lg"><span x-data="animatedCounter(1173, 500, 0)" x-init="updateCounter" x-text="Math.round(current)">1173</span>+</h5>
+                            <div x-data="averageOnlineWeeklyApp" dir="ltr">
+                                <div class="!min-h-full" data-chart-colors="bg-info" x-ref="averageOnlineWeeklyChart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-9">
+            <div class="card card-h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Web Analytics</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <p class="text-muted">Page Views</p>
+                            <h5 class="mb-0"><span class="fs-lg lh-base" x-data="animatedCounter(17415, 500, 0)" x-init="updateCounter" x-text="Math.round(current)">17415</span>+ <span class="fs-12 text-success"><i class="align-baseline ri-arrow-up-line"></i> 4.5%</span></h5>
+                        </div>
+                        <div class="col-3">
+                            <p class="text-muted">Page Views</p>
+                            <h5 class="mb-0"><span class="fs-lg lh-base" x-data="animatedCounter(2, 500, 0)" x-init="updateCounter" x-text="Math.round(current)"></span>m <span x-data="animatedCounter(18, 500, 0)" x-init="updateCounter" x-text="Math.round(current)"></span>s <span class="fs-12 text-danger"><i class="align-baseline ri-arrow-down-line"></i> 0.9%</span></h5>
+                        </div>
+                    </div>
+                    <div x-data="webAnalyticsApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-success, bg-secondary" x-ref="webAnalyticsChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="card-title flex-grow-1 mb-0">On Boarding Campaign</h6>
+                    <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i data-lucide="ellipsis" class="size-5"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#!"><span>Weekly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Monthly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Yearly</span></a></li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="mb-5 alert alert-light text-dark">
+                        Help new customers appreciate the value they'll receive from your admin.
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="badge bg-dark-subtle text-dark"><i class="align-baseline text-11 ri-circle-fill"></i> Delivered</p>
+                                    <h5 class="mt-3 mb-1">17.9%</h5>
+                                    <p class="text-muted">Last week</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="badge bg-dark-subtle text-dark"><i class="align-baseline text-11 ri-circle-fill"></i> Clicked</p>
+                                    <h5 class="mt-3 mb-1">54.6%</h5>
+                                    <p class="text-muted">Last week</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="card mb-0">
+                                <div class="card-body">
+                                    <p class="badge bg-dark-subtle text-dark"><i class="align-baseline text-11 ri-circle-fill"></i> Opened</p>
+                                    <h5 class="mt-3 mb-1">47.3%</h5>
+                                    <p class="text-muted">Last week</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="card mb-0">
+                                <div class="card-body">
+                                    <p class="badge bg-dark-subtle text-dark"><i class="align-baseline text-11 ri-circle-fill"></i> Converted</p>
+                                    <h5 class="mt-3 mb-1">11.8%</h5>
+                                    <p class="text-muted">Last week</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="card-title flex-grow-1 mb-0">Recent Transaction</h6>
+                    <a href="#!" class="flex-shrink-0 link link-primary text-dark">See all <i class="ri-arrow-right-line"></i></a>
+                </div>
+                <div class="card-body">
+                    <table class="table table-borderless mb-0">
+                        <tbody>
+                            <tr class="border-bottom">
+                                <th class="text-muted fw-medium">Order Date</th>
+                                <th class="text-muted fw-medium">Product</th>
+                                <th class="text-muted fw-medium">Price</th>
+                                <th class="text-muted fw-medium">Status</th>
+                            </tr>
+                            <tr>
+                                <td>21 Jan, 2024</td>
+                                <td>Jeremy McMullen</td>
+                                <td>$154</td>
+                                <td><span class="badge bg-success-subtle border border-success-subtle text-success">Success</span></td>
+                            </tr>
+                            <tr>
+                                <td>28 Jan, 2024</td>
+                                <td>Charles Fischer</td>
+                                <td>$150</td>
+                                <td><span class="badge bg-danger-subtle border border-danger-subtle text-danger">Cancel</span></td>
+                            </tr>
+                            <tr>
+                                <td>02 Feb, 2024</td>
+                                <td>Louise Harms</td>
+                                <td>$255</td>
+                                <td><span class="badge bg-success-subtle border border-success-subtle text-success">Success</span></td>
+                            </tr>
+                            <tr>
+                                <td>11 Feb, 2024</td>
+                                <td>Henry Boyle</td>
+                                <td>$347</td>
+                                <td><span class="badge bg-success-subtle border border-success-subtle text-success">Success</span></td>
+                            </tr>
+                            <tr>
+                                <td>15 Feb, 2024</td>
+                                <td>Isabella Smith</td>
+                                <td>$398</td>
+                                <td><span class="badge bg-success-subtle border border-success-subtle text-success">Success</span></td>
+                            </tr>
+                            <tr>
+                                <td>20 Feb, 2024</td>
+                                <td>Ethan Johnson</td>
+                                <td>$495</td>
+                                <td><span class="badge bg-danger-subtle border border-danger-subtle text-danger">Cancel</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="card-title flex-grow-1 mb-0">Followers</h6>
+                    <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i data-lucide="ellipsis" class="size-5"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#!"><span>Weekly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Monthly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Yearly</span></a></li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div x-data="followersApp" dir="ltr">
+                        <div class="h-100" data-chart-colors="bg-primary, bg-primary-subtle" x-ref="followersChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-2">
+            <div class="card">
+                <div class="card-body">
+                    <p class="mb-1 text-muted fs-13">Visit Browsers</p>
+                    <h5><span x-data="animatedCounter(4510, 500, 0)" x-init="updateCounter" x-text="Math.round(current)" class="fs-lg">4510</span>+ <span class="fs-12 text-success"><i class="align-baseline ri-arrow-up-line"></i> 1.9%</span></h5>
+                    <div x-data="visitBrowsersApp" dir="ltr">
+                        <div class="h-100" data-chart-colors="bg-primary, bg-orange, bg-warning" x-ref="visitBrowsersChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="card-title flex-grow-1 mb-0">Traffic Source</h6>
+                    <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i data-lucide="ellipsis" class="size-5"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#!"><span>Weekly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Monthly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Yearly</span></a></li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div x-data="trafficSourceApp" dir="ltr">
+                        <div class="h-100" data-chart-colors="bg-primary, bg-dark-subtle" x-ref="trafficSourceChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Top Users (Contributors)</h6>
+                </div>
+                <div class="card-body">
+                    <section class="h-36 main-simplebar px-5" id="customScroll" data-simplebar>
+                        <div class="d-flex flex-column gap-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="assets/images/avatar/user-18.png" alt="" class="size-10 flex-shrink-0 rounded-circle">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-0">Julian Glover</h6>
+                                    <p class="text-muted fs-13">78.4M Followers</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="assets/images/avatar/user-11.png" alt="" class="size-10 flex-shrink-0 rounded-circle">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-0">Steve Powlowski</h6>
+                                    <p class="text-muted fs-13">64.9M Followers</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="assets/images/avatar/user-14.png" alt="" class="size-10 flex-shrink-0 rounded-circle">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-0">Della Brekke</h6>
+                                    <p class="text-muted fs-13">63.2M Followers</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="assets/images/avatar/user-15.png" alt="" class="size-10 flex-shrink-0 rounded-circle">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-0">Jerod Bernhard</h6>
+                                    <p class="text-muted fs-13">59.3M Followers</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="assets/images/avatar/user-17.png" alt="" class="size-10 flex-shrink-0 rounded-circle">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-0">Dominic Larkin</h6>
+                                    <p class="text-muted fs-13">47.2M Followers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="card-title flex-grow-1 mb-0">Top Country</h6>
+                    <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i data-lucide="ellipsis" class="size-5"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#!"><span>Weekly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Monthly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Yearly</span></a></li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted mb-1">Visit</p>
+                    <h5 class="mb-3">
+                        <span id="visit-counter" class="fs-lg">3145</span>+
+                        <span class="fs-12 text-success"><i class="align-baseline ri-arrow-up-line"></i> 3.87%</span>
+                    </h5>
+                    <div class="d-flex flex-column gap-2">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="assets/images/flag/us.svg" loading="lazy" alt="" class="img-fluid object-fit-cover rounded-circle size-5">
+                            <h6 class="mb-0 flex-grow-1">United States</h6>
+                            <p class="flex-shrink-0">24%</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="assets/images/flag/de.svg" loading="lazy" alt="" class="img-fluid object-fit-cover rounded-circle size-5">
+                            <h6 class="mb-0 flex-grow-1">Germany</h6>
+                            <p class="flex-shrink-0">17%</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="assets/images/flag/it.svg" loading="lazy" alt="" class="img-fluid object-fit-cover rounded-circle size-5">
+                            <h6 class="mb-0 flex-grow-1">Italy</h6>
+                            <p class="flex-shrink-0">16%</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- end col -->
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-3">
+                            <h6 class="card-title mb-0 flex-grow-1">Campaign Performance</h6>
+                        </div>
+                        <div class="col-4">
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="position-relative flex-grow-1">
+                                    <input type="text" class="form-control ps-9 pe-4" placeholder="Search for campaign etc..." @input="filtercontacts" x-model="searchTerm">
+                                    <div class="position-absolute top-50 translate-middle-y d-flex align-items-center">
+                                        <i data-lucide="search" class="size-4 ms-3 text-dark"></i>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary"><i data-lucide="download" class="size-4 me-2"></i>Export</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Campaign</th>
+                                <th>Clicks</th>
+                                <th>Delivered Rate (%)</th>
+                                <th>Impressions</th>
+                                <th>CPC</th>
+                                <th>CR</th>
+                                <th>Revenue</th>
+                            </tr>
+                            <tr>
+                                <td>Summer Sale</td>
+                                <td>4.5%</td>
+                                <td>98%</td>
+                                <td>15000</td>
+                                <td>$0.25</td>
+                                <td>2.3%</td>
+                                <td>$850</td>
+                            </tr>
+                            <tr>
+                                <td>Winter Promotion</td>
+                                <td>3.8%</td>
+                                <td>95%</td>
+                                <td>12000</td>
+                                <td>$0.30</td>
+                                <td>1.8%</td>
+                                <td>$650</td>
+                            </tr>
+                            <tr>
+                                <td>Spring Discount</td>
+                                <td>5.2%</td>
+                                <td>99%</td>
+                                <td>18000</td>
+                                <td>$0.20</td>
+                                <td>2.5%</td>
+                                <td>$900</td>
+                            </tr>
+                            <tr>
+                                <td>Autumn Offer</td>
+                                <td>4.0%</td>
+                                <td>97%</td>
+                                <td>14000</td>
+                                <td>$0.28</td>
+                                <td>2.0%</td>
+                                <td>$750</td>
+                            </tr>
+                            <tr>
+                                <td>Holiday Special</td>
+                                <td>5.0%</td>
+                                <td>96%</td>
+                                <td>16000</td>
+                                <td>$0.22</td>
+                                <td>2.4%</td>
+                                <td>$800</td>
+                            </tr>
+                            <tr>
+                                <td>Back to School</td>
+                                <td>4.3%</td>
+                                <td>97%</td>
+                                <td>13000</td>
+                                <td>$0.27</td>
+                                <td>2.1%</td>
+                                <td>$720</td>
+                            </tr>
+                            <tr>
+                                <td>Black Friday</td>
+                                <td>6.0%</td>
+                                <td>95%</td>
+                                <td>20000</td>
+                                <td>$0.18</td>
+                                <td>3.0%</td>
+                                <td>$1000</td>
+                            </tr>
+                            <tr>
+                                <td>Cyber Monday</td>
+                                <td>5.5%</td>
+                                <td>94%</td>
+                                <td>19000</td>
+                                <td>$0.20</td>
+                                <td>2.9%</td>
+                                <td>$950</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-between align-items-center my-5">
+                        <div>
+                            <p class="text-muted">Showing <b class="me-1">1 - 8</b>of<b class="ms-1">15</b> Results</p>
+                        </div>
+                        <div class="justify-content-end d-flex">
+                            <nav aria-label="...">
+                                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                                    <li class="page-item pagination-primary disabled">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <i data-lucide="chevron-left" class="size-5"></i>
+                                            <span>Prev</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                    <li class="page-item" aria-current="page">
+                                        <a class="page-link rounded-2 page-number" href="#">2</a>
+                                    </li>
+                                    <li class="page-item pagination-primary ">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <span>Next</span>
+                                            <i data-lucide="chevron-right" class="size-5"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+    </div>
+
+</div>
+{{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script type="module" src="assets/js/dashboards/analytics.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
