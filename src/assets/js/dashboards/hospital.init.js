@@ -123,8 +123,7 @@ document.addEventListener("alpine:init", () => {
                 series: this.series,
                 labels: this.labels,
                 chart: {
-                    height: 250,
-                    width: '350',
+                    height: 160,
                     type: "donut",
                 },
                 plotOptions: {
@@ -246,6 +245,62 @@ document.addEventListener("alpine:init", () => {
                         bottom: 0,
                     },
                 }
+            };
+        }
+    }));
+});
+
+//Hospital Birth & Death Chart
+document.addEventListener("alpine:init", () => {
+    Alpine.data("hospitalBirthDeathApp", () => ({
+        series: [{
+            name: 'Birth Case',
+            data: [80, 50, 30, 70, 99, 36],
+        }, {
+            name: 'Death Case',
+            data: [10, 14, 28, 16, 34, 87],
+        }, {
+            name: 'Accident Case',
+            data: [44, 98, 54, 46, 34, 22],
+        }],
+        labels: ['2019', '2020', '2021', '2022', '2023', '2024'],
+        init() {
+            // Initial chart render
+            this.renderChart();
+
+            // Reload chart on window resize
+            window.addEventListener('resize', this.reloadChart.bind(this));
+        },
+        renderChart() {
+            // Destroy previous instance if exists
+            if (this.hospitalBirthDeathChart)
+                this.hospitalBirthDeathChart.destroy();
+
+            // Initialize new chart
+            this.hospitalBirthDeathChart = new ApexCharts(this.$refs.hospitalBirthDeathChart, this.options);
+            this.hospitalBirthDeathChart.render();
+        },
+        reloadChart() {
+            // Handle the logic for resizing
+            this.renderChart(); // Re-render chart on resize
+        },
+        get options() {
+            return {
+                series: this.series,
+                chart: {
+                    height: 325,
+                    type: 'radar',
+                },
+                colors: getColorCodes(this.$refs.hospitalBirthDeathChart.dataset),
+                stroke: {
+                    width: 1
+                },
+                fill: {
+                    opacity: 0.1
+                },
+                xaxis: {
+                    categories: this.labels,
+                },
             };
         }
     }));

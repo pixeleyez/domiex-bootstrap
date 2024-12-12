@@ -27,17 +27,17 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-6">
-                                    <div class="d-flex align-items-center gap-3 mb-5">
+                                    <div class="d-flex align-items-center gap-3">
                                         <h6 class="card-title flex-grow-1 mb-0">Patient Visit</h6>
                                         <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
                                             <a class="link link-danger text-dark badge border text-dark d-flex align-items-center cursor-pointer py-1" @click="open = !open" aria-expanded="open">
                                                 <span>Last Week</span>
                                                 <i class="ri-arrow-down-s-line fs-6 fw-medium lh-sm" :class="{'rotate': open}"></i>
                                             </a>
-                                            <div x-show="open" style="display: none;" class="dropdown-menu  dropdown-menu-end show position-absolute end-0">
-                                                <a class="dropdown-item" href="#">Last Week</a>
-                                                <a class="dropdown-item" href="#">Last Month</a>
-                                                <a class="dropdown-item" href="#">Last Year</a>
+                                            <div x-show="open" style="display: none;" class="dropdown-menu  dropdown-menu-end show shadow-sm position-absolute end-0">
+                                                <a class="dropdown-item" href="#">Weekly</a>
+                                                <a class="dropdown-item" href="#">Monthly</a>
+                                                <a class="dropdown-item" href="#">Yearly</a>
                                             </div>
                                         </div>
                                     </div>
@@ -45,10 +45,929 @@
                                         <div class="!min-h-full" data-chart-colors="bg-primary, bg-success, bg-warning" x-ref="patientVisitChart"></div>
                                     </div>
                                 </div><!-- end col -->
+                                <div class="col-6">
+                                    <div class="row g-5">
+                                        <div class="col-6">
+                                            <div class="bg-secondary-subtle rounded-2 p-5 position-relative overflow-hidden">
+                                                <svg class="position-absolute top-0 end-16 size-52" viewBox="0 0 1422 800">
+                                                    <g shape-rendering="crispEdges" stroke-linejoin="round" fill="none" stroke-width="2" class="stroke-secondary">
+                                                        <polygon points="1066.5,200 1066.5,0 1422,200"></polygon>
+                                                        <polygon points="1066.5,100 1066.5,0 888.75,100"></polygon>
+                                                        <polygon points="711,0 888.75,100 711,100"></polygon>
+                                                        <polygon points="888.75,100 711,100 711,200"></polygon>
+                                                        <polygon points="977.625,150 1066.5,100 1066.5,150"></polygon>
+                                                        <polygon points="888.75,150 977.625,100 888.75,100"></polygon>
+                                                        <polygon points="888.75,200 977.625,150 977.625,200"></polygon>
+                                                        <polygon points="1066.5,200 977.625,150 1066.5,150"></polygon>
+                                                        <polygon points="977.625,200 1066.5,200 1066.5,250"></polygon>
+                                                        <polygon points="977.625,250 888.75,250 977.625,200"></polygon>
+                                                        <polygon points="977.625,250 888.75,300 977.625,300"></polygon>
+                                                        <polygon points="1066.5,250 977.625,300 1066.5,300"></polygon>
+                                                        <polygon points="888.75,200 888.75,300 711,300"></polygon>
+                                                        <polygon points="888.75,400 888.75,300 711,300"></polygon>
+                                                        <polygon points="888.75,300 1066.5,400 1066.5,300"></polygon>
+                                                        <polygon points="1244.25,300 1422,200 1244.25,200"></polygon>
+                                                        <polygon points="1244.25,300 1066.5,300 1066.5,200"></polygon>
+                                                        <polygon points="1066.5,400 1244.25,400 1244.25,300"></polygon>
+                                                        <polygon points="1422,400 1422,300 1244.25,400"></polygon>
+                                                        <polygon points="533.25,100 533.25,0 711,100"></polygon>
+                                                        <polygon points="533.25,0 533.25,100 355.5,0"></polygon>
+                                                        <polygon points="355.5,100 533.25,100 533.25,200"></polygon>
+                                                        <polygon points="711,100 533.25,100 711,200"></polygon>
+                                                        <polygon points="355.5,0 355.5,200 0,200"></polygon>
+                                                        <polygon points="355.5,300 177.75,300 355.5,200"></polygon>
+                                                        <polygon points="177.75,300 177.75,200 0,200"></polygon>
+                                                        <polygon points="177.75,300 177.75,400 0,400"></polygon>
+                                                        <polygon points="177.75,400 177.75,300 355.5,300"></polygon>
+                                                        <polygon points="711,300 533.25,300 711,200"></polygon>
+                                                        <polygon points="533.25,250 444.375,200 533.25,200"></polygon>
+                                                        <polygon points="444.375,250 355.5,200 444.375,200"></polygon>
+                                                        <polygon points="355.5,300 444.375,250 355.5,250"></polygon>
+                                                        <polygon points="533.25,250 444.375,250 444.375,300"></polygon>
+                                                        <polygon points="355.5,400 533.25,400 355.5,300"></polygon>
+                                                        <polygon points="533.25,400 533.25,300 711,400"></polygon>
+                                                        <polygon points="533.25,500 533.25,400 711,500"></polygon>
+                                                        <polygon points="533.25,500 533.25,400 355.5,500"></polygon>
+                                                        <polygon points="533.25,500 444.375,550 444.375,500"></polygon>
+                                                        <polygon points="444.375,500 444.375,550 355.5,550"></polygon>
+                                                        <polygon points="355.5,550 444.375,550 444.375,600"></polygon>
+                                                        <polygon points="533.25,550 444.375,600 533.25,600"></polygon>
+                                                        <polygon points="711,500 622.125,500 622.125,550"></polygon>
+                                                        <polygon points="533.25,550 622.125,500 533.25,500"></polygon>
+                                                        <polygon points="622.125,550 622.125,600 533.25,550"></polygon>
+                                                        <polygon points="711,550 622.125,550 622.125,600"></polygon>
+                                                        <polygon points="355.5,400 355.5,500 177.75,400"></polygon>
+                                                        <polygon points="0,400 177.75,400 0,500"></polygon>
+                                                        <polygon points="177.75,600 0,500 0,600"></polygon>
+                                                        <polygon points="355.5,500 355.5,600 177.75,500"></polygon>
+                                                        <polygon points="0,800 355.5,600 355.5,800"></polygon>
+                                                        <polygon points="533.25,700 711,600 711,700"></polygon>
+                                                        <polygon points="355.5,700 533.25,600 355.5,600"></polygon>
+                                                        <polygon points="533.25,700 533.25,800 355.5,700"></polygon>
+                                                        <polygon points="533.25,800 711,700 533.25,700"></polygon>
+                                                        <polygon points="1422,400 1422,500 1244.25,500"></polygon>
+                                                        <polygon points="1244.25,500 1066.5,500 1244.25,400"></polygon>
+                                                        <polygon points="1244.25,600 1244.25,500 1066.5,500"></polygon>
+                                                        <polygon points="1422,500 1422,600 1244.25,600"></polygon>
+                                                        <polygon points="1066.5,400 888.75,500 888.75,400"></polygon>
+                                                        <polygon points="888.75,450 888.75,400 799.875,400"></polygon>
+                                                        <polygon points="711,400 799.875,450 799.875,400"></polygon>
+                                                        <polygon points="799.875,500 711,450 799.875,450"></polygon>
+                                                        <polygon points="799.875,500 799.875,450 888.75,450"></polygon>
+                                                        <polygon points="888.75,550 799.875,550 888.75,500"></polygon>
+                                                        <polygon points="711,550 799.875,500 799.875,550"></polygon>
+                                                        <polygon points="799.875,600 799.875,550 711,600"></polygon>
+                                                        <polygon points="799.875,600 888.75,550 888.75,600"></polygon>
+                                                        <polygon points="888.75,600 888.75,500 1066.5,600"></polygon>
+                                                        <polygon points="1066.5,600 888.75,700 1066.5,700"></polygon>
+                                                        <polygon points="888.75,600 711,700 888.75,700"></polygon>
+                                                        <polygon points="888.75,800 711,800 888.75,700"></polygon>
+                                                        <polygon points="888.75,700 1066.5,800 1066.5,700"></polygon>
+                                                        <polygon points="1066.5,800 1422,600 1422,800"></polygon>
+                                                    </g>
+                                                </svg>
+                                                <div class="position-relative">
+                                                    <p class="mb-12 text-muted">Total Patients</p>
+                                                    <h5><span x-data="animatedCounter(1540, 500, 0)" x-init="updateCounter" x-text="Math.round(current)">1540</span>+</h5>
+                                                    <p class="mt-1 text-muted">Last 28 days</p>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col -->
+                                        <div class="col-6">
+                                            <div class="bg-danger-subtle rounded-2 p-5 position-relative overflow-hidden">
+                                                <svg class="position-absolute top-0 end-16 size-52" viewBox="0 0 1422 800">
+                                                    <g shape-rendering="crispEdges" stroke-linejoin="round" fill="none" stroke-width="2" class="stroke-danger">
+                                                        <polygon points="1066.5,200 1066.5,0 1422,200"></polygon>
+                                                        <polygon points="1066.5,100 1066.5,0 888.75,100"></polygon>
+                                                        <polygon points="711,0 888.75,100 711,100"></polygon>
+                                                        <polygon points="888.75,100 711,100 711,200"></polygon>
+                                                        <polygon points="977.625,150 1066.5,100 1066.5,150"></polygon>
+                                                        <polygon points="888.75,150 977.625,100 888.75,100"></polygon>
+                                                        <polygon points="888.75,200 977.625,150 977.625,200"></polygon>
+                                                        <polygon points="1066.5,200 977.625,150 1066.5,150"></polygon>
+                                                        <polygon points="977.625,200 1066.5,200 1066.5,250"></polygon>
+                                                        <polygon points="977.625,250 888.75,250 977.625,200"></polygon>
+                                                        <polygon points="977.625,250 888.75,300 977.625,300"></polygon>
+                                                        <polygon points="1066.5,250 977.625,300 1066.5,300"></polygon>
+                                                        <polygon points="888.75,200 888.75,300 711,300"></polygon>
+                                                        <polygon points="888.75,400 888.75,300 711,300"></polygon>
+                                                        <polygon points="888.75,300 1066.5,400 1066.5,300"></polygon>
+                                                        <polygon points="1244.25,300 1422,200 1244.25,200"></polygon>
+                                                        <polygon points="1244.25,300 1066.5,300 1066.5,200"></polygon>
+                                                        <polygon points="1066.5,400 1244.25,400 1244.25,300"></polygon>
+                                                        <polygon points="1422,400 1422,300 1244.25,400"></polygon>
+                                                        <polygon points="533.25,100 533.25,0 711,100"></polygon>
+                                                        <polygon points="533.25,0 533.25,100 355.5,0"></polygon>
+                                                        <polygon points="355.5,100 533.25,100 533.25,200"></polygon>
+                                                        <polygon points="711,100 533.25,100 711,200"></polygon>
+                                                        <polygon points="355.5,0 355.5,200 0,200"></polygon>
+                                                        <polygon points="355.5,300 177.75,300 355.5,200"></polygon>
+                                                        <polygon points="177.75,300 177.75,200 0,200"></polygon>
+                                                        <polygon points="177.75,300 177.75,400 0,400"></polygon>
+                                                        <polygon points="177.75,400 177.75,300 355.5,300"></polygon>
+                                                        <polygon points="711,300 533.25,300 711,200"></polygon>
+                                                        <polygon points="533.25,250 444.375,200 533.25,200"></polygon>
+                                                        <polygon points="444.375,250 355.5,200 444.375,200"></polygon>
+                                                        <polygon points="355.5,300 444.375,250 355.5,250"></polygon>
+                                                        <polygon points="533.25,250 444.375,250 444.375,300"></polygon>
+                                                        <polygon points="355.5,400 533.25,400 355.5,300"></polygon>
+                                                        <polygon points="533.25,400 533.25,300 711,400"></polygon>
+                                                        <polygon points="533.25,500 533.25,400 711,500"></polygon>
+                                                        <polygon points="533.25,500 533.25,400 355.5,500"></polygon>
+                                                        <polygon points="533.25,500 444.375,550 444.375,500"></polygon>
+                                                        <polygon points="444.375,500 444.375,550 355.5,550"></polygon>
+                                                        <polygon points="355.5,550 444.375,550 444.375,600"></polygon>
+                                                        <polygon points="533.25,550 444.375,600 533.25,600"></polygon>
+                                                        <polygon points="711,500 622.125,500 622.125,550"></polygon>
+                                                        <polygon points="533.25,550 622.125,500 533.25,500"></polygon>
+                                                        <polygon points="622.125,550 622.125,600 533.25,550"></polygon>
+                                                        <polygon points="711,550 622.125,550 622.125,600"></polygon>
+                                                        <polygon points="355.5,400 355.5,500 177.75,400"></polygon>
+                                                        <polygon points="0,400 177.75,400 0,500"></polygon>
+                                                        <polygon points="177.75,600 0,500 0,600"></polygon>
+                                                        <polygon points="355.5,500 355.5,600 177.75,500"></polygon>
+                                                        <polygon points="0,800 355.5,600 355.5,800"></polygon>
+                                                        <polygon points="533.25,700 711,600 711,700"></polygon>
+                                                        <polygon points="355.5,700 533.25,600 355.5,600"></polygon>
+                                                        <polygon points="533.25,700 533.25,800 355.5,700"></polygon>
+                                                        <polygon points="533.25,800 711,700 533.25,700"></polygon>
+                                                        <polygon points="1422,400 1422,500 1244.25,500"></polygon>
+                                                        <polygon points="1244.25,500 1066.5,500 1244.25,400"></polygon>
+                                                        <polygon points="1244.25,600 1244.25,500 1066.5,500"></polygon>
+                                                        <polygon points="1422,500 1422,600 1244.25,600"></polygon>
+                                                        <polygon points="1066.5,400 888.75,500 888.75,400"></polygon>
+                                                        <polygon points="888.75,450 888.75,400 799.875,400"></polygon>
+                                                        <polygon points="711,400 799.875,450 799.875,400"></polygon>
+                                                        <polygon points="799.875,500 711,450 799.875,450"></polygon>
+                                                        <polygon points="799.875,500 799.875,450 888.75,450"></polygon>
+                                                        <polygon points="888.75,550 799.875,550 888.75,500"></polygon>
+                                                        <polygon points="711,550 799.875,500 799.875,550"></polygon>
+                                                        <polygon points="799.875,600 799.875,550 711,600"></polygon>
+                                                        <polygon points="799.875,600 888.75,550 888.75,600"></polygon>
+                                                        <polygon points="888.75,600 888.75,500 1066.5,600"></polygon>
+                                                        <polygon points="1066.5,600 888.75,700 1066.5,700"></polygon>
+                                                        <polygon points="888.75,600 711,700 888.75,700"></polygon>
+                                                        <polygon points="888.75,800 711,800 888.75,700"></polygon>
+                                                        <polygon points="888.75,700 1066.5,800 1066.5,700"></polygon>
+                                                        <polygon points="1066.5,800 1422,600 1422,800"></polygon>
+                                                    </g>
+                                                </svg>
+                                                <div class="position-relative">
+                                                    <p class="mb-12 text-muted">Surgery</p>
+                                                    <h5><span x-data="animatedCounter(241, 500, 0)" x-init="updateCounter" x-text="Math.round(current)">241</span></h5>
+                                                    <p class="mt-1 text-muted">Last 28 days</p>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col -->
+                                        <div class="col-6">
+                                            <div class="bg-info-subtle rounded-2 p-5 position-relative overflow-hidden">
+                                                <svg class="position-absolute top-0 end-16 size-52" viewBox="0 0 1422 800">
+                                                    <g shape-rendering="crispEdges" stroke-linejoin="round" fill="none" stroke-width="2" class="stroke-info">
+                                                        <polygon points="1066.5,200 1066.5,0 1422,200"></polygon>
+                                                        <polygon points="1066.5,100 1066.5,0 888.75,100"></polygon>
+                                                        <polygon points="711,0 888.75,100 711,100"></polygon>
+                                                        <polygon points="888.75,100 711,100 711,200"></polygon>
+                                                        <polygon points="977.625,150 1066.5,100 1066.5,150"></polygon>
+                                                        <polygon points="888.75,150 977.625,100 888.75,100"></polygon>
+                                                        <polygon points="888.75,200 977.625,150 977.625,200"></polygon>
+                                                        <polygon points="1066.5,200 977.625,150 1066.5,150"></polygon>
+                                                        <polygon points="977.625,200 1066.5,200 1066.5,250"></polygon>
+                                                        <polygon points="977.625,250 888.75,250 977.625,200"></polygon>
+                                                        <polygon points="977.625,250 888.75,300 977.625,300"></polygon>
+                                                        <polygon points="1066.5,250 977.625,300 1066.5,300"></polygon>
+                                                        <polygon points="888.75,200 888.75,300 711,300"></polygon>
+                                                        <polygon points="888.75,400 888.75,300 711,300"></polygon>
+                                                        <polygon points="888.75,300 1066.5,400 1066.5,300"></polygon>
+                                                        <polygon points="1244.25,300 1422,200 1244.25,200"></polygon>
+                                                        <polygon points="1244.25,300 1066.5,300 1066.5,200"></polygon>
+                                                        <polygon points="1066.5,400 1244.25,400 1244.25,300"></polygon>
+                                                        <polygon points="1422,400 1422,300 1244.25,400"></polygon>
+                                                        <polygon points="533.25,100 533.25,0 711,100"></polygon>
+                                                        <polygon points="533.25,0 533.25,100 355.5,0"></polygon>
+                                                        <polygon points="355.5,100 533.25,100 533.25,200"></polygon>
+                                                        <polygon points="711,100 533.25,100 711,200"></polygon>
+                                                        <polygon points="355.5,0 355.5,200 0,200"></polygon>
+                                                        <polygon points="355.5,300 177.75,300 355.5,200"></polygon>
+                                                        <polygon points="177.75,300 177.75,200 0,200"></polygon>
+                                                        <polygon points="177.75,300 177.75,400 0,400"></polygon>
+                                                        <polygon points="177.75,400 177.75,300 355.5,300"></polygon>
+                                                        <polygon points="711,300 533.25,300 711,200"></polygon>
+                                                        <polygon points="533.25,250 444.375,200 533.25,200"></polygon>
+                                                        <polygon points="444.375,250 355.5,200 444.375,200"></polygon>
+                                                        <polygon points="355.5,300 444.375,250 355.5,250"></polygon>
+                                                        <polygon points="533.25,250 444.375,250 444.375,300"></polygon>
+                                                        <polygon points="355.5,400 533.25,400 355.5,300"></polygon>
+                                                        <polygon points="533.25,400 533.25,300 711,400"></polygon>
+                                                        <polygon points="533.25,500 533.25,400 711,500"></polygon>
+                                                        <polygon points="533.25,500 533.25,400 355.5,500"></polygon>
+                                                        <polygon points="533.25,500 444.375,550 444.375,500"></polygon>
+                                                        <polygon points="444.375,500 444.375,550 355.5,550"></polygon>
+                                                        <polygon points="355.5,550 444.375,550 444.375,600"></polygon>
+                                                        <polygon points="533.25,550 444.375,600 533.25,600"></polygon>
+                                                        <polygon points="711,500 622.125,500 622.125,550"></polygon>
+                                                        <polygon points="533.25,550 622.125,500 533.25,500"></polygon>
+                                                        <polygon points="622.125,550 622.125,600 533.25,550"></polygon>
+                                                        <polygon points="711,550 622.125,550 622.125,600"></polygon>
+                                                        <polygon points="355.5,400 355.5,500 177.75,400"></polygon>
+                                                        <polygon points="0,400 177.75,400 0,500"></polygon>
+                                                        <polygon points="177.75,600 0,500 0,600"></polygon>
+                                                        <polygon points="355.5,500 355.5,600 177.75,500"></polygon>
+                                                        <polygon points="0,800 355.5,600 355.5,800"></polygon>
+                                                        <polygon points="533.25,700 711,600 711,700"></polygon>
+                                                        <polygon points="355.5,700 533.25,600 355.5,600"></polygon>
+                                                        <polygon points="533.25,700 533.25,800 355.5,700"></polygon>
+                                                        <polygon points="533.25,800 711,700 533.25,700"></polygon>
+                                                        <polygon points="1422,400 1422,500 1244.25,500"></polygon>
+                                                        <polygon points="1244.25,500 1066.5,500 1244.25,400"></polygon>
+                                                        <polygon points="1244.25,600 1244.25,500 1066.5,500"></polygon>
+                                                        <polygon points="1422,500 1422,600 1244.25,600"></polygon>
+                                                        <polygon points="1066.5,400 888.75,500 888.75,400"></polygon>
+                                                        <polygon points="888.75,450 888.75,400 799.875,400"></polygon>
+                                                        <polygon points="711,400 799.875,450 799.875,400"></polygon>
+                                                        <polygon points="799.875,500 711,450 799.875,450"></polygon>
+                                                        <polygon points="799.875,500 799.875,450 888.75,450"></polygon>
+                                                        <polygon points="888.75,550 799.875,550 888.75,500"></polygon>
+                                                        <polygon points="711,550 799.875,500 799.875,550"></polygon>
+                                                        <polygon points="799.875,600 799.875,550 711,600"></polygon>
+                                                        <polygon points="799.875,600 888.75,550 888.75,600"></polygon>
+                                                        <polygon points="888.75,600 888.75,500 1066.5,600"></polygon>
+                                                        <polygon points="1066.5,600 888.75,700 1066.5,700"></polygon>
+                                                        <polygon points="888.75,600 711,700 888.75,700"></polygon>
+                                                        <polygon points="888.75,800 711,800 888.75,700"></polygon>
+                                                        <polygon points="888.75,700 1066.5,800 1066.5,700"></polygon>
+                                                        <polygon points="1066.5,800 1422,600 1422,800"></polygon>
+                                                    </g>
+                                                </svg>
+                                                <div class="position-relative">
+                                                    <p class="mb-12 text-muted">Total Reports</p>
+                                                    <h5><span x-data="animatedCounter(574, 500, 0)" x-init="updateCounter" x-text="Math.round(current)">574</span></h5>
+                                                    <p class="mt-1 text-muted">Last 28 days</p>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col -->
+                                        <div class="col-6">
+                                            <div class="bg-success-subtle rounded-2 p-5 position-relative overflow-hidden">
+                                                <svg class="position-absolute top-0 end-16 size-52" viewBox="0 0 1422 800">
+                                                    <g shape-rendering="crispEdges" stroke-linejoin="round" fill="none" stroke-width="2" class="stroke-success">
+                                                        <polygon points="1066.5,200 1066.5,0 1422,200"></polygon>
+                                                        <polygon points="1066.5,100 1066.5,0 888.75,100"></polygon>
+                                                        <polygon points="711,0 888.75,100 711,100"></polygon>
+                                                        <polygon points="888.75,100 711,100 711,200"></polygon>
+                                                        <polygon points="977.625,150 1066.5,100 1066.5,150"></polygon>
+                                                        <polygon points="888.75,150 977.625,100 888.75,100"></polygon>
+                                                        <polygon points="888.75,200 977.625,150 977.625,200"></polygon>
+                                                        <polygon points="1066.5,200 977.625,150 1066.5,150"></polygon>
+                                                        <polygon points="977.625,200 1066.5,200 1066.5,250"></polygon>
+                                                        <polygon points="977.625,250 888.75,250 977.625,200"></polygon>
+                                                        <polygon points="977.625,250 888.75,300 977.625,300"></polygon>
+                                                        <polygon points="1066.5,250 977.625,300 1066.5,300"></polygon>
+                                                        <polygon points="888.75,200 888.75,300 711,300"></polygon>
+                                                        <polygon points="888.75,400 888.75,300 711,300"></polygon>
+                                                        <polygon points="888.75,300 1066.5,400 1066.5,300"></polygon>
+                                                        <polygon points="1244.25,300 1422,200 1244.25,200"></polygon>
+                                                        <polygon points="1244.25,300 1066.5,300 1066.5,200"></polygon>
+                                                        <polygon points="1066.5,400 1244.25,400 1244.25,300"></polygon>
+                                                        <polygon points="1422,400 1422,300 1244.25,400"></polygon>
+                                                        <polygon points="533.25,100 533.25,0 711,100"></polygon>
+                                                        <polygon points="533.25,0 533.25,100 355.5,0"></polygon>
+                                                        <polygon points="355.5,100 533.25,100 533.25,200"></polygon>
+                                                        <polygon points="711,100 533.25,100 711,200"></polygon>
+                                                        <polygon points="355.5,0 355.5,200 0,200"></polygon>
+                                                        <polygon points="355.5,300 177.75,300 355.5,200"></polygon>
+                                                        <polygon points="177.75,300 177.75,200 0,200"></polygon>
+                                                        <polygon points="177.75,300 177.75,400 0,400"></polygon>
+                                                        <polygon points="177.75,400 177.75,300 355.5,300"></polygon>
+                                                        <polygon points="711,300 533.25,300 711,200"></polygon>
+                                                        <polygon points="533.25,250 444.375,200 533.25,200"></polygon>
+                                                        <polygon points="444.375,250 355.5,200 444.375,200"></polygon>
+                                                        <polygon points="355.5,300 444.375,250 355.5,250"></polygon>
+                                                        <polygon points="533.25,250 444.375,250 444.375,300"></polygon>
+                                                        <polygon points="355.5,400 533.25,400 355.5,300"></polygon>
+                                                        <polygon points="533.25,400 533.25,300 711,400"></polygon>
+                                                        <polygon points="533.25,500 533.25,400 711,500"></polygon>
+                                                        <polygon points="533.25,500 533.25,400 355.5,500"></polygon>
+                                                        <polygon points="533.25,500 444.375,550 444.375,500"></polygon>
+                                                        <polygon points="444.375,500 444.375,550 355.5,550"></polygon>
+                                                        <polygon points="355.5,550 444.375,550 444.375,600"></polygon>
+                                                        <polygon points="533.25,550 444.375,600 533.25,600"></polygon>
+                                                        <polygon points="711,500 622.125,500 622.125,550"></polygon>
+                                                        <polygon points="533.25,550 622.125,500 533.25,500"></polygon>
+                                                        <polygon points="622.125,550 622.125,600 533.25,550"></polygon>
+                                                        <polygon points="711,550 622.125,550 622.125,600"></polygon>
+                                                        <polygon points="355.5,400 355.5,500 177.75,400"></polygon>
+                                                        <polygon points="0,400 177.75,400 0,500"></polygon>
+                                                        <polygon points="177.75,600 0,500 0,600"></polygon>
+                                                        <polygon points="355.5,500 355.5,600 177.75,500"></polygon>
+                                                        <polygon points="0,800 355.5,600 355.5,800"></polygon>
+                                                        <polygon points="533.25,700 711,600 711,700"></polygon>
+                                                        <polygon points="355.5,700 533.25,600 355.5,600"></polygon>
+                                                        <polygon points="533.25,700 533.25,800 355.5,700"></polygon>
+                                                        <polygon points="533.25,800 711,700 533.25,700"></polygon>
+                                                        <polygon points="1422,400 1422,500 1244.25,500"></polygon>
+                                                        <polygon points="1244.25,500 1066.5,500 1244.25,400"></polygon>
+                                                        <polygon points="1244.25,600 1244.25,500 1066.5,500"></polygon>
+                                                        <polygon points="1422,500 1422,600 1244.25,600"></polygon>
+                                                        <polygon points="1066.5,400 888.75,500 888.75,400"></polygon>
+                                                        <polygon points="888.75,450 888.75,400 799.875,400"></polygon>
+                                                        <polygon points="711,400 799.875,450 799.875,400"></polygon>
+                                                        <polygon points="799.875,500 711,450 799.875,450"></polygon>
+                                                        <polygon points="799.875,500 799.875,450 888.75,450"></polygon>
+                                                        <polygon points="888.75,550 799.875,550 888.75,500"></polygon>
+                                                        <polygon points="711,550 799.875,500 799.875,550"></polygon>
+                                                        <polygon points="799.875,600 799.875,550 711,600"></polygon>
+                                                        <polygon points="799.875,600 888.75,550 888.75,600"></polygon>
+                                                        <polygon points="888.75,600 888.75,500 1066.5,600"></polygon>
+                                                        <polygon points="1066.5,600 888.75,700 1066.5,700"></polygon>
+                                                        <polygon points="888.75,600 711,700 888.75,700"></polygon>
+                                                        <polygon points="888.75,800 711,800 888.75,700"></polygon>
+                                                        <polygon points="888.75,700 1066.5,800 1066.5,700"></polygon>
+                                                        <polygon points="1066.5,800 1422,600 1422,800"></polygon>
+                                                    </g>
+                                                </svg>
+                                                <div class="position-relative">
+                                                    <p class="mb-12 text-muted">Total Staffs</p>
+                                                    <h5><span x-data="animatedCounter(150, 500, 0)" x-init="updateCounter" x-text="Math.round(current)">150</span></h5>
+                                                    <p class="mt-1 text-muted">Last 28 days</p>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col -->
+                                    </div>
+                                </div><!-- end col -->
                             </div>
                         </div>
                     </div>
                 </div><!-- end col -->
+                <div class="col-12">
+                    <div class="card card-h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h6 class="card-title mb-0 flex-grow-1">Patients History</h6>
+                            <div class="d-flex flex-wrap align-items-center flex-shrink-0 gap-2">
+                                <button class="btn btn-primary py-1 px-3 lh-base fs-13">All</button>
+                                <button class="btn btn-outline-dark border py-1 px-3 lh-base fs-13">Weekly</button>
+                                <button class="btn btn-outline-dark border py-1 px-3 lh-base fs-13">Monthly</button>
+                                <button class="btn btn-outline-dark border py-1 px-3 lh-base fs-13">Yearly</button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-4 mb-3">
+                                <div class="col-3">
+                                    <h6 class="mb-0">241</h6>
+                                    <p class="text-muted">Assign Doctors <span class="fs-12 fw-medium text-success align-baseline"><i data-lucide="trending-up" class="d-inline-block ms-1 size-4"></i> 3.5%</span></p>
+                                </div><!--end col-->
+                                <div class="col-3">
+                                    <h6 class="mb-0">241</h6>
+                                    <p class="text-muted">Admit Patients <span class="fs-12 fw-medium text-danger align-baseline"><i data-lucide="trending-down" class="d-inline-block ms-1 size-4"></i> 0.4%</span></p>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                            <div x-data="patientsHistoryApp" dir="ltr">
+                                <div class="!min-h-full" data-chart-colors="bg-primary, bg-secondary" x-ref="patientsHistoryChart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center gap-3">
+                            <h6 class="card-title flex-grow-1 mb-0">Patient Visit by Department</h6>
+                            <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                                <a class="link link-danger text-dark badge border text-dark d-flex align-items-center cursor-pointer py-1" @click="open = !open" aria-expanded="open">
+                                    <span>Last Week</span>
+                                    <i class="ri-arrow-down-s-line fs-6 fw-medium lh-sm" :class="{'rotate': open}"></i>
+                                </a>
+                                <div x-show="open" style="display: none;" class="dropdown-menu  dropdown-menu-end show shadow-sm position-absolute end-0">
+                                    <a class="dropdown-item" href="#">Weekly</a>
+                                    <a class="dropdown-item" href="#">Monthly</a>
+                                    <a class="dropdown-item" href="#">Yearly</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div x-data="patientDepartmentApp" dir="ltr">
+                                <div class="" data-chart-colors="bg-primary, bg-success, bg-warning, bg-secondary, bg-danger" x-ref="patientDepartmentChart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h6 class="card-title flex-grow-1 mb-0">Appointment Request</h6>
+                            <a href="#!" class="link link-primary flex-shrink-0 text-dark">Create<i class="ri-arrow-right-line d-inline-block ms-1"></i>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <img src="assets/images/avatar/user-15.png" loading="lazy" alt="" class="rounded-circle size-10 flex-shrink-0">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1">Jerry Kizer</h6>
+                                    <p class="text-muted mb-0 fs-12">
+                                        <i class="ri-calendar-line"></i> <span>11:49 AM - 12 Jun, 2024</span>
+                                    </p>
+                                </div>
+                                <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                                    <button @click="setStatus(index, 'accepted')" title="Accepted" class="btn btn-sub-success btn-sm border-0">
+                                        <i class="ri-check-line"></i>
+                                    </button>
+                                    <button @click="setStatus(index, 'rejected')" title="Rejected" class="btn btn-sub-danger btn-sm border-0">
+                                        <i class="ri-close-line"></i>
+                                    </button>
+                                </div>
+                                <div class="d-flex align-items-center gap-2 flex-shrink-0 d-none">
+                                    <span class="badge bg-success-subtle text-success border border-success-subtle">Accepted</span>
+                                </div>
+                                <div class="d-flex align-items-center gap-2 flex-shrink-0 d-none">
+                                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Rejected</span>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <img src="assets/images/avatar/user-11.png" loading="lazy" alt="" class="rounded-circle size-10 flex-shrink-0">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1">Thomas Maloney</h6>
+                                    <p class="text-muted mb-0 fs-12">
+                                        <i class="ri-calendar-line"></i> <span>04:44 PM - 18 Jul, 2024</span>
+                                    </p>
+                                </div>
+                                <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                                    <button @click="setStatus(index, 'accepted')" title="Accepted" class="btn btn-sub-success btn-sm border-0">
+                                        <i class="ri-check-line"></i>
+                                    </button>
+                                    <button @click="setStatus(index, 'rejected')" title="Rejected" class="btn btn-sub-danger btn-sm border-0">
+                                        <i class="ri-close-line"></i>
+                                    </button>
+                                </div>
+                                <div class="d-flex align-items-center gap-2 flex-shrink-0 d-none">
+                                    <span class="badge bg-success-subtle text-success border border-success-subtle">Accepted</span>
+                                </div>
+                                <div class="d-flex align-items-center gap-2 flex-shrink-0 d-none">
+                                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Rejected</span>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="assets/images/avatar/user-13.png" loading="lazy" alt="" class="rounded-circle size-10 flex-shrink-0">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1">Dawn Beebe</h6>
+                                    <p class="text-muted mb-0 fs-12">
+                                        <i class="ri-calendar-line"></i> <span>01:24 PM - 12 Jun, 2024</span>
+                                    </p>
+                                </div>
+                                <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                                    <button @click="setStatus(index, 'accepted')" title="Accepted" class="btn btn-sub-success btn-sm border-0 d-none">
+                                        <i class="ri-check-line"></i>
+                                    </button>
+                                    <button @click="setStatus(index, 'rejected')" title="Rejected" class="btn btn-sub-danger btn-sm border-0 d-none">
+                                        <i class="ri-close-line"></i>
+                                    </button>
+                                </div>
+                                <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                                    <span class="badge bg-success-subtle text-success border border-success-subtle">Accepted</span>
+                                </div>
+                                <div class="d-flex align-items-center gap-2 flex-shrink-0 d-none">
+                                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Rejected</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-12">
+                    <h6 class="mb-2">Upcoming Consultation</h6>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex gap-3">
+                                <img src="assets/images/avatar/user-25.png" loading="lazy" alt="" class="rounded-2 size-11 flex-shrink-0">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1">Dr. Waylon Modin</h6>
+                                    <p class="text-muted">Dental Specialist</p>
+                                </div>
+                            </div>
+                            <div class="px-3 py-2 my-4 text-muted bg-light rounded-3 fs-13">
+                                <p><i class="align-baseline ri-calendar-todo-line me-1 fs-sm"></i> 24 Jul, 2024 - 11:00 AM - 12:00 PM</p>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button type="button" class="w-100 btn btn-outline-danger">Cancel</button>
+                                <button type="button" class="w-100 btn btn-primary">Reschedule</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!-- end col -->
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="card-title flex-grow-1 mb-0">Hospital Birth & Death Analytics</h6>
+                    <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i data-lucide="ellipsis" class="size-5"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#!"><span>Weekly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Monthly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Yearly</span></a></li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div x-data="hospitalBirthDeathApp" dir="ltr">
+                        <div class="h-100" data-chart-colors="bg-primary, bg-danger, bg-success" x-ref="hospitalBirthDeathChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="card-title flex-grow-1 mb-0">Rooms Analytics Sessions</h6>
+                    <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i data-lucide="ellipsis" class="size-5"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#!"><span>Weekly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Monthly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Yearly</span></a></li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-column gap-4">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/dashboards/hospital/vip.png" loading="lazy" alt="" class="size-8 flex-shrink-0">
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0">VIP Rooms</h6>
+                                <p class="text-muted">Average usage of VIP Rooms</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <h6 class="mb-0">36.7%</h6>
+                                <p class="text-success">this month</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/dashboards/hospital/hospital-bed.png" loading="lazy" alt="" class="size-8 flex-shrink-0">
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0">Private Rooms</h6>
+                                <p class="text-muted">Average usage of Private Rooms</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <h6 class="mb-0">61.6%</h6>
+                                <p class="text-success">this month</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/dashboards/hospital/hospital.png" loading="lazy" alt="" class="size-8 flex-shrink-0">
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0">General Rooms</h6>
+                                <p class="text-muted">Average usage of General Rooms</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <h6 class="mb-0">77.9%</h6>
+                                <p class="text-success">this month</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/dashboards/hospital/emergency-room.png" loading="lazy" alt="" class="size-8 flex-shrink-0">
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0">ICU Rooms</h6>
+                                <p class="text-muted">Average usage of ICU Rooms</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <h6 class="mb-0">24.1%</h6>
+                                <p class="text-success">this month</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/dashboards/hospital/waiting-area.png" loading="lazy" alt="" class="size-8 flex-shrink-0">
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0">Waiting Area</h6>
+                                <p class="text-muted">Average usage of Waiting Area</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <h6 class="mb-0">89.4%</h6>
+                                <p class="text-success">this month</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/dashboards/hospital/meeting.png" loading="lazy" alt="" class="size-8 flex-shrink-0">
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0">Staff Rooms</h6>
+                                <p class="text-muted">Average usage of Staff Rooms</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <h6 class="mb-0">99.9%</h6>
+                                <p class="text-success">this month</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="card-title flex-grow-1 mb-0">Summary Treatment</h6>
+                    <a href="#!" class="link link-primary flex-shrink-0">See All<i data-lucide="move-right" class="size-4 ms-1"></i>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <div class="row border-dashed">
+                        <div class="col-md-6 p-4 border-end border-bottom">
+                            <div class="d-flex gap-2">
+                                <img src="assets/images/avatar/user-25.png" loading="lazy" alt="" class="rounded-2 img-fluid size-10 flex-shrink-0">
+                                <div class="overflow-hidden flex-grow-1">
+                                    <h6 class="text-truncate mb-0">Dr. Mariana Grandon</h6>
+                                    <p class="text-muted">Endocrinologist</p>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-muted">2154 Treatment</p>
+                        </div>
+                        <div class="col-md-6 p-4 border-bottom">
+                            <div class="d-flex gap-2">
+                                <img src="assets/images/avatar/user-27.png" loading="lazy" alt="" class="rounded-2 img-fluid size-10 flex-shrink-0">
+                                <div class="overflow-hidden flex-grow-1">
+                                    <h6 class="text-truncate mb-0">Dr. Sydney Toor</h6>
+                                    <p class="text-muted">Hematology</p>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-muted">879 Treatment</p>
+                        </div>
+                        <div class="col-md-6 p-4 border-bottom border-end">
+                            <div class="d-flex gap-2">
+                                <img src="assets/images/avatar/user-26.png" loading="lazy" alt="" class="rounded-2 img-fluid size-10 flex-shrink-0">
+                                <div class="overflow-hidden flex-grow-1">
+                                    <h6 class="text-truncate mb-0">Dr. Dante Ditto</h6>
+                                    <p class="text-muted">Radiologist</p>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-muted">643 Treatment</p>
+                        </div>
+                        <div class="col-md-6 p-4 border-bottom">
+                            <div class="d-flex gap-2">
+                                <img src="assets/images/avatar/user-28.png" loading="lazy" alt="" class="rounded-2 img-fluid size-10 flex-shrink-0">
+                                <div class="overflow-hidden flex-grow-1">
+                                    <h6 class="text-truncate mb-0">Dr. Marcus Welton</h6>
+                                    <p class="text-muted">Nephrologist</p>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-muted">5412 Treatment</p>
+                        </div>
+                        <div class="col-md-6 p-4 border-end">
+                            <div class="d-flex gap-2">
+                                <img src="assets/images/avatar/user-29.png" loading="lazy" alt="" class="rounded-2 img-fluid size-10 flex-shrink-0">
+                                <div class="overflow-hidden flex-grow-1">
+                                    <h6 class="text-truncate mb-0">Dr. Jennifer Maune</h6>
+                                    <p class="text-muted">Cardiologist</p>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-muted">1874 Treatment</p>
+                        </div>
+                        <div class="col-md-6 p-4">
+                            <div class="d-flex gap-2">
+                                <img src="assets/images/avatar/user-30.png" loading="lazy" alt="" class="rounded-2 img-fluid size-10 flex-shrink-0">
+                                <div class="overflow-hidden flex-grow-1">
+                                    <h6 class="text-truncate mb-0">Dr. Antonio Ligler</h6>
+                                    <p class="text-muted">Neurologists</p>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-muted">1195 Treatment</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- end col -->
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-3">
+                            <h6 class="card-title mb-0 flex-grow-1">All Patients</h6>
+                        </div>
+                        <div class="col-4">
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="position-relative flex-grow-1">
+                                    <input type="text" class="form-control ps-9 pe-4" placeholder="Search for ..." @input="filtercontacts" x-model="searchTerm">
+                                    <div class="position-absolute top-50 translate-middle-y d-flex align-items-center">
+                                        <i data-lucide="search" class="size-4 ms-3 text-dark"></i>
+                                    </div>
+                                </div>
+                                <button @click="exportTable" class="btn btn-primary"><i data-lucide="circle-plus" class="size-4 me-2"></i>Add Lead</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th class="text-dark fw-medium">
+                                    <div class="form-check check-primary">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                    </div>
+                                </th>
+                                <th class="text-dark fw-medium">Patient Name</th>
+                                <th class="text-dark fw-medium">Age</th>
+                                <th class="text-dark fw-medium">Phone</th>
+                                <th class="text-dark fw-medium">Email </th>
+                                <th class="text-dark fw-medium">Condition</th>
+                                <th class="text-dark fw-medium">Medications</th>
+                                <th class="text-dark fw-medium">Last Visit</th>
+                                <th class="text-dark fw-medium">Action</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check check-primary">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                    </div>
+                                </td>
+                                <td>Dorothy Daley</td>
+                                <td>45</td>
+                                <td>+1 0123 4567</td>
+                                <td>dorothy.daley@pixeleyez.com</td>
+                                <td>Hypertension</td>
+                                <td>Lisinopril, Amlodipine</td>
+                                <td>12 Jan, 2024</td>
+                                <td>
+                                    <div class="d-flex gap-3">
+                                        <a class="link link-primary text-dark" href="apps-hospital-patients-lists.html" title="overview"><i class="ri-eye-line"></i></a>
+                                        <a class="link link-primary text-dark" href="apps-hospital-patients-lists.html" title="edit"><i class="ri-edit-2-line"></i></a>
+                                        <a href="#!" class="link link-danger text-dark" title="delete"><i class="ri-delete-bin-6-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check check-primary">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+                                    </div>
+                                </td>
+                                <td>Eve Green</td>
+                                <td>41</td>
+                                <td>+1 0678 9012</td>
+                                <td>eve.green@pixeleyez.com</td>
+                                <td>Anxiety</td>
+                                <td>Alprazolam</td>
+                                <td>10 Jul, 2024</td>
+                                <td>
+                                    <div class="d-flex gap-3">
+                                        <a class="link link-primary text-dark" href="apps-hospital-patients-lists.html" title="overview"><i class="ri-eye-line"></i></a>
+                                        <a class="link link-primary text-dark" href="apps-hospital-patients-lists.html" title="edit"><i class="ri-edit-2-line"></i></a>
+                                        <a href="#!" class="link link-danger text-dark" title="delete"><i class="ri-delete-bin-6-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check check-primary">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck2">
+                                    </div>
+                                </td>
+                                <td>Frank Brown</td>
+                                <td>36</td>
+                                <td>+1 0789 0123</td>
+                                <td>frank.brown@pixeleyez.com</td>
+                                <td>Back Pain</td>
+                                <td>Acetaminophen</td>
+                                <td>20 Aug, 2024</td>
+                                <td>
+                                    <div class="d-flex gap-3">
+                                        <a class="link link-primary text-dark" href="apps-hospital-patients-lists.html" title="overview"><i class="ri-eye-line"></i></a>
+                                        <a class="link link-primary text-dark" href="apps-hospital-patients-lists.html" title="edit"><i class="ri-edit-2-line"></i></a>
+                                        <a href="#!" class="link link-danger text-dark" title="delete"><i class="ri-delete-bin-6-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check check-primary">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck3">
+                                    </div>
+                                </td>
+                                <td>Grace Miller</td>
+                                <td>50</td>
+                                <td>+1 0890 1234</td>
+                                <td>grace.miller@pixeleyez.com</td>
+                                <td>Thyroid Disorder</td>
+                                <td>Levothyroxine</td>
+                                <td>01 Sep, 2024</td>
+                                <td>
+                                    <div class="d-flex gap-3">
+                                        <a class="link link-primary text-dark" href="apps-hospital-patients-lists.html" title="overview"><i class="ri-eye-line"></i></a>
+                                        <a class="link link-primary text-dark" href="apps-hospital-patients-lists.html" title="edit"><i class="ri-edit-2-line"></i></a>
+                                        <a href="#!" class="link link-danger text-dark" title="delete"><i class="ri-delete-bin-6-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check check-primary">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck4">
+                                    </div>
+                                </td>
+                                <td>Henry Wilson</td>
+                                <td>28</td>
+                                <td>+1 0901 2345</td>
+                                <td>henry.wilson@pixeleyez.com</td>
+                                <td>Migraine</td>
+                                <td>Sumatriptan</td>
+                                <td>15 Oct, 2024</td>
+                                <td>
+                                    <div class="d-flex gap-3">
+                                        <a class="link link-primary text-dark" href="apps-hospital-patients-lists.html" title="overview"><i class="ri-eye-line"></i></a>
+                                        <a class="link link-primary text-dark" href="apps-hospital-patients-lists.html" title="edit"><i class="ri-edit-2-line"></i></a>
+                                        <a href="#!" class="link link-danger text-dark" title="delete"><i class="ri-delete-bin-6-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check check-primary">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck5">
+                                    </div>
+                                </td>
+                                <td>Irene Martinez</td>
+                                <td>60</td>
+                                <td>+1 1012 3456</td>
+                                <td>irene.martinez@pixeleyez.com</td>
+                                <td>Osteoporosis</td>
+                                <td>Alendronate</td>
+                                <td>20 Nov, 2024</td>
+                                <td>
+                                    <div class="d-flex gap-3">
+                                        <a class="link link-primary text-dark" href="apps-hospital-patients-lists.html" title="overview"><i class="ri-eye-line"></i></a>
+                                        <a class="link link-primary text-dark" href="apps-hospital-patients-lists.html" title="edit"><i class="ri-edit-2-line"></i></a>
+                                        <a href="#!" class="link link-danger text-dark" title="delete"><i class="ri-delete-bin-6-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check check-primary">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck6">
+                                    </div>
+                                </td>
+                                <td>Jack Davis</td>
+                                <td>34</td>
+                                <td>+1 1123 4567</td>
+                                <td>jack.davis@pixeleyez.com</td>
+                                <td>Gastroesophageal Reflux Disease</td>
+                                <td>Omeprazole</td>
+                                <td>05 Dec, 2024</td>
+                                <td>
+                                    <div class="d-flex gap-3">
+                                        <a class="link link-primary text-dark" href="apps-hospital-patients-lists.html" title="overview"><i class="ri-eye-line"></i></a>
+                                        <a class="link link-primary text-dark" href="apps-hospital-patients-lists.html" title="edit"><i class="ri-edit-2-line"></i></a>
+                                        <a href="#!" class="link link-danger text-dark" title="delete"><i class="ri-delete-bin-6-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check check-primary">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck7">
+                                    </div>
+                                </td>
+                                <td>Karen Taylor</td>
+                                <td>42</td>
+                                <td>+1 1234 5678</td>
+                                <td>karen.taylor@pixeleyez.com</td>
+                                <td>Chronic Fatigue Syndrome</td>
+                                <td>Modafinil</td>
+                                <td>20 Dec, 2024</td>
+                                <td>
+                                    <div class="d-flex gap-3">
+                                        <a class="link link-primary text-dark" href="apps-hospital-patients-lists.html" title="overview"><i class="ri-eye-line"></i></a>
+                                        <a class="link link-primary text-dark" href="apps-hospital-patients-lists.html" title="edit"><i class="ri-edit-2-line"></i></a>
+                                        <a href="#!" class="link link-danger text-dark" title="delete"><i class="ri-delete-bin-6-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>                            
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-between align-items-center mt-5">
+                        <div>
+                            <p class="text-muted">Showing <b class="me-1">1 - 8</b>of<b class="ms-1">8</b> Results</p>
+                        </div>
+                        <div class="justify-content-end d-flex">
+                            <nav aria-label="...">
+                                <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                                    <li class="page-item pagination-primary disabled">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <i data-lucide="chevron-left" class="size-5"></i>
+                                            <span>Prev</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                    <li class="page-item pagination-primary ">
+                                        <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                            <span>Next</span>
+                                            <i data-lucide="chevron-right" class="size-5"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div><!-- end col -->
     </div>
