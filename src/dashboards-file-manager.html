@@ -1,0 +1,468 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="File Manager" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="File Manager" sub-title="Dashboards" }}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-2">
+                    <div class="card card-sub-orange">
+                        <div class="card-body">
+                            <div class="size-16 bg-orange  bg-opacity-25 text-orange rounded-circle d-flex justify-content-center align-items-center mx-auto">
+                                <i data-lucide="image" class="size-7"></i>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 mt-4">
+                                <h6 class="flex-grow-1 mb-0"><a href="#!" class="text-black">Images</a></h6>
+                                <p class="text-muted flex-shrink-0">245</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-2">
+                    <div class="card card-sub-primary">
+                        <div class="card-body">
+                            <div class="size-16 bg-primary  bg-opacity-25 text-primary rounded-circle d-flex justify-content-center align-items-center mx-auto">
+                                <i data-lucide="image" class="size-7"></i>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 mt-4">
+                                <h6 class="flex-grow-1 mb-0"><a href="#!" class="text-black">Documents</a></h6>
+                                <p class="text-muted flex-shrink-0">1472</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-2">
+                    <div class="card card-sub-warning">
+                        <div class="card-body">
+                            <div class="size-16 bg-warning  bg-opacity-25 text-warning rounded-circle d-flex justify-content-center align-items-center mx-auto">
+                                <i data-lucide="file-text" class="size-7"></i>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 mt-4">
+                                <h6 class="flex-grow-1 mb-0"><a href="#!" class="text-black">PDF Files</a></h6>
+                                <p class="text-muted flex-shrink-0">98</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-2">
+                    <div class="card card-sub-secondary">
+                        <div class="card-body">
+                            <div class="size-16 bg-secondary bg-opacity-25 text-secondary rounded-circle d-flex justify-content-center align-items-center mx-auto">
+                                <i data-lucide="video" class="size-7"></i>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 mt-4">
+                                <h6 class="flex-grow-1 mb-0"><a href="#!" class="text-black">Video</a></h6>
+                                <p class="text-muted flex-shrink-0">159</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-2">
+                    <div class="card card-sub-info">
+                        <div class="card-body">
+                            <div class="size-16 bg-info  bg-opacity-25 text-info rounded-circle d-flex justify-content-center align-items-center mx-auto">
+                                <i data-lucide="audio-lines" class="size-7"></i>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 mt-4">
+                                <h6 class="flex-grow-1 mb-0"><a href="#!" class="text-black">Audio</a></h6>
+                                <p class="text-muted flex-shrink-0">208</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-2">
+                    <div class="card card-sub-success">
+                        <div class="card-body">
+                            <div class="size-16 bg-success  bg-opacity-25 text-success rounded-circle d-flex justify-content-center align-items-center mx-auto">
+                                <i data-lucide="folder-open" class="size-7"></i>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 mt-4">
+                                <h6 class="flex-grow-1 mb-0"><a href="#!" class="text-black">Others Files</a></h6>
+                                <p class="text-muted flex-shrink-0">1569</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+            </div>
+        </div><!-- end col -->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header d-flex align-items-center gap-3">
+                    <h6 class="card-title flex-grow-1 mb-0">Analytics</h6>
+                    <div x-data="{ open: false }" class="dropdown" @click.away="open = false">
+                        <a class="link link-danger text-dark badge border text-dark d-flex align-items-center cursor-pointer py-1" @click="open = !open" aria-expanded="open">
+                            <span>Last Week</span>
+                            <i class="ri-arrow-down-s-line fs-6 fw-medium lh-sm" :class="{'rotate': open}"></i>
+                        </a>
+                        <div x-show="open" style="display: none;" class="dropdown-menu  dropdown-menu-end show shadow-sm position-absolute end-0">
+                            <a class="dropdown-item" href="#">Weekly</a>
+                            <a class="dropdown-item" href="#">Monthly</a>
+                            <a class="dropdown-item" href="#">Yearly</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div x-data="analyticsApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-light" x-ref="analyticsChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="card-title flex-grow-1 mb-0">Recent Files</h6>
+                    <a href="#!" class="link link-primary flex-shrink-0 text-dark">View All<i data-lucide="move-right" class="size-4 ms-2"></i>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="size-10 bg-light d-flex align-items-center justify-content-center flex-shrink-0 rounded-2 p-2">
+                                <img src="assets/images/file-manager/icons/picture.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0"><a href="#!" class="text-black link link-primary">Brand Logo.png</a></h6>
+                                <p class="fs-sm text-muted">14 June, 2024</p>
+                            </div>
+                            <p>2.6 MB</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="size-10 bg-light d-flex align-items-center justify-content-center flex-shrink-0 rounded-2 p-2">
+                                <img src="assets/images/file-manager/icons/ai-file-format.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0"><a href="#!" class="text-black link link-primary">AI Chat Module.ai</a></h6>
+                                <p class="fs-sm text-muted">29 June, 2024</p>
+                            </div>
+                            <p>29 MB</p>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="size-10 bg-light d-flex align-items-center justify-content-center flex-shrink-0 rounded-2 p-2">
+                                <img src="assets/images/file-manager/icons/video.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0"><a href="#!" class="text-black link link-primary">Domiex Intro.mp4</a></h6>
+                                <p class="fs-sm text-muted">05 July, 2024</p>
+                            </div>
+                            <p>44 MB</p>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="size-10 bg-light d-flex align-items-center justify-content-center flex-shrink-0 rounded-2 p-2">
+                                <img src="assets/images/file-manager/icons/document.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0"><a href="#!" class="text-black link link-primary">Project guidelines.txt</a></h6>
+                                <p class="fs-sm text-muted">09 July, 2024</p>
+                            </div>
+                            <p>7 MB</p>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="size-10 bg-light d-flex align-items-center justify-content-center flex-shrink-0 rounded-2 p-2">
+                                <img src="assets/images/file-manager/icons/office365.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0"><a href="#!" class="text-black link link-primary">List of invoice</a></h6>
+                                <p class="fs-sm text-muted">18 July, 2024</p>
+                            </div>
+                            <p>4.1 MB</p>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="size-10 bg-light d-flex align-items-center justify-content-center flex-shrink-0 rounded-2 p-2">
+                                <img src="assets/images/file-manager/icons/pdf.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0"><a href="#!" class="text-black link link-primary">Features Breakdown</a></h6>
+                                <p class="fs-sm text-muted">18 July, 2024</p>
+                            </div>
+                            <p>3 MB</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Overview Storage</h6>
+                </div>
+                <div class="card-body">
+                    <div x-data="overviewStorageApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-success, bg-warning, bg-secondary, bg-danger" x-ref="overviewStorageChart"></div>
+                    </div>
+                    <div class="mt-5">
+                        <div class="d-flex align-items-center gap-3 mb-2">
+                            <h6 class="fs-12 mb-0 flex-grow-1">Use Storage</h6>
+                            <h6 class="fs-12 mb-0 fw-semibold text-danger">74%</h6>
+                        </div>
+                        <div class="progress progress-1" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 74%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-8">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-3">
+                            <h6 class="card-title mb-0 flex-grow-1">All Patients</h6>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="position-relative flex-grow-1">
+                                    <input type="text" class="form-control ps-9 pe-4" placeholder="Search for ..." @input="filtercontacts" x-model="searchTerm">
+                                    <div class="position-absolute top-50 translate-middle-y d-flex align-items-center">
+                                        <i data-lucide="search" class="size-4 ms-3 text-dark"></i>
+                                    </div>
+                                </div>
+                                <button @click="exportTable" class="btn btn-sub-success"><i data-lucide="cloud-upload" class="size-4 me-2"></i>Upload</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table mb-0 table-borderless">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <img src="assets/images/file-manager/icons/document.png" alt="" class="size-8">
+                                        <a href="#!" class="text-black">
+                                            <h6 class="mb-0">Animation Project</h6>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>Document</td>
+                                <td>24 MB</td>
+                                <td>21 July, 2024</td>
+                                <td>
+                                    <div class="d-flex gap-3">
+                                        <a class="link link-primary text-dark" href="#!" title="overview"><i class="ri-edit-2-line"></i></a>
+                                        <a class="link link-primary text-dark" href="#!" title="edit"><i class="ri-download-2-line"></i></a>
+                                        <a href="#!" class="link link-danger text-dark" title="delete"><i class="ri-delete-bin-6-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <img src="assets/images/file-manager/icons/picture.png" alt="" class="size-8">
+                                        <a href="#!" class="text-black">
+                                            <h6 class="mb-0">UI Design</h6>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>Image</td>
+                                <td>154 MB</td>
+                                <td>28 May, 2024</td>
+                                <td>
+                                    <div class="d-flex gap-3">
+                                        <a class="link link-primary text-dark" href="#!" title="overview"><i class="ri-edit-2-line"></i></a>
+                                        <a class="link link-primary text-dark" href="#!" title="edit"><i class="ri-download-2-line"></i></a>
+                                        <a href="#!" class="link link-danger text-dark" title="delete"><i class="ri-delete-bin-6-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <img src="assets/images/file-manager/icons/video.png" alt="" class="size-8">
+                                        <a href="#!" class="text-black">
+                                            <h6 class="mb-0">Admin Tutorial</h6>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>Video</td>
+                                <td>149 MB</td>
+                                <td>02 Feb, 2024</td>
+                                <td>
+                                    <div class="d-flex gap-3">
+                                        <a class="link link-primary text-dark" href="#!" title="overview"><i class="ri-edit-2-line"></i></a>
+                                        <a class="link link-primary text-dark" href="#!" title="edit"><i class="ri-download-2-line"></i></a>
+                                        <a href="#!" class="link link-danger text-dark" title="delete"><i class="ri-delete-bin-6-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <img src="assets/images/file-manager/icons/ai-file-format.png" alt="" class="size-8">
+                                        <a href="#!" class="text-black">
+                                            <h6 class="mb-0">Brand Identity</h6>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>AI</td>
+                                <td>17 MB</td>
+                                <td>11 Feb, 2024</td>
+                                <td>
+                                    <div class="d-flex gap-3">
+                                        <a class="link link-primary text-dark" href="#!" title="overview"><i class="ri-edit-2-line"></i></a>
+                                        <a class="link link-primary text-dark" href="#!" title="edit"><i class="ri-download-2-line"></i></a>
+                                        <a href="#!" class="link link-danger text-dark" title="delete"><i class="ri-delete-bin-6-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <img src="assets/images/file-manager/icons/pdf.png" alt="" class="size-8">
+                                        <a href="#!" class="text-black">
+                                            <h6 class="mb-0">Resume</h6>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>PDF</td>
+                                <td>11 MB</td>
+                                <td>20 May, 2024</td>
+                                <td>
+                                    <div class="d-flex gap-3">
+                                        <a class="link link-primary text-dark" href="#!" title="overview"><i class="ri-edit-2-line"></i></a>
+                                        <a class="link link-primary text-dark" href="#!" title="edit"><i class="ri-download-2-line"></i></a>
+                                        <a href="#!" class="link link-danger text-dark" title="delete"><i class="ri-delete-bin-6-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <h6 class="mb-3">My Favorites</h6>
+            <div class="swiper achivementSwiper" dir="ltr">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="p-3 card card-sub-info">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Images</a></h6>
+                                    <p class="text-muted">2471 Files</p>
+                                </div>
+                                <div>
+                                    <div class="d-flex">
+                                        <a href="#!" class="avatar-hover">
+                                            <img class="border-2 border border-white rounded-circle size-8 translateY-hover" alt="" loading="lazy" src="assets/images/avatar/user-14.png">
+                                        </a>
+                                        <a href="#!" class="avatar-hover">
+                                            <img class="border-2 border border-white rounded-circle size-8 translateY-hover" alt="" loading="lazy" src="assets/images/avatar/user-16.png">
+                                        </a>
+                                        <a href="#!" class="avatar-hover">
+                                            <img class="border-2 border border-white rounded-circle size-8 translateY-hover" alt="" loading="lazy" src="assets/images/avatar/user-17.png">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card card-sub-pink">
+                            <div class="d-flex align-items-center gap-3 p-3">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Download</a></h6>
+                                    <p class="text-muted">547 Files</p>
+                                </div>
+                                <div>
+                                    <div class="d-flex ml-3 -space-x-3">
+                                        <a href="#!" class="avatar-hover">
+                                            <img class="border-2 border border-white rounded-circle size-8 translateY-hover" alt="" loading="lazy" src="assets/images/avatar/user-14.png">
+                                        </a>
+                                        <a href="#!" class="avatar-hover">
+                                            <img class="border-2 border border-white rounded-circle size-8 translateY-hover" alt="" loading="lazy" src="assets/images/avatar/user-17.png">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card card-sub-secondary">
+                            <div class="d-flex align-items-center gap-3 p-3">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#!" class="text-black">Domiex Project</a></h6>
+                                    <p class="text-muted">1479 Files</p>
+                                </div>
+                                <div>
+                                    <div class="d-flex ml-3 -space-x-3">
+                                        <a href="#!" class="avatar-hover">
+                                            <img class="border-2 border border-white rounded-circle size-8 translateY-hover" alt="" loading="lazy" src="assets/images/avatar/user-14.png">
+                                        </a>
+                                        <a href="#!" class="avatar-hover">
+                                            <img class="border-2 border border-white rounded-circle size-8 translateY-hover" alt="" loading="lazy" src="assets/images/avatar/user-16.png">
+                                        </a>
+                                        <a href="#!" class="avatar-hover">
+                                            <img class="border-2 border border-white rounded-circle size-8 translateY-hover" alt="" loading="lazy" src="assets/images/avatar/user-10.png">
+                                        </a>
+                                        <a href="#!" class="avatar-hover">
+                                            <img class="border-2 border border-white rounded-circle size-8 translateY-hover" alt="" loading="lazy" src="assets/images/avatar/user-11.png">
+                                        </a>
+                                        <a href="#!" class="avatar-hover">
+                                            <img class="border-2 border border-white rounded-circle size-8 translateY-hover" alt="" loading="lazy" src="assets/images/avatar/user-17.png">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hover-navigation">
+                    <div class="swiper-button-next fs-2xl size-6 bg-white rounded-circle"></div>
+                    <div class="swiper-button-prev fs-2xl size-6 bg-white rounded-circle"></div>
+                </div>
+            </div>
+
+            <div class="card overflow-hidden position-relative ">
+                <div class="position-absolute bottom-0 d-none d-lg-block end-0 opacity-50">
+                    <div class="position-absolute top-0 bottom-0 start-0 end-0 transpernt-gradient"></div>
+                    <img src="assets/images/dashboards/ecommerce/pattern.png" alt="" loading="lazy" class="h-40">
+                </div>
+                <div class="card-body position-relative text-center">
+                    <img src="assets/images/dashboards/file-manager.png" class="h-32 mx-auto" alt="File Manager">
+                    <h6 class="mt-4 mb-2">Upgrade to Pro</h6>
+                    <p class="mb-4 text-muted">Unlock your plan to Pro to get access to all features!</p>
+                    <a class="btn btn-primary w-100" href="/pages-pricing" role="button">Upgrade Now</a>
+                </div>
+            </div>
+        </div><!-- end col -->
+    </div>
+
+</div>
+{{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script type="module" src="assets/js/dashboards/file-manager.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

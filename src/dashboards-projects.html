@@ -1,0 +1,756 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Projects" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="Projects" sub-title="Dashboards" }}
+
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center gap-2">
+                    <h6 class="card-title flex-grow-1 mb-0">Project Status</h6>
+                    <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i data-lucide="ellipsis" class="size-5"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#!"><span>Weekly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Monthly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Yearly</span></a></li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex gap-3 mb-2">
+                        <div class="d-flex align-items-center justify-content-center rounded-2 bg-primary-subtle text-primary p-2 size-10">
+                            <i data-lucide="coins"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-0">$<span x-data="animatedCounter(21589, 500, 0)" x-init="updateCounter" x-text="Math.round(current)"></span></h6>
+                            <p class="text-muted">Total Earnings</p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <span class="font-weight-medium text-success">
+                                <i class="align-baseline ri-arrow-up-line"></i> 4.5%
+                            </span>
+                        </div>
+                    </div>
+                    <div x-data="projectStatusApp">
+                        <div class="!min-h-full" data-chart-colors="bg-primary" x-ref="projectStatusChart"></div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mt-3">
+                        <p class="text-muted flex-grow-1">Expense</p>
+                        <h6 class="mb-0">$748.99</h6>
+                        <span class="fw-medium badge bg-danger-subtle border border-danger-subtle text-danger"><i class="align-baseline ri-arrow-down-line"></i> 4.5%</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mt-3">
+                        <p class="text-muted flex-grow-1">Profit</p>
+                        <h6 class="mb-0">$8721.74</h6>
+                        <span class="fw-medium badge bg-success-subtle border border-success-subtle text-success"><i class="align-baseline ri-arrow-up-line"></i> 11.41%</span>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="row">
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-center align-items-center bg-light text-muted rounded-2 size-12">
+                                <i data-lucide="package-open"></i>
+                            </div>
+
+                            <h6 class="mt-6 mb-1">6 Opened Tasks</h6>
+                            <p class="fw-medium text-danger">
+                                <i class="align-baseline ri-arrow-down-line"></i> 4.32%
+                            </p>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-center align-items-center bg-light text-muted rounded-2 size-12">
+                                <i data-lucide="circle-check-big"></i>
+                            </div>
+
+                            <h6 class="mt-6 mb-1">15 Completed Tasks</h6>
+                            <p class="fw-medium text-success">
+                                <i class="align-baseline ri-arrow-up-line"></i> 47.73%
+                            </p>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-center align-items-center bg-light text-muted rounded-2 size-12">
+                                <i data-lucide="layout-list"></i>
+                            </div>
+
+                            <h6 class="mt-6 mb-1">148 Total Tasks</h6>
+                            <p class="fw-medium text-success">
+                                <i class="align-baseline ri-arrow-up-line"></i> 21.57%
+                            </p>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-center align-items-center bg-light text-muted rounded-2 size-12">
+                                <i data-lucide="panels-top-left"></i>
+                            </div>
+
+                            <h6 class="mt-6 mb-1">10 Projects</h6>
+                            <p class="fw-medium text-success">
+                                <i class="align-baseline ri-arrow-up-line"></i> 3.91%
+                            </p>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center gap-2">
+                    <h6 class="card-title flex-grow-1 mb-0">Daily Working Reports</h6>
+                    <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i data-lucide="ellipsis" class="size-5"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#!"><span>Weekly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Monthly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Yearly</span></a></li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div x-data="patternDonutApp" dir="ltr">
+                        <div class="!min-h-full" data-chart-colors="bg-primary, bg-secondary, bg-success" x-ref="patternDonutChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-9">
+            <div class="d-flex align-items-center gap-3 mb-3">
+                <h6 class="flex-grow-1 mb-0">Client List</h6>
+                <a href="#!" class="link link-primary text-dark">View All<i class="align-baseline ri-arrow-right-line ltr:inline-block rtl:hidden"></i></a>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex flex-wrap align-items-center gap-3 p-2 bg-light rounded-2">
+                                <img src="assets/images/avatar/user-5.png" alt="" class="rounded-circle size-10">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-0">Imelda Dach</h6>
+                                    <p class="text-muted">imelda@pixeleyez.com</p>
+                                </div>
+                                <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i data-lucide="ellipsis" class="size-5"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#!"><span>Edit</span></a></li>
+                                    <li><a class="dropdown-item" href="#!"><span>Overview</span></a></li>
+                                    <li><a class="dropdown-item" href="#!"><span>Delete</span></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-2 my-4">
+                                <span class="badge text-success border border-success">Finance Web</span>
+                                <span class="badge text-secondary border border-secondary">Business</span>
+                            </div>
+
+                            <p>Date Created: <span class="text-muted">20 July, 2024</span></p>
+
+                            <div class="pt-3 mt-3 text-center border-top border-muted">
+                                <a href="#!" class="text-primary"><i data-lucide="messages-square" class="size-4 me-2"></i>Get a Chat</a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex flex-wrap align-items-center gap-3 p-2 bg-light rounded-2">
+                                <img src="assets/images/avatar/user-11.png" alt="" class="rounded-circle size-10">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-0">Adella Hauck</h6>
+                                    <p class="text-muted">Adella Hauck</p>
+                                </div>
+                                <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i data-lucide="ellipsis" class="size-5"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#!"><span>Edit</span></a></li>
+                                    <li><a class="dropdown-item" href="#!"><span>Overview</span></a></li>
+                                    <li><a class="dropdown-item" href="#!"><span>Delete</span></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-2 my-4">
+                                <span class="badge text-info border border-info">Web Site</span>
+                                <span class="badge text-danger border border-danger">UI / UX</span>
+                            </div>
+
+                            <p>Date Created: <span class="text-muted">10 July, 2024</span></p>
+
+                            <div class="pt-3 mt-3 text-center border-top border-muted">
+                                <a href="#!" class="text-primary"><i data-lucide="messages-square" class="size-4 me-2"></i>Get a Chat</a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex flex-wrap align-items-center gap-3 p-2 bg-light rounded-2">
+                                <img src="assets/images/avatar/user-17.png" alt="" class="rounded-circle size-10">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-0">Shanny Kirlin</h6>
+                                    <p class="text-muted">shanny@pixeleyez.com</p>
+                                </div>
+                                <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i data-lucide="ellipsis" class="size-5"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#!"><span>Edit</span></a></li>
+                                    <li><a class="dropdown-item" href="#!"><span>Overview</span></a></li>
+                                    <li><a class="dropdown-item" href="#!"><span>Delete</span></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-2 my-4">
+                                <span class="badge text-primary border border-primary">Development</span>
+                                <span class="badge text-dark border border-dark">API</span>
+                            </div>
+
+                            <p>Date Created: <span class="text-muted">27 May, 2024</span></p>
+
+                            <div class="pt-3 mt-3 text-center border-top border-muted">
+                                <a href="#!" class="text-primary"><i data-lucide="messages-square" class="size-4 me-2"></i>Get a Chat</a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+            </div>
+        </div><!-- end col -->
+        <div class="col-3">
+            <div class="card position-relative overflow-hidden card-h-100">
+                <div class="position-absolute top-0 end-0 bg-primary-subtle opacity-10 rounded-circle blur-2xl size-32"></div>
+                <img src="assets/images/dashboards/projects/asssign.png" loading="lazy" alt="" class="position-absolute bottom-0 end-1">
+                <div class="card-body position-relative">
+                    <h6 class="mb-3 card-title">Assign a Project</h6>
+                    <div class="mb-3">
+                        <h6>
+                            <span id="completedTasks" data-counter="311" class="counter-value">311</span>+
+                        </h6>
+                        <p class="text-muted">Completed Task</p>
+                    </div>
+                    <div class="mb-3">
+                        <h6>
+                            <span id="assignedTasks" data-counter="594" class="counter-value">594</span>
+                        </h6>
+                        <p class="text-muted">Assigned</p>
+                    </div>
+                    <a href="#!" class="btn btn-primary">Start Now</a>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center gap-2">
+                    <h6 class="card-title flex-grow-1 mb-0">Active Projects</h6>
+                    <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i data-lucide="ellipsis" class="size-5"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#!"><span>Weekly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Monthly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Yearly</span></a></li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <p class="mb-3 text-muted">Average 64% completed</p>
+                    <div class="d-flex flex-column gap-4">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/brands/img-02.png" alt="" class="size-8 flex-shrink-0">
+                            <div class="flex-grow-1 overflow-hidden">
+                                <h6 class="text-truncate mb-0">Domiex Admin &amp; Dashboards</h6>
+                                <p class="text-muted">Project Management</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="progress progress-1 w-24">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 64%;" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <h6 class="mb-0">64%</h6>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/brands/img-08.png" alt="" class="size-8 flex-shrink-0">
+                            <div class="flex-grow-1 overflow-hidden">
+                                <h6 class="text-truncate mb-0">Shopify Ecommerce</h6>
+                                <p class="text-muted">Website</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="progress progress-1 w-24">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 27%;" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <h6 class="mb-0">27%</h6>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/brands/img-07.png" alt="" class="size-8 flex-shrink-0">
+                            <div class="flex-grow-1 overflow-hidden">
+                                <h6 class="text-truncate mb-0">Email Management</h6>
+                                <p class="text-muted">Apps & Web</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                                <div class="progress progress-1 w-24">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 43%;" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <h6 class="mb-0">43%</h6>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/brands/img-06.png" alt="" class="size-8 flex-shrink-0">
+                            <div class="flex-grow-1 overflow-hidden">
+                                <h6 class="text-truncate mb-0">Norton Mobile App</h6>
+                                <p class="text-muted">Application</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="progress progress-1 w-24">
+                                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 100%;" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <h6 class="mb-0">100%</h6>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/brands/img-11.png" alt="" class="size-8 flex-shrink-0">
+                            <div class="flex-grow-1 overflow-hidden">
+                                <h6 class="text-truncate mb-0">React</h6>
+                                <p class="text-muted">Calendar Apps</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="progress progress-1 w-24">
+                                    <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <h6 class="mb-0">0%</h6>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/brands/img-13.png" alt="" class="size-8 flex-shrink-0">
+                            <div class="flex-grow-1 overflow-hidden">
+                                <h6 class="text-truncate mb-0">Email Management</h6>
+                                <p class="text-muted">Apps & Web</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="progress progress-1 w-24">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 72%;" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <h6 class="mb-0">72%</h6>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center gap-2">
+                    <h6 class="card-title flex-grow-1 mb-0">Team Members</h6>
+                    <a href="#!" class="link link-primary flex-shrink-0 text-dark">See All<i class="align-baseline ri-arrow-right-line ms-1"></i></a>
+                </div>
+                <div class="card-body">
+                    <section class="main-simplebar px-5 h-375px" id="customScroll" data-simplebar>
+                        <div class="d-flex gap-3 flex-column">
+                            <div class="p-3 mb-0 card">
+                                <div class="d-flex align-items-center gap-2">
+                                    <img src="assets/images/avatar/user-20.png" loading="lazy" alt="" class="rounded-2 size-10">
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-0"><a href="#" class="text-black">Savion Bogan</a></h6>
+                                        <p class="text-muted">Web Designer</p>
+                                    </div>
+                                    <p class="text-muted">15 Task</p>
+                                </div>
+                            </div>
+                            <div class="p-3 mb-0 card">
+                                <div class="d-flex align-items-center gap-2">
+                                    <img src="assets/images/avatar/user-2.png" loading="lazy" alt="" class="rounded-2 size-10">
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-0"><a href="#" class="text-black">Ella Legros</a></h6>
+                                        <p class="text-muted">UI / UX Designer</p>
+                                    </div>
+                                    <p class="text-muted">74 Task</p>
+                                </div>
+                            </div>
+                            <div class="p-3 mb-0 card">
+                                <div class="d-flex align-items-center gap-2">
+                                    <img src="assets/images/avatar/user-3.png" loading="lazy" alt="" class="rounded-2 size-10">
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-0"><a href="#" class="text-black">Jayce Green</a></h6>
+                                        <p class="text-muted">React Developer</p>
+                                    </div>
+                                    <p class="text-muted">54 Task</p>
+                                </div>
+                            </div>
+                            <div class="p-3 mb-0 card">
+                                <div class="d-flex align-items-center gap-2">
+                                    <img src="assets/images/avatar/user-4.png" loading="lazy" alt="" class="rounded-2 size-10">
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-0"><a href="#" class="text-black">Americo Donnelly</a></h6>
+                                        <p class="text-muted">Asp .Net Developer</p>
+                                    </div>
+                                    <p class="text-muted">98 Task</p>
+                                </div>
+                            </div>
+                            <div class="p-3 mb-0 card">
+                                <div class="d-flex align-items-center gap-2">
+                                    <img src="assets/images/avatar/user-5.png" loading="lazy" alt="" class="rounded-2 size-10">
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-0"><a href="#" class="text-black">Sage Kohler</a></h6>
+                                        <p class="text-muted">Laravel Developer</p>
+                                    </div>
+                                    <p class="text-muted">119 Task</p>
+                                </div>
+                            </div>
+                            <div class="p-3 mb-0 card">
+                                <div class="d-flex align-items-center gap-2">
+                                    <img src="assets/images/avatar/user-6.png" loading="lazy" alt="" class="rounded-2 size-10">
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-0"><a href="#" class="text-black">Alvina Powlowski</a></h6>
+                                        <p class="text-muted">Web Designer</p>
+                                    </div>
+                                    <p class="text-muted">32 Task</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center gap-2">
+                    <h6 class="card-title flex-grow-1 mb-0">Task Activity</h6>
+                    <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i data-lucide="ellipsis" class="size-5"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#!"><span>Weekly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Monthly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Yearly</span></a></li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="position-relative h-64 d-flex justify-content-center align-items-center">
+                        <div class="position-absolute left-28 top-12">
+                            <svg class="size-40" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="50" class="fill-success opacity-75"></circle>
+                                <text x="50%" y="45%" text-anchor="middle" class="fw-semibold" font-size="15px" dy=".3em" fill="white">56.8%</text>
+                                <text x="50%" y="62%" text-anchor="middle" font-size="10px" dy=".3em" fill="white">UI Design</text>
+                            </svg>
+                        </div>
+                        <div class="position-absolute left-2 top-5">
+                            <svg class="size-32" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="50" class="fill-info opacity-75"></circle>
+                                <text x="50%" y="45%" text-anchor="middle" class="fw-semibold" fill="white" font-size="15px" dy=".3em">29.3%</text>
+                                <text x="50%" y="62%" text-anchor="middle" class="fill-sky-50" fill="white" font-size="10px" dy=".3em">Development</text>
+                            </svg>
+                        </div>
+                        <div class="position-absolute left-28 bottom-2">
+                            <svg class="size-24 drop-shadow-xl" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="50" class="fill-warning  opacity-75"></circle>
+                                <text x="50%" y="45%" text-anchor="middle" class="fw-semibold" fill="white" font-size="15px" dy=".3em">12%</text>
+                                <text x="50%" y="65%" text-anchor="middle" font-size="10px" fill="white" dy=".3em">Web Design</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="row mt-4 border-dashed">
+                        <div class="col-12 col-md-4 text-center py-3 border-end">
+                            <h6 class="mb-1">56.8%</h6>
+                            <p class="text-muted">UI Design</p>
+                        </div>
+                        <div class="col-12 col-md-4 text-center py-3 border-end">
+                            <h6 class="mb-1">29.3%</h6>
+                            <p class="text-muted">Development</p>
+                        </div>
+                        <div class="col-12 col-md-4 text-center py-3">
+                            <h6 class="mb-1">12%</h6>
+                            <p class="text-muted">Web Design</p>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-center text-muted">This week task activity by department</p>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <h6 class="mb-3">My Tasks</h6>
+            <div class="basic-tabs">
+                <ul class="nav nav-tabs border-bottom mb-5" id="myJustifyTab" role="tablist">
+                    <li class="nav-item d-flex justify-content-center" role="presentation">
+                        <button class="nav-link active fw-medium" id="justify-home-tab" data-bs-toggle="tab" data-bs-target="#justify-home-tab-pane" type="button" role="tab" aria-controls="justify-home-tab-pane" aria-selected="true">Active Task</button>
+                    </li>
+                    <li class="nav-item d-flex justify-content-center" role="presentation">
+                        <button class="nav-link fw-medium" id="justify-service-tab" data-bs-toggle="tab" data-bs-target="#justify-service-tab-pane" type="button" role="tab" aria-controls="justify-service-tab-pane" aria-selected="false">Completed</button>
+                    </li>
+                    <li class="hidden ms-auto">
+                        <a href="#!" class="btn btn-primary py-1 px-3"><i class="align-baseline ri-add-line ltr:mr-1 rtl:ml-1"></i> Create</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="d-flex flex-column gap-3 flex-md-row align-items-center">
+                        <div class="d-flex justify-content-center align-items-center rounded-2 text-primary bg-primary-subtle size-12 flex-shrink-0">
+                           <i data-lucide="shopping-bag"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="text-black">Ecommerce HTML Template</a></h6>
+                            <div class="d-flex">
+                                <a href="#!" class="pe-3 link link-primary text-dark"><i class="align-baseline me-1 ri-message-3-line"></i> 154 Comments</a>
+                                <a href="#!" class="ps-3 link link-primary text-dark"><i class="align-baseline me-1 ri-file-list-3-line"></i> 2+ Files</a>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <div x-data="myTask1App" data-series="32">
+                                <div class="!min-h-full" data-chart-colors="bg-primary" x-ref="myTask1Chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="d-flex flex-column gap-3 flex-md-row align-items-center">
+                        <div class="d-flex justify-content-center align-items-center rounded-2 text-secondary bg-secondary-subtle size-12 flex-shrink-0">
+                           <i data-lucide="presentation"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="text-black">Project Management Admin</a></h6>
+                            <div class="d-flex">
+                                <a href="#!" class="pe-3 link link-primary text-dark"><i class="align-baseline me-1 ri-message-3-line"></i> 321 Comments</a>
+                                <a href="#!" class="ps-3 link link-primary text-dark"><i class="align-baseline me-1 ri-file-list-3-line"></i> 16+ Files</a>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <div x-data="myTask1App" data-series="45">
+                                <div class="!min-h-full" data-chart-colors="bg-success" x-ref="myTask1Chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="d-flex flex-column gap-3 flex-md-row align-items-center">
+                        <div class="d-flex justify-content-center align-items-center rounded-2 text-success bg-success-subtle size-12 flex-shrink-0">
+                           <i data-lucide="droplets"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="text-black">Dropbox Development</a></h6>
+                            <div class="d-flex">
+                                <a href="#!" class="pe-3 link link-primary text-dark"><i class="align-baseline me-1 ri-message-3-line"></i> 29 Comments</a>
+                                <a href="#!" class="ps-3 link link-primary text-dark"><i class="align-baseline me-1 ri-file-list-3-line"></i> 3+ Files</a>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <div x-data="myTask1App" data-series="79">
+                                <div class="!min-h-full" data-chart-colors="bg-danger" x-ref="myTask1Chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex flex-column gap-3 flex-md-row align-items-center">
+                        <div class="d-flex justify-content-center align-items-center rounded-2 text-info bg-info-subtle size-12 flex-shrink-0">
+                           <i data-lucide="messages-square"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1"><a href="#!" class="text-black">Real Chat Application with Socket</a></h6>
+                            <div class="d-flex">
+                                <a href="#!" class="pe-3 link link-primary text-dark"><i class="align-baseline me-1 ri-message-3-line"></i> 8 Comments</a>
+                                <a href="#!" class="ps-3 link link-primary text-dark"><i class="align-baseline me-1 ri-file-list-3-line"></i> 1+ Files</a>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <div x-data="myTask1App" data-series="100">
+                                <div class="!min-h-full" data-chart-colors="bg-warning" x-ref="myTask1Chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center gap-2">
+                    <h6 class="card-title flex-grow-1 mb-0">Task Lists</h6>
+                    <a href="#!" class="link link-primary flex-shrink-0 text-dark"><i class="align-baseline ri-add-line me-2"></i>Create Task</a>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-column gap-2">
+                        <div class="form-check bg-light p-2 ps-8 rounded-2">
+                            <input id="projectTask1" class="form-check-input" type="checkbox">
+                            <label for="projectTask1" class="form-check-label fw-medium">
+                                Start work on Shot Dribble
+                            </label>
+                        </div>
+                        <div class="form-check bg-light p-2 ps-8 rounded-2">
+                            <input id="projectTask2" class="form-check-input" type="checkbox">
+                            <label for="projectTask2" class="form-check-label fw-medium">
+                                Create wireframes for the new landing page
+                            </label>
+                        </div>
+                        <div class="form-check bg-light p-2 ps-8 rounded-2">
+                            <input id="projectTask3" class="form-check-input" type="checkbox" checked>
+                            <label for="projectTask3" class="form-check-label fw-medium">
+                                Run usability tests on the latest design iteration
+                            </label>
+                        </div>
+                        <div class="form-check bg-light p-2 ps-8 rounded-2">
+                            <input id="projectTask4" class="form-check-input" type="checkbox">
+                            <label for="projectTask4" class="form-check-label fw-medium">
+                                Create more options for navbar
+                            </label>
+                        </div>
+                        <div class="form-check bg-light p-2 ps-8 rounded-2">
+                            <input id="projectTask5" class="form-check-input" type="checkbox" checked>
+                            <label for="projectTask5" class="form-check-label fw-medium">
+                                Create foundation color
+                            </label>
+                        </div>
+                        <div class="form-check bg-light p-2 ps-8 rounded-2">
+                            <input id="projectTask6" class="form-check-input" type="checkbox">
+                            <label for="projectTask6" class="form-check-label fw-medium">
+                                Redesign Homepage + details product
+                            </label>
+                        </div>
+                        <div class="form-check bg-light p-2 ps-8 rounded-2">
+                            <input id="projectTask7" class="form-check-input" type="checkbox">
+                            <label for="projectTask7" class="form-check-label fw-medium">
+                                Landing page animations
+                            </label>
+                        </div>
+                        <div class="form-check bg-light p-2 ps-8 rounded-2">
+                            <input id="projectTask8" class="form-check-input" type="checkbox" checked>
+                            <label for="projectTask8" class="form-check-label fw-medium">
+                                Update review for Client
+                            </label>
+                        </div>
+                        <div class="form-check bg-light p-2 ps-8 rounded-2">
+                            <input id="projectTask9" class="form-check-input" type="checkbox">
+                            <label for="projectTask9" class="form-check-label fw-medium">
+                                Creating App design System
+                            </label>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center gap-2">
+                    <h6 class="card-title flex-grow-1 mb-0">Activity</h6>
+                    <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i data-lucide="ellipsis" class="size-5"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#!"><span>Weekly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Monthly</span></a></li>
+                        <li><a class="dropdown-item" href="#!"><span>Yearly</span></a></li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <section class="main-simplebar px-5 h-400px" id="customScroll" data-simplebar>
+                        <ul class="p-0">
+                            <li class="list-group-item mb-3 ps-5 pb-2 mb-0">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <img src="assets/images/avatar/user-14.png" loading="lazy" alt="" class="rounded-2 size-10">
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-1">Josefina Dach</h6>
+                                        <p class="text-muted mb-0" style="font-size: 13px;">09:32 AM - Today</p>
+                                    </div>
+                                </div>
+                                <h6 class="mb-1">Client Meeting</h6>
+                                <p class="text-muted mb-0">Project meeting with Sophia @11:00AM</p>
+                            </li>                            
+                            <li class="list-group-item mb-3 ps-5 pb-2 mb-0">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <img src="assets/images/avatar/user-16.png" loading="lazy" alt="" class="rounded-2 size-10">
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-1">Zara Russell</h6>
+                                        <p class="text-muted mb-0" style="font-size: 13px;">11:57 AM - Yesterday</p>
+                                    </div>
+                                </div>
+                                <h6 class="mb-1">Commented on <a href="#!" class="link-primary">Chat App</a></h6>
+                                <p class="text-muted mb-0">"Great product but only if you end up using the exact examples in the demos provided."</p>
+                            </li>     
+                            <li class="list-group-item mb-3 ps-5 pb-2 mb-0">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <img src="assets/images/avatar/user-11.png" loading="lazy" alt="" class="rounded-2 size-10">
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-1">Matthew Warner</h6>
+                                        <p class="text-muted mb-0" style="font-size: 13px;">04:55 AM - 19 July, 2024</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3 p-3 border border-dashed border-muted rounded-3">
+                                    <img src="assets/images/brands/img-22.png" loading="lazy" alt="" class="rounded-3" style="width: 36px; height: 36px;">
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-1">Domiex Figma File</h6>
+                                        <p class="text-muted mb-0" style="font-size: 12px;">21 MB</p>
+                                    </div>
+                                </div>
+                                
+                            </li> 
+                            <li class="list-group-item mb-3 ps-5 pb-2 mb-0">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <img src="assets/images/avatar/user-13.png" loading="lazy" alt="" class="rounded-2 size-10">
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-1">Nicole Bentley</h6>
+                                        <p class="text-muted mb-0" style="font-size: 13px;">04:11 PM - 16 July, 2024</p>
+                                    </div>
+                                </div>
+                                <h6 class="mb-1">Commented on <a href="#!" class="link-primary">Create a new project for client</a></h6>
+                                <p class="text-muted mb-0">Add files to new design folder</p>
+                            </li>                          
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div><!-- end col -->
+    </div>
+</div>
+{{> partials/footer}}
+</div>
+</div>
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script type="module" src="assets/js/dashboards/projects.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
