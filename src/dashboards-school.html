@@ -1,0 +1,521 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="School" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+
+{{> partials/topbar}}
+{{> partials/sidebar}}
+
+{{> partials/page-wrapper}}
+
+<div class="container-fluid">
+    {{> partials/page-heading title="School" sub-title="Dashboards" }}
+
+    <div class="row">
+        <div class="col-9">
+            <div class="row">
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center gap-2 mb-8">
+                                        <div class="d-flex align-items-center justify-content-center rounded-2 bg-primary size-7">
+                                            <i data-lucide="graduation-cap" class="size-5 text-white"></i>
+                                        </div>
+                                        <p class="text-muted">Total Students</p>
+                                    </div>
+                                    <h5 class="position-relative d-inline-block mb-1 border-bottom border-2 border-primary pb-1"><span x-data="animatedCounter(1478, 500, 0)" x-init="updateCounter" x-text="Math.round(current)"></span></h5>
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center gap-2 mb-8">
+                                        <div class="d-flex align-items-center justify-content-center rounded-2 bg-orange size-7">
+                                            <i data-lucide="user-round" class="size-5 text-white"></i>
+                                        </div>
+                                        <p class="text-muted">Total Teachers</p>
+                                    </div>
+                                    <h5 class="position-relative d-inline-block mb-1 border-bottom border-2 border-orange pb-1"><span x-data="animatedCounter(120, 500, 0)" x-init="updateCounter" x-text="Math.round(current)"></span></h5>
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center gap-2 mb-8">
+                                        <div class="d-flex align-items-center justify-content-center rounded-2 bg-info size-7">
+                                            <i data-lucide="book-open" class="size-5 text-white"></i>
+                                        </div>
+                                        <p class="text-muted">Total Courses</p>
+                                    </div>
+                                    <h5 class="position-relative d-inline-block mb-1 border-bottom border-2 border-info pb-1"><span x-data="animatedCounter(120, 500, 0)" x-init="updateCounter" x-text="Math.round(current)"></span></h5>
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center gap-2 mb-8">
+                                        <div class="d-flex align-items-center justify-content-center rounded-2 bg-warning size-7">
+                                            <i data-lucide="graduation-cap" class="size-5 text-white"></i>
+                                        </div>
+                                        <p class="text-muted">Class Rooms</p>
+                                    </div>
+                                    <h5 class="position-relative d-inline-block mb-1 border-bottom border-2 border-warning pb-1"><span x-data="animatedCounter(65, 500, 0)" x-init="updateCounter" x-text="Math.round(current)"></span></h5>
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center gap-2 mb-8">
+                                        <div class="d-flex align-items-center justify-content-center rounded-2 bg-pink size-7">
+                                            <i data-lucide="hand-coins" class="size-5 text-white"></i>
+                                        </div>
+                                        <p class="text-muted">Total Earnings</p>
+                                    </div>
+                                    <h5 class="position-relative d-inline-block mb-1 border-bottom border-2 border-pink pb-1">$<span x-data="animatedCounter(487, 500, 0)" x-init="updateCounter" x-text="Math.round(current)"></span>M</h5>
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center gap-2 mb-8">
+                                        <div class="d-flex align-items-center justify-content-center rounded-2 bg-secondary size-7">
+                                            <i data-lucide="medal" class="size-5 text-white"></i>
+                                        </div>
+                                        <p class="text-muted">Awards</p>
+                                    </div>
+                                    <h5 class="position-relative d-inline-block mb-1 border-bottom border-2 border-secondary pb-1"><span x-data="animatedCounter(30, 500, 0)" x-init="updateCounter" x-text="Math.round(current)"></span>+</h5>
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                </div><!-- end col -->
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="card-title mb-0">Course Activities</h6>
+                        </div>
+                        <div class="card-body">
+                            <div x-data="gradientDonutApp" dir="ltr">
+                                <div class="!min-h-full" data-chart-colors="bg-dark-subtle, bg-primary" data-chart-dark-colors="bg-dark, bg-primary" x-ref="gradientDonutChart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-8">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center gap-2">
+                            <h6 class="card-title flex-grow-1 mb-0">Total Students</h6>
+                            <button class="btn btn-link link-primary text-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i data-lucide="ellipsis" class="size-5"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#!"><span>Weekly</span></a></li>
+                                <li><a class="dropdown-item" href="#!"><span>Monthly</span></a></li>
+                                <li><a class="dropdown-item" href="#!"><span>Yearly</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div x-data="dumbbellColumnApp" dir="ltr">
+                                <div class="!min-h-full" data-chart-colors="bg-primary, bg-danger" x-ref="dumbbellColumnChart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="card-title mb-0">Upcoming Test</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex flex-column gap-3">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="d-flex align-items-center justify-content-center rounded bg-orange-subtle opacity-10 size-12">
+                                        <img src="assets/images/school/computer.png" loading="lazy" alt="" class="h-6">
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-1"><a href="#!" class="text-black">Basic Computer</a></h6>
+                                        <p class="text-muted">Class 9</p>
+                                    </div>
+                                    <p class="text-danger flex-shrink-0">26 Dec</p>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="d-flex align-items-center justify-content-center rounded bg-danger-subtle opacity-10 size-12">
+                                        <img src="assets/images/school/chemical.png" loading="lazy" alt="" class="h-6">
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-1"><a href="#!" class="text-black">Science Part 2 Test</a></h6>
+                                        <p class="text-muted">Class 11</p>
+                                    </div>
+                                    <p class="text-danger flex-shrink-0">21 Dec</p>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="d-flex align-items-center justify-content-center rounded bg-danger-subtle opacity-10 size-12">
+                                        <img src="assets/images/school/dictionary.png" loading="lazy" alt="" class="h-6">
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-1"><a href="#!" class="text-black">English Grammar</a></h6>
+                                        <p class="text-muted">Class 12</p>
+                                    </div>
+                                    <p class="text-danger flex-shrink-0">15 Dec</p>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="d-flex align-items-center justify-content-center rounded bg-primary-subtle opacity-10 size-12">
+                                        <img src="assets/images/school/chemical.png" loading="lazy" alt="" class="h-6">
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-1"><a href="#!" class="text-black">Science Part 1 Test</a></h6>
+                                        <p class="text-muted">Class 11</p>
+                                    </div>
+                                    <p class="text-danger flex-shrink-0">03 Dec</p>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="d-flex align-items-center justify-content-center rounded bg-secondary-subtle opacity-10 size-12">
+                                        <img src="assets/images/school/change-management.png" loading="lazy" alt="" class="h-6">
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-1"><a href="#!" class="text-black">Management</a></h6>
+                                        <p class="text-muted">Class 12</p>
+                                    </div>
+                                    <p class="text-danger flex-shrink-0">24 Nov</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="card-title mb-0 flex-grow-1">Top Score</h6>
+                                <button class="btn btn-primary py-1 px-3">View All <i data-lucide="move-right" class="size-4 ms-1"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <table class="table mb-0 table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <td>Dorothy Daley</td>
+                                        <td>498/600</td>
+                                        <td>12 Jan, 2024</td>
+                                        <td>A</td>
+                                        <td><span class="badge bg-success-subtle border border-success-subtle text-success">Pass</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Silvia Hoover</td>
+                                        <td>140/600</td>
+                                        <td>12 Jan, 2024</td>
+                                        <td>D</td>
+                                        <td><span class="badge bg-danger-subtle border border-danger-subtle text-danger">Fail</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jonathan Davis</td>
+                                        <td>450/600</td>
+                                        <td>12 Jan, 2024</td>
+                                        <td>A</td>
+                                        <td><span class="badge bg-success-subtle border border-success-subtle text-success">Pass</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Martha Stewart</td>
+                                        <td>320/600</td>
+                                        <td>12 Jan, 2024</td>
+                                        <td>B</td>
+                                        <td><span class="badge bg-success-subtle border border-success-subtle text-success">Pass</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Harold Finch</td>
+                                        <td>275/600</td>
+                                        <td>12 Jan, 2024</td>
+                                        <td>C</td>
+                                        <td><span class="badge bg-success-subtle border border-success-subtle text-success">Pass</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="d-flex justify-content-between align-items-center mt-5">
+                                <div>
+                                    <p class="text-muted">Showing <b class="me-1">1 - 8</b>of<b class="ms-1">8</b> Results</p>
+                                </div>
+                                <div class="justify-content-end d-flex">
+                                    <nav aria-label="...">
+                                        <ul class="pagination pagination-active-primary d-flex gap-2 mb-0 p-0">
+                                            <li class="page-item pagination-primary disabled">
+                                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                                    <i data-lucide="chevron-left" class="size-5"></i>
+                                                    <span>Prev</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link page-number rounded-2" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link page-number rounded-2" href="#">2</a></li>
+                                            <li class="page-item pagination-primary ">
+                                                <a class="page-link rounded-2 d-flex align-items-center gap-1">
+                                                    <span>Next</span>
+                                                    <i data-lucide="chevron-right" class="size-5"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end col -->
+        <div class="col-3">
+            <div class="card card-h-100">
+                <div class="card-body">
+                    <div class="mb-5">
+                        <h6 class="mb-3">December, 2024</h6>
+                        <section id="customScroll" data-simplebar>
+                            <div class="d-flex gap-2">
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">1</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">2</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">3</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">4</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">5</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">6</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">7</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">8</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">9</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">10</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">11</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">12</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">13</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">14</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">15</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">16</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">17</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">18</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">19</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">20</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">21</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">22</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">23</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">24</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">25</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">27</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">28</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">29</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">30</a>
+                                <a href="#!" class="fs-lg fw-medium rounded-2 size-12 d-flex justify-content-center align-items-center bg-light text-black flex-shrink-0">31</a>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <h6 class="flex-grow-1 mb-0">Holiday Lists</h6>
+                        <a href="#!" class="flex-shrink-0 fs-13 link link-primary text-primary">View More <i data-lucide="move-right" class="size-4"></i></a>
+                    </div>
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper" dir="ltr">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="relative card">
+                                    <div class="d-flex align-items-center gap-3 card-body">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1"><i data-lucide="circle-dot" class="me-1 size-4 icon-success"></i> World Braille Day</h6>
+                                            <p class="text-muted-fs3">04 Jan, 2024</p>
+                                        </div>
+                                        <img src="assets/images/school/holiday.png" alt="" class="flex-shrink-0 size-10">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="relative card">
+                                    <div class="d-flex align-items-center gap-3 card-body">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1"><i data-lucide="circle-dot" class="me-1 size-4 icon-success"></i> Earth Hour</h6>
+                                            <p class="text-muted fs-13">23 March 2024</p>
+                                        </div>
+                                        <img src="assets/images/school/holiday.png" alt="" class="flex-shrink-0 size-10">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="relative card">
+                                    <div class="d-flex align-items-center gap-3 card-body">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1"><i data-lucide="circle-dot" class="me-1 size-4 icon-success"></i> Software Freedom Day</h6>
+                                            <p class="text-muted fs-13">15 Sep 2024</p>
+                                        </div>
+                                        <img src="assets/images/school/holiday.png" alt="" class="flex-shrink-0 size-10">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="relative card">
+                                    <div class="d-flex align-items-center gap-3 card-body">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1"><i data-lucide="circle-dot" class="me-1 size-4 icon-success"></i> Inventors Day</h6>
+                                            <p class="text-muted fs-13">29 Sep 2024</p>
+                                        </div>
+                                        <img src="assets/images/school/holiday.png" alt="" class="flex-shrink-0 size-10">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="relative card">
+                                    <div class="d-flex align-items-center gap-3 card-body">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1"><i data-lucide="circle-dot" class="me-1 size-4 icon-success"></i> World Teacher's Day</h6>
+                                            <p class="text-muted fs-13">05 Oct 2024</p>
+                                        </div>
+                                        <img src="assets/images/school/holiday.png" alt="" class="flex-shrink-0 size-10">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="relative card">
+                                    <div class="d-flex align-items-center gap-3 card-body">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1"><i data-lucide="circle-dot" class="me-1 size-4 icon-success"></i> Human Rights Day</h6>
+                                            <p class="text-muted">10 Dec 2024</p>
+                                        </div>
+                                        <img src="assets/images/school/holiday.png" alt="" class="flex-shrink-0 size-10">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- end Swiper -->
+                    <div class="position-relative">
+                        <h6 class="mb-4">Notice Board</h6>
+                        <div class="d-flex flex-column gap-5">
+                            <div class="d-flex alignitems-center gap-3">
+                                <img src="assets/images/school/blog/img-05.jpg" alt="" class="object-fit-cover w-16 h-20 rounded-2">
+                                <div>
+                                    <h6 class="mb-2 line-clamp-2"><a href="#!" class="text-black link link-primary">Beginning or end of the school year</a></h6>
+                                    <p class="text-muted">By Erwin Legros</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="assets/images/school/blog/img-03.jpg" alt="" class="object-fit-cover w-16 h-20 rounded-2">
+                                <div>
+                                    <h6 class="mb-2 line-clamp-2"><a href="#!" class="text-black link link-primary">Motivational or inspirational quotes</a></h6>
+                                    <p class="text-muted">By Ardith Bode</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="assets/images/school/blog/img-04.jpg" alt="" class="object-fit-cover w-16 h-20 rounded-2">
+                                <div>
+                                    <h6 class="mb-2 line-clamp-2"><a href="#!" class="text-black link link-primary">Examination & Parent - Teacher Meeting</a></h6>
+                                    <p class="text-muted">By Gerhard Boyle</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="assets/images/school/blog/img-02.jpg" alt="" class="object-fit-cover w-16 h-20 rounded-2">
+                                <div>
+                                    <h6 class="mb-2 line-clamp-2"><a href="#!" class="text-black link link-primary">Elementary school student activities</a></h6>
+                                    <p class="text-muted">By Maci Crist</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="assets/images/school/blog/img-01.jpg" alt="" class="object-fit-cover w-16 h-20 rounded-2">
+                                <div>
+                                    <h6 class="mb-2 line-clamp-2"><a href="#!" class="text-black link link-primary">Random acts of kindness board compare and contrast</a></h6>
+                                    <p class="text-muted">By Ruthie Blanda</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="assets/images/school/blog/img-06.jpg" alt="" class="object-fit-cover w-16 h-20 rounded-2">
+                                <div>
+                                    <h6 class="mb-2 line-clamp-2"><a href="#!" class="text-black link link-primary">A Book a Day Keeps the Monsters Away</a></h6>
+                                    <p class="text-muted">By Magnus Miller</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="assets/images/school/blog/img-07.jpg" alt="" class="object-fit-cover w-16 h-20 rounded-2">
+                                <div>
+                                    <h6 class="mb-2 line-clamp-2"><a href="#!" class="text-black link link-primary">Student Work Coming Bulletin Board</a></h6>
+                                    <p class="text-muted">By Jeremie Thiel</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="assets/images/school/blog/img-08.jpg" alt="" class="object-fit-cover w-16 h-20 rounded-2">
+                                <div>
+                                    <h6 class="mb-2 line-clamp-2"><a href="#!" class="text-black link link-primary">Add a Little Sunshine to Someone’s Day</a></h6>
+                                    <p class="text-muted">By Treva Trantow</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-9">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title mb-0">Continue Watching <i data-lucide="move-right" class="size-4 ms-1"></i></h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="ratio ratio-16x9 w-100">
+                                <iframe src="https://www.youtube.com/embed/CLkxRnRQtDE?si=8XmGYZHT5WeTmNG9" title="YouTube video" allowfullscreen class="rounded-2"></iframe>
+                            </div>
+                            <div class="mt-3">
+                                <h6 class="mb-1 text-truncate"><a href="#!" class="text-black">Tailwind Connect 2023</a></h6>
+                                <p class="fs-12 text-muted">TailwindCSS</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="ratio ratio-16x9 w-100">
+                                <iframe src="https://www.youtube.com/embed/mSC6GwizOag?si=Dqcl3RgGrfRyqmHo" title="YouTube video" allowfullscreen class="rounded-2"></iframe>
+                            </div>
+                            <div class="mt-3">
+                                <h6 class="mb-1 text-truncate"><a href="#!" class="text-black">What's new in Tailwind CSS v3.0?</a></h6>
+                                <p class="fs-12 text-muted">TailwindCSS</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="ratio ratio-16x9 w-100">
+                                <iframe src="https://www.youtube.com/embed/RZ9cWr3tY9w?si=J6KavpQC6n9gaC64" title="YouTube video" allowfullscreen class="rounded-2"></iframe>
+                            </div>
+                            <div class="mt-3">
+                                <h6 class="mb-1 text-truncate"><a href="#!" class="text-black">Controlling Stacking Contexts with Isolation Utilities</a></h6>
+                                <p class="fs-12 text-muted">TailwindCSS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+        <div class="col-3">
+            <div class="card card-h-100">
+                <div class="card-body text-center bg-light">
+                    <h5 class="mb-2 lh-base">Join the community and find out more information</h5>
+                    <button type="button" class="btn btn-success">Explore Now</button>
+                    <div class="mt-5">
+                        <img src="assets/images/dashboards/school.png" loading="lazy" alt="" class="mx-auto d-block h-44">
+                    </div>
+                </div>                
+            </div>
+        </div><!-- end col -->
+    </div><!-- end row -->
+</div>
+{{> partials/footer}}
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<script type="module" src="assets/js/dashboards/school.init.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

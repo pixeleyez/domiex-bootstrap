@@ -24,7 +24,7 @@
         <div class="col-3">
             <div class="card">
                 <div class="card-body d-flex flex-column">
-                    <h6>Search for a Question</h6>
+                    <h6 class="mb-0">Search for a Question</h6>
                     <p class="mb-3 text-muted">Type your question or search keyword</p>
                     <div class="position-relative mb-4">
                         <input type="text" id="iconWithInput" class="form-control ps-9 pe-5" placeholder="Start typing ...">
@@ -33,75 +33,934 @@
                         </div>
                     </div>
 
-                    <section class=" simplebar-height" id="customScroll" data-simplebar>
-                        <ul class="nav nav-pills flex-column mb-4" id="myTabs" role="tablist">
+                    <section class="helpCenter-tabHeight helpCenter-tab" id="customScroll" data-simplebar>
+                        <ul class="nav nav-pills flex-column d-flex gap-2 mb-4 pe-0" id="myTabs" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <a class="active btn btn-sub-primary" id="tab1" data-bs-toggle="pill" href="#content1" role="tab" aria-controls="content1" aria-selected="true">
+                                <a class="nav-link active" id="tab1" data-bs-toggle="pill" href="#content1" role="tab" aria-controls="content1" aria-selected="true">
                                     Getting Started
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">5</span>
                                 </a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="tab2" data-bs-toggle="pill" href="#content2" role="tab" aria-controls="content2" aria-selected="false">
-                                    FAQ
+                                <a class="nav-link fw-medium" id="tab2" data-bs-toggle="pill" href="#content2" role="tab" aria-controls="content2" aria-selected="false">
+                                    Account with Card
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">3</span>
                                 </a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="tab3" data-bs-toggle="pill" href="#content3" role="tab" aria-controls="content3" aria-selected="false">
-                                    Troubleshooting
+                                <a class="nav-link fw-medium" id="tab3" data-bs-toggle="pill" href="#content3" role="tab" aria-controls="content3" aria-selected="false">
+                                    Licenses Policy
+                                </a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link fw-medium" id="tab3" data-bs-toggle="pill" href="#content3" role="tab" aria-controls="content3" aria-selected="false">
+                                    Customize Templates
+                                </a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link fw-medium" id="tab3" data-bs-toggle="pill" href="#content3" role="tab" aria-controls="content3" aria-selected="false">
+                                    Customize Layouts
                                 </a>
                             </li>
                         </ul>
                     </section>
-
                     <!-- closed Us Section -->
-                    <div class="position-relative px-4 py-3 rounded bg-primary text-white mt-4">
+                    <div class="position-relative px-4 py-3 rounded bg-primary text-white mt-4 overflow-hidden">
                         <h6 class="mb-4">Do you still need our help?</h6>
-                        <button data-modal-target="closedModal" class="btn btn-primary text-white position-relative">
-                            <span class="d-inline-block position-absolute inset-0 overflow-hidden rounded-xl">
-                                <span class="d-inline-block position-absolute inset-0 rounded-xl bg-gradient opacity-0 transition-opacity duration-500 group-hover/effect:opacity-100"></span>
+                        <button class="btn btn-primary position-relative border-0 helpcenter-contactBtn z-3">
+                            <span class="position-absolute top-0 start-0 bottom-0 end-0 overflow-hidden">
+                                <span class="position-absolute top-0 start-0 bottom-0 end-0 background-hover"></span>
                             </span>
-                            <span>closed Us
-                                <i data-lucide="move-right" class="size-4"></i>
-                            </span>
+                            <span>Contact Us <i data-lucide="move-right" class="size-4 ms-1"></i></span>
                         </button>
+                        <div class="position-absolute bottom-0 end-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="300" height="160" preserveAspectRatio="none" viewBox="0 0 300 160" class="opacity-10">
+                                <g mask="url(&quot;#SvgjsMask1016&quot;)" fill="none">
+                                    <path d="M161.32 191.44C190.36 168.14 173.39 56.82 222.5 55.64 271.61 54.46 310.21 119.21 344.86 121.24" stroke="white" stroke-width="2"></path>
+                                    <path d="M103.48 160.94C139.34 155.85 149.02 78.76 217.61 71.68 286.2 64.6 298.91 8.36 331.74 6.08" stroke="white" stroke-width="2"></path>
+                                    <path d="M118.76 180.58C146.95 179.59 162.2 139.63 222.03 135.17 281.86 130.71 293.38 62.42 325.3 58.37" stroke="white" stroke-width="2"></path>
+                                    <path d="M96.26 168.19C127.98 167.05 145.97 121.03 212.32 116.71 278.68 112.39 293.56 41.87 328.39 38.31" stroke="white" stroke-width="2"></path>
+                                    <path d="M50.02 170.02C76.2 169.48 99.14 134.5 148.57 134.49 198 134.48 197.84 154.49 247.12 154.49 296.39 154.49 320.53 134.59 345.67 134.49" stroke="white" stroke-width="2"></path>
+                                </g>
+                                <defs>
+                                    <mask id="SvgjsMask1016">
+                                        <rect width="300" height="160" fill="#ffffff"></rect>
+                                    </mask>
+                                </defs>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-9">
             <div class="basic-tabs">
-                <ul class="nav nav-tabs px-3" id="myJustifyTab" role="tablist">
-                    <li class="nav-item " role="presentation">
-                        <button class="nav-link active fw-medium" id="justify-allTickets-tab" data-bs-toggle="tab" data-bs-target="#justify-allTickets-tab-pane" type="button" role="tab" aria-controls="justify-allTickets-tab-pane" aria-selected="true">All Tickets</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link fw-medium" id="justify-active-tab" data-bs-toggle="tab" data-bs-target="#justify-active-tab-pane" type="button" role="tab" aria-controls="justify-active-tab-pane" aria-selected="false">Active</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link fw-medium" id="justify-closed-tab" data-bs-toggle="tab" data-bs-target="#justify-closed-tab-pane" type="button" role="tab" aria-controls="justify-closed-tab-pane" aria-selected="false">Closed</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link fw-medium" id="justify-delete-tab" data-bs-toggle="tab" data-bs-target="#justify-delete-tab-pane" type="button" role="tab" aria-controls="justify-delete-tab-pane" aria-selected="false">Deleted</button>
-                    </li>
-                </ul>
+                <div class="d-flex justify-content-between align-items-center">
+                    <ul class="nav nav-tabs px-3" id="myJustifyTab" role="tablist">
+                        <li class="nav-item " role="presentation">
+                            <button class="nav-link active fw-medium" id="justify-allTickets-tab" data-bs-toggle="tab" data-bs-target="#justify-allTickets-tab-pane" type="button" role="tab" aria-controls="justify-allTickets-tab-pane" aria-selected="true">All Tickets</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-medium" id="justify-active-tab" data-bs-toggle="tab" data-bs-target="#justify-active-tab-pane" type="button" role="tab" aria-controls="justify-active-tab-pane" aria-selected="false">Active</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-medium" id="justify-closed-tab" data-bs-toggle="tab" data-bs-target="#justify-closed-tab-pane" type="button" role="tab" aria-controls="justify-closed-tab-pane" aria-selected="false">Closed</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-medium" id="justify-delete-tab" data-bs-toggle="tab" data-bs-target="#justify-delete-tab-pane" type="button" role="tab" aria-controls="justify-delete-tab-pane" aria-selected="false">Deleted</button>
+                        </li>
+                    </ul>
+                    <button class="btn btn-info d-flex align-items-center btn-icon-overlay position-relative">
+                        <span class="icon"><i class="ri-pencil-line size-4"></i></span>New Tickets
+                    </button>
+                </div>
 
                 <div class="tab-content mt-4" id="myJustifyTabContent">
                     <div class="tab-pane  show active" id="justify-allTickets-tab-pane" role="tabpanel" aria-labelledby="justify-allTickets-tab" tabindex="0">
-                        <div class="card">
-                            <div class="card-body">
-                                
+                        <section class="helpCenter-Content helpCenter-tab" id="customScroll" data-simplebar>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0001</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">12:49 AM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li>
+                                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a>
+                                                    </li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal">
+                                                        <a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">How to Change Primary Colors?</a></h6>
+                                        <p class="text-muted line-clamp-2">It seems like you want to change the primary colors defined in your Tailwind CSS configuration. In your current configuration, you have defined primary colors with various shades ranging from 50 to 950. If you want to change these colors, you can simply replace the hex values with the ones you desire.</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-1.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Mary Smith</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Design</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Customize</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>2</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0002</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">11:20 AM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">How to Change Font Family?</a></h6>
+                                        <p class="text-muted line-clamp-2">To change the font family for the body text in your Tailwind CSS configuration, you would modify the 'body' key within the fontFamily object. Here's how you can do it:</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-15.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Maribel White</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Design</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Customize</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>3</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0003</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">02:36 PM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">How to enable dark mode in Tailwind CSS?</a></h6>
+                                        <p class="text-muted line-clamp-2">To enable dark mode in Tailwind CSS, update your tailwind.config.js file with the darkMode option. You can choose between two different dark mode strategies: media or class.</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-18.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Jennifer White</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Design</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Customize</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>2</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0004</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">09:15 AM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">Responsive Design Tips?</a></h6>
+                                        <p class="text-muted line-clamp-2">Can someone provide tips on making a design responsive using Tailwind CSS? I've been struggling with making my layouts adjust properly on different screen sizes.</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-2.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">John Doe</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Design</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Responsive</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>4</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0005</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">01:45 PM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">Customizing Tailwind CSS with Plugins?</a></h6>
+                                        <p class="text-muted line-clamp-2">I'm interested in customizing Tailwind CSS with plugins. What are some useful plugins and how can I integrate them into my project?</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-3.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Jane Roe</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Plugins</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Customize</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>5</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0006</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">04:30 PM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">Best Practices for Utility-First CSS?</a></h6>
+                                        <p class="text-muted line-clamp-2">What are some best practices for using a utility-first CSS framework like Tailwind? I'm new to this approach and would appreciate any guidance.</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-5.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Alice Johnson</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Best Practices</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">CSS</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>5</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0007</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">07:20 PM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">Integrating Tailwind with React?</a></h6>
+                                        <p class="text-muted line-clamp-2">Can anyone share their experience or resources on integrating Tailwind CSS with a React project? I'm looking for efficient ways to manage styles in my React components.</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-6.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Bob Brown</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">React</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Integration</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>3</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0008</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">06:45 AM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">Animations in Tailwind CSS?</a></h6>
+                                        <p class="text-muted line-clamp-2">Is it possible to create animations using Tailwind CSS? If so, what are some examples or resources to get started with creating animations?</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-7.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Charlie Davis</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Animations</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">CSS</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>2</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0009</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">10:50 AM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">Using Tailwind with SASS?</a></h6>
+                                        <p class="text-muted line-clamp-2">Has anyone tried using Tailwind CSS with SASS? I'm curious about how to set it up and any potential issues I might run into.</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-8.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Dana Evans</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">SASS</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">CSS</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>3</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0010</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">08:35 PM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">Performance Optimization in Tailwind?</a></h6>
+                                        <p class="text-muted line-clamp-2">I'm looking for tips on optimizing the performance of a Tailwind CSS project. Are there any specific techniques or tools I should use?</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-9.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Eve Foster</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Performance</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Optimization</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>4</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </section>
                     </div>
                     <div class="tab-pane " id="justify-active-tab-pane" role="tabpanel" aria-labelledby="justify-active-tab" tabindex="0">
-                        <p class="text-dark">A active administrator is responsible for overseeing all aspects of the work order for a active department. Your job duties include coordinating with the active manager on the completion of customer work orders, putting together billing for work completed, and reviewing time cards for active employees.</p>
+                        <section class="helpCenter-Content helpCenter-tab" id="customScroll" data-simplebar>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0001</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">12:49 AM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">How to Change Primary Colors?</a></h6>
+                                        <p class="text-muted line-clamp-2">It seems like you want to change the primary colors defined in your Tailwind CSS configuration. In your current configuration, you have defined primary colors with various shades ranging from 50 to 950. If you want to change these colors, you can simply replace the hex values with the ones you desire.</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-1.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Mary Smith</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Design</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Customize</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>2</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0004</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">09:15 AM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">Responsive Design Tips?</a></h6>
+                                        <p class="text-muted line-clamp-2">Can someone provide tips on making a design responsive using Tailwind CSS? I've been struggling with making my layouts adjust properly on different screen sizes.</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-2.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">John Doe</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Design</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Responsive</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>4</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0005</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">01:45 PM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">Customizing Tailwind CSS with Plugins?</a></h6>
+                                        <p class="text-muted line-clamp-2">I'm interested in customizing Tailwind CSS with plugins. What are some useful plugins and how can I integrate them into my project?</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-3.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Jane Roe</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Plugins</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Customize</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>1</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0007</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">07:20 PM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">Integrating Tailwind with React?</a></h6>
+                                        <p class="text-muted line-clamp-2">Can anyone share their experience or resources on integrating Tailwind CSS with a React project? I'm looking for efficient ways to manage styles in my React components.</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-4.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Bob Brown</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">React</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Integration</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>3</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0009</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">10:50 AM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">Using Tailwind with SASS?</a></h6>
+                                        <p class="text-muted line-clamp-2">Has anyone tried using Tailwind CSS with SASS? I'm curious about how to set it up and any potential issues I might run into.</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-5.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Dana Evans</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">SASS</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">CSS</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>3</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
                     <div class="tab-pane " id="justify-closed-tab-pane" role="tabpanel" aria-labelledby="justify-closed-tab" tabindex="0">
-                        <p class="text-dark">The official business definition of a closed Administrator is an individual responsible for managing the closed database of an organization. This includes the maintenance of closed information, the creation of closed groups, and the organization of closed information into categories.</p>
+                        <section class="helpCenter-Content helpCenter-tab" id="customScroll" data-simplebar>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0002</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">11:20 AM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">How to Change Font Family?</a></h6>
+                                        <p class="text-muted line-clamp-2">To change the font family for the body text in your Tailwind CSS configuration, you would modify the 'body' key within the fontFamily object. Here's how you can do it:</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-15.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Maribel White</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Design</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Customize</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>3</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0006</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">04:30 PM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">Best Practices for Utility-First CSS?</a></h6>
+                                        <p class="text-muted line-clamp-2">What are some best practices for using a utility-first CSS framework like Tailwind? I'm new to this approach and would appreciate any guidance.</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-4.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Alice Johnson</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Best Practices</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">CSS</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>5</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0008</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">06:45 AM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">Animations in Tailwind CSS?</a></h6>
+                                        <p class="text-muted line-clamp-2">Is it possible to create animations using Tailwind CSS? If so, what are some examples or resources to get started with creating animations?</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-6.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Charlie Davis</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Animations</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">CSS</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>2</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0010</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">08:35 PM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">Performance Optimization in Tailwind?</a></h6>
+                                        <p class="text-muted line-clamp-2">I'm looking for tips on optimizing the performance of a Tailwind CSS project. Are there any specific techniques or tools I should use?</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-8.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Eve Foster</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Performance</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Optimization</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>4</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
                     <div class="tab-pane " id="justify-delete-tab-pane" role="tabpanel" aria-labelledby="justify-delete-tab" tabindex="0">
-                        <p class="text-dark">The official business definition of a closed Administrator is an individual responsible for managing the closed database of an organization. This includes the maintenance of closed information, the creation of closed groups, and the organization of closed information into categories.</p>
+                        <section class="helpCenter-Content helpCenter-tab" id="customScroll" data-simplebar>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-5 mb-4">
+                                            <h6 class="flex-grow-1 mb-0">
+                                                <a href="#" class="text-black">Ticket #2023-0003</a>
+                                            </h6>
+                                            <div class="d-flex align-items-center gap-4">
+                                                <p class="text-sm text-muted">02:36 PM</p>
+                                                <button class="btn btn-link p-0 text-black" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" title="dropdown-button">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                    <li><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>Reply Task</span></a></li>
+                                                    <li data-bs-toggle="modal" data-bs-target="#addcontactModal"><a href="#!" class="dropdown-item d-flex gap-3 align-items-center"><span>More Details</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-1"><a href="#" class="text-black">How to enable dark mode in Tailwind CSS?</a></h6>
+                                        <p class="text-muted line-clamp-2">To enable dark mode in Tailwind CSS, update your tailwind.config.js file with the darkMode option. You can choose between two different dark mode strategies: media or class.</p>
+                                        <div class="d-flex flex-wrap align-items-center gap-4 mt-5">
+                                            <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                                <img src="assets/images/avatar/user-18.png" alt="" class="rounded-circle size-8">
+                                                <h6 class="mb-0">Jennifer White</h6>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Help</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Design</a>
+                                                <a href="#" class="p-1 text-muted hover-text-primary">Customize</a>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="#" class="text-muted hover-text-primary">
+                                                    <i class="ri-chat-3-line align-middle size-5 me-1"></i> <span>2</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
+                </div>
+            </div>
+            <div class="ticket">
+                <div class="d-flex align-items-center gap-5 mb-4">
+                    <div class="flex-grow-1">
+                        <h5 class="mb-1"><a href="#!" class="fs-lg text-black">Ticket #2023-0001</a></h5>
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="text-muted">
+                                <i data-lucide="user-round" class="size-4 me-1"></i>
+                                <a href="#!" class="text-dark">Mary Smith</a>
+                            </span>
+                            <span class="text-muted">
+                                <i data-lucide="calendar" class="size-4 me-1"></i> 19 Feb, 2024
+                            </span>
+                            <span class="badge bg-success-subtle text-success">Active</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-muted cursor-pointer">Close</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <section class="helpCenter-Ticket helpCenter-tab" id="customScroll" data-simplebar>
+                        <div class="p-5 space-y-4">
+                            <div>
+                                <h5 class="mb-1">How to Change primary Colors?</h5>
+                                <p class="text-muted">It seems like you want to change the primary colors defined in your Tailwind CSS configuration. In your current configuration, you have defined primary colors with various shades ranging from 50 to 950. If you want to change these colors, you can simply replace the hex values with the ones you desire.</p>
+                            </div>
+
+                            <div class="d-flex gap-2 mt-4">
+                                <img src="https://dmaxxx.netlify.app/assets/images/user-1.png" alt="" class="rounded-3 size-10">
+                                <div class="space-y-2">
+                                    <p class="text-muted">To enable dark mode in Tailwind CSS, update your <span class="text-pink">tailwind.config.js</span> file with the <span class="text-pink">darkMode</span> option. You can choose between two different dark mode strategies: <span class="text-pink">[data-mode="dark"]</span> or <span class="text-pink">class</span>.</p>
+                                    <p class="text-muted">Using <span class="text-pink">[data-mode="dark"]</span>, the dark mode is enabled based on the user's operating system preference:</p>
+                                    <pre class=""><deckgo-highlight-code lang="js" class="mb-0"><code slot="code">module.exports = {
+darkMode: ['[data-mode="dark"]'],
+// ...
+}</code>
+</deckgo-highlight-code>
+</pre>
+                                    <p class="text-muted">Using <span class="text-pink">class</span>, the dark mode is enabled by adding a <span class="text-pink">.dark</span> class to an ancestor element of your components:</p>
+                                    <pre class=""><deckgo-highlight-code lang="js" class="mb-0"><code slot="code">module.exports = {
+darkMode: ['class'],
+// ...
+}</code>
+</deckgo-highlight-code>
+</pre>
+
+                                    <p class="text-muted">To apply styles for dark mode, simply prefix your utility classes with <span class="text-pink">dark:</span> followed by the desired state variant, if any.</p>
+                                    <p class="text-muted mt-2">For example, if you want to change the background color of an element in dark mode, you can use the following code:</p>
+                                    <pre class="mb-0"><deckgo-highlight-code lang="js" class="mb-0"><code slot="code">&lt;div class=&quot;bg-white dark:bg-gray-800&quot;&gt;
+&lt;!-- Your content here --&gt;
+&lt;/div&gt;</code>
+                                </deckgo-highlight-code>
+                                </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="javascript:void(0);" class="p-5 pt-0">
+                            <h5 class="mb-2">Comment</h5>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="textareaInput2" class="form-label">Your Reply</label>
+                                        <textarea name="textareaInput2" id="textareaInput2" rows="3" class="form-control" placeholder="Enter your description"></textarea>
+                                    </div>
+                                </div><!--end col-->
+                                <div class="text-end">
+                                    <button class="btn btn-primary" onclick="addMessage(newMessage) && (newMessage = '')">
+                                        Reply Now
+                                        <i data-lucide="move-right" class="size-4 ms-1"></i>
+                                    </button>
+                                </div>
+                            </div><!--end row-->
+                        </form>
+                    </section>
                 </div>
             </div>
         </div>
@@ -112,6 +971,8 @@
 </div>
 
 {{> partials/vendor-scripts}}
+
+<script type="module" src="assets/libs/@deckdeckgo/highlight-code/deckdeckgo-highlight-code/deckdeckgo-highlight-code.esm.js"></script>
 
 <script src="assets/js/pages/help-center.init.js"></script>
 

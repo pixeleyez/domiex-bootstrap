@@ -1,0 +1,30 @@
+.music-bg{
+    @include position(absolute, 0, 0, 0, 0);
+    background: linear-gradient(to bottom right, rgba($pink-500, .15), rgba($warning-500, .15), rgba($success-500, .15));
+}
+.music-templateBg{
+    background: linear-gradient(to right, var(--#{$prefix}primary), var(--#{$prefix}secondary), var(--#{$prefix}pink)); 
+}
+.playAll-btn{
+    border-radius: 20px 7px 20px 7px;
+}
+.play-btn{
+    transition: $transition-base;
+    &:hover{
+        background-color: #fff;
+        box-shadow: $box-shadow-sm;
+    }
+}
+.opacity-hover{
+    opacity: 0;
+    transition: $transition-base;
+    &:hover{
+        opacity: 1;
+    }
+}
+.upgrade-bg {
+    background: linear-gradient(to top right, rgba(var(--#{$prefix}info-rgb), 0.15), rgba(var(--#{$prefix}secondary-rgb), 0.15), rgba(var(--#{$prefix}primary-rgb), 0.15));
+}
+.backdrop-blur-lg{
+    backdrop-filter: blur(16px);
+}
