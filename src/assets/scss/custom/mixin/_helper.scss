@@ -15,32 +15,40 @@
 
 @mixin position($position: relative, $top: null, $right: null, $bottom: null, $left: null) {
     position: $position;
+
     // Only apply top if a value is provided
     @if $top !=null {
         top: $top;
     }
+
     // Only apply right if a value is provided
     @if $right !=null {
         right: $right;
     }
+
     // Only apply bottom if a value is provided
     @if $bottom !=null {
         bottom: $bottom;
     }
+
     // Only apply left if a value is provided
     @if $left !=null {
         left: $left;
     }
 }
-.font-base{
+
+.font-base {
     font-family: "Inter", sans-serif;
 }
+
 .cursor-pointer {
     cursor: pointer;
 }
-.top-24{
+
+.top-24 {
     top: 6rem;
 }
-h6{
+
+h6 {
     line-height: 1.5;
 }

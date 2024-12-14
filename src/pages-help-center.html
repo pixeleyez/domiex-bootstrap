@@ -67,7 +67,7 @@
                     <!-- closed Us Section -->
                     <div class="position-relative px-4 py-3 rounded bg-primary text-white mt-4 overflow-hidden">
                         <h6 class="mb-4">Do you still need our help?</h6>
-                        <button class="btn btn-primary position-relative border-0 helpcenter-contactBtn z-3">
+                        <button class="btn btn-primary position-relative border-0 helpcenter-contactBtn z-3" data-bs-toggle="modal" data-bs-target="#contactModal">
                             <span class="position-absolute top-0 start-0 bottom-0 end-0 overflow-hidden">
                                 <span class="position-absolute top-0 start-0 bottom-0 end-0 background-hover"></span>
                             </span>
@@ -110,7 +110,7 @@
                             <button class="nav-link fw-medium" id="justify-delete-tab" data-bs-toggle="tab" data-bs-target="#justify-delete-tab-pane" type="button" role="tab" aria-controls="justify-delete-tab-pane" aria-selected="false">Deleted</button>
                         </li>
                     </ul>
-                    <button class="btn btn-info d-flex align-items-center btn-icon-overlay position-relative">
+                    <button class="btn btn-info d-flex align-items-center btn-icon-overlay position-relative" data-bs-toggle="modal" data-bs-target="#newTicketsModal">
                         <span class="icon"><i class="ri-pencil-line size-4"></i></span>New Tickets
                     </button>
                 </div>
@@ -915,10 +915,10 @@
                             </div>
 
                             <div class="d-flex gap-2 mt-4">
-                                <img src="https://dmaxxx.netlify.app/assets/images/user-1.png" alt="" class="rounded-3 size-10">
+                                <img src="assets/images/avatar/user-1.png" alt="" class="rounded-3 size-10">
                                 <div class="space-y-2">
                                     <p class="text-muted">To enable dark mode in Tailwind CSS, update your <span class="text-pink">tailwind.config.js</span> file with the <span class="text-pink">darkMode</span> option. You can choose between two different dark mode strategies: <span class="text-pink">[data-mode="dark"]</span> or <span class="text-pink">class</span>.</p>
-                                    <p class="text-muted">Using <span class="text-pink">[data-mode="dark"]</span>, the dark mode is enabled based on the user's operating system preference:</p>
+                                    <p class="text-muted mt-2">Using <span class="text-pink">[data-mode="dark"]</span>, the dark mode is enabled based on the user's operating system preference:</p>
                                     <pre class=""><deckgo-highlight-code lang="js" class="mb-0"><code slot="code">module.exports = {
 darkMode: ['[data-mode="dark"]'],
 // ...
@@ -961,6 +961,126 @@ darkMode: ['class'],
                             </div><!--end row-->
                         </form>
                     </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Ticket Modal -->
+    <div class="modal fade" id="newTicketsModal" tabindex="-1" aria-labelledby="newTicketsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-2xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="mb-0">Create New Ticket</h6>
+                    <button type="button" class="btn-close link link-danger text-black" data-bs-dismiss="modal" aria-label="Close"><i data-lucide="x" class="size-5"></i></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#!" x-data="{
+                            taskTitleInput: '', projectNameInput: '', descriptionInput2: '', multipleSelect: '', assignedToSelect: '', phomenoInput: '',
+                            errors: {},
+        
+                            validate() {
+                                this.errors = {};
+                                if (!this.taskTitleInput) this.errors.taskTitleInput = 'Title is required.';
+                                if (!this.projectNameInput) this.errors.projectNameInput = 'Project Name is required.';
+                                if (!this.descriptionInput2) this.errors.descriptionInput2 = 'description is required.';
+                                if (!this.multipleSelect) this.errors.multipleSelect = 'Keywords is required.';
+                                if (!this.assignedToSelect) this.errors.assignedToSelect = 'Assignees is required.';
+                                if (!this.phomenoInput) this.errors.phomenoInput = 'phone is required.';
+                                return Object.keys(this.errors).length === 0;
+                            },
+        
+                            clearError(field) {
+                                this.errors[field] = '';
+                            }
+                        }" @submit.prevent="if(validate()) { alert('Form is valid!') }">
+                        <div class="row g-5">
+                            <div class="col-6">
+                                <label for="taskTitleInput" class="form-label fw-medium">Task Title</label>
+                                <input type="text" id="taskTitleInput" class="form-control" placeholder="" x-model="taskTitleInput" @input="clearError('taskTitleInput')">
+                                <p x-show="errors.taskTitleInput" class="text-sm text-danger" x-text="errors.taskTitleInput"></p>
+                            </div>
+                            <div class="col-6">
+                                <label for="projectNameInput" class="form-label fw-medium">Project Name</label>
+                                <input type="text" id="projectNameInput" class="form-control" placeholder="" x-model="projectNameInput" @input="clearError('projectNameInput')">
+                                <p x-show="errors.projectNameInput" class="text-sm text-danger" x-text="errors.projectNameInput"></p>
+                            </div>
+                            <div class="col-12">
+                                <label for="descriptionInput2" class="form-label fw-medium">Description</label>
+                                <textarea name="descriptionInput2" id="descriptionInput2" rows="3" class="form-control" placeholder="" x-model="descriptionInput2" @input="clearError('descriptionInput2')"></textarea>
+                                <p x-show="errors.descriptionInput2" class="text-sm text-danger" x-text="errors.descriptionInput2"></p>
+                            </div>
+                            <div class="col-6">
+                                <label for="multipleSelect" class="form-label fw-medium">Keywords</label>
+                                <div id="multipleSelect" x-model="multipleSelect" @input="clearError('multipleSelect')"></div>
+                                <p x-show="errors.multipleSelect" class="text-sm text-danger" x-text="errors.multipleSelect"></p>
+                            </div>
+                            <div class="col-6">
+                                <label for="assignedToSelect" class="form-label fw-medium">Assigned To</label>
+                                <div id="assignedToSelect" x-model="assignedToSelect" @input="clearError('assignedToSelect')"></div>
+                                <p x-show="errors.assignedToSelect" class="text-sm text-danger" x-text="errors.assignedToSelect"></p>
+                            </div>
+                            <div class="col-12">
+                                <label for="phomenoInput" class="form-label fw-medium">Phone No</label>
+                                <input type="text" id="phomenoInput" class="form-control" placeholder=" " x-model="phomenoInput" @input="clearError('phomenoInput')">
+                                <p x-show="errors.phomenoInput" class="text-sm text-danger" x-text="errors.phomenoInput"></p>
+                            </div>
+                            <div class="col-12 text-end">
+                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-2xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <div class="bg-gray-50 p-8 h-100 d-flex flex-column justify-content-end">
+                            <img src="assets/images/others/mail.png" alt="" class="position-absolute start-0 top-10">
+                            <div>
+                                <img src="assets/images/main-logo.png" alt="" class="h-8">
+                                <p class="mt-3 text-muted">Whether you need help with customization, troubleshooting, orgeneral inquiries, don't hesitate to reach out to us.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8 p-8">
+                        <button type="button" class="btn-close link link-danger text-black float-end" data-bs-dismiss="modal" aria-label="Close"><i data-lucide="x" class="size-5"></i></button>
+                        <h5 class="mb-2">Feel free to connect with us.</h5>
+                        <p class="text-muted">Our team is here to assist you with any questions or issues you mayencounter while using our admin template.</p>
+                        <form action="#!" class="mt-5">
+                            <div class="row g-5">
+                                <div class="col-6">
+                                    <label for="firstNameInput" class="form-label fw-medium">First Name</label>
+                                    <input type="text" id="firstNameInput" class="form-control" placeholder="" required>
+                                </div>
+                                <div class="col-6">
+                                    <label for="lastNameInput" class="form-label fw-medium">Last Name</label>
+                                    <input type="text" id="lastNameInput" class="form-control" placeholder="" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="emailInput" class="form-label fw-medium">Email</label>
+                                    <input type="email" id="emailInput" class="form-control" placeholder="" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="phomenoInput" class="form-label fw-medium">Phone No</label>
+                                    <input type="text" id="phomenoInput" class="form-control" placeholder="" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="descriptionInput" class="form-label fw-medium">Description</label>
+                                    <textarea name="descriptionInput" id="descriptionInput" rows="3" class="form-control" placeholder="" required></textarea>
+                                </div>
+                                <div class="col-12 text-end">
+                                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
