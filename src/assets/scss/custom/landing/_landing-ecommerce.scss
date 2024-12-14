@@ -1,0 +1,70 @@
+header {
+    &.max-w-1300px {
+        max-width: 1300px;
+    }
+}
+
+.max-w-1350px {
+    max-width: 1350px;
+}
+
+.Banner {
+    &.banner-bg {
+        background: url('../images/ecommerce/landing/home.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .banner-text {
+        bottom: -45px;
+        font-size: 11rem;
+    }
+}
+
+.tab-section {
+    margin-top: -2.5rem;
+
+    .pr-img {
+        .tab-star {
+            opacity: 0;
+            transition: $transition-base;
+            top: 0;
+        }
+
+        &:hover {
+            .tab-star {
+               opacity: 1;
+               top: 20px;
+            }
+        }
+    }
+}
+
+/* Ensure the container holds the content and hides overflow */
+.container-fluid {
+    overflow: hidden; /* Hide the overflowed content */
+    position: relative;
+}
+
+/* Apply the flexbox to the marquee wrapper */
+.animate-marquee-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+/* Set up the marquee text style and animation */
+.animate-marquee {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+}
+
+/* Define the marquee animation */
+@keyframes marquee {
+    0% {
+        transform: translateX(100%); /* Start from outside the right */
+    }
+    100% {
+        transform: translateX(-100%); /* End outside the left */
+    }
+}
