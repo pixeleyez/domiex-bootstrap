@@ -1,0 +1,30 @@
+.email-banner {
+    padding-top: 20rem;
+    padding-bottom: 12rem;
+
+    img {
+        transform: scale(1.7);
+        top: 0px;
+        right: -22rem;
+        position: relative;
+    }
+}
+.email-service{
+    padding: 6rem 0;
+}
+.email-pricing{
+    padding: 6rem 0;
+    .price-circle{
+        bottom: -4rem; 
+        right: -4rem;
+        border: 40px solid var(--#{$prefix}gray-100);
+    }
+}
+
+.email-templates{
+    background-color: $primary-900;
+    padding: 6rem 0;
+    img{
+        transform: scale(1.5);
+    }
+}
