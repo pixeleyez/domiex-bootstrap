@@ -4,10 +4,6 @@ header {
     }
 }
 
-.max-w-1350px {
-    max-width: 1350px;
-}
-
 .Banner {
     &.banner-bg {
         background: url('../images/ecommerce/landing/home.jpg');
@@ -23,48 +19,148 @@ header {
 
 .tab-section {
     margin-top: -2.5rem;
+}
 
-    .pr-img {
+.pr-img {
+    .tab-star {
+        opacity: 0;
+        transition: $transition-base;
+        top: 0;
+    }
+
+    &:hover {
         .tab-star {
+            opacity: 1;
+            top: 20px;
+        }
+    }
+}
+
+.animate-marquee {
+    white-space: nowrap;
+    animation: marquee 32s linear infinite;
+    color: var(--#{$prefix}gray-100);
+    padding: 6rem 0;
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+}
+
+.main-title {
+    text-shadow: 0 4px 15px #e1e1e1;
+
+    &::before {
+        content: '';
+        width: 0.25rem;
+        height: 50%;
+        position: absolute;
+        left: 0px;
+        background-color: var(--#{$prefix}primary);
+    }
+}
+
+.new-arrivals {
+    .discount-label::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid var(--#{$prefix}danger);
+        border-bottom: 10px solid transparent;
+        bottom: -7px;
+        right: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
+
+.banner-link {
+    background-image: url('../images/ecommerce/landing/cta-01.jpg');
+    background-position: center;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+}
+
+.edition-section {
+    padding: 6rem 0;
+
+    .edition-dropdown {
+        position: absolute;
+        top: -10px !important;
+        left: 30px !important;
+    }
+
+    .edition-dot-1 {
+        top: 20%;
+        left: 33%;
+    }
+
+    .edition-dot-2 {
+        bottom: 22%;
+        left: 28%;
+    }
+
+    .edition-dot-3 {
+        bottom: 37%;
+        left: 40%;
+    }
+}
+
+.drop-shadow-lg {
+    text-shadow: 0 4px 15px #e1e1e1;
+}
+
+.follow-section {
+    .follow-hover {
+        position: relative;
+        display: block;
+        transition: all 0.3s ease;
+
+        .follow-bgimage {
+            position: absolute;
+            inset: 0;
+            background-color: rgb(3 7 18 / 0.15);
             opacity: 0;
-            transition: $transition-base;
-            top: 0;
+        }
+
+        .instagram-icon {
+            top: 45%;
+            opacity: 0;
+            transform: translate(-45%, -50%);
+            transform: $transition-base;
         }
 
         &:hover {
-            .tab-star {
-               opacity: 1;
-               top: 20px;
+            transform: $transition-base;
+
+            .instagram-icon {
+                top: 50%;
+                opacity: 1;
+                transform: translate(-50%, -50%);
+                transform: $transition-base;
+            }
+
+            .follow-bgimage {
+                opacity: 1;
             }
         }
     }
+
 }
 
-/* Ensure the container holds the content and hides overflow */
-.container-fluid {
-    overflow: hidden; /* Hide the overflowed content */
-    position: relative;
-}
-
-/* Apply the flexbox to the marquee wrapper */
-.animate-marquee-wrapper {
-    display: flex;
-    width: 100%;
-}
-
-/* Set up the marquee text style and animation */
-.animate-marquee {
-    display: flex;
-    white-space: nowrap;
-    animation: marquee 15s linear infinite;
-}
-
-/* Define the marquee animation */
-@keyframes marquee {
-    0% {
-        transform: translateX(100%); /* Start from outside the right */
+footer {
+    .footer-top {
+        padding: 4rem 0;
     }
-    100% {
-        transform: translateX(-100%); /* End outside the left */
-    }
+}
+.header.small {
+    max-width: 100%;
 }

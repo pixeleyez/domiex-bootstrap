@@ -57,6 +57,7 @@
         "remixicon": "^4.3.0",
         "sass": "1.63.6",
         "simplebar": "^6.2.7",
+        "slick-image-compare": "^0.4.5",
         "svgo": "^3.3.2",
         "swiper": "^11.1.12",
         "tippy.js": "^6.3.7",
