@@ -460,6 +460,7 @@ $font-sizes: (
   'sm': '14px',
   '15': '0.9375rem',
   '16': '1rem',
+  '17': '1.0625rem',
   'lg': '18px',
   'xl': '20px',
   '21': '21px',
@@ -1596,10 +1597,10 @@ $avatar-sizes: (
   40: 10rem,
   44: 176px,
   48: 192px,
-  52: 13rem,
-  56: 14rem,
+  52: 208px,
+  56: 224px,
   64: 256px,
-  72: 18rem,
+  72: 288px,
   80: 20rem,
   96: 24rem,
   375px: 23.4375rem,
@@ -1618,7 +1619,9 @@ $avatar-sizes: (
   75: 75%,
   100: 100%,
   auto: auto,
-  6xl: 72rem,
+  3xl: 48rem,
+  5xl: 50rem,
+  6xl: 1152px,
 );
 
 $custom-list-styles: (

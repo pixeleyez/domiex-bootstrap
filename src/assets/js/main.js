@@ -23,7 +23,11 @@ import pt from '/assets/images/flag/pt.svg';
 
 AOS.init();
 
-
+// Header
+window.addEventListener('scroll', function() {
+    var header = document.querySelector('header');
+    header.classList.toggle('fixed', window.scrollY > 0);
+});
 
 
 document.querySelectorAll('button[data-toast]').forEach(button => {

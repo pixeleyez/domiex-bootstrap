@@ -1,0 +1,129 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="School" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+<div class="d-flex align-items-center justify-content-center h-10 text-center bg-pink bg-opacity-75 text-white">
+    <div class="container">
+        <p>Join new friends and embark on a New Year learning experience. <a href="#!" class="text-white">Click on the student list!</a></p>
+    </div>
+</div>
+
+<!----------Start Menu------------>
+<div class="">
+    <header class="container mx-auto school-header fixed-top navbar navbar-expand-xl navbar-light py-0">
+        <div class="d-flex align-items-center w-100 gap-3">
+            <a href="index.html" title="Logo">
+                <img src="assets/images/main-logo.png" alt="" class="inline-block h-7">
+                <img src="assets/images/logo-white.png" alt="" class="hidden h-7 d-none">
+            </a>
+            <div class="d-flex justify-content-center navbar-collapse" id="navbarNav">
+                <div class="d-flex flex-column flex-xl-row gap-3 align-items-center fs-16 fw-medium p-5">
+                    <a href="#products" title="products" class="nav-link link-orange text-black p-3">Home</a>
+                    <a href="#new-arrivals" title="new-arrivals" class="nav-link link-orange text-black p-3">About Us</a>
+                    <a href="#service" title="women" class="nav-link link-orange text-black p-3">Courses</a>
+                    <a href="#cta" title="cta" class="nav-link link-orange text-black p-3">Mentors</a>
+                    <a href="#cta" title="cta" class="nav-link link-orange text-black p-3">Blogs</a>
+                    <a href="#cta" title="cta" class="nav-link link-orange text-black p-3">Contact Us</a>
+                </div>
+            </div>
+            <div class="d-flex align-items-center gap-3 ml-auto">
+                <button class="btn btn-orange w-40">Enroll Now</button>
+            </div>
+        </div>
+    </header>
+</div><!----------End Menu------------>
+
+<!----------Start Menu------------>
+<section class="school-banner" id="home">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="mb-5 display-4 font-weight-medium text-capitalize fs-5xl">
+                Ready to build meaningful connections
+                <span class="position-relative d-inline-block">
+                    <span class="position-relative">Domiex</span>
+                </span>
+                education?
+            </h1>
+            <p class="mb-4 text-lg text-muted">Let's discover new knowledge, make new friends, and enjoy a learning experience with amazing teachers.</p>
+
+            <div class="d-flex justify-content-center gap-3">
+                <button type="button" class="btn btn-primary rounded-pill py-3 min-w-40">
+                    Get Started
+                    <i class="bi bi-arrow-right ml-1"></i>
+                    <i class="bi bi-arrow-left mr-1"></i>
+                </button>
+                <a href="#!" class="d-flex align-items-center gap-2 font-weight-bold">
+                    <div class="d-flex align-items-center justify-content-center bg-warning rounded-circle text-white" style="width: 40px; height: 40px;">
+                        <i class="bi bi-play-circle size-5"></i>
+                    </div>
+                    Watch Videos
+                </a>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-4">
+            <div class="col">
+                <div class="relative p-6 bg-white rounded-top-5 max-height-96 overflow-hidden" style="position: relative;">
+                    <img src="assets/images/school/landing/img-01.png" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col">
+                <div class="relative p-6 bg-white rounded-top-5 max-height-96 overflow-hidden" style="position: relative;">
+                    <img src="assets/images/school/landing/img-02.png" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col">
+                <div class="relative p-6 bg-white rounded-top-5 max-height-96 overflow-hidden" style="position: relative;">
+                    <img src="assets/images/school/landing/img-03.png" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col">
+                <div class="relative p-6 bg-white rounded-top-5 max-height-96 overflow-hidden" style="position: relative;">
+                    <img src="assets/images/school/landing/img-04.png" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-5 text-center g-4">
+            <div class="col">
+                <h3 class="mb-1">250k</h3>
+                <p class="text-muted" style="font-size: 16px;">Total Student</p>
+            </div>
+            <div class="col">
+                <h3 class="mb-1">300+</h3>
+                <p class="text-muted" style="font-size: 16px;">Expert Teacher Teams</p>
+            </div>
+            <div class="col">
+                <h3 class="mb-1">170+</h3>
+                <p class="text-muted" style="font-size: 16px;">Conducive Class Room</p>
+            </div>
+            <div class="col">
+                <h3 class="mb-1">7546</h3>
+                <p class="text-muted" style="font-size: 16px;">Online Tutorial</p>
+            </div>
+            <div class="col">
+                <h3 class="mb-1">65+</h3>
+                <p class="text-muted" style="font-size: 16px;">Career Guide</p>
+            </div>
+        </div>
+    </div>
+</section><!----------End Menu------------>
+
+
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
