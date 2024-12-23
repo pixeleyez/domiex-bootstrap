@@ -1,9 +1,18 @@
-header {
+.ecommerce-header {
     &.max-w-1300px {
         max-width: 1300px;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+    }
+    &.fixed {
+        max-width: 100%;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
 }
-
+.ecommerce-cta{
+    padding: 2rem 0 6rem 0;
+}
 .Banner {
     &.banner-bg {
         background: url('../images/ecommerce/landing/home.jpg');
@@ -122,12 +131,11 @@ header {
     .follow-hover {
         position: relative;
         display: block;
-        transition: all 0.3s ease;
 
         .follow-bgimage {
             position: absolute;
             inset: 0;
-            background-color: rgb(3 7 18 / 0.15);
+            background-color: rgb(3, 7, 18, 0.15);
             opacity: 0;
         }
 
@@ -135,17 +143,16 @@ header {
             top: 45%;
             opacity: 0;
             transform: translate(-45%, -50%);
-            transform: $transition-base;
+            transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         &:hover {
             transform: $transition-base;
-
             .instagram-icon {
                 top: 50%;
                 opacity: 1;
                 transform: translate(-50%, -50%);
-                transform: $transition-base;
+                transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
             }
 
             .follow-bgimage {
@@ -155,12 +162,8 @@ header {
     }
 
 }
-
 footer {
     .footer-top {
         padding: 4rem 0;
     }
-}
-.header.small {
-    max-width: 100%;
 }

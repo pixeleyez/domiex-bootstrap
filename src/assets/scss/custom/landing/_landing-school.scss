@@ -1,0 +1,13 @@
+.school-header {
+    top: 2.5rem;
+    background-color: transparent;
+
+    &.fixed {
+        top: 0;
+        background-color: var(--#{$prefix}body-bg);
+    }
+}
+
+.school-banner {
+    padding: 12rem 0 6rem 0;
+}
