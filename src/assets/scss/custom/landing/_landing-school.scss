@@ -5,9 +5,115 @@
     &.fixed {
         top: 0;
         background-color: var(--#{$prefix}body-bg);
+        transition: $transition-base;
+        box-shadow: 10px 5px 10px rgb(133, 133, 133, 0.10);
     }
 }
 
-.school-banner {
-    padding: 12rem 0 6rem 0;
+.bg-orangeGradient {
+    background: linear-gradient(to bottom, rgba(var(--#{$prefix}orange-rgb), 0.1), rgba(var(--#{$prefix}orange-rgb), 0));
+}
+
+@each $state in map-keys($theme-colors) {
+    .student-card-#{$state} {
+        &::before {
+            content: '';
+            @include position(absolute, null, 0, 0, 0);
+            background-color: rgba(var(--#{$prefix}#{$state}-rgb), 0.1);
+            border-top-left-radius: 624.9375rem;
+            border-top-right-radius: 624.9375rem;
+            height: 66.666667%;
+        }
+    }
+    .mentors {
+        .student-card-#{$state} {
+            &::before {
+                height: 17rem;
+                width: 17rem;
+            }
+        }
+    }
+}
+
+.school-aboutUs {
+    .aboutUs-img {
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0px;
+            top: 5rem;
+            border-radius: 0.375rem;
+            background-color: var(--#{$prefix}orange-bg-subtle);
+        }
+    }
+
+    .blur-square {
+        width: 650px;
+        height: 650px;
+        border: 1px solid var(--#{$prefix}orange);
+        filter: blur(4px);
+        border-radius: 8px;
+    }
+
+    .domiex-title {
+        transform: rotate(-90deg);
+        @include position(absolute, null, null, 3rem, -0.625rem);
+    }
+
+    .advantages {
+        box-shadow: 0 25px 50px -12px #f3f4f6;
+    }
+}
+
+.courses {
+    .courses-card {
+        background: linear-gradient(to bottom, var(--#{$prefix}orange-bg-subtle), var(--#{$prefix}body-bg));
+
+        .course-number {
+            @include position(absolute, 1.25rem, 1.25rem, null, null);
+            color: rgba(var(--#{$prefix}orange-rgb), 0.1);
+        }
+    }
+
+    &.course-firstCol {
+        &::before {
+            content: '';
+            @include position(absolute, 50%, null, null, null);
+            width: 66.666667%;
+            border: 1px solid var(--#{$prefix}gray-100);
+            z-index: -1;
+        }
+
+        &::after {
+            content: '';
+            @include position(absolute, 50%, null, null, 66.666667%);
+            border: 1px solid var(--#{$prefix}gray-100);
+            height: calc(100% + 2rem);
+        }
+    }
+
+    &.course-secondCol {
+        &::before {
+            content: '';
+            @include position(absolute, 50%, 0, null, null);
+            width: 66.666667%;
+            border: 1px solid var(--#{$prefix}gray-100);
+        }
+
+        &::after {
+            content: '';
+            @include position(absolute, 50%, 66.666667%, null, null);
+            border: 1px solid var(--#{$prefix}gray-100);
+            height: calc(100% + 2rem);
+        }
+    }
+
+    &.course-lastCol {
+        &::before {
+            content: '';
+            @include position(absolute, 50%, 0, null, null);
+            width: 33.3%;
+            border: 1px solid var(--#{$prefix}gray-100);
+        }
+    }
 }

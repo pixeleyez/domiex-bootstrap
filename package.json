@@ -56,6 +56,7 @@
         "quill": "^2.0.2",
         "remixicon": "^4.3.0",
         "sass": "1.63.6",
+        "simple-parallax-js": "^6.0.1",
         "simplebar": "^6.2.7",
         "slick-image-compare": "^0.4.5",
         "svgo": "^3.3.2",

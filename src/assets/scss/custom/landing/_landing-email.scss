@@ -1,5 +1,6 @@
 .email-header {
     transition: $transition-base;
+
     &.fixed {
         box-shadow: 10px 5px 10px rgb(133, 133, 133, 0.10);
         transition: $transition-base;
@@ -70,20 +71,17 @@
 
 .email-footer {
     background-color: var(--#{$prefix}gray-900);
+}
 
-    .top-content {
-        padding: 5rem 0;
-
-        .footer-icon {
-            &::after {
-                content: '';
-                position: absolute;
-                inset: 0;
-                background-color: rgb(31 41 55 / 0.5);
-                border-radius: 0.5rem;
-                transform: rotate(-45deg);
-            }
+@each $state in map-keys($theme-colors) {
+    .footer-icon-#{$state} {
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: rgba(var(--#{$prefix}#{$state}-rgb), 0.1);
+            border-radius: 0.5rem;
+            transform: rotate(-45deg);
         }
-
     }
 }
