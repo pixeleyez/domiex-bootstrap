@@ -36,6 +36,7 @@
 .achivementSwiper:hover .hover-navigation {
     opacity: 1;
     visibility: visible;
+    transition: $transition-base;
 }
 
 .stroke-current {

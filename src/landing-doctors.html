@@ -1,0 +1,366 @@
+{{> partials/main }}
+
+<head>
+
+    {{> partials/title-meta title="Doctors" }}
+
+    {{> partials/head-css}}
+
+</head>
+
+{{> partials/body}}
+
+<!----------Start Menu------------>
+<header class="fixed-top navbar mx-auto py-0">
+    <div class="container px-20">
+        <div class="d-flex align-items-center gap-5 w-100">
+            <a href="index.html" title="Logo">
+                <img src="assets/images/main-logo.png" alt="" class="inline-block h-7">
+                <img src="assets/images/logo-white.png" alt="" class="hidden h-7 d-none">
+            </a>
+            <div class="ms-auto" id="navbarNav">
+                <div class="d-flex flex-column flex-xl-row align-items-center fs-16 fw-medium p-4">
+                    <a href="#home" title="home" class="nav-link link-info text-black p-3">Home</a>
+                    <a href="#about-us" title="about-us" class="nav-link link-info text-black p-3">About Us</a>
+                    <a href="#courses" title="courses" class="nav-link link-info text-black p-3">Our Service</a>
+                    <a href="#mentors" title="mentors" class="nav-link link-info text-black p-3">Our Doctors</a>
+                    <a href="#blogs" title="blogs" class="nav-link link-info text-black p-3">Feedback</a>
+                </div>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <div class="d-flex gap-2 ">
+                    <button class="btn btn-sub-dark rounded-circle btn-icon"><i data-lucide="sun" class="size-4"></i></button>
+                    <button class="btn btn-info">Let's Talk <i data-lucide="headset" class="size-4 ms-1"></i> </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header><!----------End Menu------------>
+
+<!----------Start Menu------------>
+<section class="doctor-banner position-relative pb-0 overflow-hidden pt-44" id="home">
+    <div class="position-absolute top-0 start-0 bottom-0 end-0 opacity-75">
+        <svg class="object-fit-cover h-100 w-100" preserveAspectRatio="none" viewBox="0 0 1440 560">
+            <g mask="url(&quot;#SvgjsMask1012&quot;)" fill="none">
+                <path opacity="30" class="stroke-info opacity-25" d="M111.42 308.12L176.38 345.62L176.38 420.62L111.42 458.12L46.47 420.62L46.47 345.62zM176.38 195.62L241.33 233.12L241.33 308.12L176.38 345.62L111.42 308.12L111.42 233.12zM241.33 308.12L306.28 345.62L306.28 420.62L241.33 458.12L176.38 420.62L176.38 345.62zM241.33 533.12L306.28 570.62L306.28 645.62L241.33 683.12L176.38 645.62L176.38 570.62zM306.28 195.62L371.24 233.12L371.24 308.12L306.28 345.62L241.33 308.12L241.33 233.12zM371.24 533.12L436.19 570.62L436.19 645.62L371.24 683.12L306.28 645.62L306.28 570.62zM501.15 308.12L566.1 345.62L566.1 420.62L501.15 458.12L436.19 420.62L436.19 345.62zM566.1 195.62L631.05 233.12L631.05 308.12L566.1 345.62L501.15 308.12L501.15 233.12zM631.05 533.12L696.01 570.62L696.01 645.62L631.05 683.12L566.1 645.62L566.1 570.62zM696.01 -29.38L760.96 8.12L760.96 83.12L696.01 120.62L631.05 83.12L631.05 8.12zM696.01 195.62L760.96 233.12L760.96 308.12L696.01 345.62L631.05 308.12L631.05 233.12zM696.01 420.62L760.96 458.12L760.96 533.12L696.01 570.62L631.05 533.12L631.05 458.12zM825.91 -29.38L890.87 8.12L890.87 83.12L825.91 120.62L760.96 83.12L760.96 8.12zM825.91 195.62L890.87 233.12L890.87 308.12L825.91 345.62L760.96 308.12L760.96 233.12zM955.82 195.62L1020.78 233.12L1020.78 308.12L955.82 345.62L890.87 308.12L890.87 233.12zM1085.73 -29.38L1150.68 8.12L1150.68 83.12L1085.73 120.62L1020.78 83.12L1020.78 8.12zM1150.68 533.12L1215.64 570.62L1215.64 645.62L1150.68 683.12L1085.73 645.62L1085.73 570.62zM1280.59 308.12L1345.54 345.62L1345.54 420.62L1280.59 458.12L1215.64 420.62L1215.64 345.62zM1345.55 -29.38L1410.5 8.12L1410.5 83.12L1345.55 120.62L1280.59 83.12L1280.59 8.12zM1410.5 83.12L1475.45 120.62L1475.45 195.62L1410.5 233.12L1345.55 195.62L1345.55 120.62zM1475.45 195.62L1540.41 233.12L1540.41 308.12L1475.45 345.62L1410.5 308.12L1410.5 233.12zM1475.45 420.62L1540.41 458.12L1540.41 533.12L1475.45 570.62L1410.5 533.12L1410.5 458.12z" stroke="rgba(224, 240, 252, 1)" stroke-width="2"></path>
+                <path opacity="0" class="fill-info" d="M103.92 308.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM168.88 345.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM168.88 420.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM103.92 458.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM38.97 420.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM38.97 345.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM168.88 195.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM233.83 233.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM233.83 308.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM103.92 233.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM298.78 345.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM298.78 420.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM233.83 458.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM233.83 533.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM298.78 570.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM298.78 645.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM233.83 683.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM168.88 645.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM168.88 570.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM298.78 195.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM363.74 233.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM363.74 308.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM363.74 533.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM428.69 570.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM428.69 645.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM363.74 683.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM493.65 308.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM558.6 345.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM558.6 420.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM493.65 458.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM428.69 420.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM428.69 345.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM558.6 195.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM623.55 233.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM623.55 308.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM493.65 233.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM623.55 533.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM688.51 570.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM688.51 645.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM623.55 683.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM558.6 645.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM558.6 570.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM688.51 -29.38 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM753.46 8.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM753.46 83.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM688.51 120.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM623.55 83.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM623.55 8.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM688.51 195.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM753.46 233.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM753.46 308.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM688.51 345.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM688.51 420.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM753.46 458.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM753.46 533.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM623.55 458.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM818.41 -29.38 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM883.37 8.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM883.37 83.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM818.41 120.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM818.41 195.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM883.37 233.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM883.37 308.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM818.41 345.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM948.32 195.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1013.28 233.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1013.28 308.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM948.32 345.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1078.23 -29.38 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1143.18 8.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1143.18 83.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1078.23 120.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1013.28 83.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1013.28 8.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1143.18 533.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1208.14 570.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1208.14 645.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1143.18 683.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1078.23 645.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1078.23 570.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1273.09 308.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1338.04 345.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1338.04 420.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1273.09 458.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1208.14 420.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1208.14 345.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1338.05 -29.38 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1403 8.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1403 83.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1338.05 120.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1273.09 83.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1273.09 8.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1467.95 120.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1467.95 195.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1403 233.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1338.05 195.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1532.91 233.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1532.91 308.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1467.95 345.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1403 308.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1467.95 420.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1532.91 458.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1532.91 533.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1467.95 570.62 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1403 533.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1403 458.12 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0z"></path>
+                <path opacity="20" class="stroke-info opacity-25" d="M19.38 -45.28L62.68 -20.28L62.68 29.72L19.38 54.72L-23.92 29.72L-23.92 -20.28zM62.68 179.72L105.98 204.72L105.98 254.72L62.68 279.72L19.38 254.72L19.38 204.72zM19.38 254.72L62.68 279.72L62.68 329.72L19.38 354.72L-23.92 329.72L-23.92 279.72zM62.68 329.72L105.98 354.72L105.98 404.72L62.68 429.72L19.38 404.72L19.38 354.72zM19.38 404.72L62.68 429.72L62.68 479.72L19.38 504.72L-23.92 479.72L-23.92 429.72zM62.68 479.72L105.98 504.72L105.98 554.72L62.68 579.72L19.38 554.72L19.38 504.72zM149.29 479.72L192.59 504.72L192.59 554.72L149.29 579.72L105.98 554.72L105.98 504.72zM192.59 104.72L235.89 129.72L235.89 179.72L192.59 204.72L149.29 179.72L149.29 129.72zM235.89 179.72L279.19 204.72L279.19 254.72L235.89 279.72L192.59 254.72L192.59 204.72zM192.59 254.72L235.89 279.72L235.89 329.72L192.59 354.72L149.29 329.72L149.29 279.72zM409.1 179.72L452.41 204.72L452.41 254.72L409.1 279.72L365.8 254.72L365.8 204.72zM409.1 329.72L452.41 354.72L452.41 404.72L409.1 429.72L365.8 404.72L365.8 354.72zM539.01 -45.28L582.31 -20.28L582.31 29.72L539.01 54.72L495.71 29.72L495.71 -20.28zM582.31 179.72L625.62 204.72L625.62 254.72L582.31 279.72L539.01 254.72L539.01 204.72zM539.01 254.72L582.31 279.72L582.31 329.72L539.01 354.72L495.71 329.72L495.71 279.72zM539.01 404.72L582.31 429.72L582.31 479.72L539.01 504.72L495.71 479.72L495.71 429.72zM668.92 329.72L712.22 354.72L712.22 404.72L668.92 429.72L625.62 404.72L625.62 354.72zM755.52 179.72L798.83 204.72L798.83 254.72L755.52 279.72L712.22 254.72L712.22 204.72zM842.13 29.72L885.43 54.72L885.43 104.72L842.13 129.72L798.83 104.72L798.83 54.72zM798.83 104.72L842.13 129.72L842.13 179.72L798.83 204.72L755.52 179.72L755.52 129.72zM885.43 104.72L928.73 129.72L928.73 179.72L885.43 204.72L842.13 179.72L842.13 129.72zM885.43 404.72L928.73 429.72L928.73 479.72L885.43 504.72L842.13 479.72L842.13 429.72zM972.04 254.72L1015.34 279.72L1015.34 329.72L972.04 354.72L928.73 329.72L928.73 279.72zM972.04 404.72L1015.34 429.72L1015.34 479.72L972.04 504.72L928.73 479.72L928.73 429.72zM1101.94 29.72L1145.25 54.72L1145.25 104.72L1101.94 129.72L1058.64 104.72L1058.64 54.72zM1058.64 104.72L1101.94 129.72L1101.94 179.72L1058.64 204.72L1015.34 179.72L1015.34 129.72zM1145.25 -45.28L1188.55 -20.28L1188.55 29.72L1145.25 54.72L1101.94 29.72L1101.94 -20.28zM1145.25 104.72L1188.55 129.72L1188.55 179.72L1145.25 204.72L1101.94 179.72L1101.94 129.72zM1275.15 479.72L1318.46 504.72L1318.46 554.72L1275.15 579.72L1231.85 554.72L1231.85 504.72zM1318.46 404.72L1361.76 429.72L1361.76 479.72L1318.46 504.72L1275.15 479.72L1275.15 429.72zM1361.76 479.72L1405.06 504.72L1405.06 554.72L1361.76 579.72L1318.46 554.72L1318.46 504.72z" stroke="rgba(232, 244, 252, 1)" stroke-width="2"></path>
+            </g>
+            <defs>
+                <mask id="SvgjsMask1012">
+                    <rect class="object-fit-cover w-100 h-100" fill="#ffffff"></rect>
+                </mask>
+            </defs>
+        </svg>
+    </div>
+    <div class="position-absolute size-28 bg-info bg-opacity-10 clip-path-plus animate-pulse d-inline-block plus-1"></div>
+    <div class="position-absolute rotate-45 size-28 bg-white bg-opacity-50 clip-path-plus d-inline-block plus-2"></div>
+    <div class="container position-relative px-20">
+        <div class="row align-items-center">
+            <div class="col-12 col-xl-6 mb-8">
+                <div class="mb-8">
+                    <p class="position-relative ps-10 mb-2 fs-lg fw-medium text-info main-sub-title mb-2">Simplifying health care of you</p>
+                    <h1 class="mb-4 text-capitalize lh-base fs-6xl">Free Health <span class="text-info highlight-text">Checkup</span> Ensure A Better Life</h1>
+                    <p class="mb-8 fs-lg text-muted max-w-669px">Doing a regular body check-up can help doctors diagnose a disease before it poses high risk. Reduces the risk of complication during treatment – once you are diagnosed with a health condition at an early stage.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <button class="btn btn-info py-3">Make An Appointment <i data-lucide="move-right" class="size-4"></i></button>
+                        <button class="btn btn-outline-info py-3"><i data-lucide="video" class="size-4"></i> Watch Intro</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xl-5 offset-xl-1">
+                <div class="position-relative">
+                    <div class="gap-3 p-3 bg-white rounded-3 d-flex align-items-center contact-tip z-1">
+                        <div class="d-flex justify-content-center align-items-center rounded-circle text-white bg-info size-12">
+                            <i data-lucide="phone" class="size-5"></i>
+                        </div>
+                        <div>
+                            <p class="mb-1 text-muted">24/7 Hours Service</p>
+                            <h6 class="mb-0">+251 (01234 5678 98)</h6>
+                        </div>
+                    </div>
+                    <img src="assets/images/hospital/landing/main-home.png" alt="" class="position-relative img-fluid home-img">
+                </div>
+            </div>
+        </div>
+        <div class="position-relative border-none card bg-info shadow-info text-white counter-section mb-0">
+            <div class="p-8">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-3 text-center">
+                        <h4 class="mb-2 fs-xl">263k+</h4>
+                        <p class="text-opacity-75 text-white fs-16">Recovered Patients</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 text-center">
+                        <h4 class="mb-2 fs-xl">92%</h4>
+                        <p class="text-opacity-75 text-white fs-16">Satisfaction Rate</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 text-center">
+                        <h4 class="mb-2 fs-xl">102+</h4>
+                        <p class="text-opacity-75 text-white fs-16">Experts Doctors</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 text-center">
+                        <h4 class="mb-2 fs-xl">100+</h4>
+                        <p class="text-opacity-75 text-white fs-16">Award Winner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!----------End Menu------------>
+
+<!----------Start Menu------------>
+<section class="pt-14">
+    <div class="container px-20">
+        <div class="row g-4">
+            <div class="col-12 col-sm-6 col-md-4 col-xl-2">
+                <a href="#!" class="d-block text-center card card-sub-info">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center align-items-center mx-auto mb-5 bg-white rounded-circle size-16 text-info">
+                            <i class="size-6" data-lucide="microscope"></i>
+                        </div>
+                        <h6>Health Test</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-xl-2">
+                <a href="#!" class="d-block text-center card card-sub-info">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center align-items-center mx-auto mb-5 bg-white rounded-circle size-16 text-info">
+                            <i class="size-6" data-lucide="heart-pulse"></i>
+                        </div>
+                        <h6>Bone and Joint Health</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-xl-2">
+                <a href="#!" class="d-block text-center card card-sub-info">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center align-items-center mx-auto mb-5 bg-white rounded-circle size-16 text-info">
+                            <i class="size-6" data-lucide="brain"></i>
+                        </div>
+                        <h6>Brain Surgery</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-xl-2">
+                <a href="#!" class="d-block text-center card card-sub-info">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center align-items-center mx-auto mb-5 bg-white rounded-circle size-16 text-info">
+                            <i class="size-6" data-lucide="siren"></i>
+                        </div>
+                        <h6>Imaging Services</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-xl-2">
+                <a href="#!" class="d-block text-center card card-sub-info">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center align-items-center mx-auto mb-5 bg-white rounded-circle size-16 text-info">
+                            <i class="size-6" data-lucide="fingerprint"></i>
+                        </div>
+                        <h6>Genetic Testing</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-xl-2">
+                <a href="#!" class="d-block text-center card card-sub-info">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center align-items-center mx-auto mb-5 bg-white rounded-circle size-16 text-info">
+                            <i class="size-6" data-lucide="syringe"></i>
+                        </div>
+                        <h6>Laboratory Testing</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section><!----------End Menu------------>
+
+<!----------Start Menu------------>
+<section class="py-28 doctors-aboutUs" id="about-us">
+    <div class="container px-20">
+        <div class="row gx-20 align-items-center">
+            <div class="col-12 col-lg-6">
+                <div class="position-relative about-img">
+                    <img src="assets/images/hospital/landing/about.jpg" alt="" class="img-fluid rounded-4 position-relative z-1">
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <h1 class="mb-2 fs-4xl mb-0">Professional Doctors with <span class="highlight-text text-info">15+ Years</span> of Experience</h1>
+                <p class="mb-5 text-muted fs-16">Dr Shopia Mia's net worth has grown 68% this year, from $2.2 billion (₹18,295 crore) in 2024, making him the richest doctor in the USA. Comparative data indicates Dr. Shopia is also the fastest-growing non-resident on the list.</p>
+                <div class="row g-5 mb-6">
+                    <div class="col-12 col-sm-6">
+                        <div class="d-flex gap-3">
+                            <i class="mt-1 text-info size-5 flex-shrink-0" data-lucide="calendar-plus"></i>
+                            <div>
+                                <h6 class="mb-1">Make an Appointment</h6>
+                                <p class="text-muted">Schedule with your favorite doctor anytime.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="d-flex gap-3">
+                            <i class="mt-1 text-info size-5 flex-shrink-0" data-lucide="shield-check"></i>
+                            <div>
+                                <h6 class="mb-1">Health Guarantee Forever</h6>
+                                <p class="text-muted">We stand behind our puppies with a two-year genetic health guarantee.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="d-flex gap-3">
+                            <i class="mt-1 text-info size-5 flex-shrink-0" data-lucide="pill"></i>
+                            <div>
+                                <h6 class="mb-1">Pharmacy Marketplace</h6>
+                                <p class="text-muted">Online pharmacy laws in India are still in their nascent stage.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="d-flex gap-3">
+                            <i class="mt-1 text-info size-5 flex-shrink-0" data-lucide="headset"></i>
+                            <div>
+                                <h6 class="mb-1">24/7 Emergency Service</h6>
+                                <p class="text-muted">Expert team of doctors can handle any medical emergency.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex gap-3">
+                    <button type="button" class="py-3 btn btn-info">Learn More <i data-lucide="move-right" class="size-4 ms-1"></i> </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!----------End Menu------------>
+
+<!----------Start Menu------------>
+<section class="position-relative py-28 bg-light" id="services">
+    <div class="container px-20">
+        <div class="max-w-2xl mx-auto mb-12 text-center">
+            <h2 class="mb-2 fs-5xl">Service for <span class="text-info highlight-text">your Health</span></h2>
+            <p class="text-muted fs-16">Here is the complete slideshow for introducing our services. You can also use it for the value section.</p>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 rounded-lg service-card">
+                    <div class="card-body">
+                        <div class="rounded-2 p-3 mb-3 size-12 bg-danger-subtle">
+                            <i data-lucide="heart-pulse" class="icon-danger"></i>
+                        </div>
+                        <h5 class="mt-4 mb-2 fs-lg">Cardiology</h5>
+                        <p class="fs-16 mb-3 text-muted">Cardiology, medical specialty dealing with the diagnosis and treatment of diseases and abnormalities involving the heart and blood vessels.</p>
+                        <a href="#!" class="link link-info text-muted">Read More<i data-lucide="move-right" class="size-4 ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 rounded-lg service-card">
+                    <div class="card-body">
+                        <div class="rounded-2 p-3 mb-3 size-12 bg-warning-subtle">
+                            <i data-lucide="syringe" class="icon-warning"></i>
+                        </div>
+                        <h5 class="mt-4 mb-2 fs-lg">Ophthalmology</h5>
+                        <p class="fs-16 mb-3 text-muted">Ophthalmology is a clinical and surgical specialty within medicine that deals with the diagnosis and treatment of eye disorders. A former term is oculism.</p>
+                        <a href="#!" class="link link-info text-muted">Read More<i data-lucide="move-right" class="size-4 ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 rounded-lg service-card">
+                    <div class="card-body">
+                        <div class="rounded-2 p-3 mb-3 size-12 bg-success-subtle">
+                            <i data-lucide="brain" class="icon-success"></i>
+                        </div>
+                        <h5 class="mt-4 mb-2 fs-lg">Neurology</h5>
+                        <p class="fs-16 mb-3 text-muted">Medical specialty concerned with the nervous system and its functional or organic disorders the brain, spinal cord, and nerves.</p>
+                        <a href="#!" class="link link-info text-muted">Read More<i data-lucide="move-right" class="size-4 ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 rounded-lg service-card">
+                    <div class="card-body">
+                        <div class="rounded-2 p-3 mb-3 size-12 bg-info-subtle">
+                            <i data-lucide="activity" class="icon-info"></i>
+                        </div>
+                        <h5 class="mt-4 mb-2 fs-lg">Psychiatrist</h5>
+                        <p class="fs-16 mb-3 text-muted">Psychiatry is the branch of medicine focused on the diagnosis, treatment and prevention of mental, emotional and behavioral disorders.</p>
+                        <a href="#!" class="link link-info text-muted">Read More<i data-lucide="move-right" class="size-4 ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 rounded-lg service-card">
+                    <div class="card-body">
+                        <div class="rounded-2 p-3 mb-3 size-12 bg-secondary-subtle">
+                            <i data-lucide="stethoscope" class="icon-secondary"></i>
+                        </div>
+                        <h5 class="mt-4 mb-2 fs-lg">Surgeon</h5>
+                        <p class="fs-16 mb-3 text-muted">A surgeon is a doctor who specializes in evaluating and treating conditions that may require surgery, or physically changing the human body.</p>
+                        <a href="#!" class="link link-info text-muted">Read More<i data-lucide="move-right" class="size-4 ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 rounded-lg service-card">
+                    <div class="card-body">
+                        <div class="rounded-2 p-3 mb-3 size-12 bg-primary-subtle">
+                            <i data-lucide="microscope" class="icon-primary"></i>
+                        </div>
+                        <h5 class="mt-4 mb-2 fs-lg">Hematologist</h5>
+                        <p class="fs-16 mb-3 text-muted">a doctor who specializes in the treatment of bones that have not grown correctly or that have been damaged about his knee pain.</p>
+                        <a href="#!" class="link link-info text-muted">Read More<i data-lucide="move-right" class="size-4 ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!----------End Menu------------>
+
+<!----------Start Menu------------>
+<section class="py-14 py-md-28" id="doctors">
+    <div class="container px-20">
+        <div class="max-w-2xl mx-auto mb-12 text-center">
+            <h2 class="mb-2 fs-5xl">Meet our <span class="text-info highlight-text">Doctors</span></h2>
+            <p class="text-muted fs-16">Discover the expertise and compassion of our dedicated doctors at Meet. Your health is in caring hands with us.</p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-5">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <div class="position-relative">
+                        <span class="position-absolute top-6 start-50 translate-middle badge bg-warning text-dark rounded-pill">4.9</span>
+                    </div>
+                    <div class="p-8 text-center">
+                        <div class="mb-3 size-24 mx-auto    ">
+                            <img src="assets/images/hospital/landing/doctors/img-01.jpg" alt="Dr. Clyde Hillmer" class="img-fluid rounded-circle shadow-lg">
+                        </div>
+                        <div class="mt-5">
+                            <h5 class="mb-1"><a href="#" class="link link-info text-black">Dr. Clyde Hillmer</a></h5>
+                            <p class="mb-3 text-muted">Budapest, Hungary</p>
+                            <span class="rounded-1 w-32 badge bg-info-subtle text-info border border-info-subtle fs-13">Neurologist</span>
+                        </div>
+                    </div>
+                    <div class="border-top row">
+                        <a href="#" class="link link-info text-muted p-4 text-center col-6 border-end"><i data-lucide="calendar-range" class="size-4 me-1"></i> Availability</a>
+                        <a href="#" class="link link-info text-muted p-4 text-center col-6"><i data-lucide="phone" class="size-4 me-1"></i> Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <button type="button" class="btn btn-primary">
+                View All Doctors
+                <i class="bi bi-arrow-right ms-2"></i>
+            </button>
+        </div>
+    </div><!--end container-->
+</section><!----------End Menu------------>
+
+{{> partials/vendor-scripts}}
+
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
